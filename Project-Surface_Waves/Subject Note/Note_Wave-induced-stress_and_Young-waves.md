@@ -144,7 +144,7 @@ Waves may grow because of the action of wind and they may loose energy because o
 
 When considering external sources, the **action density balance equation** is:
 
-$$ \frac{d N}{dt}= S_{\text{in}} + S_{\text{ds}} + S_{\text{nl}} \tag{4}\ $$
+$$ \frac{d N}{dt}= S_{\text{in}} + S_{\text{ds}} + S_{\text{nl}} \tag{8}\ $$
 
 In the case of spherical coordinates, the operator $d/dt$ is given by Eq. (7).
 While the source terms:
