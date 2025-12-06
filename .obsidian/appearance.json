@@ -1,0 +1,17 @@
+{
+  "textFontFamily": "iA Writer Mono V,Monaspace Neon Var",
+  "showRibbon": true,
+  "baseFontSize": 14,
+  "baseFontSizeAction": false,
+  "theme": "obsidian",
+  "cssTheme": "AnuPpuccin",
+  "accentColor": "#915cf5",
+  "enabledCssSnippets": [
+    "extended-colorschemes",
+    "math-font-size",
+    "inline-code-color",
+    "editor-bg-colors"
+  ],
+  "interfaceFontFamily": "iA Writer Mono V,Monaspace Neon Var",
+  "monospaceFontFamily": "iA Writer Mono V"
+}

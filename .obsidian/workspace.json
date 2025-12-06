@@ -1,0 +1,317 @@
+{
+  "main": {
+    "id": "3d47add857efb2e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "d1dceaa906a1f49e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "921512cf63d9b095",
+            "type": "leaf",
+            "state": {
+              "type": "fluent-task-genius-view",
+              "state": {
+                "currentWorkspace": "ws_1764521105317_ben68g2e4",
+                "viewMode": "list",
+                "viewModeByViewId": {
+                  "calendar": "list"
+                },
+                "searchQuery": "",
+                "filters": {},
+                "filterInputValue": "",
+                "currentViewId": "calendar"
+              },
+              "icon": "task-genius",
+              "title": "Task Genius"
+            }
+          },
+          {
+            "id": "95c041d3815ba153",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Note_Wave-induced-stress_and_Young-waves"
+            }
+          },
+          {
+            "id": "962f214fc858b0a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ICON-waves_Short-Overview_and_Current-Status"
+            }
+          },
+          {
+            "id": "e9aa2bbdd17af4b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ICON-TKE_Parameterisation"
+            }
+          },
+          {
+            "id": "b11db98fb0ffa451",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ICON_mkexp"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "062b34ef08669b91",
+    "type": "split",
+    "children": [
+      {
+        "id": "9aa3d7e0a82208ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b89abaaea3ef86ea",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "270ac8b03869d128",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "action density",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "6009257f3c23b984",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 408.5
+  },
+  "right": {
+    "id": "838d4b369ada7e2b",
+    "type": "split",
+    "children": [
+      {
+        "id": "03f66a03b8512b9a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b12f9881a9777b27",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Project-Surface_Waves/Subject Note/Ocean_Dynamics-Chap_11-Small_Scale_Turbulence.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Ocean_Dynamics-Chap_11-Small_Scale_Turbulence"
+            }
+          },
+          {
+            "id": "da7912416eb6d0df",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Project-Surface_Waves/Subject Note/Ocean_Dynamics-Chap_11-Small_Scale_Turbulence.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Ocean_Dynamics-Chap_11-Small_Scale_Turbulence"
+            }
+          },
+          {
+            "id": "d0971a4e89ee19f8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3f5d80f594d54eb6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "cf18839df3929811",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
+            }
+          },
+          {
+            "id": "3782e50955275893",
+            "type": "leaf",
+            "state": {
+              "type": "tg-timeline-sidebar-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "tg-timeline-sidebar-view"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 309.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "bases:Create new base": false,
+      "obsidian-importer:Open Importer": false,
+      "sidebar-highlights:Open highlights": false,
+      "callout-manager:Insert Callout": false,
+      "iconic:Open rulebook": false,
+      "obsidian-task-progress-bar:Open Task Genius view": false
+    }
+  },
+  "active": "95c041d3815ba153",
+  "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
+    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
+    "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+    "Attachments/TravelAuthorization_Muxin_01122025.pdf",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+    "PhD-General/MPI-M/Seminar Notes.md",
+    "Project-Surface_Waves/Plan/Paper-Reading_Plan.md",
+    "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
+    "Zotero_import",
+    "Users/muxin/Documents/ObsidianVault/Zotero_import/oldenburgResolutionDependenceAtmosphere2022.md",
+    "Users/muxin/Documents/ObsidianVault/Zotero_import/janssenAirSeaInteractionSurface2013.md",
+    "Attachments/9YGKI7C5.png",
+    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
+    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 1.jpeg",
+    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 2.jpeg",
+    "Attachments/image.png",
+    "Attachments/IMG_2967.jpeg",
+    "Attachments/IMG_3299.jpeg",
+    "Attachments/IMG_3785.jpeg",
+    "Database.base",
+    "2025-12-03.md",
+    "Users/muxin/Documents/ObsidianVault/Zotero_import",
+    "Users/muxin/Documents/ObsidianVault",
+    "Users/muxin/Documents",
+    "Users/muxin",
+    "Users",
+    "Attachments/W3X7PQ2U.png",
+    "Project-Surface_Waves/Thoughts/Fourier_Transform_General.md",
+    "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
+    "Zotero_import",
+    "QuickCapture.md",
+    "Project-WMT/Plan/Figure_Plan.md",
+    "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
+    "Project-Surface_Waves/Tips/How_to_use_DASK_in_Data-process.md",
+    "PhD-General/TRR-181/TRR-Workshop_Fundamental_Meteorology.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+    "Attachments/Screenshot 2025-12-01 at 15.41.25.png",
+    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
+    "Project-Surface_Waves/Task",
+    "Untitled.canvas",
+    "未命名.canvas",
+    "Untitled 1.canvas"
+  ]
+}

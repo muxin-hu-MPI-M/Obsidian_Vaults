@@ -1,0 +1,27 @@
+{
+  "callouts": {
+    "custom": [],
+    "settings": {
+      "hint": [
+        {
+          "changes": {
+            "icon": "lucide-flame",
+            "color": "208, 181, 48"
+          }
+        }
+      ],
+      "tip": [
+        {
+          "changes": {
+            "color": "68, 207, 110"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

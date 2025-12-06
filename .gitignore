@@ -1,0 +1,7 @@
+# Obsidian internal files
+.obsidian/workspace
+.obsidian/cache
+
+# OS junk
+.DS_Store
+

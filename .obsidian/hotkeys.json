@@ -1,0 +1,65 @@
+{
+  "obsidian-citation-plugin:insert-markdown-citation": [
+    {
+      "modifiers": [
+        "Ctrl",
+        "Shift"
+      ],
+      "key": "M"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-insert-notes": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "I"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-import-notes": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "N"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-Format #1": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "F"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-Format APA": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "F"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-Cite APA": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-Bibliography APA": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "B"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+- [x] Transfer Notes from Notion to Obsidian ❌ 2025-11-30 #project/General 🔼 🛫 2025-11-26 13:00 📅 2025-11-30 13:00 ✅ 2025-11-30
+- [x] Read papers: Approximate Stokes Drift in Deep Water (Breivik et al. 2014) #project/surfwaves ⏫ 🛫 2025-10-28 13:00 📅 2025-11-11 13:00 ✅ 2025-11-30
+- [x] Self learning `pyicon` package #project/surfwaves 🛫 2025-10-27 13:00 📅 2025-11-11 13:00 ✅ 2025-11-30
+- [x] Self learning `pyICON` package #project/surfwaves 📅 2025-11-10 13:00 ✅ 2025-11-30
+- [x] Running ICON-O R2B7 30 years #project/surfwaves 🛫 2025-10-30 13:00 📅 2025-11-03 13:00 ✅ 2025-11-30
+- [x] Read Paper: The Effects of Ocean Surface Waves on Tropical Cyclone Intensity (Zhao et al, 2019) #project/surfwaves 🛫 2025-11-06 13:00 📅 2025-11-10 13:00 ✅ 2025-11-30
+- [x] TRR181_Workshop_Dec1-2 🛫 2025-12-01 09:00 📅 2025-12-02 16:00 #project/PhD_general ✅ 2025-12-03
+- [x] Compile own executable ICON-XPP with mkexp (Following the recipe) #project/surfwaves 🔺 🛫 2025-12-02 13:00 📅 2025-12-02 13:00 ✅ 2025-12-02
+- [x] Send invitation email for Muxin’s first panel meeting to panels: Jing-son, Nils, Noel, Christ 🛫 2025-12-02 📅 2025-12-02 09:00 #project/PhD_general ✅ 2025-12-02
+- [x] Learn basic mkExp examples from Karle’s note #mkexp #ICON/experiment #ICON #project/surfwaves 🔺 🛫 2025-12-03 10:00 📅 2025-12-03 11:00 ✅ 2025-12-03
+- [x] Finish N^2 survey 🛫 2025-12-03 16:00 📅 2025-12-03 17:00 #project/PhD_general ✅ 2025-12-06
+- [x] Meetings with Helmuth for mkexp in icon-xpp 🛫 2025-12-04 14:00 📅 2025-12-04 15:00 ⏫ #project/surfwaves ✅ 2025-12-06
+- [x] Finish the AI-Training course from MPG #project/PhD_general 🛫 2025-12-04 11:45 📅 2025-12-04 12:15 ✅ 2025-12-06

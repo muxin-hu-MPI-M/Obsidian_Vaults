@@ -1,0 +1,159 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": true,
+  "showMenuActions": true,
+  "showSuggestionIcons": true,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": false,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": true,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "Attachments": {
+      "icon": "🖼️",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "PhD-General": {
+      "icon": "🧑‍🎓",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "PhD-General/MPI-M": {
+      "icon": "lucide-earth",
+      "color": "green",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "PhD-General/TRR-181": {
+      "icon": "lucide-waves",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ],
+      "color": "blue"
+    },
+    "Project-ERC-Heather": {
+      "icon": "⛰️",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves": {
+      "icon": "🏄‍♂️",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Meeting Note": {
+      "icon": "lucide-message-square-text",
+      "color": "purple",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Plan": {
+      "icon": "lucide-list-plus",
+      "color": "green",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Subject Note": {
+      "icon": "lucide-notebook-pen",
+      "color": "red",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics": {
+      "icon": "💦",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Thoughts": {
+      "icon": "lucide-lightbulb",
+      "color": "orange",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Tips": {
+      "icon": "lucide-thumbs-up",
+      "color": "pink",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Tips/ICON_Models": {
+      "icon": "lucide-earth",
+      "color": "blue",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-WMT": {
+      "icon": "🌊",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-WMT/Meeting Note": {
+      "icon": "lucide-message-square-text",
+      "color": "blue",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-WMT/Plan": {
+      "icon": "lucide-list-plus",
+      "color": "green",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-WMT/Subject Note": {
+      "icon": "lucide-notebook-pen",
+      "color": "red",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-WMT/Thoughts": {
+      "icon": "lucide-lightbulb",
+      "color": "orange",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": []
+}

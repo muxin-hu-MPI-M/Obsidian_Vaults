@@ -1,0 +1,4 @@
+/* This is a more specific selector that targets the editor in light mode */
+body.theme-light .view-content {
+  background-color: #ffffff !important;
+}

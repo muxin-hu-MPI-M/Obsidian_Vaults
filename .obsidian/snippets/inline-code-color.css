@@ -1,0 +1,21 @@
+*/.cm-s-obsidian .cm-inline-code:not(.cm-formatting),
+*/.markdown-rendered :not(pre) > code {
+*/    color: red;
+*/}
+
+/* Light theme */
+.theme-light .cm-s-obsidian .cm-inline-code:not(.cm-formatting),
+.theme-light .markdown-rendered :not(pre) > code {
+    color: red;
+    font-size: 0.97em;
+    font-weight: 450;
+}
+
+/* Dark theme */
+.theme-dark .cm-s-obsidian .cm-inline-code:not(.cm-formatting),
+.theme-dark .markdown-rendered :not(pre) > code {
+    color: #ffb347; /* example: light orange for dark mode */
+    font-size: 0.97em;
+    font-weight: 450;
+}
+

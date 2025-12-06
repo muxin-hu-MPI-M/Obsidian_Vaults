@@ -1,0 +1,23 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "Zotero_import",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "Bibliography APA",
+      "format": "formatted-bibliography"
+    },
+    {
+      "name": "Cite APA",
+      "format": "formatted-citation",
+      "cslStyle": "apa"
+    }
+  ],
+  "exportFormats": [],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": false,
+  "whichNotesToOpenAfterImport": "first-imported-note",
+  "shouldConcat": true
+}

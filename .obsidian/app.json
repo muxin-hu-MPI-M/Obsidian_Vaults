@@ -1,0 +1,9 @@
+{
+  "promptDelete": false,
+  "attachmentFolderPath": "Attachments",
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showLineNumber": false,
+  "vimMode": false,
+  "alwaysUpdateLinks": true
+}

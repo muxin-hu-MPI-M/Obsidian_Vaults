@@ -1,0 +1,24 @@
+mjx-math, mjx-container { 
+	font-size: 120%;
+	color: black;
+}
+
+img[alt*="center"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Light theme */
+.theme-light mjx-math,
+.theme-light mjx-container {
+    color: black;
+}
+
+/* Dark theme */
+.theme-dark mjx-math,
+.theme-dark mjx-container {
+    color: white;
+}
+
+
