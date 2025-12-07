@@ -42,7 +42,32 @@ Last Eddited: 2025-11-27T09:57:00
       clc = 0.15
       l_lc = true
   ```
-- 
+- when run the icon-xpp b5b7, with parent simulation from Stephan (piControl spin-up 1300 years) with default setting in ocean vertical diffusion parameter (see below), the simulation can only continues with 25 years, and will end up in error message `Surface height too large!`
+	- but when set `c_k=1.0`, the simulation continues further >= 25 years
+```Fortran
+/
+&ocean_vertical_diffusion_nml
+    vert_mix_type = 2 ! 1: PP; 2: TKE
+    alpha_tke = 30.0
+    c_eps = 0.7
+    c_k = 0.1 ! V2024-07: 0.05
+    cd = 3.75
+    ! use_kappa_min = .true. ! b5b7: def=false
+    ! kappah_min = 2.0e-5 ! b5b7: def=1.0e-5
+    kappam_max = 100.0
+    kappam_min = 0.0
+    mxl_min = 1.d-8
+    only_tke = .true.
+    ppscheme_type = 0
+    tke_min = 1.d-6 ! V2024-07: 1.d-5
+    tke_mxl_choice = 2
+    tke_surf_min = 1.d-4
+    use_lbound_dirichlet = .false.
+    use_ubound_dirichlet = .false.
+    clc = 0.15
+    l_lc = .true.
+/
+```
 
 
 
