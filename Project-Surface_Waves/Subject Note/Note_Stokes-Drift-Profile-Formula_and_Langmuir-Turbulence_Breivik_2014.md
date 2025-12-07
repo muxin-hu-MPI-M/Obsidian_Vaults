@@ -24,11 +24,14 @@ where the $k=|\mathbf{k}|=|(k_x, k_y)|$ is the magnitude of the wavenumber vecto
 > ### **Wave variance spectrum:**
 > In the real ocean, the free surface elevation $\eta(\mathbf{x},t)$ is not a single sinusoid but a _random superposition_ of many waves with different wavenumber, frequencies, directions and amplitudes. Because it is random, we describe it by its variance, rather than by individual amplitudes.
 > Then, the total surface-elevation variance is: $\langle \eta^2 \rangle$. Kenyon (1969) decomposed this variance into contributions from each wavenumber: $\langle \eta^2 \rangle = \int F(\mathbf{k})\, d\mathbf{k}$, which is the wave variance spectrum in wavenumber space.
-> Hence, the $F(\mathbf{k})$ (unit: $m^4$) indicates surface variance density per unit wavenumber area. It tells you how much of the sea-surface variance (energy) ****is contained in waves with wavenumber vector $\mathbf{k}$.
+> Hence, the $F(\mathbf{k})$ (unit: $m^4$) indicates surface variance density per unit wavenumber area. It tells you how much of the sea-surface variance (energy) **is contained in waves with wavenumber vector $\mathbf{k}$.**
 
 > [!Tip]
 > ### **Deep water limit:**
-> Considered when the water depth $h$ is much greater than the wave wavelength.
+> Considered when the water depth $h$ is much greater than the wave wavelength. Thus:
+> $$
+> \text{Deep water when:}\quad h \gg \frac{\lambda}{2}
+> $$
 > Hence, the linear surface gravity wave dispersion relation becomes:
 > $$ \omega^2=gk\tanh{(kh)}\approx gk $$
 > as when water depth $h$ is much greater than the wavelength, it has: $h \gg \lambda/2 \quad \text{or}\quad kh \gg 1$
