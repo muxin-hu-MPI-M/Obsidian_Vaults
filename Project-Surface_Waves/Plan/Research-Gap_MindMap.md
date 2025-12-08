@@ -6,19 +6,21 @@ mindmap-plugin: basic
 
 # Research Gap
 ## Main Gap
-**“Poorly quantified surface wave effects and their relative importance in the modification of air-sea interactions in Southern Ocean and South East Pacific Upwelling System”**
+**“Poorly quantified surface wave effects and their relative importance in the modification of air-sea interactions”**
+### Sub Gaps:
+#### Global
+- Does the inclusion of fully coupled wave model affect the simulation of global mean sea-states?
+	- Are there any regional differences? If there is, which region is affected the most?
+#### Regional
+- Does the inclusion
+- Limited understanding in the coupling mechanisms of surface wave and upwelling system
 
-### Wave Effects
+### Considered Wave Effects
 Wave effects we anticipate to investigate
 - momentum flux (wind/ocean stress)
 - heat fluxes
 - Stokes drift related effects (e.g., Langmuir Turbulence, Stokes-Coriolis forcing)
 - surface roughness
-
-### Sub Gaps:
-- 
-- Limited understanding in the coupling mechanisms of surface wave and upwelling system
-
 
 ## Background
 ### Limited fully coupling approach in wind-wave studies (Wu et al., 2019)
@@ -28,10 +30,11 @@ Wave effects we anticipate to investigate
 - **Inclusion of wave effects have been proved to improves the model performance** compare to the stand alone circulation model
 	- (Wu et al., 2019) concludes that the inclusion of waves improves the model performance in terms of sea level height, temperature and circulation
 - However, these studies coupled wave to ocean OR atmosphere circulation model only, not the fully atmosphere-ocean-wave coupling
+### Why studies different impact from waves?
+- There’re complex interactions between these wave effects. 
+	- For example, (Wu et al., 2019) founded that the stokes drift advection could largely counters the effect of the Coriolis-Stokes Force on ocean circulation. But two effects do not always cancel entirely, as seen for the SST and associated coastal upwelling in Baltic Sea.
+- Thus, consistently introduce these wave effects together and investigate their relative contributions is important. 
 ### Why Southern Ocean & Southeast Pacific? 
 - The Southern Ocean is the generation source for swells influencing the wave climate of the Pacific, Atlantic and Indian Oceans (Casas-Prat et al., 2024)
 - Both Southern Ocean and Southeast Pacific exhibits robust evidence for historical and projected changes in wind-wave characteristics (Casas-Prat et al., 2024)
 
-## Sub title
-
-## 
