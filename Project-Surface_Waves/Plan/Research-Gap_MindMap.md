@@ -8,10 +8,6 @@ mindmap-plugin: basic
 ## Main Gap
 **“Poorly quantified surface wave effects and their relative importance in the modification of air-sea interactions in Southeast Pacific Upwelling System”**
 ### Sub Gaps:
-#### Global
-- Does the inclusion of fully coupled wave model affect the simulation of global mean sea-states?
-	- Are there any regional differences? If there is, which region is affected the most?
-
 - What’s the relative contribution from local wind pattern (local wave), comparing to the contributions from Swells (remote wave)
 	- SO will be the major source
 - Limited understanding in the coupling mechanisms of surface wave and upwelling system
@@ -22,7 +18,7 @@ Wave effects we anticipate to investigate
 - momentum flux (wind/wave stress)
 - Stokes drift related effects (e.g., Langmuir Turbulence, Stokes-Coriolis force, advection by Stokes drift)
 - surface roughness 
-	- might change heat fluxes, momentum flux, in the atmosphere
+	- might change heat fluxes, momentum flux, in the atmophere 
 
 ## Background
 ### Limited fully coupling approach in wind-wave studies (Wu et al., 2019)
