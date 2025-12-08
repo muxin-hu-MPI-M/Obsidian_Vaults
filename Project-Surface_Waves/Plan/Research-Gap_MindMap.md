@@ -21,6 +21,7 @@ Wave effects we anticipate to investigate
 	- might change heat fluxes, momentum flux, in the atmophere 
 
 ## Background
+“The surface wave influence on the upwelling has rarely been investigated in previous studies.” (Wu et al., 2019, p. 9) 
 ### Limited fully coupling approach in wind-wave studies (Wu et al., 2019)
 - **Traditional atmosphere, ocean, wave models run independently**
 	- the impact of surface waves on air-sea interaction processes is often ignored since the temporal and spatial scales of surface waves are much smaller than the atmospheric and oceanic dynamic scales (Hasselmann, 1991)

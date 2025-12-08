@@ -55,15 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regular Meeting Notes"
+              "title": "Research-Gap_Mindmap"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -120,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5024719238281,
-    "collapsed": true
+    "width": 284.5024719238281
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
+              "title": "Outline of Research-Gap_Mindmap"
             }
           },
           {
@@ -214,8 +214,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "calendar-clock",
-              "title": "Timeline"
+              "icon": "lucide-ghost",
+              "title": "tg-timeline-sidebar-view"
             }
           },
           {
@@ -233,8 +233,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5,
-    "collapsed": true
+    "width": 272.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -255,19 +254,19 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "48a035e8721b6dbd",
+  "active": "cfbdf4671b7190cb",
   "lastOpenFiles": [
     "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
+    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
     "Database.base",
     "QuickCapture.md",
     "2025-12-08.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
-    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Plan/Research-Gap_MindMap.md",
