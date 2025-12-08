@@ -4,53 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "a3970cbaada3fe9b",
-        "type": "tabs",
+        "id": "4c80373e7c9eaf8e",
+        "type": "split",
         "children": [
           {
-            "id": "b9f6e3b556e6e974",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_Wave-induced-stress_and_Young-waves"
-            }
+            "id": "0e6a74f77025c49c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dd7fe187516ccf14",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Project-Surface_Waves/Plan/Research-Gap_MindMap.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Research-Gap_MindMap"
+                }
+              }
+            ]
           },
           {
-            "id": "a94a1ce0ee124fe3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014"
-            }
-          },
-          {
-            "id": "0f22eb313c3de50b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Project-Surface_Waves-General_Proposal"
-            }
+            "id": "01cb6e6cbc604cec",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9779bdc2f023c0f7",
+                "type": "leaf",
+                "state": {
+                  "type": "mindmap",
+                  "state": {},
+                  "icon": "dot-network",
+                  "title": "Mind Map of Research-Gap_MindMap"
+                }
+              }
+            ]
           }
         ],
-        "currentTab": 2
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -107,7 +101,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 408.5
+    "width": 303.5
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -185,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gap_MindMap.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
+              "title": "Outline of Research-Gap_MindMap"
             }
           },
           {
@@ -200,8 +194,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "tg-timeline-sidebar-view"
+              "icon": "calendar-clock",
+              "title": "Timeline"
             }
           },
           {
@@ -219,7 +213,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 309.5
+    "width": 309.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,11 +235,18 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "0f22eb313c3de50b",
+  "active": "dd7fe187516ccf14",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
+    "Project-Surface_Waves/Plan/ICON_Simulation_EXP-ID.md",
+    "Project-Surface_Waves/Plan/Research-Gap_MindMap.md",
+    "Project-Surface_Waves/Plan/Paper-Reading_Plan.md",
+    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
+    "2025-12-08.md",
     "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
+    "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
+    "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_1-Fundamental_Laws.md",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
@@ -256,7 +258,6 @@
     "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
     "PhD-General/MPI-M/Seminar Notes.md",
-    "Project-Surface_Waves/Plan/Paper-Reading_Plan.md",
     "Zotero_import",
     "Users/muxin/Documents/ObsidianVault/Zotero_import/oldenburgResolutionDependenceAtmosphere2022.md",
     "Users/muxin/Documents/ObsidianVault/Zotero_import/janssenAirSeaInteractionSurface2013.md",
@@ -277,16 +278,10 @@
     "Users",
     "Attachments/W3X7PQ2U.png",
     "Project-Surface_Waves/Thoughts/Fourier_Transform_General.md",
-    "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Zotero_import",
     "QuickCapture.md",
     "Project-WMT/Plan/Figure_Plan.md",
-    "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
-    "Project-Surface_Waves/Tips/How_to_use_DASK_in_Data-process.md",
-    "PhD-General/TRR-181/TRR-Workshop_Fundamental_Meteorology.md",
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Attachments/Screenshot 2025-12-01 at 15.41.25.png",
-    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Task",
     "Untitled.canvas",
     "未命名.canvas",

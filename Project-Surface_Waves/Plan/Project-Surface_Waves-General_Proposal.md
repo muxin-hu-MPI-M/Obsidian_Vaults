@@ -6,6 +6,7 @@ Last Eddited: 2025-12-01
 ---
 # **Topic**The implication of surface waves and upper-ocean mixing on air-sea coupling (WP3)
 
+
 > [!Attention]
 > Aiming at investigating how surface waves impact the air-sea heat and momentum exchange and how this affects the oceanic and atmospheric circulation; Focusing on **surface wave effects in coupled and high-resolution configurations and the evaluation of feedbacks** between these compartments.
 
