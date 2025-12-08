@@ -1,9 +1,37 @@
 ---
-tags:
-  - "#project/surfwaves"
-  - "#research/gaps"
-  - "#wave/surface_wave"
-  - "#proposal/surfwaves"
-Last Eddited: 2025-12-08
+
+mindmap-plugin: basic
+
 ---
-# 
+
+# Research Gap
+## Main Gap
+**“Poorly quantified surface wave effects and their relative importance in the modification of air-sea interactions in Southern Ocean and South East Pacific Upwelling System”**
+
+### Wave Effects
+Wave effects we anticipate to investigate
+- momentum flux (wind/ocean stress)
+- heat fluxes
+- Stokes drift related effects (e.g., Langmuir Turbulence, Stokes-Coriolis forcing)
+- surface roughness
+
+### Sub Gaps:
+- 
+- Limited understanding in the coupling mechanisms of surface wave and upwelling system
+
+
+## Background
+### Limited fully coupling approach in wind-wave studies (Wu et al., 2019)
+- **Traditional atmosphere, ocean, wave models run independently**
+	- the impact of surface waves on air-sea interaction processes is often ignored since the temporal and spatial scales of surface waves are much smaller than the atmospheric and oceanic dynamic scales (Hasselmann, 1991)
+	- Energy and momentum fluxes do not fully account for the impact of the oceanic wave field at the air-sea interface
+- **Inclusion of wave effects have been proved to improves the model performance** compare to the stand alone circulation model
+	- (Wu et al., 2019) concludes that the inclusion of waves improves the model performance in terms of sea level height, temperature and circulation
+- However, these studies coupled wave to ocean OR atmosphere circulation model only, not the fully atmosphere-ocean-wave coupling
+### Why Southern Ocean & Southeast Pacific? 
+- The Southern Ocean is the generation source for swells influencing the wave climate of the Pacific, Atlantic and Indian Oceans (Casas-Prat et al., 2024)
+- Both Southern Ocean and Southeast Pacific exhibits robust evidence for historical and projected changes in wind-wave characteristics (Casas-Prat et al., 2024)
+
+## Sub title
+
+## 
