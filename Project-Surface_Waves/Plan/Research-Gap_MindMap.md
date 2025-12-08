@@ -34,6 +34,7 @@ Wave effects we anticipate to investigate
 - The Foundation: Upwelling is largely Driven by Wind Stress.
 	- Since the rate and intensity of upwelling are directly proportional to the magnitude of the initial **wind stress ($\tau$)} and the subsequent **Ekman currents**, any process that modifies either of these is critical to model accurately.
 	- Surface waves modify momentum/tracer fluxes in the air-sea interface. Its corresponding wave effect is therefore has large potential to influence the simulation of upwelling systems
+		- “In addition, waves can significantly affect momentum flux in the coastal areas affected by coastal upwelling” (Wu et al., 2022, p. 1492) 
 - The Flaw in traditional models
 	- the impact of surface waves on air-sea interaction processes is often ignored
 	- limited coupling between atmosphere, and ocean oversimplify the important role of surface waves, which act as intermediate reservoir for momentum and energy
