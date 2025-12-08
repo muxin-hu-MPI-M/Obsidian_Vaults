@@ -12,7 +12,7 @@ mindmap-plugin: basic
 	- SO will be the major source
 - Limited understanding in the coupling mechanisms of surface wave and upwelling system
 
-
+ 
 ### Considered Wave Effects
 Wave effects we anticipate to investigate
 - momentum flux (wind/wave stress)
