@@ -77,11 +77,20 @@ Last Eddited: 2025-11-27T09:57:00
 	- consistency is important
 	- LaTex’s *siunit* package
 - for the d/dt, the ‘d’ should be Roman (not italic) since it is not a variable. For variable, use italic style
+- colormap
+	- pre built colour maps that are perceptually linear and well suited for colour blind people
+		- Crameri Color Maps
+		- Colormaps for Oceanographie
+		- Color brewer
+	- build you own colour map
+		- Check if your colour map is not good for color-blinder
+			- HCL wizard
+			- color blind test
 
 
 # [[2025-12-03]] Noel’s group meeting
 ## Solve a Fluid dynamic equation
-- when considering two rigid-body plate on the top and bottom of the fluid respectively, and moves in two velocities $u_t$ and $u_b$. 
+- when considering two rigid-body plate on the <span style="background:#fff88f">top and bottom</span> of the fluid respectively, and moves in two velocities $u_t$ and $u_b$. 
   If we assume: 
   (1) Purely horizontal (in $x$ direction), incompressible flow → constant density; 
   (2) The rigid-body plates have friction

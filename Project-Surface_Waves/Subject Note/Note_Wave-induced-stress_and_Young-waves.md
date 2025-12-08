@@ -34,7 +34,7 @@ Hence, the surface stress felt by the mean circulation is the **total surface st
 Please find the below contents referenced to Janssen, 2004
 Janssen, P. (2004). _The Interaction of Ocean Waves and Wind_. Cambridge University Press.
 ### Action density spectrum *N*
-The most elegant formulation of the “energy” balance equation is in terms of he **action density spectrum** $N(\mathbf{k})$ which is the energy spectrum divided by the so-called intrinsic frequency $\sigma$. 
+The most elegant formulation of the “energy” balance equation is in terms of he **action density spectrum** $N(\mathbf{k})$ which is the **energy spectrum** divided by the so-called intrinsic frequency $\sigma$. 
 
 Given the formula:
 
@@ -97,7 +97,7 @@ since $\frac{\partial}{\partial z_i}\dot{z_i}=0$ as divergence free. Thus, along
 > [!Tip]
 > This property holds only for canonical coordinates for which the flow divergence vanishes!!!
 
-However, one should turn to the form of the action density balance equation (Eq. 3) in the ~={red}**flux form** since it is more general and has the advantage.=~ When one transforms from one set of coordinates to another there is no guarantee that the flow remains divergence-free and therefore the flux form of the action balance equation is the preferred starting point.
+However, one should turn to the form of the action density balance equation (Eq. 3) in the <span style="background:#fff88f">flux form since it is more general and has the advantage.</span> When one transforms from one set of coordinates to another there is no guarantee that the flow remains divergence-free and therefore the flux form of the action balance equation is the preferred starting point.
 
 ### Balance Equation in Spherical Geometry
 
