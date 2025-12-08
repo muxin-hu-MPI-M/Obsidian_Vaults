@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Research-Gap_Mindmap"
+              "title": "Regular Meeting Notes"
             }
           }
         ],
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Research-Gap_Mindmap"
+              "title": "Outline of Regular Meeting Notes"
             }
           },
           {
@@ -229,11 +229,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 291.5,
+    "width": 299.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -257,18 +257,21 @@
   },
   "active": "cfbdf4671b7190cb",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
+    "Database.base",
+    "QuickCapture.md",
+    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
+    "2025-12-08.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "PhD-General/MPI-M/Seminar Notes.md",
+    "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-    "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
-    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
     "Project-Surface_Waves/Plan/Research-Gap_MindMap.md",
     "Project-Surface_Waves/Plan/Untitled mindmap 1.md",
     "Project-Surface_Waves/Plan/ICON_Simulation_EXP-ID.md",
     "Project-Surface_Waves/Plan/Paper-Reading_Plan.md",
-    "2025-12-08.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_1-Fundamental_Laws.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
@@ -279,7 +282,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
     "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
-    "PhD-General/MPI-M/Seminar Notes.md",
     "Zotero_import",
     "Users/muxin/Documents/ObsidianVault/Zotero_import/oldenburgResolutionDependenceAtmosphere2022.md",
     "Users/muxin/Documents/ObsidianVault/Zotero_import/janssenAirSeaInteractionSurface2013.md",
@@ -291,15 +293,12 @@
     "Attachments/IMG_2967.jpeg",
     "Attachments/IMG_3299.jpeg",
     "Attachments/IMG_3785.jpeg",
-    "Database.base",
-    "2025-12-03.md",
     "Users/muxin/Documents/ObsidianVault/Zotero_import",
     "Users/muxin/Documents/ObsidianVault",
     "Users/muxin/Documents",
     "Users/muxin",
     "Users",
     "Attachments/W3X7PQ2U.png",
-    "Project-Surface_Waves/Thoughts/Fourier_Transform_General.md",
     "Zotero_import",
     "Attachments/Screenshot 2025-12-01 at 15.41.25.png",
     "Project-Surface_Waves/Task",
