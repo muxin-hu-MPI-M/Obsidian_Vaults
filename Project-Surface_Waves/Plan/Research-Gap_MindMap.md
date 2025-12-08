@@ -33,7 +33,7 @@ Wave effects we anticipate to investigate
 - There’re complex interactions between these wave effects. 
 	- For example, (Wu et al., 2019) founded that the stokes drift advection could largely counters the effect of the Coriolis-Stokes Force on ocean circulation. But two effects do not always cancel entirely, as seen for the SST and associated coastal upwelling in Baltic Sea.
 - Thus, consistently introduce these wave effects together and investigate their relative contributions is important. 
-### Why Southern Ocean & Southeast Pacific? 
+### Why Southeast Pacific? 
 - The Southern Ocean is the generation source for swells influencing the wave climate of the Pacific, Atlantic and Indian Oceans (Casas-Prat et al., 2024)
 - Both Southern Ocean and Southeast Pacific exhibits robust evidence for historical and projected changes in wind-wave characteristics (Casas-Prat et al., 2024)
 
