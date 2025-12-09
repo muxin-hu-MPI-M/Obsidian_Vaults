@@ -88,9 +88,22 @@ tags:
 This version is also the draft for my first Panel Report
 
 **Text**
-Surface waves play a fundamental role in mediating air-sea exchanges of momentum, heat, and turbulent energy, and their influence is expected to be particularly important in wind-driven coastal upwelling systems (Wu et al., 2019; Wu et al., 2022). The coastal upwelling closely relates to wind-driven horizontal divergence that cause cold, nutrient-rich water to rise to the surface. Its intensity and structure are therefore primarily controlled by the along-shore wind stress and the corresponding off-shore Ekman transport which leads to the horizontal divergence (Belmadani et al., 2014; Tarazona & Arntz, 2001). Thus, any process modifying the magnitude or direction of stress at the air-sea interface has the potential to substantially affect costal upwelling dynamics. Surface waves could contribute to this modulation through multiple wave-effects, including wave-modified momentum fluxes, Stokes-drift-related processes, wave-induced turbulence, and changes in surface roughness. 
+Surface waves play a fundamental role in mediating air-sea exchanges of momentum, heat, and turbulent energy, and their influence is expected to be particularly important in wind-driven coastal upwelling systems (Wu et al., 2019; Wu et al., 2022). Coastal upwelling results from wind-driven horizontal divergence that causes cold, nutrient-rich subsurface water to rise to the surface. Its intensity and structure are therefore primarily controlled by the along-shore wind stress and the associated offshore Ekman transport that induces this divergence (Belmadani et al., 2014; Tarazona & Arntz, 2001). Any process modifying the magnitude or direction of stress at the air-sea interface thus has the potential to substantially affect costal upwelling dynamics. Surface waves may contribute to this modulation through multiple wave-effects, including wave-modified momentum fluxes, Stokes-drift-related processes, wave-induced turbulence, and changes in surface roughness. 
 
-Despite this growing recognition, the role of surface waves in costal upwelling environments remains poorly quantified (Wu et al., 2019), particularly regarding the relative importance of different wave-effects. Most existing studies investigating wave impacts on air-sea interactions (and sometimes upwelling) rely on regional but uncoupled modelling frameworks, in which either ocean or atmosphere is forced by wave-model output. For example, both Staneva et al. (2017) and Wu et al. (2019) used a regional Nucleus of European Modelling of the Ocean (NEMO) model with the WAve Model (WAM) forcing to investigate the wave-induced processes. While such approaches have provided valuable insight into individual wave effects, they do not allow for feedbacks between the atmosphere, wave field, and ocean interior. As a result, the wave field is often treated as a passive component, responding to winds and ocean states without influencing atmosphere and ocean in a dynamic consistent manner. 
+Despite this growing recognition, the role of surface waves in costal upwelling environments remains poorly quantified (Wu et al., 2019), particularly regarding the relative importance of different wave-effects. Most existing studies investigating wave impacts on air-sea interactions, (and, in some cases, upwelling) employ regional but uncoupled modelling frameworks, in which either ocean or atmosphere is forced by wave-model output. For example, both Staneva et al. (2017) and Wu et al. (2019) used a regional Nucleus of European Modelling of the Ocean (NEMO) configuration forced by the WAve Model (WAM) to investigate the wave-induced processes. While such approaches have provided valuable insight into individual wave effects, they do not allow for feedbacks between the atmosphere, wave field, and ocean interior. As a result, the wave field is often treated as a passive component, responding to winds and ocean states without influencing atmosphere and ocean in a dynamic consistent manner. Although, these studies, combined with the Limited studies used coupled ocean-wave-atmosphere model, have suggested the significant influences of waves on coastal systems, including upwelling (Wu, Breivik, et al., 2019; Wu, Staneva, et al., 2019), the relative contribution of each wave effects still remained highly unknown.
+
+
+
+
+
+
+
+
+
+
+(This limitation restricts the ability to assess how wave effects adjust in response to evolving atmospheric and oceanic conditions and how these adjustments feed back onto the air-sea interactions and upwelling processes.)
+
+
 
 
 
