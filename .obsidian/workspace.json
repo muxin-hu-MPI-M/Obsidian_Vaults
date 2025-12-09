@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gap_Information.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Research-Gap_Mindmap"
+              "title": "Research-Gap_Information"
             }
           }
         ],
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gap_Information.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Research-Gap_Mindmap"
+              "title": "Outline of Research-Gap_Information"
             }
           },
           {
@@ -257,8 +257,8 @@
   "active": "cfbdf4671b7190cb",
   "lastOpenFiles": [
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
+    "Project-Surface_Waves/Plan/Research-Gap_Information.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
-    "Project-Surface_Waves/Plan/Research-Gap_Mindmap.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
