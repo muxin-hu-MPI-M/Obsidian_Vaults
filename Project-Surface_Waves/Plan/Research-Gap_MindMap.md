@@ -9,9 +9,9 @@ mindmap-plugin: basic
 **“Poorly quantified surface wave effects and their relative importance in the modification of air-sea interactions in Southeast Pacific Upwelling System”**
 ### Sub Gaps:
 - What’s the relative contribution from local wind pattern (local wave), comparing to the contributions from Swells (remote wave)
-	- SO will be the major source
-- Limited understanding in the coupling mechanisms of surface wave and upwelling system
-
+	- Southern Ocean, characterised by strong winds and significant wave-climate, will be the major source of remote waves
+- What’s the relative role of each wave-effects in wave-upwelling coupling?
+- What’s 
  
 ### Considered Wave Effects
 Wave effects we anticipate to investigate
@@ -36,11 +36,9 @@ Wave effects we anticipate to investigate
 - The Flaw in traditional models
 	- the impact of surface waves on air-sea interaction processes is often ignored
 	- limited coupling between atmosphere, and ocean oversimplify the important role of surface waves, which act as intermediate reservoir for momentum and energy
-- 
 
-
-### General Role of Surface Waves in Air-Sea Interaction
-Ocean surface gravity waves (**waves**) play a critical and complex role in air-sea interaction, which is fundamental to weather and climate through the exchange of momentum, energy, and mass1.
+### General Role of Surface Waves in Air-Sea Interaction (Wu et al., 2022)
+Ocean surface gravity waves (**waves**) play a critical and complex role in air-sea interaction, which is fundamental to weather and climate through the exchange of momentum, energy, and mass.
 - **Momentum Flux Buffering:** Waves significantly alter the wind stress, which is the momentum flux, across the interface2222. Waves act as a **buffering role** in the transfer of energy and momentum and **redistribute** these fluxes both in time and space3.
 - **Decoupling of Stress:** The presence of waves means the **ocean-side stress** ($\tau_{oc}$), which drives ocean circulation and dynamics, is often **not identical** to the **air-side stress** ($\tau_{a}$), which is the momentum flux lost from the atmosphere44. Waves can alter both the **magnitude and direction** of the stress transferred to the ocean555.
 - **TKE Generation:** **Wave breaking** is the primary mechanism that enhances the **Turbulent Kinetic Energy (TKE) dissipation rate** in the near-surface layer6. The resulting breaking-induced TKE flux can significantly affect key ocean variables, including **sea surface temperature (SST)** and **surface currents**.
@@ -54,12 +52,16 @@ Ocean surface gravity waves (**waves**) play a critical and complex role in air-
 - **Traditional atmosphere, ocean, wave models run independently**
 	- the impact of surface waves on air-sea interaction processes is often ignored since the temporal and spatial scales of surface waves are much smaller than the atmospheric and oceanic dynamic scales (Hasselmann, 1991)
 	- Energy and momentum fluxes do not fully account for the impact of the oceanic wave field at the air-sea interface
-- **Invalid Core Assumption:** In traditional atmosphere, ocean, and coupled models, the momentum flux to the ocean interior ($\tau_{oc}$) is commonly **assumed to be identical** to the momentum flux lost from the atmosphere ($\tau_{a}$)8888. This assumption is **invalid** under non-equilibrium conditions, such as **growing and decaying waves** and in **fetch-limited conditions**.
-- **Neglected Wave Dynamics:** The wave-induced alteration of stress magnitude and, particularly, the **directional difference** between $\tau_{oc}$ and $\tau_{a}$ are **rarely considered** in coupled climate and forecast models10101010.
-- **Poorly Quantified TKE:** TKE flux is often parameterized as a function of surface friction velocity when a wave model is unavailable11. This traditional parameterization is generally **not adequate** under the non-equilibrium sea states (growing and decaying waves) that are common over the open ocean12.
+- **Invalid Core Assumption:** In traditional atmosphere, ocean, and coupled models, the momentum flux to the ocean interior ($\tau_{oc}$) is commonly **assumed to be identical** to the momentum flux lost from the atmosphere ($\tau_{a}$). This assumption is **invalid** under non-equilibrium conditions, such as **growing and decaying waves** and in **fetch-limited conditions**.
+- **Neglected Wave Dynamics:** The wave-induced alteration of stress magnitude and, particularly, the **directional difference** between $\tau_{oc}$ and $\tau_{a}$ are **rarely considered** in coupled climate and forecast models.
+- **Poorly Quantified TKE:** TKE flux is often parameterised as a function of surface friction velocity when a wave model is unavailable. This traditional parameterisation is generally **not adequate** under the non-equilibrium sea states (growing and decaying waves) that are common over the open ocean12.
 - **Inclusion of wave effects have been proved to improves the model performance** compare to the stand alone circulation model
 	- (Wu et al., 2019) concludes that the inclusion of waves improves the model performance in terms of sea level height, temperature and circulation
-- However, these studies coupled wave to ocean OR atmosphere circulation model only, not the fully atmosphere-ocean-wave coupling
+	- But in Wu et al., 2019, the ocean model is forced by wave model. there’s no coupling between atmosphere, wave and ocean, no feedback from the wave field to the atmosphere, no feedback from the ocean interior to the wave field
+
+Both Wu’s studies do not consider the contribution from Stokes drift to the TKE equation (or Langmuir Turbulence in general), which is not small enough to ignore. 
+- The Stokes production of TKE occurs when the **turbulent Reynolds stresses** in the oceanic mixed layer interact with the **vertical shear of the Stokes drift velocity** (the wave-induced Lagrangian current). This interaction extracts energy directly from the surface waves and injects it into the turbulence of the upper ocean 
+- Studies have demonstrated that the magnitude of Stokes production of TKE can be **of the same order as the conventional shear production** (i.e., TKE generated by the shear of the mean Eulerian current).
 
 
 ### Why studies different impact from waves?
@@ -71,3 +73,7 @@ Ocean surface gravity waves (**waves**) play a critical and complex role in air-
 ### The use of ICON-wave
 - The **ICON-Wave** is a fully coupled wave model with the new energetically consistent coupling wave approach that can be applied in both intermediate (e.g., CMIP-type models) and high-resolution (5 km ocean, 5km or 10 km atmosphere coupled) configuration.
 - It provides the opportunity to investiagte the wave-effects in an atmosphere-ocean-wave energetically consistent fully coupling.
+
+
+## What’s New in our (target) Study compare to literature in the field
+- 
