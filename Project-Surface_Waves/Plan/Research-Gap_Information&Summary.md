@@ -82,3 +82,20 @@ tags:
 	- Their relative role in air-sea interactions over the upwelling system can be specified
 	- The dominant role can be identified
 	- Some previously ignored wave effects in climate models(namely, the Langmuir Turbulence, an important source for TKE production), can be quantified and studied.
+
+
+# Summary in Paragraph
+This version is also the draft for my first Panel Report
+
+**Text**
+Surface waves play a fundamental role in mediating air-sea exchanges of momentum, heat, and turbulent energy, and their influence is expected to be particularly important in wind-driven coastal upwelling systems (Wu et al., 2019; Wu et al., 2022). The coastal upwelling closely relates to wind-driven horizontal divergence that cause cold, nutrient-rich water to rise to the surface. Its intensity and structure are therefore primarily controlled by the along-shore wind stress and the corresponding off-shore Ekman transport which leads to the horizontal divergence (Belmadani et al., 2014; Tarazona & Arntz, 2001). Thus, any process modifying the magnitude or direction of stress at the air-sea interface has the potential to substantially affect costal upwelling dynamics. Surface waves could contribute to this modulation through multiple wave-effects, including wave-modified momentum fluxes, Stokes-drift-related processes, wave-induced turbulence, and changes in surface roughness. 
+
+Despite this growing recognition, the role of surface waves in costal upwelling environments remains poorly quantified (Wu et al., 2019), particularly regarding the relative importance of different wave-effects. Most existing studies investigating wave impacts on air-sea interactions (and sometimes upwelling) rely on regional but uncoupled modelling frameworks, in which either ocean or atmosphere is forced by wave-model output. For example, both Staneva et al. (2017) and Wu et al. (2019) used a regional Nucleus of European Modelling of the Ocean (NEMO) model with the WAve Model (WAM) forcing to investigate the wave-induced processes. While such approaches have provided valuable insight into individual wave effects, they do not allow for feedbacks between the atmosphere, wave field, and ocean interior. As a result, the wave field is often treated as a passive component, responding to winds and ocean states without influencing atmosphere and ocean in a dynamic consistent manner. 
+
+
+
+
+**Reference**:
+Wu, L., Staneva, J., Breivik, Ø., Rutgersson, A., Nurser, A. J. G., Clementi, E., & Madec, G. (2019). Wave effects on coastal upwelling and water level. _Ocean Modelling_, _140_, 101405. [https://doi.org/10.1016/j.ocemod.2019.101405](https://doi.org/10.1016/j.ocemod.2019.101405)
+
+Wu, L., Breivik, Ø., & Qiao, F. (2022). The Redistribution of Air–Sea Momentum and Turbulent Kinetic Energy Fluxes by Ocean Surface Gravity Waves. _Journal of Physical Oceanography_, _52_(7), 1483–1496. [https://doi.org/10.1175/JPO-D-21-0218.1](https://doi.org/10.1175/JPO-D-21-0218.1)
