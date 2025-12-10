@@ -5,6 +5,37 @@ tags:
   - pro
 Last Eddited: 2025-11-27T09:57:00
 ---
+
+
+# [[2025-12-10]] Noel’s group meeting
+- W.R. Young and Basile Gallet
+- swell is predominantly linear → predictable (kind of) (surline.com → surf conditions of swell)
+	- period: 6-30 s
+	- group velocity: 5-20 m/s
+	- wavelength: 50-1000 m
+	- sea-surface slope: ~0.05-0.2
+	- still consider shallow compared to the ocean depth
+- energy flux = group velocity * Energy density $=\frac{\rho g^2 T \alpha^2}{8 \pi}$
+	- T is the period
+	- a is the amplitude
+	- turns out to be large energy flux carried by swell (40 KW/m when T=10sec, a=1m) → good sites for wave power production
+		- 25 km coastlines = 1 Gigawatt ~ 1 nuclear pwer plant
+- gravity has acceleration rate $=\sigma^2\alpha$, sigma is $\sqrt{gk}$ → deep water wave dispersion relationship
+	- swell has rotary acceleration
+- after a storm, dispersion sorts out the waves, long and faster waves outrun the storm, this is the swell
+	- measure the frequency of waves, one events generated waves at different frequency
+	- frequency change with time: $\omega(t)=(\frac{g}{4\pi R})\times t$ 
+		- R is the range from the source of the wave to where you observe
+		- group velocity is only dependent on the k is deep water dispersion: $\omega^2=gk$
+		- the R (distance from the source region)can be calculated by measuring the frequency relationship with time.
+	- the direction of the source?
+		- Swell incident on a triangular array of bottom pressure sensors (measure the phase lag from three arrays to get the direction)
+		- but swell seems not to follow great circles backtracking → errors?
+		- why don’t wave follow great circles?
+			- not because of the Stokes-Coriolis force!!
+			- Young’s hypothesis: refraction by surface currents between the source and the receiver
+				- wave can be influenced by the wind the ocean currents
+
 # [[2025-12-08]] 
 ## Regular Meeting with Nils
 - there’s no k-epsilon scheme in the XPP configuration?

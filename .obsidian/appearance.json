@@ -3,7 +3,7 @@
   "showRibbon": true,
   "baseFontSize": 14,
   "baseFontSizeAction": false,
-  "theme": "system",
+  "theme": "obsidian",
   "cssTheme": "AnuPpuccin",
   "accentColor": "#915cf5",
   "enabledCssSnippets": [
