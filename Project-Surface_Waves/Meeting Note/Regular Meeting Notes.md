@@ -2,20 +2,22 @@
 tags:
   - Meeting
   - project/surfwaves
-  - pro
+  - "#presenter/Noel_Gutierrez-Brizuela"
+  - "#presenter/Nils_Brüggemann"
 Last Eddited: 2025-11-27T09:57:00
 ---
 
 
 # [[2025-12-10]] Noel’s group meeting
+#presenter/Noel_Gutierrez-Brizuela 
 - W.R. Young and Basile Gallet
-- swell is predominantly linear → predictable (kind of) (surline.com → surf conditions of swell)
+- <span style="background:#fff88f">swell is predominantly linear </span>→ predictable (kind of) (surline.com → surf conditions of swell)
 	- period: 6-30 s
 	- group velocity: 5-20 m/s
 	- wavelength: 50-1000 m
 	- sea-surface slope: ~0.05-0.2
 	- still consider shallow compared to the ocean depth
-- energy flux = group velocity * Energy density $=\frac{\rho g^2 T \alpha^2}{8 \pi}$
+- <span style="background:#fff88f">energy flux</span> = group velocity * Energy density $=\frac{\rho g^2 T \alpha^2}{8 \pi}$
 	- T is the period
 	- a is the amplitude
 	- turns out to be large energy flux carried by swell (40 KW/m when T=10sec, a=1m) → good sites for wave power production
@@ -35,9 +37,14 @@ Last Eddited: 2025-11-27T09:57:00
 			- not because of the Stokes-Coriolis force!!
 			- Young’s hypothesis: refraction by surface currents between the source and the receiver
 				- wave can be influenced by the wind the ocean currents
+				- when the wave group encounters with strong currents (ACC, and equater longitudinal currents)
+				- however, the current velocity doesn’t matter!!!!
+					- if a uniform current, do not deflect the wave direction
+					- but the <span style="background:#fff88f">vorticity of the currents refracts waves </span>(many vorticities in ACC!)
 
 # [[2025-12-08]] 
 ## Regular Meeting with Nils
+#presenter/Nils_Brüggemann 
 - there’s no k-epsilon scheme in the XPP configuration?
   In the `./types/XPP/piControl-R2B5_R2B7.config` → `EXP_TYPE` files for piControl for b5b7
   ```shell
