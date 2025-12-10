@@ -4,6 +4,57 @@ tags:
   - Seminars
 Last Eddited: 2025-11-19
 ---
+
+# [[2025-12-10]] Resolving weather fronts increases large-scale atmosphere-ocean coupling
+presenter: #presenter/Robert_jnglin_wills
+- longstanding question: is there predictability on seasonal to decadal timescale associated with coupled atmosphere-ocean variability in the midlatitudes
+	- SSTs are driven by atmospheric forcing, but then persist on longer timescales due to thermal inertial and ocean dynamics
+	- are there **predictable atmospheric responses to mid-lat SSTs?**
+	- observational record is too short
+	- model experiments have shown weak responses 
+- evidence:
+	- wintertime multi-decadal variance in U700 weaker in coupled than reanalysis; also true for multi-decadal SLP variance
+	- regression of SST anomalies on U700 anomalies shows an apparent relationship
+- something missing in models?
+	- too weak atmospheric response to Atlantic Multi-decadal variability (AMV)
+- larger response of NAO to AMOC/AMV variability in a high-resolution model
+- Mesoscale convection and precip within cold sector of cyclones is enhanced over gulf stream SSTs (case study from met Office)
+	- such mesoscale convection might be highly sensitive to the SSTs
+	- Research question: What are the up-scale impa of mesoscale process on large-scale atmospheric dynamics and climate variability?
+		- Hypothesis: mesoscale resolving simulations will increase the impact of surface anomalies on the upper troposphere.
+			- tilt the isentropics over the warmer SSTs (since denser isentropes due to higher resolution)→ strong frontal ascend might cause Jet Shift
+		- result:
+			- compare lower and higher resolution, large-scale (SLP) similar,. but details in pressure velocity different, 10X bigger updraft velocities
+			- why? smaller scale buoyant air parcel is resisted by a thinner air column as t accelerates upwards → expected 
+			- vertical heat transport in higher resolution is much bigger → vertical heat transport by mesoscale motions. the heat anomaly extends further up. also, if integrated over the air column, **the $\partial T/\partial y$ is much higher** in high resolution model
+				- **the same SST patterns give two different large-scale circulation patterns in higher vs lower resolution!!!**
+			- while in intermediate resolution (when front is not well resolved), still shows an incerase in vertical velocities. they occurs primarily in the warm sector of the cyclone (dff from higher resolution). But the weaker circulation response than the higher resolution
+			  ![[Screenshot 2025-12-10 at 13.29.07.png|center]]
+			- <span style="background:#fff88f">when run the SST-triple in +NAO case simulation, different responses in NAO-SST feedback in different resolution</span>
+				- higher resolution: triple SST under +NAO → positive feedback on NAO → strengthen NAO
+				- lower resolution: triple SST under +NAO → negative **feedback** on NAO
+			- conclusion:
+				- Resolving weather fronts at high resolution incresses the atmospheric response to NA SST anomaly
+				- **<font color="#ff0000">mechanisms</font>**: air parcels can ascend quickly within weather fronts
+			- **<span style="background:#fff88f">implication</span>:
+				- larger impact of **decadally** predictable NA SST anomalies on atmosphere and regional climate
+				- could help to explain model-observations discrepancy in NA winter circulation trends
+					- much stronger trends in observation
+					- this could be due to a response to NA SST changes over this time period
+			- highlighting some open questions and work in progress?
+				- is the response linear? → no
+				- what region of SST anomalies is most important for the atmospheric response?
+					- → preliminary result: large response only with warm Gulf stream SST; the importance of Gulf stream SSTs is the **heat fluxes**. 
+				- which grids behaves most realistically?
+			-
+- little resolution sensitivity between 200 km to 40 km where the horizontal wind energy spectrum is resolved, but the vertical wind energy spectrum isn’t. 
+
+
+
+
+
+
+
 # [[2025-11-28]] New Group Leader Intros
 ## Multiscale Cloud Physics
 presenter: #presenter/Franziska_Glassmeier

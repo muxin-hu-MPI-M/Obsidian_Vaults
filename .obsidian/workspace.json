@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
+                "file": "PhD-General/MPI-M/Seminar Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Research-Gap_Information&Summary"
+              "title": "Seminar Notes"
             }
           },
           {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -269,13 +269,14 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "861644de244197a0",
+  "active": "cfbdf4671b7190cb",
   "lastOpenFiles": [
+    "Attachments/Screenshot 2025-12-10 at 13.29.07.png",
     "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
+    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
@@ -297,7 +298,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
-    "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
     "Zotero_import",
     "Attachments/9YGKI7C5.png",
