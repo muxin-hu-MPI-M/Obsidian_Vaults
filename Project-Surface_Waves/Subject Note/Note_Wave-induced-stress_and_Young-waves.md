@@ -158,6 +158,8 @@ represent the rates of change of the position and propagation direction of a wav
 Find the Eq. (7) in (Eq. (2.81), Janssen, 2004) 
 
 
+
+
 ## The Source Term in the Wave Energy Balance
 
 ### Action Balance Equation

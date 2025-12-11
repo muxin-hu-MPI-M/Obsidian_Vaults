@@ -21,7 +21,7 @@ Last Eddited: 2025-11-27T09:57:00
 	- T is the period
 	- a is the amplitude
 	- turns out to be large energy flux carried by swell (40 KW/m when T=10sec, a=1m) → good sites for wave power production
-		- 25 km coastlines = 1 Gigawatt ~ 1 nuclear pwer plant
+		- 25 km coastlines = 1 Gigawatt ~ 1 nuclear per plant
 - gravity has acceleration rate $=\sigma^2\alpha$, sigma is $\sqrt{gk}$ → deep water wave dispersion relationship
 	- swell has rotary acceleration
 - after a storm, dispersion sorts out the waves, long and faster waves outrun the storm, this is the swell
@@ -32,7 +32,7 @@ Last Eddited: 2025-11-27T09:57:00
 		- the R (distance from the source region)can be calculated by measuring the frequency relationship with time.
 	- the direction of the source?
 		- Swell incident on a triangular array of bottom pressure sensors (measure the phase lag from three arrays to get the direction)
-		- but swell seems not to follow great circles backtracking → errors?
+		- **but swell seems not to follow great circles backtracking** → errors?
 		- why don’t wave follow great circles?
 			- not because of the Stokes-Coriolis force!!
 			- Young’s hypothesis: refraction by surface currents between the source and the receiver
