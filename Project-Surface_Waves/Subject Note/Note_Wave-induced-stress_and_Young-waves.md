@@ -44,6 +44,48 @@ $$
 This is based on the paper Edson et al. (2013) and corrigendum Edson et al. (2014). (See (ECMWF, 2024) Chapter 3.2.4). where:
 - $C_d$: drag coefficient in terms of 10 m wind speed $\mathbf{U_{10}}$. It is a value depends on the 10 m wind speed. In ECWMF WAM model, $C_d=(c_1+c_2 \mathbf{U_{10}}^{p_1})^{p_2}$, where $c_1, c_2, p_1, p_2$ are constants.
 
+The Eq. (1) is the formula for the wind stress, and it is closely related to the friction velocity. This stress of air flow on sea waves depends on the sea state and from a consideration of the momentum balance of air:
+
+$$
+u_*^2=\bar\tau_a =\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln((\frac{z_{\text{obs}}+z_o}{{z_o}}))^2}
+$$
+
+where the $\bar \tau_a$ is the density-normalised wind stress: $\tau_a = \rho \bar \tau_a$. The roughness length $z_o$ is represented as:
+
+$$
+z_o=z_b/\sqrt{1-\frac{\tau_w}{\bar\tau_a}}
+$$
+
+
+Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is so-called “wave stress” and “wave-induced stress”):
+
+$$
+\tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta
+$$
+
+Where the $\gamma N=S_{\text{in}}$
+
+> [!Important] “Wind stress” = “Wind-induced stress” = “Wind-to-wave stress” 
+> - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
+> - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
+
+
+$\gamma$ is the growth rate, which has the relationship: 
+
+$$
+\frac{\gamma}{\omega}=\epsilon \beta x^2
+$$
+where $\omega$ is the angular frequency, $\epsilon$ is the air-water density ratio and $\beta$ the *Mile’s parameter*. $x$ is a parameter linked to the wave age ($u_* / c_p$): 
+
+$$
+x=(\frac{u_*}{c_p})\text{max}(\cos{(\theta-\phi),0})
+$$
+Finally, $z_b$ is the background roughness representing the impact of gravity-capillary short waves.
+
+> [!Attention] Wave-atmosphere coupling: An angle from Momentum Flux
+> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
+
+
 ### Early comment on “Momentum Flux into the Ocean”
 - When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
 - Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
