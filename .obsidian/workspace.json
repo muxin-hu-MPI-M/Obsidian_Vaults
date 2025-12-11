@@ -63,8 +63,7 @@
               "title": "Panel-Meeting-1_2025-12-11"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,13 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON-waves_Short-Overview_and_Current-Status"
+              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
             }
           },
           {
@@ -254,16 +253,16 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "abf188da6dc53009",
+  "active": "cf18839df3929811",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
     "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Attachments/Screenshot 2025-12-10 at 13.29.07.png",
     "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",

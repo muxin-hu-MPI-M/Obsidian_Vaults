@@ -5,29 +5,51 @@ tags:
   - Subject-Note
 Last Eddited: 2025-12-06
 ---
-For more details, find the papers from: 
+The note is referring to multiple source of information: 
 - (Zhao et al., 2022) [@zhaoEffectsOceanSurface2022]
-- (Janssen et al., 2013) [@janssenAirSeaInteractionSurface2013]
-- (Janssen, 2004) [@janssenInteractionOceanWaves2004]
+- For details in 3rd generation wave model: WAM (and ECWAM), details can be found:
+	- (Janssen et al., 2013) [@janssenAirSeaInteractionSurface2013]
+	- (Janssen, 2004) [@janssenInteractionOceanWaves2004]
+	- (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
+- For the usage of WAM model, please find:
+	- (Wu et al., 2022) [@wuRedistributionAirSea2022]
+	- (Wu et al., 2019) [@wuWaveEffectsCoastal2019]
 
 > [!Important] 
 > The below is the note and my comprehension about the numerical details in the wave model from ECMWF (i.e., ECWAM model)
 
 # Wave-induced stress: Integral of wind-input source function
-## Total stress at the ocean surface 
+## Wind stress at the air-sea interface 
 
-The **total air–sea momentum flux (wind stress: $\rho_a C_D \mathbf{u_a} |\mathbf{u_a}|$, →  flux of horizontal momentum (per unit area) transferred from the wind to the ocean.**) at the ocean surface is not only transferred directly into ocean currents — part of it goes into **surface gravity waves**.
+The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
 
-We write:
+$$ 
+\begin{align} 
+\tau_{\text{a}} &= \rho_a \mathbf{u_*} |\mathbf{u_*}| \\
+&= \rho_a C_d \mathbf{U_{10}} |\mathbf{U_{10}}| \tag{1}
+\end{align}
+$$
 
-$$ \begin{equation} \tau_{\text{a}} = \tau_{\text{ocean}} + \tau_{\text{wave}} \tag{1}\end{equation} $$
-
+The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview]([[ICON-waves_Short-Overview_and_Current-Status]])
 where:
-- $\tau_a$: total wind stress
-- $\tau_{\text{ocean}}$: turbulent stress acting on the ocean mean current
-- $\tau_{\text{wave}}$: net stress taken up by the wave (the “form drag”)
+- $\tau_a$: wind stress, is considered as the total momentum flux from the wind that applies to the air-sea interface
+- $\rho_a$: density of the air in the atmospheric boundary layer
 
-Hence, the surface stress felt by the mean circulation is the **total surface stress applied by the atmosphere minus the net stress going into the waves** (Janssen et al., 2013)
+while in operational model, we consider the **friction velocity**:
+
+$$
+u_*=\sqrt{C_d}\mathbf{U_{10}}
+$$
+
+This is based on the paper Edson et al. (2013) and corrigendum Edson et al. (2014). (See (ECMWF, 2024) Chapter 3.2.4). where:
+- $C_d$: drag coefficient in terms of 10 m wind speed $\mathbf{U_{10}}$. It is a value depends on the 10 m wind speed. In ECWMF WAM model, $C_d=(c_1+c_2 \mathbf{U_{10}}^{p_1})^{p_2}$, where $c_1, c_2, p_1, p_2$ are constants.
+
+### Early comment on “Momentum Flux into the Ocean”
+- When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
+- Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
+- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{diss}$.” (ECMWF, 2024, p. 99) 🔤海洋柱的动量通量用τoc表示，是未用于产生波浪的穿过海-气界面的湍流传递的通量τa-τin与海浪因波浪破碎而传递的动量通量τdiss的总和。🔤
+ More details will be summarised in later section.
+
 
 ## Basic Equations
 
