@@ -55,30 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
+                "file": "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regular Meeting Notes"
-            }
-          },
-          {
-            "id": "861644de244197a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Project-Surface_Waves-General_Proposal"
+              "title": "Panel-Meeting-1_2025-12-11"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -213,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
+                "file": "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Project-Surface_Waves-General_Proposal"
+              "title": "Outline of Panel-Meeting-1_2025-12-11"
             }
           },
           {
@@ -228,8 +214,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "tg-timeline-sidebar-view"
+              "icon": "calendar-clock",
+              "title": "Timeline"
             }
           },
           {
@@ -243,12 +229,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -269,16 +254,18 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "861644de244197a0",
+  "active": "cfbdf4671b7190cb",
   "lastOpenFiles": [
+    "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
+    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
+    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
-    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Attachments/Screenshot 2025-12-10 at 13.29.07.png",
     "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
-    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
@@ -297,7 +284,6 @@
     "Project-Surface_Waves/Tips/How_the_Coriolis-paramter_is_derived.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
     "Zotero_import",
     "Attachments/9YGKI7C5.png",
