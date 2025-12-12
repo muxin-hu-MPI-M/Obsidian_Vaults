@@ -19,109 +19,35 @@ The note is referring to multiple source of information:
 > The below is the note and my comprehension about the numerical details in the wave model from ECMWF (i.e., ECWAM model)
 
 # Wave-induced stress: Integral of wind-input source function
-## Wind stress at the air-sea interface 
-
-The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
-
-$$ 
-\begin{align} 
-\tau_{\text{a}} &= \rho_a \mathbf{u_*} |\mathbf{u_*}| \\
-&= \rho_a C_d \mathbf{U_{10}} |\mathbf{U_{10}}| \tag{1}
-\end{align}
-$$
-
-The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview]([[ICON-waves_Short-Overview_and_Current-Status]])
-where:
-- $\tau_a$: wind stress, is considered as the total momentum flux from the wind that applies to the air-sea interface
-- $\rho_a$: density of the air in the atmospheric boundary layer
-
-while in operational model, we consider the **friction velocity**:
-
-$$
-u_*=\sqrt{C_d}\mathbf{U_{10}}
-$$
-
-This is based on the paper Edson et al. (2013) and corrigendum Edson et al. (2014). (See (ECMWF, 2024) Chapter 3.2.4). where:
-- $C_d$: drag coefficient in terms of 10 m wind speed $\mathbf{U_{10}}$. It is a value depends on the 10 m wind speed. In ECWMF WAM model, $C_d=(c_1+c_2 \mathbf{U_{10}}^{p_1})^{p_2}$, where $c_1, c_2, p_1, p_2$ are constants.
-
-The Eq. (1) is the formula for the wind stress, and it is closely related to the friction velocity. This stress of air flow on sea waves depends on the sea state and from a consideration of the momentum balance of air:
-
-$$
-u_*^2=\bar\tau_a =\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln((\frac{z_{\text{obs}}+z_o}{{z_o}}))^2}
-$$
-
-where the $\bar \tau_a$ is the density-normalised wind stress: $\tau_a = \rho \bar \tau_a$. The roughness length $z_o$ is represented as:
-
-$$
-z_o=z_b/\sqrt{1-\frac{\tau_w}{\bar\tau_a}}
-$$
-
-
-Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is so-called “wave stress” and “wave-induced stress”):
-
-$$
-\tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta
-$$
-
-Where the $\gamma N=S_{\text{in}}$
-
-> [!Important] **“Wind stress” = “Wind-induced stress” = “Wind-to-wave stress”** 
-> - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
-> - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
-
-
-$\gamma$ is the growth rate, which has the relationship: 
-
-$$
-\frac{\gamma}{\omega}=\epsilon \beta x^2
-$$
-where $\omega$ is the angular frequency, $\epsilon$ is the air-water density ratio and $\beta$ the *Mile’s parameter*. $x$ is a parameter linked to the wave age ($u_* / c_p$): 
-
-$$
-x=(\frac{u_*}{c_p})\text{max}(\cos{(\theta-\phi),0})
-$$
-Finally, $z_b$ is the background roughness representing the impact of gravity-capillary short waves.
-
-> [!Attention] Wave-atmosphere coupling: An angle from Momentum Flux
-> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
-
-
-### Early comment on “Momentum Flux into the Ocean”
-- When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
-- Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
-- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{diss}$.” (ECMWF, 2024, p. 99) 🔤海洋柱的动量通量用τoc表示，是未用于产生波浪的穿过海-气界面的湍流传递的通量τa-τin与海浪因波浪破碎而传递的动量通量τdiss的总和。🔤
- More details will be summarised in later section.
-
-
 ## Basic Equations
 
 Please find the below contents referenced to Janssen, 2004
 Janssen, P. (2004). _The Interaction of Ocean Waves and Wind_. Cambridge University Press.
-### Action density spectrum *N*
+### Action density spectrum
 The most elegant formulation of the “energy” balance equation is in terms of he **action density spectrum** $N(\mathbf{k})$ which is the **energy spectrum** divided by the so-called intrinsic frequency $\sigma$. 
 
 Given the formula:
 
 $$
-N(\mathbf{k})=\frac{gF(\mathbf{k})}{\sigma},\quad \quad \sigma=\sqrt{gk\tanh{(kh)}} \tag{2}
+N(\mathbf{k})=\frac{gF(\mathbf{k})}{\sigma},\quad \quad \sigma=\sqrt{gk\tanh{(kh)}} \tag{1}
 $$
 
 Where the $F(\mathbf{k})$ is the **wavenumber spectrum**, gives the distribution of wave energy over wavenumber $\mathbf{k}$. Its integration over the wavenumber equals the wave variance, expressed in the square of ocean **surface elevation** $\eta$:
 
 $$
-\langle \eta^2\rangle=\int_{-\infty}^{\infty}F(\mathbf{k})\;d\mathbf{k}=m_0
+\langle \eta^2\rangle=\int_{-\infty}^{\infty}F(\mathbf{k})\;d\mathbf{k}=m_0 \tag{2}
 $$
 
 Where the bracket $\langle \rangle$ stands for the ensemble average. $m_0$ is the so-called zero order moment of the spectrum and $m_0\sim \:\text{units:}\:m^2$. The integral over the wave spectrum is a measure for wave height (e.g., *significant wave height* $H_s=4\sqrt{m_0}$) 
 The wave variance $\eta^2$ can be linked to the wave energy through:
 
 $$
-\langle E \rangle =\rho_w g \langle \eta^2\rangle=\rho_wg\int_{-\infty}^{\infty}F(\mathbf{k})\;d\mathbf{k}
+\langle E \rangle =\rho_w g \langle \eta^2\rangle=\rho_wg\int_{-\infty}^{\infty}F(\mathbf{k})\;d\mathbf{k} \tag{3}
 $$
 
 **Thus**, for wave groups with action $N$ have energy $\sigma N=gF$ and momentum $kN$.
 
-### Balance Equation for Action Density Spectrum *N*
+### Balance Equation for Action Density Spectrum
 
 Give the *spatial dependency* to this action density spectrum, let:
 $$
@@ -130,7 +56,7 @@ $$
 be the combined four-dimensional vector. Thus, the most fundamental form of the transport equation for the action density spectrum $N(\mathbf{k},\mathbf{x},t)$:
 
 $$
-\frac{\partial}{\partial t}N+\frac{\partial }{\partial z_i}(\dot{z_i}N)=0 \tag{3}
+\frac{\partial}{\partial t}N+\frac{\partial }{\partial z_i}(\dot{z_i}N)=0 \tag{4}
 $$
 
 where $\dot{z_i}$ denotes the propagation velocity of a wave group in the four-dimensional phase space of $\mathbf{x}$ and $\mathbf{k}$. This equations holds for any field $\dot{z_i}$, and also for velocity fields which are not divergence-free in four-dimensional phase space.
@@ -140,7 +66,7 @@ In the special case when $\mathbf{x}$ and $\mathbf{k}$ represent a canonical vec
 $$
 \begin{align} 
 \dot{x_i} &=\frac{\partial }{\partial k_i}\Omega \\
-& \tag{4} \\
+& \tag{5} \\
 \dot{k_i} &=-\frac{\partial }{\partial x_i}\Omega 
 \end{align}
 $$
@@ -148,24 +74,24 @@ $$
 where the $\Omega$ denotes the dispersion relation:
 
 $$
-\Omega = \mathbf{k}\cdot\mathbf{u} +\sigma
+\Omega = \mathbf{k}\cdot\mathbf{u} +\sigma \tag{5}
 $$
 
 Because the field $\dot{z}$ for a continuous ensemble of wave groups is divergence free in four-dimensional phase space, thus, the transport equation for the action density may be expressed in the advection form:
 
 $$
-\frac{d}{dt} = \frac{\partial N}{\partial t}+\dot{z_i}\frac{\partial }{\partial z_i}N=0\tag{5}
+\frac{d}{dt} = \frac{\partial N}{\partial t}+\dot{z_i}\frac{\partial }{\partial z_i}N=0\tag{6}
 $$
 
 since $\frac{\partial}{\partial z_i}\dot{z_i}=0$ as divergence free. Thus, along a path in four-dimensional phase space defined by the Hamilton-Jacobi equations, the action density $N$ is conserved. 
-> [!Tip]
+
+> [!Important]
 > This property holds only for canonical coordinates for which the flow divergence vanishes!!!
 
-However, one should turn to the form of the action density balance equation (Eq. 3) in the <span style="background:#fff88f">flux form since it is more general and has the advantage.</span> When one transforms from one set of coordinates to another there is no guarantee that the flow remains divergence-free and therefore the flux form of the action balance equation is the preferred starting point.
+However, one should turn to the form of the action density balance equation (Eq. 3) in the flux form since it is more general and has the advantage. When one transforms from one set of coordinates to another there is no guarantee that the flow remains divergence-free and therefore the flux form of the action balance equation is the preferred starting point.
 
 ### Balance Equation in Spherical Geometry
-
-> [!Attention] Action Density In Spherical Geometry
+> [!Attention] **Action Density In Spherical Geometry**
 > We now consider the action density flux balance equation in the spherical geometry, i.e., consider the ~={red}spectral action density $\hat N (\omega, \theta, \phi,\lambda, t)$=~ with respect to angular frequency $\omega$ and direction $\theta$ (measured clockwise relative to true north) as a function of latitude $\phi$ and longitude $\lambda$.
 > 
 > 
@@ -177,7 +103,7 @@ However, one should turn to the form of the action density balance equation (Eq.
 Then, the conservation equation (i.e., transport equation) for $\hat N$ thus reads:
 
 $$
-\frac{d\hat N}{dt}=\frac{\partial }{\partial t}\hat N+\frac{\partial }{\partial \phi}(\dot{\phi}\hat N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = 0 \tag{6}
+\frac{d\hat N}{dt}=\frac{\partial }{\partial t}\hat N+\frac{\partial }{\partial \phi}(\dot{\phi}\hat N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = 0 \tag{7}
 $$
 
 and $\dot{\omega}=\partial \omega/\partial t$ the term involving the derivative with respect to $\omega$ drops out in case of time-independent current and bottom.
@@ -187,7 +113,7 @@ Finally, the action density $\hat N$ is related to the normal spectral density $
 Hence, the transportation with respect to normal spectral density $N$ is:
 
 $$
-\frac{dN}{dt}=\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = 0 \tag{7}
+\frac{dN}{dt}=\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = 0 \tag{8}
 $$
 
 where, with the $c_g$ the magnitude of the wave group velocity:
@@ -195,13 +121,49 @@ where, with the $c_g$ the magnitude of the wave group velocity:
 - $\dot{\lambda}=(c_g \sin{\phi}+V_0)/R\cos{\phi}$
 - $\dot{\theta}=(c_g \sin{\theta} \tan{\phi})/R+(\dot{\mathbf{k}}\times \mathbf{k})/k^2$
 - $\dot{\omega}=\partial \Omega/\partial t$
-represent the rates of change of the position and propagation direction of a wave packet. $U_0,V_0$ are the components of the current in northerly and easterly direction. ~={red}==**Eq. (7) is the basic transport equation which is used in numerical wave prediction**=~==
+represent the rates of change of the position and propagation direction of a wave packet. $U_0,V_0$ are the components of the current in northerly and easterly direction. ~={red}==**Eq. (8) is the basic transport equation which is used in numerical wave prediction**=~== (Find the Eq. (8) in (Eq. (2.81), Janssen, 2004))
 
-Find the Eq. (7) in (Eq. (2.81), Janssen, 2004) 
+## Properties of the Basic Transport Equation
+### Great circle propagation on the globe
+From Eq. (8) and the corresponding rates of change of the position and propagation direction, one can infer that in spherical coordinates the flow is not divergence-free. Considering the case of no depth refraction and no explicit time dependence, the divergence of the flow becomes non-zero because the wave direction, measured with respect to the true north, changes while the wave group propagates over the globe along a **great circle**. As a consequence wave groups propagate along a great circle. This type of refraction is therefore entirely apparent and only related to the choice of coordinate system.
+
+### Shoaling
+Discuss the finite depth effects in the absence of currents by considering some simple topographies. 
+In he case of wave propagation parallel to the direction of the depth gradient. In this case, depth refraction does not contribute to the rate of change of wave direction $\dot{\theta}$ , because with Eq. (5), $\mathbf{k}\times\dot{\mathbf{k}}=0$. In addition, we take the wave direction $\theta$ to be zero so that the longitude is constant ($\dot{\lambda}=0$) and $\dot{\theta}=0$. For time-independent topography (hence $\partial \Omega / \partial t = 0$) the transport equation becomes:
+
+$$
+\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N) = 0
+$$
+
+where 
+
+$$
+\phi=c_g \cos \theta R^{-1}=\frac{c_g}{R}
+$$
+
+and the group speed only dependents on latitude $\phi$. If we focus on steady wave (hence $\frac{\partial N}{\partial t}=0$), we immediately find conservation of the action density flux in the latitude direction so that:
+
+$$
+\frac{c_g \cos \phi}{R}N=\text{const} 
+$$
+
+If, in addition, it is assumed that the variation of depth with latitude occurs on a much shorter scale than the variation of $\cos \phi$, the latter term may be taken constant for present purposes. 
+It is then found that the action density is inversely proportional to the group speed $c_g$ so
+
+$$
+N\sim\frac{1}{c_g}
+$$
+
+And if the depth is decreasing for increasing latitude, ==**conservation of flux requires an increase of the action density as the group speed decreases for decreasing depth**== (The normal wisdom now is that the group speed decreases for decreasing depth (Janssen, 2004)). 
+
+> [!Important] **Shoaling in Coastal region**
+> Therefore,  when waves are approaching shallow waters, conservation of flux requires an increase of the action density. This phenomenon, which occurs in coastal areas, is called shoaling.
+> - Its most dramatic consequences may be seen when tidal waves, generated by earthquakes, approach the coast resulting in tsunamis.
+
+### Refraction
 
 
-
-
+### Current Effects
 ## The Source Term in the Wave Energy Balance
 
 ### Action Balance Equation
@@ -293,6 +255,81 @@ Hence, the **wave-induced stress** represents the portion of the atmospheric str
 ## Summary
 
 “Detailed description of surface waves modulated air-sea momentum flux could be found in Janssen (1989, 1991) and Breivik et al. (2016)” (Zhao et al., 2022)
+
+## Wind stress at the air-sea interface 
+
+The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
+
+$$ 
+\begin{align} 
+\tau_{\text{a}} &= \rho_a \mathbf{u_*} |\mathbf{u_*}| \\
+&= \rho_a C_d \mathbf{U_{10}} |\mathbf{U_{10}}| \tag{1}
+\end{align}
+$$
+
+The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview]([[ICON-waves_Short-Overview_and_Current-Status]])
+where:
+- $\tau_a$: wind stress, is considered as the total momentum flux from the wind that applies to the air-sea interface
+- $\rho_a$: density of the air in the atmospheric boundary layer
+
+while in operational model, we consider the **friction velocity**:
+
+$$
+u_*=\sqrt{C_d}\mathbf{U_{10}}
+$$
+
+This is based on the paper Edson et al. (2013) and corrigendum Edson et al. (2014). (See (ECMWF, 2024) Chapter 3.2.4). where:
+- $C_d$: drag coefficient in terms of 10 m wind speed $\mathbf{U_{10}}$. It is a value depends on the 10 m wind speed. In ECWMF WAM model, $C_d=(c_1+c_2 \mathbf{U_{10}}^{p_1})^{p_2}$, where $c_1, c_2, p_1, p_2$ are constants.
+
+The Eq. (1) is the formula for the wind stress, and it is closely related to the friction velocity. This stress of air flow on sea waves depends on the sea state and from a consideration of the momentum balance of air:
+
+$$
+u_*^2=\bar\tau_a =\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln((\frac{z_{\text{obs}}+z_o}{{z_o}}))^2}
+$$
+
+where the $\bar \tau_a$ is the density-normalised wind stress: $\tau_a = \rho \bar \tau_a$. The roughness length $z_o$ is represented as:
+
+$$
+z_o=z_b/\sqrt{1-\frac{\tau_w}{\bar\tau_a}}
+$$
+
+
+Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is so-called “wave stress” and “wave-induced stress”):
+
+$$
+\tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta
+$$
+
+Where the $\gamma N=S_{\text{in}}$
+
+> [!Important] **“Wind stress” = “Wind-induced stress” = “Wind-to-wave stress”** 
+> - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
+> - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
+
+
+$\gamma$ is the growth rate, which has the relationship: 
+
+$$
+\frac{\gamma}{\omega}=\epsilon \beta x^2
+$$
+where $\omega$ is the angular frequency, $\epsilon$ is the air-water density ratio and $\beta$ the *Mile’s parameter*. $x$ is a parameter linked to the wave age ($u_* / c_p$): 
+
+$$
+x=(\frac{u_*}{c_p})\text{max}(\cos{(\theta-\phi),0})
+$$
+Finally, $z_b$ is the background roughness representing the impact of gravity-capillary short waves.
+
+> [!Attention] Wave-atmosphere coupling: An angle from Momentum Flux
+> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
+
+
+### Early comment on “Momentum Flux into the Ocean”
+- When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
+- Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
+- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{diss}$.” (ECMWF, 2024, p. 99) 🔤海洋柱的动量通量用τoc表示，是未用于产生波浪的穿过海-气界面的湍流传递的通量τa-τin与海浪因波浪破碎而传递的动量通量τdiss的总和。🔤
+ More details will be summarised in later section.
+
+
 
 
 
