@@ -18,7 +18,8 @@ The note is referring to multiple source of information:
 > [!Important] 
 > The below is the note and my comprehension about the numerical details in the wave model from ECMWF (i.e., ECWAM model)
 
-# Wave-induced stress: Integral of wind-input source function
+----------
+# The Kinematic Part of the Energy Balance Equation
 ## Basic Equations
 
 Please find the below contents referenced to Janssen, 2004
@@ -106,7 +107,7 @@ $$
 \frac{d\hat N}{dt}=\frac{\partial }{\partial t}\hat N+\frac{\partial }{\partial \phi}(\dot{\phi}\hat N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = 0 \tag{7}
 $$
 
-and $\dot{\omega}=\partial \omega/\partial t$ the term involving the derivative with respect to $\omega$ drops out in case of time-independent current and bottom.
+and $\dot{\omega}=\partial \Omega/\partial t$ the term involving the derivative with respect to $\omega$ drops out in case of time-independent current and bottom.
 
 Finally, the action density $\hat N$ is related to the normal spectral density $N$ with respect to a local Cartesian frame $(x,y)$ through: $\hat Nd\omega d\theta d\phi d\lambda=Nd\omega d\theta dx dy$, or $\hat N=NR^2\cos{\phi}$ where $R$ is the radius of the earth. 
 
@@ -117,8 +118,8 @@ $$
 $$
 
 where, with the $c_g$ the magnitude of the wave group velocity:
-- $\dot{\phi}=(c_g \cos{\phi}+U_0)/R$
-- $\dot{\lambda}=(c_g \sin{\phi}+V_0)/R\cos{\phi}$
+- $\dot{\phi}=(c_g \cos{\phi}+V_0)/R$
+- $\dot{\lambda}=(c_g \sin{\phi}+U_0)/R\cos{\phi}$
 - $\dot{\theta}=(c_g \sin{\theta} \tan{\phi})/R+(\dot{\mathbf{k}}\times \mathbf{k})/k^2$
 - $\dot{\omega}=\partial \Omega/\partial t$
 represent the rates of change of the position and propagation direction of a wave packet. $U_0,V_0$ are the components of the current in northerly and easterly direction. ~={red}==**Eq. (8) is the basic transport equation which is used in numerical wave prediction**=~== (Find the Eq. (8) in (Eq. (2.81), Janssen, 2004))
@@ -128,42 +129,197 @@ represent the rates of change of the position and propagation direction of a wav
 From Eq. (8) and the corresponding rates of change of the position and propagation direction, one can infer that in spherical coordinates the flow is not divergence-free. Considering the case of no depth refraction and no explicit time dependence, the divergence of the flow becomes non-zero because the wave direction, measured with respect to the true north, changes while the wave group propagates over the globe along a **great circle**. As a consequence wave groups propagate along a great circle. This type of refraction is therefore entirely apparent and only related to the choice of coordinate system.
 
 ### Shoaling
-Discuss the finite depth effects in the absence of currents by considering some simple topographies. 
+First finite depth effect in the absence of currents is discussed by considering some simple topographies. 
 In he case of wave propagation parallel to the direction of the depth gradient. In this case, depth refraction does not contribute to the rate of change of wave direction $\dot{\theta}$ , because with Eq. (5), $\mathbf{k}\times\dot{\mathbf{k}}=0$. In addition, we take the wave direction $\theta$ to be zero so that the longitude is constant ($\dot{\lambda}=0$) and $\dot{\theta}=0$. For time-independent topography (hence $\partial \Omega / \partial t = 0$) the transport equation becomes:
 
 $$
-\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N) = 0
+\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N) = 0 \tag{9}
 $$
 
 where 
 
 $$
-\phi=c_g \cos \theta R^{-1}=\frac{c_g}{R}
+\phi=c_g \cos \theta R^{-1}=\frac{c_g}{R} \tag{10}
 $$
 
 and the group speed only dependents on latitude $\phi$. If we focus on steady wave (hence $\frac{\partial N}{\partial t}=0$), we immediately find conservation of the action density flux in the latitude direction so that:
 
 $$
-\frac{c_g \cos \phi}{R}N=\text{const} 
+\frac{c_g \cos \phi}{R}N=\text{const} \tag{11}
 $$
 
 If, in addition, it is assumed that the variation of depth with latitude occurs on a much shorter scale than the variation of $\cos \phi$, the latter term may be taken constant for present purposes. 
 It is then found that the action density is inversely proportional to the group speed $c_g$ so
 
 $$
-N\sim\frac{1}{c_g}
+N\sim\frac{1}{c_g} \tag{12}
 $$
 
-And if the depth is decreasing for increasing latitude, ==**conservation of flux requires an increase of the action density as the group speed decreases for decreasing depth**== (The normal wisdom now is that the group speed decreases for decreasing depth (Janssen, 2004)). 
-
-> [!Important] **Shoaling in Coastal region**
-> Therefore,  when waves are approaching shallow waters, conservation of flux requires an increase of the action density. This phenomenon, which occurs in coastal areas, is called shoaling.
-> - Its most dramatic consequences may be seen when tidal waves, generated by earthquakes, approach the coast resulting in tsunamis.
-
+And if the depth is decreasing for increasing latitude, ==**conservation of flux requires an increase of the action density as the group speed decreases for decreasing depth**== (The normal wisdom now is that the group speed decreases for decreasing depth (Janssen, 2004)). This is called shoaling effect
 ### Refraction
+The second example of finite depth effects that we consider is he refraction. Again, we assume no current and a time-independent topography. In the steady state the action balance equation becomes:
 
+$$
+(\cos \phi)^{-1}\frac{\partial}{\partial \phi}(\frac{c_g}{R}\cos \theta \cos \phi N)+\frac{\partial }{\partial \lambda} (\frac{c_g\sin \theta}{R \cos \phi}N)+\frac{\partial }{\partial \theta}(\dot \theta_o N)=0 \tag{13}
+$$
+
+where
+
+$$
+\dot \theta_o=(\sin\theta \frac{\partial}{\partial \phi}\Omega-\frac{\cos \theta}{\cos \phi}\frac{\partial}{\partial \lambda}\Omega)(kR)^{-1} \tag{14}
+$$
+
+The role of the $\dot \theta_o$ terms for the simple case of waves propagating along the shore can be discussed. Consider, therefore, waves propagating in a northerly direction (hence $\theta=0$) parallel to the coast. Suppose that the depth only depends on longitude such that is decreases towards the shore. The rate of change of wave direction is then positive as
+
+$$
+\dot \theta_o=-\frac{1}{kR \cos \phi}\frac{\partial }{\partial \lambda}\Omega>0 \tag{15}
+$$
+
+since $\partial \Omega / \partial \lambda<0$ (as approach towards the shore, topography changed, shallower water depth). Therefore, waves which are propagating initially parallel to the coast will turn towards the coast. ==**This illustrates that, in general, wave rays will bend towards shallower water**== resulting in, for example, focusing phenomena and caustics. This is called refraction effect.
+
+> [!Attention] **Shoaling and Refraction in Coastal region**
+> When waves are approaching shallow waters:
+> - conservation of flux requires an increase of the action density. This phenomenon, which occurs in coastal areas, is called <font color="#ff0000">shoaling</font>.
+> 	- Its most dramatic consequences may be seen when tidal waves, generated by earthquakes, approach the coast resulting in tsunamis.
+> - Topography change with space, the dispersion relationship changed with space, the rate of change of wave direction will also change. This phenomenon is called <font color="#ff0000">refraction</font>
+> 	- In general, wave rays will bend towards shallower water
 
 ### Current Effects
+A horizontal shear may result in wave refraction; the rate of change of wave direction follows Eq. (13) by taking the current into account:
+
+$$
+\dot{\theta}_{c}=\frac{1}{R}\left(\sin \theta\left[\cos \theta \frac{\partial}{\partial \phi} U_{\phi}+\sin \theta \frac{\partial}{\partial \phi} U_{\lambda}\right]-\frac{\cos \theta}{\cos \phi}\left[\cos \theta \frac{\partial}{\partial \lambda} U_{\phi}+\sin \theta \frac{\partial}{\partial \lambda} U_{\lambda}\right]\right) \tag{16}
+$$
+
+where $U_{\phi}$ and $U_{\lambda}$ are the components of the water current in latitudinal and longitudinal directions. Considering the same example as in the case of depth refraction, we note that the rate of change of the direction of waves propagating initially along the shore is given by:
+
+$$
+\dot \theta_c=-\frac{1}{R\cos \phi}\frac{\partial }{\partial \lambda}U_{\phi} \tag{17}
+$$
+
+which is positive for an along-shore current which decreases towards the coast ($\frac{\partial}{\partial \lambda}U_{\phi}<0$). In this condition, the waves will turn towards the shore.
+The most dramatic effects may be found when the waves propagate against the current. For sufficiently large current, wave propagating is prohibited and wave reflection occurs, the group velocity vanishes. Because of the vanishing group velocity, a large increase of energy at that location may be expected suggesting that wave breaking plays a role. 
+
+## Summary for the Action Balance Equation
+Note that a global 3rd generation wave model solves the action balance equation in spherical coordinates. By combining previous results, the action balance equation becomes:
+
+$$
+\frac{dN}{dt}=\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = S \tag{18}
+$$
+
+where
+$$
+\begin{align}
+\dot{\phi}&=(c_g \cos{\phi}+U|_{\text{north}})R^{-1} \tag{19a} \\
+\dot{\lambda}&=(c_g \sin{\phi}+U|_{\text{east}})(R\cos{\phi})^{-1} \tag{19b} \\
+\dot{\theta}&=(c_g \sin{\theta} \tan{\phi})R^{-1}+\dot\theta_{\text{D}} \tag{19c} \\
+\dot{\omega}&=\partial \Omega/\partial t \tag{19d}
+\end{align}
+$$
+and 
+
+$$
+\dot \theta_D=\bigg( \sin \theta \frac{\partial }{\partial \phi}\Omega - \frac{\cos \theta}{\cos \phi}\frac{\partial}{\partial \lambda}\Omega \bigg)(kR)^{-1} \tag{20}
+$$
+and the $\Omega = \mathbf{k}\cdot\mathbf{u} +\sigma$ is the dispersion relationship. The right-hand-side is the source term, which is given by:
+
+$$
+S=S_{\text{in}}+S_{\text{ds}}+S_{\text{nl}}+S_{\text{bot}} \tag{21}
+$$
+
+representing the physics of wind inpuy, dissipation, nonlinear wave-wave interaction, and bottom friction.
+
+
+-------------------------------
+# Parameterisation of Source terms
+For details in this chapter, please referring to the Chapter 3 in IFS Wave model documentation (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
+
+## Wind Input (Wind stress)
+The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
+
+$$ 
+\begin{align} 
+\tau_{\text{a}} &= \rho_a \mathbf{u_*} |\mathbf{u_*}| \tag{22}
+\end{align}
+$$
+
+The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview]([[ICON-waves_Short-Overview_and_Current-Status]])
+
+where:
+- $\tau_a$: wind stress, is considered as the total momentum flux from the wind that applies to the air-sea interface
+- $\rho_a$: density of the air in the atmospheric boundary layer
+- $u_*$: air-side friction velocity
+
+The Eq. (22) is the formula for the wind stress, and it is closely related to the friction velocity. This stress of air flow on sea waves depends on the sea state and from a consideration of the momentum balance of air:
+
+$$
+u_*^2=\bar\tau_a =\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln((\frac{z_{\text{obs}}+z_o}{{z_o}}))^2} \tag{23}
+$$
+
+where the $\bar \tau_a$ is the density-normalised wind stress: $\tau_a = \rho \bar \tau_a$. The roughness length $z_o$ is represented as:
+
+$$
+z_o=z_b/\sqrt{1-\frac{\tau_w}{\bar\tau_a}} \tag{24}
+$$
+
+
+Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is so-called “wave stress” and “wave-induced stress”):
+
+$$
+\tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta \tag{25}
+$$
+
+Where 
+$$\gamma N=S_{\text{in}} \tag{26}$$
+
+> [!Important] **“Wind stress” = “Wind-induced stress” = “Wind-to-wave stress”** 
+> - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
+> - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
+
+
+$\gamma$ is the growth rate, which has the relationship: 
+
+$$
+\frac{\gamma}{\omega}=\epsilon \beta x^2 \tag{27}
+$$
+where $\omega$ is the angular frequency, $\epsilon$ is the air-water density ratio and $\beta$ the *Mile’s parameter*. $x$ is a parameter linked to the wave age ($u_* / c_p$): 
+
+$$
+x=(\frac{u_*}{c_p})\text{max}(\cos{(\theta-\phi),0}) \tag{28}
+$$
+Finally, $z_b$ is the background roughness representing the impact of gravity-capillary short waves. Since CY49R1, the wind stress Eq. (25) was evaluated for the high frequency with a $f^{-5}$ tail of for gravity waves range until the gravity-capillary range where a simplified model for the gravity-capillary spectrum is used instead. Ultimately resulting in an estimate for $z_b$.
+In practice, ~={red}**wave stress points in the wind direction as it is mainly determined by the high-frequency waves which respond quickly to changes in the wind direction**=~ (ECMWF, 2024).
+
+The roughness length (Eq. (24)) can link to *Charnock* relation:
+
+$$
+z_o=\frac{\alpha \tau_{\alpha}}{g} \tag{29}
+$$
+
+The dimensionless ***Charnock parameter*** $\alpha$ is not constant but depends on the sea state through the wave-induced stress since CY49R1:
+
+$$
+\alpha = \frac{gz_b}{\tau}/{\sqrt{1-\frac{\tau_w}{\tau_a}}} \tag{30}
+$$
+
+where the $gz_b$ is the direct calculation of $z_b$. When combined with the renormalised growth rate, hese changes yields a reduction of the resulting *Charnock* parameter for storm wind conditions (above 20 m/s), which is correct to match the observational evidence that the *Charnock* parameter should reduce quite considerably under strong tropical winds.
+
+> [!Important] **Wave-atmosphere coupling: An angle from Momentum Flux**
+> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
+
+### Early comment on “Momentum Flux into the Ocean”
+- When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
+- Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
+- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{diss}$.” (ECMWF, 2024, p. 99) 🔤海洋柱的动量通量用τoc表示，是未用于产生波浪的穿过海-气界面的湍流传递的通量τa-τin与海浪因波浪破碎而传递的动量通量τdiss的总和。🔤
+ More details will be summarised in later section.
+
+## Dissipation
+
+## Nonlinear Transfer
+
+
+
+# Wave Forecasting and atmosphere-wave-ocean Interaction
 ## The Source Term in the Wave Energy Balance
 
 ### Action Balance Equation
@@ -255,81 +411,6 @@ Hence, the **wave-induced stress** represents the portion of the atmospheric str
 ## Summary
 
 “Detailed description of surface waves modulated air-sea momentum flux could be found in Janssen (1989, 1991) and Breivik et al. (2016)” (Zhao et al., 2022)
-
-## Wind stress at the air-sea interface 
-
-The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
-
-$$ 
-\begin{align} 
-\tau_{\text{a}} &= \rho_a \mathbf{u_*} |\mathbf{u_*}| \\
-&= \rho_a C_d \mathbf{U_{10}} |\mathbf{U_{10}}| \tag{1}
-\end{align}
-$$
-
-The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview]([[ICON-waves_Short-Overview_and_Current-Status]])
-where:
-- $\tau_a$: wind stress, is considered as the total momentum flux from the wind that applies to the air-sea interface
-- $\rho_a$: density of the air in the atmospheric boundary layer
-
-while in operational model, we consider the **friction velocity**:
-
-$$
-u_*=\sqrt{C_d}\mathbf{U_{10}}
-$$
-
-This is based on the paper Edson et al. (2013) and corrigendum Edson et al. (2014). (See (ECMWF, 2024) Chapter 3.2.4). where:
-- $C_d$: drag coefficient in terms of 10 m wind speed $\mathbf{U_{10}}$. It is a value depends on the 10 m wind speed. In ECWMF WAM model, $C_d=(c_1+c_2 \mathbf{U_{10}}^{p_1})^{p_2}$, where $c_1, c_2, p_1, p_2$ are constants.
-
-The Eq. (1) is the formula for the wind stress, and it is closely related to the friction velocity. This stress of air flow on sea waves depends on the sea state and from a consideration of the momentum balance of air:
-
-$$
-u_*^2=\bar\tau_a =\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln((\frac{z_{\text{obs}}+z_o}{{z_o}}))^2}
-$$
-
-where the $\bar \tau_a$ is the density-normalised wind stress: $\tau_a = \rho \bar \tau_a$. The roughness length $z_o$ is represented as:
-
-$$
-z_o=z_b/\sqrt{1-\frac{\tau_w}{\bar\tau_a}}
-$$
-
-
-Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is so-called “wave stress” and “wave-induced stress”):
-
-$$
-\tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta
-$$
-
-Where the $\gamma N=S_{\text{in}}$
-
-> [!Important] **“Wind stress” = “Wind-induced stress” = “Wind-to-wave stress”** 
-> - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
-> - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
-
-
-$\gamma$ is the growth rate, which has the relationship: 
-
-$$
-\frac{\gamma}{\omega}=\epsilon \beta x^2
-$$
-where $\omega$ is the angular frequency, $\epsilon$ is the air-water density ratio and $\beta$ the *Mile’s parameter*. $x$ is a parameter linked to the wave age ($u_* / c_p$): 
-
-$$
-x=(\frac{u_*}{c_p})\text{max}(\cos{(\theta-\phi),0})
-$$
-Finally, $z_b$ is the background roughness representing the impact of gravity-capillary short waves.
-
-> [!Attention] Wave-atmosphere coupling: An angle from Momentum Flux
-> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
-
-
-### Early comment on “Momentum Flux into the Ocean”
-- When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
-- Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
-- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{diss}$.” (ECMWF, 2024, p. 99) 🔤海洋柱的动量通量用τoc表示，是未用于产生波浪的穿过海-气界面的湍流传递的通量τa-τin与海浪因波浪破碎而传递的动量通量τdiss的总和。🔤
- More details will be summarised in later section.
-
-
 
 
 
