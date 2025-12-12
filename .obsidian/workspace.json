@@ -213,8 +213,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "calendar-clock",
-              "title": "Timeline"
+              "icon": "lucide-ghost",
+              "title": "tg-timeline-sidebar-view"
             }
           },
           {

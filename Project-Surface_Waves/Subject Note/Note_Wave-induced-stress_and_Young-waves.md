@@ -65,7 +65,7 @@ $$
 
 Where the $\gamma N=S_{\text{in}}$
 
-> [!Important] “Wind stress” = “Wind-induced stress” = “Wind-to-wave stress” 
+> [!Important] **“Wind stress” = “Wind-induced stress” = “Wind-to-wave stress”** 
 > - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
 > - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
 
