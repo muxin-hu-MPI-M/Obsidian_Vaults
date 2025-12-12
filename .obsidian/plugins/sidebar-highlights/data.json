@@ -693,6 +693,36 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md": [
+      {
+        "id": "p4z8t6id3",
+        "text": "**Potential project: Running ICON-Sapphire configuration with surface wave model.**",
+        "tags": [],
+        "line": 25,
+        "startOffset": 1831,
+        "endOffset": 1918,
+        "filePath": "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1765532547449,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "xeq4qo3xd",
+        "text": "ICON-Waves can use same lower resolution as ICON-a",
+        "tags": [],
+        "line": 35,
+        "startOffset": 2647,
+        "endOffset": 2701,
+        "filePath": "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1765532796668,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
     ]
   },
   "collections": {},
