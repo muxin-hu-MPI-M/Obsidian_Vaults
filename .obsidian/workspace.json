@@ -214,8 +214,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "tg-timeline-sidebar-view"
+              "icon": "calendar-clock",
+              "title": "Timeline"
             }
           },
           {
@@ -229,7 +229,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -254,7 +254,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "557a68a75b1b2451",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",

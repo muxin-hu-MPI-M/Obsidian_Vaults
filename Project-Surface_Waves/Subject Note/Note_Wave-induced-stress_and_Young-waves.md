@@ -313,12 +313,18 @@ where the $gz_b$ is the direct calculation of $z_b$. When combined with the reno
 - **Wave stress**:
   $$
 	  \begin{align}
-	  \tau_w&=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta \\
-	  &=\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta
+	  \tau_w&=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta 
+	  =\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta
 	  \end{align}
 	$$
-	
 	where $\omega_c$ is the high frequency cutoff in numerical scheme. Will be discussed in later section.
+	
+- Wind input source function:
+  $$
+	  S_{\text{in}}=\gamma N= \omega\epsilon \beta x^2 
+	$$
+	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$
+	
 - **Sea-state-dependent Charnock number:**
   $$
 	\alpha = \frac{\hat \alpha}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}
@@ -378,14 +384,27 @@ $$
 where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre, $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
 
 ## Bottom dissipation
+Dissipation owing to bottom friction is not discussed here because the details of its parameterisation were presented in Komen et al. (1994, chapter II) as well as the relative merits of this approach being fully discussed. We merely quote the main result:
 
+$$
+S_{\text{bot}}=-2C_{\text{bot}}\frac{k}{\sinh{(2kh)}}N \tag{32}
+$$
 
-
+Where the constant $C_{\text{bot}}=0.038/g$ and $h$ the water depth.
 
 ## Nonlinear Transfer
-so called “Four-wave-interactions”
+In Komen et al. (1994) the derivation of the source function Snl, describing the **nonlinear energy transfer**, was given from first principles. For surface gravity waves the nonlinear energy transfer is caused by four resonantly interacting waves, obeying the usual resonance conditions for the angular frequency and the wave numbers.
+owing to resonant four-wave interactions the rate of change of the action density spectrum $N=gF(\mathbf{k})/\omega$ (where $F$ is the wave variance spectrum) is given by:
 
+$$
+S_{\text{nl}}=4\int T^2_{1,2,3,4}\delta(\mathbf k_1+\mathbf k_2 - \mathbf k_3 -\mathbf k_4)R_i(\Delta \omega, t)[N_1N_2(N_3+N_4)-N_3N_4(N_1+N_2)]\;dk_{1,2,3}
+$$
 
+where the resonant waves $R_i(\Delta \omega,t)=\pi\delta(\omega_1+\omega_2-\omega_3-\omega_4)$ and $T_{1,2,3,4}$ is a known interaction coefficient. The evaluation of $S_{\text{nl}}$ therefore requires an enormous amount of computation because a 3D integral needs to be evaluated. In the past several attempts have been made to try to obtain a more economical evaluation of the nonlinear transfer. The approach that was most successful to date is the one by Hasselmann et al. (1985) [@hasselmannComputationsParameterizationsNonlinear1985a], reasons:
+- the parameterisation is both fast
+- respects the basic properties of the nonlinear transfer, such as conservation of momentum, energy and action
+- produces proper high-frequency spectrum
+See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 
 # Wave Forecasting and atmosphere-wave-ocean Interaction
 ## The Source Term in the Wave Energy Balance
