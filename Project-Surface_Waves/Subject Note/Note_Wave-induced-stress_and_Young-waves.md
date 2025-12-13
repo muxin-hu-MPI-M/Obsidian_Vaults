@@ -9,8 +9,8 @@ The note is referring to multiple source of information:
 - (Zhao et al., 2022) [@zhaoEffectsOceanSurface2022]
 - For details in 3rd generation wave model: WAM (and ECWAM), details can be found:
 	- (Janssen et al., 2013) [@janssenAirSeaInteractionSurface2013]
-	- (Janssen, 2004) [@janssenInteractionOceanWaves2004]
-	- (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
+	- (Janssen, 2004) [@janssenInteractionOceanWaves2004] → **background information for IFS**
+	- (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411] → **IFS document**
 - For the usage of WAM model, please find:
 	- (Wu et al., 2022) [@wuRedistributionAirSea2022]
 	- (Wu et al., 2019) [@wuWaveEffectsCoastal2019]

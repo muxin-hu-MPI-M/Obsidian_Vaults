@@ -121,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5024719238281
+    "width": 220.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -233,7 +233,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 279.5
+    "width": 248.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -254,7 +254,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cf18839df3929811",
+  "active": "557a68a75b1b2451",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
