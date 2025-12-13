@@ -235,6 +235,7 @@ representing the physics of wind inpuy, dissipation, nonlinear wave-wave interac
 For details in this chapter, please referring to the Chapter 3 in IFS Wave model documentation (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 
 ## Wind Input (Wind stress)
+### Before CY46R1, June 2019 (Also the ICON-Wave version)
 The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
 
 $$ 
@@ -253,7 +254,7 @@ where:
 The Eq. (22) is the formula for the wind stress, and it is closely related to the friction velocity. This stress of air flow on sea waves depends on the sea state and from a consideration of the momentum balance of air:
 
 $$
-u_*^2=\bar\tau_a =\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln((\frac{z_{\text{obs}}+z_o}{{z_o}}))^2} \tag{23}
+u_*^2=\bar\tau_a =\bigg(\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln(\frac{z_{\text{obs}}+z_o}{{z_o}})}\bigg)^2 \tag{23}
 $$
 
 where the $\bar \tau_a$ is the density-normalised wind stress: $\tau_a = \rho \bar \tau_a$. The roughness length $z_o$ is represented as:
@@ -290,30 +291,96 @@ $$
 Finally, $z_b$ is the background roughness representing the impact of gravity-capillary short waves. Since CY49R1, the wind stress Eq. (25) was evaluated for the high frequency with a $f^{-5}$ tail of for gravity waves range until the gravity-capillary range where a simplified model for the gravity-capillary spectrum is used instead. Ultimately resulting in an estimate for $z_b$.
 In practice, ~={red}**wave stress points in the wind direction as it is mainly determined by the high-frequency waves which respond quickly to changes in the wind direction**=~ (ECMWF, 2024).
 
-The roughness length (Eq. (24)) can link to *Charnock* relation:
+The background roughness length (Eq. (24)) can link to *Charnock* relation:
 
 $$
-z_o=\frac{\alpha \tau_{\alpha}}{g} \tag{29}
+z_b=\frac{\alpha \bar\tau_{\alpha}}{g} \tag{29}
 $$
 
-The dimensionless ***Charnock parameter*** $\alpha$ is not constant but depends on the sea state through the wave-induced stress since CY49R1:
+The dimensionless ***Charnock parameter*** $\alpha$ is not constant but depends on the sea state through the wave-induced stress before CY49R1:
 
 $$
-\alpha = \frac{gz_b}{\tau}/{\sqrt{1-\frac{\tau_w}{\tau_a}}} \tag{30}
+\alpha = \frac{\hat \alpha}{\tau}/{\sqrt{1-\frac{\tau_w}{\tau_a}}} \tag{30}
 $$
 
 where the $gz_b$ is the direct calculation of $z_b$. When combined with the renormalised growth rate, hese changes yields a reduction of the resulting *Charnock* parameter for storm wind conditions (above 20 m/s), which is correct to match the observational evidence that the *Charnock* parameter should reduce quite considerably under strong tropical winds.
 
+#### Summary for ICON-Waves
+- Surface **density-normalised wind stress** ($\bar \rho_a = \tau_a / \rho_a$):
+  $$
+	\bar \tau_a = u_*^2 =\bigg(\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln(\frac{z_{\text{obs}}+z_o}{{z_o}})}\bigg)^2
+	$$
+- **Wave stress**:
+  $$
+	  \begin{align}
+	  \tau_w&=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta \\
+	  &=\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta
+	  \end{align}
+	$$
+	
+	where $\omega_c$ is the high frequency cutoff in numerical scheme. Will be discussed in later section.
+- **Sea-state-dependent Charnock number:**
+  $$
+	\alpha = \frac{\hat \alpha}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}
+	$$
+- **Background roughness length**:
+  $$
+	z_b=\frac{\alpha \bar\tau_{\alpha}}{g} 
+	$$
+- **Sea surface roughness length**:
+  $$
+	z_o=\frac{z_b}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}=\frac{\alpha u_*^2}{g\sqrt{1-\frac{\tau_w}{u_*^2}}}
+	$$
+
+
+The formula is also summarised in [[ICON-waves_Short-Overview_and_Current-Status#Wave-ocean coupling]]
+
 > [!Important] **Wave-atmosphere coupling: An angle from Momentum Flux**
 > Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
 
-### Early comment on “Momentum Flux into the Ocean”
+### Since CY49R1, November 2024
+Many things changed compare to the CY46R1:
+- background roughness length $z_b$, roughness length $z_o$ 
+- enhanced version of dimensionless Charnock parameter $\alpha$
+- growth rate $\gamma=\gamma_0\frac{1+\rho_{\text{sp}}N_1}{1+\rho_{\text{sp}}N_2}$ 
+- wind stress $\tau_a=\tau_v +\tau_{w,lf} +\tau_{w, hf}$
+
+The idea for improvement is because:
+- It was shown that the background roughness length (zb) from the original approach of Janssen can instead be estimated explicitly. For young, steep wind sea, zb almost vanishes, giving a reduced drag.
+- it was also shown that for steep waves, the slowing down of the wind by waves is a nonlinear process
+- Hence, the **growth rate of the waves by wind depends in a nonlinear fashion on the wave spectrum**. For strong winds, it is found that, as waves are typically steep, this nonlinear effect gives a further reduction of the wind input without the need for the adhoc sheltering coefficient tauwshelter.
+
+
+
+
+**Early comment on “Momentum Flux into the Ocean”**
 - When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
 - Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
-- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{diss}$.” (ECMWF, 2024, p. 99) 🔤海洋柱的动量通量用τoc表示，是未用于产生波浪的穿过海-气界面的湍流传递的通量τa-τin与海浪因波浪破碎而传递的动量通量τdiss的总和。🔤
+- “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{ds}$.” (ECMWF, 2024, p. 99)
+ 
  More details will be summarised in later section.
 
-## Dissipation
+## Dissipation due to wave breaking
+**White capping dissipation** (often denoted $S_{ds}$​) is the loss of wave energy due to **wave breaking** in deep water, i.e. the formation of whitecaps on the ocean surface. Hasselmann (1973) summarised that: “It is generally believed that **white capping is the dominant dissipative mechanism in a wave field at moderate and higher wind speeds**, simply because other dissipative process such as molecular viscosity or turbulence appear to be inadequate to remove the energy which is know to be imparted to the waves by the wind”
+
+Whitecapping occurs when:
+- Wind-driven waves become too steep
+- The crest becomes unstable
+- The wave breaks in deep water, producing foam (“white caps”)
+It is the wave breaking caused by wave steepness and wind–wave interaction.
+
+Janssen et al. (1989) realised that the wave dissipation source function has to be adjusted in order to obtain a proper balance at the high frequencies. The dissipation source term of Hasselmann (1974) is thus extended as:
+
+$$
+S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31}
+$$
+
+where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre, $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
+
+## Bottom dissipation
+
+
+
 
 ## Nonlinear Transfer
 so called “Four-wave-interactions”
