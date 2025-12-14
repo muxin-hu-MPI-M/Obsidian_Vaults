@@ -357,8 +357,6 @@ The idea for improvement is because:
 - Hence, the **growth rate of the waves by wind depends in a nonlinear fashion on the wave spectrum**. For strong winds, it is found that, as waves are typically steep, this nonlinear effect gives a further reduction of the wind input without the need for the adhoc sheltering coefficient tauwshelter.
 
 
-
-
 **Early comment on “Momentum Flux into the Ocean”**
 - When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
 - Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
@@ -397,7 +395,7 @@ In Komen et al. (1994) the derivation of the source function $S_{nl}$, describin
 owing to resonant four-wave interactions the rate of change of the action density spectrum $N=gF(\mathbf{k})/\omega$ (where $F$ is the wave variance spectrum) is given by:
 
 $$
-S_{\text{nl}}=4\int T^2_{1,2,3,4}\delta(\mathbf k_1+\mathbf k_2 - \mathbf k_3 -\mathbf k_4)R_i(\Delta \omega, t)[N_1N_2(N_3+N_4)-N_3N_4(N_1+N_2)]\;dk_{1,2,3}
+S_{\text{nl}}=4\int T^2_{1,2,3,4}\delta(\mathbf k_1+\mathbf k_2 - \mathbf k_3 -\mathbf k_4)R_i(\Delta \omega, t)[N_1N_2(N_3+N_4)-N_3N_4(N_1+N_2)]\;dk_{1,2,3} \tag{33}
 $$
 
 where the resonant waves $R_i(\Delta \omega,t)=\pi\delta(\omega_1+\omega_2-\omega_3-\omega_4)$ and $T_{1,2,3,4}$ is a known interaction coefficient. The evaluation of $S_{\text{nl}}$ therefore requires an enormous amount of computation because a 3D integral needs to be evaluated. In the past several attempts have been made to try to obtain a more economical evaluation of the nonlinear transfer. The approach that was most successful to date is the one by Hasselmann et al. (1985) [@hasselmannComputationsParameterizationsNonlinear1985a], reasons:
@@ -407,22 +405,62 @@ where the resonant waves $R_i(\Delta \omega,t)=\pi\delta(\omega_1+\omega_2-\omeg
 See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 
 # Wave Forecasting and Sea-state Impacts on Atmosphere and ocean
+
+## Two-dimensional wave spectrum
+In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]. However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
+
+Thus, we can apply the two dimensional frequency spectrum at each grid cell, defined as:
+
+$$
+F(\omega,\theta)\;d\omega d\theta=F(\mathbf{k})\;d\mathbf{k}=F(k,\theta)k\;dkd\theta \tag{34}
+$$
+
+hence
+
+$$
+F(\omega,\theta)=\frac{k}{c_g}F(k,\theta) \tag{35}
+$$
+
+where $c_g=\frac{\partial \omega}{\partial k}$ is the group velocity. ~={red}==**The frequency spectrum is thus gives the energy distribution of the ocean waves over angular frequency $\omega$ and propagation direction $\theta$.==**=~ Regarding the directional distribution of waves conventional buoys provide only limited information. It is more common to observe the one-dimensional spectrum defined as:
+
+$$
+F(\omega)=\int F(\omega, \theta)\; d\theta \tag{36}
+$$
+
+**The frequency spectrum is obtained by means of a straightforward *Fourier transformation* of the time series for the surface elevation** $\eta$ . As far as notation is concerned we will use the same symbol for the various forms of the  spectrum, namely F ; the distinction should be clear from their arguments, $F(\mathbf{k}), F(\omega,\theta), F(\omega)$.
 ## Recall the Action Density Balance Equation
-Waves may grow because of the action of wind and they may loose energy because of dissipation due  to e.g. white capping, wave-breaking. Furthermore, finite amplitude ocean waves are subject to nonlinear four-wave interactions. As long as these perturbations are small they can be added and in the context of a statistical description of ocean waves.
+we recall **action density balance equation**, but this time we utilising the frequency spectrum via the relation: 
 
-we recall **action density balance equation**, but this time we utilising the relation: 
+$$
+F(\omega,\theta)=\frac{gN}{\omega} \tag{37}
+$$
+Noted that this relation is different from that of wavenumber spectrum, specified in Eq. (1) in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]].
+For deep water, and with additional source terms, the balance equation can become;
 
-$$ \frac{d N}{dt}= S_{\text{in}} + S_{\text{ds}} + S_{\text{nl}} \tag{8}\ $$
+$$ 
+\frac{d F}{dt}=\frac{\partial}{\partial t}F+\frac{\partial}{\partial \mathbf{x}}\cdot(c_gF) =\hat S_{\text{in}} + \hat S_{\text{ds}} + \hat S_{\text{nl}} + \hat S_{\text{bot}} \tag{38}
+$$
 
 In the case of spherical coordinates, the operator $d/dt$ is given by Eq. (7).
-While the source terms:
-- $S_{\text{in}}$: **wave-source from wind** (energy transferred from wind to waves)
-- $S_{\text{ds}}$: **wave-dissipation source** (e.g., wave breaking), injecting momentum flux into the ocean
-- **$S_{\text{nl}}$**: **nonlinear four wave interactions** (e.g., wave-wave interaction, redistribute energy)
 
-Thus, the source terms are with the dimension as $S\sim \frac{d N}{d t}$, which stands for the *rate of change of action density*.
+While the source terms are changed as well, for example: $\hat S_{\text{in}}=gS_{\text{in}}/\omega$. 
+- $S_{\text{in}}$: describes the **generation of ocean waves by wind** and therefore represents the momentum and energy transfer from air to ocean waves.
+- $S_{\text{ds}}$: describes the **dissipation of waves** by processes such as white-capping, large scale breaking eddy-induced damping. Also represents the injecting of momentum flux from ocean waves into the ocean
+- **$S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** The nonlinear transfer conserves total energy and momentum and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
+- $S_{\text{bot}}$: **bottom dissipation** due to bottom friction
 
- 
+Noted that Eq. (38) is the one considering the influence of currents and bottom drag to the ocean waves. <span style="background:#fff88f">When consider the surface stresses, the bottom dissipation source term is neglected</span>.
+
+## Momentum and energy flux (i.e., stress)
+The total wave momentum $M$ depends on the variance spectrum $F(\omega, \theta)$ and is defined as;
+
+$$
+\mathbf{M}=\rho_wg\int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}F(\omega, \theta)\;d\omega d\theta \tag{39}
+$$
+
+where $\rho_w$ is the water density and $g$ the acceleration due to gravity. 
+The momentum fluxes to and from the wave field are given by the rate of change in time of wave momentum, and **one may distinguish different momentum fluxes depending on the different physical processes**:
+### Wind-induced stress
 
 > [!Attention] **~={red}The General Form of momentum flux associated with wave:=~**
 > The **rate of change of momentum** in the wave field equals the **integral of the source term divided by phase speed**, projected along the propagation direction:
