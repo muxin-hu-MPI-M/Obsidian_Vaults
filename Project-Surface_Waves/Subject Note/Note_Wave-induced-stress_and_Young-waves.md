@@ -407,7 +407,7 @@ See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 # Wave Forecasting and Sea-state Impacts on Atmosphere and ocean
 
 ## Two-dimensional wave spectrum
-In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]. However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
+In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
 
 Thus, we can apply the two dimensional frequency spectrum at each grid cell, defined as:
 
@@ -428,6 +428,8 @@ F(\omega)=\int F(\omega, \theta)\; d\theta \tag{36}
 $$
 
 **The frequency spectrum is obtained by means of a straightforward *Fourier transformation* of the time series for the surface elevation** $\eta$ . As far as notation is concerned we will use the same symbol for the various forms of the  spectrum, namely F ; the distinction should be clear from their arguments, $F(\mathbf{k}), F(\omega,\theta), F(\omega)$.
+
+
 ## Recall the Action Density Balance Equation
 we recall **action density balance equation**, but this time we utilising the frequency spectrum via the relation: 
 
@@ -451,41 +453,47 @@ While the source terms are changed as well, for example: $\hat S_{\text{in}}=gS_
 
 Noted that Eq. (38) is the one considering the influence of currents and bottom drag to the ocean waves. <span style="background:#fff88f">When consider the surface stresses, the bottom dissipation source term is neglected</span>.
 
-## Momentum and energy flux (i.e., stress)
+
+## Momentum and Energy Flux at Air-sea Interface
+At air-sea interface, the bottom dissipation due to bottom friction is neglected.
 The total wave momentum $M$ depends on the variance spectrum $F(\omega, \theta)$ and is defined as;
 
 $$
 \mathbf{M}=\rho_wg\int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}F(\omega, \theta)\;d\omega d\theta \tag{39}
 $$
 
-where $\rho_w$ is the water density and $g$ the acceleration due to gravity. 
+where $\rho_w$ is the water density and $g$ the acceleration due to gravity. The first term inside the integral is sometimes expressed as phase speed of wave: $\frac{\mathbf k}{\omega}=\mathbf{c_p}$. Notice here the phase speed should consider different wavenumber.
+
 The momentum fluxes to and from the wave field are given by the rate of change in time of wave momentum, and **one may distinguish different momentum fluxes depending on the different physical processes**:
-### Wind-induced stress
-The wind-induces stress, which is also called “wind-stress” or “wind-to-wave stress”. It represents the momentum flux from the wind input $S_{\text{in}}$ 
- 
 
-The Eq. (3) can be expressed equivalently as (scalar form along the wind direction):
+### Wind-induced stress & Energy Flux From Wind to Waves
+The wind-induces stress, which is also called “wind-stress” or “wind-to-wave stress”. It represents the momentum flux from the wind ($S_{\text{in}}$) that are used for the generation of ocean waves. 
+Given by:
 
-$$ \begin{equation} \vec\tau_{\text{in}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{S_{\text{in}}(\omega, \theta)}{c_p} \, d\omega \, d\theta \tag{4} \end{equation} $$
+$$ \begin{equation} \mathbf{\tau_{\text{in}}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}S_{\text{in}}(\omega, \theta) \,\; d\omega \, d\theta \end{equation} \tag{40} $$
 
-where the $c_p=\frac{\omega}{k}$ is the wave phase speed.
-Same integrations of $S_{\text{dis}}$ can give other contributions to the momentum flux
+Similarly, the energy flux from wind to waves is defined by:
 
-Hence, the units for the total momentum flux (i.e., if in air-sea interface, e.g., wind → wave stress) is:
 $$
-\frac{\vec k}{\omega}E(\omega, \theta) \quad\quad \text{units}=\frac{(m^{-1})}{(s^{-1})}(J\;m^{-2})
+ \Phi_{\text{in}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} S_{\text{in}}(\omega, \theta) \,\; d\omega \, d\theta \tag{41} 
 $$
 
-> [!Tip]
-> **However**, the pre-factor (e.g., $\rho_w g$) depends on the spectral units of $S$!
-> There are two common spectral conventions:
-> - Surface elevation variance spectrum $S_{\eta}(\omega,\theta)$ (units $m^2\cdot s$)
-> 	- energy per unit surface is $\frac{1}{2}\rho_w g S_{\eta}$
-> 	- Then use $\tau \sim \frac{1}{2}\rho_w g (\text{Integral})$
-> 	  
-> - Energy density $E(\omega,\theta)$ (units $J\cdot m^{-2} \text{per Hz per rad}$)
-> 	-  $E$ already contains the $\frac{1}{2}\ g$ factor
-> 	- The use $\tau \sim \rho_w(\text{Integral})$
+### Dissipation stress & Energy Flux From Waves to Ocean
+The Dissipation stress (at the surface) describes the dissipation of waves by processes at the air-sea interface. It shares the same structure as the wind-induced stress:
+
+$$
+ \mathbf{\tau_{\text{ds}}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}S_{\text{ds}}(\omega, \theta) \,\; d\omega \, d\theta \tag{42} 
+$$
+
+Similarly, the energy flux from waves to ocean is defined by:
+
+$$
+ \Phi_{\text{ds}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} S_{\text{ds}}(\omega, \theta) \,\; d\omega \, d\theta \tag{43} 
+$$
+
+
+### Seperation: Low-frequency and High-frequency
+
 
 
 
