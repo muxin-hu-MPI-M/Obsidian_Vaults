@@ -232,7 +232,7 @@ representing the physics of wind inpuy, dissipation, nonlinear wave-wave interac
 
 -------------------------------
 # Parameterisation of Source terms
-For details in this chapter, please referring to the Chapter 3 in IFS Wave model documentation (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
+For details in this chapter, please referring to the Chapter 3 in IFS Wave model documentation (ECMWF, 2024)
 
 ## Wind Input (Wind stress)
 ### Before CY46R1, June 2019 (Also the ICON-Wave version)
@@ -339,7 +339,7 @@ where the $gz_b$ is the direct calculation of $z_b$. When combined with the reno
 	$$
 
 
-The formula is also summarised in [[ICON-waves_Short-Overview_and_Current-Status#Wave-ocean coupling]]
+The formula is also summarised [here]([[ICON-waves_Short-Overview_and_Current-Status#Wave-ocean coupling]])
 
 > [!Important] **Wave-atmosphere coupling: An angle from Momentum Flux**
 > Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
@@ -379,7 +379,7 @@ $$
 S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31}
 $$
 
-where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see Eq. (2) in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
+where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see [Eq. (2)]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
 
 ## Bottom dissipation
 Dissipation owing to bottom friction is not discussed here because the details of its parameterisation were presented in Komen et al. (1994, chapter II) as well as the relative merits of this approach being fully discussed. We merely quote the main result:
@@ -404,10 +404,11 @@ where the resonant waves $R_i(\Delta \omega,t)=\pi\delta(\omega_1+\omega_2-\omeg
 - produces proper high-frequency spectrum
 See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 
+
 # Wave Forecasting and Sea-state Impacts on Atmosphere and ocean
 
 ## Two-dimensional wave spectrum
-In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
+In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in chapter [“Action density spectrum”]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
 
 Thus, we can apply the two dimensional frequency spectrum at each grid cell, defined as:
 
@@ -436,7 +437,7 @@ we recall **action density balance equation**, but this time we utilising the fr
 $$
 F(\omega,\theta)=\frac{gN}{\omega} \tag{37}
 $$
-Noted that this relation is different from that of wavenumber spectrum, specified in Eq. (1) in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]].
+Noted that this relation is different from that of wavenumber spectrum, specified in [Eq.(1)]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]).
 For deep water, and with additional source terms, the balance equation can become;
 
 $$ 
@@ -515,27 +516,10 @@ $$
 > - Then, **the $\tau_{\text{wave}}$ is the net stress (air-sea momentum flux) going into the wave**, which is equals to the wind input $\tau_{in}$
 
 
-## Physical interpretation
-
-- The **wind input source term** $S_{\text{in}}$ quantifies how much _energy_ the wind gives to each spectral component.
-- Dividing by the **phase speed** $c_p$ gives the _momentum flux_ associated with that energy input.
-- Integrating over all frequencies and directions gives the **total stress** imparted to the wave field (the “form drag”).
-
-Hence, the **wave-induced stress** represents the portion of the atmospheric stress that is **carried by the growing waves** rather than **immediately transferred to ocean currents**.
-
-
-## Summary
-
-“Detailed description of surface waves modulated air-sea momentum flux could be found in Janssen (1989, 1991) and Breivik et al. (2016)” (Zhao et al., 2022)
-
-
-
-
-
 # Young Ocean and Young Surface Wave
 
 The terms refer to the development stage of the wave field relative to the local wind.
-## (a) Wave-age
+## Wave-age
 
 Define the wave age (dimensionless)
 
@@ -545,7 +529,7 @@ where:
 - $c_p$: phase speed of the dominant (spectral peak) waves
 - $U_{\text{10}}$: wind speed at 10 m height (input from atmospheric model)
 
-## (b) Interpretation
+## Interpretation
 
 | **Wave age** | **Description**               | **Physical Meaning**                                                                                                                                                                                                                        |
 | ------------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

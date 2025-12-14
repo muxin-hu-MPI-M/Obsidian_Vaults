@@ -55,16 +55,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Project-Surface_Waves-General_Proposal"
+              "title": "Regular Meeting Notes"
+            }
+          },
+          {
+            "id": "1612a52934f2df27",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Research-Gap_Information&Summary"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -199,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
+              "title": "Outline of Regular Meeting Notes"
             }
           },
           {
@@ -214,8 +228,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "calendar-clock",
-              "title": "Timeline"
+              "icon": "lucide-ghost",
+              "title": "tg-timeline-sidebar-view"
             }
           },
           {
@@ -256,18 +270,29 @@
   },
   "active": "8eadf67652800bf7",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
+    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
-    "Project-Surface_Waves/Meeting Note/Panel-Meeting-1_2025-12-11.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-    "Project-Surface_Waves/Meeting Note/Regular Meeting Notes.md",
-    "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
+    "[[.md",
+    "].md",
+    "Attachments/9YGKI7C5.png",
+    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
+    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 1.jpeg",
+    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 2.jpeg",
+    "Attachments/IMG_2967.jpeg",
+    "Attachments/IMG_3785.jpeg",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
+    "Attachments/Screenshot 2025-10-19 at 22.23.17.png",
+    "Attachments/Screenshot 2025-10-20 at 10.29.31 1.png",
+    "Attachments/Screenshot 2025-10-16 at 14.05.05.png",
+    "Attachments/Screenshot 2025-12-01 at 15.33.45.png",
+    "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
+    "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
     "PhD-General/MPI-M/Seminar Notes.md",
-    "Attachments/Screenshot 2025-12-10 at 13.29.07.png",
-    "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
     "Database.base",
@@ -284,23 +309,13 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Project-Surface_Waves/Tips/How_the_Coriolis-paramter_is_derived.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
     "Zotero_import",
-    "Attachments/9YGKI7C5.png",
-    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
-    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 1.jpeg",
-    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 2.jpeg",
-    "Attachments/image.png",
-    "Attachments/IMG_2967.jpeg",
-    "Attachments/IMG_3299.jpeg",
-    "Attachments/IMG_3785.jpeg",
     "Users/muxin/Documents/ObsidianVault/Zotero_import",
     "Users/muxin/Documents/ObsidianVault",
     "Users/muxin/Documents",
     "Users/muxin",
     "Users",
-    "Attachments/W3X7PQ2U.png",
     "Untitled.canvas",
     "未命名.canvas",
     "Untitled 1.canvas"

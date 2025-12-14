@@ -7,8 +7,33 @@ tags:
 Last Eddited: 2025-11-27T09:57:00
 ---
 
+# [[2025-12-15]]
+## Regular meeting with Nils
+#presenter/Nils_Brüggemann 
+- Show the derivation of wind-induced stress (or “wind stress”, “wind-to-wave stress”). The [Link]([[Note_Wave-induced-stress_and_Young-waves#Momentum and Energy Flux at Air-sea Interface]])
+- Report issue with ICON-XPP simulation with default TKE settings
+	- Has set disturbance TWICE!!! One in 1325-01-01 and one in 1345-01-01
+	- Should I worry about the email from DKRZ?
+	  ```
+	    ______________________________________________________________________
+		[33] CVR-DIR (Max-Planck-Gesellschaft)
+		Quota             :    1925 TiB
+		Actually used     :    1856 TiB
+		Percentage used   :      96%
+		______________________________________________________________________
+	    ```
+- **Discussion**: Wave-induced processes and their effects
+	- maybe we first choose a terminology to describe this long set? (e.g., wave-effects)
+	- Governing equations for 4 main wave-modified processes:
+		- momentum flux
+		- Stokes drift related effects 
+			- Langmuir Turbulence
+			- Stokes-Coriolis force
+			- advection by Stokes drift
+		- surface roughness
 
-# [[2025-12-10]] Noel’s group meeting
+# [[2025-12-10]] 
+## Noel’s group meeting
 #presenter/Noel_Gutierrez-Brizuela 
 - W.R. Young and Basile Gallet
 - <span style="background:#fff88f">swell is predominantly linear </span>→ predictable (kind of) (surline.com → surf conditions of swell)
@@ -42,7 +67,7 @@ Last Eddited: 2025-11-27T09:57:00
 					- if a uniform current, do not deflect the wave direction
 					- but the <span style="background:#fff88f">vorticity of the currents refracts waves </span>(many vorticities in ACC!)
 
-# [[2025-12-08]] 
+# [[2025-12-08]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
 - there’s no k-epsilon scheme in the XPP configuration?
@@ -126,8 +151,9 @@ Last Eddited: 2025-11-27T09:57:00
 			- color blind test
 
 
-# [[2025-12-03]] Noel’s group meeting
-## Solve a Fluid dynamic equation
+# [[2025-12-03]] 
+## Noel’s group meeting
+### Solve a Fluid dynamic equation
 - when considering two rigid-body plate on the <span style="background:#fff88f">top and bottom</span> of the fluid respectively, and moves in two velocities $u_t$ and $u_b$. 
   If we assume: 
   (1) Purely horizontal (in $x$ direction), incompressible flow → constant density; 
@@ -149,7 +175,7 @@ Last Eddited: 2025-11-27T09:57:00
     
     with this, we can get the analytical solution for the zonal flow velocity $u=u(z)$, by the boundary conditions
 
-## Fourier Transform
+### Fourier Transform
 The video link: [https://youtu.be/gTOzmE7_-mU?si=hh7dkCD_TSs3r_HI](https://youtu.be/gTOzmE7_-mU?si=hh7dkCD_TSs3r_HI)
 
 - ==Fourier transform==:
@@ -165,7 +191,8 @@ The video link: [https://youtu.be/gTOzmE7_-mU?si=hh7dkCD_TSs3r_HI](https://youtu
 		- Which time scales dominate variability. It answers what time scales control the **variability** of the scaler quantity
 		- Variability is dominated by rapid (high frequency) or slow (low frequency) processes
 
-# [[2025-11-25]] Regular Meeting with Noel
+# [[2025-11-25]] 
+## Regular Meeting with Noel
 Progress
 - Theoretical part:
     - **(Finished)** Few formula for **estimating Stokes drift profile** (i.e., wave variance spectrum), Stokes transport, and how does it related to the additional source term in TKE (i.e., Stokes drift shear → Langmuir Turbulence generation)
@@ -182,7 +209,8 @@ Questions
     - what do people expect from me??
     - discuss the scientific way
 
-# [[2025-11-24]] Regular meeting with Nils.
+# [[2025-11-24]]
+## Regular meeting with Nils.
 - XPP simulation: omip; 100 years
 - why in 30 years ocean only experiments, the difference
 - ask johanna for TRR 181 workshop
@@ -194,13 +222,14 @@ Questions
     - Noel
 - register enroll as PhD before the panel meeting
 
-# [[2025-11-24]] TRR181: Workshop; Ferrel Cell
+# [[2025-11-24]] 
+## TRR181: Workshop; Ferrel Cell
 - outline: the summary part from the material
 - accommodation in Bremen (TRR181)
 
-# [[2025-11-18]] ICON-XPP: T&F meeting
-see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make-experiments-mkexp-for-xpp---introduction-purpose-and-advantages](https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make-experiments-mkexp-for-xpp---introduction-purpose-and-advantages)
-
+# [[2025-11-18]] 
+## ICON-XPP: T&F meeting
+see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make-experiments-mkexp-for-xpp---introduction-purpose-and-advantages](https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make-experiments-mkexp-for-xpp---introduction-purpose-and-advantages))
 ### *mkexp* versus *make_runscripts*:
 - no copies of long run-scripts (by `make_runscripts`) with different histories
     - since complete runscripts (by `make_runscripts`) are complex and error-prone,
@@ -219,7 +248,8 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
 - `CMIP7_output_atm.config` and `CMIP7_output_oce.config`: output for CMIP7 (under development)
 - `XPP/input/historical` for historical experiment (start with simulation year 1850)
 
-# [[2025-11-17]] Regular Meeting with Nils
+# [[2025-11-17]]
+## Regular Meeting with Nils
 **Questions**:
 - ICON-XPP: detailed experiment settings:
     - simulation time: 100 years
@@ -253,7 +283,8 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
     - pick one year to compare
 - read more papers about of the TKE mixing in upwelling regions → check some important stuffs to look at.
 
-# [[2025-11-10]] Regular Meeting with Nils
+# [[2025-11-10]]
+## Regular Meeting with Nils
 
 - email to Stephan for the ICON-XPP, to do a reference simulation
     - and ask for a quick plots example scripts
@@ -262,7 +293,8 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
     - check the mixing and effects in the ocean/atmosphere and find the different between different mixing scheme
 - have a look over $k-\epsilon$ scheme
 
-# [[2025-11-10]] Meeting with Noel
+# [[2025-11-10]] 
+## Meeting with Noel
 
 - why running uncoupled model? since coupled and uncoupled is such different
 - how waves behave in the costal upwelling region by running simulations → give a view of what’s will this looks like
@@ -278,7 +310,8 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
             - Turbulence in the Upper-Ocean Mixed layer: Eric
             - Dynamics of winds and currents coupled to surface waves
 
-# [[2025-11-06]] Additional meeting with Nils
+# [[2025-11-06]] 
+## Additional meeting with Nils
 
 - ‘main’ supervisor: need a professor
     - University side? or Bjorn
@@ -293,21 +326,23 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
 
 - OMIP is a climatological forcing , so the date doesnt mean anything. 2010 is the date of the initial state (oras5 from 2010-01), so therefor it makes sense to set your startdate also to 2010, but this is a matter of taste. If you use a transient forcing like ERA5 (with a real date) it becomes important. For OMIP it doesn’t matter.
 
-# [[2025-11-05]] ICON-Waves & Noel’s GM
+# [[2025-11-05]] 
+## ICON-Waves & Noel’s GM
 
-## ICON-Waves Focus; 1st meeting
+### ICON-Waves Focus; 1st meeting
 
 - meet regularly, and communicate with each other to avoid overlap.
 - **Short overview of ICON-waves** (See details in [Short Overview of ICON-waves & Current status](https://www.notion.so/Short-Overview-of-ICON-waves-Current-status-2a269691c52b80c98923ff6269d6dfca?pvs=21))
 - **ICON-waves: Wave-ocean coupling** (led by Christopher Higgins, see details in [Short Overview of ICON-waves & Current status](https://www.notion.so/Short-Overview-of-ICON-waves-Current-status-2a269691c52b80c98923ff6269d6dfca?pvs=21) )
 
-## Noel’s regular group meeting
+### Noel’s regular group meeting
 
 - Paper figure discussion, suggested paper to read:
     - paper: Heat Transport through Diurnal Warm Layer
     - paper: Global ocean heat transport dominated by heat export from the tropical Pacific
 
-# [[2025-11-03]] Regular Meeting with Nils
+# [[2025-11-03]]
+## Regular Meeting with Nils
 
 - run shorter time (25-30 years) range for coupled configuration
     
@@ -322,8 +357,7 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
 - get fluent workflow (running, plotting), compare plots in the website
     
     - A useful way to manage diff. ICON version is to have a main directory containing the NAME for all diff ICON version (check ICON version using the below code:
-        
-        ```bash
+        ```
         # inside the icon-model file
         # run the below code in bash
         module load git
@@ -331,25 +365,21 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
         ```
         
         In the icon-model directory, you will find the running scripts in:
-        
-        ```bash
+        ```
         /icon-model/run/exp_{run_name}.nc
         ```
-        
-        The {run_name} is better to have a similar naming structure as nibxxxx; muhxxxx and find the
+        The {run_name} is better to have a similar naming structure as nibxxxx; muhxxxx
         
 - learn GIT, with the materials from Nils
-    
 - start register the PhD project at UHH (check the email for the materials)
-    
 - official supervisor:
-    
     - Panel:
     - Check out RTG tings
 
-# [[2025-10-27]] Regular Meeting with Nils
+# [[2025-10-27]]
+## Regular Meeting with Nils
 
-## General plan for the coming few weeks (27/10/2025 - 10/11/2025)
+### General plan for the coming few weeks (27/10/2025 - 10/11/2025)
 
 - **First stage: run ICON-o (check [ICON documentation](https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/))**
     - With two mixing schemes to evaluate the difference
@@ -364,7 +394,7 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
     - Analysis based on surface forced WMT and AMOC (strength?)
 - **Second stage: run ICON-TKK: a/o coupled, coarser resolution with same exp setting**
 
-## Other topics
+### Other topics
 
 - Book recommendation: ocean Turbulence by Thrope
 - referring back to textbook is important and useful
@@ -390,26 +420,16 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
 - Lots thing need to do: the Physics + codin
 - **Maybe combine experiment (change some of the exps)**
     - exp 2: Stokes drift + langragian current
-        
     - **Lars mention his choice of experiments:**
-        
         - Possible first experiments: wave stress instead of wind stress
-            
         - Langmuir turbulence need to be parameterized by adding a term in the TKE function ( the 3rd term at right hand side):
-            
-            ![Screenshot 2025-10-07 at 10.22.43.png](attachment:5855362f-5356-41d2-a773-b5d31d743586:Screenshot_2025-10-07_at_10.22.43.png)
+            ![[Attachments/Screenshot 2025-10-28 at 10.48.16.png|center]]
             
         - $\tau_{a}$: atmospheric stress term (frequent velocity), can we derive from the velocity shear btw atmosphere and ocean? We can test separately: by running two models (ICON-O and ICON-Wave, without coupling) to see if there’s dramatic changes
-            
-        
-        Wave stress ($\tau_{oc}$?) can be already calculated
-        
-        ```
-          ![Screenshot 2025-10-07 at 10.27.29.png](attachment:a7529848-7653-484d-bf16-ebb7500ce9f2:Screenshot_2025-10-07_at_10.27.29.png)
-        ```
+    - Wave stress ($\tau_{oc}$?) can be already calculated
         
 
-### **Suggested version of choices of experiments and configurations**
+## **Suggested version of choices of experiments and configurations**
 
 ![Screenshot 2025-10-07 at 11.05.05.png](attachment:64d93962-09ed-4b48-a1a9-4c949f66ceb5:Screenshot_2025-10-07_at_11.05.05.png)
 
@@ -427,7 +447,8 @@ see details in [https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-20251118#make
     - Technical skills:
 - Get familiar with VScode and **Git** —> nice backup system
 
-# [[2025-10-06]] Regular Meeting with Nils
+# [[2025-10-06]]
+## Regular Meeting with Nils
 
 - Meeting after the wave meeting tomorrw 07/10/2025 11:00
     - Check the email from Nils
