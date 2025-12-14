@@ -461,21 +461,7 @@ $$
 where $\rho_w$ is the water density and $g$ the acceleration due to gravity. 
 The momentum fluxes to and from the wave field are given by the rate of change in time of wave momentum, and **one may distinguish different momentum fluxes depending on the different physical processes**:
 ### Wind-induced stress
-
-> [!Attention] **~={red}The General Form of momentum flux associated with wave:=~**
-> The **rate of change of momentum** in the wave field equals the **integral of the source term divided by phase speed**, projected along the propagation direction:
-> 
-> $$ \begin{equation} \vec\tau = \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\vec k}{\omega} S(\omega, \theta) \, d\omega \, d\theta \tag{5} \end{equation} $$
-> 
-> where:
-> 
-> - $\rho_w$: the seawater density
-> - $\omega$: angular frequency
-> - $\theta$: direction
-> - $\vec k$: wavenumber
-> 
-> Hence, the integration of the source term $S_{\text{in} }$ represents **how the wind input at all frequencies and directions contributes to the total momentum flux into the wave field**.
-> 
+The wind-induces stress, which is also called “wind-stress” or “wind-to-wave stress”. It represents the momentum flux from the wind input $S_{\text{in}}$ 
  
 
 The Eq. (3) can be expressed equivalently as (scalar form along the wind direction):
