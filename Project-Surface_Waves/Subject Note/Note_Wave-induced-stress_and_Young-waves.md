@@ -381,7 +381,7 @@ $$
 S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31}
 $$
 
-where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre, $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
+where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see Eq. (2) in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
 
 ## Bottom dissipation
 Dissipation owing to bottom friction is not discussed here because the details of its parameterisation were presented in Komen et al. (1994, chapter II) as well as the relative merits of this approach being fully discussed. We merely quote the main result:
@@ -393,7 +393,7 @@ $$
 Where the constant $C_{\text{bot}}=0.038/g$ and $h$ the water depth.
 
 ## Nonlinear Transfer
-In Komen et al. (1994) the derivation of the source function Snl, describing the **nonlinear energy transfer**, was given from first principles. For surface gravity waves the nonlinear energy transfer is caused by four resonantly interacting waves, obeying the usual resonance conditions for the angular frequency and the wave numbers.
+In Komen et al. (1994) the derivation of the source function $S_{nl}$, describing the **nonlinear energy transfer**, was given from first principles. For surface gravity waves the nonlinear energy transfer is caused by four resonantly interacting waves, obeying the usual resonance conditions for the angular frequency and the wave numbers.
 owing to resonant four-wave interactions the rate of change of the action density spectrum $N=gF(\mathbf{k})/\omega$ (where $F$ is the wave variance spectrum) is given by:
 
 $$
@@ -406,14 +406,11 @@ where the resonant waves $R_i(\Delta \omega,t)=\pi\delta(\omega_1+\omega_2-\omeg
 - produces proper high-frequency spectrum
 See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 
-# Wave Forecasting and atmosphere-wave-ocean Interaction
-## The Source Term in the Wave Energy Balance
-
-### Action Balance Equation
-
+# Wave Forecasting and Sea-state Impacts on Atmosphere and ocean
+## Recall the Action Density Balance Equation
 Waves may grow because of the action of wind and they may loose energy because of dissipation due  to e.g. white capping, wave-breaking. Furthermore, finite amplitude ocean waves are subject to nonlinear four-wave interactions. As long as these perturbations are small they can be added and in the context of a statistical description of ocean waves.
 
-When considering external sources, the **action density balance equation** is:
+we recall **action density balance equation**, but this time we utilising the relation: 
 
 $$ \frac{d N}{dt}= S_{\text{in}} + S_{\text{ds}} + S_{\text{nl}} \tag{8}\ $$
 
