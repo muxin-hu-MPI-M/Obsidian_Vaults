@@ -242,7 +242,7 @@ representing the physics of wind inpuy, dissipation, nonlinear wave-wave interac
 # Parameterisation of Source terms
 For details in this chapter, please referring to the Chapter 3 in IFS Wave model documentation (ECMWF, 2024)
 
-## Wind Input (Wind stress)
+## Wind Input (“Wind stress”, “atmospheric stress”)
 ### Before CY46R1, June 2019 (Also the ICON-Wave version)
 The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
 
@@ -281,10 +281,6 @@ $$
 Where 
 $$\gamma N=S_{\text{in}} \tag{26}$$
 
-> [!Important] **“Wind stress” = “Wind-induced stress” = “Wind-to-wave stress”** 
-> - The “wind stress”, despite has slightly different formula, it is the same as the “wind-to-wave stress” considered in the later sections using the source input term $S_{\text{in}}$. 
-> - They all represents the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation
-
 
 $\gamma$ is the growth rate, which has the relationship: 
 
@@ -308,49 +304,10 @@ $$
 The dimensionless ***Charnock parameter*** $\alpha$ is not constant but depends on the sea state through the wave-induced stress before CY49R1:
 
 $$
-\alpha = \frac{\hat \alpha}{\tau}/{\sqrt{1-\frac{\tau_w}{\tau_a}}} \tag{30}
+\alpha = \frac{\hat \alpha}{\tau}/{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}} \tag{30}
 $$
 
 where the $gz_b$ is the direct calculation of $z_b$. When combined with the renormalised growth rate, hese changes yields a reduction of the resulting *Charnock* parameter for storm wind conditions (above 20 m/s), which is correct to match the observational evidence that the *Charnock* parameter should reduce quite considerably under strong tropical winds.
-
-#### Summary for ICON-Waves
-- Surface **density-normalised wind stress** ($\bar \rho_a = \tau_a / \rho_a$):
-  $$
-	\bar \tau_a = u_*^2 =\bigg(\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln(\frac{z_{\text{obs}}+z_o}{{z_o}})}\bigg)^2
-	$$
-- **Wave stress**:
-  $$
-	  \begin{align}
-	  \tau_w&=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta 
-	  =\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta
-	  \end{align}
-	$$
-	where $\omega_c$ is the high frequency cutoff in numerical scheme. Will be discussed in later section.
-	
-- Wind input source function:
-  $$
-	  S_{\text{in}}=\gamma N= \omega\epsilon \beta x^2 
-	$$
-	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$
-	
-- **Sea-state-dependent Charnock number:**
-  $$
-	\alpha = \frac{\hat \alpha}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}
-	$$
-- **Background roughness length**:
-  $$
-	z_b=\frac{\alpha \bar\tau_{\alpha}}{g} 
-	$$
-- **Sea surface roughness length**:
-  $$
-	z_o=\frac{z_b}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}=\frac{\alpha u_*^2}{g\sqrt{1-\frac{\tau_w}{u_*^2}}}
-	$$
-
-
-The formula is also summarised [here]([[ICON-waves_Short-Overview_and_Current-Status#Wave-ocean coupling]])
-
-> [!Important] **Wave-atmosphere coupling: An angle from Momentum Flux**
-> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
 
 ### Since CY49R1, November 2024
 Many things changed compare to the CY46R1:
@@ -567,38 +524,71 @@ $$
 \end{align}
 $$
 
+Notice that the dissipation source term $\hat S_{\text{ds}}$ is negative. This dissipated momentum/energy is transferred from surface waves into the ocean column.
+
 Eq. (50) can then be summarised as:
 
 $$
 \tau_{\text{oc}}=\tau_{\text{a}}-\tau_{\text{transient}} \tag{51}
 $$
 
-The transient term $\tau_{\text{transient}}$ is the explicit contributions from surface waves, separates from the atmospheric stress. 
+The term $\tau_{\text{transient}}$, separates itself from the atmospheric stress $\tau_{\text{a}}$, can be considered as the direct (and transient) impacts due to the existence of surface waves. However, careful interpretation is needed since the atmospheric stress term $\tau_{\text{a}}=\rho_{\text{a}}u_*|u_*|$ is also influenced by the surface wind (the air-side friction velocity is dependent on wind stress )
 
 
 
 
 
+---
+# Concluding Remark 
+## For ICON-Waves
+Formulas are referenced from [ICON-Short-Overview]([[ICON-waves_Short-Overview_and_Current-Status#Wave-ocean coupling]])
+- Surface **density-normalised wind stress** ($\bar \rho_a = \tau_a / \rho_a$):
+  $$
+	\bar \tau_a = u_*^2 =\bigg(\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln(\frac{z_{\text{obs}}+z_o}{{z_o}})}\bigg)^2
+	$$
+- **Wave stress**:
+  $$
+	  \begin{align}
+	  \tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta 
+	  &=\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta \\
+	  &=\frac{1}{\rho_a}(\tau_{\text{in}})
+	  \end{align}
+	$$
+	where $\omega_c$ is the high frequency cutoff in numerical scheme. Will be discussed in later section.
+	
+- Wind input source function:
+  $$
+	  S_{\text{in}}=\gamma N= \omega\epsilon \beta x^2 
+	$$
+	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$
+	
+- **Sea-state-dependent Charnock number:**
+  $$
+	\alpha = \frac{\hat \alpha}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}
+	$$
+- **Background roughness length**:
+  $$
+	z_b=\frac{\alpha \bar\tau_{\alpha}}{g} 
+	$$
+- **Sea surface roughness length**:
+  $$
+	z_o=\frac{z_b}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}=\frac{\alpha u_*^2}{g\sqrt{1-\frac{\tau_w}{u_*^2}}}
+	$$
 
 
-> [!Attention]
-> Hence, one should rewrite the momentum flux (Eq (1)) in the air-sea interface (Zhao et al., 2022) :
-> 
-> $$ \begin{align} \vec \tau_a &= \vec \tau_{\text{oc}} + \vec \tau_{\text{in}} + \vec \tau_{\text{ds}} \\ &= (\vec \tau_{\text{oc}}+ \vec \tau_{\text{ds}})+\vec \tau_{\text{in}} \\ &=\vec \tau_{\text{ocean}} + \vec \tau_{\text{wave}}    \tag{5}\end{align} $$
-> 
-> where:
-> 
-> - $\vec \tau_{a}$: wind stress, can be parameterised by $\vec \tau_{a}=\rho_a u_*^{2}$ (Monin-Obukhov Theory; $u_*$ is the friction velocity)
-> - $\vec \tau_{\text{oc}}$: momentum flux obtained by ocean from wind source
-> - $\vec \tau_{\text{in}}$: momentum flux from wind source to ocean
-> - $\vec \tau_{\text{ds}}$: momentum flux injected from breaking waves to the ocean
->   
-> **Related to Eq. (1): $\vec \tau_{\text{wave}}= \vec \tau_{\text{in}}$, as:** 
-> - **the $\vec \tau_{\text{ds}}$ should contributes to $\tau_{oc}$**, since dissipation transfer momentum from the waves to the ocean. Not from wind → wave anymore
-> - the $\tau_{nl}=0$, since nonlinear interaction ONLY redistribute energy/momentum within the spectrum but conserve total momentum.
-> - Then, **the $\tau_{\text{wave}}$ is the net stress (air-sea momentum flux) going into the wave**, which is equals to the wind input $\tau_{in}$
+### Important Comment
+>[!Important] **“Wave stress”, “Wave-induced stress” and “Wind-to-wave stress”** 
+> - The “wave stress” is the “wind-to-wave stress” $\tau_{\text{in}}$ divided by air density (as $\epsilon^{-1}=\rho_w/\rho_a$) considered in the later sections using the source input term $S_{\text{in}}$. The wave stress in Eq. (25) is specifically used in determination of air-side friction velocity
+> - They all relate the momentum flux from the atmosphere (i.e., wind) to the surface waves, which is the momentum flux used in wave generation.
+> - All three terms represent the exact same thing, but slightly modified to meet special requirements.
+
+> [!Important] **Wave-atmosphere coupling: An angle from Momentum Flux**
+> Thus, the roughness length is dependent on the “wave stress” and the “wind stress”, and this length is used in the determination of the friction velocity. All of these thus indicate a way <span style="background:#fff88f">how the wave-field will influence the atmospheric side.</span>
 
 
+
+
+---
 # Young Ocean and Young Surface Wave
 
 The terms refer to the development stage of the wave field relative to the local wind.
