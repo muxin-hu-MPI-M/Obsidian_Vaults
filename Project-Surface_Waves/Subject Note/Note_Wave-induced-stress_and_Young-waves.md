@@ -516,14 +516,15 @@ $$
 \tau_{\text{oc}}
 &=\tau_{\text{a}} - \tau_{\text{in}}-\tau_{\text{ds}} \\
 &=\tau_{\text{a}} - (\tau_{\text{in}}+\tau_{\text{ds}}) \\
-&=\tau_{\text{a}} - \rho_wg\bigg(\int_{0}^{2\pi}\int_{0}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}} +\hat S_{\text{ds}})\;d\omega d\theta  \bigg) \\
-&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta + \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta \bigg) \\
-&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta - \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}\hat S_{\text{nl}}\;d\omega d\theta \bigg) \\
-&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta + \int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}\hat S_{\text{nl}}\;d\omega d\theta \bigg) \\
-&=\tau_{\text{a}} - \rho_wg \int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}} + \hat S_{\text{nl}})\;d\omega d\theta \tag {50}
+&=\tau_{\text{a}} - \rho_wg\bigg(\int_{0}^{2\pi}\int_{0}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}} +\hat S_{\text{ds}})\,\;d\omega \, d\theta  \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\,\;d\omega \, d\theta + \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\,\;d\omega \, d\theta \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\,\;d\omega \, d\theta - \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}\hat S_{\text{nl}}\,\;d\omega \, d\theta \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\,\;d\omega \, d\theta + \int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}\hat S_{\text{nl}}\,\;d\omega \, d\theta \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}} + \hat S_{\text{nl}})\,\;d\omega \, d\theta \tag {50}
 \end{align}
 $$
 
+Where the $\tau_{\text{a}}$ is the atmospheric stress, whose magnitude is given by $\tau_{\text{a}}=\rho_{\text{a}}u_*|u_*|$, with $u_*$ the air-side friction velocity.
 Notice that the dissipation source term $\hat S_{\text{ds}}$ is negative. This dissipated momentum/energy is transferred from surface waves into the ocean column.
 
 Eq. (50) can then be summarised as:
@@ -532,25 +533,76 @@ $$
 \tau_{\text{oc}}=\tau_{\text{a}}-\tau_{\text{transient}} \tag{51}
 $$
 
-The term $\tau_{\text{transient}}$, separates itself from the atmospheric stress $\tau_{\text{a}}$, can be considered as the direct (and transient) impacts due to the existence of surface waves. However, careful interpretation is needed since the atmospheric stress term $\tau_{\text{a}}=\rho_{\text{a}}u_*|u_*|$ is also influenced by the surface wind (the air-side friction velocity is dependent on wind stress )
+The term $\tau_{\text{transient}}$, separates itself from the atmospheric stress $\tau_{\text{a}}$, can be considered as the transient impacts from ongoing (i.e., transient) surface wave processes. 
+However, careful interpretation is needed since the atmospheric stress term $\tau_{\text{a}}=\rho_{\text{a}}u_*|u_*|$ is also influenced by the surface wind, as the air-side friction velocity is dependent on wind stress (see details in previous chapter: [Wind Input]([[Note_Wave-induced-stress_and_Young-waves#Wind Input (“Wind stress”, “atmospheric stress”)]])
 
+While for the energy flux, we ignore the direct energy flux from air to ocean currents, because it is small, the energy flux to the ocean, denoted by $\Phi_{\text{oc}}$, is therefore given by $-\Phi_{\text{ds}}$. Again, utilising the assumed high frequency balance (Eq. (45)) and the conservation of energy when $S_{\text{nl}}$ is integrated over all frequencies and directions, one obtain:
 
+$$
+\begin{align}
+\Phi_{\text{oc}}
+&=-\Phi_{\text{ds}} \\
+&=-\rho_w g \int_{0}^{2\pi} \int_{0}^{\infty}\hat S_{\text{ds}} \,\; d\omega \, d\theta \\
+&=-\rho_w g \bigg(\int_{0}^{2\pi} \int_{0}^{\omega_c}\hat S_{\text{ds}} \,\; d\omega \, d\theta +\int_{0}^{2\pi} \int_{\omega_c}^{\infty}\hat S_{\text{ds}} \,\; d\omega \, d\theta \bigg) \\
+&= -\rho_w g \bigg(\int_{0}^{2\pi} \int_{0}^{\omega_c}\hat S_{\text{ds}} \,\; d\omega \, d\theta -\int_{0}^{2\pi} \int_{\omega_c}^{\infty}(\hat S_{\text{in}}+\hat S_{\text{nl}}) \,\; d\omega \, d\theta \bigg) \\
+&= -\rho_w g \bigg(\int_{0}^{2\pi} \int_{0}^{\omega_c}\hat S_{\text{ds}} \,\; d\omega \, d\theta -\int_{0}^{2\pi} \int_{\omega_c}^{\infty}\hat S_{\text{in}} \,\; d\omega \, d\theta - \int_{0}^{2\pi} \int_{\omega_c}^{\infty}\hat S_{\text{nl}} \,\; d\omega \, d\theta \bigg) \\
+&= -\rho_w g \int_{0}^{2\pi} \int_{0}^{\omega_c}(\hat S_{\text{ds}}+\hat S_{\text{nl}}) \,\; d\omega \, d\theta +\int_{0}^{2\pi} \int_{\omega_c}^{\infty}\hat S_{\text{in}} \,\; d\omega \, d\theta  \\
+&= -\rho_w g \int_{0}^{2\pi} \int_{0}^{\omega_c}(\hat S_{\text{ds}}+\hat S_{\text{nl}}) \,\; d\omega \, d\theta - \bigg(\int_{0}^{2\pi} \int_{0}^{\omega_c}\hat S_{\text{in}} \,\; d\omega \, d\theta \bigg)\\ & \quad\quad\quad\quad\quad\quad\quad\quad\quad\:\quad\quad\quad\quad\quad\quad+\int_{0}^{2\pi} \int_{\omega_c}^{\infty}\hat S_{\text{in}} \,\; d\omega \, d\theta + \bigg(\int_{0}^{2\pi} \int_{0}^{\omega_c}\hat S_{\text{in}} \,\; d\omega \, d\theta \bigg) \\
+&=\rho_w g\int_{0}^{2\pi} \int_{0}^{\infty}\hat S_{\text{in}} \,\; d\omega \, d\theta -\rho_w g \int_{0}^{2\pi} \int_{0}^{\omega_c}(\hat S_{\text{in}}+\hat S_{\text{ds}}+\hat S_{\text{nl}}) \,\; d\omega \, d\theta \\ 
+&=\Phi_{\text{in}} -\rho_w g \int_{0}^{2\pi} \int_{0}^{\omega_c}(\hat S_{\text{in}}+\hat S_{\text{ds}}+\hat S_{\text{nl}}) \,\; d\omega \, d\theta \tag{52}
+\end{align}
+$$
+
+Similar to Eq. (51), we can also rewrite the Eq. (52) to:
+
+$$
+\Phi_{\text{oc}}=\Phi_{\text{in}}-\Phi_{\text{transient}} \tag{53}
+$$
+
+The term $\Phi_{\text{transient}}$, separates itself from the energy flux from wind to wave $\Phi_{\text{in}}$, can be considered as the impacts from transient surface wave processes.
+
+Furthermore, the energy flux from wind to wave can be written to separate high- and low-frequency components:
+
+$$
+\begin{align}
+\Phi_{\text{in}}&=\rho_w g\int_{0}^{2\pi} \int_{0}^{\infty}\hat S_{\text{in}} \,\; d\omega \, d\theta \\
+&=\rho_w g\int_{0}^{2\pi} \int_{0}^{\omega_c}\hat S_{\text{ds}} \,\; d\omega \, d\theta + \rho_w g\int_{0}^{2\pi} \int_{\omega_c}^{\infty}\hat S_{\text{in}} \,\; d\omega \, d\theta \\
+&= {\Phi_{\text{in}}}_{\text{lf}}+{\Phi_{\text{in}}}_{\text{hf}} \tag{54}
+\end{align}
+$$
+
+The high-frequency ($\omega>\omega_c$) contribution to the energy flux is parameterised following the same approach as for the kinematic wave induced stress (Eq. (5.15) in (ECMWF, 2024)):
+
+$$
+{\Phi_{\text{in}}}_{\text{hf}}=\rho_a\frac{(2\pi)^4f_c^5}{g}u_*^2\int_{0}^{2\pi}F(f_c,\theta)[\text{max}(\cos{(\theta-\phi),0})]^2 \frac{\beta_m}{\kappa^2}\int_{\omega_c}^{\infty}\frac{d\omega}{\omega^2}\mu_{\text{hf}}\ln^4{(\mu_{\text{hf}})} \, \; d\theta \tag{55}
+$$
+
+In Eq. (55), the integral over directions can be evaluated using the prognostic part of the spectrum, whereas the second integral is only function of $u_*$ and the Charnock parameter. It can therefore be tabulated beforehand. Note that the integration is bounded because $\mu_{\text{hf}}\le 1$. The high-frequency component of energy flux goes into the ocean column is:
+
+$$
+{\Phi_{\text{oc}}}_{\text{hf}}=\frac{\beta_m}{\kappa^2}\sqrt{\frac{z_0}{g}}\int_{\gamma_c}^{\infty}\frac{d\gamma}{\gamma^2}\mu_{\text{hf}}\ln^4{(\mu_{\text{hf}})} \, \; d\theta, \quad \quad \gamma_c=\text{max}\big(\omega_c, x_0\frac{g}{u_*} \big)\sqrt{\frac{z_0}{g}}  \tag{56}
+$$
+
+where for typical values of the Charnock parameter, $x_0\sim0.05$. Since CY45R1 (June 2018), it was found that it was as numerically efficient to compute the integral in Eq. (56) following the variable transformation $X = \ln(\gamma)$ and only a few discretised points using the Simpson integration method.
+
+The archived energy fluxes were originally normalised by the product of the air density and the cube of the friction velocity in the air ($u_∗$). Hence the normalised energy flux into waves (parameter  140211) is obtained from Eq. (54) divided by $\rho_a u_∗^3$. However, we now also produce the actual energy flux (parameter 140105). Similarly, the normalised energy flux into ocean (parameter 140212) is obtained from normalising Eq. (52) and we now also produce the U- and V- components of the ocean side stress (parameters 140103 and 140104). The normalised stress into ocean (parameter 140214) is derived from (10.35) by dividing it with the atmospheric stress $\tau_a=\rho_a u_*^2$.
 
 
 
 ---
 # Concluding Remark 
-## For ICON-Waves
+## ICON-Waves
+### Summarised Formula set
 Formulas are referenced from [ICON-Short-Overview]([[ICON-waves_Short-Overview_and_Current-Status#Wave-ocean coupling]])
 - Surface **density-normalised wind stress** ($\bar \rho_a = \tau_a / \rho_a$):
   $$
-	\bar \tau_a = u_*^2 =\bigg(\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln(\frac{z_{\text{obs}}+z_o}{{z_o}})}\bigg)^2
+	\bar \tau_a = u_*^2 =\bigg(\frac{\kappa\mathbf{U}(z_{\text{obs}})}{\ln(\frac{z_{\text{obs}}+z_o}{{z_o}})}\bigg)^2 \tag{57}
 	$$
 - **Wave stress**:
   $$
 	  \begin{align}
 	  \tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta 
-	  &=\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta \\
+	  &=\epsilon^{-1}g\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}S_{\text{in}}\;d\omega d\theta \tag{58}\\
 	  &=\frac{1}{\rho_a}(\tau_{\text{in}})
 	  \end{align}
 	$$
@@ -558,22 +610,23 @@ Formulas are referenced from [ICON-Short-Overview]([[ICON-waves_Short-Overview_a
 	
 - Wind input source function:
   $$
-	  S_{\text{in}}=\gamma N= \omega\epsilon \beta x^2 
+	  S_{\text{in}}=\gamma N= \omega\epsilon \beta x^2 \tag{59}
 	$$
-	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$
+	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$. See details in [Eq. (28)]([[Note_Wave-induced-stress_and_Young-waves#Wind Input (“Wind stress”, “atmospheric stress”)]])
 	
 - **Sea-state-dependent Charnock number:**
   $$
-	\alpha = \frac{\hat \alpha}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}
+	\alpha = \frac{\hat \alpha}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}} \tag{60}
 	$$
 - **Background roughness length**:
   $$
-	z_b=\frac{\alpha \bar\tau_{\alpha}}{g} 
+	z_b=\frac{\alpha \bar\tau_{\alpha}}{g} \tag{61}
 	$$
 - **Sea surface roughness length**:
   $$
-	z_o=\frac{z_b}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}=\frac{\alpha u_*^2}{g\sqrt{1-\frac{\tau_w}{u_*^2}}}
+	z_o=\frac{z_b}{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}}=\frac{\alpha u_*^2}{g\sqrt{1-\frac{\tau_w}{u_*^2}}} \tag{62}
 	$$
+	
 
 
 ### Important Comment
@@ -596,7 +649,7 @@ The terms refer to the development stage of the wave field relative to the local
 
 Define the wave age (dimensionless)
 
-$$ \begin{equation} \text{Wave age} = \frac{c_p}{U_{\text{10}}} \tag{6}\end{equation} $$
+$$ \begin{equation} \text{Wave age} = \frac{c_p}{U_{\text{10}}} \end{equation} $$
 
 where:
 - $c_p$: phase speed of the dominant (spectral peak) waves
