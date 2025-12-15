@@ -21,6 +21,14 @@ The note is referring to multiple source of information:
 ----------
 # The Kinematic Part of the Energy Balance Equation
 ## Basic Equations
+### Basic of Waves
+- Relationship between wavelength, wavenumber and frequency
+	- wavelength: $\lambda$
+	- wavenumber: $k=\frac{2\pi}{\lambda}$
+	- period: $T$ → time for one full cycle → crest-to-crest
+	- Frequency:
+	    - ordinary frequency (cycles per second): $f=\frac{1}{T}$
+	    - angular frequency (radians per second): $\omega=2\pi f=\frac{2\pi}{T}$
 
 Please find the below contents referenced to Janssen, 2004
 Janssen, P. (2004). _The Interaction of Ocean Waves and Wind_. Cambridge University Press.
@@ -361,8 +369,6 @@ The idea for improvement is because:
 - When considering the wave model, the wind stress (total momentum flux from the wind) at the ocean surface is not only transferred directly into ocean interior — part of it goes into surface gravity waves. The wave is numerically considered as a ‘mediator’ between the atmosphere and ocean (Wu et al., 2019, 2022)
 - Hence, the surface stress (momentum flux) felt by the ocean interior is the total surface stress applied by the atmosphere minus the net stress going into the waves,  (Janssen et al., 2013)
 - “The momentum flux to the ocean column, denoted by $\tau_{oc}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_a - \tau_{in}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{ds}$.” (ECMWF, 2024, p. 99)
- 
- More details will be summarised in later section.
 
 ## Dissipation due to wave breaking
 **White capping dissipation** (often denoted $S_{ds}$​) is the loss of wave energy due to **wave breaking** in deep water, i.e. the formation of whitecaps on the ocean surface. Hasselmann (1973) summarised that: “It is generally believed that **white capping is the dominant dissipative mechanism in a wave field at moderate and higher wind speeds**, simply because other dissipative process such as molecular viscosity or turbulence appear to be inadequate to remove the energy which is know to be imparted to the waves by the wind”
@@ -422,13 +428,13 @@ $$
 F(\omega,\theta)=\frac{k}{c_g}F(k,\theta) \tag{35}
 $$
 
-where $c_g=\frac{\partial \omega}{\partial k}$ is the group velocity. ~={red}==**The frequency spectrum is thus gives the energy distribution of the ocean waves over angular frequency $\omega$ and propagation direction $\theta$.==**=~ Regarding the directional distribution of waves conventional buoys provide only limited information. It is more common to observe the one-dimensional spectrum defined as:
+where $c_g=\frac{\partial \omega}{\partial k}$ is the group velocity. ==**The frequency spectrum is thus giving the energy distribution of the ocean waves over angular frequency $\omega$ and propagation direction $\theta$.==** Regarding the directional distribution of waves conventional buoys provide only limited information. It is more common to observe the one-dimensional spectrum defined as:
 
 $$
 F(\omega)=\int F(\omega, \theta)\; d\theta \tag{36}
 $$
 
-**The frequency spectrum is obtained by means of a straightforward *Fourier transformation* of the time series for the surface elevation** $\eta$ . As far as notation is concerned we will use the same symbol for the various forms of the  spectrum, namely F ; the distinction should be clear from their arguments, $F(\mathbf{k}), F(\omega,\theta), F(\omega)$.
+==**The frequency spectrum is obtained by means of a straightforward *Fourier transformation* of the time series for the surface elevation**== $\eta$ . As far as notation is concerned we will use the same symbol for the various forms of the  spectrum, namely F ; the distinction should be clear from their arguments, $F(\mathbf{k}), F(\omega,\theta), F(\omega)$.
 
 
 ## Recall the Action Density Balance Equation
@@ -446,16 +452,16 @@ $$
 
 In the case of spherical coordinates, the operator $d/dt$ is given by Eq. (7).
 
-While the source terms are changed as well, for example: $\hat S_{\text{in}}=gS_{\text{in}}/\omega$. 
-- $S_{\text{in}}$: describes the **generation of ocean waves by wind** and therefore represents the momentum and energy transfer from air to ocean waves.
-- $S_{\text{ds}}$: describes the **dissipation of waves** by processes such as white-capping, large scale breaking eddy-induced damping. Also represents the injecting of momentum flux from ocean waves into the ocean
-- **$S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** The nonlinear transfer conserves total energy and momentum and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
-- $S_{\text{bot}}$: **bottom dissipation** due to bottom friction
+While the source terms are changed as well, for example: $\hat S_{\text{in}}=gS_{\text{in}}/\omega$.
+- $\hat S_{\text{in}}$: describes the **generation of ocean waves by wind** and therefore represents the momentum and energy transfer from air to ocean waves.
+- $\hat S_{\text{ds}}$: describes the **dissipation of waves** by processes such as white-capping, large scale breaking eddy-induced damping. Also represents the injecting of momentum flux from ocean waves into the ocean
+- **$\hat S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** The nonlinear transfer conserves total energy and momentum and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
+- $\hat S_{\text{bot}}$: **bottom dissipation** due to bottom friction
 
 Noted that Eq. (38) is the one considering the influence of currents and bottom drag to the ocean waves. <span style="background:#fff88f">When consider the surface stresses, the bottom dissipation source term is neglected</span>.
 
 
-## Momentum and Energy Flux at Air-sea Interface
+## Momentum/Energy Flux at Air-sea Interface
 At air-sea interface, the bottom dissipation due to bottom friction is neglected.
 The total wave momentum $M$ depends on the variance spectrum $F(\omega, \theta)$ and is defined as;
 
@@ -471,29 +477,106 @@ The momentum fluxes to and from the wave field are given by the rate of change i
 The wind-induces stress, which is also called “wind-stress” or “wind-to-wave stress”. It represents the momentum flux from the wind ($S_{\text{in}}$) that are used for the generation of ocean waves. 
 Given by:
 
-$$ \begin{equation} \mathbf{\tau_{\text{in}}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}S_{\text{in}}(\omega, \theta) \,\; d\omega \, d\theta \end{equation} \tag{40} $$
+$$ \begin{equation} \mathbf{\tau_{\text{in}}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}\hat S_{\text{in}}(\omega, \theta) \,\; d\omega \, d\theta \end{equation} \tag{40} $$
 
 Similarly, the energy flux from wind to waves is defined by:
 
 $$
- \Phi_{\text{in}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} S_{\text{in}}(\omega, \theta) \,\; d\omega \, d\theta \tag{41} 
+ \Phi_{\text{in}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty}\hat S_{\text{in}}(\omega, \theta) \,\; d\omega \, d\theta \tag{41} 
 $$
 
 ### Dissipation stress & Energy Flux From Waves to Ocean
 The Dissipation stress (at the surface) describes the dissipation of waves by processes at the air-sea interface. It shares the same structure as the wind-induced stress:
 
 $$
- \mathbf{\tau_{\text{ds}}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}S_{\text{ds}}(\omega, \theta) \,\; d\omega \, d\theta \tag{42} 
+ \mathbf{\tau_{\text{ds}}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf{k}}{\omega}\hat S_{\text{ds}}(\omega, \theta) \,\; d\omega \, d\theta \tag{42} 
 $$
 
 Similarly, the energy flux from waves to ocean is defined by:
 
 $$
- \Phi_{\text{ds}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty} S_{\text{ds}}(\omega, \theta) \,\; d\omega \, d\theta \tag{43} 
+ \Phi_{\text{ds}} = \rho_w g \int_{0}^{2\pi} \int_{0}^{\infty}\hat S_{\text{ds}}(\omega, \theta) \,\; d\omega \, d\theta \tag{43} 
 $$
 
 
-### Seperation: Low-frequency and High-frequency
+### Separation: Low-frequency and High-frequency
+It is important to note that while both the wind stress direction and momentum fluxes are mainly determined by the high-frequency part of the wave spectrum, the energy flux is to some extent also determined by the low-frequency waves (ECMWF, 2024)
+
+The ~={red}**prognostic frequency range**=~ is limited by practical considerations such as restrictions on computation time, but also by the consideration that the high-frequency part of the dissipation source function is not well-known. IN the ECWMF wave model the **high-frequency limit** $\omega_c=2\pi f_c$ is set as:
+
+$$
+f_c=\text{min} [ f_{\text{max}}, 2.5\langle f \rangle_{\text{windsea}}] \tag{44}
+$$
+
+Thus, the high-frequency extent of the prognostic region is scaled by the mean frequency $\langle f \rangle_{\text{windsea}}$ of the local wind-sea. A dynamic high-frequency cut-off, $f_c$, rather than a fixed cut-off at $f_\text{max}$, corresponding to the last discretised frequency, is necessary to avoid excessive disparities in the response time scales within the spectrum. 
+This high-frequency cut-off is also discussed in the study of Stokes drift profile by (Breivik et al., 2014). Can find the note [here]([[Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014#High-Frequency Contribution to the Profile]]).
+
+In the ~={red}**diagnostic frequency range**=~, $\omega >\omega_c$, the wave spectrum is given by Phillips’s $\omega^{-5}$ power law. For this to be the case, **it is assumed that there is a balance between input, dissipation and the flux due to non linear wave interactions in the diagnostic frequency range**. In practice, this means that all energy and momentum going into the high-frequency rage of the spectrum, either by wind input or non-linear transfer, is dissipated, and is therefor directly transferred to the ocean column:
+
+$$
+\int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}}+\hat S_{\text{nl}})\;d\omega d\theta=0 \tag{45}
+$$
+
+and for the energy flux:
+
+$$
+\int_{0}^{2\pi}\int_{\omega_c}^{\infty} (\hat S_{\text{in}}+\hat S_{\text{ds}}+\hat S_{\text{nl}})\;d\omega d\theta=0 \tag{46}
+$$
+
+### Conservation of Momentum/Energy When Integrate Nonlinear Transfer
+An important aspect of the nonlinear wave-wave interaction is that when integrate the nonlinear transfer source term $\hat S_{\text{nl}}$ over all frequency and directions, the total momentum, energy and wave-action are conserved. 
+
+This statement comes from fundamental properties of resonant nonlinear wave-wave interactions in the theory of surface gravity waves. (Hasselmann, 1962) explicitly shows that four-wave resonant interactions conserve total energy, total momentum and total wave action. The information can also be found in (Dynamics and Modelling of Ocean Waves, n.d.) by Komen et al. 1994.
+
+The formula is given by:
+
+$$
+\int_{0}^{2\pi} \int_{0}^{\infty} \frac{\mathbf k}{\omega}\hat S_{\text{nl}}\;d\omega d\theta=0 \tag{47}
+$$
+
+The above relation can be separated into high- and low-frequency range:
+
+$$
+\int_{0}^{2\pi} \int_{0}^{\omega_c} \frac{\mathbf k}{\omega}\hat S_{\text{nl}}\;d\omega d\theta + \int_{0}^{2\pi} \int_{\omega_c}^{\infty} \frac{\mathbf k}{\omega}\hat S_{\text{nl}}\;d\omega d\theta =0 \tag{48}
+$$
+
+### Momentum/Energy flux to the Ocean Column
+The momentum flux to the ocean column, denoted by $\tau_{\text{oc}}$, is the sum of the flux transferred by turbulence across the air-sea interface which was not used to generate waves ($\tau_{\text{a}} - \tau_{\text{in}}$) and the momentum flux transferred by the ocean waves due to wave breaking $\tau_{\text{ds}}$.
+
+As a consequence:
+
+$$
+\tau_{\text{oc}}=\tau_{\text{a}} - \tau_{\text{in}}-\tau_{\text{ds}} \tag{49}
+$$
+
+Utilising:
+- The assumed balance at the high frequencies (**Eq. (45)**)
+- the conservation of momentum for $\hat S_{\text{nl}}$ when integrated over all frequencies and directions (**Eq. (48)**)
+one can finds:
+
+$$
+\begin{align}
+\tau_{\text{oc}}
+&=\tau_{\text{a}} - \tau_{\text{in}}-\tau_{\text{ds}} \\
+&=\tau_{\text{a}} - (\tau_{\text{in}}+\tau_{\text{ds}}) \\
+&=\tau_{\text{a}} - \rho_wg\bigg(\int_{0}^{2\pi}\int_{0}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}} +\hat S_{\text{ds}})\;d\omega d\theta  \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta + \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta - \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}\hat S_{\text{nl}}\;d\omega d\theta \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \bigg(\int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}})\;d\omega d\theta + \int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}\hat S_{\text{nl}}\;d\omega d\theta \bigg) \\
+&=\tau_{\text{a}} - \rho_wg \int_{0}^{2\pi}\int_{0}^{\omega_c} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}} + \hat S_{\text{nl}})\;d\omega d\theta \tag {50}
+\end{align}
+$$
+
+Eq. (50) can then be summarised as:
+
+$$
+\tau_{\text{oc}}=\tau_{\text{a}}-\tau_{\text{transient}} \tag{51}
+$$
+
+The transient term $\tau_{\text{transient}}$ is the explicit contributions from surface waves, separates from the atmospheric stress. 
+
+
+
 
 
 
