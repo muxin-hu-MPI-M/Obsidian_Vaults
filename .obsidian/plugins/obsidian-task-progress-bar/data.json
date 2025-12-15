@@ -1028,7 +1028,7 @@
       "ws_1764521105317_ben68g2e4": {
         "id": "ws_1764521105317_ben68g2e4",
         "name": "Default",
-        "updatedAt": 1765058119724,
+        "updatedAt": 1765815359497,
         "settings": {
           "fluentFilterState": {
             "inbox": {
@@ -1125,23 +1125,9 @@
             },
             "tags": {
               "filters": {},
-              "selectedProject": "PhD_general",
               "advancedFilter": {
                 "rootCondition": "all",
-                "filterGroups": [
-                  {
-                    "id": "fluent-proj-group-1764672316196",
-                    "groupCondition": "all",
-                    "filters": [
-                      {
-                        "id": "fluent-proj-filter-1764672316196",
-                        "property": "project",
-                        "condition": "is",
-                        "value": "PhD_general"
-                      }
-                    ]
-                  }
-                ]
+                "filterGroups": []
               },
               "viewMode": "list"
             },

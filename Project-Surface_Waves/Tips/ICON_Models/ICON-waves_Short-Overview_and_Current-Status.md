@@ -6,6 +6,7 @@ Last Eddited: 2025-11-27
 ---
 # [[2025-11-05]]
 ## Short Overview of ICON-waves
+
 ![[Screenshot 2025-11-05 at 11.39.28.png]]
 
 ![[Screenshot 2025-11-05 at 11.40.03.png]]
