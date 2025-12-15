@@ -588,7 +588,6 @@ where for typical values of the Charnock parameter, $x_0\sim0.05$. Since CY45R1 
 The archived energy fluxes were originally normalised by the product of the air density and the cube of the friction velocity in the air ($u_∗$). Hence the normalised energy flux into waves (parameter  140211) is obtained from Eq. (54) divided by $\rho_a u_∗^3$. However, we now also produce the actual energy flux (parameter 140105). Similarly, the normalised energy flux into ocean (parameter 140212) is obtained from normalising Eq. (52) and we now also produce the U- and V- components of the ocean side stress (parameters 140103 and 140104). The normalised stress into ocean (parameter 140214) is derived from (10.35) by dividing it with the atmospheric stress $\tau_a=\rho_a u_*^2$.
 
 
-
 ---
 # Concluding Remark 
 ## ICON-Waves

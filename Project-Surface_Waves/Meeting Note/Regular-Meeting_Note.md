@@ -24,13 +24,21 @@ Last Eddited: 2025-11-27T09:57:00
 	    ```
 - **Discussion**: Wave-induced processes and their effects
 	- maybe we first choose a terminology to describe this long set? (e.g., wave-effects)
-	- Governing equations for 4 main wave-modified processes:
+	- **Governing equations** for 4 main wave-modified processes:
 		- momentum flux
 		- Stokes drift related effects 
 			- Langmuir Turbulence
 			- Stokes-Coriolis force
 			- advection by Stokes drift
 		- surface roughness
+- For later analysis:
+	- start from simple comparison for the sensitivity test for simulations with different `c_k`
+	- define the sections: coastal upwelling region, and a broader region of interests of SE Pacific
+		- focus on domain-averaged value on: potential T, density, other output in TKE. And most important, focusing on the profile of these values
+		- suggestions from Nils:
+			- can have a comparisons of certain values in a depth * time space, can have a look over the time dependency (trend, seasonality)
+- ask Stephan for the weird simulations of `c_k=0.01`, is this often that the simulation crashes?
+
 
 # [[2025-12-10]] 
 ## Noel’s group meeting
