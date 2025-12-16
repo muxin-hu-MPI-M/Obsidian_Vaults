@@ -78,21 +78,61 @@ elif [ ${LEV} == L128 ] ; then
 
 # TKE Output Table
 
-|**Name**|**Long name**|**Physical Meaning**|**Unit**|
-|---|---|---|---|
-|**tke**|turbulent kinetic energy|Total turbulent energy per unit mass.|m2 s-2|
-|**vmix_dummy_1**|vmix_dummy_1|-|fixme|
-|**vmix_dummy_2**|vmix_dummy_2|-|fixme|
-|**vmix_dummy_3**|vmix_dummy_3|-|fixme|
-|**tke_Tbpr**|TKE tend bpr|TKE tendency due to buoyancy production|m2 s-3|
-|**tke_Tspr**|TKE tend spr|TKE tendency due to shear production|m2 s-3|
-|**tke_Tdif**|TKE tend dif|TKE tendency due to diffusion|m2 s-3|
-|**tke_Tdis**|TKE tend dis|TKE tendency due to dissipation|m2 s-3|
-|**tke_Twin**|TKE tend win|TKE tendency due to wind forcing|m2 s-3|
-|**tke_Tiwf**|TKE tend iwf|TKE tendency due to internal wave forcing|m2 s-3|
-|**tke_Tbck**|TKE tend bck|TKE tendency due to background mixing|m2 s-3|
-|**tke_Ttot**|TKE tend tot|Total TKE tendency|m2 s-3|
-|**tke_Lmix**|TKE mixing length|(Kolmogorov’s) Mixing length|m|
-|**tke_Pr**|TKE Prandtl number|Turbulent Prandtl number|-|
+| **Name**         | **Long name**            | **Physical Meaning**                      | **Unit** |
+| ---------------- | ------------------------ | ----------------------------------------- | -------- |
+| **tke**          | turbulent kinetic energy | Total turbulent energy per unit mass.     | m2 s-2   |
+| **vmix_dummy_1** | vmix_dummy_1             | -                                         | fixme    |
+| **vmix_dummy_2** | vmix_dummy_2             | -                                         | fixme    |
+| **vmix_dummy_3** | vmix_dummy_3             | -                                         | fixme    |
+| **tke_Tbpr**     | TKE tend bpr             | TKE tendency due to buoyancy production   | m2 s-3   |
+| **tke_Tspr**     | TKE tend spr             | TKE tendency due to shear production      | m2 s-3   |
+| **tke_Tdif**     | TKE tend dif             | TKE tendency due to diffusion             | m2 s-3   |
+| **tke_Tdis**     | TKE tend dis             | TKE tendency due to dissipation           | m2 s-3   |
+| **tke_Twin**     | TKE tend win             | TKE tendency due to wind forcing          | m2 s-3   |
+| **tke_Tiwf**     | TKE tend iwf             | TKE tendency due to internal wave forcing | m2 s-3   |
+| **tke_Tbck**     | TKE tend bck             | TKE tendency due to background mixing     | m2 s-3   |
+| **tke_Ttot**     | TKE tend tot             | Total TKE tendency                        | m2 s-3   |
+| **tke_Lmix**     | TKE mixing length        | (Kolmogorov’s) Mixing length              | m        |
+| **tke_Pr**       | TKE Prandtl number       | Turbulent Prandtl number                  | -        |
 
 **For the TKE-Scheme in ICON, please refers to [ICON TKE Parameterisation](https://www.notion.so/ICON-TKE-Parameterisation-29a69691c52b80e7888ce8d81a77edb5?pvs=21)**
+
+
+# ICON-XPP: standard output
+## Ocean
+### `oce_def`
+Standard output for ocean default variables
+
+![[Screenshot 2025-12-16 at 09.59.08.png | center]]
+
+
+### `oce_fx`
+This is the file for grid cell information, and masks (e.g., sea_land_mask)
+
+![[Screenshot 2025-12-16 at 10.05.55.png]]
+
+
+### `oce_moc`
+The standard ocean output for meridional overturning circulation, heat/freshwater/salt transports
+
+![[Screenshot 2025-12-16 at 10.11.03.png]]
+
+
+### `oce_mon`
+The output for global variables in (time,) dimension. For example, the AMOC strength at 26 N; the global potential energy, global mean sea surface temperature.
+
+![[Screenshot 2025-12-16 at 10.22.34.png]]
+
+
+### `oce_upp`
+Variables that are important in the upper ocean
+
+![[Screenshot 2025-12-16 at 10.28.31.png]]
+
+
+## Atmosphere
+### `atm_2d`
+Two-dimensional output for surface data or column-integrated data, including sea level pressure, total column integrated water vapour.
+
+![[Screenshot 2025-12-16 at 10.31.53.png]]
+

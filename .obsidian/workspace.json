@@ -78,12 +78,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regular-Meeting_Note"
+              "title": "ICON_Output_Reference"
             }
           }
         ],
@@ -222,13 +222,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Regular-Meeting_Note"
+              "title": "Outline of ICON_Output_Reference"
             }
           },
           {
@@ -252,11 +252,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 258.5
+    "width": 235.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -277,12 +277,20 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "d35a95c8176ba93e",
   "lastOpenFiles": [
+    "Attachments/Screenshot 2025-12-16 at 10.31.53.png",
+    "Attachments/Screenshot 2025-12-16 at 10.28.31.png",
+    "Attachments/Screenshot 2025-12-16 at 10.22.34.png",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+    "Attachments/Screenshot 2025-12-16 at 10.11.03.png",
+    "Attachments/Screenshot 2025-12-16 at 10.05.55.png",
+    "Attachments/Screenshot 2025-12-16 at 09.59.08.png",
+    "Attachments/Screenshot 2025-12-16 at 09.58.24.png",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "[[Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Attachments/Screenshot 2025-12-15 at 09.42.08.png",
     "QuickCapture.md",
@@ -299,13 +307,7 @@
     "Attachments/9YGKI7C5.png",
     "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
     "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 1.jpeg",
-    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 2.jpeg",
-    "Attachments/IMG_2967.jpeg",
-    "Attachments/IMG_3785.jpeg",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
-    "Attachments/Screenshot 2025-10-19 at 22.23.17.png",
-    "Attachments/Screenshot 2025-10-20 at 10.29.31 1.png",
-    "Attachments/Screenshot 2025-10-16 at 14.05.05.png",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
     "PhD-General/MPI-M/Seminar Notes.md",
@@ -316,8 +318,6 @@
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Plan/Research-Gap_MindMap.md",
     "Project-Surface_Waves/Plan/Untitled mindmap 1.md",
-    "Project-Surface_Waves/Plan/ICON_Simulation_EXP-ID.md",
-    "Project-Surface_Waves/Plan/Paper-Reading_Plan.md",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
     "Zotero_import",
     "Users/muxin/Documents/ObsidianVault/Zotero_import",
