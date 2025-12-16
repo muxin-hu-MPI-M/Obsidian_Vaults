@@ -412,7 +412,7 @@ In the case of spherical coordinates, the operator $d/dt$ is given by Eq. (7).
 While the source terms are changed as well, for example: $\hat S_{\text{in}}=gS_{\text{in}}/\omega$.
 - $\hat S_{\text{in}}$: describes the **generation of ocean waves by wind** and therefore represents the momentum and energy transfer from air to ocean waves.
 - $\hat S_{\text{ds}}$: describes the **dissipation of waves** by processes such as white-capping, large scale breaking eddy-induced damping. Also represents the injecting of momentum flux from ocean waves into the ocean
-- **$\hat S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** The nonlinear transfer conserves total energy and momentum and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
+- **$\hat S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** <span style="background:#fff88f">The nonlinear transfer conserves total energy and momentum</span> and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
 - $\hat S_{\text{bot}}$: **bottom dissipation** due to bottom friction
 
 Noted that Eq. (38) is the one considering the influence of currents and bottom drag to the ocean waves. <span style="background:#fff88f">When consider the surface stresses, the bottom dissipation source term is neglected</span>.
@@ -457,7 +457,7 @@ $$
 
 
 ### Separation: Low-frequency and High-frequency
-It is important to note that while both the wind stress direction and momentum fluxes are mainly determined by the high-frequency part of the wave spectrum, the energy flux is to some extent also determined by the low-frequency waves (ECMWF, 2024)
+It is important to note that <span style="background:#fff88f">while both the wind stress direction and momentum fluxes are mainly determined by the high-frequency part of the wave spectrum, the energy flux is to some extent also determined by the low-frequency waves </span>(ECMWF, 2024)
 
 The ~={red}**prognostic frequency range**=~ is limited by practical considerations such as restrictions on computation time, but also by the consideration that the high-frequency part of the dissipation source function is not well-known. IN the ECWMF wave model the **high-frequency limit** $\omega_c=2\pi f_c$ is set as:
 
@@ -465,10 +465,10 @@ $$
 f_c=\text{min} [ f_{\text{max}}, 2.5\langle f \rangle_{\text{windsea}}] \tag{44}
 $$
 
-Thus, the high-frequency extent of the prognostic region is scaled by the mean frequency $\langle f \rangle_{\text{windsea}}$ of the local wind-sea. A dynamic high-frequency cut-off, $f_c$, rather than a fixed cut-off at $f_\text{max}$, corresponding to the last discretised frequency, is necessary to avoid excessive disparities in the response time scales within the spectrum. 
+Thus, the high-frequency extent of the prognostic region is scaled by the mean frequency $\langle f \rangle_{\text{windsea}}$ of the local wind-sea. A **dynamic** high-frequency cut-off, $f_c$, rather than a fixed cut-off at $f_\text{max}$, corresponding to the last discretised frequency, is necessary to avoid excessive disparities in the response time scales within the spectrum. 
 This high-frequency cut-off is also discussed in the study of Stokes drift profile by (Breivik et al., 2014). Can find the note [here]([[Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014#High-Frequency Contribution to the Profile]]).
 
-In the ~={red}**diagnostic frequency range**=~, $\omega >\omega_c$, the wave spectrum is given by Phillips’s $\omega^{-5}$ power law. For this to be the case, **it is assumed that there is a balance between input, dissipation and the flux due to non linear wave interactions in the diagnostic frequency range**. In practice, this means that all energy and momentum going into the high-frequency rage of the spectrum, either by wind input or non-linear transfer, is dissipated, and is therefor directly transferred to the ocean column:
+In the ~={red}**diagnostic frequency range**=~, $\omega >\omega_c$, the wave spectrum is given by Phillips’s $\omega^{-5}$ power law. For this to be the case, **it is assumed that there is a balance between input, dissipation and the flux due to non linear wave interactions in the diagnostic frequency range**. In practice, this means that all energy and momentum going into the high-frequency rage of the spectrum, either by wind input or non-linear transfer, is dissipated, and is therefore directly transferred to the ocean column:
 
 $$
 \int_{0}^{2\pi}\int_{\omega_c}^{\infty} \frac{\mathbf{k}}{\omega}(\hat S_{\text{in}}+\hat S_{\text{ds}}+\hat S_{\text{nl}})\;d\omega d\theta=0 \tag{45}

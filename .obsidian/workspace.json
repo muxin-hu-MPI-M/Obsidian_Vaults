@@ -78,16 +78,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON_Output_Reference"
+              "title": "ICON-TKE_Parameterisation"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -222,13 +222,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Output_Reference"
+              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
             }
           },
           {
@@ -277,18 +277,19 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "d35a95c8176ba93e",
+  "active": "48a035e8721b6dbd",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Attachments/Screenshot 2025-12-16 at 10.31.53.png",
     "Attachments/Screenshot 2025-12-16 at 10.28.31.png",
     "Attachments/Screenshot 2025-12-16 at 10.22.34.png",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Attachments/Screenshot 2025-12-16 at 10.11.03.png",
     "Attachments/Screenshot 2025-12-16 at 10.05.55.png",
     "Attachments/Screenshot 2025-12-16 at 09.59.08.png",
     "Attachments/Screenshot 2025-12-16 at 09.58.24.png",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "[[Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
@@ -306,7 +307,6 @@
     "].md",
     "Attachments/9YGKI7C5.png",
     "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
-    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c 1.jpeg",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
