@@ -339,10 +339,13 @@ It is the wave breaking caused by wave steepness and wind–wave interaction.
 Janssen et al. (1989) realised that the wave dissipation source function has to be adjusted in order to obtain a proper balance at the high frequencies. The dissipation source term of Hasselmann (1974) is thus extended as:
 
 $$
-S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31}
+S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31a}
 $$
 
 where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see [Eq. (2)]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
+
+**However**, this parameterisation gives unrealistic variations of the wind sea dissipation in the presence of swell (Ardhuin et al., 2007): the windsea dissipation can be much reduced by the addition of swell. This spurious effect contributes to the larger scatter in the western part of the ocean basins where are dominated by wind seas, with the occasional presence of swells.
+Today’s understanding of wave breaking and swell dissipation processes, although not complete, have led to parameterisations in which the steepness is more local in spectral space (Ardhuin, 2024)
 
 ## Bottom dissipation
 Dissipation owing to bottom friction is not discussed here because the details of its parameterisation were presented in Komen et al. (1994, chapter II) as well as the relative merits of this approach being fully discussed. We merely quote the main result:
