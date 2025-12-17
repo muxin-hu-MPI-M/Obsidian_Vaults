@@ -16,10 +16,7 @@
                 "currentWorkspace": "ws_1764521105317_ben68g2e4",
                 "viewMode": "list",
                 "viewModeByViewId": {
-                  "projects": "list",
-                  "review": "list",
-                  "calendar": "list",
-                  "kanban": "list"
+                  "calendar": "list"
                 },
                 "searchQuery": "",
                 "filters": {},
@@ -32,34 +29,6 @@
           },
           {
             "id": "48a035e8721b6dbd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_Wave-induced-stress_and_Young-waves"
-            }
-          },
-          {
-            "id": "557a68a75b1b2451",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Regular-Meeting_Note"
-            }
-          },
-          {
-            "id": "abf188da6dc53009",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,12 +47,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON-TKE_Parameterisation"
+              "title": "Note_Wave-induced-stress_and_Young-waves"
             }
           }
         ],
@@ -144,7 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 234.50247192382812
+    "width": 240.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -222,13 +191,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -237,8 +206,8 @@
             "state": {
               "type": "tg-timeline-sidebar-view",
               "state": {},
-              "icon": "calendar-clock",
-              "title": "Timeline"
+              "icon": "lucide-ghost",
+              "title": "tg-timeline-sidebar-view"
             }
           },
           {
@@ -252,11 +221,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 235.5
+    "width": 243.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -277,15 +246,16 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "48a035e8721b6dbd",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Attachments/Screenshot 2025-12-16 at 10.31.53.png",
     "Attachments/Screenshot 2025-12-16 at 10.28.31.png",
     "Attachments/Screenshot 2025-12-16 at 10.22.34.png",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Attachments/Screenshot 2025-12-16 at 10.11.03.png",
     "Attachments/Screenshot 2025-12-16 at 10.05.55.png",
     "Attachments/Screenshot 2025-12-16 at 09.59.08.png",
@@ -295,7 +265,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Attachments/Screenshot 2025-12-15 at 09.42.08.png",
     "QuickCapture.md",
-    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_11-Small_Scale_Turbulence.md",
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",

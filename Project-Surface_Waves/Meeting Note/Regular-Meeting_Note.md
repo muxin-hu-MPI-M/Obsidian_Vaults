@@ -7,6 +7,34 @@ tags:
 Last Eddited: 2025-11-27T09:57:00
 ---
 
+# [[2025-12-17]]
+## ICON-Waves focus group: Meeting 2
+- the documentation for the ICON-Wave discussion group:[link]([[https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group/-/boards]]), comment and track on this website
+- Eva Boza:
+	- how the wave and rain will affect the air-sea CO2 exchanges
+	- modify the parameterisation of the flux, which is currently only link to the wind input (U_10), no wave contribution
+		- also for the sensitivity test of different combination of wind, rain, wave and have a look over the CO2 exchange fluxes
+		- will focus on the global and then move to the regional
+- Update on the wave stress on the ICON-ocean:
+	- wave to ocean stress looks alike to the atmospheric stress, despite a bit different magnitude
+	- next step; dynamic coupling between waves and oceans (including logical switch, allow to switch which mode we want to use)
+		- Nils will handle the additional filed ‘forcing_stress’ in ICON-O which can be set to wind stress or the wave stress depending on the simulation mode
+		- The current ICON-Wave won’t update the advanced dissipation source term in the first Phase (since the ICON-Wave is basically the WAM)
+			- I can modify to play
+	- The ERA5-forced ICON-Waves standalone run → have a look over the output!!
+		- but this is not physically coupling! the ERA5 only change the boundary conditions
+			- ERA5 provides the significant wave height
+		- check the output namelist
+		- the stokes drift from ICON-Waves use the same vertical coordinates as ICON-O
+		- EAR5-forced ICON-O standalone run for full 2024? link? Nils will provide in the website
+	- We should provide a proposal to DKRZ for running ICON-Waves in Levante
+
+
+# [[2025-12-16]]
+## Regular meeting with Noel
+#presenter/Noel_Gutierrez-Brizuela 
+
+
 # [[2025-12-15]]
 ## Regular meeting with Nils
 #presenter/Nils_Brüggemann 
