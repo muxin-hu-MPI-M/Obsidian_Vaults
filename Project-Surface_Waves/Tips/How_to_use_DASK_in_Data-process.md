@@ -79,3 +79,20 @@ wmt_computed.to_netcdf("/path/to/wmt_output.nc")
 print("WMT calculation done!")
 
 ```
+
+
+# How to use Dask in HPC
+## Basic info
+- scale: number of SLURM jobs, (nodes)
+- cores: number of total CPU cores
+	- memory
+	- be careful with the number of cores, 200 GiB/100 cores → 2Gib per core, and your chunk size cannot be larger than 2 GiB
+- process: threads （线程数）
+
+
+## steps
+- first apply for a compute node from Levante
+- then login this compute node
+- then use Quan’s function to apply more for your calculation
+- globe.globe → find your files
+- 
