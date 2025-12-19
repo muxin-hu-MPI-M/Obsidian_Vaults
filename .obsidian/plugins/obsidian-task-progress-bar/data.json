@@ -1028,7 +1028,7 @@
       "ws_1764521105317_ben68g2e4": {
         "id": "ws_1764521105317_ben68g2e4",
         "name": "Default",
-        "updatedAt": 1765815359497,
+        "updatedAt": 1766153827938,
         "settings": {
           "fluentFilterState": {
             "inbox": {
@@ -1140,7 +1140,7 @@
               "viewMode": "list"
             }
           },
-          "fluentActiveViewId": "calendar"
+          "fluentActiveViewId": "projects"
         }
       }
     }

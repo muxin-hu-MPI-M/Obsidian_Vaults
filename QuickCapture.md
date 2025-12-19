@@ -11,3 +11,7 @@
 - [x] Finish N^2 survey 🛫 2025-12-03 16:00 📅 2025-12-03 17:00 #project/PhD_general ✅ 2025-12-06
 - [x] Meetings with Helmuth for mkexp in icon-xpp 🛫 2025-12-04 14:00 📅 2025-12-04 15:00 ⏫ #project/surfwaves ✅ 2025-12-06
 - [x] Finish the AI-Training course from MPG #project/PhD_general 🛫 2025-12-04 11:45 📅 2025-12-04 12:15 ✅ 2025-12-06
+- [x] mux0001_b5b7 (default TKE scheme) simulation: 1300-1350 ⏫ #project/surfwaves ✅ 2025-12-19
+- [/] mux0001_b5b7_c-k_03 Simualtion (change c_k=0.3): 1300-1350 🔺 #project/surfwaves
+- [/] mux0001_b5b7 with additional TKE output: 1350-1355 #project/surfwaves
+- [/] Analysis on `mux0001_b5b7` in upper-ocean and air-sea interface; Comparisons between default, c_k=0.1 and c_k=1.0. Quantities: to, so, rhopot, mass-flux #project/surfwaves
