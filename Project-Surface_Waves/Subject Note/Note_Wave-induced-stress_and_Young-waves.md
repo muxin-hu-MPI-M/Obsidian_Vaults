@@ -252,7 +252,7 @@ $$
 \end{align}
 $$
 
-The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview]([[ICON-waves_Short-Overview_and_Current-Status]])
+The formula is according to the ECWMF paper: (ECMWF, 2024); part of the understanding comes from the [ICON-Wave short overview](ICON-waves_Short-Overview_and_Current-Status)
 
 where:
 - $\tau_a$: wind stress, is considered as the total momentum flux from the wind that applies to the air-sea interface
@@ -342,7 +342,7 @@ $$
 S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31a}
 $$
 
-where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see [Eq. (2)]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
+where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see [Eq. (2)](Note_Wave-induced-stress_and_Young-waves#Action density spectrum)), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
 
 **However**, this parameterisation gives unrealistic variations of the wind sea dissipation in the presence of swell (Ardhuin et al., 2007): the windsea dissipation can be much reduced by the addition of swell. This spurious effect contributes to the larger scatter in the western part of the ocean basins where are dominated by wind seas, with the occasional presence of swells.
 Today’s understanding of wave breaking and swell dissipation processes, although not complete, have led to parameterisations in which the steepness is more local in spectral space (Ardhuin, 2024)
@@ -374,7 +374,7 @@ See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 # Wave Forecasting and Sea-state Impacts on Atmosphere and ocean
 
 ## Two-dimensional wave spectrum
-In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in chapter [“Action density spectrum”]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
+In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in chapter [“Action density spectrum”](Note_Wave-induced-stress_and_Young-waves#Action density spectrum)). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
 
 Thus, we can apply the two dimensional frequency spectrum at each grid cell, defined as:
 
@@ -403,7 +403,7 @@ we recall **action density balance equation**, but this time we utilising the fr
 $$
 F(\omega,\theta)=\frac{gN}{\omega} \tag{37}
 $$
-Noted that this relation is different from that of wavenumber spectrum, specified in [Eq.(1)]([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]).
+Noted that this relation is different from that of wavenumber spectrum, specified in [Eq.(1)](Note_Wave-induced-stress_and_Young-waves#Action density spectrum).
 For deep water, and with additional source terms, the balance equation can become;
 
 $$ 

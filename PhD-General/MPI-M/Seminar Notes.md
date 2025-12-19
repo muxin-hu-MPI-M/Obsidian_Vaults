@@ -5,6 +5,36 @@ tags:
 Last Eddited: 2025-11-19
 ---
 
+# [[2025-12-19]] Jörn Callies Informal Talk
+#presenter/Jörn_Callies
+He is a strong candidate for the new directorship
+- how and how fast does the ocean transport heat and carbon from the surface to its interior?
+	- small scales things are important → sub-mesoscale phenomena
+- how might the ocean circulation change in the future, and how has it changed in the past
+
+**sub-mesoscale turbulence in the upper ocean**
+- submesoscale turbulence is energised by baroclinic ML instabilities, which release mesoscale potential energy
+- ML instabilities are stronger in winter than summer, causing seasonality in submesoscale turbulence 
+- kinetic energy mostly cascades upscale, with a small fraction sent to small scales at fronts
+- submesoscale turbulence is strongest in the ML, but ML turbulence plays no active role in our theories
+- ML turbulence is recognised as important, but how it affects the nonlinear submesoscale turbulence is unexplored
+- A revised understanding may have implications for vertical motion
+ 
+ **Reduced subinertial mixed-layer dynamics:**
+ - so far we consider as a frictional-geostrophic balance (dominant balance), evolution is governed by order in the mixed layer → a relationship similar to the quasi-geostrophic balance
+ - however, submesoscale represents the reduced dynamics
+
+**SWOT observations of submesoscale dynamics**
+- NASA space mission: Surface Water and Ocean Topography (SWOT), nadir altimeter with Ka-band Radar Interferometer
+- start to catch submesoscale global observations used to constrain models
+
+**Developing a better understanding of submesoscale turbulence**
+- **theory**: Explore subinertial ML dynamics (instabilities, frontogenesis energy budget, turbulent cascades); study submesoscale-mesoscale interactions (couple with QG thermocline below)
+- **LES**: simulate ML turbulence and submesoscale instabilities (test reduced dynamics, assess vertical exchange)
+- **realistic simulations**: Use high-resolution simulations to explore the dynamics in a more realistic context. Are there fundamental differences between regions? What is the large-scale impact on physics and biogeochemistry?
+- observations: test theories and simulations with SWOT data. Use theories to interpret the observations
+- 
+
 # [[2025-12-10]] Resolving weather fronts increases large-scale atmosphere-ocean coupling
 presenter: #presenter/Robert_jnglin_wills
 - longstanding question: is there predictability on seasonal to decadal timescale associated with coupled atmosphere-ocean variability in the midlatitudes
