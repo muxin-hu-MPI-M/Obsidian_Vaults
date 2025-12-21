@@ -91,7 +91,8 @@ print("WMT calculation done!")
 
 
 ## steps
-- first apply for a compute node from Levante
+- first apply for a compute node from Levante by
+  
 - then login this compute node
 - then use Quan’s function to apply more for your calculation
 - globe.globe → find your files

@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regular-Meeting_Note"
-            }
-          },
-          {
-            "id": "c6b4a59113cc3774",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Plan/Plan-Checkpoints.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Plan-Checkpoints"
+              "title": "Useful-Command"
             }
           },
           {
@@ -48,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Note_Wave-induced-stress_and_Young-waves"
             }
+          },
+          {
+            "id": "b44866ccf03a2b35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Use-DASK-on-HPC"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -185,23 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Plan-Checkpoints.md",
+                "file": "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Plan-Checkpoints"
-            }
-          },
-          {
-            "id": "3782e50955275893",
-            "type": "leaf",
-            "state": {
-              "type": "tg-timeline-sidebar-view",
-              "state": {},
-              "icon": "calendar-clock",
-              "title": "Timeline"
+              "title": "Outline of Use-DASK-on-HPC"
             }
           },
           {
@@ -215,7 +205,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -242,20 +232,25 @@
   },
   "active": "8eadf67652800bf7",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/Plan-Checkpoints.md",
-    "QuickCapture.md",
+    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+    "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
+    "Project-Surface_Waves/Tips/How_the_Coriolis-paramter_is_derived.md",
+    "Project-Surface_Waves/Tips/Coding",
+    "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
-    "PhD-General/MPI-M/Seminar Notes.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
+    "Project-Surface_Waves/Plan/ICON_Simulation_EXP-ID.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "QuickCapture.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "PhD-General/MPI-M/Seminar Notes.md",
     "[[Note_Wave-induced-stress_and_Young-waves.md",
     "[[ICON-waves_Short-Overview_and_Current-Status]].md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "[ICON-waves_Short-Overview_and_Current-Status].md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
-    "Project-Surface_Waves/Tips/Useful-Command.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
-    "Project-Surface_Waves/Tips/How_to_use_DASK_in_Data-process.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Attachments/Screenshot 2025-12-16 at 10.31.53.png",
     "Attachments/Screenshot 2025-12-16 at 10.28.31.png",
@@ -271,14 +266,9 @@
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_1-Fundamental_Laws.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_7-Gravity_Waves.md",
-    "2025-12-11.md",
-    "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
-    "[[.md",
-    "].md",
     "Attachments/9YGKI7C5.png",
     "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
-    "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
     "Database.base",
     "Attachments/TravelAuthorization_Muxin_01122025.pdf",
@@ -287,7 +277,6 @@
     "Users/muxin/Documents/ObsidianVault",
     "Users/muxin/Documents",
     "Users/muxin",
-    "Users",
     "Untitled.canvas",
     "未命名.canvas",
     "Untitled 1.canvas"
