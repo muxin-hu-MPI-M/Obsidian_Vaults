@@ -24,9 +24,9 @@ tags:
 	- [ ] select, merge and calculate time means 3D variables for last 20 years:
 		- [x] `mux0001_b5b7`
 		- [/] `mux001_b5b7_c-k_03`
-	- [ ] select and merge 2D variables for last 20 years
+	- [x] select and merge 2D variables for last 20 years
 		- [x] `mux0001_b5b7`
-		- [/] `mux001_b5b7_c-k_03`
+		- [x] `mux001_b5b7_c-k_03`
 	
 - [ ] Comparison of global climatological field between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameter (`mux0001_b5b7_c-k_03`) #project/surfwaves 
 	- [ ] global SST, SSS, MLD
