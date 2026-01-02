@@ -6,7 +6,13 @@ tags:
 ---
 # Status Tracking
 
-
+- [x] **Literature Reading I**: Narrowing scientific gap in the field of surface waves #project/surfwaves 
+	- What are surface waves?
+	- What are the remaining gaps? → Wave-induced processes on air-sea interactions in the upwelling system (see details in [1st Panel Report](Panel-Meeting_Note)
+	- How do we model surface waves?
+- [x] Familiarise myself with ICON-XPP
+- [x] 1st Panel Meeting
+- [/] Literature Reading II
 # Weekly Plan 
 ## [[2025-12-22]]
 - [x] Simulation: standard ICON-XPP piControl output; Year 1300-1350 #project/surfwaves 
@@ -29,10 +35,14 @@ tags:
 		- [x] `mux0001_b5b7`
 		- [x] `mux001_b5b7_c_k-03`
 		- [x] `mux001_b5b7_c_k-10`
-	
-- [ ] Comparison of climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameters (`mux0001_b5b7_c_k-03` and `mux0001_b5b7_c_k-10`) #project/surfwaves 
-	- [ ] Differences in global climatological SST, SSS and MLD
-	- [ ] Regional difference in profiles of potential Temperature, salinity, density
-		- [ ] Define Regional masks
 
 ## [[2025-12-29]]
+- [ ] Comparison of climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameters (`mux0001_b5b7_c_k-03` and `mux0001_b5b7_c_k-10`) #project/surfwaves 
+	- [ ] Differences in global climatological SST, SSS and MLD
+		- [ ] SST
+		- [ ] SSS
+		- [ ] MLD
+	- [ ] Regional difference in profiles of potential Temperature, salinity, density
+		- [ ] Define Regional masks for the target area
+		- [ ] 
+
