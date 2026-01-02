@@ -30,5 +30,7 @@ tags:
 	
 - [ ] Comparison of climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameter (`mux0001_b5b7_c_k-03`) #project/surfwaves 
 	- [ ] Differences in global climatological SST, SSS and MLD
-	- [ ] 
+	- [ ] Regional difference in profiles of potential Temperature, salinity, density
+		- [ ] Define Regional masks
 
+## [[2025-12-29]]
