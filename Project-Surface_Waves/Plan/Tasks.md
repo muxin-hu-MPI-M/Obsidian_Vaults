@@ -21,16 +21,16 @@ tags:
 - [x] Data post-processing: Select target 3D/2D variables, merge and time-average with `cdo` #project/surfwaves 
 	- [x] select 3D variables: to, so, rhopot, mass_flux
 	- [x] select 2D variables: tos, sos, mld
-	- [ ] select, merge and calculate time means 3D variables for last 20 years:
+	- [x] select, merge and calculate time means 3D variables for last 20 years:
 		- [x] `mux0001_b5b7`
 		- [x] `mux001_b5b7_c_k-03`
-		- [ ] `mux001_b5b7_c_k-10`
-	- [ ] select and merge 2D variables for last 20 years
+		- [x] `mux001_b5b7_c_k-10`
+	- [x] select and merge 2D variables for last 20 years
 		- [x] `mux0001_b5b7`
 		- [x] `mux001_b5b7_c_k-03`
-		- [ ] `mux001_b5b7_c_k-10`
+		- [x] `mux001_b5b7_c_k-10`
 	
-- [ ] Comparison of climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameter (`mux0001_b5b7_c_k-03`) #project/surfwaves 
+- [ ] Comparison of climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameters (`mux0001_b5b7_c_k-03` and `mux0001_b5b7_c_k-10`) #project/surfwaves 
 	- [ ] Differences in global climatological SST, SSS and MLD
 	- [ ] Regional difference in profiles of potential Temperature, salinity, density
 		- [ ] Define Regional masks
