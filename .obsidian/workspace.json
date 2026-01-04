@@ -214,13 +214,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Regular-Meeting_Note"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -280,10 +280,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cf18839df3929811",
+  "active": "a4c042796da6e82b",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
