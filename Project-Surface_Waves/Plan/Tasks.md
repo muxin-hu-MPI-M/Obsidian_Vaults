@@ -42,7 +42,7 @@ tags:
 		- [x] SST
 		- [x] SSS
 		- [x] MLD
-	- [ ] Differences in regional climatological SST, SSS, MLD
+	- [x] Differences in regional climatological SST, SSS, MLD
 	- [ ] Regional difference in profiles of potential Temperature, salinity, density
 		- [ ] Define Regional masks for the target area
 		- [ ] 
