@@ -44,6 +44,6 @@ tags:
 		- [x] MLD
 	- [x] Differences in regional climatological SST, SSS, MLD
 	- [ ] Regional difference in profiles of potential Temperature, salinity, density
-		- [ ] Define Regional masks for the target area
+		- [x] Define Regional masks for the target area (`lon_reg=[-83, -76]; lat_reg=[-14,-4]`)
 		- [ ] 
 
