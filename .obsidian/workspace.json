@@ -144,6 +144,7 @@
       {
         "id": "03f66a03b8512b9a",
         "type": "tabs",
+        "dimension": 39.03225806451613,
         "children": [
           {
             "id": "b12f9881a9777b27",
@@ -213,13 +214,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -233,11 +234,12 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "70b38c6c1e92d24b",
         "type": "tabs",
+        "dimension": 60.967741935483865,
         "children": [
           {
             "id": "a4c042796da6e82b",
@@ -278,7 +280,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "499b8bf9f2dd47c1",
+  "active": "cf18839df3929811",
   "lastOpenFiles": [
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
