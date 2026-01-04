@@ -37,7 +37,7 @@ tags:
 		- [x] `mux001_b5b7_c_k-10`
 
 ## [[2025-12-29]]
-- [ ] Comparison of climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameters (`mux0001_b5b7_c_k-03` and `mux0001_b5b7_c_k-10`) #project/surfwaves 
+- [ ] Comparison of oceanic climatological fields between standard TKE scheme (`mux0001_b5b7`) and modified viscosity parameters (`mux0001_b5b7_c_k-03` and `mux0001_b5b7_c_k-10`) #project/surfwaves 
 	- [x] Differences in global climatological SST, SSS and MLD
 		- [x] SST
 		- [x] SSS
@@ -51,3 +51,8 @@ tags:
 			- [x] rhopot
 	- [ ] Summarise into slides for meeting
 
+
+## [[2026-01-05]]
+- [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters
+	- [ ] wind speed at 10 m
+	- [ ] SLP
