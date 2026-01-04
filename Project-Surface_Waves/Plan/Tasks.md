@@ -43,7 +43,11 @@ tags:
 		- [x] SSS
 		- [x] MLD
 	- [x] Differences in regional climatological SST, SSS, MLD
-	- [ ] Regional difference in profiles of potential Temperature, salinity, density
+	- [x] Regional difference in profiles of potential Temperature, salinity, density
 		- [x] Define Regional masks for the target area (`lon_reg=[-83, -76]; lat_reg=[-14,-4]`)
-		- [ ] 
+		- [x] Regional mean profiles
+			- [x] to
+			- [x] so
+			- [x] rhopot
+	- [ ] Summarise into slides for meeting
 
