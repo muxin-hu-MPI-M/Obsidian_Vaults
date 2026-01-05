@@ -53,6 +53,12 @@ tags:
 
 
 ## [[2026-01-05]]
-- [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters
+- [ ] Define regional mask #project/surfwaves 
+	- [ ] check Jin’s script
+	- [ ] define the masks on b5/b7 separately
+		- [ ] r2b5
+		- [ ] r2b7
+	- [ ] apply land/ocean masks
+- [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP

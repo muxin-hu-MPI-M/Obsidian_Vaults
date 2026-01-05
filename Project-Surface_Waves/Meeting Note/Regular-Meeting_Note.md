@@ -7,7 +7,20 @@ tags:
 Last Eddited: 2025-11-27T09:57:00
 ---
 
-
+# [[2026-01-05]]
+## Regular meeting with Nils
+#presenter/Nils_Brüggemann 
+- For regional masks: can use the `ckdtree` to define;
+	- Since we are more interested on the air-sea interface (as surface waves are oceanic waves), one should put a **ocean mask on top of the regional masks** to masked out the land components!!!
+- Some atmospheric variables worth to check:
+	- atmospheric conditions:
+		- large-scale; global: 
+			- SLP, is there a major shift in ITCZ? ENSO?
+		- local: 
+			- wind profiles; 10m-wind speed → might be informative for boundary layer conditions
+			- surface fluxes (sensible heat, latent heat, wind stress (momentum flux))
+## Generic Academic Skills
+- when encounter the cases when the model crashed, keep track the time the the values changed 
 
 
 
