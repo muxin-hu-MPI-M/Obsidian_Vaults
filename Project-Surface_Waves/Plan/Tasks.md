@@ -54,7 +54,7 @@ tags:
 
 ## [[2026-01-05]]
 - [ ] Define regional mask #project/surfwaves 
-	- [ ] check Jin’s script
+	- [x] check Jin’s script
 	- [ ] define the masks on b5/b7 separately
 		- [ ] r2b5
 		- [ ] r2b7
