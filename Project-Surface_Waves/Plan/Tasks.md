@@ -55,10 +55,14 @@ tags:
 ## [[2026-01-05]]
 - [ ] Define regional mask #project/surfwaves 
 	- [x] check Jin’s script
+	- [x] apply land/ocean mask to ignore land components
+	- [ ] separate different parts
+		- [x] general
+		- [ ] north, middle, south
+		- [ ] near shore
 	- [ ] define the masks on b5/b7 separately
 		- [x] r2b5
 		- [ ] r2b7
-	- [ ] apply land/ocean masks
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP
