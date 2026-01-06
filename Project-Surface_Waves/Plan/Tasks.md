@@ -56,7 +56,7 @@ tags:
 - [ ] Define regional mask #project/surfwaves 
 	- [x] check Jin’s script
 	- [ ] define the masks on b5/b7 separately
-		- [ ] r2b5
+		- [x] r2b5
 		- [ ] r2b7
 	- [ ] apply land/ocean masks
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
