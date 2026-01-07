@@ -257,7 +257,7 @@ where:
 - $x$ is the parameter relates to the wave age ($u_*/c_p$). 
 - The so-called **profile parameter** $\Omega_m$ **characterises the state of the mean air flow** through its dependence on the roughness $z_o$. Thus, through $\omega_m$ the growth rate depends on the roughness of the air flow, which, in its turn, depends on the sea state
 
-A simple ~={red}**parameterisation of the growth rate ($\gamma$)**=~ of the waves follows from a fit of numerical results presented in Janssen (1991). One finds:
+A simple ==**parameterisation of the growth rate ($\gamma$)**== of the waves follows from a fit of numerical results presented in Janssen (1991). One finds:
 $$ \frac{\gamma}{\omega}=\epsilon \beta x^2 \tag{23} $$
 where:
 - $\omega$ is the angular frequency
@@ -266,8 +266,9 @@ where:
   $$\beta=\frac{\beta_m}{\kappa^2}\tanh{(kh)}\mu \ln^4(\mu), \quad \mu \le 1$$
 	- where the $\kappa$ is the von Karman constant and $\beta_m$ a constant.
 	- In terms of wave and wind quantities $\mu$ is given as:
-	  $$\mu=\frac{1}{\kappa^2}(\frac{u_*}{c})^2\tanh{(kh)}\Omega_m\;\text{exp}(\frac{\kappa}{\hat x}) $$
-		- 
+	  $$\begin{align}\mu &=\frac{1}{\kappa^2}(\frac{u_*}{c_p})^2\tanh{(kh)}\Omega_m\;\text{exp}(\frac{\kappa}{\hat x})\\ \hat x&=((u_*/c_p)+z_{\text{ff}})\cos(\theta-\phi) \end{align}$$
+		- with $z_{\text{ff}}$ the wave age tuning parameter
+
 
 The **total air–sea momentum flux (wind stress → flux of horizontal momentum (per unit area) transferred from the wind to the air-sea interface.**) is written as:
 
