@@ -134,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.50247192382812,
-    "collapsed": true
+    "width": 244.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -152,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Ocean_Dynamics-Chap_11-Small_Scale_Turbulence.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ocean_Dynamics-Chap_11-Small_Scale_Turbulence"
+              "title": "Backlinks for Tasks"
             }
           },
           {
@@ -214,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Regular-Meeting_Note"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -234,7 +233,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "70b38c6c1e92d24b",
@@ -259,8 +258,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 313.5,
-    "collapsed": true
+    "width": 313.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -281,8 +279,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "499b8bf9f2dd47c1",
+  "active": "a4c042796da6e82b",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
@@ -290,8 +290,6 @@
     "[Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
