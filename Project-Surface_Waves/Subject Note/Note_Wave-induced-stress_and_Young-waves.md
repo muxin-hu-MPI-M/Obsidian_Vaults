@@ -302,25 +302,27 @@ where:
 - $z_o$ is the roughness length:
   $$\begin{align}z_o&=z_b/\sqrt{1-\frac{\tau_w}{\bar\tau_a}}\\&=\frac{\alpha u_*^2}{g\sqrt{1-\frac{\tau_w}{u_*^2}}} \tag{28}\end{align}$$
 
-Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is also so-called **“wave stress”** and **“wave-induced stress”**:
+Here $z_{\text{obs}}$ is the mean height above the waves (currently 10 m), and $\tau_w$ is the stress induced by gravity wave, which is also so-called ~={red}==**wave stress** and **wave-induced stress**===~:
 
 $$
-\tau_w=\epsilon^{-1}g\int \gamma N \mathbf{k}\;d\omega d\theta \tag{25}
+\tau_w=\epsilon^{-1}g\int \gamma N(\omega, \theta) \mathbf{k}\;d\omega d\theta \tag{29}
 $$
+For the wave stress, it follows the below relation:
+$$\begin{align} \tau_w&=\epsilon^{-1}g\int \gamma N(\omega, \theta) \mathbf{k}\;d\omega d\theta \\ &=\epsilon^{-1}g\int\frac{\gamma F(\omega, \theta)}{\sigma} \mathbf{k}\;d\omega d\theta \\&=\epsilon^{-1}g\int\frac{\mathbf{k}}{\omega}\gamma F(\omega, \theta)\;d\omega d\theta \end{align}$$
+Since considering deep water limit, the intrinsic frequency $\sigma=\sqrt{gk}=\omega$. And it seems that $\gamma F=\hat S_{\text{in}}$, which will be discussed in [[Note_Wave-induced-stress_and_Young-waves#Recall the Action Density Balance Equation]]
 
-$z_b$ is the background roughness representing the impact of gravity-capillary short waves. Since CY49R1, the wind stress Eq. (25) was evaluated for the high frequency with a $f^{-5}$ tail of for gravity waves range until the gravity-capillary range where a simplified model for the gravity-capillary spectrum is used instead. Ultimately resulting in an estimate for $z_b$.
+In the roughness length term (Eq. (28)), the **background roughness** $z_b$ is discussed, it represents the impact of gravity-capillary short waves. Since CY49R1, the wind stress Eq. (25) was evaluated for the high frequency with a $f^{-5}$ tail of for gravity waves range until the gravity-capillary range where a simplified model for the gravity-capillary spectrum is used instead. Ultimately resulting in an estimate for $z_b$.
 In practice, ~={red}**wave stress points in the wind direction as it is mainly determined by the high-frequency waves which respond quickly to changes in the wind direction**=~ (ECMWF, 2024).
-
 The background roughness length (Eq. (24)) can link to *Charnock* relation:
 
 $$
-z_b=\frac{\alpha \bar\tau_{\alpha}}{g} \tag{29}
+z_b=\frac{\alpha \bar\tau_{\alpha}}{g} \tag{30a}
 $$
 
 The dimensionless ***Charnock parameter*** $\alpha$ is not constant but depends on the sea state through the wave-induced stress before CY49R1:
 
 $$
-\alpha = \frac{\hat \alpha}{\tau}/{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}} \tag{30}
+\alpha = \frac{\hat \alpha}{\tau}/{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}} \tag{30b}
 $$
 
 where the $gz_b$ is the direct calculation of $z_b$. When combined with the renormalised growth rate, hese changes yields a reduction of the resulting *Charnock* parameter for storm wind conditions (above 20 m/s), which is correct to match the observational evidence that the *Charnock* parameter should reduce quite considerably under strong tropical winds.
@@ -417,9 +419,10 @@ $$
 we recall **action density balance equation (Eq. (18))**, but this time we utilising the frequency spectrum via the relation: 
 
 $$
-F(\omega,\theta)=\frac{gN}{\omega} \tag{37}
+F(\omega,\theta)=\sigma N(\omega, \theta) \tag{37}
 $$
-Noted that this relation is different from that of wavenumber spectrum, specified in **Eq.(1)** in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]].
+Where the $\sigma$ is the intrinsic frequency (see also Eq. (1)). This relation is in accordance with the analogy between wave packets and particles, since particles with action $N$ have energy $\sigma N$ and momentum $kN$. Noted that this relation is different from that of wavenumber spectrum, specified in **Eq.(1)** in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]].
+
 For deep water, and with additional source terms, the balance equation can become;
 
 $$ 
@@ -428,7 +431,7 @@ $$
 
 In the case of spherical coordinates, the operator $d/dt$ is given by Eq. (7).
 
-While the source terms are changed as well, for example: $\hat S_{\text{in}}=gS_{\text{in}}/\omega$.
+Previously, we discuss each source term in the framework of wave action density $N(\omega, \theta)$). Since now we utilise the frequency spectrum $F(\omega, \theta)$, the representations of source term should change accordingly: for example: $\hat S_{\text{in}}=\sigma S_{\text{in}}$.
 - $\hat S_{\text{in}}$: describes the **generation of ocean waves by wind** and therefore represents the momentum and energy transfer from air to ocean waves.
 - $\hat S_{\text{ds}}$: describes the **dissipation of waves** by processes such as white-capping, large scale breaking eddy-induced damping. Also represents the injecting of momentum flux from ocean waves into the ocean
 - **$\hat S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** <span style="background:#fff88f">The nonlinear transfer conserves total energy and momentum</span> and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
