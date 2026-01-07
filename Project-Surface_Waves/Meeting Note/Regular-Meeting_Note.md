@@ -8,6 +8,16 @@ Last Eddited: 2025-11-27T09:57:00
 ---
 
 
+# [[2026-01-07]]
+## ICON-Wave focus group: Meeting 3
+- ERA5-forced ICON-ocean standalone run: haven’t done
+	- difference between the master branch versus Helmuth’s branch: interpolation of the ERA5 data.
+		- ERA5 forcing and `omip` forcing is flagged different; The ICON read the forcing by coupler (i.e., python reading)
+- ERA5-forced ICON-waves standalone run
+- fluxes in the ICON ocean: update from Chris
+	- energy flux from wave to ocean
+		- we have he correct swell dissipation term in ICON-waves (advanced dissipation source term)
+		- the impact from the swell to the atmosphere is reflected in the wind input term, as if the negative wind input, which means the swell travel faster than the atmosphere, there’s negative $S_{in}$ and negative momentum flux. While the dissipation term due to white capping and wave breaking remains the same.
 
 
 # [[2026-01-05]]
