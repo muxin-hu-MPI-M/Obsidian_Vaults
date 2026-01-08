@@ -60,10 +60,11 @@ tags:
 		- [x] general
 		- [x] north, middle, south
 		- [x] near shore
-	- [ ] define the masks on b5/b7 separately
+	- [x] define the masks on b5/b7 separately
 		- [x] r2b5
-		- [ ] r2b7
-	- [ ] Save the masks into netcdf4 file
+		- [x] r2b7
+	- [x] Save the masks into netcdf4 file
+	- [ ] Update the masks in ocean grid, by using the `cell_sea_land_mask` variable in `tgrid` file as reference
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP
