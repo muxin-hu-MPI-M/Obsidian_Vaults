@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Tasks"
+              "title": "Backlinks for Regular-Meeting_Note"
             }
           },
           {
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -279,10 +279,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "a4c042796da6e82b",
+  "active": "499b8bf9f2dd47c1",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
