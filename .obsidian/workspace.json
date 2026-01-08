@@ -134,7 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.50247192382812
+    "width": 345.5024719238281
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -238,7 +238,7 @@
       {
         "id": "70b38c6c1e92d24b",
         "type": "tabs",
-        "dimension": 51.74081237911026,
+        "dimension": 51.74081237911025,
         "children": [
           {
             "id": "a4c042796da6e82b",
@@ -258,7 +258,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 313.5
+    "width": 403.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -279,7 +279,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "499b8bf9f2dd47c1",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",

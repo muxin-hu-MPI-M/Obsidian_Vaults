@@ -53,7 +53,7 @@ tags:
 
 
 ## [[2026-01-05]]
-- [ ] Define regional mask #project/surfwaves 
+- [x] Define regional mask #project/surfwaves 
 	- [x] check Jin’s script
 	- [x] apply land/ocean mask to ignore land components
 	- [x] separate different parts
@@ -64,7 +64,8 @@ tags:
 		- [x] r2b5
 		- [x] r2b7
 	- [x] Save the masks into netcdf4 file
-	- [ ] Update the masks in ocean grid, by using the `cell_sea_land_mask` variable in `tgrid` file as reference
+	- [x] Update the masks in ocean grid, by using the `cell_sea_land_mask` variable in `tgrid` file as reference
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP
+- [ ] upload and commit the `/home/m/m301254/proj_surfwaves/` to my github repository
