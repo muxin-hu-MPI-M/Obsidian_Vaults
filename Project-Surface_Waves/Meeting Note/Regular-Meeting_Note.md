@@ -6,7 +6,24 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2025-11-27T09:57:00
 ---
-
+# [[2026-01-08]]
+## Ice Melting: From the lab to ocean
+#presenter/Detlef_Lohse
+- melt rate of icebergs and glaciers
+	- current models are off by an order of magnitude
+	- ice melting as complex, multi-scale, multi-physics phenomenon
+	- because the density of water depends on T and S, the ambient water around the ice will change position, and influence ice melting
+	- relevance of Stefan problem on large scales: buoyancy driven flow
+	- over year 2023,24,25, the melting of Antarctic is significantly deviates from other previous years
+	- melting on smaller scale: melt ponds → essentials for radiative heat balance of earth (lowers albedo)
+	- convection in melt ponds → all due to the density of the water which moves warm and heavy water down from the surface
+	- the melting from under water would ‘eat’ the ice above → through convection in the water layer
+	- ice melting regime:
+		- temperature-driven: depends a lot on ambient water temperature
+		- salinity-driven
+		- competing between two driven mechanisms
+			- the scallops (i.e., the “tips” of ice attached to the ice stick) show up: because the warm ambient water is entrained towards the ice from below, which also makes the scallops move downward with time
+			- and it was the impact from salinity in the ambient water!!! Which change the ambient water density effectively!!
 
 # [[2026-01-07]]
 ## ICON-Wave focus group: Meeting 3
