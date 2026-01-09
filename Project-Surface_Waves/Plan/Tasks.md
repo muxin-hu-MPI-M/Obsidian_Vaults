@@ -65,6 +65,7 @@ tags:
 		- [x] r2b7
 	- [x] Save the masks into netcdf4 file
 	- [x] Update the masks in ocean grid, by using the `cell_sea_land_mask` variable in `tgrid` file as reference
+	- [x] new `oce_mask_3d`: considering the depth space, by using `wet_c` variable in `.fx` file
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP
