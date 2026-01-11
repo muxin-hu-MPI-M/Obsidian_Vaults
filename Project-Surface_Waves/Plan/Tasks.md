@@ -66,7 +66,9 @@ tags:
 	- [x] Save the masks into netcdf4 file
 	- [x] Update the masks in ocean grid, by using the `cell_sea_land_mask` variable in `tgrid` file as reference
 	- [x] new `oce_mask_3d`: considering the depth space, by using `wet_c` variable in `.fx` file
+
+# [[2026-01-12]]
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP
-- [ ] upload and commit the `/home/m/m301254/proj_surfwaves/` to my github repository
+- [ ] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
