@@ -6,6 +6,25 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2025-11-27T09:57:00
 ---
+
+# [[2026-01-12]]
+## Regular Meeting with Nils
+#presenter/Nils_Brüggemann 
+```
+Dear all,
+
+you can find step-by-step instructions on how to prepare and run an ICON‑waves‑ocean coupled test simulation here:
+
+[https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group#how-to-run-icon-waves-on-levante](https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group#how-to-run-icon-waves-on-levante "https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group#how-to-run-icon-waves-on-levante")
+
+Please try it out and let me know if you have any issues or comments.
+
+Best regards
+
+Mikhail
+```
+
+
 # [[2026-01-08]]
 ## Ice Melting: From the lab to ocean
 #presenter/Detlef_Lohse
