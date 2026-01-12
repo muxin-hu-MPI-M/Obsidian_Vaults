@@ -10,6 +10,7 @@ Last Eddited: 2025-11-27T09:57:00
 # [[2026-01-12]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
+- **ICON-waves-ocean coupled test?**
 ```
 Dear all,
 
@@ -23,6 +24,12 @@ Best regards
 
 Mikhail
 ```
+- **Update on the ICON-XPP test run** (default c_k versus changes in c_k)
+	- the new output (TKE-related variables) → problem, cannot produce new output files! Already contacted Helmuth. He said this might be a bug for the ICON code, need to contact **Kalle**
+	- Will continue some basic comparisons on variables we discussed and decided during our meeting last week (e.g., wind profile). This time, **applying the new defined masks**
+
+
+
 
 
 # [[2026-01-08]]
