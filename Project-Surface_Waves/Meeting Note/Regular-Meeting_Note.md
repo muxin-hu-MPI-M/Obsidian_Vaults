@@ -27,7 +27,12 @@ Mikhail
 - **Update on the ICON-XPP test run** (default c_k versus changes in c_k)
 	- the new output (TKE-related variables) → problem, cannot produce new output files! Already contacted Helmuth. He said this might be a bug for the ICON code, need to contact **Kalle**
 	- Will continue some basic comparisons on variables we discussed and decided during our meeting last week (e.g., wind profile). This time, **applying the new defined masks**
-
+- Nils’ suggestion on calculating the mean values when considering the region mask
+  ```python
+  # consider the different grid area. this is important when lower resolution
+  # to normalise the effect of different grid area
+  to_ave = (to * ds_tg.cell_area * mask).sum(dims='ncell')/ (ds_tg.cell_area * mask).sum(dims='ncell')
+  ```
 
 
 

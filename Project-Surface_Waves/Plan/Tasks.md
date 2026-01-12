@@ -68,9 +68,9 @@ tags:
 	- [x] new `oce_mask_3d`: considering the depth space, by using `wet_c` variable in `.fx` file
 
 # [[2026-01-12]]
-- [ ] Define the shape files/masks for the cross-sections of the Peruvian coast #project/surfwaves 
-	- [ ] shape files → txt files
-	- [ ] save the mask into netcdf file
+- [x] Define the shape files/masks for the cross-sections of the Peruvian coast #project/surfwaves 
+	- [x] shape files → txt files
+	- [x] save the mask into netcdf file
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
 	- [ ] SLP
