@@ -36,7 +36,6 @@ Mikhail
 
 
 
-
 # [[2026-01-08]]
 ## Ice Melting: From the lab to ocean
 #presenter/Detlef_Lohse
