@@ -34,6 +34,12 @@ Mikhail
   to_ave = (to * ds_tg.cell_area * mask).sum(dims='ncell')/ (ds_tg.cell_area * mask).sum(dims='ncell')
   ```
 
+## Regular Meeting with Noel
+#presenter/Noel_Gutierrez-Brizuela 
+Discussions on the figures that compare the SST between different simulations: 
+1. default (c_k=0.1)
+2. Exp_1 (c_k=0.3)
+3. Exp_2 (c_k=1.0)
 
 
 # [[2026-01-08]]
