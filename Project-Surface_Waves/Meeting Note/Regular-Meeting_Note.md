@@ -4,7 +4,7 @@ tags:
   - project/surfwaves
   - "#presenter/Noel_Gutierrez-Brizuela"
   - "#presenter/Nils_Brüggemann"
-Last Eddited: 2025-11-27T09:57:00
+Last Eddited: 2026-01-13
 ---
 
 # [[2026-01-12]]
@@ -27,7 +27,7 @@ Mikhail
 - **Update on the ICON-XPP test run** (default c_k versus changes in c_k)
 	- the new output (TKE-related variables) → problem, cannot produce new output files! Already contacted Helmuth. He said this might be a bug for the ICON code, need to contact **Kalle**
 	- Will continue some basic comparisons on variables we discussed and decided during our meeting last week (e.g., wind profile). This time, **applying the new defined masks**
-- Nils’ suggestion on calculating the mean values when considering the region mask
+- Nils’ suggestion on calculating the mean values when considering the region mask. Recorded in [[ICON_Data-process_Tips#Calculate Spatial Average]]
   ```python
   # consider the different grid area. this is important when lower resolution
   # to normalise the effect of different grid area
@@ -40,7 +40,13 @@ Discussions on the figures that compare the SST between different simulations:
 1. default (c_k=0.1)
 2. Exp_1 (c_k=0.3)
 3. Exp_2 (c_k=1.0)
-
+and find:
+- the zonal averaged potential temperature profile shows a signature spatial pattern showed above. The upper ocean near the Equator is slightly cooler than the subtropics; The SST is similar to the subsurface water over subtropical region: ![[Screenshot 2026-01-13 at 16.09.57.png|center]]
+- **Increasing the viscosity parameter $c_k$ enhances vertical mixing in the upper ocean, transporting heat absorbed from the atmosphere into the ocean interior.** In extreme cases (e.g., $c_k=1.0$), this strong mixing can cool the surface layer despite increased heat uptake.
+- **A competing effect arises because a cooler surface increases the ocean’s capacity to absorb atmospheric heat**, particularly in the tropics where net radiative input is large.
+- **As a result, excess atmospheric energy is absorbed and mixed downward over the tropical and subtropical oceans**, while the very near-surface layer remains cooler due to efficient vertical redistribution.
+- **Dynamically, this subsurface heat is transported poleward by ocean currents.**  
+    When the warmer subsurface waters reach higher latitudes, they are mixed upward, warming the surface ocean there.![[Screenshot 2026-01-13 at 16.03.47.png|center]]
 
 # [[2026-01-08]]
 ## Ice Melting: From the lab to ocean

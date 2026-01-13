@@ -77,8 +77,7 @@
               "title": "ICON_Data-process_Tips"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -214,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Data-process_Tips"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -234,7 +233,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "70b38c6c1e92d24b",
@@ -280,10 +279,14 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "ac935e2fdf17ae52",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
+    "Attachments/Screenshot 2026-01-13 at 16.09.57.png",
+    "Attachments/Screenshot 2026-01-13 at 16.03.47.png",
+    "Attachments/Screenshot 2026-01-13 at 15.52.10.png",
+    "Attachments/86D59326-9AFE-45A9-AB76-5F365A50BB6E_1_105_c.jpeg",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
@@ -308,7 +311,6 @@
     "[[Note_Wave-induced-stress_and_Young-waves.md",
     "[[ICON-waves_Short-Overview_and_Current-Status]].md",
     "[ICON-waves_Short-Overview_and_Current-Status].md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Attachments/Screenshot 2025-12-16 at 10.31.53.png",
     "Attachments/Screenshot 2025-12-16 at 10.28.31.png",
     "Attachments/Screenshot 2025-12-16 at 10.22.34.png",
@@ -316,9 +318,6 @@
     "Attachments/Screenshot 2025-12-16 at 10.05.55.png",
     "Attachments/Screenshot 2025-12-16 at 09.59.08.png",
     "Attachments/Screenshot 2025-12-16 at 09.58.24.png",
-    "Attachments/Screenshot 2025-12-15 at 09.42.08.png",
-    "Attachments/9YGKI7C5.png",
-    "Attachments/63A32032-D6D7-4E6D-A2B1-82988106A76B_1_105_c.jpeg",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",
     "Database.base",
