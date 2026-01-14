@@ -7,6 +7,12 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-01-19]]
+## Regular Meeting with Nils
+#presenter/Nils_Brüggemann 
+- present the namelist that I need for future simulation
+
+
 # [[2026-01-12]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 

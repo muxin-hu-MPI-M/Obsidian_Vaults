@@ -73,5 +73,6 @@ tags:
 	- [x] save the mask into netcdf file
 - [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
 	- [ ] wind speed at 10 m
-	- [ ] SLP
+	- [x] SLP
 - [x] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
+- [ ] make a namelist that I need for future simulation #project/surfwaves 
