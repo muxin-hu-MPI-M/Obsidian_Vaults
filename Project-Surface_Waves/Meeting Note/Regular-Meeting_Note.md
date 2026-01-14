@@ -11,6 +11,7 @@ Last Eddited: 2026-01-13
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
 - present the namelist that I need for future simulation
+	- does the ocean has the output for surface fluxes? (sensible heat, latent heat, momentum?). I only find the `HeatFlux_Total`
 
 
 # [[2026-01-12]]
