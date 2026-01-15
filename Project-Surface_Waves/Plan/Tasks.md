@@ -71,8 +71,8 @@ tags:
 - [x] Define the shape files/masks for the cross-sections of the Peruvian coast #project/surfwaves 
 	- [x] shape files → txt files
 	- [x] save the mask into netcdf file
-- [ ] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
-	- [ ] wind speed at 10 m
+- [x] Comparison of atmospheric climatological fields between standard TKE scheme and modified viscosity parameters #project/surfwaves 
+	- [x] wind speed at 10 m
 	- [x] SLP
 - [x] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
 - [ ] make a namelist that I need for future simulation #project/surfwaves 

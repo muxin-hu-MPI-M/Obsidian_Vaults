@@ -214,13 +214,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Output_Reference"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -280,8 +280,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "ac935e2fdf17ae52",
+  "active": "a4c042796da6e82b",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
@@ -297,7 +298,6 @@
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-TKE_Parameterisation.md",
     "[Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Research-Gap_Information&Summary.md",
     "Project-Surface_Waves/Plan/Project-Surface_Waves-General_Proposal.md",
