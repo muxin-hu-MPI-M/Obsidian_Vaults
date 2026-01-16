@@ -10,8 +10,11 @@ Last Eddited: 2026-01-13
 # [[2026-01-19]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
-- present the namelist that I need for future simulation
-	- does the ocean has the output for surface fluxes? (sensible heat, latent heat, momentum?). I only find the `HeatFlux_Total`
+
+- does the ocean has the output for surface fluxes? (sensible heat, latent heat, momentum?). I only find the `HeatFlux_Total`
+- needed variables that is missing on standard ICON-XPP output (see [[ICON_Output_Reference#ICON-XPP standard output]]): 
+	- **atmosphere**: wind stress components (`tauu, tauv`);
+	- **ocean**: 
 
 
 # [[2026-01-12]]
