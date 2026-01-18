@@ -75,5 +75,11 @@ tags:
 	- [x] wind speed at 10 m
 	- [x] SLP
 - [x] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
-- [ ] make a namelist that I need for future simulation #project/surfwaves 
+
+# [[2026-01-19]]
 - [ ] finish the AI use test stated in Email #project/PhD_general 
+- [ ] make a namelist that I need for future simulation #project/surfwaves 
+- [ ] Create the Peru upwelling regino masks for project mesoscale-upwelling #project/MesoEddy_Upwelling 
+	- [x] ocean: `r2b9`
+	- [ ] atmos: `r2b8`
+
