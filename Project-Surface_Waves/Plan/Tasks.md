@@ -21,7 +21,7 @@ tags:
 	- [x] `mux0001_b5b7_c_k-10`
 	
 - [ ] Simulation with additional TKE output; Year 1350-1355 #project/surfwaves 
-	- [/] `mux0001_b5b7` Simulation with additional TKE output: 1350-1355
+	- [x] `mux0001_b5b7` Simulation with additional TKE output: 1350-1355
 	- [ ] `mux0001_b5b7_c_k-03` Simulation with additional TKE output: 1350-1355
 	
 - [x] Data post-processing: Select target 3D/2D variables, merge and time-average with `cdo` #project/surfwaves 
@@ -76,3 +76,4 @@ tags:
 	- [x] SLP
 - [x] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
 - [ ] make a namelist that I need for future simulation #project/surfwaves 
+- [ ] finish the AI use test stated in Email #project/PhD_general 

@@ -9,7 +9,7 @@ This is the first panel meeting for Muxin Hu as a PhD candidate.
 # [[2025-12-11]] Panel Meeting 1
 ## Progress Report
 The first meeting would be discussing the PhD research plan/proposal. Some relevant documentations are listed below:
-- First draft for the plan/proposal is summarised in [[Research-Gap_Information&Summary]].  
+- First draft for the plan/proposal is summarised in [[Research-Gaps]].  
 - First progress report, which is the report to update the progress, status, and future plan to the panel members, is saved as a PDF file:
   ![[Panel_Meeting_1_Progress_Report_Muxin 1.pdf]]
 
@@ -21,7 +21,7 @@ The first meeting would be discussing the PhD research plan/proposal. Some relev
 - ~={red}==**First Stage of My PhD Work**===~:
   This is considered as the ICON-Waves fully coupling is currently not ready for use;
 	- **Sensitivity test of coastal upwelling to TKE scheme** (without the coupling of wave) → ongoing
-		- Can add *complexity* after the first synthesis; For example, consider a local parametric surface-wave model where the Stokes drift is derived from the wind field alone, assuming that the wave field is in equilibrium with the local wind → hence, no coupling between the atmosphere-wave-ocean. See details in [[Project-Surface_Waves-General_Proposal]]
+		- Can add *complexity* after the first synthesis; For example, consider a local parametric surface-wave model where the Stokes drift is derived from the wind field alone, assuming that the wave field is in equilibrium with the local wind → hence, no coupling between the atmosphere-wave-ocean. See details in [[General_Proposal]]
 		- One can also use this simple local parametric model to investigate the relative role of local wind/remotely generated swell regarding the generation of stokes drift and associated influence on air-sea exchanges.
 - ==**Potential project: Running ICON-Sapphire configuration with surface wave model.**==
 	- This is very attractive, since the Sapphire configuration can better resolve the wind field; Some research questions would be:

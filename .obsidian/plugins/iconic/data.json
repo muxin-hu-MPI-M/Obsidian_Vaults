@@ -61,6 +61,19 @@
         "2171c8c7e88acc21"
       ]
     },
+    "Project-MesoEddy_Upwelling": {
+      "icon": "🔫",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-MesoEddy_Upwelling/Plan": {
+      "icon": "lucide-list-plus",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ],
+      "color": "green"
+    },
     "Project-Surface_Waves": {
       "icon": "🏄‍♂️",
       "unsynced": [
