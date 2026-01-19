@@ -82,4 +82,6 @@ tags:
 - [ ] Create the Peru upwelling regino masks for project mesoscale-upwelling #project/MesoEddy_Upwelling 
 	- [x] ocean: `r2b9`
 	- [ ] atmos: `r2b8`
+	- [ ] make notes and mention this during meeting that the mask might need another version for the cross-sections
+- [ ] Ask Andrea for the script of cross-sections
 
