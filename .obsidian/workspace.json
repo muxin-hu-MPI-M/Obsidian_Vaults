@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Useful-Command"
+              "title": "Regular-Meeting_Note"
             }
           }
         ],
@@ -296,9 +296,10 @@
   },
   "active": "66b1902712bdd819",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
@@ -307,7 +308,6 @@
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Eddy_Upwelling/Plan",
     "Project-Eddy_Upwelling",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Attachments/Screenshot 2026-01-13 at 16.09.57.png",
     "Attachments/Screenshot 2026-01-13 at 16.03.47.png",
