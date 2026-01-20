@@ -10,11 +10,17 @@ Last Eddited: 2026-01-13
 # [[2026-01-19]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
-
-- does the ocean has the output for surface fluxes? (sensible heat, latent heat, momentum?). I only find the `HeatFlux_Total`
+- does the ocean has the output for surface fluxes? (sensible heat, latent heat, momentum?). I only find the `HeatFlux_Total` → ==**check namelist for the ocean**==
 - needed variables that is missing on standard ICON-XPP output (see [[ICON_Output_Reference#ICON-XPP standard output]]): 
 	- **atmosphere**: wind stress components (`tauu, tauv`);
 	- **ocean**: 
+		- wind stress components (`stress_xw, stress_yw`)
+		- tke (different components → difference balance term in the tke equation (see details in [[ICON-TKE_Parameterisation]])
+- ==**For the case of c-k=0.3:**==
+	- compare to the extreme case (c_k=1.0), it is more realistic; No major change in the background climate
+		- Which is good for us to attribute the change in our target (i.e., wind, wave, upwelling) to local change and local processes. No need to have a thorough analysis of the global climate
+- To do:
+	- Ask the `Wind_speed_10m` output in ocean grid and if the atmospheric grid also has wind stress components;
 
 
 # [[2026-01-12]]
