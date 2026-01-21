@@ -91,8 +91,7 @@
               "title": "Regular-Meeting_Note"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -294,10 +293,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "66b1902712bdd819",
+  "active": "499b8bf9f2dd47c1",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
