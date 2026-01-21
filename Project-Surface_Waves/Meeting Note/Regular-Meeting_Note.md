@@ -147,14 +147,15 @@ and find:
 - Report issue with ICON-XPP simulation with default TKE settings
 	- Has set disturbance TWICE!!! One in 1325-01-01 and one in 1345-01-01
 	- Should I worry about the email from DKRZ?
-	  ```
-	    ______________________________________________________________________
+```
+______________________________________________________________________
 		[33] CVR-DIR (Max-Planck-Gesellschaft)
 		Quota             :    1925 TiB
 		Actually used     :    1856 TiB
 		Percentage used   :      96%
-		______________________________________________________________________
-	    ```
+______________________________________________________________________
+```
+		
 - **Discussion**: Wave-induced processes and their effects
 	- maybe we first choose a terminology to describe this long set? (e.g., wave-effects)
 	- **Governing equations** for 4 main wave-modified processes:
