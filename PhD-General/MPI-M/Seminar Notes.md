@@ -4,7 +4,18 @@ tags:
   - Seminars
 Last Eddited: 2025-11-19
 ---
+# [[2026-01-22]] Wave-induced drift on a rotating earth
 
+- what is the effect of the earth’s rotation on (surface gravity) wave-induced drift (in deep water)? → Stokes drift and anti-Stokes drift
+	- Stokes drift: Lagrangian particle orbit underneath periodic surface gravity wave does not close
+		- the net drift in the wave propagation
+		- ==**Lagrangian mean flow = Eulerian mean flow + Stokes**== ($u_s=\text{mean}(\Delta x_1 \cdot \nabla u_1)=\omega_0k_0|A_0|^2e^{2k_0z}$). If take the time average the Eulerian only, you cannot find the Stokes drift
+		- net transport by a wave group, maximum at the surface, exponentially decreased in depth
+			- ![[Screenshot 2026-01-22 at 11.11.41.png|center]]
+		- Ursell shows there can be no net drift for regular waves in a rotating frame: **anti-Stokes flow**!! Hasselmann explains this via a Coriolis-Stokes force on the mean flow:
+		  ![[Screenshot 2026-01-22 at 11.13.44.png|center]]
+		- Ekman-Stokes equations: At second order in steepness, the governing equations are (obntained from Craik-Leibovich equations): representing the process between mean flow and the stokes → the stokes drift can affect the mean flow, especially over upper ocean
+		- 
 # [[2025-12-19]] Jörn Callies Informal Talk
 #presenter/Jörn_Callies
 He is a strong candidate for the new directorship
