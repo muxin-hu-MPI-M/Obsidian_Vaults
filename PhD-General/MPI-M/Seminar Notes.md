@@ -15,7 +15,8 @@ Last Eddited: 2025-11-19
 		- Ursell shows there can be no net drift for regular waves in a rotating frame: **anti-Stokes flow**!! Hasselmann explains this via a Coriolis-Stokes force on the mean flow:
 		  ![[Screenshot 2026-01-22 at 11.13.44.png|center]]
 		- Ekman-Stokes equations: At second order in steepness, the governing equations are (obntained from Craik-Leibovich equations): representing the process between mean flow and the stokes → the stokes drift can affect the mean flow, especially over upper ocean
-		- 
+- ~={red}**Summary**:=~
+	- When considering the Coriolis-Stokes force (Wave-driven Eulerian flow) on the mean flow, it reduces the magnitude of the accumulated effect of Stokes drift → Anti-Stokes flow!!!
 # [[2025-12-19]] Jörn Callies Informal Talk
 #presenter/Jörn_Callies
 He is a strong candidate for the new directorship

@@ -79,9 +79,9 @@ tags:
 # [[2026-01-19]]
 - [ ] finish the AI use test stated in Email #project/PhD_general 
 - [x] make a namelist that I need for future simulation #project/surfwaves 
-- [ ] Create the Peru upwelling region masks for project mesoscale-upwelling #project/MesoEddy_Upwelling 
+- [x] Create the Peru upwelling region masks for project mesoscale-upwelling #project/MesoEddy_Upwelling 
 	- [x] ocean: `r2b9`
-	- [ ] atmos: `r2b8`
+	- [x] atmos: `r2b8`
 	- [x] make notes and mention this during meeting that the mask might need another version for the cross-sections
 - [x] Ask Andrea for the script of cross-sections 
 - [ ] Creates the sections for all masks (`pc_all, pc_middle, pc_nearshore, pc_along shore`) #project/MesoEddy_Upwelling #project/surfwaves 
