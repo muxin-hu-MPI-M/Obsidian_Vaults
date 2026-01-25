@@ -84,12 +84,10 @@ tags:
 	- [x] atmos: `r2b8`
 	- [x] make notes and mention this during meeting that the mask might need another version for the cross-sections
 - [x] Ask Andrea for the script of cross-sections 
-- [ ] Creates the sections for all masks (`pc_all, pc_middle, pc_nearshore, pc_along shore`) #project/MesoEddy_Upwelling #project/surfwaves 
-	- [ ] r2b7
-	- [ ] r2b9
-- [ ] Update the regional masks based on the corresponding defined sections #project/surfwaves #project/MesoEddy_Upwelling 
-	- [ ] r2b7:
-		- [ ] ocean
-		- [ ] atmosphere - do I need to change this one?
-	- [ ] r2b8
+- [x] Creates the sections for two masks (`pc_all, pc_middle`) #project/MesoEddy_Upwelling #project/surfwaves 
+	- [x] r2b7
+	- [x] r2b9
+- [x] Update the ocean regional masks based on the corresponding defined sections #project/surfwaves #project/MesoEddy_Upwelling 
+	- [x] r2b7:
+	- [x] r2b9
 

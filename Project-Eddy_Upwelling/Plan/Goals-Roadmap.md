@@ -16,6 +16,32 @@ Last Eddited: 2026-01-18
 - “we will assess whether eddy compensation strengthens under continued warming and how this changes change the “residual” upwelling” **Why so-called “residual upwelling”**
 - What’s the background of the hypothesis 2? Why mesoscale eddies increasingly compensates the wind-driven overturning over time? Is it because the amount/strength of mesoscale eddies are projected to increase?
 
+## Note: Thomsen et al. (2021)
+(Thomsen et al., 2021)
+- **Background info**:
+	- Coastal upwelling rates are classically determined by the intensity of the upper-ocean offshore Ekman transport. 
+	- A potential important effect: quasi-balanced mesoscale and submesoscale turbulence is responsible for rectified eddy transport which also tends to counteract the Ekman upwelling cell. ~={red}In general, (sub)mesoscale turbulence modulates offshore transport, hence the net upwelling rate.=~
+	- Eddy effects generally oppose the Ekman circulation, resulting in so-called “eddy cancellation”
+		- The eddy-induced circulation attempts to flatten isopycnal surfaces, reduce available potential energy
+	- The traditional consideration: Wind-driven Upwelling (derivations from **Marshall and Radko (2003)** **in the context of an upwelling system**.
+		- the fluid transported by the Ekman circulation in the mixed layer. The structure being steady, this fluid crosses isopycnals as it moves offshore, and a **net buoyancy gain** is needed that must exactly satisfy the relation
+		  $$
+		     v_{\text{ek}}\;\partial_{y}\langle \bar{b} \rangle _{\text{ml}}(y)=\bar B_{\text{ml}}(y) \tag{1}
+		     $$
+		- where:
+			- $v_{\text{ml}}$: wind-driven Ekman velocity vertically averaged over the mixed layer;
+			- $\langle \bar{b} \rangle _{\text{ml}}$: mean buoyancy in the mixed layer, where $b=-g\rho_0/\rho$ with $g$ being the gravitational acceleration, $\rho$ the potential density.
+			- $\bar B_{\text{ml}}$: net buoyancy supply to the mixed layer, supposed to mainly result from air-sea exchanges sector where coastal upwelling is taking place
+		    
+- **Method**: idealised upwelling model with constant winds but ==varying heat fluxes== with and without submesoscale-rich turbulence;
+	- Eddy cancellation is evaluated with different methods all account for the **quasi-isopycnal nature （准等密度性质）** of the ocean circulation away from the surface
+- **Result**:
+	- ==zero heat fluxes==: nearly full cancellation of the Ekman cross-shore circulation by eddy effect near the shore
+	- ==with increasing heat fluxes==, the cancellation is reduced and the transverse flow progressively approaches the classical Ekman circulation
+	- sensitivity of eddy circulation to synoptic changes in air-sea heat fluxes is felt down to 125 m depth; mesoscale dynamics dominate the cancellation effect 
+
+
+
 # Meeting notes
 ## [[2026-01-21]] Opening 
 - can be finished in a short time
@@ -23,3 +49,4 @@ Last Eddited: 2026-01-18
   → pressure gradient increasing 
   → the wind goes north is strengthening
 - **ERRIRE** captures the cooling trend with high accuracy compared to CMIP, high resolution
+

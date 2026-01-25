@@ -881,6 +881,50 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md": [
+      {
+        "id": "0crkstbv5",
+        "text": "varying heat fluxes",
+        "tags": [],
+        "line": 35,
+        "startOffset": 2395,
+        "endOffset": 2418,
+        "filePath": "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1769349768932,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "vvzlev2em",
+        "text": "zero heat fluxes",
+        "tags": [],
+        "line": 38,
+        "startOffset": 2643,
+        "endOffset": 2663,
+        "filePath": "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1769349918428,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "s77y7ivms",
+        "text": "with increasing heat fluxes",
+        "tags": [],
+        "line": 39,
+        "startOffset": 2760,
+        "endOffset": 2791,
+        "filePath": "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1769349924389,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
     ]
   },
   "collections": {},

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PhD-General/MPI-M/Seminar Notes.md",
+                "file": "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Seminar Notes"
+              "title": "Goals-Roadmap"
             }
           },
           {
@@ -293,15 +293,15 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "b89abaaea3ef86ea",
+  "active": "499b8bf9f2dd47c1",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Attachments/Screenshot 2026-01-22 at 11.13.44.png",
     "Attachments/Screenshot 2026-01-22 at 11.11.41.png",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
-    "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Reference.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
