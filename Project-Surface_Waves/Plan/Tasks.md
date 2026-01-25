@@ -91,3 +91,9 @@ tags:
 	- [x] r2b7:
 	- [x] r2b9
 
+
+# [[2026-01-26]]
+- [ ] make the `individual section` in ocean r2b7 grid #project/surfwaves 
+	- [ ] Nils’ method
+	- [ ] Fraser's method
+- [ ] make the `adjacent_cells` along the pre-defined sections (in `edge` space) for the project: eddy and upwelling #project/MesoEddy_Upwelling 
