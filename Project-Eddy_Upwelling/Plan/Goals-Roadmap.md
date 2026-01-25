@@ -32,6 +32,8 @@ Last Eddited: 2026-01-18
 			- $v_{\text{ml}}$: wind-driven Ekman velocity vertically averaged over the mixed layer;
 			- $\langle \bar{b} \rangle _{\text{ml}}$: mean buoyancy in the mixed layer, where $b=-g\rho_0/\rho$ with $g$ being the gravitational acceleration, $\rho$ the potential density.
 			- $\bar B_{\text{ml}}$: net buoyancy supply to the mixed layer, supposed to mainly result from air-sea exchanges sector where coastal upwelling is taking place
+		- This relationship may seem to exert a strong constraint on the mean upper-ocean thermohaline structure of upwelling systems, because given the wind and buoyancy forcings, the mean buoyancy gradient over the mixed layer would need to adjust so that the relation can be balanced
+		- this term neglect the role of the eddy-induced circulation, unrealistic!!
 		    
 - **Method**: idealised upwelling model with constant winds but ==varying heat fluxes== with and without submesoscale-rich turbulence;
 	- Eddy cancellation is evaluated with different methods all account for the **quasi-isopycnal nature （准等密度性质）** of the ocean circulation away from the surface
