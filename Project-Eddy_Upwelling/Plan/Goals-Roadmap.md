@@ -52,3 +52,15 @@ Last Eddited: 2026-01-18
   → the wind goes north is strengthening
 - **ERRIRE** captures the cooling trend with high accuracy compared to CMIP, high resolution
 
+
+# Note → Task (2)
+- subsurafce quantities
+	- regional mask created:
+```python
+
+```
+	- climatology compare
+		- `to, so, rhopot, grad_rhopot (stratifiaction)`
+	- time series
+		- stratification
+			- metric: the yearly averaged stratification in depth and plot in the time-space
