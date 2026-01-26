@@ -56,9 +56,6 @@ Last Eddited: 2026-01-18
 # Note → Task (2)
 - subsurafce quantities
 	- regional mask created:
-```python
-
-```
 	- climatology compare
 		- `to, so, rhopot, grad_rhopot (stratifiaction)`
 	- time series
