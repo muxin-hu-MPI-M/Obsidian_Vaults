@@ -41,34 +41,78 @@ to_ave = (to * cell_area * mask * wet_c).sum(dim="ncell") / (cell_area * mask * 
 # Mask defined using Fraser’s method
 ## Descriptions
 the files (for r2b7) can be found:
-- **regional mask**: `/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/pc_all_sections_masks_oce_r2b7.nc`
+```python
+# regional mask (cell_mask)
+regional mask_path = "/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/pc_all_sections_masks_oce_r2b7.nc"
+
+# boundary masks (edge_mask)
+directions = ["north", "west", "south", "east"]
+boundary_masks = {}
+for direction in directions:
+	boundary_masks[di] = xr.open_dataset(f"/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/pc_all_sections_{direction}BoundarySection_oce_r2b7.nc")
+
+# individual sections
+all_sections = xr.open_dataset("/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/individual_sec/all_sections_r2b9_NilsVersion.nc")
+```
+
+- **regional mask**:
     - the region name is `pc_all`, which stands for the _general Peruvian Coastal region_
     - Description:
-        - the masked **cell index** is stored in the variable `contained_cells`, with the shape of the number of selected cells
-        - Because the `contained_cells` is defined as the region enclosed by the 4 boundaries (i.e., "sections"), the variable `edge_path` contains the **edge index** for the whole 4 boundaries; Similarly, the variable `vertex_path` contains all the **vertex index** that connect all 4 boundaries.
-        - the `path_orientation` is the array that contains the direction (degrees) of the corresponding individual edge, which can be used when calculating fluxes through the edge.
-    - Usage:
-        - select the masked cell by e.g., `tos.sel(ncells=regional_mask["contained_cells"])`.
-- **separate masks for 4 boundaries**: `/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/pc_all_sections_{direction}BoundarySection_oce_r2b7.nc`
+        - `contained_cells`: the masked **cell index** is stored in the variable, with the shape of the number of selected cells
+        - `edge_path` and `vertex_path`: the **edge index** and **vertex index** for the whole 4 boundaries
+	        - Because the `contained_cells` is defined as the region enclosed by the 4 boundaries (i.e., "sections")
+        - `path_orientation` is the array that contains the direction (degrees) of the corresponding individual edge, which can be used when calculating fluxes through the edge.
+- **separate masks for 4 boundaries**:
     - the `{direction}` in the above path can be: north, west, south, east. Each boundary has one nc file.
     - Description:  
         - similar to the **regional mask**, it contains the `edge_path`, `vertex_path`, `path_orientation`. However, Unlike those listed in the regional mask (i.e., master file), each of these variables contain the information only for the corresponding boundary.
-- **individual sections perpendicular to the coast**: `/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/individual_sec/all_sections_r2b9_NilsVersion.nc`
+- **individual sections perpendicular to the coast**: 
     - the file is generated through Nils' `pyicon` script.
     - Description:
         - it contains the `edge_mask` for each individual section, with the name as e.g., `mask_sectionX`. Be aware that each `edge_mask` contains the full dimension, and has the edge orientation attached. Thus, each `edge_mask` is an **array of -1, 0, +1, in the shape of number of all edges in r2b9 grid**.
         - the `ie_sectionX` and `iv_sectionX` are the **indexes for selected edge**. Notice that only the **valid edge/vertex has positive index**, invalid edge/vertex has negative `ie` and `iv`
 
-## Wrap up
-For efficient calculation on both regional mean or edge flux transport, using the cell_index and edge_index by:
+## Apply in Calculation
+### crop `tgrid` file
+For more efficient usage in **ICON native grid (“tgrid”)**, one need to crop the original tgrid file to the region masked. The `pyicon` provides the function to do so:
 ```python
-# regional mask (cell_mask)
-region_mask = xr.open_dataset("/work/mh0033/m301254/proj_surfwaves/masks/secs_to_mask/pc_all_sections_masks_oce_r2b7.nc")
+def crop_tgrid_to_region(tgrid, mask):
+	"""Crop tgrid to the region defined by the mask.
+	Parameters
+	----------
+	tgrid : xarray.Dataset
+	The tgrid dataset.
+	mask : xarray.DataArray
+	The mask defining the region to crop to.
+	
+	Returns
+	-------
+	xarray.Dataset
+	The cropped tgrid dataset.
+	"""
+	
+	ireg_c = mask["contained_cells"].astype(int)
+	crop_tg = pyic.xr_crop_tgrid(tgrid, ireg_c)
 
-# boundary mask (edge_mask)
-north_boundary_mask = xr.open_dataset("`/work/mh0033/m301254/proj_eddy_upwelling/masks/secs_to_mask/pc_middle_sections_NorthBoundarySection_oce_r2b7.nc")
+	return crop_tg
 
-# doing the regional average
+# example usage
+tgrid = xr.open_dataset(fpath_tgrid["oce"])
+mask_pc_all = xr.open_dataset("/work/mh0033/m301254/proj_surfwave/masks/secs_to_mask/pc_all_sections_masks_oce_r2b7.nc")
+
+crop_tg_pc_all = crop_tgrid_to_region(tgrid, mask_pc_all)
+```
+- the `crop_tg` is saved as individual netcdf file for later usage
+
+### Spatial Average
+- the usual workflow is summarised below:
+```python
+# read cropped tgrid files
+crop_tg = xr.open_dataset("/work/mh0033/m301254/proj_eddy_upwelling/masks/secs_to_mask/pc_all_mask_cropped_tgrid_oce_r2b7.nc") 
+# transfer to ICON readable dataset 
+ds_IcD = pyic.convert_tgrid_data(crop_tg) print("cropped tgrid has been created.") 
+# Optional: keep selected ncells index (still 0-based) 
+ncells_selected = crop_tg.cell.rename({"cell": "ncells"})
 
 # select the masked cell and guarantee they are ocean cell (i.e., "wet cell")
 to_selected = to.isel(ncells=ncells_selected).compute()   # when using dask
@@ -77,4 +121,13 @@ wet_c_selected = tgrid["wet_c"].isel(ncells=ncells_selected)
 
 # calculate the regional mean by considering the slightly different cell_area
 to_ave = (to_selected * cell_area_selected * wet_c_selected).sum(dim="ncells") /  (cell_area_selected * wet_c_selected).sum(dim="ncells")
+```
+
+## Plotting
+When plotting using the `pyic.plot()`, it usually uses the full dimension of the data, so if using the `isel(ncells = ncells_selected`, the dimension doesn’t match. For this, a good way to avoid this is to expand the mask into full dimension.
+The expanded masks can be found at:
+```python
+# example region: general Peru Coastal region
+region_name = "pc_all"
+full_mask = xr.open_dataset(f"/work/mh0033/m301254/proj_surfwave/masks/secs_to_mask/full_masks_{region_name}_oce_r2b7.nc")
 ```
