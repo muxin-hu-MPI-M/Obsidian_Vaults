@@ -93,10 +93,16 @@ tags:
 
 
 # [[2026-01-26]]
-- [ ] make the `individual section` in ocean r2b7 grid #project/surfwaves 
+- [x] make the `individual section` in ocean r2b7 grid #project/surfwaves 
 	- [x] Nils’ method
-	- [ ] Fraser's method
-- [ ] make the `adjacent_cells` along the pre-defined sections (in `edge` space) for the project: eddy and upwelling #project/MesoEddy_Upwelling 
+	- [x] Fraser's method
+- [x] make the `adjacent_cells` along the pre-defined sections (in `edge` space) for the project: eddy and upwelling #project/MesoEddy_Upwelling 
 - [x] crop the `tgrid` file based on the defined masks #project/surfwaves #project/MesoEddy_Upwelling 
 	- [x] r2b9 - `pc_middle`
 	- [x] r2b7 - all masks
+- [x] adapt Xinyue’s script to match with Andrea’s `crop_function` #project/MesoEddy_Upwelling 
+	- [x] calculate trends for T and N2
+	- [x] figure of compare
+- [ ] **Note taking**: summarise the project #project/MesoEddy_Upwelling 
+	- [ ] Summarise how to efficiently use the defined sections and section-bounded regional mask. Check `/home/m/m301254/proj_surfwave/scripts/test.ipynb`
+	- [ ] summarise the story line for the project
