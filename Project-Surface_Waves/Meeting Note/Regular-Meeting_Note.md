@@ -7,6 +7,9 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-01-29]]
+
+
 # [[2026-01-19]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
