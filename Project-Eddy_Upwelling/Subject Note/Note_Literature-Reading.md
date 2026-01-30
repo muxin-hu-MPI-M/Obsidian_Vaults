@@ -35,3 +35,12 @@ Last Eddited: 2026-01-30
 
 # Bakun 1990
 (Bakun, 1990)
+**abstract**:
+- global warming, could lead to acceleration of coastal upwelling by intensifying the coastal alongshore wind stresses on the ocean surface
+- evidence shows the growing intensity in global major upwelling systems as GHG increases
+	- This aligns with the historical run of the EERIE (1980-2010)
+		- 30 year rolling mean of area averaged total heat flux absorbed by the ocean is increasing
+		- slightly cooling trend of the SST
+		- trend of strengthening of pressure gradient in the focused area
+- 
+ 
