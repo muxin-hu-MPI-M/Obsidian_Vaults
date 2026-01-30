@@ -8,6 +8,18 @@ Last Eddited: 2026-01-13
 ---
 
 # [[2026-01-29]]
+## Regular Meeting with Nils
+#presenter/Nils_Brüggemann 
+- **output namelist**: 
+  think of getting the direct model output for the ~={red}**heat, salinity tendency budget**=~ for the tracer (T, S, then calculate the density (buoyancy)) budget analysis.
+	- the core to analysis is the ==heat budget in the mixed layer change off shore== and how this is related to the wind-driven upwelling and wind-induced surface waves
+		- the extent of mixed layer is influenced by the mixing process, and this is related to the state of ocean (temperature, salinity), and the turbulence mixing in air-sea interface and mixed layer bottom
+- in r2b7 configuration:
+	- the eddy are not resolved, the output of $\bar{u\rho}$ is given as the mean covariance, there’s no eddy velocity or eddy heat flux.
+	- hence the eddy transport of tracer is represented by parameterisation, namely “**GeutMcwilliams parameter**”
+- One can also think of the representation of coupling mechanisms between waves-ocean-atmosphere in the atmosphere.
+
+
 
 
 # [[2026-01-19]]
@@ -24,6 +36,8 @@ Last Eddited: 2026-01-13
 		- Which is good for us to attribute the change in our target (i.e., wind, wave, upwelling) to local change and local processes. No need to have a thorough analysis of the global climate
 - To do:
 	- Ask the `Wind_speed_10m` output in ocean grid and if the atmospheric grid also has wind stress components;
+
+
 
 
 # [[2026-01-12]]

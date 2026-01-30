@@ -74,6 +74,13 @@
       ],
       "color": "green"
     },
+    "Project-Eddy_Upwelling/Subject Note": {
+      "icon": "lucide-notebook-pen",
+      "color": "red",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
     "Project-Surface_Waves": {
       "icon": "🏄‍♂️",
       "unsynced": [

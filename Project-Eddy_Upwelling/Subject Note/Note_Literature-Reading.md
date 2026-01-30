@@ -1,22 +1,11 @@
 ---
 tags:
   - project/MesoEddy_Upwelling
-  - "#presenter/Noel_Gutierrez-Brizuela"
-  - "#presenter/Xinyue_Li"
-Last Eddited: 2026-01-18
+  - Subject-Note
+  - presenter/Noel_Gutierrez-Brizuela
+Last Eddited: 2026-01-30
 ---
-# Detailed Descriptions (PDF)
-![[Peru upwelling project.pdf]]
-
-## Basic Info
-- Grid
-	- atmosphere: `r2b8_atm_r0033`
-	- ocean: `r2b9_oce_r0004`, `lev=72`
-## Questions
-- “we will assess whether eddy compensation strengthens under continued warming and how this changes change the “residual” upwelling” **Why so-called “residual upwelling”**
-- What’s the background of the hypothesis 2? Why mesoscale eddies increasingly compensates the wind-driven overturning over time? Is it because the amount/strength of mesoscale eddies are projected to increase?
-
-## Note: Thomsen et al. (2021)
+# Thomsen et al. (2021)
 (Thomsen et al., 2021)
 - **Background info**:
 	- Coastal upwelling rates are classically determined by the intensity of the upper-ocean offshore Ekman transport. 
@@ -44,13 +33,5 @@ Last Eddited: 2026-01-18
 
 
 
-# Meeting notes
-## [[2026-01-21]] Opening 
-- can be finished in a short time
-- cooling of the eastern central pacific, while the land is heated 
-  → pressure gradient increasing 
-  → the wind goes north is strengthening
-- **ERRIRE** captures the cooling trend with high accuracy compared to CMIP, high resolution
-
-
-# Literature reading
+# Bakun 1990
+(Bakun, 1990)
