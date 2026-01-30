@@ -6,8 +6,9 @@ tags:
   - code/tips
 Last Eddited: 2026-01-13
 ---
-# Calculate Spatial Average
-## when not consider wet_c in fx.file
+# Basics
+## Calculate Spatial Average
+### when not consider wet_c in fx.file
 - The ICON natural grids have different grid area (in $m^2$), which can be found in the corresponding `tgrid.nc` with the variable `[‘cell_area’]` 
 - The difference is more significant in lower resolution configurations in ICON
 - Thus, when calculating the spatial average of a scalar quantity, one need to consider the cell area to make sure the correct calculation. The usual workflow would be:
@@ -16,7 +17,7 @@ Last Eddited: 2026-01-13
 tos_ave = (tos * ds_tg.cell_area * mask).sum(dims='ncell')/ (ds_tg.cell_area * mask).sum(dims='ncell')
 ```
 
-## Consider `wet_c`, more precise
+### Consider `wet_c`, more precise
 - when calculating the regional mean value for 3D fields (especially over coastal region where the **bathymetry** is important), it need special treatment for safety reason.
 - because the mask has 2 values: `mask==1.0 or mask==0.0 -> False`, so the regional average formula stated in above may encounter few problems:
 	- **Zero values are ambiguous and contaminate the mean**
@@ -38,8 +39,11 @@ to_ave = (to * cell_area * mask * wet_c).sum(dim="ncell") / (cell_area * mask * 
 
 
 
-# Mask defined using Fraser’s method
-## Descriptions
+# Regional Cell Mask & Section Edge Mask
+## Regional Mask (cell_mask)
+**Defined using Fraser’s package: `iconspy`**, please find the script in:
+`/home/m/m301254/project_surfwaves/scripts/make_sections_and_bounded_region.ipynb`
+### Descriptions
 the files (for r2b7) can be found:
 ```python
 # regional mask (cell_mask)
@@ -72,8 +76,8 @@ all_sections = xr.open_dataset("/work/mh0033/m301254/proj_surfwaves/masks/secs_t
         - it contains the `edge_mask` for each individual section, with the name as e.g., `mask_sectionX`. Be aware that each `edge_mask` contains the full dimension, and has the edge orientation attached. Thus, each `edge_mask` is an **array of -1, 0, +1, in the shape of number of all edges in r2b9 grid**.
         - the `ie_sectionX` and `iv_sectionX` are the **indexes for selected edge**. Notice that only the **valid edge/vertex has positive index**, invalid edge/vertex has negative `ie` and `iv`
 
-## Apply in Calculation
-### crop `tgrid` file
+### Apply in Calculation
+#### crop `tgrid` file
 For more efficient usage in **ICON native grid (“tgrid”)**, one need to crop the original tgrid file to the region masked. The `pyicon` provides the function to do so:
 ```python
 def crop_tgrid_to_region(tgrid, mask):
@@ -90,27 +94,30 @@ def crop_tgrid_to_region(tgrid, mask):
 	xarray.Dataset
 	The cropped tgrid dataset.
 	"""
-	
+	# contained_cells: cell index of masked area
 	ireg_c = mask["contained_cells"].astype(int)
 	crop_tg = pyic.xr_crop_tgrid(tgrid, ireg_c)
+	# build icon-readable interpolated grid
+	ds_IcD = pyic.convert_tgrid_data(crop_tg)
 
-	return crop_tg
+	return ds_IcD, crop_tg
 
 # example usage
 tgrid = xr.open_dataset(fpath_tgrid["oce"])
 mask_pc_all = xr.open_dataset("/work/mh0033/m301254/proj_surfwave/masks/secs_to_mask/pc_all_sections_masks_oce_r2b7.nc")
-
-crop_tg_pc_all = crop_tgrid_to_region(tgrid, mask_pc_all)
+ds_IcD_pc_all, crop_tg_pc_all = crop_tgrid_to_region(tgrid, mask_pc_all)
 ```
-- the `crop_tg` is saved as individual netcdf file for later usage
+- the `crop_tg` can be saved as individual netcdf file for later usage
 
-### Spatial Average
+
+#### Spatial Average
 - the usual workflow is summarised below:
 ```python
 # read cropped tgrid files
 crop_tg = xr.open_dataset("/work/mh0033/m301254/proj_eddy_upwelling/masks/secs_to_mask/pc_all_mask_cropped_tgrid_oce_r2b7.nc") 
 # transfer to ICON readable dataset 
 ds_IcD = pyic.convert_tgrid_data(crop_tg) print("cropped tgrid has been created.") 
+
 # Optional: keep selected ncells index (still 0-based) 
 ncells_selected = crop_tg.cell.rename({"cell": "ncells"})
 
@@ -123,7 +130,7 @@ wet_c_selected = tgrid["wet_c"].isel(ncells=ncells_selected)
 to_ave = (to_selected * cell_area_selected * wet_c_selected).sum(dim="ncells") /  (cell_area_selected * wet_c_selected).sum(dim="ncells")
 ```
 
-## Plotting
+### Plotting
 When plotting using the `pyic.plot()`, it usually uses the full dimension of the data, so if using the `isel(ncells = ncells_selected`, the dimension doesn’t match. For this, a good way to avoid this is to expand the mask into full dimension.
 The expanded masks can be found at:
 ```python
@@ -131,3 +138,22 @@ The expanded masks can be found at:
 region_name = "pc_all"
 full_mask = xr.open_dataset(f"/work/mh0033/m301254/proj_surfwave/masks/secs_to_mask/full_masks_{region_name}_oce_r2b7.nc")
 ```
+
+
+## Individual Section Mask (edge mask)
+The section mask can be created through: 
+- Nils’ `pyicon` script: `/home/m/m301254/Download/pyicon/tools/tool_icon_section_transport_mask.py`
+- Fraser’s `iconspy` script: `/home/m/m301254/project_surfwaves/scripts/make_sections_and_bounded_region.ipynb`
+	- Fraser’s script is more useful when defining the regions based on the section. See details in [[ICON_Data-process_Tips#Descriptions]]
+
+`pyicon` is a powerful tool to regulate difference kinds of masks, including the edge mask (or so-called sections). It can select the needed edge/vertex and modify the original tgrid file, and create a ICON-readable dataset, adjacent cells to the section for later usage.
+
+For this, #presenter/Andrea_Mosso write a ~={red}**python script** which contains some useful functions=~ to:
+1. maps a scalar from cell centres to edges using the logic of the equivalent vector `pyicon` function
+2. Build interpolated tgrid (IcD) for a given section.
+3. Computes interpolated scalar from cell to edges and restricted to a section.
+4. Add a 'distance' coordinate to a section DataArray based on edge lon/lat.
+5. Remap horizontal velocity components from cell centers to cell edges, returning the velocity normal to each edge on a cropped ICON grid. This function takes zonal (uo) and meridional (vo) velocity components defined at cell centers and:
+	1. Ensures that the velocity fields are defined on the same (possibly reduced) set of cells as the cropped grid.
+	2. Rotates the horizontal velocity vector into the local grid coordinate system to obtain the normal velocity at cell centers.
+	3. Interpolates the cell-centered normal velocity to cell edges.
