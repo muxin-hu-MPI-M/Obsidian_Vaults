@@ -103,6 +103,6 @@ tags:
 - [x] adapt Xinyue’s script to match with Andrea’s `crop_function` #project/MesoEddy_Upwelling 
 	- [x] calculate trends for T and N2
 	- [x] figure of compare
-- [ ] **Note taking**: summarise the project #project/MesoEddy_Upwelling 
-	- [ ] Summarise how to efficiently use the defined sections and section-bounded regional mask. Check `/home/m/m301254/proj_surfwave/scripts/test.ipynb`
-	- [ ] summarise the story line for the project
+- [x] **Note taking**: summarise the project #project/MesoEddy_Upwelling 
+	- [x] Summarise how to efficiently use the defined sections and section-bounded regional mask. Check `/home/m/m301254/proj_surfwave/scripts/test.ipynb`
+	- [x] summarise the story line for the project
