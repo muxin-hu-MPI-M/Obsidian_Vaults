@@ -124,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#presenter/Andrea_Mosso",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -150,7 +150,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 270.5024719238281
+    "width": 257.5024719238281
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -295,7 +295,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "d95d1666c3089ae1",
   "lastOpenFiles": [
     "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
     "Project-Eddy_Upwelling/Subject Note/Note_Literature-Reading.md",

@@ -146,14 +146,15 @@ The section mask can be created through:
 - Fraser’s `iconspy` script: `/home/m/m301254/project_surfwaves/scripts/make_sections_and_bounded_region.ipynb`
 	- Fraser’s script is more useful when defining the regions based on the section. See details in [[ICON_Data-process_Tips#Descriptions]]
 
-`pyicon` is a powerful tool to regulate difference kinds of masks, including the edge mask (or so-called sections). It can select the needed edge/vertex and modify the original tgrid file, and create a ICON-readable dataset, adjacent cells to the section for later usage.
+`pyicon` is a powerful tool to regulate difference kinds of masks, including the edge mask (or so-called sections). It can select the needed edge/vertex and modify the original **tgrid** file, and create a ICON-readable dataset, adjacent cells to the section for later usage.
 
 For this, #presenter/Andrea_Mosso write a ~={red}**python script** which contains some useful functions=~ to:
-1. maps a scalar from cell centres to edges using the logic of the equivalent vector `pyicon` function
-2. Build interpolated tgrid (IcD) for a given section.
-3. Computes interpolated scalar from cell to edges and restricted to a section.
-4. Add a 'distance' coordinate to a section DataArray based on edge lon/lat.
-5. Remap horizontal velocity components from cell centers to cell edges, returning the velocity normal to each edge on a cropped ICON grid. This function takes zonal (uo) and meridional (vo) velocity components defined at cell centers and:
-	1. Ensures that the velocity fields are defined on the same (possibly reduced) set of cells as the cropped grid.
-	2. Rotates the horizontal velocity vector into the local grid coordinate system to obtain the normal velocity at cell centers.
-	3. Interpolates the cell-centered normal velocity to cell edges.
+1. **Maps a scalar from cell centres to edges** using the logic of the equivalent vector `pyicon` function
+2. **Build interpolated tgrid (IcD) for a given section.**
+3. **Interpolate scalar from cell to edges and restricted to a section.**
+4. **Add a 'distance' coordinate to a section** DataArray based on edge longitude/latitude.
+5. **Remap horizontal velocity components from cell centres to cell edges, returning the velocity normal to each edge on a cropped ICON grid**. This function takes zonal (`uo`) and meridional (`vo`) velocity components defined at cell centres and:
+	- Ensures that the velocity fields are defined on the same (possibly reduced) set of cells as the cropped grid.
+	- Rotates the horizontal velocity vector into the local grid coordinate system to obtain the normal velocity at cell centres.
+	- Interpolates the cell-centred normal velocity to cell edges.
+6. **Bin multiple section DataArrays by distance and stack along a new ‘section’ dimension.** Useful when calculating mean quantities between different sections.
