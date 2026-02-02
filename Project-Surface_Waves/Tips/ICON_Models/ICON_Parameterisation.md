@@ -9,11 +9,14 @@ tags:
   - ICON-O
 Last Eddited: 2025-11-29
 ---
-# Introduction
+
+# TKE-Scheme (ICON-o)
+
+## Introduction
 
 To parameterise the Turbulent Kinetic Energy (TKE) in the mixed layer is complex, and couldn’t revolve in coarser resolution. Hence, parameterisation is needed. The note here will summarise several key TKE parameterisation schemes that the ICON implemented already, or will implement in the future.
 
-# The TKE-Scheme (ICON-o)
+## Summary
 
 The TKE parameterisation scheme in ICON-O model.
 ![[Screenshot 2025-10-28 at 10.48.16.png |center]]
@@ -100,3 +103,25 @@ It says: **the dissipation rate is proportional to the turbulent velocity scale 
 - Single dominant length scale $L_{mix}$ governs the energy-containing eddies
 
 For the actual ICON output of TKE and TKE tendency (change rate of TKE), please refers to the **“TKE Output Table” section in ICON Output Reference**
+
+
+
+# Gent-McWilliams parameterisation (GM90) (ICON-o)
+## Summary (AI-generated)
+The **Gent-McWilliams (GM) parameterisation** (often referred to as Get-McWilliams or GM90) is a fundamental mathematical technique used in ocean general circulation models (OGCMs) and climate models to represent the effects of unresolved, small-scale ocean eddies (mesoscale eddies) on large-scale ocean currents and tracer transport. 
+
+Its primary potential meaning and function is to ==**act as a sink for available potential energy by "flattening" isopycnals (surfaces of constant density) and reducing horizontal density gradients**==, simulating how eddies mix the ocean without relying on computationally expensive, high-resolution simulations. 
+
+Here is a breakdown of the potential meanings and impacts of the GM parameterisation: 
+1. Core Purpose: Representing Eddy Activity 
+	- ==**Adiabatic Transport:**== The GM parameterisation models the adiabatic (meaning it does not create or destroy density, but moves it) transport of tracers, such as temperature and salinity, by mesoscale eddies.
+	- ==**Bolus Velocity:**== It introduces an "eddy-induced velocity" or "bolus velocity" ($u^*$) that moves tracers, which is added to the normal ocean current velocity ($u$)
+	- ==**Flattening Isopycnals:**== The main physical effect is to flatten sloping isopycnals, which releases available potential energy (APE) created by baroclinic instability, a process critical for balancing the ocean's large-scale circulation. 
+2. Major Impacts on Climate Models 
+	- **Improved Ocean Circulation:** Implementing GM reduces the need for "flux corrections" (adjustments made to keep models from drifting) in climate simulations.
+	- **Better Simulation of the Ocean:** It significantly improves the representation of the Meridional Overturning Circulation (MOC), the Antarctic Circumpolar Current (ACC), and deep water formation.
+	- **Reduction of Spurious Mixing:** Unlike traditional horizontal diffusion, which creates false, artificial mixing (upwelling), GM provides a physically grounded way to mix tracers along isopycnal surfaces. 
+3. Key Components and Variations 
+	- **Thickness Diffusivity ($\kappa_{\text{GM}}$)**:often called the isopycnal "thickness diffusivity" or "GM diffusivity".
+	- **GM/Redi Framework:** GM is frequently combined with the **Redi parameterization** (Redi, 1982). While GM handles the _advective_ transport (movement), Redi handles the _diffusive_ mixing along isopycnals.
+	- **Modern Advancements:** While the original 1990 GM scheme used a constant $\kappa$, modern models often use spatially and temporally varying $\kappa$ values (e.g., Visbeck et al. or GEOMETRIC) that depend on local ocean conditions (like stratification or eddy kinetic energy).

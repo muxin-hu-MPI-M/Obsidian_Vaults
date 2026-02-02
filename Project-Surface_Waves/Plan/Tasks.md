@@ -77,7 +77,7 @@ tags:
 - [x] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
 
 # [[2026-01-19]]
-- [ ] finish the AI use test stated in Email #project/PhD_general 
+- [x] finish the AI use test stated in Email #project/PhD_general 
 - [x] make a namelist that I need for future simulation #project/surfwaves 
 - [x] Create the Peru upwelling region masks for project mesoscale-upwelling #project/MesoEddy_Upwelling 
 	- [x] ocean: `r2b9`
@@ -106,3 +106,7 @@ tags:
 - [x] **Note taking**: summarise the project #project/MesoEddy_Upwelling 
 	- [x] Summarise how to efficiently use the defined sections and section-bounded regional mask. Check `/home/m/m301254/proj_surfwave/scripts/test.ipynb`
 	- [x] summarise the story line for the project
+
+# [[2026-02-02]]
+- [ ] check the ocean output namelist, and make a summary for the future analysis #project/surfwaves 
+- [ ] Check the parameterisation scheme: “Gent McWilliams (GM90)” #project/surfwaves 

@@ -136,3 +136,5 @@ Two-dimensional output for surface data or column-integrated data, including sea
 
 ![[Screenshot 2025-12-16 at 10.31.53.png]]
 
+
+# Ocean output Namelist

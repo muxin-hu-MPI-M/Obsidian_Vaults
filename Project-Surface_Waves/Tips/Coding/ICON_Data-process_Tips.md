@@ -159,7 +159,7 @@ For this, #presenter/Andrea_Mosso write a ~={red}**python script** which contain
 	- Interpolates the cell-centred normal velocity to cell edges.
 6. **Bin multiple section DataArrays by distance and stack along a new ‘section’ dimension.** Useful when calculating mean quantities between different sections.
 ### Example: 2D potential temperature trend
-only core ideas are written below:
+only core workflow is summarised below:
 ```python
 from distributed import Client, LocalCluster,
 import funcs_crop_section as functions

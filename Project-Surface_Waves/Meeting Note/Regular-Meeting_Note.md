@@ -16,7 +16,9 @@ Last Eddited: 2026-01-13
 		- the extent of mixed layer is influenced by the mixing process, and this is related to the state of ocean (temperature, salinity), and the turbulence mixing in air-sea interface and mixed layer bottom
 - in r2b7 configuration:
 	- the eddy are not resolved, the output of $\bar{u\rho}$ is given as the mean covariance, there’s no eddy velocity or eddy heat flux.
-	- hence the eddy transport of tracer is represented by parameterisation, namely “**GeutMcwilliams parameter**”
+	- hence the eddy transport of tracer is represented by parameterisation, namely “**Gent McWilliams parameterisation (GM90)**” (see details in )
+		- short intro: The **Gent-McWilliams (GM) parameterisation** (often referred to as Get-McWilliams or GM90) is a fundamental mathematical technique used in ocean general circulation models (OGCMs) and climate models to represent the effects of unresolved, small-scale ocean eddies (mesoscale eddies) on large-scale ocean currents and tracer transport. 
+		- Its primary potential meaning and function is to **act as a sink for available potential energy by "flattening" isopycnals (surfaces of constant density)** and reducing horizontal density gradients, simulating how eddies mix the ocean without relying on computationally expensive, high-resolution simulations.
 - One can also think of the representation of coupling mechanisms between waves-ocean-atmosphere in the atmosphere.
 
 
@@ -26,16 +28,16 @@ Last Eddited: 2026-01-13
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
 - does the ocean has the output for surface fluxes? (sensible heat, latent heat, momentum?). I only find the `HeatFlux_Total` → ==**check namelist for the ocean**==
-- needed variables that is missing on standard ICON-XPP output (see [[ICON_Output_Reference#ICON-XPP standard output]]): 
+- needed variables that is missing on standard ICON-XPP output (see [[ICON_Output_Namelist#ICON-XPP standard output]]): 
 	- **atmosphere**: wind stress components (`tauu, tauv`);
 	- **ocean**: 
 		- wind stress components (`stress_xw, stress_yw`)
-		- tke (different components → difference balance term in the tke equation (see details in [[ICON-TKE_Parameterisation]])
+		- tke (different components → difference balance term in the tke equation (see details in [[ICON_Parameterisation]])
 - ==**For the case of c-k=0.3:**==
 	- compare to the extreme case (c_k=1.0), it is more realistic; No major change in the background climate
 		- Which is good for us to attribute the change in our target (i.e., wind, wave, upwelling) to local change and local processes. No need to have a thorough analysis of the global climate
 - To do:
-	- Ask the `Wind_speed_10m` output in ocean grid and if the atmospheric grid also has wind stress components;
+	- Ask the `Wind_speed_10m` output in ocean grid and if the atmospheric grid also has wind stress components; → the wind_speed_10m in ocean output is only on when turning on, but in general I don’t need this.
 
 
 
