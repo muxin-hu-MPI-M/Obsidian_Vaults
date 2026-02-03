@@ -160,8 +160,9 @@ There are 3 main research questions involved in the 1st phase of my PhD:
 >   - Reason of change: Overlap between previous classes and unclear classification standard
 > - We should keep this open! Nothing has determined yet!!
 	
-2. How do these wave-induced modifications affect the Peruvian coastal upwelling system in terms of its ~={red}structure and variability=~
-3. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
+1. How do these wave-induced modifications affect the Peruvian coastal upwelling system in terms of its ~={red}structure and variability=~
+	1. **more specific questions??**
+2. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
 
 ## “Subjects” and Required Variables
 The subjects (or the “targets” we will mostly focuses) are:
@@ -197,3 +198,4 @@ make sure all related variables are selected;
 	- tendency of XXX expressed in heat content: `delta_thetao (W m-2), delta_so (kg m-2 s-1)` → old variables (total tendency)
 	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend` → whole sum (adv, divergence)
 - advection (flux): `uT, vT, wT`
+
