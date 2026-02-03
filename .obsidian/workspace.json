@@ -163,8 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5024719238281,
-    "collapsed": true
+    "width": 257.5024719238281
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -288,7 +287,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5,
+    "width": 303.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -312,8 +311,8 @@
   },
   "active": "a0574c8ef950139a",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
+    "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",

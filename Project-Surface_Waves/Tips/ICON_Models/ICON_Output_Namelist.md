@@ -78,22 +78,25 @@ elif [ ${LEV} == L128 ] ; then
 
 # TKE Output Table
 
-| **Name**         | **Long name**            | **Physical Meaning**                      | **Unit** |
-| ---------------- | ------------------------ | ----------------------------------------- | -------- |
-| **tke**          | turbulent kinetic energy | Total turbulent energy per unit mass.     | m2 s-2   |
-| **vmix_dummy_1** | vmix_dummy_1             | -                                         | fixme    |
-| **vmix_dummy_2** | vmix_dummy_2             | -                                         | fixme    |
-| **vmix_dummy_3** | vmix_dummy_3             | -                                         | fixme    |
-| **tke_Tbpr**     | TKE tend bpr             | TKE tendency due to buoyancy production   | m2 s-3   |
-| **tke_Tspr**     | TKE tend spr             | TKE tendency due to shear production      | m2 s-3   |
-| **tke_Tdif**     | TKE tend dif             | TKE tendency due to diffusion             | m2 s-3   |
-| **tke_Tdis**     | TKE tend dis             | TKE tendency due to dissipation           | m2 s-3   |
-| **tke_Twin**     | TKE tend win             | TKE tendency due to wind forcing          | m2 s-3   |
-| **tke_Tiwf**     | TKE tend iwf             | TKE tendency due to internal wave forcing | m2 s-3   |
-| **tke_Tbck**     | TKE tend bck             | TKE tendency due to background mixing     | m2 s-3   |
-| **tke_Ttot**     | TKE tend tot             | Total TKE tendency                        | m2 s-3   |
-| **tke_Lmix**     | TKE mixing length        | (Kolmogorov’s) Mixing length              | m        |
-| **tke_Pr**       | TKE Prandtl number       | Turbulent Prandtl number                  | -        |
+| **Name**         | **Long name**                      | **Physical Meaning**                      | **Unit** |
+| ---------------- | ---------------------------------- | ----------------------------------------- | -------- |
+| **tke**          | turbulent kinetic energy           | Total turbulent energy per unit mass.     | m2 s-2   |
+| **vmix_dummy_1** | vmix_dummy_1                       | -                                         | fixme    |
+| **vmix_dummy_2** | vmix_dummy_2                       | -                                         | fixme    |
+| **vmix_dummy_3** | vmix_dummy_3                       | -                                         | fixme    |
+| **tke_Tbpr**     | TKE tend bpr                       | TKE tendency due to buoyancy production   | m2 s-3   |
+| **tke_Tspr**     | TKE tend spr                       | TKE tendency due to shear production      | m2 s-3   |
+| **tke_Tdif**     | TKE tend dif                       | TKE tendency due to diffusion             | m2 s-3   |
+| **tke_Tdis**     | TKE tend dis                       | TKE tendency due to dissipation           | m2 s-3   |
+| **tke_Twin**     | TKE tend win                       | TKE tendency due to wind forcing          | m2 s-3   |
+| **tke_Tiwf**     | TKE tend iwf                       | TKE tendency due to internal wave forcing | m2 s-3   |
+| **tke_Tbck**     | TKE tend bck                       | TKE tendency due to background mixing     | m2 s-3   |
+| **tke_Ttot**     | TKE tend tot                       | Total TKE tendency                        | m2 s-3   |
+| **tke_Lmix**     | TKE mixing length                  | (Kolmogorov’s) Mixing length              | m        |
+| **tke_Pr**       | TKE Prandtl number                 | Turbulent Prandtl number                  | -        |
+| tke_plc          | TKE Langmuir turbulence            | TKE Langmuir turbulence                   | m2 s-3   |
+| wlc              | Langmuir turbulence velocity scale | Langmuir turbulence velocity scale        | m s-1    |
+| hlc              | Depth of Langmuir cell             | Depth of Langmuir cell                    | m        |
 
 **For the TKE-Scheme in ICON, please refers to [ICON TKE Parameterisation](https://www.notion.so/ICON-TKE-Parameterisation-29a69691c52b80e7888ce8d81a77edb5?pvs=21)**
 
@@ -143,22 +146,48 @@ This section will discuss the potential output variables needed for future simul
 There are 3 main research questions involved in the 1st phase of my PhD:
 1. Which wave-induced processes, including 
 	   **(1) Wave-mediated momentum pathways**
-		   - Waves mediate how much and through which pathways does wind momentum reach ocean
+		   - Waves mediate how much and through which pathways does wind momentum reach to ocean
 	   **(2) Stokes-drift-driven processes**
 		   - Waves generate Lagrangian drift that reorganises momentum, tracers and momentum
 	   **(3) Wave breaking and associated irreversible processes**
 		   - Waves breaking transfers energy and momentum into turbulence, bubbles (i.e., dissipation) that change air-sea exchange efficiency
+	
 	play the dominant role in the modulation of ~={red}air-sea exchanges=~ in the Peruvian coastal region.
+	
 > [!Attention]
 > - This version is **different from the version recorded in the first panel report**!
 > - The main difference lies in the classification of wave-related processes.
->   - Reason of change: Slight overlap between (1) and (3) and unclear classification standard
+>   - Reason of change: Overlap between previous classes and unclear classification standard
+> - We should keep this open! Nothing has determined yet!!
 	
 2. How do these wave-induced modifications affect the Peruvian coastal upwelling system in terms of its ~={red}structure and variability=~
 3. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
 
-
-
-The ==**research subject**== summarised from these 3 questions are:
+## “Subjects” and Required Variables
+The subjects (or the “targets” we will mostly focuses) are:
 - air-sea exchanges
 - structure and variability of upwelling system
+
+Needed **ICON output namelist** (see the full list in [[https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/0206_output.html](https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/0206_output.html)]) will be given as below, classified based on different subjects
+### Air-sea exchanges
+#### Surface Fluxes
+- Heat:
+	- `HeatFlux_Total/Sensible/Latent` → **uncoupled**??
+	- `HeatFlux_LongWave/Shortwave` → for analysis cloud cover
+	- `atmos_fluxes_HeatFlux_Total/Sensible/Latent` → should we use this?? → **coupled**??
+- Momentum (wind stress):
+	- `stress_xw/yw` → uncoupled?
+	- `atmos_fluxes_stress_xw/yw` → wind stress → **coupled**??
+	- `bc_top_WindStress_u/v` → what is bc → boundary condition
+#### TKE
+make sure all related variables are selected; 
+- TKE equation: see details in [[ICON_Output_Namelist#TKE Output Table]]
+- Stokes-drift: `u_stokes, u3d_stokes, v3d_stokes`
+
+### Structure and variability of Upwelling System
+#### Heat content budget analysis
+- Heat content: `heat_content_total/300m/700m`
+- tendency
+	- tendency of XXX expressed in heat content: `delta_thetao (W m-2), delta_so (kg m-2 s-1)`
+	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend`
+- advection: `uT, vT, wT`

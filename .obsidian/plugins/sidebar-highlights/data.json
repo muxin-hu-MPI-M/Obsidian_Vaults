@@ -1040,22 +1040,7 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md": [
-      {
-        "id": "nixgtpg0f",
-        "text": "**research subject**",
-        "tags": [],
-        "line": 161,
-        "startOffset": 7240,
-        "endOffset": 7264,
-        "filePath": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1770112338311,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ]
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md": []
   },
   "collections": {},
   "groupingMode": "none",
