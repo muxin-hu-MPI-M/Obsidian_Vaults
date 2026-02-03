@@ -175,15 +175,18 @@ Needed **ICON output namelist** (see the full list in [[https://icon-o.gitlab-pa
 - Heat:
 	- `HeatFlux_Total/Sensible/Latent` → **uncoupled**??
 	- `HeatFlux_LongWave/Shortwave` → for analysis cloud cover
-	- `atmos_fluxes_HeatFlux_Total/Sensible/Latent` → should we use this?? → **coupled**??
+	- `atmos_fluxes_HeatFlux_Total/Sensible/Latent` → should we use this?? → **coupled**
 - Momentum (wind stress):
 	- `stress_xw/yw` → uncoupled?
-	- `atmos_fluxes_stress_xw/yw` → wind stress → **coupled**??
+	- `atmos_fluxes_stress_xw/yw` → wind stress → **coupled**
 	- `bc_top_WindStress_u/v` → what is bc → boundary condition
+
+find the coupling namelist (information) in ``
 #### TKE
 make sure all related variables are selected; 
 - TKE equation: see details in [[ICON_Output_Namelist#TKE Output Table]]
-- Stokes-drift: `u_stokes, u3d_stokes, v3d_stokes` → 3d is the profile  → Langmuir turbulence
+- Stokes-drift: `u_stokes, u3d_stokes, v3d_stokes` 
+	- 3d is the profile → Langmuir turbulence (see details in [[Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014#The Shear of the Stokes Drift Profile]]) → Langmuir turbulence term hasn’t been added to the TKE parameterised equation
 
 ### Structure and variability of Upwelling System
 #### Heat content budget analysis
@@ -194,6 +197,7 @@ make sure all related variables are selected;
 	- in a output group 
 	- **tendency**: divergence of the flux
 	- → ask andrea #presenter/Andrea_Mosso 
+	- need to add it `use_Ts_budget = True` in the namelist and write them out
 - **tendency**
 	- tendency of XXX expressed in heat content: `delta_thetao (W m-2), delta_so (kg m-2 s-1)` → old variables (total tendency)
 	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend` → whole sum (adv, divergence)

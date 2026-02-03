@@ -287,8 +287,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303.5,
-    "collapsed": true
+    "width": 303.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -311,16 +310,16 @@
   },
   "active": "a0574c8ef950139a",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Eddy_Upwelling/Subject Note/Note_Literature-Reading.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
