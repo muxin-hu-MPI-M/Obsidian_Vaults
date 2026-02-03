@@ -64,20 +64,6 @@
             }
           },
           {
-            "id": "9b7e502fd61502d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Eddy_Upwelling/Subject Note/Note_Literature-Reading.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_Literature-Reading"
-            }
-          },
-          {
             "id": "d95d1666c3089ae1",
             "type": "leaf",
             "state": {
@@ -103,6 +89,20 @@
               },
               "icon": "lucide-file",
               "title": "Research-Gaps"
+            }
+          },
+          {
+            "id": "a0574c8ef950139a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ICON_Output_Namelist"
             }
           }
         ],
@@ -242,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Research-Gaps"
+              "title": "Outline of ICON_Output_Namelist"
             }
           },
           {
@@ -262,7 +262,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "70b38c6c1e92d24b",
@@ -308,16 +308,16 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "cf18839df3929811",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
+    "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Eddy_Upwelling/Subject Note/Note_Literature-Reading.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",

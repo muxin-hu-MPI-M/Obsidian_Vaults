@@ -110,4 +110,4 @@ tags:
 # [[2026-02-02]]
 - [ ] check the ocean output namelist, and make a summary for the future analysis #project/surfwaves 
 - [ ] Check the parameterisation scheme: “Gent McWilliams (GM90)” #project/surfwaves 
-- [ ] Update the atmospheric mask based on the new coordinates #project/surfwaves 
+- [x] Update the atmospheric mask based on the new coordinates #project/surfwaves 
