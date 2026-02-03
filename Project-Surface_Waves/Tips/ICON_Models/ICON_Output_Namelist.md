@@ -137,4 +137,28 @@ Two-dimensional output for surface data or column-integrated data, including sea
 ![[Screenshot 2025-12-16 at 10.31.53.png]]
 
 
-# Ocean output Namelist
+# Potential output namelist
+This section will discuss the potential output variables needed for future simulation when the ICON-Wave is ready
+## Start from Research Questions
+There are 3 main research questions involved in the 1st phase of my PhD:
+1. Which wave-induced processes, including 
+	   **(1) Wave-mediated momentum pathways**
+		   - Waves mediate how much and through which pathways does wind momentum reach ocean
+	   **(2) Stokes-drift-driven processes**
+		   - Waves generate Lagrangian drift that reorganises momentum, tracers and momentum
+	   **(3) Wave breaking and associated irreversible processes**
+		   - Waves breaking transfers energy and momentum into turbulence, bubbles (i.e., dissipation) that change air-sea exchange efficiency
+	play the dominant role in the modulation of ~={red}air-sea exchanges=~ in the Peruvian coastal region.
+> [!Attention]
+> - This version is **different from the version recorded in the first panel report**!
+> - The main difference lies in the classification of wave-related processes.
+>   - Reason of change: Slight overlap between (1) and (3) and unclear classification standard
+	
+2. How do these wave-induced modifications affect the Peruvian coastal upwelling system in terms of its ~={red}structure and variability=~
+3. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
+
+
+
+The ==**research subject**== summarised from these 3 questions are:
+- air-sea exchanges
+- structure and variability of upwelling system

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
+                "file": "Project-Surface_Waves/Plan/General_Proposal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON_Parameterisation"
+              "title": "General_Proposal"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Surface-Wave_Transport_Observation"
+              "title": "Research-Gaps"
             }
           },
           {
@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
+                "file": "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Research-Gaps"
+              "title": "Panel-Meeting_Note"
             }
           },
           {
@@ -163,7 +163,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5024719238281
+    "width": 257.5024719238281,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -287,7 +288,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5
+    "width": 334.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -308,20 +310,21 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cf18839df3929811",
+  "active": "a0574c8ef950139a",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Eddy_Upwelling/Subject Note/Note_Literature-Reading.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
@@ -329,7 +332,6 @@
     "PhD-General/MPI-M/Seminar Notes.md",
     "Attachments/Screenshot 2026-01-22 at 11.13.44.png",
     "Attachments/Screenshot 2026-01-22 at 11.11.41.png",
-    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Attachments/Peru upwelling project.pdf",
     "Project-Eddy_Upwelling/Plan",
