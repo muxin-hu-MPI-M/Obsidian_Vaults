@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -242,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Research-Gaps"
             }
           },
           {
@@ -262,7 +262,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "70b38c6c1e92d24b",
@@ -308,19 +308,19 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "a4c042796da6e82b",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Eddy_Upwelling/Subject Note/Note_Literature-Reading.md",
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Eddy_Upwelling/Plan/Goals-Roadmap.md",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
