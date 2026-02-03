@@ -182,12 +182,18 @@ Needed **ICON output namelist** (see the full list in [[https://icon-o.gitlab-pa
 #### TKE
 make sure all related variables are selected; 
 - TKE equation: see details in [[ICON_Output_Namelist#TKE Output Table]]
-- Stokes-drift: `u_stokes, u3d_stokes, v3d_stokes`
+- Stokes-drift: `u_stokes, u3d_stokes, v3d_stokes` → 3d is the profile  → Langmuir turbulence
 
 ### Structure and variability of Upwelling System
 #### Heat content budget analysis
-- Heat content: `heat_content_total/300m/700m`
-- tendency
-	- tendency of XXX expressed in heat content: `delta_thetao (W m-2), delta_so (kg m-2 s-1)`
-	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend`
-- advection: `uT, vT, wT`
+- Heat content: `heat_content_total/300m/700m`, temp * capacity
+- !!!`Tt_had, Tt_vad, Ts_had...`
+	- related to the time
+	- vertically integrated over one depth (multiplied by a layer thickness) 
+	- in a output group 
+	- **tendency**: divergence of the flux
+	- → ask andrea #presenter/Andrea_Mosso 
+- **tendency**
+	- tendency of XXX expressed in heat content: `delta_thetao (W m-2), delta_so (kg m-2 s-1)` → old variables (total tendency)
+	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend` → whole sum (adv, divergence)
+- advection (flux): `uT, vT, wT`
