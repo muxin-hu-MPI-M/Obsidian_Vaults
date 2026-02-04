@@ -242,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -308,8 +308,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "089a886df281ca2d",
+  "active": "a4c042796da6e82b",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "here.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
@@ -318,7 +319,6 @@
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
