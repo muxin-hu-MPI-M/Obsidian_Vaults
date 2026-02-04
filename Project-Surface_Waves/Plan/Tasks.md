@@ -67,7 +67,7 @@ tags:
 	- [x] Update the masks in ocean grid, by using the `cell_sea_land_mask` variable in `tgrid` file as reference
 	- [x] new `oce_mask_3d`: considering the depth space, by using `wet_c` variable in `.fx` file
 
-# [[2026-01-12]]
+## [[2026-01-12]]
 - [x] Define the shape files/masks for the cross-sections of the Peruvian coast #project/surfwaves 
 	- [x] shape files → txt files
 	- [x] save the mask into netcdf file
@@ -76,7 +76,7 @@ tags:
 	- [x] SLP
 - [x] Learn how to upload and commit the `/home/m/m301254/proj_surfwaves/` to my *github* repository
 
-# [[2026-01-19]]
+## [[2026-01-19]]
 - [x] finish the AI use test stated in Email #project/PhD_general 
 - [x] make a namelist that I need for future simulation #project/surfwaves 
 - [x] Create the Peru upwelling region masks for project mesoscale-upwelling #project/MesoEddy_Upwelling 
@@ -92,7 +92,7 @@ tags:
 	- [x] r2b9
 
 
-# [[2026-01-26]]
+## [[2026-01-26]]
 - [x] make the `individual section` in ocean r2b7 grid #project/surfwaves 
 	- [x] Nils’ method
 	- [x] Fraser's method
@@ -107,7 +107,7 @@ tags:
 	- [x] Summarise how to efficiently use the defined sections and section-bounded regional mask. Check `/home/m/m301254/proj_surfwave/scripts/test.ipynb`
 	- [x] summarise the story line for the project
 
-# [[2026-02-02]]
+## [[2026-02-02]]
 - [x] check the ocean output namelist, and make a summary for the future analysis #project/surfwaves 
 - [ ] Check the parameterisation scheme: “Gent McWilliams (GM90)” #project/surfwaves 
 - [x] Update the atmospheric mask based on the new coordinates #project/surfwaves 

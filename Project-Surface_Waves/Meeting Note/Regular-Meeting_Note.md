@@ -12,8 +12,15 @@ Last Eddited: 2026-01-13
 ## ICON-Wave focus group: Meeting 4
 - update on **ERA5** simulation: the simulation is basically done.
 	- r2b7: same atm/oce, one year simulation
-	- can check the output namelist!!!! https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group/-/issues/1
+	- can check the [output namelist](https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group/-/issues/1)
 	- also some output for year 2024. 
+	- Issues:
+		- **Wave-current interactions**: 
+			- can find the information in [MR!1664](https://gitlab.dkrz.de/icon/icon-nwp/-/merge_requests/1664)
+			- the current branch (MR!1961) coded the refraction of the ocean currents due to the wave (i.e., wave-current interactions)
+		- **Readers for forcing**:  
+			- Test if the python reader from Helmuth #presenter/Helmuth_Haak can read the ERA5 forcing for one year test in r2b7 (the same branch **MR !1961**)
+			- check with Helmuth and Nils next week
 
 
 # [[2026-02-03]]

@@ -242,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Note_Wave-induced-stress_and_Young-waves"
             }
           },
           {
@@ -308,16 +308,17 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "a4c042796da6e82b",
+  "active": "089a886df281ca2d",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/General_Proposal.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "2026-01-26.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "here.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-    "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
@@ -348,7 +349,6 @@
     "QuickCapture.md",
     "Project-Surface_Waves/Tips/How_the_Coriolis-paramter_is_derived.md",
     "Project-Surface_Waves/Tips/Coding",
-    "Project-Surface_Waves/Plan/ICON_Simulation_EXP-ID.md",
     "Attachments/Screenshot 2025-12-16 at 10.31.53.png",
     "Attachments/Screenshot 2025-12-16 at 10.28.31.png",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
