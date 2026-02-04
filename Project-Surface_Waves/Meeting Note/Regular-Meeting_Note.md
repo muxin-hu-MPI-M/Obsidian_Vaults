@@ -7,6 +7,21 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+
+# [[2026-02-04]]
+## ICON-Wave focus group: Meeting 4
+- update on **ERA5** simulation: the simulation is basically done.
+	- r2b7: same atm/oce, one year simulation
+	- can check the output namelist!!!! https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group/-/issues/1
+	- also some output for year 2024. 
+
+
+# [[2026-02-03]]
+## Regular Meeting with Nils
+#presenter/Nils_Brüggemann 
+Discussion on the output namelist and an update on the detailed research questions. The note can be found here [[ICON_Output_Namelist#Potential output namelist]]
+
+
 # [[2026-01-29]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
