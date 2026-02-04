@@ -33,7 +33,7 @@ The note is referring to multiple source of information:
 Please find the below contents referenced to Janssen, 2004
 Janssen, P. (2004). _The Interaction of Ocean Waves and Wind_. Cambridge University Press.
 ### Action density spectrum
-The most elegant formulation of the “energy” balance equation is in terms of he **action density spectrum** $N(\mathbf{k})$ which is the **energy spectrum** divided by the so-called intrinsic frequency $\sigma$. 
+The most elegant formulation of the “energy” balance equation is in terms of he **action density spectrum** $N(\mathbf{k})$ which is the **energy spectrum** divided by the so-called ~={red}**intrinsic frequency** $\sigma$, which can be considered as the frequency **relative to the water**=~
 
 Given the formula:
 
@@ -83,7 +83,7 @@ $$
 where the $\Omega$ denotes the dispersion relation:
 
 $$
-\Omega = \mathbf{k}\cdot\mathbf{u} +\sigma \tag{5}
+\omega =\Omega(\mathbf{k}, \mathbf{x}, t) = \mathbf{k}\cdot\mathbf{u} +\sigma \tag{5}
 $$
 
 Because the field $\dot{z}$ for a continuous ensemble of wave groups is divergence free in four-dimensional phase space, thus, the transport equation for the action density may be expressed in the advection form:
@@ -105,7 +105,7 @@ However, one should turn to the form of the action density balance equation (Eq.
 > 
 > 
 > - **choice of angular frequency instead of wavenumber**: 
-> 	- for a fixed topography and current, the frequency $\Omega$ is conserved when following a wave group, therefore the transport equation simplifies
+> 	- ~={red}**for a fixed topography and current, the frequency $\Omega$ is conserved when following a wave group**=~, therefore the transport equation simplifies
 > 	- In situ observation, it is much easier to obtain frequency spectrum, just requires the analysis of time-series (i.e., Fourier-Transform). 
 > 		- But, many observations of the wavenumber spectrum have been obtained through remote sensing techniques.
 
@@ -125,7 +125,7 @@ $$
 \frac{dN}{dt}=\frac{\partial N}{\partial t}+(\cos{\phi})^{-1}\frac{\partial }{\partial \phi}(\dot{\phi}\cos{\phi}\;N)+\frac{\partial }{\partial \lambda}(\dot{\lambda}\hat N)+\frac{\partial}{\partial \omega}(\dot{\omega}\hat N)+\frac{\partial }{\partial \theta}(\dot{\theta}\hat N) = 0 \tag{8}
 $$
 
-where, with the $c_g$ the magnitude of the wave group velocity:
+where, with the $c_g$ the magnitude of the **wave group velocity relative to water** (intrinsic group velocity $c_g=\frac{\partial \sigma}{\partial k}$):
 - $\dot{\phi}=(c_g \cos{\phi}+V_0)/R$
 - $\dot{\lambda}=(c_g \sin{\phi}+U_0)/R\cos{\phi}$
 - $\dot{\theta}=(c_g \sin{\theta} \tan{\phi})/R+(\dot{\mathbf{k}}\times \mathbf{k})/k^2$
@@ -165,7 +165,7 @@ $$
 
 And if the depth is decreasing for increasing latitude, ==**conservation of flux requires an increase of the action density as the group speed decreases for decreasing depth**== (The normal wisdom now is that the group speed decreases for decreasing depth (Janssen, 2004)). This is called shoaling effect
 ### Refraction
-The second example of finite depth effects that we consider is he refraction. Again, we assume no current and a time-independent topography. In the steady state the action balance equation becomes:
+The second example of finite depth effects that we consider is the refraction. Again, we assume no current and a time-independent topography. In the steady state the action balance equation becomes:
 
 $$
 (\cos \phi)^{-1}\frac{\partial}{\partial \phi}(\frac{c_g}{R}\cos \theta \cos \phi N)+\frac{\partial }{\partial \lambda} (\frac{c_g\sin \theta}{R \cos \phi}N)+\frac{\partial }{\partial \theta}(\dot \theta_o N)=0 \tag{13}
@@ -206,7 +206,7 @@ $$
 $$
 
 which is positive for an along-shore current which decreases towards the coast ($\frac{\partial}{\partial \lambda}U_{\phi}<0$). In this condition, the waves will turn towards the shore.
-The most dramatic effects may be found when the waves propagate against the current. For sufficiently large current, wave propagating is prohibited and wave reflection occurs, the group velocity vanishes. Because of the vanishing group velocity, a large increase of energy at that location may be expected suggesting that wave breaking plays a role. 
+The most dramatic effects may be found when the waves propagate against the current. ~={red}For sufficiently large current, wave propagating is prohibited and wave reflection occurs=~, the group velocity vanishes. Because of the vanishing group velocity, a large increase of energy at that location may be expected suggesting that wave breaking plays a role. 
 
 ## Summary for the Action Balance Equation
 Note that a global 3rd generation wave model solves the action balance equation in spherical coordinates. By combining previous results, the action balance equation becomes:
@@ -224,12 +224,14 @@ $$
 \dot{\omega}&=\partial \Omega/\partial t \tag{19d}
 \end{align}
 $$
+Where $c_g=c_g^{(i)}=\frac{\partial \sigma}{\partial k}$ is the **intrinsic group velocity** (i.e., group velocity relative to water). While the **absolute (observed) group velocity** $c_g^{(abs)}=\frac{\partial \Omega}{\partial k}=c_g^{(i)}+U$, and is implemented in Eq. 19a-b
+
 and 
 
 $$
 \dot \theta_D=\bigg( \sin \theta \frac{\partial }{\partial \phi}\Omega - \frac{\cos \theta}{\cos \phi}\frac{\partial}{\partial \lambda}\Omega \bigg)(kR)^{-1} \tag{20}
 $$
-and the $\Omega = \mathbf{k}\cdot\mathbf{u} +\sigma$ is the dispersion relationship. The right-hand-side is the source term, which is given by:
+and the $\Omega = \mathbf{k}\cdot\mathbf{u} +\sigma$ is the **dispersion relationship (or absolute frequency observed in the Earth-fixed frame)**. The right-hand-side is the source term, which is given by:
 
 $$
 S=S_{\text{in}}+S_{\text{ds}}+S_{\text{nl}}+S_{\text{bot}} \tag{21}
