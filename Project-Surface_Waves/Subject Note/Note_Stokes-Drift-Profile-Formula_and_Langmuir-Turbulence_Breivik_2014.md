@@ -103,7 +103,7 @@ $$ \begin{equation} v_P(z)=2\int_{\omega_P}^{\infty}\alpha_Pg\omega^{-2}e^{2\ome
 Which can be found analytically:
 $$ \begin{equation} v_P(z)=2\alpha_Pg \biggl\{ \mathbf {exp}(2\omega_P^2z/g)/\omega_p -\sqrt{\frac{-2\pi z}{g}}\biggr[1-\mathbf{erf}(\frac{\omega_p}{\sqrt{-2z/g}})\biggr]\biggl\} \tag{11}\end{equation} $$
 The transport can also be found analytically:
-$$ \begin{equation} V_P=\frac{\alpha_Pg^2}{2\omega_P^3} \tag{12}\end{equation} $$
+$$ \begin{equation} V_P=\frac{\alpha_Pg^2}{3\omega_P^3} \tag{12}\end{equation} $$
 
 - **Near the surface (when $|z|$ is small)**, the term in Stoke drift profile Eq (11) involving the error function becomes vanishingly small compared with the first term, and it is clear that:
     $$ \begin{equation} v_P(z)\approx(2\alpha_Pg/\omega_p)e^{2k_pz} \tag{13}\end{equation} $$
