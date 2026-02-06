@@ -109,6 +109,6 @@ tags:
 
 ## [[2026-02-02]]
 - [x] check the ocean output namelist, and make a summary for the future analysis #project/surfwaves 
-- [ ] Check the parameterisation scheme: “Gent McWilliams (GM90)” #project/surfwaves 
+- [x] Check the parameterisation scheme: “Gent McWilliams (GM90)” #project/surfwaves 
 - [x] Update the atmospheric mask based on the new coordinates #project/surfwaves 
-- [ ] Discussion with Christopher #presenter/Christopher_Higgins about the current status if the wave-ocean coupling, and some basic physics related to the wave influence on ocean currents (e.g., refraction)
+- [x] Discussion with Christopher #presenter/Christopher_Higgins about the current status if the wave-ocean coupling, and some basic physics related to the wave influence on ocean currents (e.g., refraction)
