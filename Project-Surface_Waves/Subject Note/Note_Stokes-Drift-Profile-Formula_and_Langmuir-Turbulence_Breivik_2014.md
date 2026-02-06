@@ -49,7 +49,7 @@ We now recast the east and north components of the ~={red}**Stokes drift profile
 $$ \begin{equation} \mathbf{v_s}(z)=\frac{16\pi^3}{g}\int_{0}^{2\pi} \int_{0}^{\infty}f^3 \hat{\mathbf{k}} e^{2kz}F(f, \theta)\;df\:d\theta \tag{4} \end{equation} $$
 Where $\theta$ is measured clockwise from north (going to).
 
-The ~={red}**Stokes transport**=~ $\mathbf{V_s}=\int_{0}^{\infty}\mathbf{v_s}(z)dz$ becomes in the deep water limit:
+The ~={red}**Stokes transport**=~ $\mathbf{V_s}=\int_{-\infty}^{0}\mathbf{v_s}(z)dz$ becomes in the deep water limit (since $\int_{-\infty}^{0}e^{2kz}\;dz=1/2k$):
 $$ \begin{equation} \mathbf{V_s}=2\pi\int_{0}^{2\pi} \int_{0}^{\infty}f\hat{\mathbf{k}}F(f,\theta)dfd\theta \tag{5}\end{equation} $$
 The integrand (Eq (5)) here is the first-order moment of the wave spectrum $m_1$ weighted by the unit vector $\hat{\mathbf{k}}$ of the wave component, with the $n$th-order moment of the 2D spectrum defined as:
 $$ \begin{equation} m_n=\int_{0}^{2\pi}\int_{0}^{\infty}f^nF(f,\theta)dfd\theta \tag{6}\end{equation} $$

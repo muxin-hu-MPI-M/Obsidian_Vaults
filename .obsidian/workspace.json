@@ -228,13 +228,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Data-process_Tips"
+              "title": "Outline of Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014"
             }
           },
           {
@@ -248,7 +248,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "70b38c6c1e92d24b",
@@ -296,12 +296,12 @@
   },
   "active": "1230892cf6936b78",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "Project-Surface_Waves/Plan/Tasks.md",
