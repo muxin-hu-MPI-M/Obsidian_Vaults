@@ -491,7 +491,7 @@ f_c=\text{min} [ f_{\text{max}}, 2.5\langle f \rangle_{\text{windsea}}] \tag{44}
 $$
 
 Thus, the high-frequency extent of the prognostic region is scaled by the mean frequency $\langle f \rangle_{\text{windsea}}$ of the local wind-sea. A **dynamic** high-frequency cut-off, $f_c$, rather than a fixed cut-off at $f_\text{max}$, corresponding to the last discretised frequency, is necessary to avoid excessive disparities in the response time scales within the spectrum. 
-This high-frequency cut-off is also discussed in the study of Stokes drift profile by (Breivik et al., 2014). Can find the note in [[Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014#High-Frequency Contribution to the Profile]]
+This high-frequency cut-off is also discussed in the study of Stokes drift profile by (Breivik et al., 2014). Can find the note in [[Note_Stokes-Drift-Profile#High-Frequency Contribution to the Profile]]
 
 In the ~={red}**diagnostic frequency range**=~, $\omega >\omega_c$, the wave spectrum is given by Phillips’s $\omega^{-5}$ power law. For this to be the case, **it is assumed that there is a balance between input, dissipation and the flux due to non linear wave interactions in the diagnostic frequency range**. In practice, this means that all energy and momentum going into the high-frequency rage of the spectrum, either by wind input or non-linear transfer, is dissipated, and is therefore directly transferred to the ocean column:
 

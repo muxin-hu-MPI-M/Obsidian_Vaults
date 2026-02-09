@@ -112,3 +112,9 @@ tags:
 - [x] Check the parameterisation scheme: “Gent McWilliams (GM90)” #project/surfwaves 
 - [x] Update the atmospheric mask based on the new coordinates #project/surfwaves 
 - [x] Discussion with Christopher #presenter/Christopher_Higgins about the current status if the wave-ocean coupling, and some basic physics related to the wave influence on ocean currents (e.g., refraction)
+
+## [[2026-02-09]]
+- [ ] Analysis on ERA5 reanalysis with wave outputs (2000-2024) #project/surfwaves 
+	- [ ] 10 m wind v.s wind stress (check to what extent the stress changed its direction because of the wave)
+	- [x] surface stokes drift velocity (magnitude + direction)
+	- [x] Estimated Stokes Transport (see Eq. 31 in [[Note_Stokes-Drift-Profile]]

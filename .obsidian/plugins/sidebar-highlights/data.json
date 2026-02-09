@@ -428,92 +428,6 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md": [
-      {
-        "id": "w87uub3y2",
-        "text": "**However, this monochromatic wave profile is prone to problem:**",
-        "tags": [],
-        "line": 92,
-        "startOffset": 6619,
-        "endOffset": 6688,
-        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764538766842,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "l2vkym6dk",
-        "text": "**Breivik et al. (2014) have explored a profile that approaches the exponential shape [Eq (13)] near the surface and goes like the asymptotic solution [Eq (15)] in the deep**",
-        "tags": [],
-        "line": 117,
-        "startOffset": 8789,
-        "endOffset": 8967,
-        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764539029748,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "0443ud6u7",
-        "text": "production of **Langmuir turbulence arises from a vortex force term",
-        "tags": [],
-        "line": 148,
-        "startOffset": 10387,
-        "endOffset": 10458,
-        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764539465173,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "eujp7vagp",
-        "text": "**Langmuir Turbulence Production**",
-        "tags": [],
-        "line": 170,
-        "startOffset": 12307,
-        "endOffset": 12345,
-        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764539591183,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "sn45fh5ro",
-        "text": "**$\\nu_m\\mathbf S\\cdot \\frac{\\partial \\mathbf v_s}{\\partial z}$: Langmuir turbulence production**",
-        "tags": [],
-        "line": 179,
-        "startOffset": 13099,
-        "endOffset": 13200,
-        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764539591970,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "h13lihypp",
-        "text": "**a high-frequency cut-off $f_c$.**",
-        "tags": [],
-        "line": 197,
-        "startOffset": 14889,
-        "endOffset": 14928,
-        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile-Formula_and_Langmuir-Turbulence_Breivik_2014.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764540382742,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ],
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md": [
       {
         "id": "gd44t6bqr",
@@ -1040,7 +954,93 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md": []
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md": [],
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md": [
+      {
+        "id": "w87uub3y2",
+        "text": "**However, this monochromatic wave profile is prone to problem:**",
+        "tags": [],
+        "line": 92,
+        "startOffset": 6619,
+        "endOffset": 6688,
+        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764538766842,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "l2vkym6dk",
+        "text": "**Breivik et al. (2014) have explored a profile that approaches the exponential shape [Eq (13)] near the surface and goes like the asymptotic solution [Eq (15)] in the deep**",
+        "tags": [],
+        "line": 117,
+        "startOffset": 8789,
+        "endOffset": 8967,
+        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764539029748,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "0443ud6u7",
+        "text": "production of **Langmuir turbulence arises from a vortex force term",
+        "tags": [],
+        "line": 148,
+        "startOffset": 10387,
+        "endOffset": 10458,
+        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764539465173,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "eujp7vagp",
+        "text": "**Langmuir Turbulence Production**",
+        "tags": [],
+        "line": 170,
+        "startOffset": 12307,
+        "endOffset": 12345,
+        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764539591183,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "sn45fh5ro",
+        "text": "**$\\nu_m\\mathbf S\\cdot \\frac{\\partial \\mathbf v_s}{\\partial z}$: Langmuir turbulence production**",
+        "tags": [],
+        "line": 179,
+        "startOffset": 13099,
+        "endOffset": 13200,
+        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764539591970,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "h13lihypp",
+        "text": "**a high-frequency cut-off $f_c$.**",
+        "tags": [],
+        "line": 197,
+        "startOffset": 14889,
+        "endOffset": 14928,
+        "filePath": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764540382742,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
+    ]
   },
   "collections": {},
   "groupingMode": "none",
