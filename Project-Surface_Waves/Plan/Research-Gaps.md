@@ -7,7 +7,29 @@ tags:
 ---
 
 # [[2026-02-09]] Update: Refine research questions
-$\nabla$
+1. Which wave-induced processes, including 
+	1. **Wave-mediated momentum pathways**
+		- Waves mediate how much and through which pathways does wind momentum reach to ocean
+	2. **Stokes-drift-driven processes**
+		- Waves generate Lagrangian drift that reorganises momentum, tracers and momentum
+	3. **Wave breaking and associated irreversible processes**
+		- Waves breaking transfers energy and momentum into turbulence, bubbles (i.e., dissipation) that change air-sea exchange efficiency
+	play the dominant role in the modulation of ~={red}air-sea exchanges=~ in the Peruvian coastal region.
+	
+2. How do these wave-induced modifications affect the Peruvian coastal upwelling system in terms of its ~={red}structure and variability=~
+	1. **Wave-mediated momentum -> change the stress that ocean "feels"**
+	   - Without wave: $\tau_{oc}=\tau_a$ ($\tau_{oc}=\tau_{oc}(\text{wind})$)
+	   - With wave: $\tau_{oc} = \tau_{a} - \tau_{in} -\tau_{ds}$ ($\tau_{oc}=\tau_{oc}(\text{wind, wave})$)
+	   - Directly Affect Ekman flow $v_{ek}$ estimation (to the 1st-order)
+	1. **Stokes transport -> modify the offshore mass transport (i.e., divergence of surface flow)**
+	   - Without wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} v_{ek}\;dz$, $w_{up}\sim V_{ek}$
+	   - With wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} (v_{ek}+v_{st})\;dz$, $w_{up}\sim (V_{ek}+V_{st})$
+
+3. **Wave-induced $\Delta \text{TKE}$ -> affect stratification -> affect ocean state -> ...?**
+
+- need to find the a "target" metric to analyse
+
+3. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
 
 
 
