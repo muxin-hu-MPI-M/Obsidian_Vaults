@@ -115,14 +115,14 @@ tags:
 
 ## [[2026-02-09]]
 - [ ] Record the idea thoroughly in Obsidian note
-	- [ ] Update research questions in 
+	- [ ] Update research questions recorded in [[ICON_Output_Namelist#Start from Research Questions]] to [[Research-Gaps]]
+	- [ ] 
 - [ ] Analysis on ERA5 reanalysis with wave outputs (2000-2024) #project/surfwaves 
-	- [ ] Create Regional mask
 	- [x] ocean stress vs wind stress (normalised ocean stress)
 	- [x] surface stokes drift velocity (magnitude + direction)
 	- [x] Estimated Stokes Transport (see Eq. 31 in [[Note_Stokes-Drift-Profile]]
-	- [ ] Estimated Stokes transport vs Estimated Ekman transport
+	- [x] Estimated Stokes transport vs Estimated Ekman transport
 		- [x] Estimate the total Stokes transport
-		- [ ] Estimate Ekman transport 
-			- [ ] without wave $\tau_{oc}=\tau_a$  
-			- [ ] with wave $\tau_{oc}=\tau_a - \tau_{in} - \tau_{diss}$
+		- [x] Estimate Ekman transport 
+			- [x] without wave $\tau_{oc}=\tau_a$  
+			- [x] with wave $\tau_{oc}=\tau_a - \tau_{in} - \tau_{diss}$
