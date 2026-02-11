@@ -24,15 +24,14 @@ tags:
 	2. **Stokes transport -> modify the offshore mass transport (i.e., divergence of surface flow)**
 	   - Without wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} v_{ek}\;dz$, $w_{up}\sim V_{ek}$
 	   - With wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} (v_{ek}+v_{st})\;dz$, $w_{up}\sim (V_{ek}+V_{st})$
-	3. 
-
-3. **Wave-induced $\Delta \text{TKE}$ -> affect stratification -> affect ocean state -> ...?**
-
-- need to find the a "target" metric to analyse
+	3. **Wave-induced $\Delta TKE$ → affect stratification → affect ocean state → ...?**
+	   - need to find the a "target" metric to analyse
 
 3. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
 
-
+> [!Question] 
+> - Why are these questions important? 
+> - What can a better understanding bring to the community?
 
 # [[2025-12-11]] Update: PhD Proposal 1st version
 

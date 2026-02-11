@@ -4,6 +4,65 @@ tags:
   - Seminars
 Last Eddited: 2025-11-19
 ---
+
+# [[2026-02-11]] Project Week: Summary
+## Global north/south
+#presenter/Sasha_Roewer #presenter/Tomas_Escaff
+- can we achieve  a symmetrical climate in symmetrical world?
+- change in climate sensitiivty? etc..
+- asymmetrical in full orbit!!!
+	- total precipitation → why?? 
+	- but symmetrical in fixed radiation
+
+## Warm extratropical bias projection
+#presenter/Victor_Brovkin
+- ocean is not the problem
+- land? soil moisture on higher side
+- interactions between land and atmosphere?
+	- transition from NGC3 (TMX) to NGC4 (), the bias extends dramatically 
+	- reason for particular warm bias found: The **Louis’ scheme in TMX** (explicit land-atmosphere coupling), change in vertical structure of the atmosphere, lead to more vertical mixing over the land
+
+## Cold Pacific Puzzle
+#presenter/Dian
+- at high resolution, can we get a decent ENSO if we have a decent mean state (use flux adjustment??)?
+	- implement SST nudging and delta Q output, or use heat flux adjustment
+- the global flux adjustment done decent job over Pacific (including SO), 
+	- use local tropical adjustment, not that decent
+
+## The world avoided by cleaning the air
+#presenter/Sarah_Kang
+- aerosol decreased over western Pacific (Actual world)
+- create a scenario where the aerosol do not decrease since 2000 (Avoided world)
+- The actual world is warmer than the avoided world in the global mean
+	- Warming is the strongest in winter primarily occurs in colder region
+	- why? might relate to stronger circulation response
+- clean the air, smaller seasonal amplitude
+- 1.5K warmer world brought when cleaning the air in 14 years
+
+## oroTopo: What is the effect of high resolution orography/topography
+- difference:
+	- orography: height; 
+	- topography: all info aout a place (incl land cover, surface roughness, etc)
+- goal:
+	- basic experiment to study the effects of globally reduce orographic resolution
+		- r2b8 configuration, r2b4 orography
+
+## Future projection of the Peru coastal upwelling system
+#presenter/Xinyue_Li 
+- SST cooling in the upwelling region during 1980-2010, but suddently shift to warming in 202-2050
+- the traditional view of the wind-driven upwelling do not explain the projection
+	- enhance of the surface stratification, traps heat to the surface
+	- heating is from a vertical pathway, with enhanced offshore transport redistributing this nearshore heat
+	- eddy’s role?
+		- the damping effect of air sea couling on surface eddies will increase, making it more unfavourable for eddy growth
+
+
+
+
+
+
+
+
 # [[2026-01-22]] Wave-induced drift on a rotating earth
 
 - what is the effect of the earth’s rotation on (surface gravity) wave-induced drift (in deep water)? → Stokes drift and anti-Stokes drift
