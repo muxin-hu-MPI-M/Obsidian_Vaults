@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -242,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Research-Gaps"
+              "title": "Outline of ICON_Output_Namelist"
             }
           },
           {
@@ -308,10 +308,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cf18839df3929811",
+  "active": "a0574c8ef950139a",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "[Panel-Meeting_Note.md",
     "[[Panel-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
