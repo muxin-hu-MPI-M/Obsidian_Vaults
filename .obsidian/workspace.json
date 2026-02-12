@@ -105,8 +105,7 @@
               "title": "Note_Stokes-Drift-Profile"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -242,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -308,10 +307,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "a4c042796da6e82b",
+  "active": "66b1902712bdd819",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Plan/Research-Gaps.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
