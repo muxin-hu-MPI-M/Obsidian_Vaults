@@ -105,7 +105,8 @@
               "title": "Note_Stokes-Drift-Profile"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -162,7 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5024719238281
+    "width": 280.5024719238281
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -171,7 +172,6 @@
       {
         "id": "03f66a03b8512b9a",
         "type": "tabs",
-        "dimension": 48.259187620889755,
         "children": [
           {
             "id": "b12f9881a9777b27",
@@ -241,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Research-Gaps"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -264,9 +264,8 @@
         "currentTab": 4
       },
       {
-        "id": "70b38c6c1e92d24b",
+        "id": "56e3efc834b16cf2",
         "type": "tabs",
-        "dimension": 51.740812379110245,
         "children": [
           {
             "id": "a4c042796da6e82b",
@@ -286,7 +285,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303.5
+    "width": 339.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -307,12 +306,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "66b1902712bdd819",
+  "active": "a4c042796da6e82b",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Research-Gaps.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Plan/Research-Gaps.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
