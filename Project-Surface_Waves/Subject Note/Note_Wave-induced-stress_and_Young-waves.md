@@ -327,6 +327,13 @@ $$
 \alpha = \frac{\hat \alpha}{\tau}/{\sqrt{1-\frac{\tau_w}{\bar\tau_a}}} \tag{30b}
 $$
 
+The determination of tunable constant $\hat \alpha$ is not a trivial task. Since CY47R1, it was realised that the Charnock parameter  
+or more generally since CY49R1:
+$$
+\alpha=\frac{gz_b}{\tau}/\sqrt{1-\frac{\tau_w}{\tau_a}} \tag{30c}
+$$
+
+
 where the $gz_b$ is the direct calculation of $z_b$. When combined with the renormalised growth rate, hese changes yields a reduction of the resulting *Charnock* parameter for storm wind conditions (above 20 m/s), which is correct to match the observational evidence that the *Charnock* parameter should reduce quite considerably under strong tropical winds.
 
 ### Since CY49R1, November 2024

@@ -22,7 +22,7 @@ tags:
 	   - With wave: $\tau_{oc} = \tau_{a} - \tau_{in} -\tau_{ds}$ ($\tau_{oc}=\tau_{oc}(\text{wind, wave})$)
 	   - Directly Affect Ekman flow $v_{ek}$ estimation (to the 1st-order)
 	2. **Stokes transport -> modify the offshore mass transport (i.e., divergence of surface flow)**
-	   - Without wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} v_{ek}\;dz$, $w_{up}\sim V_{ek}$
+	   - Without wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} \nabla \cdot v_{ek}\;dz$, $w_{up}\sim V_{ek}$
 	   - With wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} (v_{ek}+v_{st})\;dz$, $w_{up}\sim (V_{ek}+V_{st})$
 	3. **Wave-induced $\Delta TKE$ → affect stratification → affect ocean state → ...?**
 	   - need to find the a "target" metric to analyse
