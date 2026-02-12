@@ -6,7 +6,23 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
+# [[2026-02-12]]
+## Brainstorming Session
+#presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
+See detailed notes in [Updated ideas](Research-Gaps#2026-02-12 Update Ideas)
 
+## Regular Meeting with Nils
+- regarding the updated research questions listed in [Refined research questions](Research-Gaps#2026-02-09 Update Refine research questions)
+	- the $\Delta TKE$ could be very interesting, as it change the stratification, the extent of the mixing layer, change the sea state, some 2nd and 3rd feedback mechanisms may ultimately change the upwelling intensity and structure
+		- Nils: “The Langmuir turbulence may change a lot to the TKE”
+	- one potential idea (listed in [[Research-Gaps]]): **relate the Stokes transport (largely dominated by swells) to the dispersion of pollutants in Eastern-boundary coastal system**. 
+		- Usually, these pollutants will be carried away by the Ekman transport offshore
+		- Since the swell propagates onshore (e.g., in Peruvian), and the Stokes transport is largely determined by the swells, this may counteract to the ekman transport
+		- But need to identify ~={red}extreme cases for swells=~, which can be filtered by applying mask.
+			- mask: use significant height, to pass certain threshold
+			- first one would need to get a time series of the regional mean wave height (from difference wave component (wind waves, total swells))
+- We could also try to force the ICON-o with the ERA5 atmospheric and wave forcing
+	- to study and estimate the Stokes transport
 
 # [[2026-02-04]]
 ## ICON-Wave focus group: Meeting 4

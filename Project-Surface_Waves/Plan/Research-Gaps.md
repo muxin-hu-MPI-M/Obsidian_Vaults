@@ -5,6 +5,23 @@ tags:
   - wave/surface_wave
   - proposal/surfwaves
 ---
+# [[2026-02-12]] Update: Ideas
+some potential ideas that are discussed in the [brainstorming session](Regular-Meeting_Note#2026-02-12)
+1. **Force the ICON-O with ERA5 atmospheric/wave forcing to study the Stokes transport**
+	- use the ERA5 wave outputs (e.g., ocean stress $\tau_{oc}$) to force the ocean
+2. **Would ~={red}extreme swell events=~ modulate the upper ocean tracer transport and affect:**
+	1. spreads of the pollutants in the coastal upwelling region?
+		- study if in extreme cases, the onshore Stokes transport (near the surface) could affect the offshore Ekman transport, to what extent? how’s the spread of the pollutants?
+		- need high resolution regional model
+		- need high frequency data (hourly, daily)
+	2. production of phytoplankton in the coastal upwelling region?
+		- If it is, to what extent? 
+		- Dynamical reason? → change in upwelling intensity? structure?
+		- need to run HAMOCC (additional coast; should be the later stage of my PhD!!)
+3. **~={red}Stokes transport of heat that crosses the Equator Pacific=~**
+	- Context: the mean Stokes transport, which is largely modulated by the swells, can travel and propagate across the equator, which might induce a significant amount of mean heat transport that the upper ocean mean currents cannot
+	- It might incorporate large seasonality. As the storms-rich season in two hemispheres are different. The swell generation (mainly from storms) might also show great seasonality, and so does the seasonal mean Stokes transport of heat.
+
 
 # [[2026-02-09]] Update: Refine research questions
 1. Which wave-induced processes, including 
@@ -17,14 +34,14 @@ tags:
 	play the dominant role in the modulation of ~={red}air-sea exchanges=~ in the Peruvian coastal region.
 	
 2. How do these wave-induced modifications affect the Peruvian coastal upwelling system in terms of its ~={red}structure and variability=~
-	1. **Wave-mediated momentum -> change the stress that ocean "feels"**
+	1. ==**Wave-mediated momentum -> change the stress that ocean "feels"**==
 	   - Without wave: $\tau_{oc}=\tau_a$ ($\tau_{oc}=\tau_{oc}(\text{wind})$)
 	   - With wave: $\tau_{oc} = \tau_{a} - \tau_{in} -\tau_{ds}$ ($\tau_{oc}=\tau_{oc}(\text{wind, wave})$)
 	   - Directly Affect Ekman flow $v_{ek}$ estimation (to the 1st-order)
 	2. **Stokes transport -> modify the offshore mass transport (i.e., divergence of surface flow)**
 	   - Without wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} \nabla \cdot v_{ek}\;dz$, $w_{up}\sim V_{ek}$
 	   - With wave (to the 1st-order): $w_{up}\sim \int_{-h}^{0} (v_{ek}+v_{st})\;dz$, $w_{up}\sim (V_{ek}+V_{st})$
-	3. **Wave-induced $\Delta TKE$ → affect stratification → affect ocean state → ...?**
+	1. ==**Wave-induced $\Delta TKE$ → affect stratification → affect ocean state → ...?**==
 	   - need to find the a "target" metric to analyse
 
 3. What are the relative contributions of locally generated wind waves and remotely generated swells to air-sea exchanges in the Peruvian upwelling system?
