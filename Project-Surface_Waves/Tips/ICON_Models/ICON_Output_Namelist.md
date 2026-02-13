@@ -203,3 +203,5 @@ make sure all related variables are selected;
 	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend` → whole sum (adv, divergence)
 - advection (flux): `uT, vT, wT`
 
+
+cloud cover, SST, wind stress, LH/SH surface, wind profiles
