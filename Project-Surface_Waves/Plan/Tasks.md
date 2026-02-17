@@ -17,12 +17,19 @@ tags:
 
 # Weekly Plan 
 
-
+## [[2026-02-16]]
+- [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
+- [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
+	- [ ] Determine the final output list: strategy
+	- [ ] Simulation:
+		- [ ] `c_k=0.1` (default)
+		- [ ] `c_k=0.3` (ck03)
+		- [ ] `c_k=1.0` (ck10)
 
 ## [[2026-02-09]]
-- [ ] Record the idea thoroughly in Obsidian note #project/surfwaves 
+- [x] Record the idea thoroughly in Obsidian note #project/surfwaves 
 	- [x] Update research questions recorded in [[ICON_Output_Namelist#Start from Research Questions]] to [[Research-Gaps]]
-	- [ ] Update the potential ideas
+	- [x] Update the potential ideas
 - [ ] Analysis on ERA5 reanalysis with wave outputs (2000-2024) #project/surfwaves 
 	- [x] ocean stress vs wind stress (normalised ocean stress)
 	- [x] surface stokes drift velocity (magnitude + direction)
@@ -34,8 +41,6 @@ tags:
 			- [x] with wave $\tau_{oc}=\tau_a - \tau_{in} - \tau_{diss}$
 	- [ ] create the regional mask
 	- [ ] regional mean: analysis on seasonality
-		- [ ] 
-
 
 ## [[2026-02-02]]
 - [x] check the ocean output namelist, and make a summary for the future analysis #project/surfwaves 

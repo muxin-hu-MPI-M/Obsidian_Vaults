@@ -129,7 +129,6 @@ The output for global variables in (time,) dimension. For example, the AMOC stre
 
 ### `oce_upp`
 Variables that are important in the upper ocean
-
 ![[Screenshot 2025-12-16 at 10.28.31.png]]
 
 
@@ -203,5 +202,39 @@ make sure all related variables are selected;
 	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend` → whole sum (adv, divergence)
 - advection (flux): `uT, vT, wT`
 
+## Air-sea coupled output list
+from #presenter/Helmuth_Haak 
+```
+if [[ "$output_oce_flx" == "yes" ]]; 
+
+then cat >> ${oce_namelist} <<EOF
+
+&output_nml 
+	filetype = 5                                      ! output format: 2=GRIB2, 4=NETCDFv2, 5=NETCDFv4 
+	output_filename = "${EXPNAME}_oce_flx" 
+	filename_format = "<output_filename>_<datetime2>" 
+	output_start = "${start_date}"                    ! start date in ISO-format 
+	output_end = "${end_date}"                        ! end date in ISO-format 
+	output_interval = "P1D"                           ! interval in ISO-format 
+	file_interval = "${oce_file_interval}"            ! interval in ISO-format 
+	output_grid = .TRUE. 
+	mode = 1                                          ! 1: forecast mode (relative t-axis); 2: climate mode 
+	operation = 'mean'                                ! mean over output interval 
+	include_last = .FALSE. 
+	m_levels = "1"                                    ! surface and subsurface level only 
+	ml_varlist = 'Qtop', 'Qbot','HeatFlux_Total','HeatFlux_ShortWave','HeatFlux_LongWave','HeatFlux_Sensible','HeatFlux_Latent', 'FrshFlux_Runoff','FrshFlux_Precipitation','FrshFlux_Evaporation','FrshFlux_SnowFall','FrshFlux_TotalOcean','FrshFlux_VolumeIce','totalsnowfall','atmos_fluxes_stress_x','atmos_fluxes_stress_y','atmos_fluxes_stress_xw','atmos_fluxes_stress_yw', 'sea_level_pressure'
+
+/
+```
+
 
 cloud cover, SST, wind stress, LH/SH surface, wind profiles
+
+## Strategy
+==30 years of spin up with simplified output (default output), then 20 years of detailed output==
+the potential list of “additional” detailed outputs:
+1. `oce_tke`: TKE related output (already implemented in the `mux0001_b5b7` configuration)
+2. `oce_flx`: air-sea fluxes; Check the above namelist; should I keep on only the surface and subsurface only?
+3. `oce_htd`: heat tendency related variables. all 3d variables?
+4. `oce_std`: salt tendency related variables
+5. `oce_upo`: update the upper ocean output with additional tke, tendency parameters ??
