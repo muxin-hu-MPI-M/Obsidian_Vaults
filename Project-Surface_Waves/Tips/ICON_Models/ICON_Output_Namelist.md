@@ -102,6 +102,72 @@ elif [ ${LEV} == L128 ] ; then
 
 
 # ICON-XPP: standard output
+
+## Lists in the config file
+```
+# Ocean
+	[[[output_nml oce_mon]]]
+      .hide             = false
+      output_grid       = true
+      ml_varlist        += group:ocean_monitor
+
+    [[[output_nml oce_def]]]
+      .hide             = false
+      output_grid       = true
+      output_interval   = P1Y                          # production: annual data only
+      ml_varlist        += group:oce_default, group:oce_essentials, to, so, u, v
+
+    [[[output_nml oce_upp]]]
+      output_grid       = true
+      m_levels          = "1...10, 18, 25, 55"         # upper 1 km, in additon 2, 3, 4 km
+      ml_varlist += draftave, hi, hs, conc, to, so, ice_u, ice_v, Qtop, Qbot, u, v, mld, mlotst, mlotst10, zos, condep, stretch_c, verticallyTotal_mass_flux_e, HeatFlux_Total, FrshFlux_Runoff, FrshFlux_Precipitation, FrshFlux_Evaporation, FrshFlux_SnowFall, FrshFlux_TotalOcean, FrshFlux_VolumeIce, totalsnowfall, Wind_Speed_10m
+
+    [[[output_nml oce_moc]]]
+      output_grid       = true
+      ml_varlist        += group:ocean_moc
+      
+      
+[output]
+  oce_mon = true
+  oce_def = true
+  oce_upp = true
+  oce_moc = true
+
+  [[fixed]]
+    oce_fx = true 
+    
+# Atmosphere
+	[[[output_nml atm_mon]]]
+      .hide = false
+      ml_varlist  = tas_gmean, rsdt_gmean, rsut_gmean, rlut_gmean, radtop_gmean, prec_gmean, evap_gmean, pme_gmean
+
+    [[[output_nml atm_2d]]]
+      .hide = false
+      output_grid = true
+      ml_varlist  = pres_msl, pres_sfc, t_s, clct, tot_prec_rate, tqv, tqv_dia, tqc_dia, tqi_dia, umfl_s, vmfl_s, sp_10m, t_2m, sob_t, sod_t, sou_t, thb_t, sob_s, sou_s, thb_s, shfl_s, lhfl_s, snow_con_rate, snow_gsp_rate, ice_gsp_rate, qifl_s, qhfl_s, t_seasfc, fr_land, fr_seaice, condhf_ice, meltpot_ice, t_ice, h_ice, albvisdif, albvisdir, albnirdif, albnirdir
+
+    [[[output_nml atm_3d]]]
+      .hide = false
+      output_grid = true
+      ml_varlist  = pres_sfc, pres, geopot, temp, u, v, qv, rh, clc, tot_qc_dia, tot_qi_dia, runoff_s, runoff_g
+      ## h_levels = raw('10, 500, 5000') 
+
+    [[[output_nml lnd_mon]]]
+      .hide = false
+
+    [[[output_nml lnd_bas]]]
+      # ml_varlist = group:jsb_all_basic  #  full basic output
+      # - reduced basic output incl. alcc
+      ml_varlist += group:jsb_seb_basic,group:jsb_hydro_basic,group:jsb_sse_basic, group:jsb_pheno_basic,group:jsb_rad_basic,group:jsb_alcc_basic
+
+
+[output]
+  atm_mon = true
+  atm_3d  = true
+  atm_2d  = true
+  lnd_mon = true
+  lnd_bas = true
+```
 ## Ocean
 ### `oce_def`
 Standard output for ocean default variables
@@ -137,6 +203,9 @@ Variables that are important in the upper ocean
 Two-dimensional output for surface data or column-integrated data, including sea level pressure, total column integrated water vapour.
 
 ![[Screenshot 2025-12-16 at 10.31.53.png]]
+
+
+
 
 
 # Potential output namelist
