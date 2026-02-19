@@ -6,6 +6,25 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
+
+# [[2026-02-19]]
+## Meeting: project eddy and upwelling
+#presenter/Noel_Gutierrez-Brizuela 
+- **scientific problem**: observed cooling /constant SST in the historical trend, but the simulation with GHG increasing shows the warming trend from past to the future
+	- accelerated warming in the simulation
+	- but the observation is cooling
+	- ICON simulation shows the historical cooling!! and then transition to warming in the 2020-2050 period
+- Takeaway message:
+	- SST experience a regime shift after 2020 
+		- downward Qnet weakens
+	- Nearshore warming is accompanies by stronger stratification and enhanced offshore transport
+		- thus, not obvious reason for the SST warming
+	- the warming enters through the vertical pathway
+		- through vertical mean transport
+		- with enhanced offshore transport redistributing this nearshore heat
+	- air sea damping strengthens in the future period, limiting nearshore eddy amplification
+
+
 # [[2026-02-12]]
 ## Brainstorming Session
 #presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
