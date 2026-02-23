@@ -17,14 +17,15 @@ tags:
 
 # Weekly Plan 
 
-## [[2026-02-16]]
+## [[2026-02-23]]
 - [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
 - [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
-	- [ ] Determine the final output list: strategy
-	- [ ] Simulation:
-		- [ ] `c_k=0.1` (default)
-		- [ ] `c_k=0.3` (ck03)
-		- [ ] `c_k=1.0` (ck10)
+	- [ ] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
+	- [ ] 5-years test Simulation on `c_k=0.1 (default)`
+	- [ ] Longer simulation
+		- [ ] `c_k=0.1`
+		- [ ] `c_k=0.3`
+		- [ ] `c_k=1.0`
 
 ## [[2026-02-09]]
 - [x] Record the idea thoroughly in Obsidian note #project/surfwaves 
