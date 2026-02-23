@@ -18,9 +18,11 @@ tags:
 # Weekly Plan 
 
 ## [[2026-02-23]]
+- [ ] Studentship registration at UHH #project/PhD_general 
+- [ ] Info for permit #project/PhD_general 
 - [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
 - [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
-	- [ ] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
+	- [x] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
 	- [ ] 5-years test Simulation on `c_k=0.1 (default)`
 	- [ ] Longer simulation
 		- [ ] `c_k=0.1`
