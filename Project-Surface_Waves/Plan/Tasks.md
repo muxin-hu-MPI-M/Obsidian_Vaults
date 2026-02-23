@@ -21,6 +21,11 @@ tags:
 - [ ] Studentship registration at UHH #project/PhD_general 
 - [ ] Info for permit #project/PhD_general 
 - [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
+	- [ ] Cross-equatorial OHT by stokes drift in 
+		- [x] Indo-Pacific 
+		- [x] Pacific 
+		- [ ] Indian
+	- [x] Climatological zonally integrated OHT by stokes drift in different basins, plot the OHT vs Latitude
 - [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
 	- [x] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
 	- [ ] 5-years test Simulation on `c_k=0.1 (default)`
