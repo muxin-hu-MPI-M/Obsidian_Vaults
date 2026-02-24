@@ -26,7 +26,7 @@ tags:
 		- [x] CV
 		- [x] diploma supplement
 		- [x] high school certificate
-		- [ ] comparability form
+		- [x] comparability form
 		- [ ] supervision agreement
 		- [ ] research project outline (check with Nils)
 - [ ] Info for permit #project/PhD_general 
