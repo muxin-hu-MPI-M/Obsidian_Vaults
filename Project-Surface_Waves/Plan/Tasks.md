@@ -23,9 +23,10 @@ tags:
 		- [x] copies of degree certificates (Bachelor+Master)
 		- [x] transcripts of records
 		- [x] Copy of identification document (Passport, VISA)
-		- [ ] CV
+		- [x] CV
 		- [x] diploma supplement
 		- [x] high school certificate
+		- [ ] comparability form
 		- [ ] supervision agreement
 		- [ ] research project outline (check with Nils)
 - [ ] Info for permit #project/PhD_general 
