@@ -20,12 +20,12 @@ tags:
 ## [[2026-02-23]]
 - [ ] Studentship registration at UHH #project/PhD_general 
 	- [ ] Step 1: prepare documents
-		- [ ] copies of degree certificates (Bachelor+Master)
-		- [ ] transcripts of records
-		- [ ] Copy of identification document (Passport, VISA)
+		- [x] copies of degree certificates (Bachelor+Master)
+		- [x] transcripts of records
+		- [x] Copy of identification document (Passport, VISA)
 		- [ ] CV
-		- [ ] diploma supplement
-		- [ ] high school certificate
+		- [x] diploma supplement
+		- [x] high school certificate
 		- [ ] supervision agreement
 		- [ ] research project outline (check with Nils)
 - [ ] Info for permit #project/PhD_general 
