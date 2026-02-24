@@ -19,6 +19,13 @@ tags:
 
 ## [[2026-02-23]]
 - [ ] Studentship registration at UHH #project/PhD_general 
+	- [ ] Step 1: prepare documents
+		- [ ] copies of degree certificates (Bachelor+Master)
+		- [ ] transcripts of records
+		- [ ] diploma supplement
+		- [ ] high school certificate
+		- [ ] supervision agreement
+		- [ ] 
 - [ ] Info for permit #project/PhD_general 
 - [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
 	- [ ] Cross-equatorial OHT by stokes drift in 
