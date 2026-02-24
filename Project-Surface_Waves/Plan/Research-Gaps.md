@@ -5,6 +5,62 @@ tags:
   - wave/surface_wave
   - proposal/surfwaves
 ---
+
+# [[2026-02-24]] Update: Outline of the Topic and Research Project
+## Detailed version
+### Physical problem
+Coastal upwelling systems are key components of the climate system, sustaining high biological productivity and regulating regional air–sea exchanges of momentum, heat, and tracers. Upwelling is primarily driven by alongshore winds that induce offshore Ekman transport and divergence of surface waters, allowing cold, nutrient-rich subsurface water to rise toward the surface. The efficiency of this process depends critically on how atmospheric momentum and energy are transferred across the air–sea interface and redistributed within the upper ocean.
+Surface gravity waves play a fundamental role in mediating these exchanges. By modifying surface stress, generating Stokes drift, and injecting turbulence through wave breaking, waves influence how wind forcing is transmitted into the ocean mixed layer. These processes may alter upper-ocean stratification, vertical mixing, and transport pathways, thereby affecting the intensity and structure of coastal upwelling. Despite their potential importance, the dynamical role of surface waves in regulating upwelling systems remains incompletely understood.
+### Missing Mechanisms in Current Understanding
+Previous studies have demonstrated that wave-induced processes can significantly influence air–sea interactions in coastal regions. However, most investigations rely on uncoupled or one-way coupled modelling frameworks, in which the wave field does not evolve interactively with atmospheric and oceanic states. Such configurations prevent feedbacks among wind forcing, wave evolution, and ocean response, limiting the dynamical consistency of simulated air–sea exchanges.
+Furthermore, wave effects are often investigated individually and represented inconsistently across studies. Key processes, including wave-modified momentum fluxes, Stokes-drift-related dynamics, and wave-breaking-induced turbulence, are rarely evaluated within a unified and energetically consistent framework. Consequently, the combined and interacting impacts of surface waves on coastal upwelling dynamics remain poorly quantified.
+### Central Hypothesis
+This project is guided by the following hypothesis: **Wave-induced modifications of surface stress and upper-ocean turbulence systematically alter upper-ocean structure through modified air–sea exchanges, leading to measurable changes in coastal upwelling intensity that cannot be captured in insufficiently coupled modelling frameworks.**
+Testing this hypothesis requires a dynamically consistent framework in which atmosphere, waves, and ocean evolve interactively.
+### Conceptual Framework: Wave-Induced Pathways
+Wave impacts on air–sea interaction will be examined through three physically distinct pathways:
+1. **Wave-Mediated Momentum Pathway**:
+   Surface waves regulate how atmospheric momentum is transferred into the ocean by modifying surface roughness and stress partitioning. These processes influence Ekman transport and therefore directly affect upwelling-favourable divergence.
+2. **Lagrangian pathway**
+   Waves generate Lagrangian Stokes drift that modifies momentum balances through the Coriolis–Stokes force and reorganises tracer and mass transport within the upper ocean, potentially altering vertical structure and transport efficiency.
+3. **Turbulence Pathway**
+   Surface waves enhance upper-ocean turbulence through two mechanisms: (i) direct TKE injection associated with wave breaking and (ii) Langmuir turbulence arising from wave–current interaction between Stokes drift shear and Eulerian currents (Craik–Leibovich mechanism). Together, these processes modify mixed-layer depth, stratification, and air–sea exchange efficiency.
+This classification separates wave effects according to their dominant influence on momentum transfer, Lagrangian transport, and turbulent energy budgets while acknowledging the coupled nature of wave–current interactions.
+### Method: Fully coupled Modelling Framework
+The project will employ the fully coupled ICON modelling system, in which atmosphere (ICON-A), wave (ICON-Wave), and ocean (ICON-O) components interact through energetically consistent exchanges of momentum and energy. This framework enables two-way feedbacks between atmospheric forcing, wave evolution, and ocean response, allowing wave-induced processes to emerge dynamically rather than being prescribed.
+The Southeast Pacific (Peru–Chile) upwelling system is selected as the study region due to its persistent alongshore winds and complex wave climate characterised by the coexistence of locally generated wind waves and remotely generated swells. These characteristics provide an ideal environment for separating different wave influences on air–sea exchanges.
+### Experimental Design
+A hierarchy of numerical experiments will be conducted to isolate and quantify wave effects:
+- **CTRL:** Atmosphere–ocean coupled simulation without explicit wave feedback.
+- **WITHWAVE:** Fully coupled atmosphere–wave–ocean simulation enabling wave feedbacks.
+- **PROCESS experiments:** Simulations selectively activating individual wave-induced mechanisms to isolate contributions from momentum, Stokes-drift, and turbulence pathways.
+- **Sensitivity experiments:** Simulations separating the roles of locally generated wind waves and remotely generated swell forcing.
+This experimental strategy allows causal attribution of wave impacts on upper-ocean structure and upwelling variability.
+### Research Questions
+The project addresses the following quantifiable questions:
+1. What are the relative contributions of wave-mediated momentum transfer, Stokes-drift processes, and wave-induced turbulence to air–sea exchanges in the Southeast Pacific upwelling system?    
+2. To what extent do wave-induced processes modify upwelling intensity, vertical structure, and temporal variability compared with atmosphere–ocean coupled simulations without wave feedback?
+3. How do locally generated wind waves and remotely generated swells differ in their influence on air–sea momentum and energy exchanges?
+### Expected Scientific Advances
+This research will provide a dynamically consistent and process-based assessment of how surface waves influence coastal upwelling systems. By quantifying the relative importance of distinct wave-induced pathways within a fully coupled framework, the project aims to:
+- clarify mechanisms linking surface waves and coastal upwelling dynamics,
+- identify biases arising from insufficiently coupled modelling approaches,
+- improve physical understanding of air–sea exchange processes in eastern boundary systems, and
+- inform future development of coupled Earth system models and parameterisations.
+
+## Concise version
+Coastal upwelling systems are key components of the climate system, linking atmospheric forcing to ocean circulation, ecosystem productivity, and regional air–sea exchanges. Upwelling is primarily driven by alongshore winds that induce offshore Ekman transport and surface divergence, allowing cold, nutrient-rich subsurface waters to reach the surface. The efficiency and variability of this process depend critically on how momentum and energy are transferred across the air–sea interface and redistributed within the upper ocean. While surface gravity waves are known to mediate these exchanges, their dynamical role in shaping coastal upwelling remains insufficiently quantified.
+
+Surface waves influence air–sea interaction through multiple mechanisms that modify how wind forcing enters and is processed within the ocean. They alter surface stress and roughness, generate Lagrangian Stokes drift that interacts with ocean currents, and enhance upper-ocean turbulence through both wave breaking and wave–current interaction processes. Despite growing evidence that these mechanisms affect upper-ocean structure, most previous studies rely on uncoupled or one-way coupled modelling frameworks in which the wave field does not evolve interactively with atmospheric and oceanic states. Such approaches suppress feedbacks among winds, waves, and ocean circulation and typically examine wave effects in isolation, preventing a dynamically consistent assessment of their combined influence. Consequently, it remains unclear whether neglecting interactive wave coupling leads to systematic biases in simulated coastal upwelling systems.
+
+This project tests the hypothesis that **wave-induced modifications of surface stress and upper-ocean turbulence systematically alter upper-ocean structure through modified air–sea exchanges, leading to measurable changes in coastal upwelling intensity that cannot be captured in insufficiently coupled modelling frameworks**. To investigate this hypothesis, wave impacts are interpreted through three physically connected pathways. First, the **momentum pathway**, in which surface waves regulate the transmission of atmospheric momentum into the ocean by modifying surface roughness and stress partitioning, thereby influencing Ekman transport and upwelling-favourable divergence. Second, the **Lagrangian pathway**, whereby Stokes drift introduces wave-driven Lagrangian transport and modifies momentum balances through wave–current interactions such as the Coriolis–Stokes force, reorganizing tracer transport and mixed-layer structure. Third, the **turbulent kinetic energy (TKE) pathway**, through which wave breaking injects turbulence and momentum into the upper ocean, while interactions between Stokes-drift shear and Eulerian currents generate Langmuir turbulence, jointly enhancing vertical mixing and altering mixed-layer depth and air–sea exchange efficiency. Together, these pathways provide a unified physical framework for attributing how waves modify upwelling dynamics.
+
+The investigation will be conducted using the fully coupled ICON modelling system, which interactively couples atmosphere (ICON-A), waves (ICON-Wave), and ocean (ICON-O) through energetically consistent exchanges of momentum and energy. This framework enables two-way feedbacks among atmospheric forcing, wave evolution, and ocean response, allowing wave-induced processes to emerge dynamically rather than being prescribed. The Southeast Pacific (Peru–Chile) upwelling system is selected as the study region because persistent alongshore winds sustain year-round upwelling while a complex wave climate — shaped by both locally generated wind waves and remotely generated swells — provides an ideal setting to separate distinct wave influences on air–sea exchanges.
+
+A hierarchy of numerical experiments will be performed to isolate causal mechanisms. A baseline atmosphere–ocean coupled simulation (CTRL) will be compared with a fully coupled atmosphere–wave–ocean configuration (WITHWAVE) to quantify the integrated impact of wave feedbacks. Additional process experiments will selectively activate individual wave-induced pathways to attribute momentum, Lagrangian, and turbulence contributions, while sensitivity experiments will distinguish the roles of locally generated wind waves and remotely generated swells. These simulations enable direct quantification of how wave processes modify upwelling intensity, vertical structure, and temporal variability.
+
+The project addresses three central questions: (i) what are the relative contributions of momentum, Lagrangian, and TKE pathways to wave-modulated air–sea exchanges; (ii) how strongly do interactive wave processes modify coastal upwelling compared with simulations lacking wave feedback; and (iii) how differently do wind waves and swells influence upper-ocean dynamics and air–sea fluxes. By integrating multiple wave-induced mechanisms within a dynamically consistent coupled framework, this research will provide a process-based assessment of surface-wave impacts on coastal upwelling, quantify biases arising from insufficient coupling in current models, and improve physical understanding of upper-ocean mixing and air–sea interaction in eastern boundary systems, ultimately contributing to improved representation of air–sea exchanges in coupled Earth system models.
+
 # [[2026-02-12]] Update: Ideas
 some potential ideas that are discussed in the [brainstorming session](Regular-Meeting_Note#2026-02-12)
 1. **Force the ICON-O with ERA5 atmospheric/wave forcing to study the Stokes transport**
