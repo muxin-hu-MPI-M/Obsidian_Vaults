@@ -29,7 +29,7 @@ tags:
 		- [x] comparability form
 		- [ ] supervision agreement
 		- [ ] research project outline (check with Nils)
-- [ ] Info for permit #project/PhD_general 
+- [ ] prepare residence permit documents #project/PhD_general 
 - [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
 	- [ ] Cross-equatorial OHT by stokes drift in 
 		- [x] Indo-Pacific 
