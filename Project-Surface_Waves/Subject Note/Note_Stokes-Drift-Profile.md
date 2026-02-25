@@ -163,7 +163,7 @@ Here:
 - Each term in the right-hand side:
     - $\frac{g}{\rho_w}\overline{u_3'\rho'}=\overline{b'w'}$: buoyancy production term
     - $\overline{u_i'u_j'}\frac{\partial \overline u_i}{\partial x_j}$: shear production term(s)
-    - $-\overline{u_i'u_j'}\frac{\partial v_i}{\partial x_j}$: ~={red}**production of Langmuir turbulence; Involving the Reynolds stresses multiplied by the gradient in Stoles drift velocity $v_i$.**=~
+    - $-\overline{u_i'u_j'}\frac{\partial v_i}{\partial x_j}$: ~={red}**production of Langmuir turbulence; Involving the Reynolds stresses multiplied by the gradient in Stokes drift velocity $v_i$.**=~
     - $-\frac{\partial}{\partial x_j}(\overline{u_j'e})-\frac{1}{\rho_w}\frac{\partial}{\partial x_i}(\overline{u_i'p'})$: TKE Flux (redistribution) term
 
 
