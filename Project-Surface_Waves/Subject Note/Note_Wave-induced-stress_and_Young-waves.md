@@ -336,6 +336,7 @@ $$
 
 where the $gz_b$ is the direct calculation of $z_b$. When combined with the renormalised growth rate, hese changes yields a reduction of the resulting *Charnock* parameter for storm wind conditions (above 20 m/s), which is correct to match the observational evidence that the *Charnock* parameter should reduce quite considerably under strong tropical winds.
 
+(Wu et al., 2019) found that, **in general,** **the charnock number $\alpha$ increases with increasing inverse wave age** ($u^*/c_p$) as the sea surface grows rougher when the sea state becomes younger. However, the charnock number has significant scatter under the same wave age caused by differences in wave steepness
 ### Since CY49R1, November 2024
 Many things changed compare to the CY46R1:
 - background roughness length $z_b$, roughness length $z_o$ 

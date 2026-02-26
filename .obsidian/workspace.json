@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -124,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Coriolis",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -145,8 +145,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -293,10 +292,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "84b3fa6fb6531a71",
+  "active": "089a886df281ca2d",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
