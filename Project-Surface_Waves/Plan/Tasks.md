@@ -17,6 +17,12 @@ tags:
 
 # Weekly Plan 
 
+## [[2026-03-02]]
+- [ ] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point
+	- [ ] first try using shape file
+	- [ ] ask Fraser to see if his script also apply to atmospheric grid
+- [ ] 
+
 ## [[2026-02-23]]
 - [ ] Studentship registration at UHH #project/PhD_general 
 	- [x] Step 1: prepare documents
@@ -29,16 +35,18 @@ tags:
 		- [x] comparability form
 		- [x] supervision agreement
 		- [x] research project outline (check with Nils)
+	- [ ] Hand-in documents in DOCATA
 - [x] prepare residence permit documents #project/PhD_general 
-- [ ] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
-	- [ ] Cross-equatorial OHT by stokes drift in 
+- [x] Summarise the estimation results for the “Stokes transport of heat across Indo-Pacific Equator” into sides #project/surfwaves 
+	- [x] Cross-equatorial OHT by stokes drift in 
 		- [x] Indo-Pacific 
 		- [x] Pacific 
-		- [ ] Indian
+		- [x] Indian
 	- [x] Climatological zonally integrated OHT by stokes drift in different basins, plot the OHT vs Latitude
 - [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
 	- [x] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
-	- [ ] 5-years test Simulation on `c_k=0.1 (default)`
+	- [x] 5-years test Simulation on `c_k=0.1 (default)`
+	- [ ] check if the simulation is okay
 	- [ ] Longer simulation
 		- [ ] `c_k=0.1`
 		- [ ] `c_k=0.3`
