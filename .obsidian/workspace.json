@@ -90,9 +90,20 @@
               "icon": "lucide-file",
               "title": "ICON_Data-process_Tips"
             }
+          },
+          {
+            "id": "77a46a62bff4b309",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.4"
+            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -292,17 +303,17 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "66b1902712bdd819",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "2026-02-12.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "[Panel-Meeting_Note.md",
