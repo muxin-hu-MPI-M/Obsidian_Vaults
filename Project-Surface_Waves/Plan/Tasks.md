@@ -18,9 +18,9 @@ tags:
 # Weekly Plan 
 
 ## [[2026-03-02]]
-- [ ] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point
-	- [ ] first try using shape file
-	- [ ] ask Fraser to see if his script also apply to atmospheric grid
+- [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point
+	- [x] first try using shape file
+	- [x] ask Fraser to see if his script also apply to atmospheric grid: No, need to implement another method
 - [ ] 
 
 ## [[2026-02-23]]

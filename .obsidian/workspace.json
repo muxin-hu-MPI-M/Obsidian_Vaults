@@ -103,7 +103,8 @@
               "title": "Release Notes 1.12.4"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -238,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Panel-Meeting_Note"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -258,7 +259,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -282,7 +283,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 399.5
+    "width": 371.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -303,12 +304,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "66b1902712bdd819",
+  "active": "190369091626a017",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Research-Gaps.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",

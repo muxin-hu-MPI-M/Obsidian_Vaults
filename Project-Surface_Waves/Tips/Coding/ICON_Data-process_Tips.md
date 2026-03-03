@@ -39,7 +39,7 @@ to_ave = (to * cell_area * mask * wet_c).sum(dim="ncell") / (cell_area * mask * 
 
 
 
-# Regional Cell Mask & Section Edge Mask
+# Regional Cell Mask & Section Edge Mask: Ocean
 ## Regional Mask (cell_mask)
 **Defined using Fraser’s package: `iconspy`**, please find the script in:
 `/home/m/m301254/project_surfwaves/scripts/make_sections_and_bounded_region.ipynb`
@@ -392,3 +392,11 @@ ds_tgrid = xr.open_dataset("/home/m/m301254/pyicon_data/grids/r2b7_oce_r0005/r2b
 ds_IcD, cells, crop_tg = functions.build_section_IcD(ds_tgrid, mask_and_sections, "north_boundary")
 
 ```
+
+
+# Regional Cell mask: Atmospheric
+The corresponding regional masks, using the same corner points as the oceanic masks, are created using the shape file defined ONLY with the corner points latitude/longitude. The script can be found in `/home/m/m301254/project_surfwaves/scripts/make_mask_from_shapefile.ipynb`
+
+Two kinds of file:
+- `pc_masks_atm_full-dim.nc`: which contains the selected mask with the full spatial dimension
+- `pc_{region}_mask_atm_r2b5.nc`: information for the contained cell (only int), can be used 
