@@ -239,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of ICON_Data-process_Tips"
             }
           },
           {
@@ -304,10 +304,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "239fafeedbe050ea",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",

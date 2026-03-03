@@ -21,7 +21,13 @@ tags:
 - [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point
 	- [x] first try using shape file
 	- [x] ask Fraser to see if his script also apply to atmospheric grid: No, need to implement another method
-- [ ] 
+- [ ] check the example output to see if the data is successfully simulated
+	- [x] atm_2d
+	- [ ] atm_3d
+	- [x] oce_flx
+	- [ ] oce_upo
+	- [ ] oce_tke
+	- [ ] oce_bgt
 
 ## [[2026-02-23]]
 - [x] Studentship registration at UHH #project/PhD_general 
