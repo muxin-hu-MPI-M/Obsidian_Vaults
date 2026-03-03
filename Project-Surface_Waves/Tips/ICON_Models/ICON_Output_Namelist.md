@@ -76,7 +76,7 @@ elif [ ${LEV} == L128 ] ; then
     minVerticalLevels=12
 ```
 
-# TKE Output Table
+# TKE Output
 
 | **Name**         | **Long name**                      | **Physical Meaning**                      | **Unit** |
 | ---------------- | ---------------------------------- | ----------------------------------------- | -------- |
@@ -98,8 +98,10 @@ elif [ ${LEV} == L128 ] ; then
 | wlc              | Langmuir turbulence velocity scale | Langmuir turbulence velocity scale        | m s-1    |
 | hlc              | Depth of Langmuir cell             | Depth of Langmuir cell                    | m        |
 
-**For the TKE-Scheme in ICON, please refers to [ICON TKE Parameterisation](https://www.notion.so/ICON-TKE-Parameterisation-29a69691c52b80e7888ce8d81a77edb5?pvs=21)**
-
+## TKE Scheme
+For the TKE-Scheme in ICON, please refers to [[ICON_Parameterisation#TKE-Scheme (ICON-o)]]
+In general, the tendency term referring to the change relative to time:
+$$ \begin{equation} \frac{\partial \varepsilon}{\partial t}=\frac{\partial}{\partial z}\bigg( c_E\varepsilon^{1/2}L\frac{\partial \varepsilon}{\partial z}\bigg)+ c_u\varepsilon^{1/2}L\bigg(\frac{\partial \overline{\mathbf u_h}}{\partial z} \bigg)^2-c_b\varepsilon^{1/2}L\frac{\partial \overline{b}}{\partial z}-c_\epsilon\frac{\varepsilon^{3/2}}{L} \end{equation} $$
 
 # ICON-XPP: standard output
 
@@ -207,7 +209,6 @@ Two-dimensional output for surface data or column-integrated data, including sea
 
 
 
-
 # Potential output namelist
 This section will discuss the potential output variables needed for future simulation when the ICON-Wave is ready
 ## Start from Research Questions
@@ -266,9 +267,6 @@ make sure all related variables are selected;
 	- **tendency**: divergence of the flux
 	- → ask andrea #presenter/Andrea_Mosso 
 	- need to add it `use_Ts_budget = True` in the namelist and write them out
-- **tendency**
-	- tendency of XXX expressed in heat content: `delta_thetao (W m-2), delta_so (kg m-2 s-1)` → old variables (total tendency)
-	- complete XXX tendency at cells: `opottemptend, osalttend, odensitytend` → whole sum (adv, divergence)
 - advection (flux): `uT, vT, wT`
 
 ## Air-sea coupled output list
@@ -307,3 +305,92 @@ the potential list of “additional” detailed outputs:
 3. `oce_htd`: heat tendency related variables. all 3d variables?
 4. `oce_std`: salt tendency related variables
 5. `oce_upo`: update the upper ocean output with additional tke, tendency parameters ??
+
+
+# Heat/salt budget Output Table
+
+| Name   | Long name                     | physical meaning                                  | Unit    |
+| ------ | ----------------------------- | ------------------------------------------------- | ------- |
+| Tt_had | temp. tend. hor. adv.         | horizontal advection term                         | K s-1 m |
+| Tt_vad | temp. tend. vert. adv.        | vertical advection term                           | K s-1 m |
+| Tt_hdf | temp. tend. hor. diff.        | horizontal diffusion term                         | K s-1 m |
+| Tt_vdf | temp. tend. vert diff.        | vertical diffusion term                           | K s-1 m |
+| Tt_idf | temp. tend. impl. diff.       | Implicit diffusion term                           | K s-1 m |
+| Tt_sur | temp. tend. surface           | surface tendency (net change from surface fluxes) | K s-1 m |
+| Tt_srf | temp. tend. surface refractor | surface refractor                                 | K s-1 m |
+| Tt_tot | temp. tend. total             | total tendency                                    | K s-1 m |
+Same for the salt tendency output
+
+## Function: conservation equation:
+Take the heat as an example:
+$$
+\frac{\partial T}{\partial t}=-\nabla \cdot (\mathbf{u}T)+ \nabla \cdot (K\nabla T)+Q_{\text{surface}}
+$$
+where:
+- $T$: temperature
+- $\mathbf{u}=(u,v,w)$: velocity field
+- $K$: diffusion tensor (mixing)
+- $Q_{\text{surface}}$: surface heat source (converted into temperature tendency)
+
+In general, locally:
+$$
+\frac{\partial T}{\partial t}=-\nabla \cdot \mathbf{F}
+$$
+where $\mathbf{F}$ is a heat/temperature flux
+
+> [!Important]
+> A temperature tendency is mathematically the convergence of a temperature/heat flux
+
+### Decompositions
+The model store **layer-integrated tendencies**, in the unit of $K\;s^{-1}\;m$
+In general:
+$$
+Tt_{tot} = Tt_{had} + Tt_{vad} + Tt_{hdf} + Tt_{vdf} + Tt_{idf} + Tt_{sur} + Tt_{srf}
+$$
+if the term is <font color="#ff0000">positive</font>, then it tend to <font color="#ff0000">increase</font> the heat inside the cell
+#### Horizontal advection
+Tendency:
+$$
+Tt_{had}=-(\frac{\partial (uT)}{\partial x}+\frac{\partial (vT)}{\partial y}) \times \Delta z
+$$ 
+#### Vertical advection
+Tendency:
+$$
+Tt_{vad}=-(\frac{\partial (wT)}{\partial z})\times \Delta z
+$$
+#### horizontal diffusion
+represents the lateral mixing:
+the flux:
+$$
+\mathbf F_{hdf} = -K_h \nabla_h T
+$$
+Tendency:
+$$
+Tt_{hdf} = \nabla_h \cdot (K_h\nabla_hT)\times \Delta z
+$$
+
+#### Vertical diffusion
+tendency (vertical gradient of vertical turbulent mixing):
+$$
+Tt_{vdf}=\frac{\partial}{\partial z}(K_v\frac{\partial T}{\partial z})\times \Delta z
+$$
+
+#### Implicit diffusion
+Numerical/implicit mixing from solver stability schemes. Mathematically similar to diffusion:
+$$
+Tt_{idf}=\nabla \cdot (K_{impli}\nabla T)\times \Delta z
+$$
+but arises from:
+- implicit time stepping
+- numerical stabilisation
+
+#### Surface tendency
+heating/cooling from surface fluxes:
+$$
+Tt_{sur}=\frac{Q_{net}}{\rho c_p \Delta z}\times \Delta z = \frac{Q_{net}}{\rho c_p}
+$$
+where:
+- $Q_{net}$: net surface heat flux
+
+#### Surface refractor
+model-specific correction term
