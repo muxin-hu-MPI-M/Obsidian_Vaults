@@ -21,13 +21,15 @@ tags:
 - [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point
 	- [x] first try using shape file
 	- [x] ask Fraser to see if his script also apply to atmospheric grid: No, need to implement another method
-- [ ] check the example output to see if the data is successfully simulated
+- [x] check the example output to see if the data is successfully simulated
 	- [x] atm_2d
-	- [ ] atm_3d
+	- [x] atm_3d
 	- [x] oce_flx
-	- [ ] oce_upo
-	- [ ] oce_tke
-	- [ ] oce_bgt
+	- [x] oce_upo
+	- [x] oce_tke
+	- [x] oce_bgt
+- [ ] proceed to have 5-years simulation for `c_k=0.3`
+- [ ] have brand new simulation which has 
 
 ## [[2026-02-23]]
 - [x] Studentship registration at UHH #project/PhD_general 
@@ -52,7 +54,7 @@ tags:
 - [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
 	- [x] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
 	- [x] 5-years test Simulation on `c_k=0.1 (default)`
-	- [ ] check if the simulation is okay
+	- [x] check if the simulation is okay
 	- [ ] Longer simulation
 		- [ ] `c_k=0.1`
 		- [ ] `c_k=0.3`

@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -241,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Output_Namelist"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -306,12 +306,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "a0574c8ef950139a",
+  "active": "190369091626a017",
   "lastOpenFiles": [
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
