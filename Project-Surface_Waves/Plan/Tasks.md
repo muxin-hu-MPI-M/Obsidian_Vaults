@@ -28,8 +28,9 @@ tags:
 	- [x] oce_upo
 	- [x] oce_tke
 	- [x] oce_bgt
+- [ ] proceed longer simulation for default `c_k=0.1`
 - [ ] proceed to have 5-years simulation for `c_k=0.3`
-- [ ] have brand new simulation which has 
+- [ ] Inquire Lorenz for the experiment with difference `c_k`
 
 ## [[2026-02-23]]
 - [x] Studentship registration at UHH #project/PhD_general 
