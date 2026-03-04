@@ -105,8 +105,7 @@
               "title": "ICON_Parameterisation"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -241,13 +240,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Data-process_Tips"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -261,7 +260,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -285,7 +284,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 371.5
+    "width": 316.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -306,11 +305,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "cf18839df3929811",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",

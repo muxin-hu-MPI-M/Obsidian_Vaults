@@ -6,9 +6,15 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
+
+
+# [[2026-03-04]]
+## ICON-wave focus group: Meeting 5
+- 
+
 # [[2026-03-03]]
 ## Helmuth
-- ask Nils about joining the projecst from TRR that I can use the node hour
+- ask Nils about joining the project from TRR that I can use the node hour
 	- 1239: difficult one with Gulia, need to ask her maybe
 	- 1102: from Nils
 
