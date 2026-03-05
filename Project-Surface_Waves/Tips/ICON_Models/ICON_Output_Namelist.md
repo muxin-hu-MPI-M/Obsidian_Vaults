@@ -306,6 +306,49 @@ the potential list of “additional” detailed outputs:
 4. `oce_std`: salt tendency related variables
 5. `oce_upo`: update the upper ocean output with additional tke, tendency parameters ??
 
+### Namelist for the additional outputs:
+```
+# additional output
+    # TKE related 
+    [[[output_nml oce_tke]]]
+      .hide             = false
+      output_grid       = true
+      output_interval   = P1M                          
+      ml_varlist        += tke, vmix_dummy_1, vmix_dummy_2, vmix_dummy_3, tke_Tbpr, tke_Tspr, tke_Tdif, tke_Tdis, tke_Twin, tke_Tiwf, tke_Tbck, tke_Ttot, tke_Lmix, tke_Pr, tke_plc, wlc, hlc, u_stokes
+    
+    # air-sea coupled fluxes
+    [[[output_nml oce_flx]]]
+      .hide             = false
+      output_grid       = true
+      output_interval   = P1M                          
+      m_levels          = "1"                          # surface and subsurface level only
+      ml_varlist        += Qtop, Qbot, HeatFlux_Total, HeatFlux_ShortWave, HeatFlux_LongWave, HeatFlux_Sensible, HeatFlux_Latent, FrshFlux_Runoff, FrshFlux_Precipitation, FrshFlux_Evaporation, FrshFlux_SnowFall, FrshFlux_TotalOcean, FrshFlux_VolumeIce, totalsnowfall, atmos_fluxes_stress_x, atmos_fluxes_stress_y, atmos_fluxes_stress_xw, atmos_fluxes_stress_yw, sea_level_pressure
+
+    # heat/salinity tendency (i.e., divergence of flux to diff. components)
+    [[[output_nml oce_bgt]]]
+      .hide             = false
+      output_grid       = true
+      output_interval   = P1M
+      ml_varlist        += Tt_had, Tt_vad, Tt_hdf, Tt_vdf, Tt_idf, Tt_sur, Tt_srf, Tt_tot, Ts_had, Ts_vad, Ts_hdf, Ts_vdf, Ts_idf, Ts_sur, Ts_srf, Ts_tot
+
+    # heat/salinity advection
+    # this will not be turned on since r2b7 has not resolve eddy
+    [[[output_nml oce_adv]]]
+      .hide             = false
+      output_grid       = true
+      output_interval   = P1M
+      ml_varlist        += uT, uS, vT, vS, wT, wS
+
+    # updated upper ocean variables
+    [[[output_nml oce_upo]]]
+      .hide             = false
+      output_grid       = true
+      output_interval   = P1M
+      m_levels          = "1...10"         # upper 1 km
+      ml_varlist        += draftave, tos, sos, mld, mlotst, mlotst10, zos, condep, stretch_c, verticallyTotal_mass_flux_e, heat_content_total, heat_content_300m, heat_content_700m, to, so, rho, rhopot, mass_flux, u, v, w
+
+```
+
 
 # Heat/salt budget Output Table
 

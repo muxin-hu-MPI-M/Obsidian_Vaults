@@ -10,13 +10,23 @@ Last Eddited: 2026-01-13
 
 # [[2026-03-04]]
 ## ICON-wave focus group: Meeting 5
-- 
+- ICON-wave status:
+	- **Development of wave-current refraction is finished**, simulation is running, updates will be provided in the GitLab page: [[https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group/-/boards]]
+	- Development of Wave-modified fluxes encounters problem (i.g., momentum flux: $\tau_{oc}=\tau_a - \tau_{w} - \tau_{ds}$, and energy flux: $\phi_{ds}$) with the “type variables” in the ICON code
+	- Initialised the TKE-scheme update with incorporating the Stokes drift. 
+		- problem with coupling, since the stokes drift is a 3D variable
+		- TKE scheme update also requires the implementation of energy flux from the wave (i.e., wave-dissipated energy from wave-breaking)
+	- We would like to have the ERA forced simulations with:
+		- ERA5 atmospheric forcing + ICON-o
+		- ERA4 atmospheric forcing + ICON-Wave + ICON-O
+- **ICON-wave standalone simulation compare to the ERA5 wave products:** 
+	- compare the surface stokes drift velocity with the **geological location**, instead of remapping
 
 # [[2026-03-03]]
 ## Helmuth
 - ask Nils about joining the project from TRR that I can use the node hour
 	- 1239: difficult one with Gulia, need to ask her maybe
-	- 1102: from Nils
+	- 1102: from Nils → [[2026-03-05]] Update: Already received the memembership!
 
 
 # [[2026-02-19]]
@@ -90,9 +100,6 @@ Discussion on the output namelist and an update on the detailed research questio
 		- Its primary potential meaning and function is to **act as a sink for available potential energy by "flattening" isopycnals (surfaces of constant density)** and reducing horizontal density gradients, simulating how eddies mix the ocean without relying on computationally expensive, high-resolution simulations.
 - One can also think of the representation of coupling mechanisms between waves-ocean-atmosphere in the atmosphere.
 
-
-
-
 # [[2026-01-19]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
@@ -107,9 +114,6 @@ Discussion on the output namelist and an update on the detailed research questio
 		- Which is good for us to attribute the change in our target (i.e., wind, wave, upwelling) to local change and local processes. No need to have a thorough analysis of the global climate
 - To do:
 	- Ask the `Wind_speed_10m` output in ocean grid and if the atmospheric grid also has wind stress components; → the wind_speed_10m in ocean output is only on when turning on, but in general I don’t need this.
-
-
-
 
 # [[2026-01-12]]
 ## Regular Meeting with Nils
@@ -221,12 +225,6 @@ and find:
 		- the stokes drift from ICON-Waves use the same vertical coordinates as ICON-O
 		- EAR5-forced ICON-O standalone run for full 2024? link? Nils will provide in the website
 	- We should provide a proposal to DKRZ for running ICON-Waves in Levante
-
-
-# [[2025-12-16]]
-## Regular meeting with Noel
-#presenter/Noel_Gutierrez-Brizuela 
-
 
 # [[2025-12-15]]
 ## Regular meeting with Nils
@@ -451,8 +449,6 @@ Questions
     - Christ
     - Noel
 - register enroll as PhD before the panel meeting
-
-# [[2025-11-24]] 
 ## TRR181: Workshop; Ferrel Cell
 - outline: the summary part from the material
 - accommodation in Bremen (TRR181)
@@ -525,7 +521,6 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
 
 # [[2025-11-10]] 
 ## Meeting with Noel
-
 - why running uncoupled model? since coupled and uncoupled is such different
 - how waves behave in the costal upwelling region by running simulations → give a view of what’s will this looks like
 - WAVEWATCH II and III
@@ -542,7 +537,6 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
 
 # [[2025-11-06]] 
 ## Additional meeting with Nils
-
 - ‘main’ supervisor: need a professor
     - University side? or Bjorn
 - Panel:
@@ -553,39 +547,29 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
 - 26 N 30 W → location for checking the TKE profile
 
 ## Meeting with Helmuth Haak
-
 - OMIP is a climatological forcing , so the date doesnt mean anything. 2010 is the date of the initial state (oras5 from 2010-01), so therefor it makes sense to set your startdate also to 2010, but this is a matter of taste. If you use a transient forcing like ERA5 (with a real date) it becomes important. For OMIP it doesn’t matter.
 
 # [[2025-11-05]] 
 ## ICON-Waves & Noel’s GM
-
 ### ICON-Waves Focus; 1st meeting
-
 - meet regularly, and communicate with each other to avoid overlap.
 - **Short overview of ICON-waves** (See details in [Short Overview of ICON-waves & Current status](https://www.notion.so/Short-Overview-of-ICON-waves-Current-status-2a269691c52b80c98923ff6269d6dfca?pvs=21))
 - **ICON-waves: Wave-ocean coupling** (led by Christopher Higgins, see details in [Short Overview of ICON-waves & Current status](https://www.notion.so/Short-Overview-of-ICON-waves-Current-status-2a269691c52b80c98923ff6269d6dfca?pvs=21) )
 
 ### Noel’s regular group meeting
-
 - Paper figure discussion, suggested paper to read:
     - paper: Heat Transport through Diurnal Warm Layer
     - paper: Global ocean heat transport dominated by heat export from the tropical Pacific
 
 # [[2025-11-03]]
 ## Regular Meeting with Nils
-
 - run shorter time (25-30 years) range for coupled configuration
-    
 - run uncoupled, 100 years
-    
 - try both: **r2b7-uncoupled (~30 yrs, OMIP-forcing (same year over and over again, useful to test something)**; r2b7-coupled
-    
     - where is most affected btw coupled and uncoupled simulation
     - Then apply the **website**: automatically generate figures
 - ICON-XPP: coupled, coupled with atmos model from DWD with ICOn-o, with resolution r2b7 (ocean), r2b5 (atmos)
-    
 - get fluent workflow (running, plotting), compare plots in the website
-    
     - A useful way to manage diff. ICON version is to have a main directory containing the NAME for all diff ICON version (check ICON version using the below code:
         ```
         # inside the icon-model file
@@ -593,13 +577,11 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
         module load git
         git log
         ```
-        
         In the icon-model directory, you will find the running scripts in:
         ```
         /icon-model/run/exp_{run_name}.nc
         ```
-        The {run_name} is better to have a similar naming structure as nibxxxx; muhxxxx
-        
+        The {run_name} is better to have a similar naming structure as nibxxxx; muhxxxx  
 - learn GIT, with the materials from Nils
 - start register the PhD project at UHH (check the email for the materials)
 - official supervisor:
@@ -608,9 +590,7 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
 
 # [[2025-10-27]]
 ## Regular Meeting with Nils
-
 ### General plan for the coming few weeks (27/10/2025 - 10/11/2025)
-
 - **First stage: run ICON-o (check [ICON documentation](https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/))**
     - With two mixing schemes to evaluate the difference
         - TKE-scheme (default):
@@ -625,25 +605,17 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
 - **Second stage: run ICON-TKK: a/o coupled, coarser resolution with same exp setting**
 
 ### Other topics
-
 - Book recommendation: ocean Turbulence by Thrope
 - referring back to textbook is important and useful
 - TRR spring school
 
 # [[2025-10-15]]
-
 ## Noel’s group meeting
-
 - molecular viscosity and dynamic viscosity are different
 
 # [[2025-10-07]]
-
 ## Discussion on ICON-O-Wave Experiments
-
-![Screenshot 2025-10-07 at 10.12.42.png](attachment:efb3d116-6d0a-45fe-b184-50641a9f6a47:Screenshot_2025-10-07_at_10.12.42.png)
-
 ‼️The reference experiment can be runned
-
 - Full: combined all of them
 - resolution: R2B7 20km, 72 layers, need to decide:forcing; simulation period; model output (e.g., MLD, TKE profile, Hs, wave direction
 - ICON-Wave R2B7 grid is difference from the ICON-O
@@ -660,15 +632,11 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
         
 
 ## **Suggested version of choices of experiments and configurations**
-
-![Screenshot 2025-10-07 at 11.05.05.png](attachment:64d93962-09ed-4b48-a1a9-4c949f66ceb5:Screenshot_2025-10-07_at_11.05.05.png)
-
 - Difference between the ICONwave and the IFS-WAM?
     - The $\tau_{a}$ term in ECMWF is influenced by the mean state term (no wind, still has $\tau_{a}$)
     - tau in ICON-Wave is more influence by the wind term
 
 ## Meeting with Nils
-
 - Read books (download online → check the chat with Nils)
     - Chapter about turbulent models —> chapter 11.2
 - Read papers Nils suggested in the email
@@ -679,7 +647,6 @@ see details in [here]([https://gitlab.dkrz.de/icon/icon-nwp/-/wikis/mkexp-202511
 
 # [[2025-10-06]]
 ## Regular Meeting with Nils
-
 - Meeting after the wave meeting tomorrw 07/10/2025 11:00
     - Check the email from Nils
         - request some documents for the setup of the ICON-Wave during the meeting
