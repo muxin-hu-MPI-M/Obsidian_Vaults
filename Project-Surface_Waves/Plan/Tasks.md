@@ -18,10 +18,10 @@ tags:
 # Weekly Plan 
 
 ## [[2026-03-02]]
-- [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point
+- [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point #project/surfwaves 
 	- [x] first try using shape file
 	- [x] ask Fraser to see if his script also apply to atmospheric grid: No, need to implement another method
-- [x] check the example output to see if the data is successfully simulated
+- [x] check the example output to see if the data is successfully simulated #project/surfwaves 
 	- [x] atm_2d
 	- [x] atm_3d
 	- [x] oce_flx
@@ -33,6 +33,7 @@ tags:
 - [ ] Inquire Lorenz for the experiment with difference `c_k`
 - [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case
 	- [ ] compare with geological location
+- [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence”
 
 ## [[2026-02-23]]
 - [x] Studentship registration at UHH #project/PhD_general 
