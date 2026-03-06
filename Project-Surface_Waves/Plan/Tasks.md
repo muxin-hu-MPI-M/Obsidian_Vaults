@@ -13,6 +13,13 @@ tags:
 - [x] Familiarise myself with ICON-XPP
 - [x] 1st Panel Meeting
 - [/] Literature Reading II
+- [x] Update: narrowing scientific questions and PhD outline
+- [ ] Experiment: Evaluate impacts of different turbulence mixing efficiency parameter `c_k` to the Peru-Chile Upwelling System (PCUS)
+	- [x] Experiment design: (1) CTRL (default `c_k=0.1`); (2) CK03 (`c_k=0.3`)
+	- [x] Simulation
+		- [x] spin-up for 30-years; Less output
+		- [x] focus period: later 20-years with detailed output
+	- [ ] Analysis
 
 
 # Weekly Plan 
@@ -30,7 +37,7 @@ tags:
 	- [x] oce_bgt
 - [x] proceed longer simulation for default `c_k=0.1`
 - [x] proceed to have 5-years simulation for `c_k=0.3`
-- [ ] Inquire Lorenz for the experiment with difference `c_k`
+- [x] Inquire Lorenz for the experiment with difference `c_k`
 - [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case
 	- [ ] compare with geological location
 - [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence”
@@ -55,14 +62,13 @@ tags:
 		- [x] Pacific 
 		- [x] Indian
 	- [x] Climatological zonally integrated OHT by stokes drift in different basins, plot the OHT vs Latitude
-- [ ] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
+- [x] Simulations with detailed output in different `c_k` experiments #project/surfwaves 
 	- [x] Determine the final output list: strategy (listed in [[ICON_Output_Namelist]])
 	- [x] 5-years test Simulation on `c_k=0.1 (default)`
 	- [x] check if the simulation is okay
-	- [ ] Longer simulation
-		- [ ] `c_k=0.1`
-		- [ ] `c_k=0.3`
-		- [ ] `c_k=1.0`
+	- [x] Longer simulation
+		- [x] `c_k=0.1`
+		- [x] `c_k=0.3`
 
 ## [[2026-02-09]]
 - [x] Record the idea thoroughly in Obsidian note #project/surfwaves 
