@@ -39,7 +39,8 @@ tags:
 - [x] proceed to have 5-years simulation for `c_k=0.3`
 - [x] Inquire Lorenz for the experiment with difference `c_k`
 - [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case
-	- [ ] compare with geological location
+	- [ ] compare surface stokes drift (ust, vst) with geological location;
+		- [ ] scatter plot (icon vs era5 points by points)
 - [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence”
 
 ## [[2026-02-23]]
