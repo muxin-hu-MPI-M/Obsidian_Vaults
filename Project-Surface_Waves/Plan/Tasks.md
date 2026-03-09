@@ -24,6 +24,15 @@ tags:
 
 # Weekly Plan 
 
+
+## [[2026-03-09]]
+- [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case #project/surfwaves 
+	- [ ] compare surface stokes drift (ust, vst) with geological location;
+		- [ ] scatter plot (icon vs era5 points by points)
+- [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence” #project/surfwaves 
+- [x] register the Spring School #project/PhD_general 
+- [ ] 
+
 ## [[2026-03-02]]
 - [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point #project/surfwaves 
 	- [x] first try using shape file
@@ -38,10 +47,6 @@ tags:
 - [x] proceed longer simulation for default `c_k=0.1`
 - [x] proceed to have 5-years simulation for `c_k=0.3`
 - [x] Inquire Lorenz for the experiment with difference `c_k`
-- [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case
-	- [ ] compare surface stokes drift (ust, vst) with geological location;
-		- [ ] scatter plot (icon vs era5 points by points)
-- [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence”
 
 ## [[2026-02-23]]
 - [x] Studentship registration at UHH #project/PhD_general 
