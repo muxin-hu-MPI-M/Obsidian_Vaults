@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Run_Long_Simulation"
+              "title": "Outline of Note_Stokes-Drift-Profile"
             }
           },
           {
@@ -292,7 +292,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "951a9c7017951fbe",
+  "active": "84b3fa6fb6531a71",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",

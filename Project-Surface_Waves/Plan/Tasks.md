@@ -27,8 +27,13 @@ tags:
 
 ## [[2026-03-09]]
 - [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case #project/surfwaves 
-	- [ ] compare surface stokes drift (ust, vst) with geological location;
-		- [ ] scatter plot (icon vs era5 points by points)
+	- [x] compare surface stokes drift (ust, vst) with geological location;
+		- [x] scatter plot (icon vs era5 points by points)
+		- [x] global RMSE map
+	- [x] compare significant wave heights for total waves, sea waves, and swells
+		- [x] scatter plots
+		- [x] global RMSE
+	- [ ] compare wave direction
 - [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence” #project/surfwaves 
 - [x] register the Spring School #project/PhD_general 
 - [ ] 
