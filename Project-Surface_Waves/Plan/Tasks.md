@@ -34,9 +34,9 @@ tags:
 		- [x] scatter plots
 		- [x] global RMSE
 	- [ ] compare wave direction
-- [ ] preparing report for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence” #project/surfwaves 
+- [x] preparing slides for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence” #project/surfwaves 
 - [x] register the Spring School #project/PhD_general 
-- [ ] 
+
 
 ## [[2026-03-02]]
 - [x] update the Peru coast mask in atmospheric grid (r2b5) using the correct lat/lon grid point #project/surfwaves 

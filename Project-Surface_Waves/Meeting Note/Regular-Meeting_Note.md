@@ -9,7 +9,9 @@ Last Eddited: 2026-01-13
 # [[2026-03-11]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
-- 
+- Issue: **Significantly stronger surface Stokes drift in ICON-Wav compared to ECWAM over tropical and subtropical regions** 
+	- The RMSE values reach ~0.2 m/s over subtropical regions, which is substantially large comparing to the range of absolute magnitude (0-0.4 m/s)
+	- The significant wave height (SWH) shows relatively good agreement between the two models for both total waves and wind waves. Slightly higher RMSE values appear in the comparison of swell SWH, but their magnitude (~0.01) remains small relative to the absolute SWH values(see details in [[Note_Stokes-Drift-Profile#Stoke Drift Profile]])
 
 
 # [[2026-03-04]]
