@@ -20,7 +20,7 @@ Last Eddited: 2026-01-13
 		  Subtracting $OHC$ from equation (2) will leaves:
 		  $$ \delta Q = \rho c_p [\delta T(SSH+\delta h)+\delta h(SST+\delta T)]$$
 		  **This relationship links Stokes-induced heat convergence to perturbations in SST ($\delta T$) and SSH ($\delta h$) while implicitly accounting for mass convergence.**
-		- Therefore, the Stokes-induced forcing could be represented in the model as perturbations to SST and SSH, allowing the ocean model to dynamically adjust 
+		- Therefore, the Stokes-induced forcing could be represented in the model as perturbations to SST and SSH, allowing the ocean model to dynamically adjust while conserving both heat and mass
 
 
 # [[2026-03-11]]
