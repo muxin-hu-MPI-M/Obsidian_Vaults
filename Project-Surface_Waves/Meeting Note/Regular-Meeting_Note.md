@@ -11,17 +11,38 @@ Last Eddited: 2026-01-13
 ## Noel’s group meeting: Update from Muxin
 - Presentation: ==**“Proposal: Stokes transport of Heat”**==
 	- Received feedback:
-		- perform a sensitivity experiment by ==**forcing the ICON model with the Stokes-induced heat convergence**== ($\Delta Q_{st}$)”, even though its magnitude is much smaller than the net surface heat flux $Q_{net}$ into the ocean
-		- However, Stokes drift also produces Lagrangian mass convergence, denoted as $\Delta M_{st}$. Since the ocean must conserve mass, this convergence cannot remain unbalanced and must be compensated by adjustments in the Eulerian flow and sea surface height.
+		- perform a sensitivity experiment by ==**forcing the ICON model with the Stokes-induced heat convergence**== ($-\nabla \cdot Q_{st}$)”, even though its magnitude is much smaller than the net surface heat flux $Q_{net}$ into the ocean
+		- However, Stokes drift also produces Lagrangian mass convergence, denoted as $-\nabla \cdot M_{st}$. Since the ocean must conserve mass, this convergence cannot remain unbalanced and must be compensated by adjustments in the Eulerian flow and sea surface height.
 		- Therefore, ~={red}**a physically consistent forcing should account for both heat and mass conservation**=~. Considering the vertically integrated ocean heat conservation (OHC):
 		  $$OHC=\rho c_p(SST\times SSH) \tag{1}$$
 		  Perturbations in heat content due to Stokes-induced heat convergence can be expressed as:
 		  $$OHC+\delta Q = \rho c_p(SST+\delta T)(SSH+\delta h) \tag{2}$$
 		  Subtracting $OHC$ from equation (2) will leaves:
-		  $$ \delta Q = \rho c_p [\delta T(SSH+\delta h)+\delta h(SST+\delta T)]$$
+		  $$ \delta Q = \rho c_p [\delta T(SSH+\delta h)+\delta h(SST+\delta T)] \tag{3}$$
 		  **This relationship links Stokes-induced heat convergence to perturbations in SST ($\delta T$) and SSH ($\delta h$) while implicitly accounting for mass convergence.**
 		- Therefore, the Stokes-induced forcing could be represented in the model as perturbations to SST and SSH, allowing the ocean model to dynamically adjust while conserving both heat and mass
-
+	- How to get the $\delta T$ and $\delta h$?
+		- we have the heat and mass convergence ($-\Delta Q_{st}$ and the $-\Delta M_{st}$) at each time step
+		- ==Mass conservation determines $\delta h$:==
+		  Integrate from bottom $z=-H$ to $z=h$ (free surface), the continuity equation gives:
+		  $$\begin{align}
+		  \int_{-H}^{h}(\nabla \cdot \mathbf{u}+\frac{\partial w}{\partial z})\;dz&=0 \\
+		  \int_{-H}^{h}\nabla \cdot \mathbf{u}\;dz + w(h)-w(-H) &=0
+		  \end{align}$$
+		  Since $w(-H)=0$, and the surface vertical velocity: $w(h)=\frac{\partial h}{\partial t}$, then:
+		  $$\frac{\partial h}{\partial t}=-\int_{-H}^{h}\nabla \cdot \mathbf{u}\;dz$$
+		  The mass divergence (i.e., mass flux divergence) is expressed as:
+		  $$\begin{align}\nabla \cdot M&=\nabla \cdot (\rho\int_{-H}^{h}\mathbf{u}\;dz)\\&=\rho\int_{-H}^{h}\nabla \cdot \mathbf{u}\;dz\end{align}$$
+		  Then the SSH change is therefore linked to the mass divergence:
+		  $$\frac{\partial h}{\partial t}=-\frac{1}{\rho}\nabla \cdot M$$
+		  Define $\Delta M_{st} = \nabla \cdot M_{st}$, for a discrete time step $\Delta t$:
+		  $$\delta h = -\frac{\Delta M_{st}}{\rho}\Delta t$$
+		  ~={red}**This directly gives the SSH perturbation forced by Stokes mass convergence**=~ $\Delta M_{st}$
+		- ==**Heat content perturbation:**==
+		  Rewrite the equation (3):
+		  $$\Delta Q_{st}\Delta t=\rho c_p[\delta T(SSH-\frac{\Delta M_{st}}{\rho}\Delta t)+(-\frac{\Delta M_{st}}{\rho}\Delta t)(SST+\delta T)]$$
+		  get the $\delta T$ by replacing the $\delta h$.
+ 
 
 # [[2026-03-11]]
 ## Regular Meeting with Nils
