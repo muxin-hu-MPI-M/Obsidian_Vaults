@@ -6,12 +6,31 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
+
+# [[2026-03-12]]
+## Noel’s group meeting: Update from Muxin
+- Presentation: ==**“Proposal: Stokes transport of Heat”**==
+	- Received feedback:
+		- perform a sensitivity experiment by ==**forcing the ICON model with the Stokes-induced heat convergence**== ($\Delta Q_{st}$)”, even though its magnitude is much smaller than the net surface heat flux $Q_{net}$ into the ocean
+		- However, Stokes drift also produces Lagrangian mass convergence, denoted as $\Delta M_{st}$. Since the ocean must conserve mass, this convergence cannot remain unbalanced and must be compensated by adjustments in the Eulerian flow and sea surface height.
+		- Therefore, ~={red}**a physically consistent forcing should account for both heat and mass conservation**=~. Considering the vertically integrated ocean heat conservation (OHC):
+		  $$OHC=\rho c_p(SST\times SSH) \tag{1}$$
+		  Perturbations in heat content due to Stokes-induced heat convergence can be expressed as:
+		  $$OHC+\delta Q = \rho c_p(SST+\delta T)(SSH+\delta h) \tag{2}$$
+		  Subtracting $OHC$ from equation (2) will leaves:
+		  $$ \delta Q = \rho c_p [\delta T(SSH+\delta h)+\delta h(SST+\delta T)]$$
+		  **This relationship links Stokes-induced heat convergence to perturbations in SST ($\delta T$) and SSH ($\delta h$) while implicitly accounting for mass convergence.**
+		- Therefore, the St
+
+
 # [[2026-03-11]]
 ## Regular Meeting with Nils
 #presenter/Nils_Brüggemann 
 - Issue: **Significantly stronger surface Stokes drift in ICON-Wav compared to ECWAM over tropical and subtropical regions** 
 	- The RMSE values reach ~0.2 m/s over subtropical regions, which is substantially large comparing to the range of absolute magnitude (0-0.4 m/s)
-	- The significant wave height (SWH) shows relatively good agreement between the two models for both total waves and wind waves. Slightly higher RMSE values appear in the comparison of swell SWH, but their magnitude (~0.01) remains small relative to the absolute SWH values(see details in [[Note_Stokes-Drift-Profile#Stoke Drift Profile]])
+	- The significant wave height (SWH) shows relatively good agreement between the two models for both total waves and wind waves. Slightly higher RMSE values appear in the comparison of swell SWH, but their magnitude (~0.01) remains small relative to the absolute SWH values.
+	- This suggests that the overall wave energy levels are broadly consistent between the two models. Moreover, the spatial patterns of SWH difference do not resemble those observed in the surface Stokes drift velocity
+	- Therefore, the discrepancies in surface Stokes drift are unlikely to originate solely from differences in bulk wave energy. A plausible explanation is differences in the simulated wave energy spectrum, as Stokes drift depends strongly on the higher-order frequency part of the spectrum and scales roughly to the 3rd moment of frequency spectrum (see details in [[Note_Stokes-Drift-Profile#Stoke Drift Profile]])
 
 
 # [[2026-03-04]]
