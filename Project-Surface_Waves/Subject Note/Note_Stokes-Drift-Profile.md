@@ -144,6 +144,25 @@ Where the $k_m$ is the wavenumber for the monochromatic wave [Eq (8)].
 
 **So how do model calculate the above two quantities?**
 
+# Approximate Stokes transport
+See details in Eq. (35) in (Breivik et al., 2014)
+We can derive the first moment from the integrated parameters of a wave model or from wave observations and find an estimate for the Stokes transport:
+$$\begin{align}V_s &= \frac{2\pi }{16}\bar{f}H_s^2(\sin{\bar{\theta}},\cos{\bar{\theta}})\\ &=\frac{\pi H_s^2}{8\bar{T}}(\sin{\bar{\theta}},\cos{\bar{\theta}})\end{align}$$
+
+Where:
+- mean frequency $\bar{f}=m_1/m_0$
+- mean wave period $\bar{T}=1/\bar{f}$
+- mean wave direction $\bar \theta$
+- significant wave height $H_s=4\sqrt{m_0}$ 
+
+> [!Attention] **This approximation assumes:**
+> 1. Deep water
+> 2. Each wave system (wind wave, swell) treated as monochromatic, as narrow-band spectrum
+> 3. Stokes transport direction $\approx$ mean wave direction
+> 4. Using bulk significant height $H_s=4\sqrt{m_0}$, mean wave period $\bar{T}=1/\bar{f}$, and mean wave direction $\bar{\theta}$
+
+It is evident that this rough estimate will overestimate the magnitude of the stokes transport by $\sim 20\%$
+
 # The Shear of the Stokes Drift Profile
 
 The ==production of **Langmuir turbulence arises from a vortex force term==: $\mathbf v_s \times \nabla\times\mathbf u$** (where the $\mathbf u=(u_x,u_y, u_z)=(u_1, u_2, u_3)$ is the vectorised Eulerian currents) **in the momentum equation** ([Leibovich 1983](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=The+form+and+dynamics+of+Langmuir+circulations.&btnG=)).

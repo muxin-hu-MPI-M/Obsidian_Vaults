@@ -5,6 +5,38 @@ tags:
 Last Eddited: 2025-11-19
 ---
 
+
+# [[2026-03-16]]
+## Seminar: What makes EERIE simulations different from CMIP6’s?
+#presenter/Jin-song_von_Storch
+- higher resolution → stronger fluctuations → stronger dissipation → weaker response
+	- evidence: too strong auto-correlation in SST in CMIP6 models; while the bias has been reduced in EERIE (lower the auto-correlation)
+		- the auto-correlation decrease with increase resolution 
+		  → ~={red}**the dissipation increases with increasing fluctuations**=~
+	- why?
+		- theoretical considerations show that: 
+			- total dissipation depends on fluctuations
+			- total dissipation depends not solely on pre-existing dissipation
+		- demonstration via Lorenz 1963 model:
+			- x variations depends on both y and z; y would become damping factor to x over time (negative auto-correlation)
+			- adding noise to model without changing pre-existing dissipation
+				- with increasing strength of fluctuations, the total dissipation strengthens, even though the pre-existing dissipation remained.
+	- ==The **total dissipation correlates** with the **Integrated fluctuation strength** in terms of the spatial pattern==
+	- The EERIE comparing to CMIP6:
+		- stronger dissipation in Z500 everywhere except deep tropics!
+		- both the fluctuations and dissipation reduction are stronger in higher resolution models (EERIE runs) outside the deep tropics
+		- inside the deep tropics: except for ICON, no clear difference between EERIE and CMIP6 climate (ICON has limited parameterisations of convections!)
+		- possible reason of why deep tropics behave different:
+			- dominance of parameterisations
+				- parameterisations do not directly initiate interactions between grid points;
+				- their dominance can make the emergent dissipation less sensitive to changes in fluctuations
+			- efficiency of numerical dissipation
+	- Higher resolution exhibit lower GMSe responses
+		- if total dissipation acts as an interal restoring force, and if Z500 captures much of the polar-amplified warming signal, increasing resolution can weaken this signal by strengthening total dissipation
+		- however, total dissipation is only one fo many factors
+
+
+
 # [[2026-02-11]] Project Week: Summary
 ## Global north/south
 #presenter/Sasha_Roewer #presenter/Tomas_Escaff

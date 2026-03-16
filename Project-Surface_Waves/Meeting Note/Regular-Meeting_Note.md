@@ -7,6 +7,7 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+
 # [[2026-03-12]]
 ## Noel’s group meeting: Update from Muxin
 - Presentation: ==**“Proposal: Stokes transport of Heat”**==
