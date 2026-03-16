@@ -25,6 +25,10 @@ tags:
 # Weekly Plan 
 
 
+## [[2026-03-16]]
+- [ ] c_k experiments analysis #project/surfwaves 
+	- [ ] 
+
 ## [[2026-03-09]]
 - [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case #project/surfwaves 
 	- [x] compare surface stokes drift (ust, vst) with geological location;
