@@ -12,6 +12,7 @@ Last Eddited: 2026-03-16
 	  $$F = (1-\alpha)F_*+\alpha (cD/\tau)(T'-T_*') $$
 	  where a prime refers to the anomaly, asterisks represent model-diagnosed values, and $T$ denotes SST. The reference temperature anomaly $T'$ is based on observation. The model anomaly $T_*'$ is the derivation from the climatology of a 300-year control experiment. $c$ is the specific heat of seawater, $D=50 \;m$ is the typical depth of the ocean mixed later, and tau is the restoring timescales. A weight $\alpha=1$ within the inner box, linearly reduced to zero in the buffer zone.”
 	- **==Here the ~={red}restoring target variable=~ is SST in the deep tropical eastern Pacific==**. 
+		- In POGA, the modelled SST is nudged towards the observed SST by adding or removing heat from the ocean
 	- Mathematically, restoring means adding a forcing proportional to the difference between model SST anomaly and observed SST anomaly. The system is pushed toward $T'_* \rightarrow T'$ over a timescale $\tau$ by:
 		- If the model SST anomaly is too warm ($T'_* \gt T'$), the restoring term removes heat from the ocean
 		- If the model SST anomaly is too cold ($T'_* \lt T'$), the restoring term adds heat to the ocean
