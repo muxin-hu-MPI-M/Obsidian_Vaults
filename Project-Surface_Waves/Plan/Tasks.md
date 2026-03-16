@@ -27,6 +27,9 @@ tags:
 
 ## [[2026-03-16]]
 - [ ] c_k experiments analysis #project/surfwaves 
+	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
+	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
+- [ ] Understanding idealised experiment #project/surfwaves 
 	- [ ] 
 
 ## [[2026-03-09]]

@@ -1186,7 +1186,23 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md": []
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md": [],
+    "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md": [
+      {
+        "id": "oh5ig6tyw",
+        "text": "Here the ~={red}restoring target variable=~ is SST in the deep tropical eastern Pacific",
+        "tags": [],
+        "line": 13,
+        "startOffset": 1069,
+        "endOffset": 1160,
+        "filePath": "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1773657874467,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
+    ]
   },
   "collections": {},
   "groupingMode": "none",
