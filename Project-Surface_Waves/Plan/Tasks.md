@@ -29,8 +29,14 @@ tags:
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
-- [ ] Understanding idealised experiment #project/surfwaves 
-	- [ ] 
+- [x] Understanding idealised experiment #project/surfwaves 
+- [ ] Update the “Stokes transport of heat” slides #project/surfwaves 
+	- [ ] Answer Nils’ questions
+		- [ ] divergence free?
+			- [x] global
+			- [ ] Pacific ocean specific
+		- [x] Stokes transport formula, staggering
+		- [x] how I aggregate in time
 
 ## [[2026-03-09]]
 - [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case #project/surfwaves 

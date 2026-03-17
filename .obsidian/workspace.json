@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PhD-General/MPI-M/Seminar Notes.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Seminar Notes"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -278,16 +278,17 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "de5da1babd032899",
+  "active": "190369091626a017",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Output_Namelist.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
@@ -296,7 +297,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
     "2026-02-12.md",
-    "PhD-General/MPI-M/Seminar Notes.md",
     "[Panel-Meeting_Note.md",
     "[[Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
