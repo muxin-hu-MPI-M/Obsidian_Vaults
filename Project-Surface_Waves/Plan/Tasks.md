@@ -30,11 +30,11 @@ tags:
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
 - [x] Understanding idealised experiment #project/surfwaves 
-- [ ] Update the “Stokes transport of heat” slides #project/surfwaves 
-	- [ ] Answer Nils’ questions
-		- [ ] divergence free?
+- [x] Update the “Stokes transport of heat” slides #project/surfwaves 
+	- [x] Answer Nils’ questions
+		- [x] divergence free?
 			- [x] global
-			- [ ] Pacific ocean specific, get a zonally meridional Stokes transport
+			- [x] Pacific ocean specific, get a zonally meridional Stokes transport
 		- [x] Stokes transport formula, staggering
 		- [x] how I aggregate in time
 
