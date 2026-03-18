@@ -34,7 +34,7 @@ tags:
 	- [ ] Answer Nils’ questions
 		- [ ] divergence free?
 			- [x] global
-			- [ ] Pacific ocean specific
+			- [ ] Pacific ocean specific, get a zonally meridional Stokes transport
 		- [x] Stokes transport formula, staggering
 		- [x] how I aggregate in time
 
