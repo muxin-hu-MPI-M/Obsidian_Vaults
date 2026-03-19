@@ -6,6 +6,29 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
+# [[2026-03-18]]
+## Regular meeting with Nils
+- Discussion on designing future “ICON-Wave sensitivity test”
+	- we need to be careful of “playing” around the Stokes drift related effects
+		- some papers, like (Wu et al., 2019), separated the Stokes drift related effects to (1) CSF and (2) Stokes advection of travers. 
+		- The idea is great, but how they implement the experiment is wrong. 
+		- For example, in one of their experiment, they **only considering the CSF in the momentum equation but ignore the Stokes advection**. The significant “response” of models in terms of surface tracer distribution are simply due to the presence of “Eulerian return flow”.
+		- Also, they keep the CSF forcing but neglect the “pressure correction” term and the “vortex forcing” term. **This implicitly ignores the Stokes advection of momentum**, which is in the first-order of importance in the momentum equation
+	- ~={red}**==Thus, in our experiment, we can classify the wave effects==**=~ (after discussed with #presenter/Nobu_Suzuki, also see [[Research-Gaps#2026-02-09 Update Refine research questions]]
+		- **Surface wave mediated momentum flux** (i.e., stress)
+		- **Stokes-drift related processes**
+			- CSF
+			- Stokes advection of tracers and momentum
+			- Stokes shear (its effect on large-scale flow)
+		- **TKE changes induced by surface waves**
+			- Langmuir turbulence (also related to Stokes shear, but its effect on small scales)
+			- wave-breaking
+- ~={red}==**Discussion on 1st paper**===~
+
+
+
+
+ 
 
 
 # [[2026-03-12]]
