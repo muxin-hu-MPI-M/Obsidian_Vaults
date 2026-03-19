@@ -27,6 +27,9 @@ tags:
 
 ## [[2026-03-16]]
 - [ ] c_k experiments analysis #project/surfwaves 
+	- [ ] Area averaged wind field
+		- [x] monthly mean 10 wind speed 
+		- [ ] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
 - [x] Understanding idealised experiment #project/surfwaves 
