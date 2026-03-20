@@ -47,7 +47,15 @@ Three ideas so far:
 	- To implement Langmuir turbulence, the reconstruction of Stokes profile is needed. The idea is to use Breivik’s parameterisation (see (Breivik et al., 2014)) which approximate Stokes drift profile via (1) Surface stokes drift (directly from ERA5) and (2) Stokes transport (need estimation)
 ### Coupled ICON atm-oce with ERA5 Stokes-induced heat/mass divergence
 - Run historic period of atmosphere-ocean coupled ICON with “forcing” that is introduced by the heat/mass divergence from Stokes transports
-- 
+- This idealised experiment **intends to perturb the coupled atmosphere-ocean ICON model with Stokes-induced heat and mass divergence**
+	- In this setup, the Stokes effects act only as a perturbation that “kicks” the coupled system
+	- The ==tracer transport associated with the Stokes drift is therefore represented through the imposed divergence, while the Stokes-induced Eulerian adjustment emerges dynamically within the model after the mass divergence is applied==.
+- The primary focus of this idealised experiment is thus the Eulerian adjustment in the coupled system, whereas the waves themselves simply provide the initial perturbations at every timestep
+- **This approach is fundamentally different from (Wu et al., 2019).** In their study, they attempted to introduce the full wave-averaged Boussinesq framework, but the implementation in their isolating experiments was inconsistent. 
+	- In particular, they considered the Stokes-induced return flow but did not include the Stokes advection of tracers in the first place. 
+	- In addition, when manipulating the wave-averaged Boussinesq equations, they neglected the wave-induced advection of momentum while isolating the Coriolis-Stokes forcing. 
+	- These omissions lead to an internally inconsistent representation of the wave effects.
+- The new paper (Li et al., 2026) 
 
 # [[2026-03-18]]
 ## Regular meeting with Nils
