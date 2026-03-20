@@ -46,6 +46,7 @@ Three ideas so far:
 	- incorporation of Stokes drift into TKE is necessary
 	- To implement Langmuir turbulence, the reconstruction of Stokes profile is needed. The idea is to use Breivik’s parameterisation (see (Breivik et al., 2014)) which approximate Stokes drift profile via (1) Surface stokes drift (directly from ERA5) and (2) Stokes transport (need estimation)
 ### Coupled ICON atm-oce with ERA5 Stokes-induced heat/mass divergence
+- Run historic period of atmosphere-ocean coupled ICON with “forcing” that is introduced by the heat/mass divergence from Stokes transports
 - 
 
 # [[2026-03-18]]
