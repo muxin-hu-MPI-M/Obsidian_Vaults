@@ -6,6 +6,13 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
+
+# [[2026-03-20]]
+## Discussion on project Stokes transport & 1st paper idea
+#presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
+
+
+
 # [[2026-03-18]]
 ## Regular meeting with Nils
 - Discussion on designing future “ICON-Wave sensitivity test”
@@ -23,13 +30,6 @@ Last Eddited: 2026-01-13
 		- **TKE changes induced by surface waves**
 			- Langmuir turbulence (also related to Stokes shear, but its effect on small scales)
 			- wave-breaking
-- ~={red}==**Discussion on 1st paper**===~
-
-
-
-
- 
-
 
 # [[2026-03-12]]
 ## Noel’s group meeting: Update from Muxin
