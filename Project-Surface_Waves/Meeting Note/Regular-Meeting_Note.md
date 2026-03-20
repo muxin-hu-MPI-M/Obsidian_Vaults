@@ -11,7 +11,7 @@ Last Eddited: 2026-01-13
 ## Discussion on project Stokes transport & 1st paper idea
 #presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
 Three ideas so far:
-### Coupled ICON Atmosphere-ocean
+### Coupled ICON atm-oce with different c_k
 - Apply three (?) different mixing parameterisations (e.g. Gaspar with ck=0.1,0.5 and k-eps or kpp or even something else)
 - run simulations for current climate (control simulations)
 - investigate heat budget of upwelling systems and effect of mixing on upwelling dynamics
@@ -45,8 +45,8 @@ Three ideas so far:
 	- reading of Stokes drift by python reader needs be developed
 	- incorporation of Stokes drift into TKE is necessary
 	- To implement Langmuir turbulence, the reconstruction of Stokes profile is needed. The idea is to use Breivik’s parameterisation (see (Breivik et al., 2014)) which approximate Stokes drift profile via (1) Surface stokes drift (directly from ERA5) and (2) Stokes transport (need estimation)
-### Stokes transport of heat
-
+### Coupled ICON atm-oce with ERA5 Stokes-induced heat/mass divergence
+- 
 
 # [[2026-03-18]]
 ## Regular meeting with Nils
