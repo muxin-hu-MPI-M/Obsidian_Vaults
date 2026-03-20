@@ -26,6 +26,9 @@ tags:
 
 
 ## [[2026-03-16]]
+- [ ] Condense information for the idea of “Stokes transports of heat” to wave person #project/surfwaves 
+	- [ ] diagram of idea (background, significance and how to trying to implement)
+	- [ ] 
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 

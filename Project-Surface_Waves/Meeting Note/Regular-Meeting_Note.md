@@ -12,31 +12,41 @@ Last Eddited: 2026-01-13
 #presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
 Three ideas so far:
 ### Coupled ICON Atmosphere-ocean
-- apply three (?) different mixing parameterizations (e.g. Gaspar with ck=0.1,0.5 and k-eps or kpp or even something else)
+- Apply three (?) different mixing parameterisations (e.g. Gaspar with ck=0.1,0.5 and k-eps or kpp or even something else)
 - run simulations for current climate (control simulations)
 - investigate heat budget of upwelling systems and effect of mixing on upwelling dynamics
 - repeat analysis with simulation with enhanced CO2 forcing (e.g. 4xCO2 or 1% CO2 increase)
-
-Pros:
-- minor developments required (GOTM needs to be updated in recent master)
-- coupled atm-oce simualation
-- control simulation is ready
-
-Cons:
-- computationally heavy
-- no surface waves
-
-### ICON ocean with ERA5 atm and wave forcing
+- Pros:
+	- minor developments required (GOTM-library needs to be updated in recent master)
+	- ==coupled atmosphere-ocean simulation==
+	- control simulation is ready
+- Cons:
+	- computationally heavy
+	- no surface waves
+- ~={red}Comment from Noel=~: 
+	- Changing the mixing efficiency parameter $c_k$​ globally will inevitably alter water mass properties throughout the ocean. Consequently, the characteristics of the water that upwells in coastal upwelling regions will also be modified, which can complicate the interpretation of the local heat budget.
+		- The key issue is ==non-local influence (or remote influence)==. When $c_k$​ is changed globally, the resulting differences in coastal heat budgets cannot be attributed solely to processes occurring in the coastal upwelling region.
+		- the upwelled water originates remotely. If the global mixing changes these water masses, then the temperature and heat content of the source water changes and the background stratification changes
+		- Therefore, it becomes unclear whether the change is caused by the **local effect of altered mixing**, or **remote changes in water mass properties that are advected into the region**
+	- Thus, think about doing a “regional tuning” (e.g., from a simple latitude-longitude box)
+- ~={red}Comment from Christ=~: 
+	- Good idea of analysing the atmosphere-ocean feedback mechanism and its effect on coastal upwelling dynamics
+	- Can use a ==metric of wave activity== (have a look over the paper: *wind sea swell climatology*) to be the reference of tuning the mixing parameter $c_k$
+		- strong wave activity → increase the $c_k$, but again, this will introduce non-local influence which complicates the interpretation
+		- any method to separate local & non-local influence?
+### ICON ocean with ERA5 Atmosphere and wave forcing
 - run historic period of ICON ocean with ERA5 forcing
 - add Stokes drift from ERA5 to TKE equation and repeat simulation
 - analyse heat budget of coastal upwelling systems and compare the different simulation
+- Pros:
+	- computationally less expensive
+	- surface wave effects can be analysed, limit wave effects to Langmuir turbulence
+- Cons:
+	- reading of Stokes drift by python reader needs be developed
+	- incorporation of Stokes drift into TKE is necessary
+	- To implement Langmuir turbulence, the reconstruction of Stokes profile is needed. The idea is to use Breivik’s parameterisation (see (Breivik et al., 2014)) which approximate Stokes drift profile via (1) Surface stokes drift (directly from ERA5) and (2) Stokes transport (need estimation)
+### Stokes transport of heat
 
-Pros:
-- computationally less expensive
-- surface wave effects can be analysed
-Cons:
-- reading of Stokes drift by python reader needs be developed
-- incorporation of Stokes drift into TKE is necessary
 
 # [[2026-03-18]]
 ## Regular meeting with Nils
