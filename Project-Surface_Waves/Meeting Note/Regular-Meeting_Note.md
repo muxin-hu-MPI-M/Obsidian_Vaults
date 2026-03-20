@@ -10,8 +10,33 @@ Last Eddited: 2026-01-13
 # [[2026-03-20]]
 ## Discussion on project Stokes transport & 1st paper idea
 #presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
+Three ideas so far:
+### Coupled ICON Atmosphere-ocean
+- apply three (?) different mixing parameterizations (e.g. Gaspar with ck=0.1,0.5 and k-eps or kpp or even something else)
+- run simulations for current climate (control simulations)
+- investigate heat budget of upwelling systems and effect of mixing on upwelling dynamics
+- repeat analysis with simulation with enhanced CO2 forcing (e.g. 4xCO2 or 1% CO2 increase)
 
+Pros:
+- minor developments required (GOTM needs to be updated in recent master)
+- coupled atm-oce simualation
+- control simulation is ready
 
+Cons:
+- computationally heavy
+- no surface waves
+
+### ICON ocean with ERA5 atm and wave forcing
+- run historic period of ICON ocean with ERA5 forcing
+- add Stokes drift from ERA5 to TKE equation and repeat simulation
+- analyse heat budget of coastal upwelling systems and compare the different simulation
+
+Pros:
+- computationally less expensive
+- surface wave effects can be analysed
+Cons:
+- reading of Stokes drift by python reader needs be developed
+- incorporation of Stokes drift into TKE is necessary
 
 # [[2026-03-18]]
 ## Regular meeting with Nils
