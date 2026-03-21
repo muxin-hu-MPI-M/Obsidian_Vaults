@@ -333,5 +333,5 @@ The average deviation is about 28 and 75% of the time the difference is less tha
 
 - The alternative profile proposed here has been shown to be a better approximation than the monochromatic approximation for both theoretical spectra, modelled 2D spectra in the open ocean, and 1D observed spectra.
 - Utilising this alternative profile comes at no added cost since the computation relies on the same two parameters
-- In the open ocean the mean wave direction (MWD) serves as a good proxy for the Stokes transport direction, it is a significantly better substitute than the surface Stokes drift direction.
+- **In the open ocean the mean wave direction (MWD) serves as a good proxy for the Stokes transport direction, it is a significantly better substitute than the surface Stokes drift direction.**
 - Adding the contribution from the tail gives an important contribution to the Stokes drift velocity in the upper half meter in the open ocean. Its impact rapidly decays, and below 0.5 m, the difference is marginal. However, treat the high-frequency contribution relies on the full 2D spectrum makes this approach impractical.
