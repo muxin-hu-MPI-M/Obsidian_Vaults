@@ -77,8 +77,7 @@
               "title": "ICON_Data-process_Tips"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Note_Stokes-Drift-Profile"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -278,12 +277,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "84b3fa6fb6531a71",
+  "active": "66b1902712bdd819",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "PhD-General/MPI-M/Seminar Notes.md",
