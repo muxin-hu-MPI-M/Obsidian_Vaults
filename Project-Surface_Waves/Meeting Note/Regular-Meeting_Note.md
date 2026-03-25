@@ -6,7 +6,7 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
-
+(Janssen et al., 2013)
 # [[2026-03-20]]
 ## Discussion on project Stokes transport & 1st paper idea
 #presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
