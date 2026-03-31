@@ -289,6 +289,7 @@ and find:
 - **As a result, excess atmospheric energy is absorbed and mixed downward over the tropical and subtropical oceans**, while the very near-surface layer remains cooler due to efficient vertical redistribution.
 - **Dynamically, this subsurface heat is transported poleward by ocean currents.**  
     When the warmer subsurface waters reach higher latitudes, they are mixed upward, warming the surface ocean there.![[Screenshot 2026-01-13 at 16.03.47.png|center]]
+    
 
 # [[2026-01-08]]
 ## Ice Melting: From the lab to ocean

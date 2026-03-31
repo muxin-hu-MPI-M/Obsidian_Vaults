@@ -24,17 +24,18 @@ tags:
 
 # Weekly Plan 
 
-
-## [[2026-03-16]]
-- [ ] Condense information for the idea of “Stokes transports of heat” to wave person #project/surfwaves 
-	- [ ] diagram of idea (background, significance and how to trying to implement)
-	- [ ] 
+## [[2026-03-30]]
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
 		- [ ] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
+
+## [[2026-03-16]]
+- [x] Condense information for the idea of “Stokes transports of heat” to wave person #project/surfwaves 
+	- [x] diagram of idea (background, significance and how to trying to implement)
+	- [x] story line
 - [x] Understanding idealised experiment #project/surfwaves 
 - [x] Update the “Stokes transport of heat” slides #project/surfwaves 
 	- [x] Answer Nils’ questions
@@ -52,7 +53,7 @@ tags:
 	- [x] compare significant wave heights for total waves, sea waves, and swells
 		- [x] scatter plots
 		- [x] global RMSE
-	- [ ] compare wave direction
+	- [ ] wave direction
 - [x] preparing slides for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence” #project/surfwaves 
 - [x] register the Spring School #project/PhD_general 
 
