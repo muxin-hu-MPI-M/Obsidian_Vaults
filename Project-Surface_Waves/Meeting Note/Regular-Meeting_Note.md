@@ -7,13 +7,8 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
-# [[2026-03-31]]
-## Science communication:
-- general structure for summarising your PhD to someone:
-	- **Broad topic**: one sentence to summarise what’s your work
-	- **fact**: we know x, we know y
-	- **gap**: But we don’t know z, z is important for ...
-	- **Therefore**: I’m interested in z ...
+
+
 
 # [[2026-03-26]]
 ## Discussion on “Stokes advection of heat” with Lars and Nobu
