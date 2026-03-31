@@ -6,7 +6,27 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
-(Janssen et al., 2013)
+
+# [[2026-03-31]]
+## Science communication:
+- general structure for summarising your PhD to someone:
+	- **Broad topic**: one sentence to summarise what’s your work
+	- **fact**: we know x, we know y
+	- **gap**: But we don’t know z, z is important for ...
+	- **Therefore**: I’m interested in z ...
+
+# [[2026-03-26]]
+## Discussion on “Stokes advection of heat” with Lars and Nobu
+### Comment from Lars
+Inviscid simulations, which is purely driven by waves. $u$ is Eulerian, $u^S$ is Stoke drift, $u^L$ is Lagrangian velocity, ~={red}**The latter advects momentum, tracer and potential vorticity, and oscillates around zero**=~.
+![[Screenshot 2026-03-31 at 11.37.29.png|center]]
+- In a steady state (when the Coriolis-Stokes forcing is fully developed), the induced **mean Eulerian compensation** (~={red}oscillating Eulerian return flow=~) is exactly the same magnitude of the Stokes drift (100% cancel)
+- However, in an **unsteady state** (when the Coriolis-Stokes forcing is still developing, the first 5 hours in the above plot ), there is **net influence from the Stokes drift** 
+	- In real climate, the Stokes drift is not steady, it varies in its magnitude and direction
+	- In some regions, the development of Eulerian return flow is slow (longer unsteady balance). In these regions, the Stokes transport may induce net impacts already before the full Eulerian compensation is done
+### Comment from Nobu
+
+
 # [[2026-03-20]]
 ## Discussion on project Stokes transport & 1st paper idea
 #presenter/Nils_Brüggemann #presenter/Noel_Gutierrez-Brizuela #presenter/Christopher_Higgins 
