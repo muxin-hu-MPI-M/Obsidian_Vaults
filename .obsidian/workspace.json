@@ -63,7 +63,8 @@
               "title": "ICON_Data-process_Tips"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -263,10 +264,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "66b1902712bdd819",
+  "active": "84b3fa6fb6531a71",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "PhD-General/TRR-181/TRR-SpringSchool.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",

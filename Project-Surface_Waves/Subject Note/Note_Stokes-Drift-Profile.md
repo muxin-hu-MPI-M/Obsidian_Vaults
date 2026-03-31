@@ -165,7 +165,7 @@ It is evident that this rough estimate will overestimate the magnitude of the st
 
 # The Shear of the Stokes Drift Profile
 
-The ==production of **Langmuir turbulence arises from a vortex force term==: $\mathbf v_s \times \nabla\times\mathbf u$** (where the $\mathbf u=(u_x,u_y, u_z)=(u_1, u_2, u_3)$ is the vectorised Eulerian currents) **in the momentum equation** ([Leibovich 1983](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=The+form+and+dynamics+of+Langmuir+circulations.&btnG=)).
+The ~={red}==production of **Langmuir turbulence arises from a vortex force term===~: $\mathbf v_s \times \nabla\times\mathbf u$** (where the $\mathbf u=(u_x,u_y, u_z)=(u_1, u_2, u_3)$ is the vectorised Eulerian currents) **in the momentum equation** ([Leibovich 1983](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=The+form+and+dynamics+of+Langmuir+circulations.&btnG=)).
 
 It is assumed that the vortex force gives rise to a term involving the shear of the Stokes drift velocity profile in the turbulence kinetic energy, although it is somewhat unclear whether this effect will be strong enough to explain the observed Langmuir circulation.
 
@@ -197,6 +197,7 @@ Here:
 > - $\nu_mS^2=\nu_m(\partial \overline{\mathbf{u}}/\partial z)^2$: shear production
 > - $-\nu_hN^2=-\nu_h(-\frac{g}{\rho_w}\frac{d\rho}{dz})$: buoyancy production
 > - ==**$\nu_m\mathbf S\cdot \frac{\partial \mathbf v_s}{\partial z}$: Langmuir turbulence production**==, wave-current interaction term (couple the shear of Eulerian current with the vertical shear of stokes drift)
+>   - Apply the gradient transport closure: $-\overline{u_i'w'}=-\nu_m\frac{\partial \overline{u_i}}{\partial z}$, where $\mathbf S=(\frac{\partial \overline u}{\partial z},\frac{\partial \overline v}{\partial z})$
 >   - $\nu_m\mathbf S\cdot \frac{\partial \mathbf v_s}{\partial z}=\nu_m(\partial \overline{u}/\partial z)\frac{\partial \mathbf v_s}{\partial z}+ \nu_m(\partial\overline{v}/\partial z)\frac{\partial \mathbf v_s}{\partial z}$
 > - Divergences of the pressure correlation term $\overline{w'p'}$ and turbulent transport $\overline{w'e'}$ (Redistribution term)
 
