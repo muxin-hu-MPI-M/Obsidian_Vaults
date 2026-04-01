@@ -22,6 +22,17 @@ Last Eddited: 2026-01-13
 ## Comment for modifying Stokes advection:
 - if only add the Stokes into tracer equation, the PV is not consistent since the PV incorporates the momentum equation
 - The add of Stokes drift into the ICON model is feasible and possible.
+### Isolate Lagrangian transport effect of surface wave
+- Do not attempt to represent the full wave-current interaction dynamics described by the wave-averaged momentum equations. 
+- Instead, we focus specifically on the transport pathway associated with Stokes drift. 
+- To achieve this, the diagnosed Stokes velocity $\mathbf u_s$ is incorporated into the advection operators of the ocean model, such that mass, momentum, and tracers are transported by an effective Lagrangian velocity: $$\mathbf u_{L}=\mathbf u_E + \mathbf u_s $$
+	Where $\mathbf u_E$ is the resolved Eulerian velocity. 
+- In this configuration, Stokes drift contributes directly to the transport of water properties while the model continues to solve the full momentum and mass conservation equations.
+- Although the additional dynamical terms associated with wave-current interaction, such as Coriolis-Stokes forcing, vortex forces, and wave-induced pressure are not explicitly included, the coupled ocean-atmosphere system remains dynamically consistent in the sense that mass conservation is maintained and the circulation is free to adjust dynamically. 
+- Any perturbation introduced by the Stokes transport can therefore induce pressure adjustments, sea surface height changes, and Eulerian return flows within the model. In this way, the experiment allows the climate system to respond to the imposed Lagrangian transport while isolating the role of Stokes-driven advection from other wave-related processes.
+- The configuration provides a controlled framework to investigate 
+  ~={red}”**whether wave-induced Lagrangian transport alone can influence large-scale ocean circulation and climate variability”**=~
+  , while allowing the coupled system to dynamically adjust through its internally resolved processes.
 
 
 # [[2026-03-26]]
