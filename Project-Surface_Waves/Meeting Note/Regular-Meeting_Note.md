@@ -19,6 +19,9 @@ Last Eddited: 2026-01-13
 		- **current refraction**: components? need to look over test book!!!!
 			- Chris: wave-action spectrum spread
 	- next step: run r2b7 with spinned up ocean
+## Comment for modifying Stokes advection:
+- if only add the Stokes into tracer equation, the PV is not consistent since the PV incorporates the momentum equation
+- The add of Stokes drift into the ICON model is feasible and possible.
 
 
 # [[2026-03-26]]
