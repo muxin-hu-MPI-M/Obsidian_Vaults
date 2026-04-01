@@ -8,6 +8,17 @@ Last Eddited: 2026-01-13
 ---
 
 
+# [[2026-04-01]]
+## ICON-wave focus group: meeting
+- the wave-current interaction part is finished
+	- simple test: constant current field (Gaussian-like)
+	- physical implementation is ready, but rather the test part
+	- wave-current: how important it is? comparing wave to wave-current
+		- wave height adjustment (i.e., subtraction): ~20 cm in the coarser resolution (r2b4 ~1/2 degree resolution). 
+		- Strong current in Southern ocean, you don’t see many difference? Need to have spin-up to set up current system in Southern ocean (ocean starts from rest)
+		- **current refraction**: components? need to look over test book!!!!
+			- Chris: wave-action spectrum spread
+	- next step: run r2b7 with spinned up ocean
 
 
 # [[2026-03-26]]
