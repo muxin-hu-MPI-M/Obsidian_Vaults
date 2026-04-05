@@ -27,9 +27,12 @@ tags:
 ## [[2026-04-06]]
 - [ ] PhD registration complete (contact IMPRS office) #project/PhD_general 
 - [ ] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
+	- [x] Stokes modified Lagrangian transport
+	- [ ] Stokes modified Lagrangian transport + Coriolis-Stokes?
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
+		- [ ] pressure gradient (using pyicon)
 		- [ ] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
