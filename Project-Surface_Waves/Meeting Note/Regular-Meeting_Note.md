@@ -61,6 +61,7 @@ Inviscid simulations, which is purely driven by waves. $u$ is Eulerian, $u^S$ is
 	- In real climate, the Stokes drift is not steady, it varies in its magnitude and direction
 	- In some regions, the development of Eulerian return flow is slow (longer unsteady balance). In these regions, the Stokes transport may induce net impacts already before the full Eulerian compensation is done
 ### Comment from Nobu
+“... Also, instead of treating the stokes advection as a surface flux, **it might be easier to just add the Stokes advection and the Stokes-Coriolis in the ocean interior --either at the top layer or, better, over some depth assuming some simplified vertical profile of the Stokes drift.** In this way, all you need to do is to get a Stokes-drift data from ERA5, and you don't have to do anything artificial to u,v,T,S. In this way, you can also consider the Stokes advection and Stokes-Coriolis together, which is what you should do outside of the equatorial regions. Aside from dealing with ICON's unstructured grid, this should be relatively straightforward with Helmuth's help.”
 
 
 # [[2026-03-20]]
