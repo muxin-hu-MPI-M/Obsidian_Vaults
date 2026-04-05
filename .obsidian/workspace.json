@@ -134,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280.5024719238281,
-    "collapsed": true
+    "width": 280.5024719238281
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -257,8 +256,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 316.5,
-    "collapsed": true
+    "width": 316.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -281,11 +279,11 @@
   },
   "active": "2b5e79dfb1baec31",
   "lastOpenFiles": [
-    "PhD-General/TRR-181/TRR-SpringSchool.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "PhD-General/TRR-181/TRR-SpringSchool.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Attachments/Screenshot 2026-03-31 at 11.37.29.png",
     "Project-Surface_Waves/Plan/Research-Gaps.md",

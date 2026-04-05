@@ -20,24 +20,8 @@ Last Eddited: 2026-01-13
 			- Chris: wave-action spectrum spread
 	- next step: run r2b7 with spinned up ocean
 ## Comment for modifying Stokes advection:
-- if only add the Stokes into tracer equation, the PV is not consistent since the PV incorporates the momentum equation
+- if only add the Stokes into tracer equation, **the PV is not consistent since the PV incorporates the momentum equation**
 - The add of Stokes drift into the ICON model is feasible and possible.
-### Isolate Lagrangian transport effect of surface wave
-- Do not attempt to represent the full wave-current interaction dynamics described by the wave-averaged momentum equations. Instead, we focus specifically on the transport pathway associated with Stokes drift.
-- Missing wave-current interaction:
-	- **Momentum equation inconsistency**: the wave-averaged momentum forcing terms associated with surface waves are excluded:
-		- Coriolis-Stokes forcing, vortex forces, wave-induced pressure corrections, Langmuir turbulence
-	- **PV inconsistency**: If Stokes drift modifies transport but no the full momentum balance, the evolution of PV may not follow the correct wave-averaged dynamics
-- To achieve this, the diagnosed Stokes velocity $\mathbf u_s$ is incorporated into the advection operators of the ocean model, such that mass, momentum, and tracers are transported by an effective Lagrangian velocity: $$\mathbf u_{L}=\mathbf u_E + \mathbf u_s $$
-	Where $\mathbf u_E$ is the resolved Eulerian velocity. 
-- In this configuration, Stokes drift contributes directly to the transport of water properties while the model continues to solve the full momentum and mass conservation equations.
-	- Although the additional dynamical terms associated with wave-current interaction are not explicitly included, the coupled ocean-atmosphere system remains dynamically consistent in the sense that mass conservation is maintained and the circulation is free to adjust dynamically. 
-	- Any perturbation introduced by the Stokes transport can therefore induce pressure adjustments, sea surface height changes, and Eulerian return flows within the model. In this way, the experiment allows the climate system to respond to the imposed Lagrangian transport while isolating the role of Stokes-driven advection from other wave-related processes.
-- The configuration provides a controlled framework to investigate ~={red}”**whether wave-induced Lagrangian transport alone can influence large-scale ocean circulation and climate variability”**=~, while allowing the coupled system to dynamically adjust through its internally resolved processes.
-
-In general, the experiment provides a clean and controlled framework to isolate the transport pathway associated with surface waves. It directly tests whether the Lagrangian transport induced by surface waves can alter the redistribution of tracers and energy in the climate system. It helps clarify the climate relevance of wave-induced transport, thereby improving our outstanding of how surface wave processes may interact with large-scale ocean circulation.
-
-
 ### Isolating the Lagrangian transport effect of surface wave
 Surface gravity waves generate a Stokes drift that contributes to the Lagrangian motion of water parcels in the upper ocean. $$\mathbf u_{L}=\mathbf u_E + \mathbf u_s $$
 Where $\mathbf u_E$ is the Eulerian velocity and $\mathbf u_s$ is the Stokes drift induced by surface waves.
@@ -53,8 +37,19 @@ The experiment does not attempt to represent the full wave-current interaction d
 
 A key physical motivation for this design is that compensation of transport perturbations in the ocean does not occur instantaneously. Adjustment of the ocean typically involved processes operate across various spatial and temporal scales and exhibit regional variability. Consequently, the introduction of wave-driven Lagrangian transport may alter surface tracer pathways and upper-ocean heat redistribution before the ocean circulation fully compensates the imposed perturbation, and may lead to a residual tracer transport that persists after large-scale Eulerian compensation has developed, particularly in regions where dynamical adjustment is slow.
 
-The present configuration therefore provides a controlled framework to test how the ocean circulation dynamically adjusts to wave-driven Lagrangian transport. By diagnosing the resulting circulation changes, the experiment enables quantification of the degree of Eulerian compensation and identification of the dynamical mechanisms responsible for the adjustment. This analysis further allows assessment of how much of the imposed Stokes transport is compensated by circulation changes and how much contributes to effective tracer redistribution. Because the full wave momentum dynamics are not represented, the identified adjustment mechanisms should be interpreted as the ocean’s response to the imposed transport perturbation rather than the true physical pathways of wave–current interaction. Nevertheless, quantifying both the compensation processes and the resulting residual tracer transport provides a direct measure of the potential climate relevance of wave-induced Lagrangian transport. In this way, the experiment not only evaluates whether this transport pathway can influence the coupled climate system, but also clarifies the dynamical mechanisms through which the ocean adjusts to wave-driven transport perturbations. The key question addressed in this study is whether wave-driven Lagrangian transport can produce persistent tracer redistribution before the large-scale ocean circulation dynamically compensates the imposed transport perturbation.
+The present configuration therefore provides a controlled framework to test how the ocean circulation dynamically adjusts to wave-driven Lagrangian transport. The imposed Stokes drift introduces an additional transport pathway, to which the ocean circulation dynamically adjusts through pressure gradients, sea-surface height changes, and Eulerian return flows. Because the full wave momentum dynamics are not represented, the resulting circulation changes should be interpreted as the system’s response to the imposed transport perturbation rather than the true dynamical pathways of wave-current interaction. Nevertheless, this framework allows a direct assessment of **how much of the imposed Stokes transport is effectively compensated by the circulation adjustments and how much contributes to residual tracer redistribution.** Quantifying the resulting tracer transport therefore provides ~={red}**a measure of the potential climate relevance of wave-induced Lagrangian transport in an idealised setting**=~. In this way, the experiment evaluates whether this additional transport has the potential to influence the coupled climate system, even when allowing the ocean circulations to dynamically adjust to the imposed perturbation. The key question addressed in this study is whether wave-driven Lagrangian transport can generate a persistent residual tracer redistribution after the large-scale ocean circulation dynamically compensates the imposed transport perturbation.
 
+#### Summary
+- **Experimental design:**  
+    The idealised experiment is designed to isolate the transport pathway associated with Stokes drift. Specifically, the diagnosed Stokes drift is added to the Eulerian velocity to form an effective Lagrangian velocity that advects mass, momentum, and tracers with water parcels.
+- **Dynamical adjustment allowed:**  
+    The coupled ocean–atmosphere system is allowed to dynamically adjust to the imposed transport perturbation through pressure gradients, sea-surface height changes, and Eulerian circulation responses, ensuring that the overall mass balance of the system is maintained.
+- **Idealised representation of wave effects:**  
+    The experiment does not attempt to represent the full wave–current interaction dynamics described by the wave-averaged momentum equations. Consequently, several wave-induced dynamical processes are not included, such as Coriolis–Stokes forcing, Langmuir turbulence, and wave-induced pressure corrections. In addition, the imposed transport may introduce inconsistencies in the full dynamical framework (e.g., potential vorticity balance), since the momentum pathways associated with the wave field are not explicitly represented.
+- **Interpretation of the response:**  
+    As a result, the diagnosed circulation changes should be interpreted as the ocean’s dynamical response to an imposed transport perturbation rather than the true physical pathways through which waves interact with the ocean.
+- **Scientific value of the experiment:**  
+    Despite these idealisations, the configuration provides a controlled framework to assess the potential climate relevance of wave-driven Lagrangian transport. By quantifying how much of the imposed Stokes transport is dynamically compensated and how much contributes to residual tracer redistribution, the experiment evaluates whether this additional transport pathway can produce a measurable impact on the coupled climate system.
 
 # [[2026-03-26]]
 ## Discussion on “Stokes advection of heat” with Lars and Nobu

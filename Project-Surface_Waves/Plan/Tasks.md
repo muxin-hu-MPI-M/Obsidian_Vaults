@@ -24,13 +24,16 @@ tags:
 
 # Weekly Plan 
 
-## [[2026-03-30]]
+## [[2026-04-06]]
+- [ ] PhD registration complete (contact IMPRS office) #project/PhD_general 
+- [ ] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
 		- [ ] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
+
 
 ## [[2026-03-16]]
 - [x] Condense information for the idea of “Stokes transports of heat” to wave person #project/surfwaves 
@@ -46,14 +49,14 @@ tags:
 		- [x] how I aggregate in time
 
 ## [[2026-03-09]]
-- [ ] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case #project/surfwaves 
+- [x] compare ERA5 wave simulation to ICON-wave standalone simulation and update the plot in global case #project/surfwaves 
 	- [x] compare surface stokes drift (ust, vst) with geological location;
 		- [x] scatter plot (icon vs era5 points by points)
 		- [x] global RMSE map
 	- [x] compare significant wave heights for total waves, sea waves, and swells
 		- [x] scatter plots
 		- [x] global RMSE
-	- [ ] wave direction
+	- [x] wave direction
 - [x] preparing slides for “heat transport by Stokes drift and associated Lagrangian heat/mass convergence” #project/surfwaves 
 - [x] register the Spring School #project/PhD_general 
 
@@ -105,7 +108,7 @@ tags:
 - [x] Record the idea thoroughly in Obsidian note #project/surfwaves 
 	- [x] Update research questions recorded in [[ICON_Output_Namelist#Start from Research Questions]] to [[Research-Gaps]]
 	- [x] Update the potential ideas
-- [ ] Analysis on ERA5 reanalysis with wave outputs (2000-2024) #project/surfwaves 
+- [x] Analysis on ERA5 reanalysis with wave outputs (2000-2024) #project/surfwaves 
 	- [x] ocean stress vs wind stress (normalised ocean stress)
 	- [x] surface stokes drift velocity (magnitude + direction)
 	- [x] Estimated Stokes Transport (see Eq. 31 in [[Note_Stokes-Drift-Profile]]
