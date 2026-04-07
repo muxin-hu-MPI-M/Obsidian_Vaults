@@ -25,7 +25,7 @@ tags:
 # Weekly Plan 
 
 ## [[2026-04-06]]
-- [ ] PhD registration complete (contact IMPRS office) #project/PhD_general 
+- [x] PhD registration complete (contact IMPRS office) #project/PhD_general 
 - [ ] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
 	- [x] Stokes modified Lagrangian transport
 	- [ ] Stokes modified Lagrangian transport + Coriolis-Stokes?
