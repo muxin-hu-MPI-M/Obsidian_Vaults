@@ -8,6 +8,21 @@ Last Eddited: 2026-01-13
 ---
 
 
+
+# [[2026-04-07]]
+## Discussion with Nobu:
+#presenter/Nobu_Suzuki 
+also see the previous discussion: [[Regular-Meeting_Note#Comment from Nobu]]
+- **Stokes advection and the Stokes-Coriolis cannot be separated**
+	- This is because once considered the Stokes advection term, it describes dynamics in the Lagrangian framework
+	- Hence, Coriolis effect must acts on Lagrangian velocity as well, otherwise the parcel is advected by Stokes drift but Earth’s rotation does not feel that motion, which is physically inconsistency
+- **However, one can ignore the Stokes shear force**
+	- As it represents interactions between the Eulerian mean flow and gradient of Stokes drift (mainly its vertical gradient), which transfers energy between waves and turbulence
+	- Stokes shear mostly affect:
+		- Langmuir turbulence
+		- upper-ocean small scale mixing 
+- **When considering the Stokes advection + Stokes-Coriolis, but ignoring the Stokes-shear term is acceptable** 
+	- this idealised setting still keeps the minimal consistent Lagrangian dynamics
 # [[2026-04-01]]
 ## ICON-wave focus group: meeting
 - the wave-current interaction part is finished
