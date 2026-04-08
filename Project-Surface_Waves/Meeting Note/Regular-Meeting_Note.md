@@ -23,6 +23,17 @@ also see the previous discussion: [[Regular-Meeting_Note#Comment from Nobu]]
 		- upper-ocean small scale mixing 
 - **When considering the Stokes advection + Stokes-Coriolis, but ignoring the Stokes-shear term is acceptable** 
 	- this idealised setting still keeps the minimal consistent Lagrangian dynamics
+## Discussion with Noel:
+- The idea ([[Proposal-Large_scale_dynamical_impact_of_Stokes_drift#Isolating the Large-Scale dynamical impact of Stokes drift]]) is cool
+- **How to implement the Stokes drift into the model?**
+	- **add the depth-mean Stokes drift value to the top layer** → good approximation, easiest
+		- At each time step, if the return flow happens also at the same layer, or the layer with identical tracer value (e.g., potential temperature). The net effect would be almost entirely cancelled
+	- **retrieve the full velocity profile in the depth space, add the velocity accordingly** → more consistent, requires more work on interpolating the depth coordinate
+- **For the analysis afterwards, we can get:**
+	- the model output for calculating the OHT, wind stress
+	- Then, also compute the Stokes transport of heat from the prescribed Stokes drift, and the Stokes-mediated wind stress component
+	- The “residuals” as the system’s response
+
 # [[2026-04-01]]
 ## ICON-wave focus group: meeting
 - the wave-current interaction part is finished

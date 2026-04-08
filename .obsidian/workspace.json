@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
+            "id": "41d59f6a3682d7aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Regular-Meeting_Note"
+            }
+          },
+          {
             "id": "2b5e79dfb1baec31",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Proposal-Large_scale_dynamical_impact_of_Stokes_drift"
-            }
-          },
-          {
-            "id": "089a886df281ca2d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Plan/Research-Gaps.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Research-Gaps"
             }
           },
           {
@@ -50,6 +50,20 @@
             }
           },
           {
+            "id": "c07c1a503f3e6d70",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Note_Wave-induced-stress_and_Young-waves"
+            }
+          },
+          {
             "id": "de5da1babd032899",
             "type": "leaf",
             "state": {
@@ -61,20 +75,6 @@
               },
               "icon": "lucide-file",
               "title": "ICON_Data-process_Tips"
-            }
-          },
-          {
-            "id": "41d59f6a3682d7aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Regular-Meeting_Note"
             }
           }
         ]
@@ -212,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Proposal-Large_scale_dynamical_impact_of_Stokes_drift"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -277,21 +277,22 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "2b5e79dfb1baec31",
+  "active": "41d59f6a3682d7aa",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
-    "Project-Surface_Waves/Plan/Research-Gaps.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+    "Project-Surface_Waves/Plan/Research-Gaps.md",
     "QuickCapture.md",
     "here.md",
     "2026-02-12.md",
     "[Panel-Meeting_Note.md",
     "PhD-General/TRR-181/TRR-SpringSchool.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Attachments/Screenshot 2026-03-31 at 11.37.29.png",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md",
@@ -305,7 +306,6 @@
     "[[Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/General_Proposal.md",
     "2026-01-26.md",
-    "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
     "Project-Eddy_Upwelling/Subject Note",

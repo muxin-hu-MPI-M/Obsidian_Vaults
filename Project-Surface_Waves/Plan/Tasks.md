@@ -36,6 +36,7 @@ tags:
 		- [ ] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
+- [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
 
 
 ## [[2026-03-16]]
