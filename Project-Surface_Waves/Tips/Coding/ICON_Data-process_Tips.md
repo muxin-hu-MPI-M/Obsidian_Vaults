@@ -400,3 +400,30 @@ The corresponding regional masks, using the same corner points as the oceanic ma
 Two kinds of file:
 - `pc_masks_atm_full-dim.nc`: which contains the selected mask with the full spatial dimension
 - `pc_{region}_mask_atm_r2b5.nc`: information for the contained cell (only int), can be used 
+
+
+
+# Calculate gradient/divergence/curl on ICON native grid using PyICON
+
+## Atmospheric grid (r2b5 from DWD) → impossible!!
+The r2b5 tgrid file (from DWD) misses few key parameters that affects the calculation of some important parameters:
+- Affect `ds_IcD[cell_cart_vec]`
+	- "cell_circumcenter_cartesian_x"
+	- "cell_circumcenter_cartesian_y"
+- Affect `ds_IcD[vert_cart_vec]`
+	- "cartesian_x_vertices"
+	- "cartesian_y_vertices"
+	- "cartesian_z_vertices"
+- Affect `ds_IcD[edge_cart_vec]` → Needed when using `pyic.xr_calc_edge2cell_coeff_cc
+	- "edge_middle_cartesian_x"
+	- "edge_middle_cartesian_y"
+	- "edge_middle_cartesian_z"
+- Affect `ds_IcD[dual_edge_cart_vec]`
+	- "edge_dual_middle_cartesian_x"
+	- "edge_dual_middle_cartesian_y"
+	- "edge_dual_middle_cartesian_z"
+- Affect `ds_IcD[edge_prim_norm]` → Needed when using `pyic.xr_calc_edge2cell_coeff_cc_t
+	- "edge_primal_normal_cartesian_x"
+	- "edge_primal_normal_cartesian_y"
+	- "edge_primal_normal_cartesian_z"
+

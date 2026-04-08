@@ -32,7 +32,7 @@ tags:
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
-		- [ ] pressure gradient (using pyicon)
+		- [-] pressure gradient (using pyicon); the atmospheric tgrid (`r2b5_atm_r0030` has some key missing parameters which prevent the calculation of `cell2edge_coeff_cc`)
 		- [ ] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
