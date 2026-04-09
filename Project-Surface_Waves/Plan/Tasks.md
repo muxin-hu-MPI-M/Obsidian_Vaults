@@ -31,7 +31,7 @@ tags:
 	- [x] Stokes modified Lagrangian transport + Coriolis-Stokes?
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [ ] Interpolate atmospheric 3D variables to vertical coordinates:
-		- [ ] pressure
+		- [x] pressure
 		- [ ] geopotential height
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
