@@ -30,6 +30,7 @@ tags:
 	- [x] Stokes modified Lagrangian transport
 	- [x] Stokes modified Lagrangian transport + Coriolis-Stokes?
 - [ ] c_k experiments analysis #project/surfwaves 
+	- [ ] Interpolate atmospheric 3D variables into pressure/geopotential height coordinates
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
 		- [-] pressure gradient (using pyicon); the atmospheric tgrid (`r2b5_atm_r0030` has some key missing parameters which prevent the calculation of `cell2edge_coeff_cc`)
