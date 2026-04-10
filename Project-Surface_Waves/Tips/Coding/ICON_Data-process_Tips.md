@@ -399,7 +399,56 @@ The corresponding regional masks, using the same corner points as the oceanic ma
 
 Two kinds of file:
 - `pc_masks_atm_full-dim.nc`: which contains the selected mask with the full spatial dimension
-- `pc_{region}_mask_atm_r2b5.nc`: information for the contained cell (only int), can be used 
+- `pc_{region}_mask_atm_r2b5.nc`: information for the contained cell (only int), can be used to select and do calculations
+
+### Example: Regional mean 10 m wind speed
+see script under `/home/m/m301254/project_surfwaves/scripts/mux0003_b5b7_peru-coast_analysis.ipynb`
+
+```python
+import funcs_crop_region as funcs_crop_region
+
+# mask: pc_all in atm and oce differently
+fpath_mask = f"/work/mh0033/m301254/proj_surfwave/masks"
+mask_atm = xr.open_dataset(f"{fpath_mask}/pc_all_mask_atm_r2b5.nc")
+mask_atm_plot = xr.open_dataset(f"{fpath_mask}/pc_masks_atm_full-dim.nc")
+
+# read data using dask
+sp10_def = xr.open_mfdataset(f"{path_data['def']}{run_def}_atm_2d_*")["sp_10m"].isel(height=0)
+sp10_ck3 = xr.open_mfdataset(f"{path_data['ck3']}{run_ck3}_atm_2d_*")["sp_10m"].isel(height=0)
+
+# monthly climatology
+sp10_def_monthly = sp10_def.groupby("time.month").mean("time")
+sp10_ck3_monthly = sp10_ck3.groupby("time.month").mean("time")
+
+# calculate the selected regional mean
+sp10_def_monthly_reg = funcs_crop_region.regional_area_mean_atm(sp10_def_monthly, ds_tg_atm, mask_atm)
+sp10_ck3_monthly_reg = funcs_crop_region.regional_area_mean_atm(sp10_ck3_monthly, ds_tg_atm, mask_atm)
+
+# climatology of annual mean
+sp10_def_clim = sp10_def.mean(dim="time")
+sp10_ck3_clim = sp10_ck3.mean(dim="time")
+
+# selected regional mean
+sp10_def_clim_reg = funcs_crop_region.regional_area_mean_atm(sp10_def_clim, ds_tg_atm, mask_atm)
+sp10_ck3_clim_reg = funcs_crop_region.regional_area_mean_atm(sp10_ck3_clim, ds_tg_atm, mask_atm)
+
+# plot
+plt.figure(figsize=(8,5))
+plt.plot(sp10_def_monthly_reg.month, sp10_def_monthly_reg, c="b", label="CTRL monthly mean")
+plt.plot(sp10_ck3_monthly_reg.month, sp10_ck3_monthly_reg, c="r", label="CK03 monthly mean")
+plt.hlines(sp10_def_clim_reg, 1, 12, colors='b', linestyles='dashed', label="CTRL annual mean")
+plt.hlines(sp10_ck3_clim_reg, 1, 12, colors='r', linestyles='dashed', label="CK03 annual mean")
+plt.xlabel("Month")
+plt.xlim(0,13)
+plt.xticks(range(0,13))
+plt.ylabel("m s$^{-1}$")
+plt.legend()
+plt.grid(True, alpha=0.5, linestyle='--')
+plt.title("Climatology: Monthly-mean regional averaged wind10m in Peru Coast")
+save_path = "/home/m/m301254/project_surfwaves/figs/mux0003_b5b7/pc_all/clim_wind10m_monthly_ave_pc-all.png"
+plt.savefig(save_path, dpi=100)
+plt.show()
+```
 
 
 
