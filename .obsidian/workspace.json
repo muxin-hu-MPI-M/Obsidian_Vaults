@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON_Data-process_Tips"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -278,7 +278,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "PhD-General/MPI-M/Seminar Notes.md",
