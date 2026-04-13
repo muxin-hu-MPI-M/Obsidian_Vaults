@@ -34,6 +34,10 @@ tags:
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
 - [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
+- [ ] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
+	- [ ] Ask for the note
+	- [ ] Figure out what to do first
+
 
 
 ## [[2026-04-06]]
