@@ -24,15 +24,9 @@ tags:
 
 # Weekly Plan 
 
-## [[2026-04-06]]
-- [x] PhD registration complete (contact IMPRS office) #project/PhD_general 
-- [x] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
-	- [x] Stokes modified Lagrangian transport
-	- [x] Stokes modified Lagrangian transport + Coriolis-Stokes?
+## [[2026-04-13]]
 - [ ] c_k experiments analysis #project/surfwaves 
-	- [ ] Interpolate atmospheric 3D variables to vertical coordinates:
-		- [x] pressure
-		- [ ] geopotential height
+	- [x] Interpolate atmospheric 3D variables to pressure coordinates
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
 		- [-] pressure gradient (using pyicon); the atmospheric tgrid (`r2b5_atm_r0030` has some key missing parameters which prevent the calculation of `cell2edge_coeff_cc`)
@@ -41,6 +35,12 @@ tags:
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
 - [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
 
+
+## [[2026-04-06]]
+- [x] PhD registration complete (contact IMPRS office) #project/PhD_general 
+- [x] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
+	- [x] Stokes modified Lagrangian transport
+	- [x] Stokes modified Lagrangian transport + Coriolis-Stokes?
 
 ## [[2026-03-16]]
 - [x] Condense information for the idea of “Stokes transports of heat” to wave person #project/surfwaves 
