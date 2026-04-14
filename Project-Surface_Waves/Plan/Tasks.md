@@ -40,6 +40,7 @@ tags:
 	- [ ] Ask for the note
 	- [ ] Figure out what to do first
 - [x] Email to the buddy #project/PhD_general 
+- [x] Read paper for discussion #project/PhD_general 
 
 
 
