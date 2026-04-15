@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -278,12 +278,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "41d59f6a3682d7aa",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
