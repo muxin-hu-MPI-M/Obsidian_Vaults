@@ -6,12 +6,13 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-01-13
 ---
-
-
-
+# [[2026-04-15]]
+## Meeting with Nils & Nobu: Stokes-induced Lagrangian transport
+#presenter/Nils_Brüggemann #presenter/Nobushiro_Suzuki 
+- run quick test on ***Oceananigans*** using Julia?
 # [[2026-04-07]]
 ## Discussion with Nobu:
-#presenter/Nobu_Suzuki 
+#presenter/Nobushiro_Suzuki 
 also see the previous discussion: [[Regular-Meeting_Note#Comment from Nobu]]
 - **Stokes advection and the Stokes-Coriolis cannot be separated**
 	- This is because once considered the Stokes advection term, it describes dynamics in the Lagrangian framework
