@@ -10,7 +10,11 @@ Last Eddited: 2026-01-13
 ## Meeting with Nils & Nobu: Stokes-induced Lagrangian transport
 #presenter/Nils_Brüggemann #presenter/Nobushiro_Suzuki 
 - run quick test on ***Oceananigans*** using Julia?
-- paper: 
+- **The research question is too general**:
+	- Need to specify more
+	- literature reading for background information
+		- what has been done? been discussed?
+		- What’s might be the focused region?
 # [[2026-04-07]]
 ## Discussion with Nobu:
 #presenter/Nobushiro_Suzuki 
