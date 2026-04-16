@@ -38,6 +38,9 @@ tags:
 		- [x] figure out why the current situation has negative inverse depth scale
 		- [ ] correct it, discussed with Chris
 	- [ ] Summarise the “Approximate Stokes drift”
+		- [x] monochromatic
+		- [x] Breivik 2014: Exponential integral
+		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
 - [ ] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
 	- [ ] Ask for the note

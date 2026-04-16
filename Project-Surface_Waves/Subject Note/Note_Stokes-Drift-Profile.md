@@ -95,8 +95,7 @@ $$ \begin{equation} k_m=\frac{v_0}{2V_s} \tag{8}\end{equation} $$
 > - Will have a weaker vertical gradient than the profile under a full spectrum near the surface
 > - Will tends too quickly to zero deeper down </aside>
 
-## Alternative: Exponential Integral Profile
-### Profile considering Phillips spectrum
+## Alternative (1): Exponential Integral Profile
 The behaviour of the profile under a full spectrum is most readily investigated by considering the Phillips spectrum, applicable to the equilibrium range of the spectrum of wind generated waves above the spectral peak:
 $$ \begin{equation} F_P= \begin{cases} \alpha_Pg^2\omega^{-5}, &\omega \gt \omega_p \\ 0, &\omega \le\omega_p \end{cases} \tag{9}\end{equation} $$
 Set Phillips’ parameter $\alpha_P=0.0083$ (there is a disagreement, other works preferring $\alpha_P=0.0081$). The **peak circular frequency is denoted $\omega_p$.** the Stokes drift profile (Eq (4)) under Eq (9) is:
@@ -117,18 +116,24 @@ $$ \begin{equation} V_P=\frac{\alpha_Pg^2}{3\omega_P^3} \tag{12}\end{equation} $
     $$ \begin{equation} v_P(z)\approx\alpha_Pg^2(e^{2k_pz}/2\omega_p^3|z|) \tag{15}\end{equation} $$
 
 > [!Attention]
-> Motivated by this, ==**Breivik et al. (2014) have explored a profile that approaches the exponential shape [Eq (13)] near the surface and goes like the asymptotic solution [Eq (15)] in the deep**==:
-$$ \begin{equation} v_e=v_0\frac{e^{2k_ez}}{1-Ck_ez} \tag{16}\end{equation} $$
+> Motivated by this, **Breivik et al. (2014) have explored a profile that approaches the exponential shape [Eq (13)] near the surface and goes like the asymptotic solution [Eq (15)] in the deep**:$$ \begin{equation} v_e=v_0\frac{e^{2k_ez}}{1-Ck_ez} \tag{16}\end{equation} $$
+> where:
+> - $C$: Constant. 
+> - $v_0$: surface Stokes drift velocity, vector
+> - $k_e$: inverse depth scale, or effective wave number. Designed to be the function of $v_0$ and $T_s$
+> - $T_s$: Stokes transport, has its own direction
 
 The coefficient that was found to minimise the MSE for the Phillips spectrum over the entire profile is $C\approx8$. Obviously the MSE takes into account discrepancies over the entire water column and will be more sensitive to deviations in the upper part where the drift is stronger.
 
 The transport under such a profile involved the exponential integral $E_1$ and can be solved analytically to yield:
 
-$$ \begin{equation} V_S=\frac{\frac{1}{4}(v_0e^{1/4}E_1)}{8k_e} \tag{17}\end{equation} $$
+$$ \begin{equation} |V_S|=\frac{|v_0|e^{1/4}E_1(1/4)}{8k_e} \tag{17}\end{equation} $$
+>[!Tips]
+>**Here both $v_0$ and $V_s$ should be a scalar quantity (i.e., its magnitude)**. To clarify, Eq. (17) and (18) will follow the expressions recorded in Janssen et al. (2013).
 
-It will in the following be referred to as the exponential integral profile. This imposes the following constraint on the inverse depth scale:
+It will in the following be referred to as the exponential integral profile. This imposes the following constraint on the inverse depth scale. 
 
-$$ \begin{equation} k_e=\frac{\frac{1}{4}(v_0e^{1/4}E_1)}{8V_s}\approx\frac{v_0}{5.97V_s} \tag{18}\end{equation} $$
+$$ \begin{equation} k_e=\frac{|v_0|e^{1/4}E_1(1/4)}{8|V_s|}\approx\frac{v_0}{5.97V_s} \tag{18}\end{equation} $$
 
 Here $e^{1/4}E_1(1/4)\approx 1.34$; thus,
 
@@ -143,9 +148,8 @@ Where the $k_m$ is the wavenumber for the monochromatic wave [Eq (8)].
 > 
 > These two quantities is used to calculate the wavenumber $k_e$, then the profile $v_e$
 
-**So how do model calculate the above two quantities?**
 
-### Approximate Stokes Transport
+# Approximate Stokes Transport using bulk wave parameters
 See details in Eq. (35) in (Breivik et al., 2014)
 We can derive the first moment from the integrated parameters of a wave model or from wave observations and find an estimate for the Stokes transport:
 $$\begin{align}V_s &\approx \frac{2\pi }{16}\bar{f}H_s^2\hat{\mathbf k}_s\\ &\approx\frac{\pi H_s^2}{8\bar{T}}(\sin{\bar{\theta}},\cos{\bar{\theta}})\end{align}$$
@@ -167,13 +171,15 @@ Where:
 
 It is evident that this rough estimate based on integrated parameters will overestimate the magnitude of the stokes transport by $\sim 19\%$ (Breivik et al., 2014)
 
-## Case: Reconstruct Stokes drift Profile based on ERA5 wave outputs
+
+
+# Case: Reconstruct Stokes drift Profile based on ERA5 wave outputs
 **Following the Approximation introduced in (Breivik et al., 2014; Janssen et al., 2013) above, using the exponential integral profile that considered to match Phillips spectrum**
 - Would require two inputs for reconstructing
 	1. Surface Stokes drift velocity $\mathbf {u_s}(0)$
 	2. Stokes transport $\mathbf V_s$
 - Usually, both of them are standard wave outputs from wave prediction model
-- For re
+- To approximate 
 - ERA5 outputs provides the “mean wave period based on the first moment of wind wave/swells”. These values
 
 # The Shear of the Stokes Drift Profile
