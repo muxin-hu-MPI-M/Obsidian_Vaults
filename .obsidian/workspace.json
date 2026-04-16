@@ -77,7 +77,8 @@
               "title": "ICON_Data-process_Tips"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Regular-Meeting_Note"
+              "title": "Outline of Note_Stokes-Drift-Profile"
             }
           },
           {
@@ -232,7 +233,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -277,7 +278,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "b89abaaea3ef86ea",
+  "active": "cf18839df3929811",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
