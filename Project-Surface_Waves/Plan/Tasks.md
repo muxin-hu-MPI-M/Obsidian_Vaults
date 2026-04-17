@@ -34,17 +34,17 @@ tags:
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
 - [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
-	- [ ] inverse depth scale to e-folding depth scale
+	- [x] inverse depth scale to e-folding depth scale
 		- [x] figure out why the current situation has negative inverse depth scale
-		- [ ] correct it, discussed with Chris
+		- [x] correct it, discussed with Chris
 	- [ ] Summarise the “Approximate Stokes drift”
 		- [x] monochromatic
 		- [x] Breivik 2014: Exponential integral
 		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
-- [ ] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
-	- [ ] Ask for the note
-	- [ ] Figure out what to do first
+- [x] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
+	- [x] Ask for the note
+	- [x] Figure out what to do first
 - [x] Email to the buddy #project/PhD_general 
 - [x] Read paper for discussion #project/PhD_general 
 

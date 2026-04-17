@@ -5,7 +5,7 @@ tags:
   - "#presenter/Xinyue_Li"
 Last Eddited: 2026-01-18
 ---
-# Detailed Descriptions (PDF)
+# Project Description
 ![[Peru upwelling project.pdf]]
 
 ## Basic Info
@@ -42,10 +42,7 @@ Last Eddited: 2026-01-18
 	- ==with increasing heat fluxes==, the cancellation is reduced and the transverse flow progressively approaches the classical Ekman circulation
 	- sensitivity of eddy circulation to synoptic changes in air-sea heat fluxes is felt down to 125 m depth; mesoscale dynamics dominate the cancellation effect 
 
-
-
-# Meeting notes
-## [[2026-01-21]] Opening 
+## Discussion Meeting
 - can be finished in a short time
 - cooling of the eastern central pacific, while the land is heated 
   → pressure gradient increasing 
@@ -53,4 +50,22 @@ Last Eddited: 2026-01-18
 - **ERRIRE** captures the cooling trend with high accuracy compared to CMIP, high resolution
 
 
-# Literature reading
+
+# Updates
+## 1st Draft
+![[Upwelling_region_outline-1.pdf]]
+
+## Discussion on 1st Draft
+### Plan for the figures
+![[Figures_plan.jpg]]
+
+### Plan for the figures: design
+![[Figures_plan_2.jpg]]
+
+### My job: Update Figure 3 & description
+Three panels:
+1. **Historical** mean section-averaged Temperature + Velocity vector field (u, w)
+2. **Future** mean section-averaged Temperature + Velocity vector field (u, w)
+3. **Change (Future - Historical)** in Temperature and velocity vector field
+
+The zonal velocity $u$ in the model output is defined in the eastward direction. However, the analysis sections are oriented approximately perpendicular to the Peruvian coastline, which is rotated by about 30 degrees relative to the meridional axis. To ensure a consistent representation, $u$ is projected onto the cross-shore direction to derive the corresponding cross-shore velocity component $u’$:$$u'=u\cdot\cos{(30\degree)}$$
