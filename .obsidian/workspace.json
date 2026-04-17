@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Goals-Roadmap-Updates-Track"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -233,7 +233,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -278,13 +278,13 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "84b3fa6fb6531a71",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
+    "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
     "Attachments/Figures_plan_2.jpg",
     "Attachments/Figures_plan.jpg",
     "Attachments/Upwelling_region_outline-1.pdf",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "PhD-General/MPI-M/Seminar Notes.md",
@@ -320,7 +320,6 @@
     "Attachments/Screenshot 2026-01-13 at 16.09.57.png",
     "Attachments/Screenshot 2026-01-13 at 16.03.47.png",
     "Attachments/Screenshot 2026-01-13 at 15.52.10.png",
-    "Attachments/86D59326-9AFE-45A9-AB76-5F365A50BB6E_1_105_c.jpeg",
     "Project-Surface_Waves/Tips/Coding",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin 1.pdf",
     "Attachments/Panel_Meeting_1_Progress_Report_Muxin.pdf",

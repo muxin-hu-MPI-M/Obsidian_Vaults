@@ -45,6 +45,7 @@ tags:
 - [x] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
 	- [x] Ask for the note
 	- [x] Figure out what to do first
+	- [x] Update 
 - [x] Email to the buddy #project/PhD_general 
 - [x] Read paper for discussion #project/PhD_general 
 
