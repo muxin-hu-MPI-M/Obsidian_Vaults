@@ -1274,6 +1274,36 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md": [
+      {
+        "id": "yjvqkw5se",
+        "text": "**downward part is the Greenhouse (GH) effect**",
+        "tags": [],
+        "line": 27,
+        "startOffset": 1698,
+        "endOffset": 1749,
+        "filePath": "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1776696235574,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "8dew2hevu",
+        "text": "climate feedback parameter:",
+        "tags": [],
+        "line": 56,
+        "startOffset": 4383,
+        "endOffset": 4414,
+        "filePath": "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1776699231946,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
     ]
   },
   "collections": {},

@@ -50,12 +50,12 @@ tags:
 	- [x] Ask for the note
 	- [x] Figure out what to do first
 	- [x] Update the figure
-	- [ ] ‼️ correct the derivation of cross-shore velocity!
+	- [x] ‼️ correct the derivation of cross-shore velocity!
 	- [x] compute climatological stratification (N2) and alongshore velocity & diff
 	- [ ] Write figure description and interpolation in the draft
 - [x] Email to the buddy #project/PhD_general 
 - [x] Read paper for discussion #project/PhD_general 
- is 
+ 
 ## [[2026-04-06]]
 - [x] PhD registration complete (contact IMPRS office) #project/PhD_general 
 - [x] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
