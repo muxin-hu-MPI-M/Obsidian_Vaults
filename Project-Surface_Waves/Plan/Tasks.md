@@ -24,7 +24,7 @@ tags:
 
 # Weekly Plan 
 
-## [[2026-04-13]]
+## [[2026-04-20]]
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [x] Interpolate atmospheric 3D variables to pressure coordinates
 	- [ ] Area averaged wind field
@@ -42,15 +42,18 @@ tags:
 		- [x] Breivik 2014: Exponential integral
 		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
-- [x] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
+
+## [[2026-04-13]]
+- [x] Prepare discussion note on Stokes Lagrangian transport to Nobu & Nils
+- [x] Discuss with Chris: Reconstruct Stokes drift profile using ERA5
+- [ ] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
 	- [x] Ask for the note
 	- [x] Figure out what to do first
-	- [x] Update 
+	- [x] Update the figure
+	- [ ] Write figure description and interpolation in the draft
 - [x] Email to the buddy #project/PhD_general 
 - [x] Read paper for discussion #project/PhD_general 
-
-
-
+ is 
 ## [[2026-04-06]]
 - [x] PhD registration complete (contact IMPRS office) #project/PhD_general 
 - [x] Refine and summarise the updated idea: “***Isolating the Lagrangian transport effect of surface wave***” to an report #project/surfwaves 
