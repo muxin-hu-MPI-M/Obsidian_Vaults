@@ -50,6 +50,7 @@ tags:
 	- [x] Ask for the note
 	- [x] Figure out what to do first
 	- [x] Update the figure
+	- [ ] ‼️ correct the derivation of cross-shore velocity!
 	- [ ] Write figure description and interpolation in the draft
 - [x] Email to the buddy #project/PhD_general 
 - [x] Read paper for discussion #project/PhD_general 
