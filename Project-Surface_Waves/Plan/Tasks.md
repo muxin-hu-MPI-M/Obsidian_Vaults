@@ -46,13 +46,13 @@ tags:
 ## [[2026-04-13]]
 - [x] Prepare discussion note on Stokes Lagrangian transport to Nobu & Nils
 - [x] Discuss with Chris: Reconstruct Stokes drift profile using ERA5
-- [ ] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
+- [x] Update Figure 3 in project Peruvian Upwelling & Mesoscale Eddy #project/MesoEddy_Upwelling 
 	- [x] Ask for the note
 	- [x] Figure out what to do first
 	- [x] Update the figure
 	- [x] ‼️ correct the derivation of cross-shore velocity!
 	- [x] compute climatological stratification (N2) and alongshore velocity & diff
-	- [ ] Write figure description and interpolation in the draft
+	- [x] Write figure description and interpolation in the draft
 - [x] Email to the buddy #project/PhD_general 
 - [x] Read paper for discussion #project/PhD_general 
  
