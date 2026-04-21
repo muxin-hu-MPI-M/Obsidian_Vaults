@@ -77,8 +77,7 @@
               "title": "ICON_Data-process_Tips"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -288,8 +287,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "84b3fa6fb6531a71",
+  "active": "41d59f6a3682d7aa",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Tasks.md",
@@ -300,7 +300,6 @@
     "Attachments/Figures_plan_2.jpg",
     "Attachments/Figures_plan.jpg",
     "Attachments/Upwelling_region_outline-1.pdf",
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
