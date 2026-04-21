@@ -1304,6 +1304,38 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "Zürich-to-Hamburg_Short-Stays.md": [
+      {
+        "id": "6pakxm4xs",
+        "text": "Kölner Dom",
+        "tags": [],
+        "line": 23,
+        "startOffset": 1876,
+        "endOffset": 1915,
+        "filePath": "Zürich-to-Hamburg_Short-Stays.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1776758797784,
+        "isNativeComment": false,
+        "color": "#ff0000",
+        "type": "html"
+      },
+      {
+        "id": "l748h2ykl",
+        "text": "Prinzipalmarkt",
+        "tags": [],
+        "line": 33,
+        "startOffset": 2851,
+        "endOffset": 2894,
+        "filePath": "Zürich-to-Hamburg_Short-Stays.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1776758791774,
+        "isNativeComment": false,
+        "color": "#ff0000",
+        "type": "html"
+      }
     ]
   },
   "collections": {},

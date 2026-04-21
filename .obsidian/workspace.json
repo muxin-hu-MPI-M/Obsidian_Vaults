@@ -77,8 +77,7 @@
               "title": "ICON_Data-process_Tips"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,6 +230,16 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "211672f3a2cb6109",
+            "type": "leaf",
+            "state": {
+              "type": "highlights-sidebar",
+              "state": {},
+              "icon": "highlighter",
+              "title": "Highlights"
+            }
           }
         ],
         "currentTab": 5
@@ -278,10 +287,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "84b3fa6fb6531a71",
+  "active": "41d59f6a3682d7aa",
   "lastOpenFiles": [
-    "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
+    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Zürich-to-Hamburg_Short-Stays.md",
     "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md",
+    "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "PhD-General/PhD_courses",
     "Attachments/Figures_plan_2.jpg",
@@ -292,7 +303,6 @@
     "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "QuickCapture.md",
@@ -310,7 +320,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
-    "[[Panel-Meeting_Note.md",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
     "Project-Eddy_Upwelling/Subject Note",
