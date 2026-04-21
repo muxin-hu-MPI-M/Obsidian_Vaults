@@ -42,6 +42,10 @@ tags:
 		- [x] Breivik 2014: Exponential integral
 		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
+- [ ] Paper reading:
+	- [ ] Fujiwara et al. 2026
+	- [ ] Sun et al. 2021
+	- [ ] Bi et al. 2012
 
 ## [[2026-04-13]]
 - [x] Prepare discussion note on Stokes Lagrangian transport to Nobu & Nils
