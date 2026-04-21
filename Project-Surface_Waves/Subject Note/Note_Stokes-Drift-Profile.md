@@ -17,6 +17,9 @@ $$ \begin{equation}\mathbf{v}_s(z) = g \int_{-\infty}^{\infty} F(\mathbf{k}) \fr
 
 where the $k=|\mathbf{k}|=|(k_x, k_y)|$ is the magnitude of the wavenumber vector, $h$ is the bottom depth (positive), $g$ is the gravitational acceleration, $\omega =2 \pi f$ is the circular frequency, and $z$ is the vertical coordinate (positive up).
 
+The origin equation is given by **Kenyon (1969)**: Stokes drift for random gravity waves(https://doi.org/10.1029/JC074i028p06991)
+
+
 > [!Attention]
 > **To avoid confusion, we use $v$ for Stokes drift velocities and $u$ for Eulerian currents**
 
