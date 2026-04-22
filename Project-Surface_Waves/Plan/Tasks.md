@@ -44,7 +44,7 @@ tags:
 	- [ ] full reconstruction
 - [ ] Paper reading:
 	- [ ] Fujiwara et al. 2026
-	- [ ] Sun et al. 2021
+	- [x] Sun et al. 2021
 	- [ ] Bi et al. 2012
 
 ## [[2026-04-13]]
