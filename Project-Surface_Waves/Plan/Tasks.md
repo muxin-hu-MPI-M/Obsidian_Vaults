@@ -43,8 +43,8 @@ tags:
 		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
 - [ ] Paper reading:
+	- [x] review paper: Bremer & Breivik 2018
 	- [ ] Fujiwara et al. 2026
-	- [x] Sun et al. 2021
 	- [ ] Bi et al. 2012
 
 ## [[2026-04-13]]

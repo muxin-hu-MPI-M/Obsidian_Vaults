@@ -22,6 +22,47 @@ Last Eddited: 2026-01-13
 		- “The Coriolis-Stokes force is of significance for ocean modelling outside the tropics where the wave field is mostly dominated by swell (McWilliams & Restrepo (1999))” - ~={blue}(Bremer and Breivik, 2018)=~
 		- “The CL vortex force ($u^s\times(\nabla \times u^E)$ in Suzuki’s paper, Eq. (2)) is of greatest importance when modelling near shore, shallow-water conditions because of the strong shear in Eulerian currents. See Uchiyama et al. (2016) and Warner et al. (2010)” - ~={blue}(Bremer and Breivik, 2018)=~
 			- The role of the CL vortex force in Langmuir turbulence is however important throughout the world’s oceans
+- Comment from Nils:
+	- Keep literature reading, discuss the idea with Jean Bidlot, ask for feedback
+	- will determine the topic next week!!!!
+	- Reconstruct the **hourly** global Stokes profile **by my own**, as the ERA5 forcing to ICON is in hourly time step by default
+	- For using **pyicon** in DWD icon grid, change the “cartesian” related variables to the below block.
+		- Can change the `pyic.convert_tgrid` to a new version which reads the `cell_cart_vec, vert_cart_vec, edge_cart_vec, edge_prim_norm` like below (need modification)
+		- then, can save the converted ds_IcD to a new file for later usage.
+		- Can easily calculate the grad and div.
+	```python
+	  # --- coordinates
+       #GB: at DWD no cartesian info in grid files --> calculate
+       clon = f.variables['clon'][:]
+       clat = f.variables['clat'][:]
+       vlon = f.variables['vlon'][:]
+       vlat = f.variables['vlat'][:]
+       elon = f.variables['elon'][:]
+       elat = f.variables['elat'][:]
+       elon_pn = f.variables['zonal_normal_primal_edge'][:]
+       elat_pn = f.variables['meridional_normal_primal_edge'][:]
+       self.cell_cart_vec = np.ma.zeros((self.clon.size,3), dtype=self.dtype)
+       self.cell_cart_vec[:,0] = np.cos(clat[:])*np.cos(clon[:])
+       self.cell_cart_vec[:,1] = np.cos(clat[:])*np.sin(clon[:])
+       self.cell_cart_vec[:,2] = np.sin(clat[:])
+       self.vert_cart_vec = np.ma.zeros((self.vlon.size,3), dtype=self.dtype)
+       self.vert_cart_vec[:,0] = np.cos(vlat[:])*np.cos(vlon[:])
+       self.vert_cart_vec[:,1] = np.cos(vlat[:])*np.sin(vlon[:])
+       self.vert_cart_vec[:,2] = np.sin(vlat[:])
+       self.edge_cart_vec = np.ma.zeros((self.elon.size,3), dtype=self.dtype)
+       self.edge_cart_vec[:,0] = np.cos(elat[:])*np.cos(elon[:])
+       self.edge_cart_vec[:,1] = np.cos(elat[:])*np.sin(elon[:])
+       self.edge_cart_vec[:,2] = np.sin(elat[:])
+       self.dual_edge_cart_vec = np.ma.zeros((self.elon.size,3), dtype=self.dtype)
+       #GB: this is not used anywhere so far, so we leave it as zero
+       #self.dual_edge_cart_vec[:,0] = f.variables['edge_dual_middle_cartesian_x'][:]
+       #self.dual_edge_cart_vec[:,1] = f.variables['edge_dual_middle_cartesian_y'][:]
+       #self.dual_edge_cart_vec[:,2] = f.variables['edge_dual_middle_cartesian_z'][:]
+       self.edge_prim_norm = np.ma.zeros((self.elon.size,3), dtype=self.dtype)
+       self.edge_prim_norm[:,0] = - elon_pn[:]*np.sin(elon[:]) - elat_pn[:]*np.sin(elat[:])*np.cos(elon[:])
+       self.edge_prim_norm[:,1] =   elon_pn[:]*np.cos(elon[:]) - elat_pn[:]*np.sin(elat[:])*np.sin(elon[:])
+       self.edge_prim_norm[:,2] =   elat_pn[:]*np.cos(elat[:])
+	```
 
 # [[2026-04-15]]
 ## Meeting with Nils & Nobu: Stokes-induced Lagrangian transport
