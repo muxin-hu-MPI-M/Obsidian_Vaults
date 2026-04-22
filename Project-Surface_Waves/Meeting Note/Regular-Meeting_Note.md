@@ -30,6 +30,7 @@ Last Eddited: 2026-01-13
 		- Can change the `pyic.convert_tgrid` to a new version which reads the `cell_cart_vec, vert_cart_vec, edge_cart_vec, edge_prim_norm` like below (need modification)
 		- then, can save the converted ds_IcD to a new file for later usage.
 		- Can easily calculate the grad and div.
+		- related to the previous difficulties recorded in [[ICON_Data-process_Tips#Atmospheric grid (r2b5 from DWD) → impossible!!]]. This time, it is possible!!!
 	```python
 	  # --- coordinates
        #GB: at DWD no cartesian info in grid files --> calculate
