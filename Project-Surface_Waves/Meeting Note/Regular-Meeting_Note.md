@@ -9,6 +9,31 @@ Last Eddited: 2026-01-13
 
 # [[2026-04-23]]
 ## Meeting with Jean Bidlot
+#presenter/Jean_Bidlot
+- For my “Wave-modified Lagrangian transport” project, strong motivation
+	- ==**The focus should not be in the global mean performance, but rather regional, and shorter time scales.**== The time mean average (e.g., 30-year climatology) would averaged out most of the Swell-related effects (since swells are more seasonal, and less frequent), the remaining wave-effect comes more from the wind waves, which is driven by the global mean wind patterns
+	- ==**The reconstruction of Stokes profile needs careful consideration**==
+		- clarify the assumptions: see ~={blue}(Breivik & Christensen, 2020)=~
+		- make sure the reconstruction uses the ~={red}*mean wave period based on the first moment*=~ of wave kinds
+		- It’s better to use the profile based on Phillip’s spectrum, introduced in ~={blue}(Breivik et al., 2016)=~. This profile specifically better captures the high frequency contribution at the surface
+		- the separation of wind waves and total swells is statistically okay, but still need to mention the **limitations of using mean wave quantities for the total swells**.
+			- Total swells may contain multiple swell systems with distinct 2D spectrum field (2D: direction and frequency), since each swell system has narrow 2D spectrum shape.
+			- Representing the swells’ contribution to Stokes drift with mean wave quantities for total swell is therefore losing details, and the separation using ~={blue}(Breivik & Christensen, 2020)=~ creates “artificial waves” → big concern, might receive negative feedbacks
+			- However, one potential argument is that, from the statistic point of view, it is acceptable to use mean quantities since they represent the mean effects from different swell systems that act on that specific grid cell
+	- ==‼️**Potential collaboration**==
+		- contact: jean.bidlot@ecmwf.int
+		- **topic**: *Comparing reconstructed Stokes drift profile with “true” profile integrated from full 2D spectrum*
+			- Reconstruct the Stokes profile using wave parameters through a hierarchy of approximations
+				- Monochromatic profile (see ~={blue}Breivik et al., 2014=~)
+				- Exponential integral profile (see ~={blue}Breivik et al., 2014=~)
+				- Profile based on Phillips spectrum (see ~={blue}Breivik et al., 2016=~)
+			- compare these reconstructions to the reference value calculated by integration of wave spectrum field (the “true” value by definition)
+		- Need to determine the depth $z$ space (the deepest depth, and the resolution), and provide to Jean
+			- Maybe have a look over the e-folding depth scale? or inverse depth scale
+			- determine a strategy to decide the depth space
+		- Jean will provide the simulation with the (1) true value; and (2) wave parameters for reconstruction
+		- ~={red}*The comparison could be served to a new paper (if large difference), or a support background information (in Appendix) that the reconstruction is okay in the wave-modified Lagrangian transport project*=~
+
 
 # [[2026-04-22]]
 ## Regular meeting with Nils
