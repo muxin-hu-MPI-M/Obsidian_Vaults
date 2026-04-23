@@ -11,15 +11,26 @@ Last Eddited: 2026-01-13
 ## Meeting with Jean Bidlot
 #presenter/Jean_Bidlot
 - For my “Wave-modified Lagrangian transport” project, strong motivation
-	- ==**The focus should not be in the global mean performance, but rather regional, and shorter time scales.**== The time mean average (e.g., 30-year climatology) would averaged out most of the Swell-related effects (since swells are more seasonal, and less frequent), the remaining wave-effect comes more from the wind waves, which is driven by the global mean wind patterns
+	- ==**The analysis should prioritise regional variability and shorter time scales**==, rather than global mean behaviour. Long-term averages (e.g., 30-year climatologies) tend to smooth out a large fraction of swell-related signals, since swell events are intermittent and exhibit strong seasonality. As a result, the remaining wave effects in such averages are dominated by wind-wave contributions, which are more directly tied to large-scale, persistent wind patterns. This motivates a shift toward:
+		- regional diagnostics
+		- event-based or seasonal analysis  
+		to better capture the dynamical impact of swells.
 	- ==**The reconstruction of Stokes profile needs careful consideration**==
 		- clarify the assumptions: see ~={blue}(Breivik & Christensen, 2020)=~
-		- make sure the reconstruction uses the ~={red}*mean wave period based on the first moment*=~ of wave kinds
+		- The reconstruction must use the ~={red}*mean wave period derived from the first spectral moment*=~ to ensure consistency with theory.
 		- It’s better to use the profile based on Phillip’s spectrum, introduced in ~={blue}(Breivik et al., 2016)=~. This profile specifically better captures the high frequency contribution at the surface
-		- the separation of wind waves and total swells is statistically okay, but still need to mention the **limitations of using mean wave quantities for the total swells**.
-			- Total swells may contain multiple swell systems with distinct 2D spectrum field (2D: direction and frequency), since each swell system has narrow 2D spectrum shape.
-			- Representing the swells’ contribution to Stokes drift with mean wave quantities for total swell is therefore losing details, and the separation using ~={blue}(Breivik & Christensen, 2020)=~ creates “artificial waves” → big concern, might receive negative feedbacks
-			- However, one potential argument is that, from the statistic point of view, it is acceptable to use mean quantities since they represent the mean effects from different swell systems that act on that specific grid cell
+		- Limitations in representing swell contributions
+			- The separation between wind waves and total swell is statistically convenient, but introduces important limitations:
+				- “Total swell” often consists of **multiple swell systems**, each with distinct directional–frequency (2D) spectral characteristics and narrow spectral peaks.
+				- Representing these systems using **bulk (mean) wave parameters** inevitably loses spectral detail.
+				- The separation method proposed by **Breivik & Christensen** may effectively introduce _artificial wave components_, which could be a point of criticism.
+			- A possible justification is that:
+				- from a **statistical perspective**, mean wave parameters can be interpreted as representing the **aggregate effect** of multiple swell systems within a grid cell
+				- however, this assumption and its implications should be clearly acknowledged and discussed
+	- ==**Forcing the ICON model:**==
+		- ~={red}ERA5 Wave+ atmosphere → force the ICON-o=~:
+			- Jean’s comment: It ensures internal consistency within the forcing fields, but not consistency with the simulated ocean (or atmosphere, if coupled).
+			- if uses the ERA5 Wave → force the ICON-a/o, waves are not consistent with ICON winds, strong wave-wind mismatch
 	- ==‼️**Potential collaboration**==
 		- contact: jean.bidlot@ecmwf.int
 		- **topic**: *Comparing reconstructed Stokes drift profile with “true” profile integrated from full 2D spectrum*
