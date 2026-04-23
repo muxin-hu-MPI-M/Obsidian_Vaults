@@ -7,6 +7,8 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-04-23]]
+## Meeting with Jean Bidlot
 
 # [[2026-04-22]]
 ## Regular meeting with Nils
