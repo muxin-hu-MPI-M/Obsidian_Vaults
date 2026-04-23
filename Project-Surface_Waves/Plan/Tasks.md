@@ -29,7 +29,8 @@ tags:
 	- [x] Interpolate atmospheric 3D variables to pressure coordinates
 	- [ ] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
-		- [-] pressure gradient (using pyicon); the atmospheric tgrid (`r2b5_atm_r0030` has some key missing parameters which prevent the calculation of `cell2edge_coeff_cc`)
+		- [x] pressure gradient (using pyicon); the atmospheric tgrid (`r2b5_atm_r0030` has some key missing parameters which prevent the calculation of `cell2edge_coeff_cc`)
+			- [x] can solve by updates the ds_IcD file using the DWD grid parameters
 		- [x] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
@@ -148,8 +149,8 @@ tags:
 		- [x] Estimate Ekman transport 
 			- [x] without wave $\tau_{oc}=\tau_a$ 
 			- [x] with wave $\tau_{oc}=\tau_a - \tau_{in} - \tau_{diss}$
-	- [ ] create the regional mask
-	- [ ] regional mean: analysis on seasonality
+	- [x] create the regional mask
+	- [x] regional mean: analysis on seasonality
 
 ## [[2026-02-02]]
 - [x] check the ocean output namelist, and make a summary for the future analysis #project/surfwaves 
