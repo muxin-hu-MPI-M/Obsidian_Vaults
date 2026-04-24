@@ -17,6 +17,8 @@ Last Eddited: 2026-01-13
 - **Wave-mediated stress changes** (i.e., modifications in momentum flux) are expected to exert a stronger influence in the tropics.
 	- Surface waves modulate how atmospheric momentum is transferred into the ocean, thereby influencing upper-ocean mixing and the resulting temperature variability.
 	- As the tropics are regions of persistent large-scale convection and ascent, these impacts may be further communicated to the overlying atmosphere.
+- When add the Stokes drift velocity into the model, one need to consider the divergence of Stokes drift
+	- the usual treatment is to have a “negative” vertical Stokes drift velocity to insure the divergence-free
 
 # [[2026-04-23]]
 ## Meeting with Jean Bidlot
