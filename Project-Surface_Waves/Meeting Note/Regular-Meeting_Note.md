@@ -7,6 +7,17 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-04-24]]
+## Meeting: Jean, Nils, Mikhail, Carsten, Chris
+- comparing tests:
+	- force the ecWAM and ICON-wave with ERA5 atmosogere (i.e. winds), no ocean.
+	- force the ecWAM and ICON-wave with ERA5 atmosphere and OR6 oceans (which are consistent since OR6 is forced by ERA5)
+- the ICON-wave calculate the actual Stokes drift profile use the **Kenyon integration**: $$ \begin{equation}\mathbf{v}_s(z) = g \int_{-\infty}^{\infty} F(\mathbf{k}) \frac{\mathbf{k}}{\omega} \left[ \frac{2k \cosh 2k(z + h)}{\sinh 2kh} \right] \mathrm{d} \mathbf{k} \tag{1}\end{equation} $$ see details in ~={blue}Kenyon, 1969 and Breivik et al., 2014=~
+	- This ensures **no deep-water limit** to enable representations of waves in intermediate and shallow water depth, which is important for operational forecast
+- **Wave-mediated stress changes** (i.e., modifications in momentum flux) are expected to exert a stronger influence in the tropics.
+	- Surface waves modulate how atmospheric momentum is transferred into the ocean, thereby influencing upper-ocean mixing and the resulting temperature variability.
+	- As the tropics are regions of persistent large-scale convection and ascent, these impacts may be further communicated to the overlying atmosphere.
+
 # [[2026-04-23]]
 ## Meeting with Jean Bidlot
 #presenter/Jean_Bidlot
