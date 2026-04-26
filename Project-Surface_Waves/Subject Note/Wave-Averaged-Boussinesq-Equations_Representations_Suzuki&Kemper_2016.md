@@ -52,8 +52,7 @@ but:
 -  Stokes drift gradient–induced deformation of mean flow
 -  part of wave-modified vorticity restructuring associated with shear interactions
 -  full GLM energetic consistency
-
-## Consequences for vorticity dynamics
+### Consequences for vorticity dynamics
 The resulting system remains correct for:
 - kinematic transport of vorticity
 but becomes incomplete for:
@@ -61,6 +60,22 @@ but becomes incomplete for:
 - energetically consistent wave–mean coupling
 - shear-driven modification of flow structures
 
-## Interpretation
-> [!Attention] 
-> The model represents a wave-modified flow in which Stokes drift acts only as an advecting velocity within the Lagrangian framework, while the shear-mediated pathway through which wave gradients perform work on the Eulerian mean flow is intentionally removed. This preserves kinematic transport but removes the energetic wave–mean coupling mechanism.
+## Summary
+### Experiment Description
+A kinematic wave-modified flow model where Stokes drift enters ONLY through the material advection velocity $u^L=u^E+u^s$, while all gradient-mediated wave-mean coupling is neglected. This forms a controlled closure choice.
+### Mechanism Isolation
+Keep
+- Lagrangian transport pathway: how waves move fluid parcels
+	- redistribution of tracers, vorticity, mass
+Neglect
+- dynamical coupling pathway: how waves reshape the flow
+	- wave-mean shear interaction involving gradients of Stokes drift
+	- energy transfer between waves and mean flow
+### Scientific Question
+“How much of the large-scale climate response can be explained purely by wave-modified transport, without wave–mean dynamical coupling?”
+
+> [!Attention] Paragraph:
+> - This framework isolates the role of wave-induced Lagrangian transport from wave–mean shear interactions in controlling large-scale ocean variability. 
+> - It does not represent wave-driven momentum transfer or energetically consistent wave-mean flow interaction. 
+> - The aim is to isolate the pure kinematic role of wave-induced transport and assess whether it alone can modify large-scale and seasonal ocean circulation patterns relative to a baseline state with no wave effects. 
+> - This design allows a clean mechanistic separation between a non-wave reference state and a wave-transport-only state, providing a controlled test of whether Lagrangian transport by waves is sufficient to produce climatically relevant modifications in circulation and stratification patterns.
