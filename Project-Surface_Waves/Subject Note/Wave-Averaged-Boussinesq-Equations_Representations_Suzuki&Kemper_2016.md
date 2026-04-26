@@ -43,11 +43,11 @@ but:
 - wave–induced deformation of the mean flow by Stokes drift gradients is not represented in a dynamically consistent way
 
 ## What is retained/lost
-Retained:
+==Retained: **transport role of Stokes drift**==
 -  advection of velocity and vorticity by Stokes drift
 -  redistribution of relative vorticity (kinematic transport)
 -  Coriolis modification via Lagrangian velocity
-Lost
+==Lost: **shear-interaction role**==
 -  wave–mean energy transfer mechanism (non-divergent work)
 -  Stokes drift gradient–induced deformation of mean flow
 -  part of wave-modified vorticity restructuring associated with shear interactions
@@ -61,7 +61,6 @@ but becomes incomplete for:
 - energetically consistent wave–mean coupling
 - shear-driven modification of flow structures
 
-
-## Revised interpretation
-
+## Interpretation
+> [!Attention] 
 > The model represents a wave-modified flow in which Stokes drift acts only as an advecting velocity within the Lagrangian framework, while the shear-mediated pathway through which wave gradients perform work on the Eulerian mean flow is intentionally removed. This preserves kinematic transport but removes the energetic wave–mean coupling mechanism.
