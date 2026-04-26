@@ -27,7 +27,7 @@ tags:
 ## [[2026-04-20]]
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [x] Interpolate atmospheric 3D variables to pressure coordinates
-	- [ ] Area averaged wind field
+	- [x] Area averaged wind field
 		- [x] monthly mean 10 wind speed 
 		- [x] pressure gradient (using pyicon); the atmospheric tgrid (`r2b5_atm_r0030` has some key missing parameters which prevent the calculation of `cell2edge_coeff_cc`)
 			- [x] can solve by updates the ds_IcD file using the DWD grid parameters
