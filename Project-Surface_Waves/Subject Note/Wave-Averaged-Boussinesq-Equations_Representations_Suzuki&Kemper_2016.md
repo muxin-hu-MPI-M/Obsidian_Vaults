@@ -25,25 +25,11 @@ Rearrange the above two terms into:
 ## Vortex force affects relative vorticity
 ### Curl of the CL vortex force
 Take the curl of the momentum equation, the vortex force contributes to vorticity evolution through: $$\nabla \times (\mathbf u^s \times \boldsymbol{\omega}^E)=(\omega^E \cdot \nabla)\mathbf u^s-(\mathbf u^s \cdot \nabla)\omega^E + \mathbf u^s(\nabla\cdot\omega^E)-\omega^E(\nabla \cdot \mathbf u^s)$$
-the leading-order contribution are: $$\nabla \times (\mathbf u^s \times \boldsymbol{\omega}^E)\approx(\omega^E \cdot \nabla)\mathbf u^s-(\mathbf u^s \cdot \nabla)\omega^E$$
-which are:
+Where:
+-  $(\omega^E \cdot \nabla)\mathbf u^s$: Vorticity-Stokes shear coupling
 - $-(\mathbf u^s \cdot \nabla)\omega^E$: Stokes advection of vorticity
-- $(\omega^E \cdot \nabla)\mathbf u^s$: Vorticity-Stokes shear coupling
-
-If we taking the decomposition of CL vortex: $-(\nabla \times \mathbf u^E)\times \mathbf u_s = u^s_j \nabla u^E_j - (\mathbf u^s \cdot \nabla)\mathbf u^E=\mathbf F$, we now compute $\nabla \times \mathbf F$: $$\nabla \times \mathbf F=-[(\mathbf u^s \cdot \nabla)\omega^E-(\omega^E\cdot \nabla)\mathbf u^s]+\epsilon_{ikl}(\partial_ku_j^s)(\partial_lu_j^E)$$
-The two components have contributions of:
-- Stokes advection term ($- (\mathbf u^s \cdot \nabla)\mathbf u^E$):
-	- Pure vorticity advection explicitly $-(\mathbf u^s \cdot \nabla)\omega^E$
-	- Vorticity-shear coupling $(\omega^E\cdot \nabla)\mathbf u^s$
-- Eulerian-gradient term ($u^s_j \nabla u^E_j$):
-	- non-linear interaction term
-### Interpretation
-The decomposition of CL vortex into: (1) Stokes advection term and (2) gradient-Stokes term contributes differently to the evolution of relative vorticity $\omega^E$.
-- The Stokes advection term:
-	- Advect vorticity through pure Stokes-advection
-	- local change of vorticity through coupling between vorticity and shear of Stokes
-- The Eulerian-gradient:
-	- Affect evolution of vorticity through non-linear interactions 
+- $\mathbf u^s(\nabla\cdot\omega^E)=0$, as $\nabla\cdot\omega^E=0$
+- $-\omega^E(\nabla \cdot \mathbf u^s)\approx0$, as $\nabla\cdot u^s \approx 0$
 
 # Experiment: Neglecting the Stokes shear term
 ## Assumption
@@ -68,14 +54,9 @@ Lost
 -  full GLM energetic consistency
 
 ## Consequences for vorticity dynamics
-The resulting system:
-✔ remains correct for:
-
+The resulting system remains correct for:
 - kinematic transport of vorticity
-- advection of enstrophy by Stokes drift
-
-⚠ becomes incomplete for:
-
+but becomes incomplete for:
 - wave-modified vorticity deformation mechanisms
 - energetically consistent wave–mean coupling
 - shear-driven modification of flow structures
