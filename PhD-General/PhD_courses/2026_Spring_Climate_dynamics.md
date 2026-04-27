@@ -62,4 +62,3 @@ Last Eddited: 2026-04-20
 		- $T_1<T<T_2$: partial ice cover → $\alpha(T)=\alpha_1-\frac{\alpha_1-\alpha_2}{T_2-T_1}(T-T_1)$, the albedo decreases with increasing temperature
 	- $\frac{S_0}{4}(1-\alpha)=A+BT$ 
 
-## [[2026-04-13]] 1st Course
