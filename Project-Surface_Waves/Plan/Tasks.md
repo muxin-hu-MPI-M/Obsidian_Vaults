@@ -24,7 +24,7 @@ tags:
 
 # Weekly Plan 
 
-## [[2026-04-20]]
+## [[2026-04-27]]
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [x] Interpolate atmospheric 3D variables to pressure coordinates
 	- [x] Area averaged wind field
