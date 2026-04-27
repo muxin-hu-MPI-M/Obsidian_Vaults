@@ -7,6 +7,16 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-04-28]]
+## Regular meeting with Nils
+- **When introducing the Stokes drift into the model, need to consider the diagnosed vertical component of Stokes drift** (called pseudo-velocity, see Eq. (2) in ~={blue}(Fujiwara et al., 2026)=~ $$w^{s}(z)=-\nabla \cdot \int_{-H}^{z} \mathbf u^{s}\;dz’$$
+	- where $z=-H(x,y)$ is the bottom profile. 
+	- Here the incompressibility of the Stokes velocity is implicitly assumed: $$\nabla \cdot \mathbf u^{s} + \partial_z w^{s}=0$$
+	- Note that $w^{s}$ is not asymptotically derived and is different from the vertical component of TRUE Stokes drift
+	- The Stokes drift velocity obtained from the traditional definition is not necessarily incompressible.
+- **Need to consider some boundary conditions.** see details in Eq. (5)-(8) in ~={blue}(Fujiwara et al., 2026)=~
+- 
+
 
 # [[2026-04-24]]
 ## Meeting: Jean, Nils, Mikhail, Carsten, Chris
