@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016"
             }
           },
           {
@@ -288,13 +288,13 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "84b3fa6fb6531a71",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
