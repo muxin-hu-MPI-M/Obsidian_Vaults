@@ -39,26 +39,32 @@ If the Stokes shear term is neglected, the model assumes:
     - Lagrangian advection
     - Lagrangian Coriolis force
 but:
-- wave–mean energy exchange through shear is excluded 
-- wave–induced deformation of the mean flow by Stokes drift gradients is not represented in a dynamically consistent way
+- the Stokes shear term is explicitly neglected
+- Therefore, gradient-mediated wave-mean interactions are not represented
+- the formulation departs from energetically consistent GLM dynamics
 
 ## What is retained/lost
 ==Retained: **transport role of Stokes drift**==
 -  advection of velocity and vorticity by Stokes drift
--  redistribution of relative vorticity (kinematic transport)
+-  kinematic redistribution of relative vorticity
 -  Coriolis modification via Lagrangian velocity
+-  Mass transport effects associated with Stokes drift (via continuity)
 ==Lost: **shear-interaction role**==
--  wave–mean energy transfer mechanism (non-divergent work)
--  Stokes drift gradient–induced deformation of mean flow
--  part of wave-modified vorticity restructuring associated with shear interactions
--  full GLM energetic consistency
+-  wave-to-Eulerian kinetic energy transfer (which is via Stokes shear force)
+-  Wave-induced deformation of the flow via Stokes drift gradients
+	- strain, tilting and shear production
+-  Vortex-force-related contributions tied to Stokes shear
+	- part of wave-driven vorticity restructuring
+-  Full GLM energetic and dynamical consistency
+
+> [!Attention] In short, waves can redistribute momentum, but cannot energise the Eulerian flow
 ### Consequences for vorticity dynamics
 The resulting system remains correct for:
 - kinematic transport of vorticity
 but becomes incomplete for:
-- wave-modified vorticity deformation mechanisms
-- energetically consistent wave–mean coupling
-- shear-driven modification of flow structures
+- Shear-driven vorticity generation and deformation
+- Wave-modified vortex stretching/tilting linked to Stokes gradients
+- Energetically consistent coupling between waves and rotational flow
 
 ## Summary
 ### Experiment Description
@@ -70,6 +76,7 @@ Keep
 Neglect
 - dynamical coupling pathway: how waves reshape the flow
 	- wave-mean shear interaction involving gradients of Stokes drift
+	- Shear-mediated modification of the **flow**
 	- energy transfer between waves and mean flow
 ### Scientific Question
 “How much of the large-scale climate response can be explained purely by wave-modified transport, without wave–mean dynamical coupling?”
