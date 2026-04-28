@@ -45,7 +45,7 @@ tags:
 	- [ ] full reconstruction
 - [ ] Paper reading:
 	- [x] review paper: Bremer & Breivik 2018
-	- [ ] Fujiwara et al. 2026
+	- [x] Fujiwara et al. 2026
 	- [ ] Bi et al. 2012
 
 ## [[2026-04-13]]

@@ -18,7 +18,7 @@ Paper reading:
 		- The Stokes drift velocity obtained from the traditional definition is not necessarily incompressible.
 	- **Need to consider some boundary conditions.** see details in Eq. (5)-(8)
 	- Their study implement the monochromatic Stokes drift approximation, as the consideration of wave-induced Ekman pumping suggests that the vertically integrated Stokes transport characterises the resulting current response. No need to have sophisticated approximation
-	- **Idealised simulation with localised Stokes drift is imposed on a Linearised case** (High Rossby number, neglect the Vortex Force term → neglect the Stokes advection of momentum)
+	- **Idealised simulation with localised Stokes drift is imposed on a ~={red}Linearised case**=~ (High Rossby number, neglect the Vortex Force term → neglect the Stokes advection of momentum)
 		- **Flat bottom:** Lagrangian field exhibits a dipole circulation pattern on either side of the Stokes forcing. Transient water displacement happens, transient “Stokes-Ekman pumping” happens, but near zero long term (>= 72 h) changes in geostrophic current after zero Stokes
 		- **Slope bottom**: has net long term irreversible changes in geostrophic current after zero Stokes through the generation of topographic Rossby waves
 
