@@ -70,14 +70,14 @@ but becomes incomplete for:
 ### Experiment Description
 A kinematic wave-modified flow model where Stokes drift enters ONLY through the material advection velocity $u^L=u^E+u^s$, while all gradient-mediated wave-mean coupling is neglected. This forms a controlled closure choice.
 ### Mechanism Isolation
-Keep
+Retained pathway
 - Lagrangian transport pathway: how waves move fluid parcels
 	- redistribution of tracers, vorticity, mass
-Neglect
+Removed pathway
 - dynamical coupling pathway: how waves reshape the flow
+	- Wave-to-Eulerian energy transfer
 	- wave-mean shear interaction involving gradients of Stokes drift
-	- Shear-mediated modification of the **flow**
-	- energy transfer between waves and mean flow
+	- Shear-mediated flow deformation
 ### Scientific Question
 “How much of the large-scale climate response can be explained purely by wave-modified transport, without wave–mean dynamical coupling?”
 
