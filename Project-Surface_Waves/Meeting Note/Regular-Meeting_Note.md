@@ -7,6 +7,19 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-04-29]]
+## Talk with Yasushi Fujiwara
+- In his idealised simulation with localised Stokes drift (linearised case)
+	- Focus on the high Rossby number, which cancels the Vortex force term in the below WAB equation $$\partial_t \mathbf u + (\mathbf u \cdot \nabla) \mathbf u + f \times \mathbf u^{L} = b + D^U - \nabla (p+\frac{1}{2}|\mathbf u^{L}|^2 - \frac{1}{2}|\mathbf u|^2) - (\nabla \times \mathbf u)\times \mathbf u^{s}$$
+		- because the VF term incorporates quadratic terms, which is neglected in the linear case
+	- The VF term can be decomposed into two other terms: $$-(\nabla \times \mathbf u)\times \mathbf u_s = u^s_j \nabla u_j - (\mathbf u^s \cdot \nabla)\mathbf u$$
+	- Which is the “Stokes-Eulerian gradient term” and the “Stokes momentum advection” term
+	- In ~={blue}(Fujiwara et al., 2026)=~, the entire VF term is neglected, ~={red}hence the Stokes momentum advection is also neglected=~
+- In my intended experiment, which I will ONLY neglect the Stokes shear term in the below alternative from of WAB equation: $$\partial_t \mathbf u + (\mathbf u^{L} \cdot \nabla) \mathbf u = -f\times \mathbf u^{L} + b + D^{u} - \nabla p - u_j^{L}\nabla u_j^{s}$$
+	- The Stokes shear force term $- u_j^{L}\nabla u_j^{s}$ is the combination of Stokes-Eulerian-gradient term $u^s_j \nabla u_j$ with the gradient of pressure correction term $- \nabla (\frac{1}{2}|\mathbf u^{L}|^2 - \frac{1}{2}|\mathbf u|^2)$
+	- In my experiment, ~={red}the Stoke advection of momentum will be preserved=~, which in principal has additional Stokes advection of momentum compared to the linearised case from ~={blue}(Fujiwara et al., 2026)=~, therefore generating different result
+- ==**POTENTIAL PROBLEM**==:
+	- Check whether removing Stokes shear force is still conserving the relative vorticity
 # [[2026-04-28]]
 ## Regular meeting with Nils
 Paper reading:
