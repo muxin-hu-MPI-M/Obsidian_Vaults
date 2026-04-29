@@ -35,6 +35,7 @@ tags:
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
 - [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
+	- [ ] Download the hourly output for the correct wave data for reconstruction
 	- [x] inverse depth scale to e-folding depth scale
 		- [x] figure out why the current situation has negative inverse depth scale
 		- [x] correct it, discussed with Chris
@@ -43,10 +44,9 @@ tags:
 		- [x] Breivik 2014: Exponential integral
 		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
-- [ ] Paper reading:
+- [x] Paper reading:
 	- [x] review paper: Bremer & Breivik 2018
 	- [x] Fujiwara et al. 2026
-	- [ ] Bi et al. 2012
 
 ## [[2026-04-13]]
 - [x] Prepare discussion note on Stokes Lagrangian transport to Nobu & Nils
