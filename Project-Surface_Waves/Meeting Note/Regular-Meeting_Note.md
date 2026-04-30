@@ -39,6 +39,23 @@ Last Eddited: 2026-01-13
 	- ~={red}**Net circulation selectively occurs for small-scale wave inhomogeneity**=~
 	- Realistic topography: wave driven currents remains even afer cyclone passes, fluctuations propagates southward as topographic Rossby waves
 	- Wave-forcing effects (e.g., mass transport) modifies the wind-driven effects by 1-12%
+
+### In situ observation of wind-wave interactions
+#presenter/Marc_Buckley
+- longwave travel faster, and even faster than the very surface wind (since wind slows down below critical layer)
+	- **critical layer:** where wind speed matches with the phase speed of surface wave
+- traditional parameterisation: drag coefficient from observation
+- observation of the “**sheltering layer**”; below by the high viscosity detach the wave from the boundary layer
+	- air goes down and accelerating on the wind-facing side (crest), air goes up and decelerating on the other side (backside, trough)
+	- the sheltering mechanisms dominates the growth of short young waves
+	- Phase shift w.r.t height on the either side of the wave crest
+
+### Direct numerical simulation of surface wave-induced forces
+#presenter/Carsten_Eden
+- understanding of wave effects in LES model mostly rely on Craik-Lebovitch forcing
+- but no observation evidence for Coriolis-Stokes or vortex force
+- 
+
 # [[2026-04-29]]
 ## Talk with Yasushi Fujiwara
 - In his idealised simulation with localised Stokes drift (linearised case)

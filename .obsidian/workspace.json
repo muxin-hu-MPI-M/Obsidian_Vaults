@@ -212,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -287,10 +287,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "41d59f6a3682d7aa",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
+    "2026-04-29.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
     "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
@@ -319,7 +320,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
     "Project-Eddy_Upwelling/Subject Note",
