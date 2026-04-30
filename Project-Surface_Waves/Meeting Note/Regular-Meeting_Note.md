@@ -7,6 +7,38 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-04-30]]
+## Eddy-wave meeting summary
+### Surface wave-induced mass transport and ocean current responses
+#presenter/Yasushi_Fujiwara
+- wave-current interaction
+- remotely generated swells can influence the local wave field
+- Interest: how the wave-induced mass transport modify the ocean current?
+	- short-time scale current response
+- Particle trajectory at second order: Stokes drift
+	- the first order is the orbital movement (no net transport)
+	- Lagrangian mean velocity = Eulerian-mean + Stokes 
+- Stokes transport / Ekman transport can reach more than 30% outside tropics → "❓transient”
+- Stokes drify, by definition, not 100% incompressible, however, people assume it but introducing the diagnosed vertical Stokes drift
+- ==**Short-timescale current responses → group-induced return flow**==
+	- inhomogeneous wave field, waves patterns generally follow the wind field
+	- waves are “groupy”
+	- Eulerian return flow response (van den Bremer and Taylor 2015) for the wave group
+		- convergence.divergence of Stokes transport at group edges raises lowers te water surface
+		- Group-bound forced response: potential flow from group from one edge to another
+	- the idealised simulation
+		- the return flow is almost vertically uniform → barotropic
+		- Barotropic Eulerian velocity immediately cancel the Stokes mass transport
+	- wave-resolving simulation vs wave-averaged simulation, show same solution
+- ==**long-timescale (subinertial) current responses → rotation induced return flow**==
+	- CSF, rotation-induced anti-Stokes flow (Eulerian velocity) → make the mean Lagrangian velocity is zero
+	- Coriolis force on Stokes drift, vertical convergence of Reynolds stress
+	- time-dependent inhomogeneous forcing?
+		- inhomogeneous Stokes forcing on a rest ocean induced a dipole-like pattern Lagrangian velocity response → geostrophic circulation
+		- The Eulerian velocity almost cancel the Stokes, but some residuals that shows in the Lagrangian velocity
+	- ~={red}**Net circulation selectively occurs for small-scale wave inhomogeneity**=~
+	- Realistic topography: wave driven currents remains even afer cyclone passes, fluctuations propagates southward as topographic Rossby waves
+	- Wave-forcing effects (e.g., mass transport) modifies the wind-driven effects by 1-12%
 # [[2026-04-29]]
 ## Talk with Yasushi Fujiwara
 - In his idealised simulation with localised Stokes drift (linearised case)
