@@ -55,9 +55,7 @@ Last Eddited: 2026-01-13
 - understanding of wave effects in LES model mostly rely on Craik-Lebovitch forcing
 - but no observation evidence for Coriolis-Stokes or vortex force
 
-### Scale-dependent wave-mean decomposition of surface drifter kinetic energy using Lagrangian filtering
-#presenter/Han_Wang
-- 
+
 # [[2026-04-29]]
 ## Talk with Yasushi Fujiwara
 - In his idealised simulation with localised Stokes drift (linearised case)
