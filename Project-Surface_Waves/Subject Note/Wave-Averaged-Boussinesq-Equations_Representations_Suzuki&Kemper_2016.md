@@ -86,3 +86,6 @@ Removed pathway
 > - It does not represent wave-driven momentum transfer or energetically consistent wave-mean flow interaction. 
 > - The aim is to isolate the pure kinematic role of wave-induced transport and assess whether it alone can modify large-scale and seasonal ocean circulation patterns relative to a baseline state with no wave effects. 
 > - This design allows a clean mechanistic separation between a non-wave reference state and a wave-transport-only state, providing a controlled test of whether Lagrangian transport by waves is sufficient to produce climatically relevant modifications in circulation and stratification patterns.
+
+
+# Reconstruct the Stokes drift profile from ERA5

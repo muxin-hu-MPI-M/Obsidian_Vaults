@@ -7,11 +7,11 @@ tags:
   - Subject-Note
 Last Eddited: 2025-11-30
 ---
-The note is referring to the journal paper: **Breivik et al., 2014 (**[10.1175/JPO-D-14-0020](https://doi.org/10.1175/JPO-D-14-0020.1)**). Please find the original paper in Zotero: 2025 Ocean Waves**
+The note is referring to the journal paper: ~={blue}**Breivik et al., 2014=~ (**[10.1175/JPO-D-14-0020](https://doi.org/10.1175/JPO-D-14-0020.1)**). Please find the original paper in Zotero: 2025 Ocean Waves**
 
 # Stoke Drift and Stokes transport: Definition
 
-The Stokes drift profile in water of arbitrary depth was shown by Kenyon (1969) in the case of linear waves to relate to the **wave variance spectrum** (Breivik et al. (2014)):
+The Stokes drift profile in water of arbitrary depth was shown by Kenyon (1969) in the case of linear waves to relate to the **wave variance spectrum** ~={blue}(Breivik et al. (2014))=~:
 
 $$ \begin{equation}\mathbf{v}_s(z) = g \int_{-\infty}^{\infty} F(\mathbf{k}) \frac{\mathbf{k}}{\omega} \left[ \frac{2k \cosh 2k(z + h)}{\sinh 2kh} \right] \mathrm{d} \mathbf{k} \tag{1}\end{equation} $$
 
@@ -45,7 +45,9 @@ $$ \begin{equation} \omega^2=gk \tag{2}\end{equation} $$
 Hence, we will have the dispersion relationship in terms of frequency:
 $$ k=\frac{(2 \pi f)^2}{g} $$
 With the Eq (2), the ~={red}**Stokes drift profile**=~ Eq (1) simplified to:
-$$ \begin{equation} \mathbf{v_s}(z)=\frac{2}{g}\int\int_{-\infty}^{\infty}\omega^3 \hat{\mathbf{k}} e^{2kz}F(\mathbf{k})\;d\mathbf{k} \tag{3}\end{equation} $$
+$$ \begin{equation} \mathbf{v_s}(z)=\frac{2}{g}\int\int_{-\infty}^{\infty}\omega^3 \hat{\mathbf{k}} e^{2kz}F(\mathbf{k})\;d\mathbf{k} \tag{3a}\end{equation} $$
+It has another form:
+$$ \begin{equation} \mathbf{v_s}(z)=\frac{2}{g}\int\int_{-\infty}^{\infty}\omega^3  e^{2kz}F(\omega)\;d\omega \tag{3b}\end{equation} $$
 where the $\hat{\mathbf{k}}=\mathbf k/k$ is the unit vector in the direction of the wave component. The double integrals refer to the 2-D wavenumber space $(k_x, k_y)$
 
 We now recast the east and north components of the ~={red}**Stokes drift profile** in frequency direction=~ $(f, \theta)$ coordinates as:
@@ -72,20 +74,18 @@ Estimating the full profile from Eq (4) can be a costly operation even when a mo
 > $$ \begin{align} \mathbf{v_s}(z)&=\frac{2}{g}\int\int_{-\infty}^{\infty}\omega^3 \hat{\mathbf{k}} e^{2kz}F(\mathbf{k})\;d\mathbf{k} \nonumber \\ &= \frac{2}{g}\int\int_{-\infty}^{\infty}\omega^3 \hat{\mathbf{k}} e^{2kz}F(\mathbf{k})\;d^2k \nonumber \\ &= \frac{16\pi^3}{g}\int\int_{-\infty}^{\infty}f^3 \hat{\mathbf{k}} e^{2kz}F(\mathbf{k})\;d^2k \nonumber \\ &= \frac{16\pi^3}{g}\int_{0}^{2\pi}\int_{0}^{\infty}f^3 \hat{\mathbf{k}} e^{2kz}F(\mathbf{k})\;kdkd\theta \nonumber \\ &= \frac{16\pi^3}{g}\int_{0}^{2\pi} \int_{0}^{\infty}f^3 \hat{\mathbf{k}} e^{2kz}F(f, \theta)\;df\:d\theta \nonumber \end{align} $$
 
 
-> [!Attention]
+> [!Tips]
 > When a wave spectrum is not available, **the Stokes drift profile must be approximated from the transport Eq (5) and the surface Strokes drift velocity.**
 
 
 # Approximate Stokes Drift Profile
 ## Exponential profile of a Monochromatic Wave
 
-It is therefore common to **approximate Eq (4) by the exponential profile of a monochromatic wave:**
-$$ \begin{equation} v_m=v_0e^{2k_mz} \tag{7}\end{equation} $$
-
-where $v_0$ is the surface Stokes drift velocity.
-
-To ensure that the surface Stokes drift and the total transport of the monochromatic wave in Eq. (7) agree with the values for the full spectrum, Eqs (4)-(5), the wavenumber must be determined by:
-$$ \begin{equation} k_m=\frac{v_0}{2V_s} \tag{8}\end{equation} $$
+> [!Attention] **Monochromatic Profile**
+> It is therefore common to **approximate Eq (4) by the exponential profile of a monochromatic wave:** $$ \begin{equation} v_m=v_0e^{2k_mz} \tag{7}\end{equation} $$
+> where: 
+> - $v_0$ is the surface Stokes drift velocity.
+> - To ensure that the surface Stokes drift and the total transport of the monochromatic wave in Eq. (7) agree with the values for the full spectrum, Eqs (4)-(5), the wavenumber must be determined by: $$ \begin{equation} k_m=\frac{v_0}{2V_s} \tag{8}\end{equation} $$
 
 > (7)→(8) derivation:
 > Given that:
@@ -93,33 +93,31 @@ $$ \begin{equation} k_m=\frac{v_0}{2V_s} \tag{8}\end{equation} $$
 > we will have
 > $$ V_s=\frac{v_0}{2k_m}\int_{-\infty}^{0} e^{2k_mz}\;d(2k_mz)=\frac{v_0}{2k_m} $$
 
-> [!Attention]
-> ==**However, this monochromatic wave profile is prone to problem:**==
-> - Will have a weaker vertical gradient than the profile under a full spectrum near the surface
-> - Will tends too quickly to zero deeper down </aside>
+==**However, this monochromatic wave profile is prone to problem:**==
+- Will have a weaker vertical gradient than the profile under a full spectrum near the surface
+- Will tends too quickly to zero deeper down </aside>
 
 ## Alternative (1): Exponential Integral Profile
 The behaviour of the profile under a full spectrum is most readily investigated by considering the Phillips spectrum, applicable to the equilibrium range of the spectrum of wind generated waves above the spectral peak:
 $$ \begin{equation} F_P= \begin{cases} \alpha_Pg^2\omega^{-5}, &\omega \gt \omega_p \\ 0, &\omega \le\omega_p \end{cases} \tag{9}\end{equation} $$
 Set Phillips’ parameter $\alpha_P=0.0083$ (there is a disagreement, other works preferring $\alpha_P=0.0081$). The **peak circular frequency is denoted $\omega_p$.** the Stokes drift profile (Eq (4)) under Eq (9) is:
 $$ \begin{equation} v_P(z)=2\int_{\omega_P}^{\infty}\alpha_Pg\omega^{-2}e^{2\omega^2z/g}\;d\omega \tag{10}\end{equation} $$
-Which can be found analytically:
-$$ \begin{equation} v_P(z)=2\alpha_Pg \biggl\{ \mathbf {exp}(2\omega_P^2z/g)/\omega_p -\sqrt{\frac{-2\pi z}{g}}\biggr[1-\mathbf{erf}(\frac{\omega_p}{\sqrt{-2z/g}})\biggr]\biggl\} \tag{11}\end{equation} $$
+Which can be found analytically, which after using the deep-water dispersion relation (see ~={blue}(Breivik et al., 2014)=~ Eq (11)):
+$$ \begin{equation} v_P(z)=2\alpha_Pg \biggl\{ \mathbf {exp}(2\omega_P^2z/g)/\omega_p -\sqrt{\frac{-2\pi z}{g}}\biggr[1-\mathbf{erf}(\frac{\omega_p}{\sqrt{-2z/g}})\biggr]\biggl\} \tag{11a}\end{equation} $$
 The transport can also be found analytically:
-$$ \begin{equation} V_P=\frac{\alpha_Pg^2}{3\omega_P^3} \tag{12}\end{equation} $$
+$$ \begin{equation} V_P=\frac{\alpha_Pg^2}{3\omega_p^3} \tag{12}\end{equation} $$
 
 - **Near the surface (when $|z|$ is small)**, the term in Stoke drift profile Eq (11) involving the error function becomes vanishingly small compared with the first term, and it is clear that:
     $$ \begin{equation} v_P(z)\approx(2\alpha_Pg/\omega_p)e^{2k_pz} \tag{13}\end{equation} $$
     
-    Here we have introduced the peak wavenumber $k_p=\omega_p^2/g$.
     
 - **In deeper water, (when large $|z|$)**, we substitute the following asymptotic expansion for the error function in Eq (11), valid for large $x$:
     $$ \begin{equation} \mathbf{erf}(x)\approx 1-\frac{e^{-x^2}}{x\sqrt{\pi}}\bigg(1-\frac{1}{2x^2}\bigg) \tag{14}\end{equation} $$
     Hence, for the large $|z|$ profile, Eq (10) becomes:
     $$ \begin{equation} v_P(z)\approx\alpha_Pg^2(e^{2k_pz}/2\omega_p^3|z|) \tag{15}\end{equation} $$
 
-> [!Attention]
-> Motivated by this, **Breivik et al. (2014) have explored a profile that approaches the exponential shape [Eq (13)] near the surface and goes like the asymptotic solution [Eq (15)] in the deep**:$$ \begin{equation} v_e=v_0\frac{e^{2k_ez}}{1-Ck_ez} \tag{16}\end{equation} $$
+> [!Attention] **Exponential Integral Profile**
+> Motivated by this, **~={blue}Breivik et al. (2014)=~ have explored a profile that approaches the exponential shape [Eq (13)] near the surface and goes like the asymptotic solution [Eq (15)] in the deep**:$$ \begin{equation} v_e=v_0\frac{e^{2k_ez}}{1-Ck_ez} \tag{16}\end{equation} $$
 > where:
 > - $C$: Constant. 
 > - $v_0$: surface Stokes drift velocity, vector
@@ -131,7 +129,7 @@ The coefficient that was found to minimise the MSE for the Phillips spectrum ove
 The transport under such a profile involved the exponential integral $E_1$ and can be solved analytically to yield:
 
 $$ \begin{equation} |V_S|=\frac{|v_0|e^{1/4}E_1(1/4)}{8k_e} \tag{17}\end{equation} $$
->[!Tips]
+>[!Tip]
 >**Here both $v_0$ and $V_s$ should be a scalar quantity (i.e., its magnitude)**. To clarify, Eq. (17) and (18) will follow the expressions recorded in Janssen et al. (2013).
 
 It will in the following be referred to as the exponential integral profile. This imposes the following constraint on the inverse depth scale. 
@@ -142,9 +140,9 @@ Here $e^{1/4}E_1(1/4)\approx 1.34$; thus,
 
 $$ \begin{equation} k_e\approx \frac{v_0}{5.97V_s}\approx\frac{k_m}{3} \tag{19}\end{equation} $$
 
-Where the $k_m$ is the wavenumber for the monochromatic wave [Eq (8)].
+Where the $k_m$ is the wavenumber for the monochromatic wave Eq. (8).
 
-> [!Tips]
+> [!Tip]
 > Thus, **this alternative profile relies on the same two quantities required for the monochromatic profile**, namely
 > - Stokes transport $V_s$
 > - surface Stokes drift velocity $v_0$
@@ -152,10 +150,39 @@ Where the $k_m$ is the wavenumber for the monochromatic wave [Eq (8)].
 > These two quantities is used to calculate the wavenumber $k_e$, then the profile $v_e$
 
 
+## Alternative (2): Based on Phillip’s spectrum
+Similar to the alternative approximation (1), the second alternative is based on the assumption that the Phillips spectrum (Eq. (9)) yields a reasonable estimate of the part of the spectrum which contributes most to the Stokes drift velocity near the surface, i.e., the high-frequency waves. 
+
+The Stokes drift velocity profile under Eq. (9) gives the Eq. (10). The analytical solution exists for Eq. (10), which is the Eq. (11a), but it has another expression:
+$$ \begin{equation} v_P(z)=\frac{2\alpha_Pg}{\omega_p} \biggl\{ \mathbf {exp}(2k_pz) -\sqrt{-2\pi k_pz}\biggr[\mathbf{erfc}(\sqrt{-2k_pz})\biggr]\biggl\} \tag{11b}\end{equation}$$
+Here the $\mathbf{erfc}=1-\mathbf{erf}$ is the complementary error function, and $k_p=\omega_p^2/g$ is the peak wavenumber.
+
+From Eq. (11b) we see that for the Phillips spectrum Eq. (10) the surface Stokes drift velocity is:
+$$v_0=v_{\text{Phil}}(z=0)=\frac{2\alpha g}{\omega_p} \tag{20}$$
+For large depths, i.e., as $z \rightarrow -\infty$, Eq. (11b) approaches the asymptotic limit:
+$$\lim_{z \rightarrow -\infty}v_{\text{Phil}}=-\frac{v_0}{4k_pz}e^{2k_pz}\tag{21}$$
+This means the exponential integral profile Eq. (16) proposed by ~={blue}(Breivik et al., 2014)=~ has too strong deep flow when fitted to the Phillips spectrum. This could be alleviated by setting the coefficient C = 4 in Eq. (16), but at the expense of increasing the overall root-mean-square (rms) deviation over the water column. Further, although the profile Eq. (16) is well suited to modelling the shear at intermediate water depths, its shear near the surface is too weak. Under the Phillips spectrum Eq. (10) the shear is:
+$$\frac{\partial v_{\text{Phil}}}{\partial z}=4\alpha\int_{\omega_p}^{\infty}e^{2\omega^2z/g}\;d\omega \tag{22}$$
+for which an analytical expression exits, see ~={blue}Gradshteyn and Ryzhik (2007)=~:
+$$\frac{\partial v_{\text{Phil}}}{\partial z}=\alpha\sqrt{-\frac{2\pi g}{z}}\mathbf{erfc}(\sqrt{-2k_pz}) \tag{23}$$
+Near the surface the shear tends to infinity. This strong shear is not captured by either the exponential integral profile (Eq. (16) or the monochromatic profile (Eq. (7)).
+
+~={blue}(Breivik et al., 2016)=~ assumes that the Phillips spectrum profile (11b) is also a reasonable approximation for Stokes drift velocity profiles under a general spectrum, and that the low-frequency part below the peak contributes little to the overall Stokes drift profile so that it can be ignored. 
+
+> [!Attention] **Phillips Spectrum Profile**
+> After few assumptions and considerations (see details in ~={blue}(Breivik et al., 2016)=~), one can approximate Stokes drift profile (Eq. (3a, b)) by Eq. (11b):  $$\begin{equation} \mathbf{v}_s(z)\approx v_0 \biggl\{e^{-2\overline{k}|z|} -\beta\sqrt{2\pi \overline{k}|z|}\biggr[\mathbf{erfc}(\sqrt{2\overline{k}|z|})\biggr]\biggl\} \tag{24}\end{equation}$$
+> where:
+> - $\beta$: a parameter, which is exactly one in Phillips spectrum
+> 	- ~={blue}(Breivik et al., 2016)=~ found $\beta=1$ yield good agreement between modeled and parameterised Stokes drift profiles.
+> - $\overline k$: inverse depth scale, which can be determined given an estimate of the transport $\mathbf{V}_s$ and the surface Stokes drift velocity $v_0$ by: $$\overline k=\frac{v_0}{2\mathbf{V}_s}(1-2\beta/3) \tag{25}$$
+> 	- Estimation of Stokes transport according to Eq. (26) (equivalent to Eq. (38)) using bulk-wave parameters
+> 	- Surface stokes drift velocity can to be separated into wind wave and total swells (or swell partition 1/2/3) components
+
+
 # Approximate Stokes Transport using bulk wave parameters
-See details in Eq. (35) in (Breivik et al., 2014)
+See details in Eq. (35) in ~={blue}(Breivik et al., 2014)=~
 We can derive the first moment from the integrated parameters of a wave model or from wave observations and find an estimate for the Stokes transport:
-$$\begin{align}V_s &\approx \frac{2\pi }{16}\bar{f}H_s^2\hat{\mathbf k}_s\\ &\approx\frac{\pi H_s^2}{8\bar{T}}(\sin{\bar{\theta}},\cos{\bar{\theta}})\end{align}$$
+$$\begin{align}V_s &\approx \frac{2\pi }{16}\bar{f}H_s^2\hat{\mathbf k}_s\\ &\approx\frac{\pi H_s^2}{8\bar{T}}(\sin{\bar{\theta}},\cos{\bar{\theta}}) \tag{26}\end{align}$$
 
 Where:
 - mean frequency $\bar{f}=m_1/m_0$
@@ -163,7 +190,7 @@ Where:
 - $\hat{\mathbf k}_s=(\sin{\theta_s}, \cos{\theta_s})$: unit vector in the direction $\theta_s$ of the Stokes transport
 	- Stokes transport direction is not normally archived by wave prediction models
 	- but it can be ~={red}approximated by the mean wave direction=~ $\bar \theta$. 
-		- This approximation exhibits a significantly smaller deviation from the actual Stokes transport direction compared to using the direction of the surface Stokes drift velocity (Breivik et al., 2014).
+		- This approximation exhibits a significantly smaller deviation from the actual Stokes transport direction compared to using the direction of the surface Stokes drift velocity ~={blue}(Breivik et al., 2014)=~.
 - significant wave height $H_s=4\sqrt{m_0}$ 
 
 > [!Important] **This approximation assumes:**
@@ -172,7 +199,7 @@ Where:
 > 3. Stokes transport direction $\approx$ mean wave direction
 > 4. Using bulk significant height $H_s=4\sqrt{m_0}$, mean wave period $\bar{T}=1/\bar{f}$, and mean wave direction $\bar{\theta}$
 
-It is evident that this rough estimate based on integrated parameters will overestimate the magnitude of the stokes transport by $\sim 19\%$ (Breivik et al., 2014)
+It is evident that this rough estimate based on integrated parameters will overestimate the magnitude of the stokes transport by $\sim 19\%$ ~={blue}(Breivik et al., 2014)=~
 
 
 
@@ -193,7 +220,7 @@ It is assumed that the vortex force gives rise to a term involving the shear of 
 
 The turbulent kinetic energy (TKE) equation with a Stokes drift shear term can be written as:
 
-$$ \begin{equation} \frac{De}{Dt} = \frac{g}{\rho_w}\overline{u_3'\rho'}-\overline{u_i'u_j'}\frac{\partial \overline u_i}{\partial x_j}-\overline{u_i'u_j'}\frac{\partial v_i}{\partial x_j} - \frac{\partial}{\partial x_j}(\overline{u_j'e})-\frac{1}{\rho_w}\frac{\partial}{\partial x_i}(\overline{u_i'p'})-\epsilon \tag{20}\end{equation} $$
+$$ \begin{equation} \frac{De}{Dt} = \frac{g}{\rho_w}\overline{u_3'\rho'}-\overline{u_i'u_j'}\frac{\partial \overline u_i}{\partial x_j}-\overline{u_i'u_j'}\frac{\partial v_i}{\partial x_j} - \frac{\partial}{\partial x_j}(\overline{u_j'e})-\frac{1}{\rho_w}\frac{\partial}{\partial x_i}(\overline{u_i'p'})-\epsilon \tag{27}\end{equation} $$
 
 Given that the $u$ stands for current velocity, $v$ stands for Stokes drift velocity
 
@@ -211,7 +238,7 @@ Here:
 > [!Attention]
 > ==**Langmuir Turbulence Production**== 
 > By making the gradient transport closure approximation, ignoring advective terms and horizontal gradients, and rewriting in vectorial form, we arrive at:
-> $$ \begin{equation} \frac{\partial e}{\partial t}=-\nu_hN^2+\nu_mS^2+\nu_m\mathbf S\cdot \frac{\partial \mathbf v_s}{\partial z}-\frac{\partial}{\partial z}(\overline{w'e})-\frac{1}{\rho_w}\frac{\partial}{\partial z}(\overline{w'p'})-\epsilon \tag{21}\end{equation} $$
+> $$ \begin{equation} \frac{\partial e}{\partial t}=-\nu_hN^2+\nu_mS^2+\nu_m\mathbf S\cdot \frac{\partial \mathbf v_s}{\partial z}-\frac{\partial}{\partial z}(\overline{w'e})-\frac{1}{\rho_w}\frac{\partial}{\partial z}(\overline{w'p'})-\epsilon \tag{28}\end{equation} $$
 > Using $z$ for the vertical axis and $w$ for vertical velocities.
 > 
 > Here:
@@ -227,11 +254,11 @@ Notice that **the diffusion coefficient and turbulent viscosity are used when as
 
 The shear of the Phillips spectrum, an analytical solution can be found, but the shear goes to infinity on the surface, which is in contrast to the shear under a monochromatic wave, which remain bounded near the surface.
 
-$$ \begin{equation} \frac{\partial v_m(z=0)}{\partial z}=2k_mv_0 \tag{22}\end{equation} $$
+$$ \begin{equation} \frac{\partial v_m(z=0)}{\partial z}=2k_mv_0 \tag{29}\end{equation} $$
 
 The shear of the exponential integral profile (Eq (16)) also remains bounded, but reaches a value approximately 67% higher than the monochromatic profile at the surface:
 
-$$ \begin{equation} \frac{\partial v_e(z=0)}{\partial z}=10k_ev_0\approx \frac{10}{3}k_mv_0 \tag{23}\end{equation} $$
+$$ \begin{equation} \frac{\partial v_e(z=0)}{\partial z}=10k_ev_0\approx \frac{10}{3}k_mv_0 \tag{30}\end{equation} $$
 
 In practice, though, it may **be necessary to cap the Stokes shear near the surface** when estimating the Langmuir turbulence when assuming a tail proportional to f 25 (see next section).
 
@@ -246,13 +273,13 @@ In wave prediction model (e.g., WAM, WaveWatch-III and ECMWF version of WAM), th
 
 One can follow Komen et al. (1994) and assume a tail of the form
 
-$$ \begin{equation} F_{HF}=F(f_c,\theta)(\frac{f_c}{f})^5 \tag{24}\end{equation} $$
+$$ \begin{equation} F_{HF}=F(f_c,\theta)(\frac{f_c}{f})^5 \tag{31}\end{equation} $$
 
 which is consistent with the Phillips spectrum (Eq (9)).
 
 The two dimensional spectrum below the cutoff frequency $f_c$ is here assumed to come from observations or from a numerical wave prediction model. This is the procedure used for adding the diagnostic high-frequency contribution to the spectrum in the Wave model (Wave Model (WAM; see Wamdi Group 1988; Komen et al. 1994; Janssen 2004) as well as the WaveWatch-III model (Tolman 1991; Tolman et al. 2002). In the ECMWF version of the WAM model [ECWAM; see ECMWF (2013)] (Breivik et al., 2014, p. 2437). A **lower diagnostic cutoff** is set at:
 
-$$ \begin{equation} f_d=min(f_{max}, 2.5\overline{f}_{windsea}) \tag{25}\end{equation} $$
+$$ \begin{equation} f_d=min(f_{max}, 2.5\overline{f}_{windsea}) \tag{32}\end{equation} $$
 
 here:
 - $\overline{f}_{windsea}$ is the mean frequency of the wind sea based on the first moment
@@ -274,21 +301,21 @@ Above the $f_d$ the spectrum is treated diagnostically, that is , a tail of the 
 
 The high-frequency tail adds the following contribution:
 
-$$ \begin{equation} \mathbf v_{HF}(z)=\frac{16 \pi^3}{g}f_c^5\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta\int_{f_c}^{\infty}\frac{\text{exp}(8\pi^2zf^2/g)}{f^2}\:df \tag{26}\end{equation} $$
+$$ \begin{equation} \mathbf v_{HF}(z)=\frac{16 \pi^3}{g}f_c^5\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta\int_{f_c}^{\infty}\frac{\text{exp}(8\pi^2zf^2/g)}{f^2}\:df \tag{33}\end{equation} $$
 
 The later integral is similar to Eq (10) and can be solved in a similar manner to Eq (11), yield:
 
-$$ \begin{equation} \mathbf v_{HF}(z)=\frac{16 \pi^3}{g}f_c^5\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta \times \biggl\{\frac{\text{exp}(-\mu f_c^2)}{f_c}-\sqrt{\mu \pi}[1-\text{erf}(f_c\sqrt{\mu})] \biggl\} \tag{27}\end{equation} $$
+$$ \begin{equation} \mathbf v_{HF}(z)=\frac{16 \pi^3}{g}f_c^5\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta \times \biggl\{\frac{\text{exp}(-\mu f_c^2)}{f_c}-\sqrt{\mu \pi}[1-\text{erf}(f_c\sqrt{\mu})] \biggl\} \tag{34}\end{equation} $$
 
 where $\mu=-8\pi^2z/g$. Thus, $\mu(z=0)=0$.
 
 The **high-frequency addition to the surface Stokes drift** in **deep water** is:
 
-$$ \begin{equation} \mathbf v_{HF}(0)=\frac{16 \pi^3}{g}f_c^4\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta \tag{28}\end{equation} $$
+$$ \begin{equation} \mathbf v_{HF}(0)=\frac{16 \pi^3}{g}f_c^4\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta \tag{35}\end{equation} $$
 
 ECWAM (ECMWF 2013) computes and outputs the surface Stokes drift velocity vector corrected for the high-frequency contribution. The tail contribution to the Stokes transport is:
 
-$$ \begin{equation} \mathbf V_{HF}=\frac{2\pi}{3}f_c^2\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta \tag{29}\end{equation} $$
+$$ \begin{equation} \mathbf V_{HF}=\frac{2\pi}{3}f_c^2\int_{0}^{2\pi}F(f_c,\theta)\hat{\mathbf k}\:d\theta \tag{36}\end{equation} $$
 
 # Modelled profiles in the NA
 
@@ -298,7 +325,7 @@ $$ \begin{equation} \mathbf V_{HF}=\frac{2\pi}{3}f_c^2\int_{0}^{2\pi}F(f_c,\thet
 
 ## Tail sensitivity of modelled Stokes drift profiles
 
-Adding the contribution from the high-frequency tail is important, and indeed it is standard practice to include it in the computation of the **surface Stokes drift velocity** (see, e.g., the ECMWF model documentation; ECMWF 2013, p. 52) (Breivik et al., 2014)
+Adding the contribution from the high-frequency tail is important, and indeed it is standard practice to include it in the computation of the **surface Stokes drift velocity** (see, e.g., the ECMWF model documentation; ECMWF 2013, p. 52) ~={blue}(Breivik et al., 2014)=~
 
 > [!Attention]
 > Breivik et al (2014) found that:
@@ -316,7 +343,7 @@ In principle it is straightforward to add this contribution to the approximate p
 
 It is clear that:
 
-$$ \begin{equation} |\mathbf V_s|\le2\pi m_1 \tag{30}\end{equation} $$
+$$ \begin{equation} |\mathbf V_s|\le2\pi m_1 \tag{37}\end{equation} $$
 
 However, it is not clear how large this deviation is on average for typical wave spectra in the open ocean. Assessing the overestimation is of practical value since the first spectral moment is often archived or indirectly measured.
 
@@ -326,7 +353,7 @@ since:
 
 we can derive the first momentum from the integrated parameters (see Eq (6)) of a wave model or from wave observations and find an estimate for the Stokes transport:
 
-$$ \begin{equation} \mathbf V_s\approx\frac{2\pi}{16}\overline f H_{m_{0}}^2 \hat{\mathbf k_s} \tag{31}\end{equation} $$
+$$ \begin{equation} \mathbf V_s\approx\frac{2\pi}{16}\overline f H_{m_{0}}^2 \hat{\mathbf k_s} \tag{38}\end{equation} $$
 
 Here, $\hat{\mathbf k_s}=(\sin{\theta_s}, \cos{\theta_s})$ is the unit vector in the direction $\theta_s$ of the Stokes transport. $\theta_s$ is not normally archived by wave prediction models but it can be approximated by the mean wave direction (MWD) $\overline{\theta}$:
 
@@ -334,7 +361,7 @@ Estimating the Stokes transport (Eq (5)) from the first moment $m_1$ (Eq (6)) is
 
 Similarly, the surface Stokes drift velocity:
 
-$$ \begin{equation} |\mathbf v_0| \le16\pi^3m_3/g \tag{32}\end{equation} $$
+$$ \begin{equation} |\mathbf v_0| \le16\pi^3m_3/g \tag{39}\end{equation} $$
 
 The estimate from $m_3$ will be on average about 19%.
 
@@ -342,7 +369,7 @@ The estimate from $m_3$ will be on average about 19%.
 
 mean wave direction (MWD) $\overline{\theta}$:
 
-$$ \begin{equation} \overline{\theta}=\arctan \Biggr[ \frac{\int_{0}^{2\pi}\int_{0}^{\infty}\sin{\theta}F(f,\theta)\:df\:d\theta}{\int_{0}^{2\pi}\int_{0}^{\infty}\cos{\theta}F(f,\theta)\:df\:d\theta} \Biggr] \tag{33}\end{equation} $$
+$$ \begin{equation} \overline{\theta}=\arctan \Biggr[ \frac{\int_{0}^{2\pi}\int_{0}^{\infty}\sin{\theta}F(f,\theta)\:df\:d\theta}{\int_{0}^{2\pi}\int_{0}^{\infty}\cos{\theta}F(f,\theta)\:df\:d\theta} \Biggr] \tag{40}\end{equation} $$
 
 How well it approximates the direction of the Stokes transport since it is a standard output parameter of many wave models?
 

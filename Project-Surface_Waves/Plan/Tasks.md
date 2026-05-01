@@ -39,10 +39,10 @@ tags:
 	- [x] inverse depth scale to e-folding depth scale
 		- [x] figure out why the current situation has negative inverse depth scale
 		- [x] correct it, discussed with Chris
-	- [ ] Summarise the “Approximate Stokes drift”
+	- [x] Summarise the “Approximate Stokes drift”
 		- [x] monochromatic
 		- [x] Breivik 2014: Exponential integral
-		- [ ] Breivik 2016: Based on exact solution for the Phillips spectrum
+		- [x] Breivik 2016: Based on exact solution for the Phillips spectrum
 	- [ ] full reconstruction
 - [x] Paper reading:
 	- [x] review paper: Bremer & Breivik 2018
