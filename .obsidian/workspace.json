@@ -91,8 +91,7 @@
               "title": "Note_Stokes-Drift-Profile"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,13 +226,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Proposal-Large_scale_dynamical_impact_of_Stokes_drift"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -302,10 +301,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "2b5e79dfb1baec31",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
+    "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
@@ -320,7 +320,6 @@
     "Attachments/Figures_plan.jpg",
     "Attachments/Upwelling_region_outline-1.pdf",
     "PhD-General/MPI-M/Seminar Notes.md",
-    "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Plan/Research-Gaps.md",
     "QuickCapture.md",
