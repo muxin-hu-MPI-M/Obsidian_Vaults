@@ -24,6 +24,24 @@ tags:
 
 # Weekly Plan 
 
+
+## [[2026-05-04]]
+- [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
+	- [x] Download the hourly output for the correct wave data for reconstruction (test 2024)
+	- [x] inverse depth scale to e-folding depth scale
+		- [x] figure out why the current situation has negative inverse depth scale
+		- [x] correct it, discussed with Chris
+	- [x] Summarise the “Approximate Stokes drift”
+		- [x] monochromatic
+		- [x] Breivik 2014: Exponential integral
+		- [x] Breivik 2016: Based on exact solution for the Phillips spectrum
+	- [ ] test full reconstruction on 2024 January
+		- [x] No separation
+			- [x] Exponential
+			- [x] Phillips
+		- [ ] Separate wind waves and total swells
+			- [ ] 
+
 ## [[2026-04-27]]
 - [ ] c_k experiments analysis #project/surfwaves 
 	- [x] Interpolate atmospheric 3D variables to pressure coordinates
@@ -34,16 +52,6 @@ tags:
 		- [x] monthly mean wind profile at lowest atmosphere
 	- [ ] TKE-related difference: climatology/seasonality; surface and in-depth profile of sections
 	- [ ] air-sea interaction (e.g., fluxes) difference: climatology/seasonality
-- [ ] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
-	- [x] Download the hourly output for the correct wave data for reconstruction (test 2024)
-	- [x] inverse depth scale to e-folding depth scale
-		- [x] figure out why the current situation has negative inverse depth scale
-		- [x] correct it, discussed with Chris
-	- [x] Summarise the “Approximate Stokes drift”
-		- [x] monochromatic
-		- [x] Breivik 2014: Exponential integral
-		- [x] Breivik 2016: Based on exact solution for the Phillips spectrum
-	- [ ] full reconstruction
 - [x] Paper reading:
 	- [x] review paper: Bremer & Breivik 2018
 	- [x] Fujiwara et al. 2026

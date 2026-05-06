@@ -7,7 +7,48 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-05-13]]
+## Regular meeting with Nils
+Paper reading:
+- ~={blue}(Fujiwara et al., 2026)=~ ***“Wave-driven ocean currents: how the conservative effects of Stokes transport induce large-scale currents”***
+	- **When introducing the Stokes drift into the model, need to consider the diagnosed vertical component of Stokes drift** (called pseudo-velocity, see Eq. (2)) $w^{s}(z)=-\nabla \cdot \int_{-H}^{z} \mathbf u^{s}\;dz’$,  where $z=-H(x,y)$ is the bottom profile. 
+		- The Stokes drift velocity obtained from the traditional definition is not necessarily incompressible.
+		- Here the incompressibility of the Stokes velocity is implicitly assumed: $\nabla \cdot \mathbf u^{s} + \partial_z w^{s}=0$
+	- **Need to consider some boundary conditions.** see details in Eq. (5)-(8)
+	- Their study implement the monochromatic Stokes drift approximation, as the consideration of wave-induced Ekman pumping suggests that the vertically integrated Stokes transport characterises the resulting current response. No need to have sophisticated approximation
+	- **Idealised simulation with localised Stokes drift is imposed on a ~={red}Linearised case**=~ (High Rossby number, neglect the Vortex Force term → neglect the Stokes advection of momentum)
+		- **Flat bottom:** Lagrangian field exhibits a dipole circulation pattern on either side of the Stokes forcing. Transient water displacement happens, transient “Stokes-Ekman pumping” happens, but near zero long term (>= 72 h) changes in geostrophic current after zero Stokes
+		- **Slope bottom**: has net long term irreversible changes in geostrophic current after zero Stokes through the generation of topographic Rossby waves
 
+# [[2026-05-05]]
+## ERA5 forcing on ICON: talk with Helmuth
+#presenter/Helmuth_Haak 
+Four stages of forcing ICON with ERA5 atmosphere + waves:
+1. Download the ERA5 wave data to the Levante using the script from Helmuth
+2. Modify the python reader script (recipe), calculate the Stokes transport (parameter for reconstruction) in the python reader. Provide transport and surface velocity to Yak coupler.
+3. Modify the Yak coupler. The ERA5 wave fields have coarser resolution than normal ERA5 atmospheric fields. contact Moritz Hnnke from DKRZ.
+4. Branch off from ICON-main, modifying the ICON code
+
+Steps:
+- Download the ERA5 wave data:
+	- copy the python virtual environment requirement to local directory: 
+	  `cp /work/mh0033/m211054/projects/ecmwf_download/data1/requirements.txt.`
+	- create the virtual environment:
+	  `python3 -m venv ${DDIR}/.venv`
+		`source ${DDIR}/.venv/bin/activate` 
+		`python -m pip install -r requirements.txt` 
+		`source ${DDIR}/.venv/bin/activate`
+	- create `.cdsapirc` in the HOME directory, copy the url and key information from the ECMWF website account (see details in the website too)
+	- copy the script for downloading, and adjust for desired variables, save directory:
+	  `cp /work/mh0033/m211054/projects/ecmwf_download/data1/00_download_era5_1971.sh.`
+	- use “screen” to run it, remember the which Levante(0-6) to use the screen
+	  `screen -r`
+		`ctrl-a d`
+- Modify python reader recipe:
+	- ICON reads the ERA5 atmospheric forcing through **(1) Python reader**, the Python reader will push the ERA5 fields to the **(2) Yak Coupler** to do interpolation, and finally feeds to the **(3) ICON execute model**
+	- Calculate the Stokes transport in the python reader
+	- Feed the Stokes transport and direct output of surface Stokes velocity to the Coupler to do interpolation (which interpolation method?)
+	- Reconstruct the profile in the ICON code (where the vertical information is provided)
 
 # [[2026-04-30]]
 ## Eddy-wave meeting summary
@@ -58,6 +99,8 @@ Last Eddited: 2026-01-13
 - but no observation evidence for Coriolis-Stokes or vortex force
 
 
+
+
 # [[2026-04-29]]
 ## Talk with Yasushi Fujiwara
 - In his idealised simulation with localised Stokes drift (linearised case)
@@ -71,20 +114,6 @@ Last Eddited: 2026-01-13
 	- In my experiment, ~={red}the Stoke advection of momentum will be preserved=~, which in principal has additional Stokes advection of momentum compared to the linearised case from ~={blue}(Fujiwara et al., 2026)=~, therefore generating different result
 - ==**POTENTIAL PROBLEM**==:
 	- Check whether removing Stokes shear force is still conserving the relative vorticity
-# [[2026-04-28]]
-## Regular meeting with Nils
-Paper reading:
-- ~={blue}(Fujiwara et al., 2026)=~ ***“Wave-driven ocean currents: how the conservative effects of Stokes transport induce large-scale currents”***
-	- **When introducing the Stokes drift into the model, need to consider the diagnosed vertical component of Stokes drift** (called pseudo-velocity, see Eq. (2)) $w^{s}(z)=-\nabla \cdot \int_{-H}^{z} \mathbf u^{s}\;dz’$
-		- where $z=-H(x,y)$ is the bottom profile. 
-		- Here the incompressibility of the Stokes velocity is implicitly assumed: $\nabla \cdot \mathbf u^{s} + \partial_z w^{s}=0$
-		- Note that $w^{s}$ is not asymptotically derived and is different from the vertical component of TRUE Stokes drift
-		- The Stokes drift velocity obtained from the traditional definition is not necessarily incompressible.
-	- **Need to consider some boundary conditions.** see details in Eq. (5)-(8)
-	- Their study implement the monochromatic Stokes drift approximation, as the consideration of wave-induced Ekman pumping suggests that the vertically integrated Stokes transport characterises the resulting current response. No need to have sophisticated approximation
-	- **Idealised simulation with localised Stokes drift is imposed on a ~={red}Linearised case**=~ (High Rossby number, neglect the Vortex Force term → neglect the Stokes advection of momentum)
-		- **Flat bottom:** Lagrangian field exhibits a dipole circulation pattern on either side of the Stokes forcing. Transient water displacement happens, transient “Stokes-Ekman pumping” happens, but near zero long term (>= 72 h) changes in geostrophic current after zero Stokes
-		- **Slope bottom**: has net long term irreversible changes in geostrophic current after zero Stokes through the generation of topographic Rossby waves
 
 
 # [[2026-04-24]]
