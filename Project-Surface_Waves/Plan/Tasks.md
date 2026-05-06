@@ -40,7 +40,7 @@ tags:
 			- [x] Exponential
 			- [x] Phillips
 		- [ ] Separate wind waves and total swells
-			- [ ] 
+			- [ ] test if can directly use → NO!, near zero denominator
 
 ## [[2026-04-27]]
 - [ ] c_k experiments analysis #project/surfwaves 
