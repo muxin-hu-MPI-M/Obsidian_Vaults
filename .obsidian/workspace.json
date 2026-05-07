@@ -226,13 +226,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -301,10 +301,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "41d59f6a3682d7aa",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Plan/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
