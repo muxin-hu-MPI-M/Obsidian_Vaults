@@ -22,6 +22,19 @@ Paper reading:
 
 # [[2026-05-07]]
 ## Discussion with Nobu
+- When introduce the Stokes profile, need to consider diagnosing vertical component of Stokes drift (called pseudo-velocity), which implicitly satisfy: $\nabla \cdot \mathbf u^{s} + \partial_z w^{s}=0$
+	- The equation: $$w^{s}(z)=-\nabla \cdot \int_{-H}^{z} \mathbf u^{s}\;dz’$$
+	- And apply boundary condition:
+		- at the upper boundary $z=\eta$: $\partial_t \eta = -\nabla \cdot \int_{-H}^{z} (\mathbf u+\mathbf u^{s})\;dz’$, and pressure $p=0$.
+		- at the bottom boundary at $z=-H$, a no-normal-flow boundary condition is applied for the Eulerian velocity: $w+\mathbf u \cdot \nabla H=0$, as well as the Stokes velocity $w^s+\mathbf u^s \cdot \nabla H=0$
+- **neglect the Stokes shear force term will introduce artificial source/sink of potential vorticity**
+- preserve all three terms can make the system consistent
+	- Lagrangian advection
+	- Lagrangian Coriolis
+	- Stokes shear terms
+- It’s rather easier to implement the full three terms. Using Eq. (1) in ~={blue}(Suzuki & Fox-Kemper, 2016)=~, which is also the expression that the ICON used
+	- However, Eq. (1) is in the form of non-hydrostatic.
+	- ~={red}Need to check if hydrostatic formulation ensures the consistency in potential vorticity=~. By simply taking the curl of Eq. (1) 
 
 # [[2026-05-05]]
 ## ERA5 forcing on ICON: talk with Helmuth
