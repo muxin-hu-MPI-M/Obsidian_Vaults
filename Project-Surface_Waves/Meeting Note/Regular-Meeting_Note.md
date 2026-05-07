@@ -20,6 +20,9 @@ Paper reading:
 		- **Flat bottom:** Lagrangian field exhibits a dipole circulation pattern on either side of the Stokes forcing. Transient water displacement happens, transient “Stokes-Ekman pumping” happens, but near zero long term (>= 72 h) changes in geostrophic current after zero Stokes
 		- **Slope bottom**: has net long term irreversible changes in geostrophic current after zero Stokes through the generation of topographic Rossby waves
 
+# [[2026-05-07]]
+## Discussion with Nobu
+
 # [[2026-05-05]]
 ## ERA5 forcing on ICON: talk with Helmuth
 #presenter/Helmuth_Haak 

@@ -40,7 +40,10 @@ tags:
 			- [x] Exponential
 			- [x] Phillips
 		- [ ] Separate wind waves and total swells
-			- [ ] test if can directly use → NO!, near zero denominator
+			- [x] test if can directly use → NO!, near zero denominator
+			- [ ] two regimes
+				- [x] near-parallel and anti-parallel cases
+				- [x] try 10/5 degrees 
 
 ## [[2026-04-27]]
 - [ ] c_k experiments analysis #project/surfwaves 
