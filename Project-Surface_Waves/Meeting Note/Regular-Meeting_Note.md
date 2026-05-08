@@ -33,9 +33,10 @@ Paper reading:
 	- Lagrangian Coriolis
 	- Stokes shear terms
 - It’s rather easier to implement the full three terms. Using Eq. (1) in ~={blue}(Suzuki & Fox-Kemper, 2016)=~, which is also the expression that the ICON used
-	- However, Eq. (1) is in the form of non-hydrostatic.
-	- ~={red}Need to check if hydrostatic formulation ensures the consistency in potential vorticity=~. By simply taking the curl of Eq. (1) 
-
+	- ~={red}Need to check if **hydrostatic formulation** ensures the consistency in potential vorticity=~
+		- Update: yes, consistent when considering quasi-hydrostatic
+		- the term $u_j^L\cdot \nabla u_j$ will be cancelled out by summation between the RHS and LHS of the formula Eq. (1), which leaves the Suzuki’s formulation with the (1) Lagrangian advection, (2) Lagrangian Coriolis and (3) Stokes shear force term
+		- The Suzuki’s alternative formula is consistent in potential vorticity
 # [[2026-05-05]]
 ## ERA5 forcing on ICON: talk with Helmuth
 #presenter/Helmuth_Haak 
