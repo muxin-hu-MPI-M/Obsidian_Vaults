@@ -20,6 +20,11 @@ Paper reading:
 		- **Flat bottom:** Lagrangian field exhibits a dipole circulation pattern on either side of the Stokes forcing. Transient water displacement happens, transient “Stokes-Ekman pumping” happens, but near zero long term (>= 72 h) changes in geostrophic current after zero Stokes
 		- **Slope bottom**: has net long term irreversible changes in geostrophic current after zero Stokes through the generation of topographic Rossby waves
 
+# [[2026-05-12]]
+## Regular Meeting with Noel
+#presenter/Noel_Gutierrez-Brizuela 
+- Nobu’s paper suggests a quasi-hydrostatic, or “wavy hydrostatic””
+
 # [[2026-05-07]]
 ## Discussion with Nobu
 - When introduce the Stokes profile, need to consider diagnosing vertical component of Stokes drift (called pseudo-velocity), which implicitly satisfy: $\nabla \cdot \mathbf u^{s} + \partial_z w^{s}=0$
