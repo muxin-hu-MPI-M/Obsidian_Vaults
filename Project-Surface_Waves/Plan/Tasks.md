@@ -31,7 +31,7 @@ tags:
 	- [x] Check status [[Meeting_Note_WMT]]
 	- [ ] Restart working
 		- [x] find the maximum AMOC_sfc in picon and respo, saved to fileemen
-		- [ ] Update Figure 1
+		- [x] Update Figure 1
 		- [x] Update Figure 2
 		- [ ] Update Figure 3
 		- [ ] Update Figure 4 
