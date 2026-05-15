@@ -25,8 +25,12 @@ tags:
 # Weekly Plan 
 
 ## [[2026-05-11]]
-- [ ] Download wave data using Helmuth’s script
-- [ ] Stokes profile reconstruction: decomposition
+- [ ] Re-starting WMT project #project/WMT 
+	- [x] Guest account activate
+	- [x] Re-login to JupyterLab
+	- [ ] Check status [[Meeting_Note_WMT]]
+- [ ] Download wave data using Helmuth’s script #project/surfwaves 
+- [ ] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
 	- [ ] Test on strategy
