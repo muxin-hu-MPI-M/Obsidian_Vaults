@@ -28,7 +28,9 @@ tags:
 - [ ] Re-starting WMT project #project/WMT 
 	- [x] Guest account activate
 	- [x] Re-login to JupyterLab
-	- [ ] Check status [[Meeting_Note_WMT]]
+	- [x] Check status [[Meeting_Note_WMT]]
+	- [ ] Restart working
+		- [ ] find the maximum AMOC_sfc in picon and respo, saved to file
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
 - [ ] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
