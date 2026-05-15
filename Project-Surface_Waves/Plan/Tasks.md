@@ -30,7 +30,7 @@ tags:
 	- [x] Re-login to JupyterLab
 	- [x] Check status [[Meeting_Note_WMT]]
 	- [ ] Restart working
-		- [ ] find the maximum AMOC_sfc in picon and respo, saved to file
+		- [ ] find the maximum AMOC_sfc in picon and respo, saved to fileemen
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
 - [ ] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
