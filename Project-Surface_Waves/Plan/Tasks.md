@@ -25,7 +25,13 @@ tags:
 # Weekly Plan 
 
 ## [[2026-05-11]]
-- [ ] 
+- [ ] Download wave data using Helmuth’s script
+- [ ] Stokes profile reconstruction: decomposition
+	- [x] Determine decomposition strategy
+	- [x] Email to Chris for discussion
+	- [ ] Test on strategy
+		- [ ] if match with Stokes velocity magnitude
+		- [ ] masks: collinear case, non-collinear case (can apply/cannot apply decomposition)
 
 ## [[2026-05-04]]
 - [x] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
