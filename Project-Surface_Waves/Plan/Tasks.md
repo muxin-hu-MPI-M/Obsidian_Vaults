@@ -33,7 +33,7 @@ tags:
 		- [x] find the maximum AMOC_sfc in picon and respo, saved to fileemen
 		- [x] Update Figure 1
 		- [x] Update Figure 2
-		- [ ] Update Figure 3
+		- [x] Update Figure 3
 		- [ ] Update Figure 4 
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
 - [ ] Stokes profile reconstruction: decomposition #project/surfwaves 
