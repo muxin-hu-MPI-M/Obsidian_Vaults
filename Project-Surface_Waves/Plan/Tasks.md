@@ -40,7 +40,7 @@ tags:
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
 	- [ ] Test on strategy
-		- [ ] if match with Stokes velocity magnitude
+		- [x] if match with Stokes velocity magnitude
 		- [ ] masks: collinear case, non-collinear case (can apply/cannot apply decomposition)
 
 ## [[2026-05-04]]

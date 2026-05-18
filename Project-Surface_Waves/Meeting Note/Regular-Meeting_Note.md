@@ -7,8 +7,31 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-05-22]]
+## Regular meeting with Nils
+#presenter/Nils_Brüggemann 
+From last meeting:
+- Stokes reconstruction, Non-collinear case: 
+	- find to have **unique solution** if non-collinear. This is because the vector equation is just a 2×2 linear system in a non-collinear basis
+		- a **physically admissible positive solution** only if both magnitudes are positive (constraint)
+		- That positive solution exists **if and only if surface Stokes velocity vector $\mathbf u_{st}$ lies inside the convex cone spanned by two direction​ unit vector.** If it lies outside that cone, then the unique signed solution necessarily has one negative coefficient, and the positive-only decomposition is impossible.
+- Therefore, the reconstruction will have 3 cases:
+	- collinear: fallback to non-decomposition
+	- non-collinear:
+		- if surface Stokes velocity vector $\mathbf u_{st}$ lies inside the convex cone spanned by two direction​ unit vector: apply decomposition
+		- if it lies outside: fallback to non-decomposition
+- A 1-month test on 2024 finds relative percentage of 3 cases: 
+	- if the threshold set to 10 degrees
+		- decomposition fail: ~35%
+			- collinear: ~13%
+			- non-collinear but negative magnitude: ~22%
+		- decomposition success: ~65%
+
+
+
 # [[2026-05-13]]
 ## Regular meeting with Nils
+#presenter/Nils_Brüggemann 
 Paper reading:
 - ~={blue}(Fujiwara et al., 2026)=~ ***“Wave-driven ocean currents: how the conservative effects of Stokes transport induce large-scale currents”***
 	- **When introducing the Stokes drift into the model, need to consider the diagnosed vertical component of Stokes drift** (called pseudo-velocity, see Eq. (2)) $w^{s}(z)=-\nabla \cdot \int_{-H}^{z} \mathbf u^{s}\;dz’$,  where $z=-H(x,y)$ is the bottom profile. 
@@ -19,6 +42,9 @@ Paper reading:
 	- **Idealised simulation with localised Stokes drift is imposed on a ~={red}Linearised case**=~ (High Rossby number, neglect the Vortex Force term → neglect the Stokes advection of momentum)
 		- **Flat bottom:** Lagrangian field exhibits a dipole circulation pattern on either side of the Stokes forcing. Transient water displacement happens, transient “Stokes-Ekman pumping” happens, but near zero long term (>= 72 h) changes in geostrophic current after zero Stokes
 		- **Slope bottom**: has net long term irreversible changes in geostrophic current after zero Stokes through the generation of topographic Rossby waves
+During meeting:
+- Stokes reconstruction: find the cases that is non-collinear, but cannot yield physically constrained decomposition (i.e., enforcing positive magnitudes)
+	- Check the percentage and spatial pattern of this non-collinear but non-admissible cases
 
 # [[2026-05-12]]
 ## Regular Meeting with Noel
