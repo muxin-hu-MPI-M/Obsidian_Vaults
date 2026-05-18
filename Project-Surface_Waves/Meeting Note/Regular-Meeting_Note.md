@@ -21,11 +21,17 @@ From last meeting:
 		- if surface Stokes velocity vector $\mathbf u_{st}$ lies inside the convex cone spanned by two direction​ unit vector: apply decomposition
 		- if it lies outside: fallback to non-decomposition
 - A 1-month test on 2024 finds relative percentage of 3 cases: 
-	- if the threshold set to 10 degrees
+	- if the collinear threshold set to 10 degrees
 		- decomposition fail: ~35%
 			- collinear: ~13%
-			- non-collinear but negative magnitude: ~22%
+			- ~={red}non-collinear but negative magnitude: ~22%=~
 		- decomposition success: ~65%
+	- if the collinear threshold set to 5 degrees
+		- decomposition fail: ~32%
+			- collinear: ~6%
+			- ~={red}non-collinear but negative magnitude: ~26%=~
+		- decomposition success: ~68%
+	- Tested over January-Feb and June-July, no clear difference
 
 
 
