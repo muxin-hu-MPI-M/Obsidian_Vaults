@@ -32,7 +32,7 @@ From last meeting:
 			- ~={red}non-collinear but negative magnitude: ~26%=~
 		- decomposition success: ~68%
 	- Tested over January-Feb and June-July, no clear difference
-
+	- ![[Screenshot 2026-05-18 at 14.39.06.png]]
 
 
 # [[2026-05-13]]
