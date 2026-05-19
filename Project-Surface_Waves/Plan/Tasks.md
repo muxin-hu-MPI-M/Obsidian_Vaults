@@ -39,9 +39,12 @@ tags:
 - [ ] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
-	- [ ] Test on strategy
+	- [x] Test on strategy
 		- [x] if match with Stokes velocity magnitude
-		- [ ] masks: collinear case, non-collinear case (can apply/cannot apply decomposition)
+		- [x] masks: collinear case, non-collinear case (can apply/cannot apply decomposition)
+	- [ ] Reconstruction
+		- [x] 2024 Jan
+		- [ ] Test
 
 ## [[2026-05-04]]
 - [x] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 
