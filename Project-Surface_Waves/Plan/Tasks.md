@@ -36,15 +36,15 @@ tags:
 		- [x] Update Figure 3
 		- [ ] Update Figure 4 
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
-- [ ] Stokes profile reconstruction: decomposition #project/surfwaves 
+- [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
 	- [x] Test on strategy
 		- [x] if match with Stokes velocity magnitude
 		- [x] masks: collinear case, non-collinear case (can apply/cannot apply decomposition)
-	- [ ] Reconstruction
+	- [x] Reconstruction
 		- [x] 2024 Jan
-		- [ ] Test
+		- [x] Test
 
 ## [[2026-05-04]]
 - [x] Retrieve Stokes profile from the ERA5 wave analysis according to (Breivik et al., 2014) #project/surfwaves 

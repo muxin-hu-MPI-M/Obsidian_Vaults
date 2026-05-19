@@ -6,6 +6,32 @@ tags:
   - "#supervisor/robb_wills"
 Last Eddited: 2025-12-01
 ---
+# [[2026-05-19]] Discussion: Storyline
+#presenter/Jingzhi_Zhang 
+- ==**Significant difference in climatological sea ice coverage over the Labrador Sea between the LAB and ENA cluster**==
+	- the ENA cluster (weak climatological AMOC_z, MOC_sfc and WMT_sfc) has substantially greater sea ice coverage over the Labrador Sea
+	- This difference has been founded and discussed in Lin et al., 2023. 
+		- They found negative sensitivity of climatological sea ice cover against AMOC_z climatology.
+		- “Models with the abundant-ice-covered Labrador Sea in the mean state (i.e., weak AMOC climatology), the magnitudes of sea ice decline reach 10-20% in the first 5 years of 4xCO2. Projected sea ice loss between S10 (i.e.,strong AMOC climatology) and W10 (i.e., weak AMOC climatology) already has contrasting magnittudes in the first month”
+		- “For model with strong mean state AMOC, with less sea ice and **stronger upward turbulent heat fluxes climatologically,** the weak sea ice decline leads to little change in net shortwave radiation and stronger suppression of the upward turbulent heat fluxes. Also, the surface warming penetrates to the subsurface due to the stronger climatological mixing (~={blue}i.e., in my case, stronger WMT=~) in the upper ocean. The subsurface warming and the corresponding density decrease drive the AMOC weakening at a leading time scale of 1-5 years”
+- Then, ~={red}**what’s new in my research???**=~
+	- metric: surface-forced WMT; surface-forced MOC
+	- I also discussed the ENA regional WMT, even though the cluster is classified based on WMT over Labrador Sea
+	- I found, models with higher dense climatological surface-forced WMT (SWMT) in the North Atlantic tends to experience greater dense SWMT reduction under 4xCO2 forcing, correspondingly larger decline in surface-forced MOC and AMOC in depth coordinate.
+	- Now, can I explain why? in the first place, that higher climatological SWMT would leads to higher sensitivity of SWMT under CO2 forcing? Or should I?
+	- the WMT equation: $$\begin{align} F(\sigma)&=\frac{1}{\Delta \sigma}\int\int_{\sigma}^{\sigma+\Delta \sigma}D(x,y,t)\;dA \\ D(x,y,t) &=\frac{\alpha(x,y,t)}{c_w}Q_H(x,y,t)-\beta(x,y,t)S(x,y,t)Q_F(x,y,t)\end{align}$$
+		- where:
+			- $\alpha$ is the thermal expansion coefficient calculated at each grid point for every month of output data, $c_w$ is the specific heat capacity of sea water (~constant)
+			- $Q_H$ is the surface heat flux into the ocean
+			- $\beta$ is the haline contraction coefficient also calculated at each grid point for each time
+			- $S$ is the surface absolute salinity;
+			- $Q_F$ is the freshwater flux
+		- We have proved that **the heat-flux-driven density flux and corresponding WMT dominates its climatological magnitude and variability under 4xCO2 forcing**. Then, maybe check which variable’s variation dominates this heat-flux-driven density flux variability: $$\begin{align}D(x,y,t)&=D_T+D_W \\ D_T&=\frac{\alpha(x,y,t)}{c_w}Q_H(x,y,t)=\alpha'(x,y,t)Q_H(x,y,t) \\ \Delta D_T &\approx \Delta \alpha' Q_H+\Delta Q_H \alpha' + \Delta \alpha'\Delta Q_H \end{align}$$
+			- I might need to show, for those models with higher climatological $Q_H$, the $\Delta D_T$ is also higher, with the expectation of higher $\Delta Q_H \alpha'$, in both Labrador Sea and Eastern North Atlantic region
+
+
+
+
 # [[2025-11-13]] Discussion: Paper figures
 
 ## Suggestions for the figure modification

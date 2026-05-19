@@ -1464,6 +1464,22 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md": [
+      {
+        "id": "3dqdjduht",
+        "text": "**Significant difference in climatological sea ice coverage over the Labrador Sea between the LAB and ENA cluster**",
+        "tags": [],
+        "line": 10,
+        "startOffset": 179,
+        "endOffset": 298,
+        "filePath": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1779204280319,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
     ]
   },
   "collections": {},
