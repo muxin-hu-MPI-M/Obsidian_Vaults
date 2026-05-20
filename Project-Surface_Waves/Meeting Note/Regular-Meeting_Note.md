@@ -35,6 +35,13 @@ From last meeting:
 	- ![[Screenshot 2026-05-18 at 14.39.06.png]]
 
 
+# [[2026-05-20]]
+## Regular meeting with Noel
+#presenter/Noel_Gutierrez-Brizuela 
+- introducing the decomposition with higher complexity, but cannot apply it to the global ocean, will make the analysis more complex. because the fallback total-sea profile is **NOT** physically equivalent to the successfully decomposed profile
+	- The fallback total-sea profile is most defensible when wind sea and swell propagate in similar directions. It is less informative for opposing or strongly mixed systems where **bulk ERA5 partition directions and the total ERA5 surface Stokes drift vector are mutually inconsistent under a two-direction, non-negative closure**
+- Maybe use the total-sea profile globally (median complexity), which assumes the Stokes transport estimated from bulk wave parameters is in the same direction of surface Stokes velocity
+
 # [[2026-05-13]]
 ## Regular meeting with Nils
 #presenter/Nils_Brüggemann 
