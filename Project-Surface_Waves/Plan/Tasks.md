@@ -24,6 +24,9 @@ tags:
 
 # Weekly Plan 
 
+## [[2026-05-18]]
+- [ ] Summarise and assess the current Method: reconstructing Stokes profile
+
 ## [[2026-05-11]]
 - [ ] Re-starting WMT project #project/WMT 
 	- [x] Guest account activate
