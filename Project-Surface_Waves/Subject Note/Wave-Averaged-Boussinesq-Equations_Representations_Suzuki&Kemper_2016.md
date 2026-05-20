@@ -89,3 +89,10 @@ Removed pathway
 
 
 # Reconstruct the Stokes drift profile from ERA5
+
+## [[2026-05-20]] Assess Stokes profile reconstruction method
+We reconstruct the Stokes drift profile using the Phillips-spectrum approximation of Breivik et al. (2016), which requires the surface Stokes drift and the Stokes transport. ERA5 provides the surface Stokes drift vector directly, while the Stokes transport is estimated from bulk wave parameters using the first-moment approximation. Because surface Stokes drift is more strongly weighted toward short wind waves whereas Stokes transport is more sensitive to longer waves and swell, we further test a two-component reconstruction separating wind sea and total swell.
+
+For grid points where the ERA5 surface Stokes vector lies inside the positive cone spanned by the wind-sea and total-swell mean propagation directions, we solve a non-negative two-component vector decomposition and reconstruct separate wind-sea and swell Stokes profiles. Where the two directions are nearly collinear, or where the non-negative decomposition is not admissible, we revert to a bulk total-sea reconstruction and flag these points as low-directional-information cases.
+
+This procedure should be interpreted as a directionally constrained bulk approximation, not as a full spectral partition of Stokes drift. Its main purpose is to reduce the physically unrealistic assumption that the full Stokes transport always follows the surface Stokes drift direction. We therefore evaluate the sensitivity of ICON forcing to the decomposed and fallback reconstructions separately.
