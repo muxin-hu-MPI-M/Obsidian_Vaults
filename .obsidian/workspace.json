@@ -119,8 +119,7 @@
               "title": "Stokes_reconst_totalsea"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -330,11 +329,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8be1fd4749da1041",
+  "active": "e6254c4b018b61ac",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_totalsea.md",
     "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_decompose.md",
     "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_totalsea.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
     "Project-Surface_Waves/Plan/Experimental/Method_Stokes_profile_reconst_totalsea.md",

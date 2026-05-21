@@ -47,6 +47,9 @@ From last meeting:
 		- Easy to attribute the observed response to the 1-D reconstruction. Otherwise, don’t know if the observed responses arise from the inconsistent reconstruction.
 	- Limitation: 
 		- Assumed collinear surface Stokes drift and Stokes transport, which may underrepresent cases where wind sea and swell propagate in different or nearly opposing directions → however, easy to state, as the chosen closure: profile is constrained to match the ERA5 surface Stokes drift.
+- Single-year-repeat forcing?
+	- pros: no interannual variability and trend, more controlled, higher statistical interpretable if want to compare to CTRL
+	- cons: more work
 
 
 
