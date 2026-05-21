@@ -41,7 +41,10 @@ From last meeting:
 	- The method is not globally applicable. It mixes 2 different physical closures in on global forcing product. One key question emerges: whether a climate signal comes from Stokes forcing itself, from the decomposition, from fallback regions, or from discontinuities between reconstruction regions
 	- The later analysis cannot cleanly attribute global responses to wind sea versus swell.
 	- To sum up, it adds a second, partly unresolved methodological question on top of the main research question: the potential climate relevance of Stokes forcing.
-- I propose: maybe just use the **global fallback** total-sea reconstruction, assuming the Stokes transport in the same direction of surface Stokes velocity.
+- I propose: maybe just use the **global fallback** total-sea reconstruction, assuming the Stokes transport in the same direction of surface Stokes velocity. But keep the partitioned reconstruction as a sensitivity test
+	- Reason: 
+		- Keeps the closure assumption explicit and interpretable, avoids mixing physically different reconstruction regimes that increases methodological complexity without necessarily improving the interpretation
+		- Easy to attribute the observed response to the 1-D reconstruction. Otherwise, don’t know if the observed responses arise from the inconsistent reconstruction.
 
 
 
