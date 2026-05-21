@@ -70,3 +70,32 @@ $$
 STOKES\_TOTAL - CTRL .
 $$
 This comparison isolates the effect of adding the total-sea reconstructed Stokes profile to ICON under a bulk one-dimensional Stokes forcing strategy.
+
+
+# Manuscript: Methodology-Total-Sea Stokes Drift Profile Reconstruction
+
+We reconstruct the vertical Stokes drift profile from ERA5 wave reanalysis using the Phillips-spectrum approximation of Breivik et al. 2016. The target experiment, STOKES_TOTAL, is compared with a control simulation, CTRL, in which no Stokes drift profile forcing is applied. The aim is to test whether adding a physically plausible bulk Stokes profile affects the simulated ocean state at climate-relevant scales.
+
+The Phillips-spectrum profile is used because it provides a more realistic broadband approximation than a monochromatic profile and improves the representation of near-surface Stokes shear compared with earlier bulk profiles (Breivik et al., 2014, 2016). It also requires only two bulk constraints: the surface Stokes drift velocity and the Stokes transport. This makes it suitable for long ICON simulations in which the full two-dimensional wave spectrum is not explicitly integrated.
+
+The Stokes transport is defined as
+
+$$ \mathbf{V}_s=\int_{-\infty}^{0}\mathbf{u}_s(z)\,dz , $$
+
+where $\mathbf{u}_s(z)$ is the Stokes drift velocity at depth $z$. ERA5 provides the total surface Stokes drift vector, $\mathbf{u}_{s0}$, directly. Since the Stokes transport is not used here as a direct ERA5 output, we estimate it from total-sea mean wave quantities as
+
+$$ \mathbf{V}_s^{bulk} \approx \frac{2\pi}{16}\bar{f}H_{m0}^{2}\hat{\mathbf{k}}, $$
+
+where $H_{m0}=4\sqrt{m_0}$ is the significant wave height, $\bar{f}=m_1/m_0$ is the first-moment mean frequency, and $\hat{\mathbf{k}}$ is the mean wave propagation direction. In the one-dimensional reconstruction, the magnitude $V_s=|\mathbf{V}_s^{bulk}|$ is used to determine the profile depth scale, while the profile direction is prescribed by the ERA5 surface Stokes drift vector.
+
+The reconstructed profile is given by
+
+$$ \mathbf{u}_s(z)\approx \mathbf{u}_{s0} \left\{ e^{-2\overline{k}|z|} - \beta\sqrt{2\pi \overline{k}|z|} \left[ \operatorname{erfc}\left(\sqrt{2\overline{k}|z|}\right) \right] \right\}, $$
+
+where $\beta=1$ for the Phillips-spectrum profile, following Breivik et al. \citep{Breivik2016}. The inverse depth scale is
+
+$$ \overline{k}= \frac{u_{s0}}{2V_s} \left(1-\frac{2\beta}{3}\right), $$
+
+where $u_{s0}=|\mathbf{u}_{s0}|$. This formulation constrains the profile by the observed ERA5 surface Stokes drift and by a bulk estimate of the total-sea Stokes transport.
+
+This reconstruction is a one-dimensional approximation to an intrinsically directional wave field. The direction of the surface Stokes drift and the direction of the Stokes transport may differ, especially in mixed wind-sea and swell conditions. The method therefore cannot represent vertical rotation of the Stokes drift vector or separate wind-sea and swell contributions. We retain this approach because these limitations are explicit and acceptable for the present climate-scale experiment: the Phillips-spectrum profile is a defensible bulk approximation, requires only ERA5-available diagnostics, and allows us to test the modeled response to a physically plausible total-sea Stokes forcing. The unresolved directional complexity is treated as a methodological limitation to be discussed separately.
