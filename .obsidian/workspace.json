@@ -119,7 +119,8 @@
               "title": "Method_Stokes_reconst_totalsea"
             }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -329,13 +330,13 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "e6254c4b018b61ac",
+  "active": "8be1fd4749da1041",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Experimental/Method_Stokes_reconst_totalsea.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
     "Project-Surface_Waves/Plan/Experimental/Method_Stokes_reconst_decompose.md",
     "Project-Surface_Waves/Plan/Experimental/Method_Stokes_profile_reconst_totalsea.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
