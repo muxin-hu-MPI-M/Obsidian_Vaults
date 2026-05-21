@@ -26,8 +26,8 @@ tags:
 
 ## [[2026-05-18]]
 - [x] Summarise and assess the current Method: reconstructing Stokes profile
-	- [ ] DECOM: apply decomposition, when cannot, fallback to total-sea profile
-	- [ ] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
+	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
+	- [x] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
 
 ## [[2026-05-11]]
 - [ ] Re-starting WMT project #project/WMT 

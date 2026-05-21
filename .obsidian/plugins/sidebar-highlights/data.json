@@ -334,22 +334,6 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Plan/Paper-Reading_Plan.md": [
-      {
-        "id": "95az2tm53",
-        "text": "**Note**: [[Chapter_11-Small_Scale_Turbulence]]\n\n# **How to implement surface waves:**\n\n- ✅ Breivik, Ø., P. A. E. M. Janssen, and J.-R. Bidlot, 2014: Approximate Stokes Drift Profiles in Deep Water. _Journal of Physical Oceanography_, **44**, 2433–2445, [https://doi.org/10.1175/JPO-D-14-0020.1](https://doi.org/10.1175/JPO-D-14-0020.1).\n\t- ",
-        "tags": [],
-        "line": 11,
-        "startOffset": 379,
-        "endOffset": 724,
-        "filePath": "Project-Surface_Waves/Plan/Paper-Reading_Plan.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764573865446,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ],
     "PhD-General/TRR-181/TRR-Workshop_Fundamental_Meteorology.md": [
       {
         "id": "u9i21shqv",
@@ -1252,64 +1236,6 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Plan/Research-Gaps.md": [
-      {
-        "id": "slzyl8us8",
-        "text": "**These wave-mediated processes introduce additional complexity, potentially influencing the efficiency of Ekman transport, vertical mixing, and upper-ocean structure beyond classical wind-driven dynamics.**",
-        "tags": [],
-        "line": 9,
-        "startOffset": 782,
-        "endOffset": 993,
-        "filePath": "Project-Surface_Waves/Plan/Research-Gaps.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1772014917680,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "v2t9ysha0",
-        "text": "wave-induced modifications of surface stress, Lagrangian transport, and TKE systematically alter upper-ocean structure through modified air–sea exchanges, producing measurable changes in upwelling intensity and vertical structure that cannot be captured in insufficiently coupled modelling frameworks.",
-        "tags": [],
-        "line": 13,
-        "startOffset": 2094,
-        "endOffset": 2399,
-        "filePath": "Project-Surface_Waves/Plan/Research-Gaps.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1772015009919,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "lh0rvfg7e",
-        "text": "**Wave-mediated momentum -> change the stress that ocean \"feels\"**",
-        "tags": [],
-        "line": 118,
-        "startOffset": 19225,
-        "endOffset": 19295,
-        "filePath": "Project-Surface_Waves/Plan/Research-Gaps.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1772015010050,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "riif5wcdi",
-        "text": "**Wave-induced $\\Delta TKE$ → affect stratification → affect ocean state → ...?**",
-        "tags": [],
-        "line": 125,
-        "startOffset": 19876,
-        "endOffset": 19961,
-        "filePath": "Project-Surface_Waves/Plan/Research-Gaps.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1772015010701,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ],
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md": [],
     "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md": [
       {
@@ -1491,6 +1417,80 @@
         "footnoteCount": 0,
         "footnoteContents": [],
         "createdAt": 1779204280319,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
+    ],
+    "Project-Surface_Waves/Plan/Conceptual/Paper-Reading_Plan.md": [
+      {
+        "id": "95az2tm53",
+        "text": "**Note**: [[Chapter_11-Small_Scale_Turbulence]]\n\n# **How to implement surface waves:**\n\n- ✅ Breivik, Ø., P. A. E. M. Janssen, and J.-R. Bidlot, 2014: Approximate Stokes Drift Profiles in Deep Water. _Journal of Physical Oceanography_, **44**, 2433–2445, [https://doi.org/10.1175/JPO-D-14-0020.1](https://doi.org/10.1175/JPO-D-14-0020.1).\n\t- ",
+        "tags": [],
+        "line": 11,
+        "startOffset": 379,
+        "endOffset": 724,
+        "filePath": "Project-Surface_Waves/Plan/Conceptual/Paper-Reading_Plan.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764573865446,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
+    ],
+    "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md": [
+      {
+        "id": "slzyl8us8",
+        "text": "**These wave-mediated processes introduce additional complexity, potentially influencing the efficiency of Ekman transport, vertical mixing, and upper-ocean structure beyond classical wind-driven dynamics.**",
+        "tags": [],
+        "line": 9,
+        "startOffset": 782,
+        "endOffset": 993,
+        "filePath": "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1772014917680,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "v2t9ysha0",
+        "text": "wave-induced modifications of surface stress, Lagrangian transport, and TKE systematically alter upper-ocean structure through modified air–sea exchanges, producing measurable changes in upwelling intensity and vertical structure that cannot be captured in insufficiently coupled modelling frameworks.",
+        "tags": [],
+        "line": 13,
+        "startOffset": 2094,
+        "endOffset": 2399,
+        "filePath": "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1772015009919,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "lh0rvfg7e",
+        "text": "**Wave-mediated momentum -> change the stress that ocean \"feels\"**",
+        "tags": [],
+        "line": 118,
+        "startOffset": 19225,
+        "endOffset": 19295,
+        "filePath": "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1772015010050,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "riif5wcdi",
+        "text": "**Wave-induced $\\Delta TKE$ → affect stratification → affect ocean state → ...?**",
+        "tags": [],
+        "line": 125,
+        "startOffset": 19876,
+        "endOffset": 19961,
+        "filePath": "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1772015010701,
         "isNativeComment": false,
         "type": "highlight"
       }

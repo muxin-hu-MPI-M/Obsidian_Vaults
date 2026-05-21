@@ -107,6 +107,19 @@
         "2171c8c7e88acc21"
       ]
     },
+    "Project-Surface_Waves/Plan/Conceptual": {
+      "icon": "🧐",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
+    "Project-Surface_Waves/Plan/Experimental": {
+      "icon": "experiment",
+      "color": "green",
+      "unsynced": [
+        "2171c8c7e88acc21"
+      ]
+    },
     "Project-Surface_Waves/Subject Note": {
       "icon": "lucide-notebook-pen",
       "color": "red",
