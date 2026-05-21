@@ -45,6 +45,8 @@ From last meeting:
 	- Reason: 
 		- Keeps the closure assumption explicit and interpretable, avoids mixing physically different reconstruction regimes that increases methodological complexity without necessarily improving the interpretation
 		- Easy to attribute the observed response to the 1-D reconstruction. Otherwise, don’t know if the observed responses arise from the inconsistent reconstruction.
+	- Limitation: 
+		- Assumed collinear surface Stokes drift and Stokes transport, which may underrepresent cases where wind sea and swell propagate in different or nearly opposing directions → however, easy to state, as the chosen closure: profile is constrained to match the ERA5 surface Stokes drift.
 
 
 
