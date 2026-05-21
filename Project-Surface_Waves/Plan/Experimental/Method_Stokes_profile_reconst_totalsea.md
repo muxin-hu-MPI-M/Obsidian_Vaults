@@ -21,7 +21,7 @@ $$
 where $\mathbf{u}_s(z)$ is the Stokes drift velocity at depth $z$. ERA5 provides the total surface Stokes drift vector, $\mathbf{u}_{s0}$, directly. The corresponding Stokes transport is not used as a direct ERA5 output here, and is instead estimated from bulk total-sea wave parameters as
 
 $$
-\mathbf{V}_s \approx \frac{2\pi}{16}\bar{f}H_{m0}^{2}\hat{\mathbf{k}},
+\mathbf{V}_s^{bulk} \approx \frac{2\pi}{16}\bar{f}H_{m0}^{2}\hat{\mathbf{k}},
 $$
 
 where $H_{m0}=4\sqrt{m_0}$ is the significant wave height, $\bar{f}=m_1/m_0$ is the first-moment mean frequency, and $\hat{\mathbf{k}}$ is the wave propagation direction. In `STOKES_TOTAL`, the transport magnitude is estimated from total-sea wave parameters, while the horizontal direction of the reconstructed profile is aligned with the ERA5 surface Stokes drift vector. The reconstructed profile therefore satisfies the ERA5 surface Stokes drift constraint and uses the bulk wave state to set the vertical integral.
