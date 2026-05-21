@@ -28,7 +28,7 @@ tags:
 - [x] Summarise and assess the current Method: reconstructing Stokes profile
 	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
 	- [x] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
-
+- [ ] Download wave data using Helmuth’s script #project/surfwaves 
 ## [[2026-05-11]]
 - [ ] Re-starting WMT project #project/WMT 
 	- [x] Guest account activate
@@ -40,7 +40,6 @@ tags:
 		- [x] Update Figure 2
 		- [x] Update Figure 3
 		- [ ] Update Figure 4 
-- [ ] Download wave data using Helmuth’s script #project/surfwaves 
 - [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
