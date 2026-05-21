@@ -11,15 +11,19 @@ Last Eddited: 2026-01-13
 ## Regular meeting with Nils
 #presenter/Nils_Brüggemann 
 From last meeting:
-- Stokes reconstruction, Non-collinear case: 
+- Stokes reconstruction, Non-collinear case:
 	- find to have **unique solution** if non-collinear. This is because the vector equation is just a 2×2 linear system in a non-collinear basis
 		- a **physically admissible positive solution** only if both magnitudes are positive (constraint)
 		- That positive solution exists **if and only if surface Stokes velocity vector $\mathbf u_{st}$ lies inside the convex cone spanned by two direction​ unit vector.** If it lies outside that cone, then the unique signed solution necessarily has one negative coefficient, and the positive-only decomposition is impossible.
-- Therefore, the reconstruction will have 3 cases:
-	- collinear: fallback to non-decomposition
-	- non-collinear:
-		- if surface Stokes velocity vector $\mathbf u_{st}$ lies inside the convex cone spanned by two direction​ unit vector: apply decomposition
-		- if it lies outside: fallback to non-decomposition
+- ==**Therefore, each grid point and time step is assigned to one of 3 cases:**==
+	- **Collinear**: fallback to non-decomposition
+	- **Non-collinear, admissible decomposition**: if surface Stokes velocity vector $\mathbf u_{st}$ lies inside the convex cone spanned by two direction​ unit vector.
+	- **Non-collinear, inadmissible decomposition**: if surface Stokes velocity vector $\mathbf u_{st}$ lies outside the convex cone.
+		- This does not imply that one wave component is physically absent. Rather, it indicates that ~={red}the bulk ERA5 partition directions and the total ERA5 surface Stokes drift vector are mutually inconsistent under a two-direction, non-negative closure=~.
+			- Such inconsistency can arise because total swell may combine several swell systems, because partition-mean directions are bulk energy-weighted summaries, or because the surface Stokes drift is computed from the full spectrum rather than from only two idealised directional components.
+- For the collinear and inadmissible cases, one alternative is to apply the total-sea fallback reconstruction using the ERA5 total surface Stokes drift and the bulk total-sea transport estimate.
+	- This fallback is introduced to avoid spatially intermittent missing forcing in ICON, not to imply that the total-sea profile is physically equivalent to a successful wind-sea/swell decomposition
+	- The fallback therefore provides a practical lower-information estimate in regions where the available bulk wave diagnostics do not support a physically admissible partitioned reconstruction.
 - A 1-month test on 2024 finds relative percentage of 3 cases: 
 	- if the collinear threshold set to 10 degrees
 		- decomposition fail: ~35%
@@ -33,6 +37,11 @@ From last meeting:
 		- decomposition success: ~68%
 	- Tested over January-Feb and June-July, no clear difference
 	- ![[Screenshot 2026-05-18 at 14.39.06.png]]
+- The decomposition is attractive from a wave-physics perspective, but risky in a climate-scale research:
+	- The method is not globally applicable. It mixes 2 different physical closures in on global forcing product. One key question emerges: whether a climate signal comes from Stokes forcing itself, from the decomposition, from fallback regions, or from discontinuities between reconstruction regions
+	- The later analysis cannot cleanly attribute global responses to wind sea versus swell.
+	- To sum up, it adds a second, partly unresolved methodological question on top of the main research question: the potential climate relevance of Stokes forcing.
+
 
 
 # [[2026-05-20]]
@@ -41,6 +50,7 @@ From last meeting:
 - introducing the decomposition with higher complexity, but cannot apply it to the global ocean, will make the analysis more complex. because the fallback total-sea profile is **NOT** physically equivalent to the successfully decomposed profile
 	- The fallback total-sea profile is most defensible when wind sea and swell propagate in similar directions. It is less informative for opposing or strongly mixed systems where **bulk ERA5 partition directions and the total ERA5 surface Stokes drift vector are mutually inconsistent under a two-direction, non-negative closure**
 - Maybe use the total-sea profile globally (median complexity), which assumes the Stokes transport estimated from bulk wave parameters is in the same direction of surface Stokes velocity
+- This method is already enough when the focus of the 
 
 # [[2026-05-13]]
 ## Regular meeting with Nils
@@ -158,6 +168,8 @@ Steps:
 #presenter/Carsten_Eden
 - understanding of wave effects in LES model mostly rely on Craik-Lebovitch forcing
 - but no observation evidence for Coriolis-Stokes or vortex force
+
+
 
 
 
