@@ -44,6 +44,10 @@ tags:
 		- [x] Update Figure 3
 		- [ ] Update Figure 4 
 		- [ ] Figure 5
+			- [ ] explicitly output Q_h, alpha
+				- [x] piControl
+				- [ ] 4xCO2
+				- [ ] Check if match with previous results
 - [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion

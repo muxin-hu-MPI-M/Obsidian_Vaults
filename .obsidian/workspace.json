@@ -242,13 +242,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Regular-Meeting_Note"
+              "title": "Outline of Meeting_Note_WMT"
             }
           },
           {
@@ -317,7 +317,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "41d59f6a3682d7aa",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
