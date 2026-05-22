@@ -241,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -271,7 +271,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -316,8 +316,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "e6254c4b018b61ac",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
@@ -328,7 +329,6 @@
     "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_decompose.md",
     "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
     "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Plan/Experimental/Method_Stokes_profile_reconst_totalsea.md",
     "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Plan/Experimental/ICON_Simulation_EXP-ID.md",

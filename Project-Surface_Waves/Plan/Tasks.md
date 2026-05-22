@@ -30,7 +30,8 @@ tags:
 	- [x] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
 	- [x] test: 1980, 1981
-	- [ ] change to 12 parallel?
+	- [x] change to seasonal parallel?
+	- [ ] check data
 ## [[2026-05-11]]
 - [ ] Re-starting WMT project #project/WMT 
 	- [x] Guest account activate
