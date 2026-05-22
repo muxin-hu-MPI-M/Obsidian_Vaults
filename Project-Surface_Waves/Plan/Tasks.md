@@ -43,6 +43,7 @@ tags:
 		- [x] Update Figure 2
 		- [x] Update Figure 3
 		- [ ] Update Figure 4 
+		- [ ] Figure 5
 - [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
