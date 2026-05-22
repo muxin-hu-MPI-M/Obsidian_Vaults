@@ -29,6 +29,8 @@ tags:
 	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
 	- [x] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
+	- [x] test: 1980, 1981
+	- [ ] change to 12 parallel?
 ## [[2026-05-11]]
 - [ ] Re-starting WMT project #project/WMT 
 	- [x] Guest account activate
