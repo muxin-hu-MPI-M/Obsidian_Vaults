@@ -138,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "great circle",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -159,8 +159,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -317,7 +316,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "b89abaaea3ef86ea",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
