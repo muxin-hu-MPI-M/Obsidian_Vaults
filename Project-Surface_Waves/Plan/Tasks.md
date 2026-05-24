@@ -48,7 +48,9 @@ tags:
 				- [x] piControl
 				- [x] 4xCO2
 				- [x] Check if match with previous results
-			- [ ] 
+			- [x] determine if decomposition matches with true variability
+				- [x] annual mean climatology
+				- [x] JFM mean climatology
 - [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
