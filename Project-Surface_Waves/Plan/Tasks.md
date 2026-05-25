@@ -57,7 +57,7 @@ tags:
 		- [x] Update Figure 1
 		- [x] Update Figure 2
 		- [x] Update Figure 3
-		- [ ] Continue in week [[2026-05-25]]
+		- [ ] Continue in 2026-05-25
 - [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion
