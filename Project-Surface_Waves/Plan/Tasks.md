@@ -33,7 +33,7 @@ tags:
 - [ ] Re-starting WMT project #project/WMT 
 	- [ ] Restart working
 		- [ ] Update Figure 4 
-		- [ ] Figure 5
+		- [x] Figure 5
 			- [x] explicitly output Q_h, alpha
 				- [x] piControl
 				- [x] 4xCO2
@@ -41,7 +41,8 @@ tags:
 			- [x] determine if decomposition matches with true variability
 				- [x] annual mean climatology
 				- [x] JFM mean climatology
-			- [ ] 
+			- [x] Absolute relative contribution map
+	- [ ] prepare slides
 ## [[2026-05-18]]
 - [x] Summarise and assess the current Method: reconstructing Stokes profile
 	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
