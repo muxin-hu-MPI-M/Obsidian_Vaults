@@ -24,24 +24,14 @@ tags:
 
 # Weekly Plan 
 
-## [[2026-05-18]]
-- [x] Summarise and assess the current Method: reconstructing Stokes profile
-	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
-	- [x] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
+
+## [[2026-05-25]]
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
 	- [x] test: 1980, 1981
 	- [x] change to seasonal parallel?
 	- [ ] check data
-## [[2026-05-11]]
 - [ ] Re-starting WMT project #project/WMT 
-	- [x] Guest account activate
-	- [x] Re-login to JupyterLab
-	- [x] Check status [[Meeting_Note_WMT]]
 	- [ ] Restart working
-		- [x] find the maximum AMOC_sfc in picon and respo, saved to fileemen
-		- [x] Update Figure 1
-		- [x] Update Figure 2
-		- [x] Update Figure 3
 		- [ ] Update Figure 4 
 		- [ ] Figure 5
 			- [x] explicitly output Q_h, alpha
@@ -51,6 +41,23 @@ tags:
 			- [x] determine if decomposition matches with true variability
 				- [x] annual mean climatology
 				- [x] JFM mean climatology
+			- [ ] 
+## [[2026-05-18]]
+- [x] Summarise and assess the current Method: reconstructing Stokes profile
+	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
+	- [x] TOTAL: apply total-sea profile everywhere (i.e., no decomposition)
+
+## [[2026-05-11]]
+- [x] Re-starting WMT project #project/WMT 
+	- [x] Guest account activate
+	- [x] Re-login to JupyterLab
+	- [x] Check status [[Meeting_Note_WMT]]
+	- [x] Restart working
+		- [x] find the maximum AMOC_sfc in picon and respo, saved to fileemen
+		- [x] Update Figure 1
+		- [x] Update Figure 2
+		- [x] Update Figure 3
+		- [ ] Continue in week [[2026-05-25]]
 - [x] Stokes profile reconstruction: decomposition #project/surfwaves 
 	- [x] Determine decomposition strategy
 	- [x] Email to Chris for discussion

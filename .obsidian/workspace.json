@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+                "file": "Project-Surface_Waves/Plan/Experimental/Download_ERA5_Wave_outputs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Meeting_Note_WMT"
+              "title": "Download_ERA5_Wave_outputs"
             }
           },
           {
@@ -105,8 +105,7 @@
               "title": "Assess_diff_Stokes_reconstruction_methods"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -318,9 +317,10 @@
   },
   "active": "190369091626a017",
   "lastOpenFiles": [
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Experimental/Download_ERA5_Wave_outputs.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
@@ -350,7 +350,6 @@
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
     "QuickCapture.md",
-    "here.md",
     "Attachments/Screenshot 2026-03-31 at 11.37.29.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
