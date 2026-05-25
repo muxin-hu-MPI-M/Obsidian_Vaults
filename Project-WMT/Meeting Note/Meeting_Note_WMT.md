@@ -12,8 +12,22 @@ Last Eddited: 2025-12-01
 	- the new version is the same with the previous one in terms of the `Dh, Dw, Dtotal`, but haven’t been normalised by grid area `areacello`
 	- the new output: `alpha_over_cw` and `Qh` (identical to the original data)
 		- the idea is to decompose the response of density flux (last 50-year 4xCO2 means minus the first 500-year piControl mean (i.e., climatology))
-		- 
+- The mathematical expressions for four components should be: $$D_h(x,y,t) = -\alpha'(x,y,t)Q_h(x,y,t),$$
+   - where: $$\alpha'(x,y,t)=\frac{\alpha(x,y,t)}{c_w}.$$
+   - define the climatological mean over each experiment:
+     - $\overline{D_h}^{\,pi}=-\overline{\alpha' Q_h}^{\,pi},$ 
+     - $\overline{D_h}^{\,4x}=-\overline{\alpha' Q_h}^{\,4x},$
+   - the actual response: $$\Delta D_h=\overline{D_h}^{\,4x}-\overline{D_h}^{\,pi}=-\overline{\alpha' Q_h}^{\,4x}+\overline{\alpha' Q_h}^{\,pi}.$$
+   - Now decompose using climatological mean fields: $\overline{\alpha'}^{\,pi},\quad \overline{Q_h}^{\,pi},\quad \overline{\alpha'}^{\,4x},\quad \overline{Q_h}^{\,4x}.$
+   - Define:
+     - $\Delta \alpha'=\overline{\alpha'}^{\,4x} -\overline{\alpha'}^{\,pi},$
+     - $\Delta Q_h'=\overline{Q_h'}^{\,4x} -\overline{Q_h'}^{\,pi},$
+   - The three mean-field decomposition terms are: $$\begin{align} \Delta D_h^Q &= -\overline{\alpha'}^{\,pi}\Delta Q_h, \\ \Delta D_h^\alpha&=-\Delta\alpha'\,\overline{Q_h}^{\,pi}, \\ \Delta D_h^{nonlinear}&= -\Delta\alpha'\Delta Q_h.\end{align}$$
+   - Because the actual density flux uses the time mean of the product: $$\overline{\alpha'Q_h} \neq \overline{\alpha'}\,\overline{Q_h},$$, ==**there is an additional covariance, which measures the change in the temporal covariance between $\alpha'$ and $Q_h$, including seasonal and interannual co-variability==**: $$\begin{align}\Delta D_h^{cov}&= \Delta D_h - \left( \Delta D_h^Q + \Delta D_h^\alpha + \Delta D_h^{nonlinear} \right) \\&=-\left[\overline{\alpha'Q_h}^{\,4x}-\overline{\alpha'}^{\,4x}\overline{Q_h}^{\,4x}\right]+\left[\overline{\alpha'Q_h}^{\,pi}-\overline{\alpha'}^{\,pi}\overline{Q_h}^{\,pi}\right].\end{align}$$
 
+- The decomposition results show:
+	- If focusing on the annual mean climatology (directly taking the time mean for both piControl and 4xCO2), the temporal covariance term is very large, can take up to 40% of the total variability
+	- If focusing on the winter (either defined as JFM, or DJF), the temporal covariance term reduced
 
 # [[2026-05-19]] Discussion: Storyline
 #presenter/Jingzhi_Zhang 

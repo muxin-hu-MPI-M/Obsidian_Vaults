@@ -1407,16 +1407,30 @@
     ],
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md": [
       {
-        "id": "3dqdjduht",
-        "text": "**Significant difference in climatological sea ice coverage over the Labrador Sea between the LAB and ENA cluster**",
+        "id": "yfxasb9rf",
+        "text": "**there is an additional covariance, which measures the change in the temporal covariance between $\\alpha'$ and $Q_h$, including seasonal and interannual co-variability",
         "tags": [],
-        "line": 19,
-        "startOffset": 653,
-        "endOffset": 772,
+        "line": 25,
+        "startOffset": 1794,
+        "endOffset": 1966,
         "filePath": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
         "footnoteCount": 0,
         "footnoteContents": [],
-        "createdAt": 1779204280319,
+        "createdAt": 1779716566193,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "fs2429rkq",
+        "text": "**Significant difference in climatological sea ice coverage over the Labrador Sea between the LAB and ENA cluster**",
+        "tags": [],
+        "line": 33,
+        "startOffset": 2685,
+        "endOffset": 2804,
+        "filePath": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1779716565920,
         "isNativeComment": false,
         "type": "highlight"
       }
