@@ -6,6 +6,15 @@ tags:
   - "#supervisor/robb_wills"
 Last Eddited: 2025-12-01
 ---
+
+# [[2026-05-25]] Benchmark
+- Redo the density flux calculation for each grid, time and for every models
+	- the new version is the same with the previous one in terms of the `Dh, Dw, Dtotal`, but haven’t been normalised by grid area `areacello`
+	- the new output: `alpha_over_cw` and `Qh` (identical to the original data)
+		- the idea is to decompose the response of density flux (last 50-year 4xCO2 means minus the first 500-year piControl mean (i.e., climatology))
+		- 
+
+
 # [[2026-05-19]] Discussion: Storyline
 #presenter/Jingzhi_Zhang 
 - ==**Significant difference in climatological sea ice coverage over the Labrador Sea between the LAB and ENA cluster**==
