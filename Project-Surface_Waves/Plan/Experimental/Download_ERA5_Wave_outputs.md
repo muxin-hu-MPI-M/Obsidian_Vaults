@@ -40,3 +40,6 @@ var_short[10]="vst"
 	- `mdww` has no 20001001-20001231
 	- `uts` has no 20000701-20000931
 	- `vts` has no 20000701-20000931
+- `p1ww_19970701_19970931` has 379 duplicate time
+	- it has unique correct time range, but with duplicate content
+	- the duplicate starts from 1997-09-01T00:00:00 to 1997-09-16T18:00:00
