@@ -4,7 +4,10 @@ tags:
   - Seminars
 Last Eddited: 2025-11-19
 ---
-
+# [[2026-05-27]]
+## Note: CVR retreat 2026
+- higher resolution (km-scale model) → higher dissipation → more variability to the initial condition → lower predictability
+- parameterisation gives extra variability
 
 # [[2026-03-16]]
 ## Seminar: What makes EERIE simulations different from CMIP6’s?
