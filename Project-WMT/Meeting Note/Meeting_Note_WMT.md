@@ -9,18 +9,18 @@ Last Eddited: 2025-12-01
 
 
 # [[2026-05-28]] Clarification of notation
-- Annotations:
-	- $AMOC_z$: values of overturning stream-function at 35 N, 1000 m depth
-	- $WMT$: surface-forced WMT distribution (unit: Sv (m3 s-1)), find individually in two experiment
-	- $MOC_{\sigma}$: surface-forced overturning stream-function, a function of density and latitude, find in two experiment
-	- $IWMT$: density-integral WMT over certain density ranges (unit: kg s-1). In my study, we select the sigma range starting from the sigma where finds the largest climatological $MOC_{\sigma}$ in each experiment.
-	- $D$: Density flux
-		- $D_h=-\alpha Q_h /c_w$: heat-flux driven density flux
-		- $D_w=-\beta S Q_w$: freshwater-flux driven density flux
 
+| variable                      | Description                                                                                                                                                                                                                                                           | Unit       |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| $AMOC_z$                      | Values of overturning stream-function in Atlantic sector at 35 N, 1000 m depth. Direct model output                                                                                                                                                                   | Sv         |
+| $WMT$                         | Surface-forced Water Mass Transformation distributed over density (i.e., sigma) space.                                                                                                                                                                                | Sv         |
+| $MOC_{\sigma}$                | Surface-forced overturning stream-function, a function of $\sigma$ and latitude                                                                                                                                                                                       | Sv         |
+| $\sigma_{MOC_{\sigma}^{max}}$ | The $\sigma$ level of the maximum surface-forced AMOC founded north of 50 N in the Atlantic basin.                                                                                                                                                                    | kg m-3     |
+| $IWMT$                        | Integrated $WMT$ over a certain $\sigma$ range: $(\sigma > \sigma_{MOC_{\sigma}^{max}}-0.5)$; It is used to quantify how much surface buoyancy forcing contributes to the formation of densest water masses that sink to form the deepest limb of surface forced AMOC | kg s-1     |
+| $D$                           | Density flux. Has two component: (1) heat-flux driven density flux $D_h=-\alpha Q_h /c_w$ and (2) freshwater-flux driven density flux $D_w=-\beta S Q_w$                                                                                                              | kg m-2 s-1 |
 - every annotation will have two values:
-	- $\overline{X}^{\text{pi}}$, which is the climatological value, for simplification, use $X$
-	- $\overline{X}^{\text{4x}}$
+	- $\overline{X}^{\text{pi}}$: climatology, defined as 500-year time mean of piControl experiment. For simplification, use $X$ directly
+	- $\overline{X}^{\text{4x}}$: last 50-year time-mean of abrupt-4xCO2 experiment
 	- The “response” will be defined as: $\Delta X = \overline{X}^{\text{4x}} - X$ 
 		- the response in heat-flux driven density flux $\Delta D_h$ will be decomposed into:
 			- $\Delta D_h^Q = -\overline{\alpha'}^{\,pi}\Delta Q_h$
