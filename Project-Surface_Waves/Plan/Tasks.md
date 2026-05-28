@@ -29,7 +29,9 @@ tags:
 - [ ] Download wave data using Helmuth’s script #project/surfwaves 
 	- [x] test: 1980, 1981
 	- [x] change to seasonal parallel?
-	- [ ] check data
+	- [x] check data
+	- [x] merge to yearly chunk
+	- [ ] check yearly chunk, do I have all NaN values?
 - [ ] Re-starting WMT project #project/WMT 
 	- [ ] Restart working
 		- [ ] Update Figure 4 

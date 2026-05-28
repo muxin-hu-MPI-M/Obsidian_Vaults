@@ -11,7 +11,7 @@ Last Eddited: 2025-12-01
 #presenter/Hongdou_fan 
 - Calculate the corresponding response in WMT for each decomposed density flux terms (delta_dh_Q, delta_dh_alpha), to see if each term could influence the denser sigma space
 - plot the regions with active WMT in the densest portion (that can reach to the deepest depth)
-	- or, plot the spatial pattern of WMT at certain density bin (the color would be the Sv value for each grid) → select denser sigma
+	- or, plot the spatial pattern of WMT at certain density bin (the colour would be the Sv value for each grid) → select denser sigma
 - Figure 3, maybe reduced with no climatological AMOC_z compares with climatological MOC
 
 # [[2026-05-25]] Benchmark
