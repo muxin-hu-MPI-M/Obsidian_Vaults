@@ -26,12 +26,12 @@ tags:
 
 
 ## [[2026-05-25]]
-- [ ] Download wave data using Helmuth’s script #project/surfwaves 
+- [x] Download wave data using Helmuth’s script #project/surfwaves 
 	- [x] test: 1980, 1981
 	- [x] change to seasonal parallel?
 	- [x] check data
 	- [x] merge to yearly chunk
-	- [ ] check yearly chunk, do I have all NaN values?
+	- [x] check yearly chunk, do I have all NaN values?
 - [ ] Re-starting WMT project #project/WMT 
 	- [ ] Restart working
 		- [ ] Update Figure 4 

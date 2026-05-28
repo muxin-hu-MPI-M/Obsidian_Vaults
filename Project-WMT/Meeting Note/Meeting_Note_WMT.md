@@ -7,6 +7,23 @@ tags:
 Last Eddited: 2025-12-01
 ---
 
+
+# [[2026-05-28]] Clarification of notation
+- Annotations:
+	- $AMOC_z$: values of overturning stream-function at 35 N, 1000 m depth
+	- $WMT$: surface-forced WMT distribution (unit: Sv (m3 s-1)), find individually in two experiment
+	- $MOC_{\sigma}$: surface-forced overturning stream-function, a function of density and latitude, find in two experiment
+	- $IWMT$: density-integral WMT over certain density ranges (unit: kg s-1). In my study, we select the sigma range starting from the sigma where finds the largest climatological $MOC_{\sigma}$ in each experiment.
+	- $D$: Density flux
+		- $D_h=-\alpha Q_h /c_w$: heat-flux driven density flux
+		- $D_w=-\beta S Q_w$: freshwater-flux driven density flux
+
+- every annotation will have two values:
+	- $\overline{X}^{\text{pi}}$, which is the climatological value, for simplification, use $X$
+	- $\overline{X}^{\text{4x}}$
+	- The “response” will be defined as: $\Delta X = \overline{X}^{\text{4x}} - X$ 
+
+
 # [[2026-05-27]] Discussion with Hongdou
 #presenter/Hongdou_fan 
 - Calculate the corresponding response in WMT for each decomposed density flux terms (delta_dh_Q, delta_dh_alpha), to see if each term could influence the denser sigma space
