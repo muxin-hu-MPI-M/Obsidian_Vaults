@@ -22,6 +22,11 @@ Last Eddited: 2025-12-01
 	- $\overline{X}^{\text{pi}}$, which is the climatological value, for simplification, use $X$
 	- $\overline{X}^{\text{4x}}$
 	- The “response” will be defined as: $\Delta X = \overline{X}^{\text{4x}} - X$ 
+		- the response in heat-flux driven density flux $\Delta D_h$ will be decomposed into:
+			- $\Delta D_h^Q = -\overline{\alpha'}^{\,pi}\Delta Q_h$
+			- $\Delta D_h^\alpha =-\Delta\alpha'\,\overline{Q_h}^{\,pi}$
+			- $\Delta D_h^{nonlinear}= -\Delta\alpha'\Delta Q_h$
+			- $\Delta D_h^{cov}=\Delta D_h - \left( \Delta D_h^Q + \Delta D_h^\alpha + \Delta D_h^{nonlinear} \right)$ → residual terms, measuring the change in the temporal covariance between $\alpha'$ and $Q_h$, including seasonal and interannual co-variability
 
 
 # [[2026-05-27]] Discussion with Hongdou
