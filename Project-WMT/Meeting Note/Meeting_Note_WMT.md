@@ -41,7 +41,7 @@ Last Eddited: 2025-12-01
 	- the new version is the same with the previous one in terms of the `Dh, Dw, Dtotal`, but haven’t been normalised by grid area `areacello`
 	- the new output: `alpha_over_cw` and `Qh` (identical to the original data)
 		- the idea is to decompose the response of density flux (last 50-year 4xCO2 means minus the first 500-year piControl mean (i.e., climatology))
-- The mathematical expressions for four components should be: $$D_h(x,y,t) = -\alpha'(x,y,t)Q_h(x,y,t),$$
+- The heat-driven density flux: $$D_h(x,y,t) = -\alpha'(x,y,t)Q_h(x,y,t),$$
    - where: $$\alpha'(x,y,t)=\frac{\alpha(x,y,t)}{c_w}.$$
    - define the climatological mean over each experiment:
      - $\overline{D_h}^{\,pi}=-\overline{\alpha' Q_h}^{\,pi},$ 
