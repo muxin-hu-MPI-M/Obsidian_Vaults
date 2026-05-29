@@ -7,6 +7,46 @@ tags:
 Last Eddited: 2025-12-01
 ---
 
+# [[2026-05-29]] Discussion: Paper Figures
+#presenter/Robb_wills #presenter/Joas_Mueller
+## Suggestions on figures
+### Figure 1
+- Keep the current version
+- Add a panel showing the cluster mean 4xCO2 time mean WMT and surface forced MOC 
+	- Check if the MOC strengthens at lighter density range is the result of shoaling (displacement)
+	- add in supplementary
+### Figure 2
+- keep the current version first, but maybe add additional panel as Figure 2d: $\Delta IWMT$ vs $\Delta IWMT^h$
+- Figure 2 shows that:
+	- the basin-scale total IWMT response is strongly connected to the AMOC weakening under 4xCo2 forcing (Figure 2a, b, c)
+	- the basin-scale total IWMT response is overwhelmingly heat driven (potentially Figure 2d)
+### Figure 3
+- keep the current version
+- Important to show, as it is the most direct quantification of mean state WMT for each model in both experiments
+### Figure 4
+- keep the current version
+- Figure 4 shows that:
+	- The basin-scale total IWMT response is moderately linked to its climatology (Figure 4a), but this relationship is primarily rooted in the R_lab (Figure 4b, c)
+	- Even though the heat-driven IWMT response controls the total response (Figure 2d), but the basin-scale heat-driven climatology alone does not explain it (Figure 4d). This issue could be partly explained by the similar regional contrast, that the $R_{lab}$ shows strong climatology-response relationship, whereas $R_{ena}$ does not (Figure 4e, f)
+	- “The mean-state dependence of IWMT response is strongly regional. The basin-scale total IWMT response is moderately related to the climatological total IWMT, but this relationship is primarily rooted in the Labrador Sea. In both total and heat-driven IWMT, the Labrador Sea shows a strong climatology-response relationship, whereas the Eastern North Atlantic does not. Thus, the Labrador Sea provides the coherent mean-state control, while ENA contributes more heterogeneously.”
+
+### Figure 5
+- When write the method description (i.e., heat-driven density flux decomposition), stay in line with the theory as in the reference paper (be careful with the sign convention)
+- try to use direct $\Delta D_h^i$ map to show the relative importance of each decomposed term
+- in each decomposed term map, separate the dependence of inter-cluster difference to either mean state difference or change-term difference. **This tells whether the cluster difference in $\Delta D_h^i$  comes from different climatological field or different response.** 
+	- For example, for $\Delta D_h^Q=\overline{\alpha'}^{pi}\Delta Q_h$, separate the inter-cluster difference dependence to either cluster difference in $\alpha'$ climatology ($\overline{\alpha’}^{pi}$) or cluster difference in response in net heat flux ($\Delta Q_h$).
+		- If the $\alpha’$-mean contribution dominates, then the two clusters may experience similar $\Delta Q_h$, but convert that heat flux change into density flux change differently because their climatological thermodynamic sensitivity differs
+		- if the $\Delta Q_h$ contribution dominates, then the clusters differ mainly because they experience different surface heat-flux responses under 4xCO2. In that case, the mechanism is not just mean-state conversion efficiency, but a different air-sea heat-flux response
+		- ==This directly answers:== **“Is the broader and stronger Cluster_LAB $Q_h$-driven density flux reduction caused by a different background climatological thermodynamic sensitivity, or by a stronger surface heat-flux response”**
+	- Similar idea for $\Delta D_h^{\alpha}$.
+		- if the $Q_h$-mean contribution dominates, then the two clusters experience similar $\Delta \alpha’$, the heat-driven density flux change differently because their climatological $Q_h$ differs
+		- if the $\Delta \alpha'$ contribution dominates, then the clusters differ mainly because they experience different response in thermal expansion coefficient under 4xCO2. In that case, the mechanism involves 
+		- ==This directly answers:== **“Is the stronger Cluster_ENA $\alpha'$-driven density flux increase caused by a different background climatological net heat flux received at ocean surface, or by a stronger change in thermal sensitivity”**
+
+## Feedback
+- For Figure 3 (bar chart), Joas pointed out that **CAS-ESM2-0** and **NorCPM1** are characterised by strong climatological $IWMT$ in both $R_{lab}$​ and $R_{ena}$​, yet experience only modest reductions in both regions. Consistent with this behaviour, both models show comparatively small decreases in $MOC_{\sigma}$ and $AMOC_z$
+- Robb pointed
+
 
 # [[2026-05-28]] Clarification of notation
 
@@ -86,27 +126,26 @@ Last Eddited: 2025-12-01
 
 # [[2025-11-13]] Discussion: Paper figures
 
-## Suggestions for the figure modification
-
-### **Figure 1**:
+## Suggestions on figures
+### **Figure 1**
 - zoom in to focus on 24-29 kg m-3
 - try:
     - separately plot the cluster mean surface-forced AMOC climatology/mean response; Explicitly labeled the $\sigma_{AMOC_{max}}$ in the figure in AMOC panel and WMT distribution panel.
     - Or plot it with the WMT distributions, for which we can have a direct label of $\sigma_{AMOC_{max}}$ in the WMT distribution as well
 - Remember the supplementary for all 14 WMT distributions in piControl, Response, (and maybe the 4xCO2)
 
-### **Figure 2**:
+### **Figure 2**
 - No need to use $\sigma_{max}$. Since it’s only used in the WMT to find the densest portion. Now:
 - Simply find the maximum $AMOC_{surf}$ across the entire sigma space
 - the WMT should focus on the $\sigma >\sigma_{AMOC_{max}}-0.5$
     - For the choice of $\sigma >\sigma_{AMOC_{max}}-0.5$, search for papers (e.g., Dylan’s paper) for support
 
-### **Figure 3**:
+### **Figure 3**
 - for the ‘grey’ part, clarifying the LAB and ENA remaining WMT (dark blue and dark orange)
 - think of ‘percentage’
     - maybe normalise the WMT by region size? (the motivation: the ENA region is much bigger than the LAB region) → but accounts for the actual contributions to the total WMT, the size also matters, so maybe not
 
-### Figure 4:
+### **Figure 4**
 - make each scatter plots the same size, organising into a ‘triangular’ shape to highlight the hierarchy of WMT_response vs WMT_climatology
 	- WMT_total
 		- WMT_lab
@@ -116,7 +155,7 @@ Last Eddited: 2025-12-01
 			- WMT_ena,T
 			- WMT_ena,S
 
-### Figure 5:
+### **Figure 5**
 Mechanism plot:
 - trace back to the surface density flux formula (see Oldenburg et al. (2021)).
 - the surface-forced WMT at each density is calculated by integrating this surface density flux over all surface area in each density bin.

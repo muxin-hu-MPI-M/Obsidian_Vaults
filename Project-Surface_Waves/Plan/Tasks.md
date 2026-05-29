@@ -32,9 +32,9 @@ tags:
 	- [x] check data
 	- [x] merge to yearly chunk
 	- [x] check yearly chunk, do I have all NaN values?
-- [ ] Re-starting WMT project #project/WMT 
-	- [ ] Restart working
-		- [ ] Update Figure 4 
+- [x] Re-starting WMT project #project/WMT 
+	- [x] Restart working
+		- [x] Update Figure 4 
 		- [x] Figure 5
 			- [x] explicitly output Q_h, alpha
 				- [x] piControl
@@ -44,7 +44,7 @@ tags:
 				- [x] annual mean climatology
 				- [x] JFM mean climatology
 			- [x] Absolute relative contribution map
-	- [ ] prepare slides
+	- [x] prepare slides
 - [ ] climate dynamic assignment 2 #project/PhD_general 
 ## [[2026-05-18]]
 - [x] Summarise and assess the current Method: reconstructing Stokes profile
