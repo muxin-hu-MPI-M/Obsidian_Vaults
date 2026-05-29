@@ -42,6 +42,9 @@ Last Eddited: 2025-12-01
 		- if the $Q_h$-mean contribution dominates, then the two clusters experience similar $\Delta \alpha’$, the heat-driven density flux change differently because their climatological $Q_h$ differs
 		- if the $\Delta \alpha'$ contribution dominates, then the clusters differ mainly because they experience different response in thermal expansion coefficient under 4xCO2. In that case, the mechanism involves 
 		- ==This directly answers:== **“Is the stronger Cluster_ENA $\alpha'$-driven density flux increase caused by a different background climatological net heat flux received at ocean surface, or by a stronger change in thermal sensitivity”**
+### Figure 6
+- Calculate the corresponding heat-flux driven $WMT$ from each decomposed term
+- This plot is served to close the loop by reflecting to Figure 1 WMT redistribution
 
 ## Feedback
 - For Figure 3 (bar chart), Joas pointed out that **CAS-ESM2-0** and **NorCPM1** are characterised by strong climatological $IWMT$ in both $R_{lab}$​ and $R_{ena}$​, yet experience only modest reductions in both regions. Consistent with this behaviour, both models show comparatively small decreases in $MOC_{\sigma}$ and $AMOC_z$
