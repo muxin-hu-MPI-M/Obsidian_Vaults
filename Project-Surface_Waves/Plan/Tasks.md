@@ -45,7 +45,7 @@ tags:
 				- [x] JFM mean climatology
 			- [x] Absolute relative contribution map
 	- [x] prepare slides
-- [ ] climate dynamic assignment 2 #project/PhD_general 
+- [x] climate dynamic assignment 2 #project/PhD_general 
 ## [[2026-05-18]]
 - [x] Summarise and assess the current Method: reconstructing Stokes profile
 	- [x] DECOM: apply decomposition, when cannot, fallback to total-sea profile
