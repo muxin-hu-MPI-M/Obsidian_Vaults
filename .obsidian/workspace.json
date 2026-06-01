@@ -111,12 +111,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON_Run_Long_Simulation"
+              "title": "ICON-Ocean-era5forcing"
             }
           }
         ],
@@ -330,9 +330,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "b89abaaea3ef86ea",
+  "active": "2d7b813971e1810d",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
@@ -363,8 +365,6 @@
     "Attachments/Figures_plan.jpg",
     "Attachments/Upwelling_region_outline-1.pdf",
     "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
-    "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
-    "QuickCapture.md",
     "Attachments/Screenshot 2026-03-31 at 11.37.29.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
