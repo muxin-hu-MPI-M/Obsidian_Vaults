@@ -25,6 +25,9 @@ tags:
 # Weekly Plan 
 
 
+## [[2026-06-01]]
+- [ ] explore the era5 force icon script #project/surfwaves 
+	- [ ] build icon executable on icon ocean 
 ## [[2026-05-25]]
 - [x] Download wave data using Helmuth’s script #project/surfwaves 
 	- [x] test: 1980, 1981
