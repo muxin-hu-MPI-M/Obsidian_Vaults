@@ -69,4 +69,11 @@ EOF
 export START_MODEL="srun -l --mem=0  --export=ALL --kill-on-bad-exit=1 --hint=nomultithread  --ntasks=${mpi_total_procs} --ntasks-per-node=${mpi_procs_pernode} --cpus-per-task=${OMP_NUM_THREADS} --multi-prog mpmd.conf"
 ```
 
-If you want to use a different data location, the right place is the provider launch line in the generated mpmd.conf block, for example:
+If you want to use a different data location, the right place is the provider launch line in the generated `mpmd.conf` block, for example:
+```
+$((mpi_total_procs - ERA5_PROCS))-$((mpi_total_procs - 1)) \ ${PYTHON} ${basedir}/etc/era5g_omip_runoff_provider.py \ --dataPath /your/base/path/
+```
+or more explicitly:
+```
+`$((mpi_total_procs - ERA5_PROCS))-$((mpi_total_procs - 1)) \ ${PYTHON} ${basedir}/etc/era5g_omip_runoff_provider.py \ --dataPath /your/base/path/ \ --era5Path /your/era5/path/
+```
