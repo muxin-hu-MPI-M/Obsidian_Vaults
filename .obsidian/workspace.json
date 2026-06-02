@@ -255,13 +255,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Meeting_Note_WMT"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -285,7 +285,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -330,12 +330,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "2d7b813971e1810d",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",

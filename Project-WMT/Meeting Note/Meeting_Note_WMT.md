@@ -9,6 +9,7 @@ Last Eddited: 2025-12-01
 
 # [[2026-06-02]] Discussion with Hongdou
 - find AMOC_z in the 50 N, maybe higher correlation in climatological/response comparison with MOC
+- the most important result is that the Labrador Sea shows a strong climatology-response relationship in IWMT, and the signals come major from heat-driven IWMT, framing the paper with this core findings
 
 # [[2026-05-29]] Discussion: Paper Figures
 #presenter/Robb_wills #presenter/Joas_Mueller
