@@ -255,13 +255,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ICON-Ocean-era5forcing"
+              "title": "Outline of Tasks"
             }
           },
           {
@@ -330,10 +330,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cf18839df3929811",
+  "active": "190369091626a017",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",

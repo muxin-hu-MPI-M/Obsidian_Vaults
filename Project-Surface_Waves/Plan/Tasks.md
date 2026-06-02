@@ -29,6 +29,7 @@ tags:
 - [ ] explore the era5 force icon script #project/surfwaves 
 	- [x] build icon executable on icon ocean 
 	- [ ] read and understand the python provider that read the data
+	- [ ] email to Nils
 ## [[2026-05-25]]
 - [x] Download wave data using Helmuth’s script #project/surfwaves 
 	- [x] test: 1980, 1981
