@@ -7,6 +7,9 @@ tags:
 Last Eddited: 2025-12-01
 ---
 
+# [[2026-06-02]] Discussion with Hongdou
+- find AMOC_z in the 50 N, maybe higher correlation in climatological/response comparison with MOC
+
 # [[2026-05-29]] Discussion: Paper Figures
 #presenter/Robb_wills #presenter/Joas_Mueller
 ## Suggestions on figures
