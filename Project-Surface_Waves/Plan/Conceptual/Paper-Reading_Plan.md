@@ -14,7 +14,7 @@ Some literature that would be relevant is:
 # **How to implement surface waves:**
 
 - ✅ Breivik, Ø., P. A. E. M. Janssen, and J.-R. Bidlot, 2014: Approximate Stokes Drift Profiles in Deep Water. _Journal of Physical Oceanography_, **44**, 2433–2445, [https://doi.org/10.1175/JPO-D-14-0020.1](https://doi.org/10.1175/JPO-D-14-0020.1).
-	- ==**Note**: [[Note_Stokes-Drift-Profile]]
+	- ==**Note**: [[Breivik_2014&2016_Note_Stokes-Drift-Profile]]
 - Breivik, Ø., and K. H. Christensen, 2020: A Combined Stokes Drift Profile under Swell and Wind Sea. _Journal of Physical Oceanography_, **50**, 2819–2833, [https://doi.org/10.1175/JPO-D-20-0087.1](https://doi.org/10.1175/JPO-D-20-0087.1).
 
 # **Surface wave effects in ocean models:**

@@ -4,6 +4,8 @@ tags:
   - "#project/surfwaves"
   - wave/surface_wave
   - presenter/Nobushiro_Suzuki
+  - important_paper
+  - Theory
 Last Eddited: 2026-04-24
 ---
 # Craik–Leibovich (CL) Vortex Force

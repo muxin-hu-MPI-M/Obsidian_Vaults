@@ -311,7 +311,7 @@ $$
 $$
 For the wave stress, it follows the below relation:
 $$\begin{align} \tau_w&=\epsilon^{-1}g\int \gamma N(\omega, \theta) \mathbf{k}\;d\omega d\theta \\ &=\epsilon^{-1}g\int\frac{\gamma F(\omega, \theta)}{\sigma} \mathbf{k}\;d\omega d\theta \\&=\epsilon^{-1}g\int\frac{\mathbf{k}}{\omega}\gamma F(\omega, \theta)\;d\omega d\theta \end{align}$$
-Since considering deep water limit, the intrinsic frequency $\sigma=\sqrt{gk}=\omega$. And it seems that $\gamma F=\hat S_{\text{in}}$, which will be discussed in [[Note_Wave-induced-stress_and_Young-waves#Recall the Action Density Balance Equation]]
+Since considering deep water limit, the intrinsic frequency $\sigma=\sqrt{gk}=\omega$. And it seems that $\gamma F=\hat S_{\text{in}}$, which will be discussed in [[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Recall the Action Density Balance Equation]]
 
 In the roughness length term (Eq. (28)), the **background roughness** $z_b$ is discussed, it represents the impact of gravity-capillary short waves. Since CY49R1, the wind stress Eq. (25) was evaluated for the high frequency with a $f^{-5}$ tail of for gravity waves range until the gravity-capillary range where a simplified model for the gravity-capillary spectrum is used instead. Ultimately resulting in an estimate for $z_b$.
 In practice, ~={red}**wave stress points in the wind direction as it is mainly determined by the high-frequency waves which respond quickly to changes in the wind direction**=~ (ECMWF, 2024).
@@ -370,7 +370,7 @@ $$
 S_{\text{ds}}=-C_{\text{ds}}\langle\omega\rangle(\langle k\rangle^2m_0)^2 \biggr[ \frac{(1-\delta)k}{\langle k \rangle}+\delta (\frac{k}{\langle k \rangle})^2 \biggr]N \tag{31a}
 $$
 
-where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
+where $C_{\text{ds}}$ and $\delta$ are constants, $m_0$ is the total wave variance per square metre (see [[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Action density spectrum]]), $k$ the wavenumber, and $\langle\omega\rangle$ and $\langle k \rangle$ are the mean angular frequency and mean wavenumber, respectively. 
 
 **However**, this parameterisation gives unrealistic variations of the wind sea dissipation in the presence of swell (Ardhuin et al., 2007): the windsea dissipation can be much reduced by the addition of swell. This spurious effect contributes to the larger scatter in the western part of the ocean basins where are dominated by wind seas, with the occasional presence of swells.
 Today’s understanding of wave breaking and swell dissipation processes, although not complete, have led to parameterisations in which the steepness is more local in spectral space (Ardhuin, 2024)
@@ -402,7 +402,7 @@ See details in Chapter 3.3 in (ECMWF, 2024) [@ecmwfIFSDocumentationCY49R1202411]
 # Wave Forecasting and Sea-state Impacts on Atmosphere and ocean
 
 ## Two-dimensional wave spectrum
-In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in chapter “Action density spectrum” ([[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
+In previous section, we discussed about the **wavenumber spectrum** $F(\mathbf{k})$ of the wave energy, which gives the distribution of wave energy over wavenumber $\mathbf{k}$ (see details in chapter “Action density spectrum” ([[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Action density spectrum]])). However, similar to the wave action density, it is much easier to obtain the frequency spectrum because this just requires the analysis of time series at a certain location. 
 
 Thus, we can apply the two dimensional frequency spectrum at each grid cell, defined as:
 
@@ -431,7 +431,7 @@ we recall **action density balance equation (Eq. (18))**, but this time we utili
 $$
 F(\omega,\theta)=\sigma N(\omega, \theta) \tag{37}
 $$
-Where the $\sigma$ is the intrinsic frequency (see also Eq. (1)). This relation is in accordance with the analogy between wave packets and particles, since particles with action $N$ have energy $\sigma N$ and momentum $kN$. Noted that this relation is different from that of wavenumber spectrum, specified in **Eq.(1)** in [[Note_Wave-induced-stress_and_Young-waves#Action density spectrum]].
+Where the $\sigma$ is the intrinsic frequency (see also Eq. (1)). This relation is in accordance with the analogy between wave packets and particles, since particles with action $N$ have energy $\sigma N$ and momentum $kN$. Noted that this relation is different from that of wavenumber spectrum, specified in **Eq.(1)** in [[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Action density spectrum]].
 
 For deep water, and with additional source terms, the balance equation can become;
 
@@ -446,7 +446,7 @@ Previously, we discuss each source term in the framework of wave action density 
 - $\hat S_{\text{ds}}$: describes the **dissipation of waves** by processes such as white-capping, large scale breaking eddy-induced damping. Also represents the injecting of momentum flux from ocean waves into the ocean
 - **$\hat S_{\text{nl}}$**: denotes **nonlinear transfer by resonant four-wave interactions.** <span style="background:#fff88f">The nonlinear transfer conserves total energy and momentum</span> and is important in shaping the wave spectrum and in the spectrum down-shift towards lower frequencies (i.e., wave-wave interaction, redistribute energy)
 - $\hat S_{\text{bot}}$: **bottom dissipation** due to bottom friction
-Find the parameterisations of source terms above in [[Note_Wave-induced-stress_and_Young-waves#Parameterisation of Source terms]]
+Find the parameterisations of source terms above in [[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Parameterisation of Source terms]]
 
 Noted that Eq. (38) is the one considering the influence of currents and bottom drag to the ocean waves. <span style="background:#fff88f">When consider the surface stresses, the bottom dissipation source term is neglected</span>.
 
@@ -499,7 +499,7 @@ f_c=\text{min} [ f_{\text{max}}, 2.5\langle f \rangle_{\text{windsea}}] \tag{44}
 $$
 
 Thus, the high-frequency extent of the prognostic region is scaled by the mean frequency $\langle f \rangle_{\text{windsea}}$ of the local wind-sea. A **dynamic** high-frequency cut-off, $f_c$, rather than a fixed cut-off at $f_\text{max}$, corresponding to the last discretised frequency, is necessary to avoid excessive disparities in the response time scales within the spectrum. 
-This high-frequency cut-off is also discussed in the study of Stokes drift profile by (Breivik et al., 2014). Can find the note in [[Note_Stokes-Drift-Profile#High-Frequency Contribution to the Profile]]
+This high-frequency cut-off is also discussed in the study of Stokes drift profile by (Breivik et al., 2014). Can find the note in [[Breivik_2014&2016_Note_Stokes-Drift-Profile#High-Frequency Contribution to the Profile]]
 
 In the ~={red}**diagnostic frequency range**=~, $\omega >\omega_c$, the wave spectrum is given by Phillips’s $\omega^{-5}$ power law. For this to be the case, **it is assumed that there is a balance between input, dissipation and the flux due to non linear wave interactions in the diagnostic frequency range**. In practice, this means that all energy and momentum going into the high-frequency rage of the spectrum, either by wind input or non-linear transfer, is dissipated, and is therefore directly transferred to the ocean column:
 
@@ -567,7 +567,7 @@ $$
 $$
 
 The term $\tau_{\text{transient}}$, separates itself from the atmospheric stress $\tau_{\text{a}}$, can be considered as the transient impacts from ongoing (i.e., transient) surface wave processes. 
-However, careful interpretation is needed since the atmospheric stress term $\tau_{\text{a}}=\rho_{\text{a}}u_*|u_*|$ is also influenced by the surface wind, as the air-side friction velocity is dependent on wind stress (see details in previous chapter: [Wind Input]([[Note_Wave-induced-stress_and_Young-waves#Wind Input (“Wind stress”, “atmospheric stress”)]])
+However, careful interpretation is needed since the atmospheric stress term $\tau_{\text{a}}=\rho_{\text{a}}u_*|u_*|$ is also influenced by the surface wind, as the air-side friction velocity is dependent on wind stress (see details in previous chapter: [Wind Input]([[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Wind Input (“Wind stress”, “atmospheric stress”)]])
 
 While for the energy flux, we ignore the direct energy flux from air to ocean currents, because it is small, the energy flux to the ocean, denoted by $\Phi_{\text{oc}}$, is therefore given by $-\Phi_{\text{ds}}$. Again, utilising the assumed high frequency balance (Eq. (45)) and the conservation of energy when $S_{\text{nl}}$ is integrated over all frequencies and directions, one obtain:
 
@@ -644,7 +644,7 @@ Formulas are referenced from [ICON-Short-Overview]([[ICON-waves_Short-Overview_a
   $$
 	  S_{\text{in}}=\gamma N= \omega\epsilon \beta x^2 \tag{59}
 	$$
-	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$. See details in [Eq. (28)]([[Note_Wave-induced-stress_and_Young-waves#Wind Input (“Wind stress”, “atmospheric stress”)]])
+	$x$ is the parameter that associates with the reciprocal of wave age $x\sim \frac{u_*}{c_p}$. See details in [Eq. (28)]([[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Wind Input (“Wind stress”, “atmospheric stress”)]])
 	
 - **Sea-state-dependent Charnock number:**
   $$

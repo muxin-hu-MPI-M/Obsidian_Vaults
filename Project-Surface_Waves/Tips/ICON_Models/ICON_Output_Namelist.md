@@ -255,7 +255,7 @@ find the coupling namelist (information) in ``
 make sure all related variables are selected; 
 - TKE equation: see details in [[ICON_Output_Namelist#TKE Output Table]]
 - Stokes-drift: `u_stokes, u3d_stokes, v3d_stokes` 
-	- 3d is the profile → Langmuir turbulence (see details in [[Note_Stokes-Drift-Profile#The Shear of the Stokes Drift Profile]]) → Langmuir turbulence term hasn’t been added to the TKE parameterised equation
+	- 3d is the profile → Langmuir turbulence (see details in [[Breivik_2014&2016_Note_Stokes-Drift-Profile#The Shear of the Stokes Drift Profile]]) → Langmuir turbulence term hasn’t been added to the TKE parameterised equation
 
 ### Structure and variability of Upwelling System
 #### Heat content budget analysis

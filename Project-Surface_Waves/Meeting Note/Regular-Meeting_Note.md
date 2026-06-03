@@ -510,7 +510,7 @@ Three ideas so far:
 	- The RMSE values reach ~0.2 m/s over subtropical regions, which is substantially large comparing to the range of absolute magnitude (0-0.4 m/s)
 	- The significant wave height (SWH) shows relatively good agreement between the two models for both total waves and wind waves. Slightly higher RMSE values appear in the comparison of swell SWH, but their magnitude (~0.01) remains small relative to the absolute SWH values.
 	- This suggests that the overall wave energy levels are broadly consistent between the two models. Moreover, the spatial patterns of SWH difference do not resemble those observed in the surface Stokes drift velocity
-	- Therefore, the discrepancies in surface Stokes drift are unlikely to originate solely from differences in bulk wave energy. A plausible explanation is differences in the simulated wave energy spectrum, as Stokes drift depends strongly on the higher-order frequency part of the spectrum and scales roughly to the 3rd moment of frequency spectrum (see details in [[Note_Stokes-Drift-Profile#Stoke Drift Profile]])
+	- Therefore, the discrepancies in surface Stokes drift are unlikely to originate solely from differences in bulk wave energy. A plausible explanation is differences in the simulated wave energy spectrum, as Stokes drift depends strongly on the higher-order frequency part of the spectrum and scales roughly to the 3rd moment of frequency spectrum (see details in [[Breivik_2014&2016_Note_Stokes-Drift-Profile#Stoke Drift Profile]])
 
 
 # [[2026-03-04]]
@@ -735,7 +735,7 @@ and find:
 # [[2025-12-15]]
 ## Regular meeting with Nils
 #presenter/Nils_Brüggemann 
-- Show the derivation of wind-induced stress (or “wind stress”, “wind-to-wave stress”). The [Link]([[Note_Wave-induced-stress_and_Young-waves#Momentum and Energy Flux at Air-sea Interface]])
+- Show the derivation of wind-induced stress (or “wind stress”, “wind-to-wave stress”). The [Link]([[ECMWF_2024_Note_Wave-induced-stress_and_Young-waves#Momentum and Energy Flux at Air-sea Interface]])
 - Report issue with ICON-XPP simulation with default TKE settings
 	- Has set disturbance TWICE!!! One in 1325-01-01 and one in 1345-01-01
 	- Should I worry about the email from DKRZ?

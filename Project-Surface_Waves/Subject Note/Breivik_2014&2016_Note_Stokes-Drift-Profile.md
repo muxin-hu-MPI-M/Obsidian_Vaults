@@ -5,6 +5,7 @@ tags:
   - stokes_drift
   - Theory
   - Subject-Note
+  - important_paper
 Last Eddited: 2025-11-30
 ---
 The note is referring to the journal paper: ~={blue}**Breivik et al., 2014=~ (**[10.1175/JPO-D-14-0020](https://doi.org/10.1175/JPO-D-14-0020.1)**). Please find the original paper in Zotero: 2025 Ocean Waves**

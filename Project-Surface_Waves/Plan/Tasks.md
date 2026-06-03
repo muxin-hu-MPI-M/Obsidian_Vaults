@@ -208,7 +208,7 @@ tags:
 - [x] Analysis on ERA5 reanalysis with wave outputs (2000-2024) #project/surfwaves 
 	- [x] ocean stress vs wind stress (normalised ocean stress)
 	- [x] surface stokes drift velocity (magnitude + direction)
-	- [x] Estimated Stokes Transport (see Eq. 31 in [[Note_Stokes-Drift-Profile]]
+	- [x] Estimated Stokes Transport (see Eq. 31 in [[Breivik_2014&2016_Note_Stokes-Drift-Profile]]
 	- [x] Estimated Stokes transport vs Estimated Ekman transport
 		- [x] Estimate the total Stokes transport
 		- [x] Estimate Ekman transport 

@@ -22,105 +22,35 @@
             }
           },
           {
-            "id": "84b3fa6fb6531a71",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016"
-            }
-          },
-          {
-            "id": "c07c1a503f3e6d70",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_Wave-induced-stress_and_Young-waves"
-            }
-          },
-          {
-            "id": "de5da1babd032899",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ICON_Data-process_Tips"
-            }
-          },
-          {
-            "id": "6e53e441319fd6b9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_Stokes-Drift-Profile"
-            }
-          },
-          {
-            "id": "41d59f6a3682d7aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Plan/Experimental/Download_ERA5_Wave_outputs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Download_ERA5_Wave_outputs"
-            }
-          },
-          {
-            "id": "8be1fd4749da1041",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Assess_diff_Stokes_reconstruction_methods"
-            }
-          },
-          {
             "id": "2d7b813971e1810d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+                "file": "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Meeting_Note_WMT"
+              "title": "Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal"
+            }
+          },
+          {
+            "id": "624f3bf08bb0030d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Proposal-Large_scale_dynamical_impact_of_Stokes_drift"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Regular-Meeting_Note"
+              "title": "Backlinks for Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal"
             }
           },
           {
@@ -212,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Ocean_Dynamics-Chap_11-Small_Scale_Turbulence.md",
+                "file": "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Ocean_Dynamics-Chap_11-Small_Scale_Turbulence"
+              "title": "Outgoing links from Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal"
             }
           },
           {
@@ -255,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+                "file": "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Meeting_Note_WMT"
+              "title": "Outline of Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal"
             }
           },
           {
@@ -332,24 +262,25 @@
   },
   "active": "2d7b813971e1810d",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+    "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+    "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
-    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-    "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
     "Project-Surface_Waves/Plan/Experimental/Download_ERA5_Wave_outputs.md",
-    "Project-Surface_Waves/Subject Note/Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+    "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
+    "PhD-General/MPI-M/Seminar Notes.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_totalsea.md",
     "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_decompose.md",
-    "Project-Surface_Waves/Subject Note/Wave-Averaged-Boussinesq-Equations_Representations_Suzuki&Kemper_2016.md",
-    "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Plan/Experimental/Method_Stokes_profile_reconst_totalsea.md",
-    "Project-Surface_Waves/Subject Note/Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Plan/Experimental/ICON_Simulation_EXP-ID.md",
     "Project-Surface_Waves/Plan/Experimental",
     "Project-Surface_Waves/Plan/Conceptual",
@@ -364,7 +295,6 @@
     "Attachments/Figures_plan_2.jpg",
     "Attachments/Figures_plan.jpg",
     "Attachments/Upwelling_region_outline-1.pdf",
-    "Project-Surface_Waves/Subject Note/Note_Surface-wave.md",
     "Attachments/Screenshot 2026-03-31 at 11.37.29.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.34.png",
     "Attachments/Screenshot 2026-01-30 at 11.48.11.png",
