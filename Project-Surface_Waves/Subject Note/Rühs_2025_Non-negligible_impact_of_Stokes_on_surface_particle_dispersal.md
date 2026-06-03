@@ -23,10 +23,22 @@ Last Eddited: 2025-12-04
 # Theoretical background and state of the art
 ## Impact of waves on Lagrangian surface drift velocities
 - the overall magnitude and vertical shear of Stokes drift depend on the sea-state (Breivik & Christensen, 2020)
-- “Wave-driven Eulerian current velocities arise from a combination of different processes related to interactions between Eulerian currents and Stokes drift, acting on a fluid particle through so-called ==Stokes forces== (see, e.g., van den Bremer and Breivik, 2018, for a review), **as well as wave-induced changes in air–sea momentum and turbulent energy fluxes**” (Rühs et al., 2025, p. 218)
-	- ==Stokes force==: 
+- “Wave-driven Eulerian current velocities arise from a combination of different processes related to interactions between Eulerian currents and Stokes drift, acting on a fluid particle through so-called ~={red}**Stokes forces**=~ (see, e.g., van den Bremer and Breivik, 2018, for a review), **as well as ~={red}wave-induced changes in air–sea momentum=~ and ~={red}turbulent energy fluxes=~**” (Rühs et al., 2025, p. 218)
+	- ~={red}**Stokes force**=~:
 		- “As all of the interactions with waves in the WAB equations involve only one wave statistic—the Stokes drift—the interaction terms will be collectively referred to as Stokes forces.” (Suzuki and Fox-Kemper, 2016)
 		- The different effects of (non-breaking) surface waves on the Eulerian mean flow in the form of Stokes forces are described by wave-averaged momentum equations (e.g., Craik and Leibovich, 1976; Suzuki and Fox-Kemper, 2016).
+		- “They always include the Stokes–Coriolis force (Hasselmann, 1970, 1971), which, however, appears either together with the vortex force and a wave-induced modification of the pressure (e.g., Craik and Leibovich, 1976) or together with Stokes advection and Stokes shear forces (e.g., Suzuki and Fox-Kemper, 2016).” (Rühs et al., 2025, p. 219)
+	- ~={red}**wave-induced change in air-sea momentum flux**=~:
+		- “The momentum flux from the atmosphere to the ocean is impacted by surface waves in two ways. Firstly, waves modify the sea surface roughness and, consequently, the regional atmospheric momentum flux (e.g., Charnock, 1955; Li et al., 2020). 
+		- Secondly, waves alter when, where, and how much of this momentum flux is available to drive ocean currents
+			- as waves grow, they absorb momentum from the wind (also referred to as wave-supported stress) that otherwise would have contributed to driving ocean currents, 
+			- whereas as waves dissipate, they transfer momentum to ocean currents (also referred to as wave-to-ocean stress) (see Breivik et al., 2015; Couvelard et al., 2020).”
+	- ~={red}**wave-induced change in turbulent energy flux**=~:
+		- “As waves break, they inject turbulent kinetic energy into the surface layer, and vertical mixing is enhanced over a depth on the order of the significant wave height (Craig and Banner, 1994; Drennan et al., 1992).”
+		- “Moreover, the waveaveraged flow generates Langmuir turbulence, resulting in vertical mixing over even greater depths (McWilliams et al., 1997), and significantly deepens the mixed layer in large areas of the world ocean (Couvelard et al., 2020).”
+		- The related hydrographic changes can, in turn, introduce changes in horizontal Eulerian currents.
+		- ==These changes in horizontal Eulerian surface currents due to wave-induced mixing could be as important as the impact of Stokes drift (Rascle et al., 2006; Rascle and Ardhuin, 2009).”==
 	- <span style="background:#affad1">Comment</span>: my study isolates the Eulerian ocean response to an imposed, ERA5-derived Stokes drift profile through the conservative Stokes-force terms of the wave-averaged momentum equation. The diagnosed velocity residual, is therefore interpreted as the **Stokes-force-induced Eulerian velocity**, rather than the full wave-induced Eulerian velocity. The “full” wave effect would also include wave-modified wind stress, wave-supported stress, wave breaking energy input, Langmuir turbulence, and wave effects on turbulent mixing.
 	- “Because the other processes (e.g., surface momentum and turbulent kinetic energy fluxes) are kept identical to the control experiment, the diagnosed residuals should be interpreted as the oceanic adjustment to Stokes-drift momentum forcing alone. It does not include wave-induced modifications of air-sea fluxes, wave breaking, or Langmuir-enhanced turbulence.”
+- 
 	
