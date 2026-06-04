@@ -14,12 +14,11 @@ full pipeline before modifying the ICON-o code:
 - **Prepare data**
 	- Download era5 RAW wave data
 	- create a striped test directory
-	- cp the atm2d and wave <font color="#ff0000">RAW grb</font> data into my work directory, using the directory’s striping (for efficient reading)
-	- create the json files for yearly chunk
-		- `atm2d.json`
-		- `wave2d.json`
+	- cp wave <font color="#ff0000">RAW grb</font> data into my work directory, using the directory’s striping (for efficient reading)
+	- create the `wave2d.json` files for yearly chunk
 - **modify/create Python provider**
 	- keep the original provider for atm2d and runoff (`master/etc/era5g_omip_runoff_provider.py`, which has been tested by Tatchi, it works)
+		- which means, just use the `atm2d.json` in the `/pool/data/ICON/oes/ERA5_forcing/`
 	- create the another python provider for wave with similar logic as `era5g_omip_runoff_provider.py`
 		- define similar functions: 
 			- timer
