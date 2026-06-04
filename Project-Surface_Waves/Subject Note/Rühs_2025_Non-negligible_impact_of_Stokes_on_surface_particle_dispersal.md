@@ -44,5 +44,10 @@ Last Eddited: 2025-12-04
 		- ==These changes in horizontal Eulerian surface currents due to wave-induced mixing could be as important as the impact of Stokes drift (Rascle et al., 2006; Rascle and Ardhuin, 2009).”==
 	- <span style="background:#affad1">Comment</span>: my study isolates the Eulerian ocean response to an imposed, ERA5-derived Stokes drift profile through the conservative Stokes-force terms of the wave-averaged momentum equation. The diagnosed velocity residual, is therefore interpreted as the **Stokes-force-induced Eulerian velocity anomaly** , rather than the full wave-induced Eulerian velocity anomaly. The “full” wave effect would also include wave-modified wind stress, wave-supported stress, wave breaking energy input, Langmuir turbulence, and wave effects on turbulent mixing.
 	- <span style="background:#affad1">for my study</span>, “Because the other processes (e.g., surface momentum and turbulent kinetic energy fluxes) are kept identical to the control experiment, the diagnosed residuals should be interpreted as the oceanic adjustment to Stokes-drift momentum forcing alone. It does not include wave-induced modifications of air-sea fluxes, wave breaking, or Langmuir-enhanced turbulence.”
-- 
-	
+
+## Representation of wave impact in large-scale Lagrangian simulations
+- **old standard**: no approximation for wave impact is applied. Particles are advected solely with non-wave-driven Eulerian velocity from a stand-alone ocean model. 
+	- The underlying (implicit) assumption is that impacts of wave-driven Eulerian currents and Stokes drift either are completely negligible or offset one another.
+- **basic approximation**: particles are advected with non-wave-driven Eulerian currents plus Stokes drift, while neglecting the wave-driven Eulerian current response.
+	- That is: take velocity from an ocean-only model, add Stokes drift from a wave model, and use the sum to move particles. The ocean model itself is not allowed to respond to the Stokes drift. So there is no generated anti-Stokes Eulerian current, no modified Ekman response, no Stokes-force adjustment, no wave-driven change in the Eulerian circulation.
+	- The (implicit) assumption is that – at the ocean surface – the impact of wave-driven Eulerian currents is negligible or at least less important than Stokes drift
