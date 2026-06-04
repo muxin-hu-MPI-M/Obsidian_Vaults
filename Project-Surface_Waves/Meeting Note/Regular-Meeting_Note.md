@@ -21,17 +21,60 @@ full pipeline before modifying the ICON-o code:
 - **modify/create Python provider**
 	- keep the original provider for atm2d and runoff (`master/etc/era5g_omip_runoff_provider.py`, which has been tested by Tatchi, it works)
 	- create the another python provider for wave with similar logic as `era5g_omip_runoff_provider.py`
+		- define similar functions: 
+			- timer
+			- parse_args
+			- get_dataset
+			- read_var
+		- centralised ERA5 variable meadata
 		- get wave data grid information
 		- define the grid corners, get the global indices for corners and cells
 		- create YAC fields
 		- Finalise the YAC component and field definitions
 		- inside the time-loop
-			- read the wave data similar as the original atm2d field, parallel (prepare task)
-				- data field
-				- time range
-				- grid information (check how `era5g_omip_runoff_provider.py` handle the different grid information in runoff)
-			- do the calculation of Stokes transport inside the python reader
-			- `put` the the final 3 fields ust, vst, and Vs via Yac
+			- determine current start and end date
+			- load the wave data similar as the original atm2d field, parallel (prepare task) for one year
+			- get variables in a loop
+			- check all variables have the same start time and ensure that
+			- loop over hours in the current year:
+				- read variables in parallel, tasks, submit tasks to ht eglobal thread pool
+				- do the calculation of Stokes transport inside the python reader
+				- `put` the the final 3 fields ust, vst, and Vs via Yac
+- **modify runscript**:
+	- under `cat > ${EXPDIR}/coupling.yaml<<EOF`, after `coupling:`, add wave field, specify coupling_period and interpolation stack, according to `predef` (see below)
+	- define the number of ERA5 provider processes
+```
+cat > ${EXPDIR}/coupling.yaml<<EOF
+
+predef:
+  interp_stacks:
+    hcsbb_interp_stack: &hcsbb_interp_stack
+    ... 
+...
+timestep_unit: ISO_format
+calendar: proleptic-gregorian
+coupling:
+# ERA5 -> OCE
+  - <<: [ *era2ocn, *nnn_fixed ]
+    coupling_period: PT1H
+    field:
+      - t2m
+      - tdew
+#      - 10m_wind_speed
+      - ldown
+      - swdown
+      - precip
+      - sea_level_pressure
+      - tcc
+...
+# define the number of ERA5 provider processes
+ERA5_PROCS=1
+
+cat > ${EXPDIR}/mpmd.conf << EOF
+0-$((mpi_total_procs - ERA5_PROCS - 2))   $MODEL
+$((mpi_total_procs - ERA5_PROCS - 1))-$((mpi_total_procs - 2))    ${PYTHON} ${basedir}/etc/era5g_omip_runoff_provider.py
+$((mpi_total_procs - 1))-$((mpi_total_procs - 1))                 ${PYTHON} ${basedir}/etc/era5g_wave_provider.py
+```
 
 # [[2026-05-22]]
 ## Regular meeting with Nils
