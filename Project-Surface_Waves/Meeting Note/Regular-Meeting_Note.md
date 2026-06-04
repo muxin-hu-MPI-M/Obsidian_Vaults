@@ -8,6 +8,31 @@ Last Eddited: 2026-01-13
 ---
 
 
+# [[2026-06-04]]
+## Meeting with Nils-Arne (DKRZ)
+full pipeline before modifying the ICON-o code:
+- **Prepare data**
+	- Download era5 RAW wave data
+	- create a striped test directory
+	- cp the atm2d and wave <font color="#ff0000">RAW grb</font> data into my work directory, using the directory’s striping (for efficient reading)
+	- create the json files for yearly chunk
+		- `atm2d.json`
+		- `wave2d.json`
+- **modify/create Python provider**
+	- keep the original provider for atm2d and runoff (`master/etc/era5g_omip_runoff_provider.py`, which has been tested by Tatchi, it works)
+	- create the another python provider for wave with similar logic as `era5g_omip_runoff_provider.py`
+		- get wave data grid information
+		- define the grid corners, get the global indices for corners and cells
+		- create YAC fields
+		- Finalise the YAC component and field definitions
+		- inside the time-loop
+			- read the wave data similar as the original atm2d field, parallel (prepare task)
+				- data field
+				- time range
+				- grid information (check how `era5g_omip_runoff_provider.py` handle the different grid information in runoff)
+			- do the calculation of Stokes transport inside the python reader
+			- `put` the the final 3 fields ust, vst, and Vs via Yac
+
 # [[2026-05-22]]
 ## Regular meeting with Nils
 #presenter/Nils_Brüggemann 
