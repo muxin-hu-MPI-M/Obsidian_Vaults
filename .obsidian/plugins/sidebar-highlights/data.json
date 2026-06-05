@@ -1064,50 +1064,6 @@
         "type": "highlight"
       }
     ],
-    "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md": [
-      {
-        "id": "0crkstbv5",
-        "text": "varying heat fluxes",
-        "tags": [],
-        "line": 37,
-        "startOffset": 2746,
-        "endOffset": 2769,
-        "filePath": "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1769349768932,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "vvzlev2em",
-        "text": "zero heat fluxes",
-        "tags": [],
-        "line": 40,
-        "startOffset": 2994,
-        "endOffset": 3014,
-        "filePath": "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1769349918428,
-        "isNativeComment": false,
-        "type": "highlight"
-      },
-      {
-        "id": "s77y7ivms",
-        "text": "with increasing heat fluxes",
-        "tags": [],
-        "line": 41,
-        "startOffset": 3111,
-        "endOffset": 3142,
-        "filePath": "Project-Eddy_Upwelling/Plan/Goals-Roadmap-Updates-Track.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1769349924389,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ],
     "PhD-General/PhD_courses/2026_Spring_Climate_dynamics.md": [
       {
         "id": "yjvqkw5se",
@@ -1642,6 +1598,50 @@
         "isNativeComment": false,
         "color": "#affad1",
         "type": "html"
+      }
+    ],
+    "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md": [
+      {
+        "id": "746ym8ufh",
+        "text": "varying heat fluxes",
+        "tags": [],
+        "line": 70,
+        "startOffset": 4252,
+        "endOffset": 4275,
+        "filePath": "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1780662154593,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "cfs4v4s8r",
+        "text": "zero heat fluxes",
+        "tags": [],
+        "line": 73,
+        "startOffset": 4500,
+        "endOffset": 4520,
+        "filePath": "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1780662153841,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "hlxvv9mr0",
+        "text": "with increasing heat fluxes",
+        "tags": [],
+        "line": 74,
+        "startOffset": 4617,
+        "endOffset": 4648,
+        "filePath": "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1780662153958,
+        "isNativeComment": false,
+        "type": "highlight"
       }
     ]
   },

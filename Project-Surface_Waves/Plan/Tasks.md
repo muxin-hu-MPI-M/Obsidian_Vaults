@@ -28,7 +28,7 @@ tags:
 ## [[2026-06-01]]
 - [ ] explore the era5 force icon script #project/surfwaves 
 	- [x] build icon executable on icon ocean 
-	- [ ] read and understand the python provider that read the data
+	- [x] read and understand the python provider that read the data
 	- [x] email to Nils
 	- [ ] prepare json files for both atm2d and wave2d
 ## [[2026-05-25]]

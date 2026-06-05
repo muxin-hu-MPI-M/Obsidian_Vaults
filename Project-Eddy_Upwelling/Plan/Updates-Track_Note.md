@@ -5,8 +5,41 @@ tags:
   - "#presenter/Xinyue_Li"
 Last Eddited: 2026-01-18
 ---
+# Updates
+
+## [[2026-06-05]] Change Figure 4 and caption
+- Modification of the Figure 4
+	- change the first row of mean temperature to mean trend for Temperature for two period
+	  → showing that in the historical run, the T is decreasing in the coastal surface, but the tendency change into increase in the future scenario
+	- remain stratification in the second row, but change to 1st column of climatological stratification, 2nd column to the difference between future period and historical period
+- modify the Figure 4 caption and description accordingly.
+
+
+
+## [[2026-04-28]] My job: Update Figure 3 & description
+Three panels:
+1. **Historical** mean section-averaged Temperature + Velocity vector field (u, w)
+2. **Future** mean section-averaged Temperature + Velocity vector field (u, w)
+3. **Change (Future - Historical)** in Temperature and velocity vector field
+
+The zonal velocity $u$ in the model output is defined in the eastward direction. However, the analysis sections are oriented approximately perpendicular to the Peruvian coastline, which is rotated by about 30 degrees relative to the meridional axis. To ensure a consistent representation, $u$ is projected onto the cross-shore direction to derive the corresponding cross-shore velocity component $u’$:$$u'=u\cdot\cos{(30\degree)}$$
+## [[2026-03-04]] 1st Draft
+![[Upwelling_region_outline-1.pdf]]
+
+## Discussion on 1st Draft
+### Plan for the figures
+![[Figures_plan.jpg]]
+
+### Plan for the figures: design
+![[Figures_plan_2.jpg]]
+
+
+
+
+
 # Project Description
 ![[Peru upwelling project.pdf]]
+
 
 ## Basic Info
 - Grid
@@ -48,24 +81,3 @@ Last Eddited: 2026-01-18
   → pressure gradient increasing 
   → the wind goes north is strengthening
 - **ERRIRE** captures the cooling trend with high accuracy compared to CMIP, high resolution
-
-
-
-# Updates
-## 1st Draft
-![[Upwelling_region_outline-1.pdf]]
-
-## Discussion on 1st Draft
-### Plan for the figures
-![[Figures_plan.jpg]]
-
-### Plan for the figures: design
-![[Figures_plan_2.jpg]]
-
-### My job: Update Figure 3 & description
-Three panels:
-1. **Historical** mean section-averaged Temperature + Velocity vector field (u, w)
-2. **Future** mean section-averaged Temperature + Velocity vector field (u, w)
-3. **Change (Future - Historical)** in Temperature and velocity vector field
-
-The zonal velocity $u$ in the model output is defined in the eastward direction. However, the analysis sections are oriented approximately perpendicular to the Peruvian coastline, which is rotated by about 30 degrees relative to the meridional axis. To ensure a consistent representation, $u$ is projected onto the cross-shore direction to derive the corresponding cross-shore velocity component $u’$:$$u'=u\cdot\cos{(30\degree)}$$
