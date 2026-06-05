@@ -8,11 +8,12 @@ Last Eddited: 2026-01-18
 # Updates
 
 ## [[2026-06-05]] Change Figure 4 and caption
-- Modification of the Figure 4
-	- change the first row of mean temperature to mean trend for Temperature for two period
-	  → showing that in the historical run, the T is decreasing in the coastal surface, but the tendency change into increase in the future scenario
-	- remain stratification in the second row, but change to 1st column of climatological stratification, 2nd column to the difference between future period and historical period
-- modify the Figure 4 caption and description accordingly.
+Modification of the Figure 4 as: 
+- Figure with 2x2 subplots
+	- 1st row: Time-mean Temperature in historical run and time-mean difference, with (u,w) and its difference, the difference figure has a contour showing the maximum Temperature trend
+	- 2nd row: Time-mean Stratification pattern in historical run and time-mean difference
+- Write the corresponding Figure caption and description
+
 
 
 
