@@ -7,6 +7,21 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-06-05]]
+## Regular meeting with Nils
+- cheap setup for testing the python provider, using R2B4
+- apply for a interactive node using Nils’s script
+	- get the `s2n` in `~/.profile`
+	- get one interactive node
+	- dry run the runscript to see if this works out (solely on R2B4, which can be run on 1 node)
+- after successfully pass the variable to the ICON, then we need to modify the ICON code to output the passed field, with the new variable name (next step)
+	- for adding a new output variable, look for `add_var` calls
+- icon:
+	- physics: parameterisation, all mixing scheme
+		- find the add-var in `/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/physics/mo_ocean_physics_types.f90`
+		- find the similar variables to my new variables, and copy exactly what it refers to in the Fortran code, and add the comment by Muxin to easily go back
+	- dynamic: 
+	- config: namelist
 
 # [[2026-06-04]]
 ## Meeting with Nils-Arne (DKRZ)
