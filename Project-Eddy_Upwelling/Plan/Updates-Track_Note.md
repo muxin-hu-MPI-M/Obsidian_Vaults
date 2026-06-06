@@ -13,7 +13,12 @@ Modification of the Figure 4 as:
 	- 1st row: Time-mean Temperature in historical run and time-mean difference, with (u,w) and its difference, the difference figure has a contour showing the maximum Temperature trend
 	- 2nd row: Time-mean Stratification pattern in historical run and time-mean difference
 - Write the corresponding Figure caption and description
-
+	- Logic:
+		1. upwelling remains active and intensified slightly, matching with Figure 1, 2 with increased alongshore winds.
+		2. Strengthened upwelling keep supply cooler subsurface water to the surface
+		3. despite this dynamical intensification, the near coastal waters become warmer, and the warming trend is more pronounced towards the coast
+		4. Warming is accompanied by a vertically differentiated response in mean stratification. Specifically, stratification weakens within a shallow near-surface layer ($\sim$20 m), while it strengthens immediately below. The anomalies reach to ~10% of the climatological value
+		5. This vertical modulate reflects an enhanced near-surface vertical mixing coexisting with a reduced vertical mixing belows
 
 
 
