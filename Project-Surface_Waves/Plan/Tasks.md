@@ -30,7 +30,7 @@ tags:
 	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
 	- [ ] create new python provider for wave data
 		- [x] first version
-			- [ ] try dry run (agent did that)
+			- [x] try dry run (agent did that), save it into log file
 	- [ ] Modify run script
 - [ ] Panel Meeting: #project/PhD_general 
 	- [ ] Update the progress report
