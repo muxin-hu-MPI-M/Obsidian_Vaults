@@ -27,15 +27,20 @@ tags:
 
 ## [[2026-06-08]]
 - [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
-	- [ ] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
+	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
 	- [ ] create new python provider for wave data
+		- [ ] try dry run
 	- [ ] Modify run script
+- [ ] Panel Meeting: #project/PhD_general 
+	- [ ] Update the progress report
+		- [ ] what’s to include? discuss with Nils during meeting
+		- [ ] 
 ## [[2026-06-01]]
 - [ ] explore the era5 force icon script #project/surfwaves 
 	- [x] build icon executable on icon ocean 
 	- [x] read and understand the python provider that read the data
 	- [x] email to Nils
-	- [ ] prepare json files for both atm2d and wave2d
+	- [x] prepare json files for both atm2d and wave2d
 - [x] Finish reading Rühs et al., 2025
 ## [[2026-05-25]]
 - [x] Download wave data using Helmuth’s script #project/surfwaves 
