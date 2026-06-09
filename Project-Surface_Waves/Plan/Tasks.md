@@ -29,9 +29,10 @@ tags:
 - [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
 	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
 	- [ ] create new python provider for wave data
-		- [x] first version
+		- [ ] first version
 			- [x] try dry run (agent did that), save it into log file
-	- [ ] Modify run script
+			- [ ] Modify run script
+			- [ ] try online test (maybe do this uses interactive mode, on lower resolution)
 - [ ] Panel Meeting: #project/PhD_general 
 	- [ ] Update the progress report
 		- [ ] what’s to include? discuss with Nils during meeting
