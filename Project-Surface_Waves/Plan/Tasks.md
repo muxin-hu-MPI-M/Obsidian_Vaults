@@ -26,6 +26,7 @@ tags:
 
 
 ## [[2026-06-08]]
+- [ ] renew the payment method for Swiss tele and Zotero
 - [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
 	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
 	- [ ] create new python provider for wave data
