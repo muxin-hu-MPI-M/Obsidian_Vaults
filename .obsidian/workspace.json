@@ -198,13 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Updates-Track_Note"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -228,7 +228,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -273,10 +273,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "f3aa8b54b1ff8c89",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
+    "Project-Surface_Waves/Plan/Experimental/Download_ERA5_Wave_outputs.md",
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md",
     "Attachments/IMG_8791 1.heic",
     "Attachments/IMG_8791.heic",
@@ -288,10 +290,8 @@
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
-    "Project-Surface_Waves/Plan/Experimental/Download_ERA5_Wave_outputs.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
-    "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
     "PhD-General/MPI-M/Seminar Notes.md",

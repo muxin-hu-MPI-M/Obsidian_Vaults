@@ -82,6 +82,52 @@ end_date = '1971-01-02T00:00:00'
 ```
 Then it still tries to open/read the ERA5 and OMIP runoff input files for that period.
 
+## Provider rank
+```Python
+if not DRYRUN:
+    """
+    Initialize YAC and define the ERA5 provider component.
+    """
+    yac = YAC()
+
+    def_calendar(Calendar.PROLEPTIC_GREGORIAN)
+    comp = yac.def_comp(args.componentName)
+
+    # Get the number of provider ranks and the rank of the local process
+    num_provider_rank = comp.size
+    provider_rank = comp.rank
+
+    if provider_rank == 0:
+        logger.info(
+            f"""
+            Initialized YAC component '{args.componentName}' with
+            {num_provider_rank} ranks using {num_threads} threads each
+            """
+        )
+else:
+    num_provider_rank = 1
+    provider_rank = 0
+```
+
+Both `num_provider_rank` and `provider_rank` are YAC/MPI concepts, in both providers, this line creates a YAC component:
+```Python
+comp = yac.def_comp(args.componentName)
+```
+Then:
+```Python
+num_provider_rank = comp.size
+provider_rank = comp.rank
+```
+Meaning:
+- num_provider_rank: how many MPI ranks/processes belong to this provider component.
+- provider_rank: the local rank number inside this provider component, starting from 0.
+So if: `num_provider_rank == 1 provider_rank == 0`, that means: there is only one provider process, and it is rank 0. It handles everything.
+
+For the atmosphere/runoff provider, default component supports multiple provider ranks, The ERA5 atmosphere variables are distributed like this (line 64):
+```Python
+if i % num_provider_rank == provider_rank:
+```
+So if num_provider_rank = 2, rank 0 handles variables 0, 2, 4, ..., rank 1 handles 1, 3, 5, .... Runoff is special: only provider_rank == 0 handles it.
 
 # Create runscript: example
 ```Bash
