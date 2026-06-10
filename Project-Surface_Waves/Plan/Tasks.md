@@ -36,7 +36,8 @@ tags:
 			- [ ] try online test (maybe do this uses interactive mode, on lower resolution)
 - [ ] Panel Meeting: #project/PhD_general 
 	- [ ] Update the progress report
-		- [ ] what’s to include? discuss with Nils during meeting
+		- [x] what’s to include? discuss with Nils during meeting
+		- [ ] A new sypnosis
 		- [ ] 
 ## [[2026-06-01]]
 - [ ] explore the era5 force icon script #project/surfwaves 
