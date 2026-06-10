@@ -9,14 +9,18 @@ Last Eddited: 2026-01-13
 
 # [[2026-06-10]]
 ## Regular meeting with Nils
+#presenter/Nils_Brüggemann 
 - AI privacy, AI licenses → it should be fine
 - keep working on the pipeline
 - Ask him if emergent questions regarding the technical issue next week
 - Panel meeting, progress report:
 	- shorten the context
-	- explain the current thesis synthesis in the **first part of PROGRESS report**
+	- explain the current thesis synthesis (focusing on Stokes forces) in the **first part of PROGRESS report**
 	- describe the transits from previous focus in the **STATUS report**
 		- “...the previous synthesis showed a broader..., the current version focuses on one specific aspect of the wave-driven impacts: the Stokes forces”
+## Discussion with Helmuth
+#presenter/Helmuth_Haak 
+- 
 
 # [[2026-06-05]]
 ## Regular meeting with Nils
