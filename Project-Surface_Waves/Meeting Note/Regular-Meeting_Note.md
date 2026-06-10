@@ -7,6 +7,10 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-06-10]]
+- AI privacy
+- AI licenses 
+
 # [[2026-06-05]]
 ## Regular meeting with Nils
 - cheap setup for testing the python provider, using R2B4
