@@ -189,3 +189,211 @@ it means:
 For the provider, `PYTHON` chooses the interpreter and package environment, including things like xarray, numpy, isodate, zarr. `PYTHONPATH` adds local builds directories so Python can find ICON-related modules, especially the YAC python bindings, usually through 
 - /work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/externals/mtime/build/python
 - /work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/externals/yac/python
+
+
+
+# Pipeline: introducing 3 wave fields to ICON code
+`p_as` is **not ERA5-specific**. It is `TYPE(t_atmos_for_ocean)`, a general “atmosphere/forcing for ocean” container. In this branch, the ERA5 provider fills it when `iforc_oce == era5_provider`.
+So for Option A, we use `p_as` as the storage place for your ERA5 wave forcing too. That is practical and consistent.
+
+## Recommended Pipeline
+### 0. First adjust Python names
+I would make the scalar name ERA5-specific too:
+```python
+YAC_OUTPUT_FIELDS = [
+    ("ust", "era5_zonal_sfc_stokes_drift"),
+    ("vst", "era5_meridional_sfc_stokes_drift"),
+    ("stokes_transport", "era5_stokes_transport"),
+]
+```
+So all three YAC fields are clearly ERA5 wave forcing fields.
+
+### 1. Add storage in `t_atmos_for_ocean`
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_surface_types.f90
+```
+Current type is here:
+```fortran
+TYPE t_atmos_for_ocean
+```
+Add three pointer arrays, for example near `u`, `v`, or near wind stress:
+```fortran
+& era5_zonal_sfc_stokes_drift     (:,:), & ! ERA5 surface Stokes drift, zonal      [m/s]
+& era5_meridional_sfc_stokes_drift(:,:), & ! ERA5 surface Stokes drift, meridional [m/s]
+& era5_stokes_transport           (:,:), & ! ERA5 Stokes transport magnitude       [m2/s]
+```
+These are cell-centered 2D fields with shape `(nproma, nblks_c)`, same as other surface forcings.
+
+### 2. Register them with `add_var`
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_forcing.f90
+```
+Subroutine:
+```fortran
+construct_atmos_for_ocean
+```
+Add three `CALL add_var(...)` entries, similar to the existing ERA5 entries around `era5_u10`, `era5_v10`, etc.
+
+Example:
+```fortran
+CALL add_var(ocean_default_list, 'era5_zonal_sfc_stokes_drift', &
+  &          p_as%era5_zonal_sfc_stokes_drift, &
+  &          grid_unstructured_cell, za_surface, &
+  &          t_cf_var('era5_zonal_sfc_stokes_drift', 'm s-1', &
+  &                   'era5_zonal_sfc_stokes_drift', datatype_flt), &
+  &          dflt_g2_decl_cell, &
+  &          ldims=(/nproma,alloc_cell_blocks/), in_group=groups_oce_era5)
+```
+Similarly:
+```fortran
+era5_meridional_sfc_stokes_drift  ! unit: m s-1
+era5_stokes_transport             ! unit: m2 s-1
+```
+Then initialize them to zero in the same subroutine:
+```fortran
+p_as%era5_zonal_sfc_stokes_drift(:,:)      = 0.0_wp
+p_as%era5_meridional_sfc_stokes_drift(:,:) = 0.0_wp
+p_as%era5_stokes_transport(:,:)            = 0.0_wp
+```
+Also add them to the OpenACC `COPYIN` block if this run may use GPU/OpenACC:
+```fortran
+!$ACC   COPYIN(p_as%era5_zonal_sfc_stokes_drift, p_as%era5_meridional_sfc_stokes_drift) &
+!$ACC   COPYIN(p_as%era5_stokes_transport)
+```
+I would **not** manually add explicit `ALLOCATE/DEALLOCATE` yet unless compile/runtime shows it is needed. The existing `add_var` pattern appears to manage most of these `p_as` arrays.
+
+### 3. Add a YAC receiver
+Here I recommend a slightly cleaner version than your step 3.
+**Instead of mixing the wave fields into the existing 12-field atmospheric ERA5 receiver, create a separate wave receiver, either:**
+```text
+src/coupling/mo_ocean_era5_wave_provider_coupling.f90
+```
+or add separate subroutines inside:
+```text
+src/coupling/mo_ocean_era5_provider_coupling.f90
+```
+Recommended new routines:
+```fortran
+construct_ocean_era5_wave_provider_coupling_post_sync(...)
+couple_ocean_to_era5_wave_provider(...)
+```
+Why separate? Because the wave provider is a separate Python/YAC component:
+```text
+era5_wave_provider
+era5_wave_grid
+```
+and it should be possible to debug it independently from the existing atmosphere/runoff provider.
+
+This receiver should define and receive exactly:
+```text
+era5_zonal_sfc_stokes_drift
+era5_meridional_sfc_stokes_drift
+era5_stokes_transport
+```
+It should follow the same pattern as:
+```text
+src/coupling/mo_ocean_era5_provider_coupling.f90
+```
+but with:
+```fortran
+INTEGER, PARAMETER :: no_of_fields = 3
+```
+and three field objects.
+
+### 4. Register the wave coupling fields during YAC setup
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/coupling/mo_ocean_coupling_frame.f90
+```
+Current ERA5 construct call is around line 131:
+```fortran
+CALL construct_ocean_era5_provider_coupling_post_sync(...)
+```
+If you create a separate wave receiver, add a similar call for:
+```fortran
+CALL construct_ocean_era5_wave_provider_coupling_post_sync(...)
+```
+This is the ICON-side declaration of “the ocean component has target fields with these names”.
+
+### 5. Call the receiver during the ocean forcing update
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_surface_refactor.f90
+```
+Existing ERA5 receive call is around:
+```fortran
+CALL couple_ocean_to_era5_provider(...)
+```
+Add a second call nearby:
+```fortran
+CALL couple_ocean_to_era5_wave_provider( &
+  p_patch_3D, &
+  p_as%era5_zonal_sfc_stokes_drift, &
+  p_as%era5_meridional_sfc_stokes_drift, &
+  p_as%era5_stokes_transport, &
+  lacc=lzacc)
+```
+
+Yes, an `IF` statement is a good idea, for example only call it when the ERA5 wave provider is enabled. At first, you can key it off the same ERA5 coupling condition for testing, but eventually it would be nicer to have a separate switch like `is_coupled_to_era5_wave()`.
+
+### 6. Modify the runscript YAC YAML
+File:
+
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/run/exp.ocean_era5_R2B7L72_test.run
+```
+
+Add component config:
+
+```yaml
+era5wave2ocn: &era5wave2ocn
+  src_component: era5_wave_provider
+  src_grid: era5_wave_grid
+  src_lag: 0
+  tgt_component: oce
+  tgt_grid: icon_ocean_grid
+  tgt_lag: 0
+  mapping_side: target
+  <<: [ *time_config ]
+```
+
+Add coupling entry:
+
+```yaml
+- <<: [ *era5wave2ocn, *nnn_fixed ]
+  coupling_period: PT1H
+  field:
+    - era5_zonal_sfc_stokes_drift
+    - era5_meridional_sfc_stokes_drift
+    - era5_stokes_transport
+```
+
+You may later choose a better interpolation stack, but `nnn_fixed` is a reasonable first test.
+
+### 7. Modify `mpmd.conf` launch
+In the same runscript, add one process for:
+
+```bash
+${PYTHON} ${basedir}/etc/era5g_wave_provider.py
+```
+
+and reduce the model rank range accordingly. Your runscript already has commented hints for this.
+
+### 8. Build and test
+Test order:
+- Python dry run:
+   ```bash
+   python era5g_wave_provider.py --dryrun ...
+   ```
+- Compile ICON after Fortran changes.
+- Run a very short coupled test, maybe 1-6 hours.
+- Confirm fields exist in output:
+   ```bash
+   cdo sinfo output_file.nc
+   ncdump -h output_file.nc | grep era5.*stokes
+   ```
+
+**Main correction to your list**
+Your step 3 says “modify `mo_ocean_era5_provider_coupling.f90` to add the 3 more fields”. That can work, but I would instead add a separate wave-provider receiver. Storage can still be in `p_as`; the coupling receive logic should be separate because the source component is separate. This makes the system easier to test and avoids making the atmosphere/runoff provider and wave provider artificially inseparable.
