@@ -20,7 +20,12 @@ Last Eddited: 2026-01-13
 		- “...the previous synthesis showed a broader..., the current version focuses on one specific aspect of the wave-driven impacts: the Stokes forces”
 ## Discussion with Helmuth
 #presenter/Helmuth_Haak 
-- 
+- first version of `era5g_wave_provider.py` is implemented, and has been tested on dryrun. The result looks great
+- next step: compile the wave provider, do a online test using cheap setup (r2b4)
+	- before compiling the wave provider:
+		- specify the new variables in the ICON code. Maybe all 3 new fields, since we want to differentiate the era5 **surface** **ust, vst** from the actual zonal/meridional_stokes_drift (which is 3D variables by design)
+			- data type (13?)
+			- adding add_var
 
 # [[2026-06-05]]
 ## Regular meeting with Nils

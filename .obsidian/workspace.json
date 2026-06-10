@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TRR-Workshop_Git-Lab"
+              "title": "Regular-Meeting_Note"
             }
           },
           {
@@ -95,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "git",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -116,8 +116,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -199,13 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of TRR-Workshop_Git-Lab"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -276,6 +275,7 @@
   },
   "active": "f3aa8b54b1ff8c89",
   "lastOpenFiles": [
+    "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
     "Project-Surface_Waves/Plan/Tasks.md",
@@ -306,7 +306,6 @@
     "Project-Surface_Waves/Plan/Conceptual",
     "Attachments/Screenshot 2026-05-18 at 14.39.06.png",
     "Project-WMT/Plan/Figure_Plan.md",
-    "2026-04-29.md",
     "PhD-General/PhD_courses",
     "Attachments/Figures_plan_2.jpg",
     "Attachments/Figures_plan.jpg",
