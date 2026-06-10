@@ -4,7 +4,7 @@ tags:
   - Meeting
 Last Eddited: 2025-12-11
 ---
-This is the first panel meeting for Muxin Hu as a PhD candidate.
+
 
 # [[2025-12-11]] Panel Meeting 1
 ## Progress Report
