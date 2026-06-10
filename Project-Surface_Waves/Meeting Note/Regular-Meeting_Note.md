@@ -8,8 +8,13 @@ Last Eddited: 2026-01-13
 ---
 
 # [[2026-06-10]]
-- AI privacy
-- AI licenses 
+## Regular meeting with Nils
+- AI privacy, AI licenses → it should be fine
+- keep working on the pipeline
+- Ask him if emergent questions regarding the technical issue next week
+- Panel meeting, progress report:
+	- shorten the context
+	- 
 
 # [[2026-06-05]]
 ## Regular meeting with Nils
