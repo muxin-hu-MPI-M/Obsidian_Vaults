@@ -14,7 +14,9 @@ Last Eddited: 2026-01-13
 - Ask him if emergent questions regarding the technical issue next week
 - Panel meeting, progress report:
 	- shorten the context
-	- 
+	- explain the current thesis synthesis in the **first part of PROGRESS report**
+	- describe the transits from previous focus in the **STATUS report**
+		- “...the previous synthesis showed a broader..., the current version focuses on one specific aspect of the wave-driven impacts: the Stokes forces”
 
 # [[2026-06-05]]
 ## Regular meeting with Nils
