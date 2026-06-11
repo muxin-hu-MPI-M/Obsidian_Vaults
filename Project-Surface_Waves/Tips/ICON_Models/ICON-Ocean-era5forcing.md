@@ -196,6 +196,61 @@ For the provider, `PYTHON` chooses the interpreter and package environment, incl
 `p_as` is **not ERA5-specific**. It is `TYPE(t_atmos_for_ocean)`, a general “atmosphere/forcing for ocean” container. In this branch, the ERA5 provider fills it when `iforc_oce == era5_provider`.
 So for Option A, we use `p_as` as the storage place for your ERA5 wave forcing too. That is practical and consistent.
 
+## Files that contains ‘era5’
+```bash
+config/mo_ocean_nml.f90:745: INTEGER, PARAMETER :: ERA5_provider             = 13  ! ERA5 from python reader
+boundary/mo_ocean_surface_refactor.f90:40:    &  No_Forcing, Analytical_Forcing, OMIP_FluxFromFile, Coupled_FluxFromAtmo,era5_provider,       &
+boundary/mo_ocean_surface_refactor.f90:956:    USE mo_ocean_era5_provider_coupling, ONLY : couple_ocean_to_era5_provider
+boundary/mo_ocean_surface_refactor.f90:957:    USE mo_coupling_config, only : is_coupled_to_era5
+boundary/mo_ocean_surface_refactor.f90:990:    CASE (OMIP_FluxFromFile, era5_provider)         !  12,13      !  Driving the ocean with OMIP fluxes
+boundary/mo_ocean_surface_refactor.f90:995:      IF ( is_coupled_to_era5() ) THEN
+boundary/mo_ocean_surface_refactor.f90:997:    CALL couple_ocean_to_era5_provider(p_patch_3D, p_as%tafo, &
+
+boundary/mo_ocean_forcing.f90:452:    LOGICAL, DIMENSION(MAX_GROUPS) :: groups_oce_era5
+boundary/mo_ocean_forcing.f90:461:    groups_oce_era5 = groups("oce_era5")
+boundary/mo_ocean_forcing.f90:470:    CALL add_var(ocean_default_list, 'era5_t2m', p_as%tafo ,&
+boundary/mo_ocean_forcing.f90:472:      &          t_cf_var('era5_t2m', 'C', 'era5_t2m', datatype_flt),&
+boundary/mo_ocean_forcing.f90:474:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:476:    CALL add_var(ocean_default_list, 'era5_tdew', p_as%ftdew , &
+boundary/mo_ocean_forcing.f90:478:      &          t_cf_var('era5_tdew', 'K', 'era5_tdew', datatype_flt),&
+boundary/mo_ocean_forcing.f90:480:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:482:    CALL add_var(ocean_default_list, 'era5_wind10', p_as%fu10 , &
+boundary/mo_ocean_forcing.f90:484:      &          t_cf_var('era5_wind10', 'm s-1', 'era5_wind10', datatype_flt),&
+boundary/mo_ocean_forcing.f90:486:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:488:    CALL add_var(ocean_default_list, 'era5_ustress', p_as%topBoundCond_windStress_u , &
+boundary/mo_ocean_forcing.f90:490:      &          t_cf_var('era5_ustress', 'Pa', 'era5_ustress', datatype_flt),&
+boundary/mo_ocean_forcing.f90:492:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:494:    CALL add_var(ocean_default_list, 'era5_vstress', p_as%topBoundCond_windStress_v , &
+boundary/mo_ocean_forcing.f90:496:      &          t_cf_var('era5_vstress', 'Pa', 'era5_vstress', datatype_flt),&
+boundary/mo_ocean_forcing.f90:498:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:500:     CALL add_var(ocean_default_list, 'era5_u10', p_as%u , &
+boundary/mo_ocean_forcing.f90:502:      &          t_cf_var('era5_u10', 'm s-1', 'era5_u10', datatype_flt),&
+boundary/mo_ocean_forcing.f90:504:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:506:          CALL add_var(ocean_default_list, 'era5_v10', p_as%v , &
+boundary/mo_ocean_forcing.f90:508:      &          t_cf_var('era5_v10', 'm s-1', 'era5_v10', datatype_flt),&
+boundary/mo_ocean_forcing.f90:510:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:512:          CALL add_var(ocean_default_list, 'era5_ldown', p_as%flwr , &
+boundary/mo_ocean_forcing.f90:514:      &          t_cf_var('era5_ldown', 'W m-2', 'era5_ldown', datatype_flt),&
+boundary/mo_ocean_forcing.f90:516:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:518:            CALL add_var(ocean_default_list, 'era5_precip', p_as%frshflux_precipitation , &
+boundary/mo_ocean_forcing.f90:520:      &          t_cf_var('era5_precip', 'm s-1', 'era5_precip', datatype_flt),&
+boundary/mo_ocean_forcing.f90:522:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:524:            CALL add_var(ocean_default_list, 'era5_swdown', p_as%fswr , &
+boundary/mo_ocean_forcing.f90:526:      &          t_cf_var('era5_swdown', 'W m-2', 'era5_swdown', datatype_flt),&
+boundary/mo_ocean_forcing.f90:528:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:530:           CALL add_var(ocean_default_list, 'era5_runoff', p_as%frshflux_runoff , &
+boundary/mo_ocean_forcing.f90:532:      &          t_cf_var('era5_runoff', 'm s-1', 'era5_runoff', datatype_flt),&
+boundary/mo_ocean_forcing.f90:534:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:536:            CALL add_var(ocean_default_list, 'era5_slp', p_as%pao , &
+boundary/mo_ocean_forcing.f90:538:      &          t_cf_var('era5_slp', 'Pa', 'era5_slp', datatype_flt),&
+boundary/mo_ocean_forcing.f90:540:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_forcing.f90:542:            CALL add_var(ocean_default_list, 'era5_tcc', p_as%fclou , &
+boundary/mo_ocean_forcing.f90:544:      &          t_cf_var('era5_tcc', '1', 'era5_tcc', datatype_flt),&
+boundary/mo_ocean_forcing.f90:546:      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+boundary/mo_ocean_ext_data.f90:272:    ! omip forcing data on cell edge (dont need this with iforc_oce == era5_provider)
+boundary/mo_ocean_ext_data.f90:455:    ! dont need this with iforc_oce == era5_provider
+```
+
 ## Recommended Pipeline
 ### 0. First adjust Python names
 I would make the scalar name ERA5-specific too:
@@ -213,7 +268,7 @@ File:
 ```text
 /work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_surface_types.f90
 ```
-Current type is here:
+Current type is here:w
 ```fortran
 TYPE t_atmos_for_ocean
 ```

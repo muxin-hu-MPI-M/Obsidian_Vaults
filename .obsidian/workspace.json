@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -316,8 +316,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "369e4d05e96f7b4e",
+  "active": "3a3ddfb51ceb73d5",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
     "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
@@ -348,7 +349,6 @@
     "Project-Surface_Waves/Plan/Experimental",
     "Project-Surface_Waves/Plan/Conceptual",
     "Attachments/Screenshot 2026-05-18 at 14.39.06.png",
-    "Project-WMT/Plan/Figure_Plan.md",
     "PhD-General/PhD_courses",
     "Attachments/Figures_plan_2.jpg",
     "Attachments/Figures_plan.jpg",
