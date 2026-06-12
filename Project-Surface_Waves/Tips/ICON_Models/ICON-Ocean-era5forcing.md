@@ -253,15 +253,20 @@ boundary/mo_ocean_ext_data.f90:455:    ! dont need this with iforc_oce == era5_p
 
 
 ## Pipeline suggested from Helmuth
-### Modify `TYPE`
-Add 3 more fields in `TYPE t_atmos_for_ocean`, which will be used in:
-- `mo_ocean_forcing.f90`, inside the `SUBROUTINE construct_atmos_for_ocean`
-- 
+### Summary
+1. modify `TYPE t_atmos_for_ocean` in `/src/ocean/boundary/mo_ocean_surface_types.f90`
+2. `add_var` in `/src/ocean/boundary/mo_ocean_forcing.f90`
+3. modify subroutines in `src/coupling/mo_ocean_era5_provider_coupling.f90`, and in places where they call the subroutines. two subroutines:
+	1. `construct_ocean_era5_provider_coupling_post_sync`, need to update in `src/coupling/mo_ocean_coupling_frame.f90`
+	2. `couple_ocean_to_era5_wave_provider`, need to update in `src/ocean/boundary/mo_ocean_surface_refactor.f90`
+
+### Steps
+#### 1. Modify TYPE
 File:
 ```text
 /work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_surface_types.f90
 ```
-Current type is here:w
+Current type is here:
 ```fortran
 TYPE t_atmos_for_ocean
 ```
@@ -272,6 +277,7 @@ Add three pointer arrays, for example near `u`, `v`, or near wind stress:
 & era5_stokes_transport           (:,:), & ! ERA5 Stokes transport magnitude       [m2/s]
 ```
 These are cell-centered 2D fields with shape `(nproma, nblks_c)`, same as other surface forcings.
+
 
 
 

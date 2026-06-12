@@ -149,7 +149,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812
+    "width": 248.50247192382812,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -281,7 +282,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 307.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -302,7 +304,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cf18839df3929811",
+  "active": "369e4d05e96f7b4e",
   "lastOpenFiles": [
     "Career_Talks_interview_Johanna.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
