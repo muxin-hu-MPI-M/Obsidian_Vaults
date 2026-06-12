@@ -251,6 +251,30 @@ boundary/mo_ocean_ext_data.f90:272:    ! omip forcing data on cell edge (dont ne
 boundary/mo_ocean_ext_data.f90:455:    ! dont need this with iforc_oce == era5_provider
 ```
 
+
+## Pipeline suggested from Helmuth
+### Modify `TYPE`
+Add 3 more fields in `TYPE t_atmos_for_ocean`, which will be used in:
+- `mo_ocean_forcing.f90`, inside the `SUBROUTINE construct_atmos_for_ocean`
+- 
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_surface_types.f90
+```
+Current type is here:w
+```fortran
+TYPE t_atmos_for_ocean
+```
+Add three pointer arrays, for example near `u`, `v`, or near wind stress:
+```fortran
+& era5_zonal_sfc_stokes_drift     (:,:), & ! ERA5 surface Stokes drift, zonal      [m/s]
+& era5_meridional_sfc_stokes_drift(:,:), & ! ERA5 surface Stokes drift, meridional [m/s]
+& era5_stokes_transport           (:,:), & ! ERA5 Stokes transport magnitude       [m2/s]
+```
+These are cell-centered 2D fields with shape `(nproma, nblks_c)`, same as other surface forcings.
+
+
+
 ## Recommended Pipeline
 ### 0. First adjust Python names
 I would make the scalar name ERA5-specific too:
@@ -452,3 +476,4 @@ Test order:
 
 **Main correction to your list**
 Your step 3 says “modify `mo_ocean_era5_provider_coupling.f90` to add the 3 more fields”. That can work, but I would instead add a separate wave-provider receiver. Storage can still be in `p_as`; the coupling receive logic should be separate because the source component is separate. This makes the system easier to test and avoids making the atmosphere/runoff provider and wave provider artificially inseparable.
+
