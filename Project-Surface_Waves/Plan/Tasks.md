@@ -25,20 +25,29 @@ tags:
 # Weekly Plan 
 
 
-## [[2026-06-08]]
-- [ ] renew the payment method for Swiss tele and Zotero
+## [[2026-06-15]]
 - [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
-	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
-	- [ ] create new python provider for wave data
-		- [ ] first version
-			- [x] try dry run (agent did that), save it into log file
-			- [ ] Modify run script
-			- [ ] try online test (maybe do this uses interactive mode, on lower resolution)
+	- [x] modify ICON code to ‘receive’ the new forcing variable
+		- [x] modification
+		- [x] compile to see if okay
+	- [ ] add the wave provider script in the run script, test if it works
 - [ ] Panel Meeting: #project/PhD_general 
 	- [ ] Update the progress report
 		- [x] what’s to include? discuss with Nils during meeting
-		- [ ] A new sypnosis
-		- [ ] 
+		- [x] A new sypnosis
+		- [ ] check with Nils/Noel
+## [[2026-06-08]]
+- [ ] renew the payment method for Swiss tele and Zotero
+	- [x] swiss tele
+	- [ ] zotero
+- [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
+	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
+	- [x] create new python provider for wave data
+		- [x] first version
+			- [x] try dry run (agent did that), save it into log file
+			- [x] Modify run script
+			- [x] try online test (maybe do this uses interactive mode, on lower resolution)
+
 ## [[2026-06-01]]
 - [ ] explore the era5 force icon script #project/surfwaves 
 	- [x] build icon executable on icon ocean 
