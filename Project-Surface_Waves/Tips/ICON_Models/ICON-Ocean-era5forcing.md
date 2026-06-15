@@ -264,7 +264,7 @@ boundary/mo_ocean_ext_data.f90:455:    ! dont need this with iforc_oce == era5_p
 #### 1. Modify TYPE
 File:
 ```text
-/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/master/src/ocean/boundary/mo_ocean_surface_types.f90
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/boundary/mo_ocean_surface_types.f90
 ```
 Current type is here:
 ```fortran
@@ -278,8 +278,58 @@ Add three pointer arrays, for example near `u`, `v`, or near wind stress:
 ```
 These are cell-centered 2D fields with shape `(nproma, nblks_c)`, same as other surface forcings.
 
+#### 2. Add_var
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/boundary/mo_ocean_forcing.f90
+```
+Under the subroutine, put the add_var, with the specific name defined in the first step
+```Fortran
+SUBROUTINE construct_atmos_for_ocean(p_patch, p_as)
+!
+    TYPE(t_patch),                INTENT(IN):: p_patch
+    TYPE(t_atmos_for_ocean ), INTENT(INOUT) :: p_as
 
+    ...
+    groups_oce_era5 = groups("oce_era5")
+    ...
+    
+    CALL add_var(ocean_default_list, 'era5_surf_ust', p_as%surf_ust , &
+      &          grid_unstructured_cell,za_surface, &
+      &          t_cf_var('era5_surf_ust', 'm s-1', 'era5_surf_ust', datatype_flt),&
+      &          dflt_g2_decl_cell,&
+      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
 
+    CALL add_var(ocean_default_list, 'era5_surf_vst', p_as%surf_vst , &
+      &          grid_unstructured_cell,za_surface, &
+      &          t_cf_var('era5_surf_vst', 'm s-1', 'era5_surf_vst', datatype_flt),&
+      &          dflt_g2_decl_cell,&
+      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+
+    CALL add_var(ocean_default_list, 'era5_stokes_transport', p_as%stokes_transport , &
+      &          grid_unstructured_cell,za_surface, &
+      &          t_cf_var('era5_stokes_transport', 'm2 s-1', 'era5_stokes_transport', datatype_flt),&
+      &          dflt_g2_decl_cell,&
+      &          ldims=(/nproma,alloc_cell_blocks/),in_group=groups_oce_era5)
+```
+Then initialise them to zero in the same subroutine:
+```fortran
+p_as%surf_ust(:,:)      = 0.0_wp
+p_as%surf_vst(:,:)      = 0.0_wp
+p_as%stokes_transport(:,:)    = 0.0_wp
+```
+No `ALLOCATE/DEALLOCATE` at this stage. The existing `add_var` pattern appears to manage most of these `p_as` arrays.
+
+#### 3. Modify subroutines in provider_coupling field
+File:
+```text
+/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/coupling/mo_ocean_era5_provider_coupling.f90
+```
+Starting with the subroutine 1:
+```Fortran
+CONTAINS
+	SUBROUTINE construct_ocean_era5_provider_coupling_post_sync
+```
 
 ## Recommended Pipeline
 ### 0. First adjust Python names
