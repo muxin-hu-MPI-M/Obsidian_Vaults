@@ -30,7 +30,10 @@ tags:
 	- [x] modify ICON code to ‘receive’ the new forcing variable
 		- [x] modification
 		- [x] compile to see if okay
-	- [ ] add the wave provider script in the run script, test if it works
+	- [x] add the wave provider script in the run script, test if it works
+		- [x] compile the icon with levante.intel
+	- [ ] missing value problem
+		- [ ] change wave provider, assign the NaN values in source data to 0.0
 - [ ] Panel Meeting: #project/PhD_general 
 	- [ ] Update the progress report
 		- [x] what’s to include? discuss with Nils during meeting
