@@ -26,14 +26,16 @@ tags:
 
 
 ## [[2026-06-15]]
-- [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
+- [x] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
 	- [x] modify ICON code to ‘receive’ the new forcing variable
 		- [x] modification
 		- [x] compile to see if okay
 	- [x] add the wave provider script in the run script, test if it works
 		- [x] compile the icon with levante.intel
-	- [ ] missing value problem
-		- [ ] change wave provider, assign the NaN values in source data to 0.0
+	- [x] missing value problem
+		- [x] change wave provider, assign the NaN values in source data to 0.0
+		- [x] fix the sanitise function to handle the missing value -9999 to 9999
+		- [x] implement the interpolation method for wave data
 - [ ] Panel Meeting: #project/PhD_general 
 	- [ ] Update the progress report
 		- [x] what’s to include? discuss with Nils during meeting

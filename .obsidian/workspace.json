@@ -124,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "grep",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -145,8 +145,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -303,7 +302,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Plan/Tasks.md",
