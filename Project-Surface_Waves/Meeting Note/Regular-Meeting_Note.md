@@ -21,7 +21,9 @@ Last Eddited: 2026-01-13
 		- write out the TKE output would be better
 - working on wave-current coupling, some issue, will be finished next week
 - starting experiment → wave stress drive the ocean
-- 
+- two suspect → ask Chris
+	- swell need to be damped
+	- stripe 
 
 # [[2026-06-10]]
 ## Regular meeting with Nils
