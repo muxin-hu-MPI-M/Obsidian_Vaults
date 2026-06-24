@@ -91,8 +91,7 @@
               "title": "Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -149,7 +148,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812
+    "width": 248.50247192382812,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -281,7 +281,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 307.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -302,8 +303,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "13a83055757bdd15",
+  "active": "f3aa8b54b1ff8c89",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Plan/Tasks.md",
@@ -322,7 +324,6 @@
     "Project-Eddy_Upwelling/Plan/Meeting_Note.md",
     "2026-06-05.md",
     "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",

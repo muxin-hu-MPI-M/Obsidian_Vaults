@@ -7,6 +7,22 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-06-24]]
+## ICON-wave focus group
+### From Mikhail & Chris
+- exchange of the Stokes profile is already implemented
+	- to few hundreds of meter
+	- send to the ocean
+	- also use the YAC coupling
+		- sending the 3D profile
+	- the profile is used for the calculation of the TKE
+	- sensitivity test shows the MLD not change too much when 100 times the TKE
+		- the MLD is too coarse
+		- write out the TKE output would be better
+- working on wave-current coupling, some issue, will be finished next week
+- starting experiment → wave stress drive the ocean
+- 
+
 # [[2026-06-10]]
 ## Regular meeting with Nils
 #presenter/Nils_Brüggemann 
