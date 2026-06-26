@@ -38,9 +38,10 @@ tags:
 		- [ ] Gnatt plot
 	- [ ] Slides for 10 mins short presentation
 - [ ] ERA5 wave forcing to ICON #project/surfwaves 
-	- [ ] Add calculation of Stokes profile
-	- [ ] calculated 3D stokes into the same TYPE, passed to ICON
-	- [ ] 
+	- [x] Add calculation of Stokes profile
+	- [x] calculated 3D stokes into the same TYPE, passed to ICON
+	- [x] compile modifications use levante.nag
+	- [ ] test run use r2b4, check reconstructed profile
 
 ## [[2026-06-15]]
 - [x] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
