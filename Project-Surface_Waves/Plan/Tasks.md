@@ -25,6 +25,19 @@ tags:
 # Weekly Plan 
 
 
+
+## [[2026-06-22]]
+- [ ] Panel Meeting: #project/PhD_general 
+	- [ ] Update the progress report
+		- [x] what’s to include? discuss with Nils during meeting
+		- [x] A new sypnosis
+		- [x] check with Nils/Noel
+		- [ ] Thesis synopsis: declare that “1st part of the thesis”
+		- [ ] Status report: replace Fig 1&2 with volume transport, but mention the tracer transport
+		- [ ] Plane until next AP
+		- [ ] Gnatt plot
+	- [ ] Slides for 10 mins short presentation
+
 ## [[2026-06-15]]
 - [x] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
 	- [x] modify ICON code to ‘receive’ the new forcing variable
@@ -36,11 +49,7 @@ tags:
 		- [x] change wave provider, assign the NaN values in source data to 0.0
 		- [x] fix the sanitise function to handle the missing value -9999 to 9999
 		- [x] implement the interpolation method for wave data
-- [ ] Panel Meeting: #project/PhD_general 
-	- [ ] Update the progress report
-		- [x] what’s to include? discuss with Nils during meeting
-		- [x] A new sypnosis
-		- [ ] check with Nils/Noel
+
 ## [[2026-06-08]]
 - [ ] renew the payment method for Swiss tele and Zotero
 	- [x] swiss tele
