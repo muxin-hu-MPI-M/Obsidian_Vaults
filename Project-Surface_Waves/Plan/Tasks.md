@@ -32,9 +32,9 @@ tags:
 		- [x] what’s to include? discuss with Nils during meeting
 		- [x] A new sypnosis
 		- [x] check with Nils/Noel
-		- [ ] Thesis synopsis: declare that “1st part of the thesis”
-		- [ ] Status report: replace Fig 1&2 with volume transport, but mention the tracer transport
-		- [ ] Plane until next AP
+		- [x] Thesis synopsis: declare that “1st part of the thesis”
+		- [x] Status report: replace Fig 1&2 with volume transport, but mention the tracer transport
+		- [x] Plane until next AP
 		- [ ] Gnatt plot
 	- [ ] Slides for 10 mins short presentation
 - [ ] ERA5 wave forcing to ICON #project/surfwaves 
