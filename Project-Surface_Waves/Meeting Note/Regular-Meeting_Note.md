@@ -7,6 +7,16 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-06-30]]
+## Regular meeting with Nils
+three-pathway structure can be:
+1. **Wave-mediated air-sea fluxes**  
+    Sea state modifies the exchange of momentum, heat, moisture, gas, and possibly mechanical energy across the air-sea interface.
+2. **Stokes-induced resolved dynamics**  
+    Stokes drift enters the wave-averaged momentum balance and modifies resolved Eulerian currents, sea-surface height, convergence/divergence, and tracer transport.
+3. **Wave-enhanced turbulence and mixing**  
+    Waves enhance unresolved vertical mixing through Langmuir turbulence, non-breaking-wave-induced mixing, breaking-wave TKE input, and related parameterisations.
+
 # [[2026-06-24]]
 ## ICON-wave focus group
 ### From Mikhail & Chris

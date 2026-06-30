@@ -6,6 +6,15 @@ tags:
   - proposal/surfwaves
 ---
 
+
+# [[2026-06-30]] Update: 3 pathways declare
+three-pathway structure can be:
+1. **Wave-mediated air-sea fluxes**  
+    Sea state modifies the exchange of momentum, heat, moisture, gas, and possibly mechanical energy across the air-sea interface.
+2. **Stokes-induced resolved dynamics**  
+    Stokes drift enters the wave-averaged momentum balance and modifies resolved Eulerian currents, sea-surface height, convergence/divergence, and tracer transport.
+3. **Wave-enhanced turbulence and mixing**  
+    Waves enhance unresolved vertical mixing through Langmuir turbulence, non-breaking-wave-induced mixing, breaking-wave TKE input, and related parameterisations.
 # [[2026-02-25]] Update: PhD Research Outline
 Coastal upwelling systems are fundamental components of the climate system, linking atmospheric forcing to ocean circulation, air–sea exchanges, and marine productivity. Upwelling is primarily driven by alongshore winds: wind stress generates offshore Ekman transport and surface divergence, allowing cold, nutrient-rich subsurface waters to reach the surface (Belmadani et al., 2014; Tarazona and Arntz, 2001). While wind remains the first-order driver of upwelling, air–sea momentum and energy exchange occur over a wave-covered ocean surface, where surface gravity waves can modulate how atmospheric forcing is transmitted into the upper ocean. ==**These wave-mediated processes introduce additional complexity, potentially influencing the efficiency of Ekman transport, vertical mixing, and upper-ocean structure beyond classical wind-driven dynamics.**==
 
