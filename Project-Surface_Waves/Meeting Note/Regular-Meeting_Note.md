@@ -9,7 +9,7 @@ Last Eddited: 2026-01-13
 
 # [[2026-06-30]]
 ## TRR181-L4
--  if doing uncoupled, the SST might be strictly tight to the atmospheric forcing, which will damp the influence from waves → might be the strong motivation for the coupled simulation
+- if doing uncoupled, the SST might be strictly tight to the atmospheric forcing, which will damp the influence from waves → might be the strong motivation for the coupled simulation
 ## Regular meeting with Nils
 three-pathway structure can be:
 1. **Wave-mediated air-sea fluxes**  

@@ -27,21 +27,21 @@ tags:
 
 
 ## [[2026-06-22]]
-- [ ] Panel Meeting: #project/PhD_general 
-	- [ ] Update the progress report
+- [x] Panel Meeting: #project/PhD_general 
+	- [x] Update the progress report
 		- [x] what’s to include? discuss with Nils during meeting
 		- [x] A new sypnosis
 		- [x] check with Nils/Noel
 		- [x] Thesis synopsis: declare that “1st part of the thesis”
 		- [x] Status report: replace Fig 1&2 with volume transport, but mention the tracer transport
 		- [x] Plane until next AP
-		- [ ] Gnatt plot
-	- [ ] Slides for 10 mins short presentation
-- [ ] ERA5 wave forcing to ICON #project/surfwaves 
+		- [x] Gnatt plot
+	- [x] Slides for 10 mins short presentation
+- [x] ERA5 wave forcing to ICON #project/surfwaves 
 	- [x] Add calculation of Stokes profile
 	- [x] calculated 3D stokes into the same TYPE, passed to ICON
 	- [x] compile modifications use levante.nag
-	- [ ] test run use r2b4, check reconstructed profile
+	- [x] test run use r2b4, check reconstructed profile
 
 ## [[2026-06-15]]
 - [x] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
