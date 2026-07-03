@@ -53,7 +53,7 @@ where the $\hat{\mathbf{k}}=\mathbf k/k$ is the unit vector in the direction of 
 
 We now recast the east and north components of the ~={red}**Stokes drift profile** in frequency direction=~ $(f, \theta)$ coordinates as:
 $$ \begin{equation} \mathbf{v_s}(z)=\frac{16\pi^3}{g}\int_{0}^{2\pi} \int_{0}^{\infty}f^3 \hat{\mathbf{k}} e^{2kz}F(f, \theta)\;df\:d\theta \tag{4} \end{equation} $$
-Where $\theta$ is measured clockwise from north (going to).
+Where $\theta$ is measured clockwise from north (going to). **This integrand includes an exponential function which decays according to the wave number k, so that vertical profiles of Stokes drift also depend on the spectral shape** (Tamura et al., 2012, p. 2)
 
 The ~={red}**Stokes transport**=~ $\mathbf{V_s}=\int_{-\infty}^{0}\mathbf{v_s}(z)dz$ becomes in the deep water limit (since $\int_{-\infty}^{0}e^{2kz}\;dz=1/2k$):
 $$ \begin{equation} \mathbf{V_s}=2\pi\int_{0}^{2\pi} \int_{0}^{\infty}f\hat{\mathbf{k}}F(f,\theta)dfd\theta \tag{5}\end{equation} $$

@@ -4,6 +4,11 @@ tags:
   - Meeting
 Last Eddited: 2025-12-11
 ---
+# [[2026-07-02]] Panel Meeting 2
+## Progress report
+
+
+## Meeting note
 
 
 # [[2025-12-11]] Panel Meeting 1
