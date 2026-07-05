@@ -68,7 +68,7 @@ tags:
 			- [x] try online test (maybe do this uses interactive mode, on lower resolution)
 
 ## [[2026-06-01]]
-- [ ] explore the era5 force icon script #project/surfwaves 
+- [x] explore the era5 force icon script #project/surfwaves 
 	- [x] build icon executable on icon ocean 
 	- [x] read and understand the python provider that read the data
 	- [x] email to Nils
