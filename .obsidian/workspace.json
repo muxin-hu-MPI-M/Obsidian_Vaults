@@ -63,8 +63,7 @@
               "title": "ECMWF_2024_Note_Wave-induced-stress_and_Young-waves"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -270,11 +269,13 @@
       "obsidian-importer:Open Importer": false,
       "sidebar-highlights:Open highlights": false,
       "callout-manager:Insert Callout": false,
-      "iconic:Open rulebook": false
+      "iconic:Open rulebook": false,
+      "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "59847c160bbc5db6",
+  "active": "fbeb0fba2e00b1e9",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
     "Heidelberg-Trip.md",
     "Zürich-to-Hamburg_Short-Stays.md",
     "Project-Surface_Waves/Plan/Tasks.md",
@@ -303,7 +304,6 @@
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
-    "Project-Eddy_Upwelling/Plan/Updates-Track_Note.md",
     "Attachments/IMG_8791 1.heic",
     "Attachments/IMG_8791.heic",
     "Project-Surface_Waves/Plan/Experimental",

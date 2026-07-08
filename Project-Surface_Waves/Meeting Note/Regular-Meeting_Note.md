@@ -7,6 +7,25 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-07-08]]
+## IMPRS-Intro: Climate Economics
+- social science: 
+	- how we related the physical world, economy, society institutions, behaviours, socioeconomic feedbacks, drivers of emissions, policy, mitigation and adaptation
+- how much climate change is desirable:
+	- cost and benefit (mitigation sense) analysis
+- Normative vs. descriptive
+	- normative: prescriptive “what ought to be”, choice, optimality
+	- descriptive: positive, “what was”
+- Definitions:
+	- Pareto improvement
+	- Pareto optimal/efficient
+	- Potential Pareto improvement / Kaldor-Hicks efficiency
+- model:
+	- social planner: Notional figure, as-fi decider, has an objective in mind
+	- Representative agents
+- private vs social cost/benefits
+- 
+
 # [[2026-07-02]]
 ## Panel meeting
 - In our intended experiment, the effects of currents on wave field were neglected (similar as McWilliams and Restrepo, 1999)
