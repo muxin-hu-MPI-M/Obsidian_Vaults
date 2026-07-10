@@ -24,7 +24,8 @@ Last Eddited: 2026-01-13
 	- social planner: Notional figure, as-fi decider, has an objective in mind
 	- Representative agents
 - private vs social cost/benefits
-- 
+- temperature-CO2 feedback:
+	- logarithmic relation between CO2 in atmosphere and global mean temperature
 
 # [[2026-07-02]]
 ## Panel meeting
