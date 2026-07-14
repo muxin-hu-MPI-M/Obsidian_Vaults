@@ -410,22 +410,6 @@
         "type": "highlight"
       }
     ],
-    "Project-Surface_Waves/Thoughts/Fourier_Transform_General.md": [
-      {
-        "id": "t6kimlsfk",
-        "text": "Fourier transform",
-        "tags": [],
-        "line": 12,
-        "startOffset": 271,
-        "endOffset": 292,
-        "filePath": "Project-Surface_Waves/Thoughts/Fourier_Transform_General.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1764803749008,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ],
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md": [
       {
         "id": "p4z8t6id3",
@@ -1626,6 +1610,65 @@
         "createdAt": 1780662153958,
         "isNativeComment": false,
         "type": "highlight"
+      }
+    ],
+    "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md": [
+      {
+        "id": "t6kimlsfk",
+        "text": "Fourier transform",
+        "tags": [],
+        "line": 13,
+        "startOffset": 279,
+        "endOffset": 300,
+        "filePath": "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1764803749008,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "ny1vx5yjv",
+        "text": "**Distributivity**",
+        "tags": [],
+        "line": 27,
+        "startOffset": 1159,
+        "endOffset": 1181,
+        "filePath": "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1784035532619,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "oeyk1m9gg",
+        "text": "**Associativity**",
+        "tags": [],
+        "line": 53,
+        "startOffset": 2238,
+        "endOffset": 2259,
+        "filePath": "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1784035539422,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "hn24cez9h",
+        "text": "Vector triple product",
+        "tags": [],
+        "line": 59,
+        "startOffset": 2612,
+        "endOffset": 2673,
+        "filePath": "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1784035656497,
+        "isNativeComment": false,
+        "color": "#fff88f",
+        "type": "html"
       }
     ]
   },
