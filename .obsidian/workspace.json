@@ -63,8 +63,7 @@
               "title": "ICON_Run_Long_Simulation"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -275,8 +274,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "59847c160bbc5db6",
+  "active": "fbeb0fba2e00b1e9",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
@@ -302,7 +302,6 @@
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Heidelberg-Trip.md",
     "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Thoughts/attachments/ST9Y2YCZ.png",
     "Project-Surface_Waves/Thoughts/attachments/STHU8YJ7.png",
     "Project-Surface_Waves/Thoughts/attachments",

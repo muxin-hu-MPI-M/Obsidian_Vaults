@@ -69,11 +69,24 @@ $$
 $$
 
 # Useful conversions in wave-averaged momentum framework
-- Einstein conversion if $\mathbf \alpha=(\alpha_x, \alpha_y, \alpha_z), \mathbf \beta=(\beta_x, \beta_y, \beta_z)$. **See details in (Suzuki & Fox-Kemper, 2016)**
+- Einstein conversion:
+$$
+\begin{align}
+	u_j \nabla u_j &=u_x \nabla u_x + u_y \nabla u_y + u_z \nabla u_z \\
+	&=
+	\begin{pmatrix}
+		u_x \partial_x u_x + u_y \partial_x u_y + u_z \partial_x u_z \\
+		u_x \partial_y u_y + u_y \partial_y u_y + u_z \partial_y u_z \\
+		u_x \partial_z u_z + u_y \partial_z u_y + u_z \partial_z u_z
+	\end{pmatrix}.
+\end{align}
+$$
+- if $\mathbf \alpha=(\alpha_x, \alpha_y, \alpha_z), \mathbf \beta=(\beta_x, \beta_y, \beta_z)$. **See details in (Suzuki & Fox-Kemper, 2016)**
 $$
 \begin{align}
 \mathbf{\alpha}\times (\nabla\times \mathbf{\beta}) &= \alpha_j \nabla \beta_j - (\alpha \cdot \nabla)\times \beta \\
 &=\alpha_x \nabla \beta_x + \alpha_y \nabla \beta_y + \alpha_z \nabla \beta_z - (\alpha \cdot \nabla)\times \beta
 \end{align}
 $$
-- 
+- conservative force
+$$ - \frac{\nabla |\mathbf u|^2}{2}=-u_j\nabla u_j $$
