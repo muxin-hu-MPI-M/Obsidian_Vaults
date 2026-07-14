@@ -62,7 +62,7 @@ $$ (\mathbf a \cdot \mathbf b) \mathbf c \ne \mathbf a(\mathbf b \cdot \mathbf c
 $$
 \begin{align}
 \mathbf{a}\times (\mathbf{b} \times \mathbf{c}) &= \mathbf{b}(\mathbf a \cdot \mathbf{c}) - \mathbf{c}(\mathbf a \cdot \mathbf{b})\\
-(\mathbf{a}\times \mathbf{b}) \times \mathbf{c} &= \mathbf{b}(\mathbf a \cdot \mathbf{c}) - \mathbf{a}(\mathbf b \cdot \mathbf{b}) \\
+(\mathbf{a}\times \mathbf{b}) \times \mathbf{c} &= \mathbf{b}(\mathbf a \cdot \mathbf{c}) - \mathbf{a}(\mathbf b \cdot \mathbf{c}) \\
 \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) &= \mathbf{b}\cdot(\mathbf{c}\times\mathbf{a}) = \mathbf{c}\cdot(\mathbf{a}\times\mathbf{b}) \\
 \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) &= -\mathbf{a}\cdot(\mathbf{c}\times\mathbf{b})
 \end{align}
