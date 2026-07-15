@@ -9,10 +9,43 @@ tags:
 Last Eddited: 2026-04-24
 ---
 # Setup for ICON
+## Finalising WAB momentum equation
 see detailed conversion rules in [[Mathematical_Understanding#Useful conversions in wave-averaged momentum framework]]
 
-Momentum equation framework used in ICON:
+Wave-averaged Boussinesq (WAB) Momentum equations in different forms (Suzuki & Fox-Kemper, 2016):
+$$
+\begin{align}
+\partial_t \mathbf{u}+ \left(\nabla \times \mathbf{u}+\mathbf{f}\right)\times \mathbf{u}^L  &= \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2),
+\tag{1}
+\\
+\partial_t \mathbf{u}^L+ \left(\mathbf{u}^{L}\cdot\nabla\right)\mathbf{u}^L + \mathbf{f}\times\mathbf{u}^{L}  &= \mathbf{b}+\mathbf{D}^{u} -\nabla p - \mathbf{u}^L \times \left(\nabla \times \mathbf{u}^s \right) + \partial_t \mathbf{u}^s
+\tag{2}
+\end{align}
+$$
+Eq.1 is the momentum equation structure that implemented in the ICON source code, with all oeprators.
 
+Thus, to efficiently use the origin structure of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
+$$
+\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L + \partial_t \mathbf{u}^s \tag{3}
+$$
+The Full **3D version** without the consideration of wavy-hydrostatic approximation (horizontal/vertical)
+- horizontal vector
+- vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
+
+Plan:
+- discrete equations for a one dimension diffusion equation
+- derive the hori/vertical expressions of Eq.(3)
+- get the form similar to Peter’s expressions in 2017
+- vector: normal alphabet
+- matrixes: fancy greek alphabet
+- familiar with the notation in Peter’s logic
+- Familiar myself with the ICON source 
+- $D^u$ use the $u^L$
+- $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
+- try to implement $\partial_t u^s$ into ICON
+
+
+## Numerical consideration
 
 
 
