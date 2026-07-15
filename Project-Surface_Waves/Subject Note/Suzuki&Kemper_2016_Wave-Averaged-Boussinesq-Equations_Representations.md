@@ -35,7 +35,18 @@ Because:
 - Distributivity of cross product: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = - \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$
 - Convective acceleration identity: $(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$
 ### 3D expansions
-The Full **3D version** without the consideration of wavy-hydrostatic approximation
+The Full **3D version** without the consideration of wavy-hydrostatic approximation are summarised below:
+$$
+\begin{align}
+\partial_t u^L - (f + \omega_z^L)v^L + w^L\omega_y^L &= b_x + D^u -\partial_x p - (u^L \partial_x u^L+ v^L \partial_x v^L + w^L \partial_x w^L)  + (w^L\omega_y^s - v^L \omega_z^s) + \partial_t u^s 
+\\
+\partial_t v^L + (f + \omega_z^L)u^L - w^L\omega_x^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L + w^L \partial_y w^L)  + (u^L\omega_z^s - w^L \omega_x^s) + \partial_t v^s 
+\\
+\partial_t w^L + v^L\omega_x^L - u^L\omega_y^L &= b_z + D^z -\partial_z p - (u^L \partial_z u^L+ v^L \partial_z v^L + w^L \partial_z w^L)  + (v^L\omega_x^s - u^L \omega_y^s) + \partial_t w^s
+\end{align}
+$$
+
+
 ### 2D horizontal + vertical (ICON-form)
 - horizontal vector operator e.g.,$\nabla_h$ 
 - vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
