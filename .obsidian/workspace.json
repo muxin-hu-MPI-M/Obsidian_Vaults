@@ -8,45 +8,31 @@
         "type": "tabs",
         "children": [
           {
+            "id": "7e2abbe5f6f62af6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Regular-Meeting_Note"
+            }
+          },
+          {
             "id": "fbeb0fba2e00b1e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mathematical_Understanding"
-            }
-          },
-          {
-            "id": "0e54896fe5f9d21b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Thoughts/Note_on_Surface_Wave.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_on_Surface_Wave"
-            }
-          },
-          {
-            "id": "45f5fc9f62da480b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zürich-to-Hamburg_Short-Stays.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Zürich-to-Hamburg_Short-Stays"
+              "title": "Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
             }
           },
           {
@@ -63,7 +49,8 @@
               "title": "ICON_Run_Long_Simulation"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -274,9 +261,20 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "b89abaaea3ef86ea",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
+    "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
+    "Project-Surface_Waves/Thoughts/Note_on_Surface_Wave.md",
+    "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+    "Project-Surface_Waves/Thoughts/(2014-09-01)-Approximate-Stokes-Drift-Profiles-in-Deep-Water-KRC3DAWP.md",
+    "Project-Surface_Waves/Thoughts/attachments/(2014-09-01)-Approximate-Stokes-Drift-Profiles-in-Deep-Water-KRC3DAWP.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+    "Zürich-to-Hamburg_Short-Stays.md",
+    "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-Ocean-era5forcing.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
@@ -287,21 +285,10 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON_mkexp.md",
     "Project-Surface_Waves/Plan/Experimental/ICON_Simulation_EXP-ID.md",
     "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
-    "Zürich-to-Hamburg_Short-Stays.md",
-    "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
     "Project-Surface_Waves/Thoughts/How_much_AMOC_Weakening_would_cool_Europe_under_Climate_change.md",
-    "Project-Surface_Waves/Thoughts/Understanding_Idealised_experiment.md",
-    "Project-Surface_Waves/Thoughts/Note_on_Surface_Wave.md",
-    "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "Project-Surface_Waves/Thoughts/Surface-Wave_Transport_Observation.md",
     "Project-Surface_Waves/Thoughts/(2024-01)-Wind-wave-climate-changes-and-their-impacts-6YF82YEW.md",
     "Project-Surface_Waves/Thoughts/(2022)-The-Effects-of-Ocean-Surface-Waves-on-Tropical-Cyclone-Intensity--Numerical-Simulations-Using-a-Regional-Atmosphe-UPGPKJSZ.md",
-    "Project-Surface_Waves/Thoughts/(2014-09-01)-Approximate-Stokes-Drift-Profiles-in-Deep-Water-KRC3DAWP.md",
-    "Project-Surface_Waves/Thoughts/(2013-01-01)-Air-Sea-Interaction-and-Surface-Waves-RU62EKSR.md",
-    "Project-Surface_Waves/Thoughts/(2010-01-01)-Dynamics-of-Winds-and-Currents-Coupled-to-Surface-Waves-JQRPIFWN.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Heidelberg-Trip.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Thoughts/attachments/ST9Y2YCZ.png",
     "Project-Surface_Waves/Thoughts/attachments/STHU8YJ7.png",
     "Project-Surface_Waves/Thoughts/attachments",

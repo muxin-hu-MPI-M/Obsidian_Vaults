@@ -8,6 +8,14 @@ tags:
   - Theory
 Last Eddited: 2026-04-24
 ---
+# Setup for ICON
+see detailed conversion rules in [[Mathematical_Understanding#Useful conversions in wave-averaged momentum framework]]
+
+Momentum equation framework used in ICON:
+
+
+
+
 # Craik–Leibovich (CL) Vortex Force
 ## CL vortex force form and identity
 The vortex force can be rewritten using vector identities (as $A\times B=-B\times A$):
