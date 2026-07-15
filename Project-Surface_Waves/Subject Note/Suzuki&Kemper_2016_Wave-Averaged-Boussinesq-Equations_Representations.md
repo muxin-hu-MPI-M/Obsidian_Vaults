@@ -10,6 +10,7 @@ Last Eddited: 2026-04-24
 ---
 # Setup for ICON
 ## Finalising WAB momentum equation
+### Vectors form
 see detailed conversion rules in [[Mathematical_Understanding#Useful conversions in wave-averaged momentum framework]]
 
 Wave-averaged Boussinesq (WAB) Momentum equations in different forms (Suzuki & Fox-Kemper, 2016):
@@ -26,10 +27,17 @@ Eq.1 is the momentum equation structure that implemented in the ICON source code
 
 Thus, to efficiently use the origin structure of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
 $$
-\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L + \partial_t \mathbf{u}^s \tag{3}
+\boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L + \partial_t \mathbf{u}^s} \tag{3}
 $$
-The Full **3D version** without the consideration of wavy-hydrostatic approximation (horizontal/vertical)
-- horizontal vector
+Comparing Eq.(3) to Eq.(1), one can find:
+$$(\nabla \times \mathbf{u}^L)\times \mathbf{u}^L + \nabla(p + \frac{1}{2}|\mathbf{u}^L|^2)-(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = (\mathbf{u}^L \cdot \nabla)\mathbf{u}^L + \nabla p + \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$$
+Because:
+- Distributivity of cross product: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = - \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$
+- Convective acceleration identity: $(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$
+### 3D expansions
+The Full **3D version** without the consideration of wavy-hydrostatic approximation
+### 2D horizontal + vertical (ICON-form)
+- horizontal vector operator e.g.,$\nabla_h$ 
 - vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
 ## Numerical consideration

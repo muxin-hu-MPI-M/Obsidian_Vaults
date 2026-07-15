@@ -69,7 +69,7 @@ $$
 $$
 
 # Useful conversions in wave-averaged momentum framework
-- Einstein conversion:
+- **Einstein conversion**:
 $$
 \begin{align}
 	u_j \nabla u_j &=u_x \nabla u_x + u_y \nabla u_y + u_z \nabla u_z \\
@@ -88,5 +88,7 @@ $$
 &=\alpha_x \nabla \beta_x + \alpha_y \nabla \beta_y + \alpha_z \nabla \beta_z - (\alpha \cdot \nabla)\times \beta
 \end{align}
 $$
-- conservative force
+- **conservative force**
 $$ - \frac{\nabla |\mathbf u|^2}{2}=-u_j\nabla u_j $$
+- **Convective acceleration identity** (i.e., Lamb form identity); Standard identity used to convert between advective from and vortex-force form of the momentum equation
+$$(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$$
