@@ -49,8 +49,7 @@
               "title": "Breivik_2014&2016_Note_Stokes-Drift-Profile"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,8 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812,
-    "collapsed": true
+    "width": 248.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -240,8 +238,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5,
-    "collapsed": true
+    "width": 307.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -262,13 +259,13 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "190369091626a017",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Rühs_2025_Non-negligible_impact_of_Stokes_on_surface_particle_dispersal.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "Project-Surface_Waves/Thoughts/Note_on_Surface_Wave.md",

@@ -32,19 +32,6 @@ The Full **3D version** without the consideration of wavy-hydrostatic approximat
 - horizontal vector
 - vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
-Plan:
-- discrete equations for a one dimension diffusion equation
-- derive the hori/vertical expressions of Eq.(3)
-- get the form similar to Peter’s expressions in 2017
-- vector: normal alphabet
-- matrixes: fancy greek alphabet
-- familiar with the notation in Peter’s logic
-- Familiar myself with the ICON source 
-- $D^u$ use the $u^L$
-- $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
-- try to implement $\partial_t u^s$ into ICON
-
-
 ## Numerical consideration
 
 

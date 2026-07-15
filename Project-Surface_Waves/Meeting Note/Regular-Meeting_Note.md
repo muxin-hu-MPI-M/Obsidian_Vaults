@@ -7,6 +7,21 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+
+# [[2026-07-15]]
+## Regular meeting with Nils
+Plan in the next 2 weeks:
+- discrete equations for a one dimension diffusion equation
+- derive the hori/vertical expressions of Eq.(3)
+- get the form similar to Peter’s expressions in 2017
+- vector: normal alphabet
+- matrixes: fancy greek alphabet
+- familiar with the notation in Peter’s logic
+- Familiar myself with the ICON source 
+- $D^u$ use the $u^L$
+- $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
+- try to implement $\partial_t u^s$ into ICON
+
 # [[2026-07-08]]
 ## IMPRS-Intro: Climate Economics
 - social science: 

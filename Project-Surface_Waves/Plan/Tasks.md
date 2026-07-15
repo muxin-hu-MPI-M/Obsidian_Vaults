@@ -25,6 +25,10 @@ tags:
 # Weekly Plan 
 
 
+## [[2026-07-13]]
+- [ ] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
+	- [x] Understanding the ICON structure in terms of momentum equation
+	- [ ] Full 3D version
 
 ## [[2026-06-22]]
 - [x] Panel Meeting: #project/PhD_general 
@@ -59,7 +63,7 @@ tags:
 - [ ] renew the payment method for Swiss tele and Zotero
 	- [x] swiss tele
 	- [ ] zotero
-- [ ] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
+- [x] Pipeline: era5 wave forcing to ICON-o; Check information [[Regular-Meeting_Note#Meeting with Nils-Arne (DKRZ)]] #project/surfwaves 
 	- [x] prepare wave data into yearly chunk `wave2d.json`, matching with same structure as `atm2d.json` under pool
 	- [x] create new python provider for wave data
 		- [x] first version
