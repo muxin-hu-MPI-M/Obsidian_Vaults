@@ -28,7 +28,8 @@ tags:
 ## [[2026-07-13]]
 - [ ] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
 	- [x] Understanding the ICON structure in terms of momentum equation
-	- [ ] Full 3D version
+	- [x] Full 3D version
+	- [ ] Separate 2D horizontal vector from vertical component
 
 ## [[2026-06-22]]
 - [x] Panel Meeting: #project/PhD_general 
