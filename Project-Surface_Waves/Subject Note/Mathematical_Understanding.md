@@ -68,7 +68,7 @@ $$
 \end{align}
 $$
 
-# Useful conversions in wave-averaged momentum framework
+# Conversions in WAB momentum framework
 - **Einstein conversion**:
 $$
 \begin{align}

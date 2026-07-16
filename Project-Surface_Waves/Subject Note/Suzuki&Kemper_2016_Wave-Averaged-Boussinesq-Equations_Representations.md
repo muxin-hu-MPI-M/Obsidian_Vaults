@@ -11,9 +11,7 @@ Last Eddited: 2026-04-24
 # Setup for ICON
 ## Finalising WAB momentum equation
 ### Vectors form
-see detailed conversion rules in [[Mathematical_Understanding#Useful conversions in wave-averaged momentum framework]]
-
-Wave-averaged Boussinesq (WAB) Momentum equations in different forms (Suzuki & Fox-Kemper, 2016):
+Wave-averaged Boussinesq (WAB) Momentum equations in different full 3D vector forms (Suzuki & Fox-Kemper, 2016):
 $$
 \begin{align}
 \partial_t \mathbf{u}+ \left(\nabla \times \mathbf{u}+\mathbf{f}\right)\times \mathbf{u}^L  &= \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2),
@@ -34,6 +32,8 @@ $$(\nabla \times \mathbf{u}^L)\times \mathbf{u}^L + \nabla(p + \frac{1}{2}|\math
 Because:
 - Distributivity of cross product: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = - \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$
 - Convective acceleration identity: $(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$
+
+See detailed conversion rules in [[Mathematical_Understanding#Useful conversions in wave-averaged momentum framework]]
 ### 3D expansions
 The Full **3D version** without the consideration of wavy-hydrostatic approximation are summarised below:
 $$
@@ -45,6 +45,49 @@ $$
 \partial_t w^L + v^L\omega_x^L - u^L\omega_y^L &= b_z + D^z -\partial_z p - (u^L \partial_z u^L+ v^L \partial_z v^L + w^L \partial_z w^L)  + (v^L\omega_x^s - u^L \omega_y^s) + \partial_t w^s
 \end{align}
 $$
+Where:
+$$
+\nabla \times \mathbf{u}^L =
+\begin{pmatrix}
+\omega_x^L \\
+\omega_y^L \\
+\omega_z^L
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\partial_z v^L+\partial_y w^L \\
+\partial_z u^L-\partial_x w^L \\
+\partial_x v^L-\partial_y u^L
+\end{pmatrix}, \quad\quad
+\nabla \times \mathbf{u}^s =
+\begin{pmatrix}
+\omega_x^s \\
+\omega_y^s \\
+\omega_z^s
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\partial_z v^s+\partial_y w^s \\
+\partial_z u^s-\partial_x w^s \\
+\partial_x v^s-\partial_y u^s
+\end{pmatrix}.
+$$
+Thus,
+$$
+(\nabla \times \mathbf{u}^L) \times \mathbf{u}^L =
+\begin{pmatrix}
+	w^L\omega_y^L- v^L\omega_z^L \\
+	u^L\omega_z^L- w^L\omega_x^L \\
+	v^L\omega_x^L- u^L\omega_y^L
+\end{pmatrix}, \quad\quad
+(\nabla \times \mathbf{u}^s) \times \mathbf{u}^L =
+\begin{pmatrix}
+	w^L\omega_y^s- v^L\omega_z^s \\
+	u^L\omega_z^s- w^L\omega_x^s \\
+	v^L\omega_x^s- u^L\omega_y^s
+\end{pmatrix}
+$$
+
 
 
 ### 2D horizontal + vertical (ICON-form)
