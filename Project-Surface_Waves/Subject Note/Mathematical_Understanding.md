@@ -76,8 +76,8 @@ $$
 	&=
 	\begin{pmatrix}
 		u_x \partial_x u_x + u_y \partial_x u_y + u_z \partial_x u_z \\
-		u_x \partial_y u_y + u_y \partial_y u_y + u_z \partial_y u_z \\
-		u_x \partial_z u_z + u_y \partial_z u_y + u_z \partial_z u_z
+		u_x \partial_y u_x + u_y \partial_y u_y + u_z \partial_y u_z \\
+		u_x \partial_z u_x + u_y \partial_z u_y + u_z \partial_z u_z
 	\end{pmatrix}.
 \end{align}
 $$
