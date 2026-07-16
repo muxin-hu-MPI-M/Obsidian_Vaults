@@ -21,19 +21,25 @@ $$
 \tag{2}
 \end{align}
 $$
-Eq.1 is the momentum equation structure that implemented in the ICON source code, with all oeprators.
+Eq.1 is the momentum equation structure that implemented in the ICON source code, with all oepraters.
 
-Thus, to efficiently use the origin structure of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
+Thus, to efficiently use the operators of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
 $$
 \boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L + \partial_t \mathbf{u}^s} \tag{3}
 $$
-Comparing Eq.(3) to Eq.(1), one can find:
-$$(\nabla \times \mathbf{u}^L)\times \mathbf{u}^L + \nabla(p + \frac{1}{2}|\mathbf{u}^L|^2)-(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = (\mathbf{u}^L \cdot \nabla)\mathbf{u}^L + \nabla p + \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$$
-Because:
-- Distributivity of cross product: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = - \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$
-- Convective acceleration identity: $(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$
+This replacement will lead to two additional terms at the right-hand-side of Eq.(3), they are:
+- wave-influenced Stokes vortex force: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
+- prognostic Stokes velocity: $\partial_t \mathbf{u}^s$
 
-See detailed conversion rules in [[Mathematical_Understanding#Useful conversions in wave-averaged momentum framework]]
+> [!Tips] 
+Comparing Eq.(3) to Eq.(1), one can find:
+> $$(\nabla \times \mathbf{u}^L)\times \mathbf{u}^L + \nabla(p + \frac{1}{2}|\mathbf{u}^L|^2)-(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = (\mathbf{u}^L \cdot \nabla)\mathbf{u}^L + \nabla p + \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$$
+> Because:
+> - Distributivity of cross product: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = - \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$
+> - Convective acceleration identity: $(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$
+> 
+> See detailed conversion rules in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
+
 ### 3D expansions
 The Full **3D version** without the consideration of wavy-hydrostatic approximation are summarised below:
 $$
