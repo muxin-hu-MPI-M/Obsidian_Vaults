@@ -31,7 +31,7 @@ This replacement will lead to two additional terms at the right-hand-side of Eq.
 - wave-influenced Stokes vortex force: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
 - prognostic Stokes velocity: $\partial_t \mathbf{u}^s$
 
-> [!Tips] 
+> [!Tip] 
 Comparing Eq.(3) to Eq.(1), one can find:
 > $$(\nabla \times \mathbf{u}^L)\times \mathbf{u}^L + \nabla(p + \frac{1}{2}|\mathbf{u}^L|^2)-(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = (\mathbf{u}^L \cdot \nabla)\mathbf{u}^L + \nabla p + \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$$
 > Because:
@@ -98,8 +98,12 @@ $$ -\nabla(p+\frac{1}{2}|\mathbf{u}^L|^2) = -\nabla p - u_j^L\nabla u_j^L$$
 Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See details in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
 ### 2D horizontal + vertical (ICON-form)
+Now to match with the ICON 
 - horizontal vector operator e.g.,$\nabla_h$ 
-- vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
+
+
+
+vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
 ## Numerical consideration
 
