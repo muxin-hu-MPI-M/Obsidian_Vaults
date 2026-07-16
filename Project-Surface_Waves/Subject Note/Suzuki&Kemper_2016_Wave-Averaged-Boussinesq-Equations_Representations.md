@@ -93,8 +93,9 @@ $$
 	v^L\omega_x^s- u^L\omega_y^s
 \end{pmatrix}
 $$
-
-
+And the Kinetic energy of the Lagrangian velocity, or conservative force, introduces a wave influence in the pressure energy transport when combining with the pressure:
+$$ -\nabla(p+\frac{1}{2}|\mathbf{u}^L|^2) = -\nabla p - u_j^L\nabla u_j^L$$
+Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See details in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
 ### 2D horizontal + vertical (ICON-form)
 - horizontal vector operator e.g.,$\nabla_h$ 
