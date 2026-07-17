@@ -98,7 +98,8 @@ $$ -\nabla(p+\frac{1}{2}|\mathbf{u}^L|^2) = -\nabla p - u_j^L\nabla u_j^L$$
 Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See details in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
 ### 2D horizontal + vertical (ICON-form)
-Now to match with the ICON 
+Now to match with the ICON
+- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$
 - horizontal vector operator e.g.,$\nabla_h$ 
 
 
