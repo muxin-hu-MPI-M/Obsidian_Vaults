@@ -106,6 +106,28 @@ Now to match with the ICON
 
 vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
+## Scaling Analysis
+### Horizontal momentum
+In principal, few terms can be scientifically neglected.
+In wave-influenced Stokes vortex force:
+$$
+\begin{align}
+[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{horizontal}} 
+=
+\begin{pmatrix}
+	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
+	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s 
+\end{pmatrix}, \quad\quad
+\end{align}
+$$
+The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. These two terms can be safely neglected. While the horizontal gradient of horizontal Stokes drift velocity terms are tricky, depends on the how various the Stokes drift velocities are in the data.
+
+However, in the implementation of horizontal WAV momentum equation, no ignorance of any terms is more convenient and consistent with all the existing ICON operators.
+### Vertical momentum
+The vertical momentum equation after expansions:
+
+
+
 ## Numerical consideration
 
 
