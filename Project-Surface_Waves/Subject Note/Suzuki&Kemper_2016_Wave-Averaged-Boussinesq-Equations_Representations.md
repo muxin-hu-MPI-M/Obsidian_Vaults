@@ -23,7 +23,7 @@ $$
 $$
 Eq.1 is the momentum equation structure that implemented in the ICON source code, with all oepraters.
 
-> [!Attention] 3D vector WAB momentum equation
+> [!Attention] **Vectorised WAB momentum equation**
 > Thus, to efficiently use the operators of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
 > $$
 > \boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L + \partial_t \mathbf{u}^s} \tag{3}
@@ -96,16 +96,17 @@ And the Kinetic energy of the Lagrangian velocity, or conservative force, introd
 $$ -\nabla(p+\frac{1}{2}|\mathbf{u}^L|^2) = -\nabla p - u_j^L\nabla u_j^L$$
 Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See details in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
-Expanding all the vorticity terms, cancelling the $-w^L \partial_x w^L$ and $-w^L \partial_y w^L$ at both sides on the horizontal momentum equation, one can get the full 3D equations like:
-$$
-\begin{align}
-\partial_t u^L - (f + \partial_x v^L - \partial_y u^l)v^L + w^L\partial_z u^L &= b_x + D^u -\partial_x p - (u^L \partial_x u^L+ v^L \partial_x v^L)  + (w^L \partial_z u^s - w^L \partial_x w^s- v^L \partial_x v^s + v^L \partial_y u^s) + \partial_t u^s 
-\\
-\partial_t v^L + (f + \partial_x v^l - \partial_y u^L)u^L - w^L\partial_z v^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L)  + (u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s- w^L\partial_y w^s ) + \partial_t v^s 
-\\
-\partial_t w^L + v^L\partial_y w^L - v^L \partial_z v^L - u^L\partial_z u^L + u^L \partial_x w^L &= b_z + D^w -\partial_z p - (u^L \partial_z u^L+ v^L \partial_z v^L + w^L \partial_z w^L)  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
-\end{align}
-$$
+> [!Important] **3D WAB momentum Equations**:
+> Expanding all the vorticity terms, cancelling the $-w^L \partial_x w^L$ and $-w^L \partial_y w^L$ at both sides on the horizontal momentum equation, one can get the full 3D WAB momentum equations like:
+> $$
+> \begin{align}
+> \partial_t u^L - (f + \partial_x v^L - \partial_y u^l)v^L + w^L\partial_z u^L &= b_x + D^u -\partial_x p - (u^L \partial_x u^L+ v^L \partial_x v^L)  + (w^L \partial_z u^s - w^L \partial_x w^s- v^L \partial_x v^s + v^L \partial_y u^s) + \partial_t u^s 
+> \\
+> \partial_t v^L + (f + \partial_x v^l - \partial_y u^L)u^L - w^L\partial_z v^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L)  + (u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s- w^L\partial_y w^s ) + \partial_t v^s 
+> \\
+> \partial_t w^L + v^L\partial_y w^L - v^L \partial_z v^L - u^L\partial_z u^L + u^L \partial_x w^L &= b_z + D^w -\partial_z p - (u^L \partial_z u^L+ v^L \partial_z v^L + w^L \partial_z w^L)  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
+> \end{align}
+> $$
 ### 2D horizontal + vertical (ICON-form)
 Now to match with the ICON momentum formulation (Equation (1) in Korn, 2017):
 ![[Screenshot 2026-07-20 at 11.17.09.png | central]]
