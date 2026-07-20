@@ -29,7 +29,9 @@ tags:
 - [ ] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
 	- [x] Understanding the ICON structure in terms of momentum equation
 	- [x] Full 3D version
+	- [ ] Full 3D version with all expansions
 	- [ ] Separate 2D horizontal vector from vertical component
+	- [ ] If neglect the horizontal gradient of vertical Stokes velocity, will it affect the consistency of potential vorticity?
 
 ## [[2026-06-22]]
 - [x] Panel Meeting: #project/PhD_general 
