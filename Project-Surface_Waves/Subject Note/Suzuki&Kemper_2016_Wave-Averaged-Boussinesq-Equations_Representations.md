@@ -112,8 +112,16 @@ In principal, few terms can be scientifically neglected.
 In wave-influenced Stokes vortex force:
 $$
 \begin{align}
+(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L 
+&= 
+\begin{pmatrix}
+	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
+	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s \\
+	
+\end{pmatrix},
+\\
 [(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{horizontal}} 
-=
+&=
 \begin{pmatrix}
 	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
 	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s 
