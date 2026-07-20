@@ -109,8 +109,9 @@ $$
 ### 2D horizontal + vertical (ICON-form)
 Now to match with the ICON momentum formulation (Equation (1) in Korn, 2017):
 ![[Screenshot 2026-07-20 at 11.17.09.png | central]]
-- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$
-- horizontal vector operator e.g.,$\nabla_h$ 
+- $f$ the Coriolis parameter, $rho$ and $rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
+- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
+- $\mathrm{A}_v$ the coefficient of vertical velocity diffusion, horizontal and vettical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
 
 
 
