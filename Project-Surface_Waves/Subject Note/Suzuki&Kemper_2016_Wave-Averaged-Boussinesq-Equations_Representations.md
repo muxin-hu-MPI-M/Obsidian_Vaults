@@ -8,9 +8,8 @@ tags:
   - Theory
 Last Eddited: 2026-04-24
 ---
-# Setup for ICON
-## Finalising WAB momentum equation
-### Vectors form
+# Finalising WAB momentum equation in ICON structure
+## Vectors form
 Wave-averaged Boussinesq (WAB) Momentum equations in different full 3D vector forms (Suzuki & Fox-Kemper, 2016):
 $$
 \begin{align}
@@ -39,7 +38,7 @@ Because:
 - Convective acceleration identity: $(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$
 See detailed conversion rules in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
-### 3D expansions
+## 3D expansions
 The **3D version** without the consideration of wavy-hydrostatic approximation are summarised below:
 $$
 \begin{align}
@@ -104,22 +103,11 @@ Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See detail
 > \\
 > \partial_t v^L + (f + \partial_x v^l - \partial_y u^L)u^L - w^L\partial_z v^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L)  + (u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s- w^L\partial_y w^s ) + \partial_t v^s 
 > \\
-> \partial_t w^L + v^L\partial_y w^L - v^L \partial_z v^L - u^L\partial_z u^L + u^L \partial_x w^L &= b_z + D^w -\partial_z p - (u^L \partial_z u^L+ v^L \partial_z v^L + w^L \partial_z w^L)  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
+> \partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L &= b_z + D^w -\partial_z p - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
 > \end{align}
 > $$
-### 2D horizontal + vertical (ICON-form)
-Now to match with the ICON momentum formulation (Equation (1) in Korn, 2017):
-![[Screenshot 2026-07-20 at 11.17.09.png | central]]
-- $f$ the Coriolis parameter, $rho$ and $rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
-- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
-- $\mathrm{A}_v$ the coefficient of vertical velocity diffusion, horizontal and vettical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
-
-
-
-vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
 ## Scaling Analysis
-### Horizontal momentum
 In wave-influenced Stokes vortex force:
 $$
 
@@ -139,10 +127,35 @@ $$
 \end{pmatrix}
 
 $$
-The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. These two terms can be safely neglected. While the horizontal gradient of horizontal Stokes drift velocity terms are tricky, depends on the how various the Stokes drift velocities are in the data.
+### Horizontal momentum
+The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. These two terms can be safely neglected. 
+While the horizontal gradient of horizontal Stokes drift velocity terms are tricky, depends on the how various the Stokes drift velocities are in the data. In general, these terms scale much larger than the horizontal gradient of vertical Stokes drift velocity.
+
+If separate the horizontal velocities from the vertical velocity: $\mathbf{u}=(\mathbf{v}, w)$, where $\quad \mathbf{v}=(u,v)$, one can find two ways to represent the wave-influenced Stokes vortex force in the horizontal momentum equation. 
+- **Origin**:
+$$
+[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} = w^L(\partial_z \mathbf{v}^s - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L
+$$
+- **Neglect** $- w^L \partial_x w^s$ **and** $- w^L \partial_y w^s$:
+$$
+[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} \approx w^L\partial_z \mathbf{v}^s  + \omega^s \vec{z} \times \mathbf{v}^L
+$$
+
+The difference is only the product of vertical Lagrangian velocity and horizontal gradient of vertical Stokes drift velocity $w^L \nabla_h w^s$.
 
 ### Vertical momentum
 The vertical momentum equation after expansions:
+
+## 2D horizontal vector + vertical (ICON-form)
+Now to match with the ICON momentum formulation (Equation (1) in Korn, 2017):
+![[Screenshot 2026-07-20 at 11.17.09.png | central]]
+- $f$ the Coriolis parameter, $rho$ and $rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
+- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
+- $\mathrm{A}_v$ the coefficient of vertical velocity diffusion, horizontal and vettical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
+
+
+
+vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
 
 
