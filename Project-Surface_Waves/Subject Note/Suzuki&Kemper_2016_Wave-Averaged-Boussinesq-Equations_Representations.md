@@ -41,7 +41,7 @@ Comparing Eq.(3) to Eq.(1), one can find:
 > See detailed conversion rules in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
 ### 3D expansions
-The Full **3D version** without the consideration of wavy-hydrostatic approximation are summarised below:
+The **3D version** without the consideration of wavy-hydrostatic approximation are summarised below:
 $$
 \begin{align}
 \partial_t u^L - (f + \omega_z^L)v^L + w^L\omega_y^L &= b_x + D^u -\partial_x p - (u^L \partial_x u^L+ v^L \partial_x v^L + w^L \partial_x w^L)  + (w^L\omega_y^s - v^L \omega_z^s) + \partial_t u^s 
@@ -97,6 +97,7 @@ And the Kinetic energy of the Lagrangian velocity, or conservative force, introd
 $$ -\nabla(p+\frac{1}{2}|\mathbf{u}^L|^2) = -\nabla p - u_j^L\nabla u_j^L$$
 Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See details in [[Mathematical_Understanding#Conversions in WAB momentum framework]]
 
+
 ### 2D horizontal + vertical (ICON-form)
 Now to match with the ICON
 - horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$
@@ -108,29 +109,27 @@ vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the 
 
 ## Scaling Analysis
 ### Horizontal momentum
-In principal, few terms can be scientifically neglected.
 In wave-influenced Stokes vortex force:
 $$
-\begin{align}
+
 (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L 
-&= 
+= 
 \begin{pmatrix}
 	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
 	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s \\
-	
-\end{pmatrix},
-\\
-[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{horizontal}} 
-&=
+	-v^L\partial_z v^s + v^L \partial_y w^s - u^L \partial_z u^s + u^L \partial_x w^s
+\end{pmatrix}, \quad\quad
+
+[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} 
+=
 \begin{pmatrix}
 	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
 	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s 
-\end{pmatrix}, \quad\quad
-\end{align}
+\end{pmatrix}
+
 $$
 The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. These two terms can be safely neglected. While the horizontal gradient of horizontal Stokes drift velocity terms are tricky, depends on the how various the Stokes drift velocities are in the data.
 
-However, in the implementation of horizontal WAV momentum equation, no ignorance of any terms is more convenient and consistent with all the existing ICON operators.
 ### Vertical momentum
 The vertical momentum equation after expansions:
 
