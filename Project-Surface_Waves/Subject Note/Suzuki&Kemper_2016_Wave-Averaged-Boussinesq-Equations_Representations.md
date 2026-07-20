@@ -107,29 +107,66 @@ Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See detail
 > \end{align}
 > $$
 
-## Scaling Analysis
-In wave-influenced Stokes vortex force:
-$$
+## 2D horizontal vector + vertical
+Now to match with the ICON-o ~={red}**ocean primitive equations** (Equation (1) in Korn, 2017)=~:
+![[Screenshot 2026-07-20 at 11.17.09.png | centre]]
 
-(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L 
-= 
-\begin{pmatrix}
+For consistency, we use the same notation as above:
+- $f$ the Coriolis parameter, $\rho$ and $rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
+- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
+- $\mathrm{A}_v$ the coefficient of vertical velocity diffusion, horizontal and vettical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
+
+> [!Important] **WAB momentum equation in 2D horizontal vector + Vertical velocity**
+> The WAB form of momentum equation becomes:
+> $$
+> \begin{align}
+> &\partial_t \mathbf{v}^L + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \partial_z \mathbf{v}^L + \frac{1}{\rho_0}\nabla_h p - D_h \mathbf{v}^L - \frac{\partial}{\partial z} A_v \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\partial_z \mathbf{v}^s - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \partial_t \mathbf{v}^s = 0
+> \\
+> &\partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L + \partial_z p = -\rho g + D^w - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
+> \\
+> &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0
+> \end{align}
+> $$
+
+vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities using continuity
+
+## Scaling Analysis
+### Horizontal momentum
+According to the ICON-o ocean primitive equation, all the “original structure” should be maintained to ensure both consistency and low complexity. 
+**This section only discuss the scales of additional terms we implement**, they are:
+$$
+(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = 
+ \begin{pmatrix}
 	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
 	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s \\
 	-v^L\partial_z v^s + v^L \partial_y w^s - u^L \partial_z u^s + u^L \partial_x w^s
-\end{pmatrix}, \quad\quad
-
-[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} 
-=
-\begin{pmatrix}
-	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
-	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s 
-\end{pmatrix}
-
+ \end{pmatrix},
 $$
-### Horizontal momentum
-The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. These two terms can be safely neglected. 
-While the horizontal gradient of horizontal Stokes drift velocity terms are tricky, depends on the how various the Stokes drift velocities are in the data. In general, these terms scale much larger than the horizontal gradient of vertical Stokes drift velocity.
+The horizontal component:
+$$
+ [(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} 
+ =
+ \begin{pmatrix}
+ 	w^L\partial_z u^s - w^L \partial_x w^s - v^L \partial_x v^s + v^L \partial_y u^s \\
+ 	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s 
+ \end{pmatrix} 
+$$
+The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. The detailed scaling analysis are summarised below
+let: 
+$$ \mathbf{v}^L\sim U, \qquad w^L\sim W,\qquad \mathbf{v}^s\sim U_s, \qquad w^s\sim W_s, $$
+$w^s$ is diagnosed from continuity:
+$$ \text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 $$
+Thus,
+$$ W^s \sim \frac{H_s}{L_s} U_s, \qquad \text{let}\quad\epsilon_s = \frac{H_s}{L_s}$$
+The ratio between (1) horizontal gradient of vertical Stokes drift velocity and (2) vertical gradient of horizontal Stokes drift velocity:
+$$
+\frac{w^L\nabla_h w^s} {w^L\partial_z\mathbf{v}^s} \sim \frac{W\epsilon_s U_s/L_s}{WU_s/H_s} =  \epsilon_s^2.
+$$
+therefore, if the vertical length scale of Stokes profile is significantly smaller than the horizontal length scale,
+$$
+\frac{w^L\nabla_h w^s} {w^L\partial_z\mathbf{v}^s} \sim \frac{W\epsilon_s U_s/L_s}{WU_s/H_s} =  \epsilon_s^2 = (\frac{H_s}{L_s})^2 \ll 1
+$$
+Then the horizontal gradient of vertical Stokes drift velocity terms can be safely neglected under the momentum framework.
 
 If separate the horizontal velocities from the vertical velocity: $\mathbf{u}=(\mathbf{v}, w)$, where $\quad \mathbf{v}=(u,v)$, one can find two ways to represent the wave-influenced Stokes vortex force in the horizontal momentum equation. 
 - **Origin**:
@@ -143,19 +180,20 @@ $$
 
 The difference is only the product of vertical Lagrangian velocity and horizontal gradient of vertical Stokes drift velocity $w^L \nabla_h w^s$.
 
+> [!Warning] However, although in the momentum framework, the terms can be safely neglected, one still need to test if neglect terms will introduce significant artificial sink/source terms in the potential vorticity or not.
+
 ### Vertical momentum
 The vertical momentum equation after expansions:
+$$
+\partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L + \partial_z p = -\rho g + D^w - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
+$$
+For the Lagrangian velocity, let:
+$$ x,y\sim L,\qquad z\sim H,\qquad u^L,v^L\sim U,\qquad w^L\sim W.$$
+for large-scale circulation, we have:
+$$ \epsilon = \frac{H}{L} \ll 1, \qquad \text{thus}\quad w^l \sim W \sim \epsilon U$$
+While for the Stokes velocity, it has its own length scales, and also satisfy continuity:
+$$ x,y \sim L_s, \qquad z\sim H_s, \qquad u^s, v^s\sim U_s, \qquad w^s\sim W_s\sim\epsilon_s U_s$$
 
-## 2D horizontal vector + vertical (ICON-form)
-Now to match with the ICON momentum formulation (Equation (1) in Korn, 2017):
-![[Screenshot 2026-07-20 at 11.17.09.png | central]]
-- $f$ the Coriolis parameter, $rho$ and $rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
-- horizontal velocity field: $\mathbf{v}=(u,v)$; vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
-- $\mathrm{A}_v$ the coefficient of vertical velocity diffusion, horizontal and vettical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
-
-
-
-vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities (continuity, already in the source code)
 
 
 
