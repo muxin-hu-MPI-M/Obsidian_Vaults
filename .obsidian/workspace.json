@@ -135,8 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812,
-    "collapsed": true
+    "width": 248.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -214,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tasks"
+              "title": "Outline of Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
             }
           },
           {
@@ -268,8 +267,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5,
-    "collapsed": true
+    "width": 307.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -290,14 +288,14 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Untitled.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_11-Small_Scale_Turbulence.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Attachments/Screenshot 2026-07-20 at 11.17.09.png",
     "Untitled.base",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",

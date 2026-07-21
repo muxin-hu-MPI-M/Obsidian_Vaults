@@ -194,9 +194,9 @@ $$ U_s \text{ is large}, \qquad H_s \text{ is small}, \qquad f \text{ is small},
 > 
 > Therefore, one can find two ways to represent the wave-influenced Stokes vortex force in the horizontal momentum equation.
 > - **Origin**:
-> $$ [(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} = w^L(\partial_z \mathbf{v}^s - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L$$
+> $$ \boxed{[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} = w^L(\partial_z \mathbf{v}^s - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L}$$
 > - **Neglect** $- w^L \partial_x w^s$ **and** $- w^L \partial_y w^s$:
-> $$ [(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} \approx w^L\partial_z \mathbf{v}^s  + \omega^s \vec{z} \times \mathbf{v}^L $$
+> $$ \boxed{[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} \approx w^L\partial_z \mathbf{v}^s  + \omega^s \vec{z} \times \mathbf{v}^L} $$
 > 
 > The difference is only the product of vertical Lagrangian velocity and horizontal gradient of vertical Stokes drift velocity $w^L \nabla_h w^s$.
 
@@ -240,7 +240,7 @@ Therefore,
 $$\boxed{u^L\partial_x w^s,\ v^L\partial_y w^s \text{ are smaller than } u^L\partial_z u^s,\ v^L\partial_z v^s \text{ by } \epsilon_s^2.}$$
 Thus the horizontal-gradient terms of $w^s$ can be neglected if $\epsilon_s\ll 1.$
 Now compare the vertical-gradient Stokes terms with the leading hydrostatic scale:
-$$\frac{UU_s/H_s}{fU/\epsilon}=\boxed{\frac{\epsilon U_s}{fH_s}.}$$
+$$\frac{UU_s/H_s}{fU/\epsilon}=\frac{\epsilon U_s}{fH_s}.$$
 This ratio is not automatically small. With typical values
 $$\epsilon\sim 10^{-3}\text{--}10^{-2},\qquad U_s\sim 0.01\text{--}0.1\ \mathrm{m\,s^{-1}},\qquad H_s\sim 10\text{--}50\ \mathrm{m},\qquad f\sim 10^{-4}\ \mathrm{s^{-1}},$$
 we obtain
@@ -251,14 +251,44 @@ gives
 $$\frac{\epsilon U_s}{fH_s}=\frac{10^{-2}\times 0.05}{10^{-4}\times 20}=0.25.$$
 > [!Important]
 > So the vertical-gradient Stokes terms can be $O(0.1)$ or even $O(1)$ relative to the leading hydrostatic pressure-buoyancy balance. Therefore, in a wavy-hydrostatic approximation, it is reasonable to retain
-> $$\boxed{-u^L\partial_z u^s - v^L\partial_z v^s}$$
+> $$-u^L\partial_z u^s - v^L\partial_z v^s$$
 > while neglecting
-> $$\boxed{u^L\partial_x w^s,\qquad v^L\partial_y w^s}$$
+> $$u^L\partial_x w^s,\qquad v^L\partial_y w^s$$
 > under the assumption $\epsilon_s\ll 1.$ The resulting wavy-hydrostatic balance is
 > $$\boxed{\partial_z P'=b-u^L\partial_z u^s-v^L\partial_z v^s}$$
-> or equivalent: $$\boxed{\partial_z p=\rho g-\rho_0(u^L\partial_z u^s-v^L\partial_z v^s)}$$
+> or equivalent: $$\boxed{\partial_z p=-\rho g-\rho_0(u^L\partial_z u^s+v^L\partial_z v^s)}$$
 > up to smaller vertical-inertia, diffusion, and horizontal-\(w^s\)-gradient terms.
 
+## WAB in ICON structure
+Recall the notation from (Korn, 2017):
+- State vector $\mathbf{v}, \eta, T , S$ consisting of a horizontal velocity field $\mathbf{v}$, the surface elevation $\eta$ and the oceanic tracers temperature and salinity $C = \{T , S\}$.
+- $f$ the Coriolis parameter, $\rho$ and $\rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
+- Vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
+- $\mathrm{A}^{\mathrm{v}}$ the coefficient of vertical velocity diffusion, horizontal and vertical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
+
+> [!Attention] **WAB Equations in ICON-o structure**
+> The ICON-o ocean primitive equation framework in WAB form is:
+> $$
+> \begin{align}
+> &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0
+> \\
+> &\frac{\partial p}{\partial z} = -\rho g - \rho_0 (v^L \partial_z v^s + u^L \partial_z u^s)
+> \\
+> &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0
+> \\
+> &\text{div}_h \mathbf{v}^s + \frac{\partial w^s}{\partial z} = 0 \tag{5}
+> \\
+> &\frac{\partial \eta}{\partial t} + \text{div}_h \int_{-B}^{\eta}\mathbf{v}^L\;dz = 0
+> \\
+> & \frac{\partial C}{\partial t} + \text{div}(C\mathbf{v})-\text{div}_h(\mathrm{K}^{\mathrm{C}} \nabla C) - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{C}} \frac{\partial}{\partial z} C = 0
+> \\
+> &\rho = F_{eos}(p, T, S),
+> \end{align}
+> $$
+
+If decompose the pressure as a sum of surface pressure and internal hydrostatic pressure: $$p(x,y,z,t)=p_{hy}(x,y,z,t)+ p_{s}(x,y,t) $$where the hydrostatic pressure is given by the weight of a water column above a vertical level $z$: $$p_{hy}(x,y,z,t) = g\int_{z}^{0}\rho(x,y,z',t)\;dz' $$
+The surface pressure $p_s$ depends only on the horizontal coordinates, assuming a well mixed surface with a uniform density given by the reference density, surface pressure is modelled in terms of the surface elevation $\eta$: $p_s(x, y, t) = g\rho_0\eta(x, y, t)$. Inserting the pressure decomposition into Eq.(5) yields for the velocity equation:
+$$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
 
 ## Numerical consideration
 
