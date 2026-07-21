@@ -202,12 +202,62 @@ $$ U_s \text{ is large}, \qquad H_s \text{ is small}, \qquad f \text{ is small},
 
 > [!Warning] However, although in the momentum framework, the terms can be safely neglected, one still need to test if neglect terms will introduce significant artificial sink/source terms in the potential vorticity or not.
 
-### Vertical momentum
-The vertical momentum equation after expansions:
-$$
-\partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L + \partial_z p = -\rho g + D^w - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
-$$
+### Vertical Momentum Scaling
+The vertical momentum equation after expansion is
+$$\partial_t w^L + v^L\partial_y w^L + u^L\partial_x w^L + \partial_z p = -\rho g + D^w - w^L\partial_z w^L + \left(v^L\partial_y w^s - v^L\partial_z v^s - u^L\partial_z u^s + u^L\partial_x w^s\right) + \partial_t w^s.$$
+To do scaling consistently, divide by $\rho_0$ and use the kinematic pressure anomaly
+$$P'=\frac{p'}{\rho_0}.$$
+After removing the resting hydrostatic background,
+$$p=p_0(z)+p',\qquad \rho=\rho_0+\rho',$$
+with
+$$\partial_z p_0=-\rho_0 g,$$
+the dynamically relevant hydrostatic balance is
+$$\partial_z P'=b,\qquad b=-\frac{g\rho'}{\rho_0}.$$
+From horizontal geostrophic scaling,
+$$\nabla_h P'\sim fU,$$
+so
+$$P'\sim fUL.$$
+Therefore,
+$$\partial_z P'\sim \frac{P'}{H}\sim \frac{fUL}{H}=\frac{fU}{\epsilon},\qquad \epsilon=\frac{H}{L}.$$
+Thus the leading pressure-buoyancy scale is
+$$\boxed{\partial_z P' \sim b \sim \frac{fU}{\epsilon}.}$$
 
+Thus, the ordinary vertical acceleration terms scale as
+$$\partial_t w^L,\quad u^L\partial_x w^L,\quad v^L\partial_y w^L,\quad w^L\partial_z w^L \sim \epsilon^2\frac{U^2}{H}.$$
+Relative to the leading hydrostatic scale,
+$$\frac{\epsilon^2 U^2/H}{fU/\epsilon}=\epsilon^2 Ro,\qquad Ro=\frac{U}{fL}.$$
+Therefore,
+$$\boxed{\partial_t w^L,\ u^L\partial_x w^L,\ v^L\partial_y w^L,\ w^L\partial_z w^L \ll \partial_z P',\ b}$$
+when
+$$\epsilon^2 Ro\ll 1.$$
+Now consider the Stokes terms. The vertical-gradient terms scale as
+$$u^L\partial_z u^s,\quad v^L\partial_z v^s \sim \frac{UU_s}{H_s}.$$
+The horizontal-gradient terms involving $w^s$ scale as
+$$u^L\partial_x w^s,\quad v^L\partial_y w^s \sim \frac{UW_s}{L_s}\sim \frac{U\epsilon_s U_s}{L_s}.$$
+Comparing them,
+$$\frac{u^L\partial_x w^s}{u^L\partial_z u^s}\sim \frac{U\epsilon_s U_s/L_s}{UU_s/H_s}=\epsilon_s^2.$$
+Therefore,
+$$\boxed{u^L\partial_x w^s,\ v^L\partial_y w^s \text{ are smaller than } u^L\partial_z u^s,\ v^L\partial_z v^s \text{ by } \epsilon_s^2.}$$
+Thus the horizontal-gradient terms of $w^s$ can be neglected if $\epsilon_s\ll 1.$
+Now compare the vertical-gradient Stokes terms with the leading hydrostatic scale:
+$$\frac{UU_s/H_s}{fU/\epsilon}=\boxed{\frac{\epsilon U_s}{fH_s}.}$$
+This ratio is not automatically small. With typical values
+$$\epsilon\sim 10^{-3}\text{--}10^{-2},\qquad U_s\sim 0.01\text{--}0.1\ \mathrm{m\,s^{-1}},\qquad H_s\sim 10\text{--}50\ \mathrm{m},\qquad f\sim 10^{-4}\ \mathrm{s^{-1}},$$
+we obtain
+$$\frac{\epsilon U_s}{fH_s}\sim 10^{-3}\text{--}1.$$
+For example,
+$$\epsilon=10^{-2},\qquad U_s=0.05\ \mathrm{m\,s^{-1}},\qquad H_s=20\ \mathrm{m},$$
+gives
+$$\frac{\epsilon U_s}{fH_s}=\frac{10^{-2}\times 0.05}{10^{-4}\times 20}=0.25.$$
+> [!Important]
+> So the vertical-gradient Stokes terms can be $O(0.1)$ or even $O(1)$ relative to the leading hydrostatic pressure-buoyancy balance. Therefore, in a wavy-hydrostatic approximation, it is reasonable to retain
+> $$\boxed{-u^L\partial_z u^s - v^L\partial_z v^s}$$
+> while neglecting
+> $$\boxed{u^L\partial_x w^s,\qquad v^L\partial_y w^s}$$
+> under the assumption $\epsilon_s\ll 1.$ The resulting wavy-hydrostatic balance is
+> $$\boxed{\partial_z P'=b-u^L\partial_z u^s-v^L\partial_z v^s}$$
+> or equivalent: $$\boxed{\partial_z p=\rho g-\rho_0(u^L\partial_z u^s-v^L\partial_z v^s)}$$
+> up to smaller vertical-inertia, diffusion, and horizontal-\(w^s\)-gradient terms.
 
 
 ## Numerical consideration
