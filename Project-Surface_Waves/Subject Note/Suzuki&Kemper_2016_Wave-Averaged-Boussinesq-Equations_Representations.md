@@ -44,7 +44,7 @@ $$
 \begin{align}
 \partial_t u^L - (f + \omega_z^L)v^L + w^L\omega_y^L &= b_x + D^u -\partial_x p - (u^L \partial_x u^L+ v^L \partial_x v^L + w^L \partial_x w^L)  + (w^L\omega_y^s - v^L \omega_z^s) + \partial_t u^s 
 \\
-\partial_t v^L + (f + \omega_z^L)u^L - w^L\omega_x^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L + w^L \partial_y w^L)  + (u^L\omega_z^s - w^L \omega_x^s) + \partial_t v^s 
+\partial_t v^L + (f + \omega_z^L)u^L - w^L\omega_x^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L + w^L \partial_y w^L)  + (u^L\omega_z^s - w^L \omega_x^s) + \partial_t v^s
 \\
 \partial_t w^L + v^L\omega_x^L - u^L\omega_y^L &= b_z + D^z -\partial_z p - (u^L \partial_z u^L+ v^L \partial_z v^L + w^L \partial_z w^L)  + (v^L\omega_x^s - u^L \omega_y^s) + \partial_t w^s
 \end{align}
@@ -101,7 +101,7 @@ Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See detail
 > \begin{align}
 > \partial_t u^L - (f + \partial_x v^L - \partial_y u^l)v^L + w^L\partial_z u^L &= b_x + D^u -\partial_x p - (u^L \partial_x u^L+ v^L \partial_x v^L)  + (w^L \partial_z u^s - w^L \partial_x w^s- v^L \partial_x v^s + v^L \partial_y u^s) + \partial_t u^s 
 > \\
-> \partial_t v^L + (f + \partial_x v^l - \partial_y u^L)u^L - w^L\partial_z v^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L)  + (u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s- w^L\partial_y w^s ) + \partial_t v^s 
+> \partial_t v^L + (f + \partial_x v^l - \partial_y u^L)u^L - w^L\partial_z v^L &= b_y + D^v -\partial_y p - (u^L \partial_y u^L+ v^L \partial_y v^L)  + (u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s- w^L\partial_y w^s ) + \partial_t v^s \tag{4}
 > \\
 > \partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L &= b_z + D^w -\partial_z p - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
 > \end{align}
@@ -131,8 +131,18 @@ For consistency, we use the same notation as above:
 vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities using continuity
 
 ## Scaling Analysis
+First, introducing the scales
+For the Lagrangian velocity, let:
+$$ x,y\sim L,\qquad z\sim H,\qquad u^L,v^L\sim U,\qquad w^L\sim W.$$
+for large-scale circulation, vertical velocity is diagnosed from the continuity:
+$$ \text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 $$
+thus,
+$$ \epsilon = \frac{H}{L} \ll 1, \qquad w^L \sim W \sim \epsilon U$$
+While for the Stokes velocity, it has its own length and velocity scales:
+$$ x,y \sim L_s, \qquad z\sim H_s, \qquad u^s, v^s\sim U_s, $$
+and the vertical Stokes velocity also satisfy continuity:
+$$\epsilon_s = \frac{H_s}{L_s}, \qquad w^s\sim W_s\sim\epsilon_s U_s $$
 ### Horizontal momentum
-According to the ICON-o ocean primitive equation, all the “original structure” should be maintained to ensure both consistency and low complexity. 
 **This section only discuss the scales of additional terms we implement**, they are:
 $$
 (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = 
@@ -151,14 +161,7 @@ $$
  	u^L\partial_x v^s - u^L \partial_y u^s + w^L \partial_z v^s - w^L \partial_y w^s 
  \end{pmatrix} 
 $$
-The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. The detailed scaling analysis are summarised below
-let: 
-$$ \mathbf{v}^L\sim U, \qquad w^L\sim W,\qquad \mathbf{v}^s\sim U_s, \qquad w^s\sim W_s, $$
-$w^s$ is diagnosed from continuity:
-$$ \text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 $$
-Thus,
-$$ W^s \sim \frac{H_s}{L_s} U_s, \qquad \text{let}\quad\epsilon_s = \frac{H_s}{L_s}$$
-The ratio between (1) horizontal gradient of vertical Stokes drift velocity and (2) vertical gradient of horizontal Stokes drift velocity:
+The horizontal gradient of vertical Stokes drift velocity terms: $- w^L \partial_x w^s$ and $- w^L \partial_y w^s$ are significantly smaller than the vertical gradient of horizontal Stokes drift velocity terms. The ratio between (1) horizontal gradient of vertical Stokes drift velocity and (2) vertical gradient of horizontal Stokes drift velocity:
 $$
 \frac{w^L\nabla_h w^s} {w^L\partial_z\mathbf{v}^s} \sim \frac{W\epsilon_s U_s/L_s}{WU_s/H_s} =  \epsilon_s^2.
 $$
@@ -187,13 +190,6 @@ The vertical momentum equation after expansions:
 $$
 \partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L + \partial_z p = -\rho g + D^w - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
 $$
-For the Lagrangian velocity, let:
-$$ x,y\sim L,\qquad z\sim H,\qquad u^L,v^L\sim U,\qquad w^L\sim W.$$
-for large-scale circulation, we have:
-$$ \epsilon = \frac{H}{L} \ll 1, \qquad \text{thus}\quad w^l \sim W \sim \epsilon U$$
-While for the Stokes velocity, it has its own length scales, and also satisfy continuity:
-$$ x,y \sim L_s, \qquad z\sim H_s, \qquad u^s, v^s\sim U_s, \qquad w^s\sim W_s\sim\epsilon_s U_s$$
-
 
 
 
