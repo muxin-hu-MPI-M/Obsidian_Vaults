@@ -131,17 +131,17 @@ For consistency, we use the same notation as above:
 vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the horizontal velocities using continuity
 
 ## Scaling Analysis
-First, introducing the scales
-For the Lagrangian velocity, let:
-$$ x,y\sim L,\qquad z\sim H,\qquad u^L,v^L\sim U,\qquad w^L\sim W.$$
-for large-scale circulation, vertical velocity is diagnosed from the continuity:
-$$ \text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 $$
-thus,
-$$ \epsilon = \frac{H}{L} \ll 1, \qquad w^L \sim W \sim \epsilon U$$
-While for the Stokes velocity, it has its own length and velocity scales:
-$$ x,y \sim L_s, \qquad z\sim H_s, \qquad u^s, v^s\sim U_s, $$
-and the vertical Stokes velocity also satisfy continuity:
-$$\epsilon_s = \frac{H_s}{L_s}, \qquad w^s\sim W_s\sim\epsilon_s U_s $$
+> [!Quote] **Scaling**
+> First, introducing the scales
+> For the Lagrangian velocity, let:
+> $$ x,y\sim L,\qquad z\sim H,\qquad u^L,v^L\sim U,\qquad w^L\sim W.$$> for large-scale circulation, vertical velocity is diagnosed from the continuity:
+> $$ \text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 $$
+> thus,
+> $$ \epsilon = \frac{H}{L} \ll 1, \qquad w^L \sim W \sim \epsilon U$$
+> While for the Stokes velocity, it has its own length and velocity scales:
+> $$ x,y \sim L_s, \qquad z\sim H_s, \qquad u^s, v^s\sim U_s, $$
+> and the vertical Stokes velocity also satisfy continuity:
+> $$\epsilon_s = \frac{H_s}{L_s}, \qquad w^s\sim W_s\sim\epsilon_s U_s $$
 ### Horizontal momentum
 **This section only discuss the scales of additional terms we implement**, they are:
 $$
