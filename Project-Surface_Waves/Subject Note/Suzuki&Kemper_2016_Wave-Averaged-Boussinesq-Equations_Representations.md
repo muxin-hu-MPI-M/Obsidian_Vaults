@@ -171,6 +171,10 @@ $$
 $$
 Thus the horizontal gradient of vertical Stokes drift velocity terms can be safely neglected if we consider the vertical gradient of horizontal Stokes drift.
 
+Then let’s compare the $\omega^s \vec{z} \times \mathbf{v}^L$ to the $w^L \partial_z \mathbf{v}^s$:
+$$\frac{\omega^s \vec{z} \times \mathbf{v}^L} {w^L\partial_z\mathbf{v}^s} \sim \frac{UU_s/L_s}{WU_s/H_s} \sim \frac{UH_s}{\epsilon U L_s}  =  \frac{\epsilon_s}{\epsilon} = \frac{H_s/L_s}{H/L}$$
+depends on the relative difference between 2 ratios.
+
 Then let’s compare the $w^L \partial_z \mathbf{v}^s$ terms with the other terms in the horizontal momentum equation (Eq. (4)). In large-scale ocean circulation, the leading horizontal balance is often the geostrophic balance between the pressure gradient and Coriolis:
 $$ f\vec{z}\times \mathbf{v}^L+\frac{1}{\rho_0}\nabla_hp \sim 0$$
 Thus the leading scaling is: 
@@ -190,15 +194,18 @@ $$ \frac{\epsilon U_s}{fH_s} = \frac{10^{-2}\times 0.05}{10^{-4}\times 20} = 0.2
 So this term can be smaller than Coriolis, but not always negligibly small. It becomes more important when:
 $$ U_s \text{ is large}, \qquad H_s \text{ is small}, \qquad f \text{ is small}, \qquad \epsilon=H/L \text{ is not extremely small}. $$
 > [!Important] 
-> Thus, $w^L \partial_z \mathbf{v}^s$ should be considered, while the $(- w^L \partial_x w^s, - w^L \partial_y w^s)$ term is $\epsilon_s^2$ times smaller than the $w^L \partial_z \mathbf{v}^s$, which can be neglect when $\epsilon_s=H_s / L_s$ is small
+> Thus, $w^L \partial_z \mathbf{v}^s$ should be considered, while the $(- w^L \partial_x w^s, - w^L \partial_y w^s)$ term is $\epsilon_s^2$ times smaller than the $w^L \partial_z \mathbf{v}^s$, which can be neglect when $\epsilon_s=H_s / L_s$ is small; the $\omega^s \vec{z} \times \mathbf{v}^L$ can also be neglected if $\epsilon_s \ll \epsilon$, where $\epsilon=H/L$.
 > 
 > Therefore, one can find two ways to represent the wave-influenced Stokes vortex force in the horizontal momentum equation.
 > - **Origin**:
 > $$ \boxed{[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} = w^L(\partial_z \mathbf{v}^s - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L}$$
-> - **Neglect** $- w^L \partial_x w^s$ **and** $- w^L \partial_y w^s$:
+> - **Neglect** $- w^L \partial_x w^s$ **and** $- w^L \partial_y w^s$ if $\epsilon_s \ll 1$:
 > $$ \boxed{[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} \approx w^L\partial_z \mathbf{v}^s  + \omega^s \vec{z} \times \mathbf{v}^L} $$
-> 
 > The difference is only the product of vertical Lagrangian velocity and horizontal gradient of vertical Stokes drift velocity $w^L \nabla_h w^s$.
+> - **Neglect** $\omega^s \vec{z} \times \mathbf{v}^L$ if $\epsilon_s \ll \epsilon$:
+> $$ \boxed{[(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L]_{\text{h}} \approx w^L\partial_z \mathbf{v}^s} $$
+> 
+
 
 > [!Warning] However, although in the momentum framework, the terms can be safely neglected, one still need to test if neglect terms will introduce significant artificial sink/source terms in the potential vorticity or not.
 
