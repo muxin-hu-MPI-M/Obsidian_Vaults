@@ -287,8 +287,10 @@ Recall the notation from (Korn, 2017):
 > $$
 
 If decompose the pressure as a sum of surface pressure and internal hydrostatic pressure: $$p(x,y,z,t)=p_{hy}(x,y,z,t)+ p_{s}(x,y,t) $$where the hydrostatic pressure is given by the weight of a water column above a vertical level $z$: $$p_{hy}(x,y,z,t) = g\int_{z}^{0}\rho(x,y,z',t)\;dz' $$
-The surface pressure $p_s$ depends only on the horizontal coordinates, assuming a well mixed surface with a uniform density given by the reference density, surface pressure is modelled in terms of the surface elevation $\eta$: $p_s(x, y, t) = g\rho_0\eta(x, y, t)$. Inserting the pressure decomposition into Eq.(5) yields for the velocity equation:
-$$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
+The surface pressure $p_s$ depends only on the horizontal coordinates, assuming a well mixed surface with a uniform density given by the reference density, surface pressure is modelled in terms of the surface elevation $\eta$: $p_s(x, y, t) = g\rho_0\eta(x, y, t)$. 
+
+> [!Attention] 
+> Inserting the pressure decomposition into Eq.(5) yields for the velocity equation: $$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
 
 ## Numerical consideration
 
