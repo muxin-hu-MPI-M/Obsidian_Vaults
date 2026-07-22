@@ -25,7 +25,7 @@ Eq.1 is the momentum equation structure that implemented in the ICON source code
 > [!Attention] **Vectorised WAB momentum equation**
 > Thus, to efficiently use the operators of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
 > $$
-> \boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L + \partial_t \mathbf{u}^s} \tag{3}
+> \boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + \underbrace{(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L}_{\text{Stokes vortex force}} + \partial_t \mathbf{u}^s} \tag{3}
 > $$
 > This replacement will lead to two additional terms at the right-hand-side of Eq.(3), they are:
 > - wave-influenced Stokes vortex force: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
@@ -143,7 +143,7 @@ vertical velocity is diagnostic for both Eulerian and Stokes, diagnose from the 
 > and the vertical Stokes velocity also satisfy continuity:
 > $$\epsilon_s = \frac{H_s}{L_s}, \qquad w^s\sim W_s\sim\epsilon_s U_s $$
 ### Horizontal momentum
-**This section only discuss the scales of additional terms we implement**, they are:
+**This section only discuss the scales of full Stokes vortex force:**
 $$
 (\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = 
  \begin{pmatrix}
@@ -266,6 +266,32 @@ $$\frac{\epsilon U_s}{fH_s}=\frac{10^{-2}\times 0.05}{10^{-4}\times 20}=0.25.$$
 > or equivalent: $$\boxed{\partial_z p=-\rho g-\rho_0(u^L\partial_z u^s+v^L\partial_z v^s)}$$
 > up to smaller vertical-inertia, diffusion, and horizontal-\(w^s\)-gradient terms.
 
+### 🌟 Does neglecting terms in Stokes vortex force causing inconsistency?
+The above sections individually discussed the scaling of Stokes vortex force in both horizontal and vertical momentum equations. However, in the end, the proposed ignorances in both cases:
+- $-w^L\nabla_h w^s = (- w^L \partial_x w^s, - w^L \partial_y w^s)$ in horizontal momentum equation
+- $\mathbf{v}^L \cdot \nabla_h w^s = (u^L\partial_x w^s,\ v^L\partial_y w^s)$ in vertical momentum equation
+can be summed up into a general form.
+
+Write the full Stokes vortex force as
+$$ \mathbf{F}^s=(\nabla\times\mathbf{u}^s)\times\mathbf{u}^L=\underbrace{\begin{pmatrix}w^L\partial_z\mathbf{v}^s+\zeta^s\hat{\mathbf{z}}\times\mathbf{v}^L\\-\mathbf{v}^L\cdot\partial_z\mathbf{v}^s\end{pmatrix}}_{\mathbf{F}^s_0}+\underbrace{\begin{pmatrix}-w^L\nabla_h w^s\\\mathbf{v}^L\cdot\nabla_h w^s\end{pmatrix}}_{\mathbf{F}^s_w},\qquad \zeta^s=\partial_xv^s-\partial_yu^s. $$
+The complete $\nabla_h w^s$-dependent force pair is
+$$ \mathbf F_w^s=\begin{pmatrix}-w^L\nabla_h w^s\\\mathbf v^L\cdot\nabla_h w^s\end{pmatrix}. $$
+#### Energy
+The two blocks are independently perpendicular to $\mathbf u^L=(u^L, v^L, w^L)=(\mathbf{v}^L,w)$:
+$$ \begin{align} \mathbf{u}^L\cdot\mathbf{F}^s_0&=\mathbf{v}^L\cdot\left(w^L\partial_z\mathbf{v}^s+\zeta^s\hat{\mathbf z}\times\mathbf v^L\right)-w^L\mathbf v^L\cdot\partial_z\mathbf v^s=0, \\ \mathbf{u}^L\cdot\mathbf{F}^s_w&=-w^L\mathbf v^L\cdot\nabla_hw^s+w^L\mathbf v^L\cdot\nabla_hw^s=0. \end{align}$$
+However, dropping the vertical component of $\mathbf F_w^s$ due to wavy-hydrostatic but retain the horizontal one would leave the energy residual. The horizontal and vertical contributions of $\nabla_h w^s$-dependent force pair to the Lagrangian kinetic-energy budget are
+$$ \begin{align}\mathcal P_h&=\rho_0\mathbf v^L\cdot\left(-w^L\nabla_hw^s\right)=-\rho_0w^L\mathbf v^L\cdot\nabla_hw^s, \\\mathcal P_z&=\rho_0w^L\left(\mathbf v^L\cdot\nabla_hw^s\right)=+\rho_0w^L\mathbf v^L\cdot\nabla_hw^s.\end{align}$$
+Therefore,
+$$ \mathcal P_h+\mathcal P_z=0. $$
+If you retain the horizontal term but omit the vertical term, the uncanceled work is
+$$ \mathcal P_{\mathrm{error}}=-\rho_0w^L\mathbf v^L\cdot\nabla_hw^s.$$
+The sign is flow-dependent because $\mathbf v^L\cdot\nabla_hw^s$ can be positive or negative. Therefore, the hybrid approximation may act as either an artificial energy source or sink.
+
+> [!Attention] **Therefore, dropping the complete $\mathbf F_w^s$ block does not introduce direct spurious work by the vortex force. But if drop incompletely it will leave energy residuals act act as artificial energy source/sink**
+
+#### Potential vorticity
+
+
 ## WAB in ICON structure
 Recall the notation from (Korn, 2017):
 - State vector $\mathbf{v}, \eta, T , S$ consisting of a horizontal velocity field $\mathbf{v}$, the surface elevation $\eta$ and the oceanic tracers temperature and salinity $C = \{T , S\}$.
@@ -287,7 +313,7 @@ Recall the notation from (Korn, 2017):
 > \\
 > &\frac{\partial \eta}{\partial t} + \text{div}_h \int_{-B}^{\eta}\mathbf{v}^L\;dz = 0
 > \\
-> & \frac{\partial C}{\partial t} + \text{div}(C\mathbf{v})-\text{div}_h(\mathrm{K}^{\mathrm{C}} \nabla C) - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{C}} \frac{\partial}{\partial z} C = 0
+> & \frac{\partial C}{\partial t} + \text{div}(C\mathbf{v}^L)-\text{div}_h(\mathrm{K}^{\mathrm{C}} \nabla C) - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{C}} \frac{\partial}{\partial z} C = 0
 > \\
 > &\rho = F_{eos}(p, T, S),
 > \end{align}
