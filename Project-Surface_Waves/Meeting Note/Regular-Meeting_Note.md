@@ -7,6 +7,9 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-07-22]]
+## Discussion with Antoine
+- in Korn 2017, the $M{\mathbf{u}}=P^T P{\mathbf{u}}$, is the operator to use mapping function ($P^T$) to reconstruct the normal velocity at vertical face (edge) from the velocity field in neighbouring volume columns ($P_{\mathbf{u}}$)
 
 # [[2026-07-15]]
 ## Regular meeting with Nils
