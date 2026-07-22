@@ -290,7 +290,21 @@ The sign is flow-dependent because $\mathbf v^L\cdot\nabla_hw^s$ can be positive
 > [!Attention] **Therefore, dropping the complete $\mathbf F_w^s$ block does not introduce direct spurious work by the vortex force. But if drop incompletely it will leave energy residuals act act as artificial energy source/sink**
 
 #### Potential vorticity
+the paired reduced force is equivalent to replacing the Stokes velocity inside the vortex force by
+$$ \widetilde{\mathbf{u}}^s=(u^s,v^s,0). $$
+Then
+$$ \mathbf{F}_0^s=[\nabla\times\widetilde{\mathbf{u}}^s]\times\mathbf{u}^L. $$
+So the reduced model conserves the reduced PV
+$$ \boxed{\widetilde q=\left[\nabla\times(\mathbf{u}^L-\widetilde{\mathbf{u}}^s)+f\hat{\mathbf z}\right]\cdot\nabla b} $$
+provided the flow is inviscid, adiabatic, incompressible, and the tracer/buoyancy is transported by $\mathbf{u}^L$:
 
+$$ \frac{D_L b}{Dt}=0,\qquad \nabla\cdot\mathbf{u}^L=0. $$
+It does **not** exactly conserve the full-WAB PV
+$$ q=\left[\nabla\times(\mathbf{u}^L-\mathbf{u}^s)+f\hat{\mathbf z}\right]\cdot\nabla b, $$
+because the reduced model has removed the curl contribution from $w^s$. The difference is
+
+$$ \widetilde q-q=\partial_yw^s\,\partial_xb-\partial_xw^s\,\partial_yb. $$
+> [!Attention] **So the clean conclusion is: Paired reduction preserves zero-work structure and conserves a reduced PV, but not the exact full-WAB PV**
 
 ## WAB in ICON structure
 Recall the notation from (Korn, 2017):
