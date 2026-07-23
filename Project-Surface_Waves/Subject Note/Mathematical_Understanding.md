@@ -40,6 +40,8 @@ $$
 $$
 (\mathbf{a} + \mathbf{b}) \cdot \mathbf{c} = \mathbf{a}\cdot \mathbf{c} + \mathbf{b}\cdot \mathbf{c}
 $$
+also:
+$$\nabla\times(\phi \mathbf A)=\nabla\phi\times\mathbf A+\phi\,\nabla\times\mathbf A $$
 **Commutativity/Anti-commutative**
 - dot product is commutative
 $$\mathbf a \cdot \mathbf b = \mathbf b \cdot \mathbf a$$
