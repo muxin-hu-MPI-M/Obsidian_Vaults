@@ -10,7 +10,23 @@ Last Eddited: 2026-01-13
 # [[2026-07-22]]
 ## Discussion with Antoine
 - in Korn 2017, the $M{\mathbf{u}}=P^T P{\mathbf{u}}$, is the operator to use mapping function ($P^T$) to reconstruct the normal velocity at vertical face (edge) from the velocity field in neighbouring volume columns ($P_{\mathbf{u}}$)
-
+- veloc_adv_horz_mimetic: general advection formula
+- Momentum part
+	- `mo_ocean_velocity_advection` inside the subroutine `veloc_adv_horz_mimetic_rot`
+		- we will use `IF (velocity_advection_form == rotational_form) THEN`
+		- the corresponding subroutine is `veloc_adv_horz_mimetic_rot`
+		- `nonlinear_coriolis_3d` calculate the absolute vorticity times the (f+w)z timrs v (second term); output the `veloc_adv_horz_e` goes to `p_diag` → find the p_diag in `mo_ocean_types`, type name: `t_hydro_ocean_diag`
+		- `grad_fd_norm_oce_3d_onBlock` calculate 3rd terms, output `p_diag%grad(:,:,blockNo)`
+			- `calculate_explicit_term_g_n_onBlock` in `mo_ocean_ab_timestepping_mimetic.f90`
+			- all the contributions to the p_diag to sum up the whole tendency
+	- for my experiment
+		- creating a new namelist in `mo_ocean_nml`
+		- mother subroutine: `veloc_adv_horz_mimetic`
+			- add if statement here for my modification
+			- copy the advection function (`veloc_adv_horz_mimetic_rot`) and make my own advection function
+- Wavy-Hydrostatic pressure part
+	- subroutine name for calculating the horizontal pressure gradient `cal_internal_press_grad`
+	- hydrostatic pressure is calculated in `cal_internal_press_grad` in `mo_ocean_thermodyn.f90`, 
 # [[2026-07-15]]
 ## Regular meeting with Nils
 Plan in the next 2 weeks:

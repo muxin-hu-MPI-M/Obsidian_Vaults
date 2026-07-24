@@ -77,8 +77,7 @@
               "title": "Terminologies_in_Meteorology_Oceanography"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
+              "title": "Outline of Regular-Meeting_Note"
             }
           },
           {
@@ -288,11 +287,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "7e2abbe5f6f62af6",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Terminologies_in_Meteorology_Oceanography.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_11-Small_Scale_Turbulence.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Thoughts/Note_on_Surface_Wave.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
