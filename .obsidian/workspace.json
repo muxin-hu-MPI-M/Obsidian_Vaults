@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+                "file": "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Mathematical_Understanding"
+              "title": "Outline of Breivik_2014&2016_Note_Stokes-Drift-Profile"
             }
           },
           {
@@ -288,10 +288,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "9c33eb456bbcecd3",
+  "active": "59847c160bbc5db6",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
