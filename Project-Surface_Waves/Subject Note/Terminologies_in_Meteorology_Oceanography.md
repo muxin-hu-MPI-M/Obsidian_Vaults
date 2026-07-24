@@ -5,6 +5,9 @@ tags:
   - "#climate_dynamics"
 Last Eddited: 2026-07-24
 ---
+# Ertel PV
+
+
 # Boussinesq Approximation
 ## Concept
 > [!Attention] The **Boussinesq approximation** usually means:
