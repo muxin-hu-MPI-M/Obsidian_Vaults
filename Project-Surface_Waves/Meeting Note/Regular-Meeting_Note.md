@@ -8,6 +8,7 @@ Last Eddited: 2026-01-13
 ---
 
 # [[2026-08-03]]
+## Discussion with Christopher
 - the eddy viscosity coefficient should also be changed if we are using the Lagrangian velocity
 - the concept should be using the Eulerian mean velocity field
 - send an invitation of seamless working group of mattermost to Chris
