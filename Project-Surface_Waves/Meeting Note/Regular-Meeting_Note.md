@@ -7,6 +7,11 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-08-03]]
+- the eddy viscosity coefficient should also be changed if we are using the Lagrangian velocity
+- the concept should be using the Eulerian mean velocity field
+- send an invitation of seamless working group of mattermost to Chris
+
 # [[2026-07-22]]
 ## Discussion with Antoine
 - in Korn 2017, the $M{\mathbf{u}}=P^T P{\mathbf{u}}$, is the operator to use mapping function ($P^T$) to reconstruct the normal velocity at vertical face (edge) from the velocity field in neighbouring volume columns ($P_{\mathbf{u}}$)
