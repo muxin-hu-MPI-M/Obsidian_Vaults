@@ -265,7 +265,7 @@ $$\frac{\epsilon U_s}{fH_s}=\frac{10^{-2}\times 0.05}{10^{-4}\times 20}=0.25.$$
 > $$u^L\partial_x w^s,\qquad v^L\partial_y w^s$$
 > under the assumption $\epsilon_s\ll 1.$ The resulting wavy-hydrostatic balance is
 > $$\boxed{\partial_z P'=b-u^L\partial_z u^s-v^L\partial_z v^s}$$
-> or equivalent: $$\boxed{\partial_z p=-\rho g-\rho_0(u^L\partial_z u^s+v^L\partial_z v^s)}$$
+> or equivalent: $$\partial_z p=-\rho g-\rho_0(u^L\partial_z u^s+v^L\partial_z v^s)$$, in vectorised form: $$\boxed{\partial_z p=-\rho g-\rho_0 \mathbf{v}^L \cdot \partial_z \mathbf{v}^s}$$
 > up to smaller vertical-inertia, diffusion, and horizontal $w^s$-gradient terms.
 
 #### Why comparing scaling using dynamically relevant pressure?
@@ -308,16 +308,30 @@ the paired reduced force is equivalent to replacing the Stokes velocity inside t
 $$ \widetilde{\mathbf{u}}^s=(u^s,v^s,0). $$
 Then
 $$ \mathbf{F}_0^s=[\nabla\times\widetilde{\mathbf{u}}^s]\times\mathbf{u}^L. $$
-So the reduced model conserves the reduced PV
+So the reduced model conserves the reduced PV, with the Eulerian velocity:
+$$\widetilde{\mathbf u}=\mathbf u^L-\widetilde{\mathbf u}^s$$
+So the reduced Boussinesq WAB PV is:
 $$ \boxed{\widetilde q=\left[\nabla\times(\mathbf{u}^L-\widetilde{\mathbf{u}}^s)+f\hat{\mathbf z}\right]\cdot\nabla b} $$
+Under the hydrostatic primitive-equation scaling, this becomes
+$$ \widetilde q_H=(f+\zeta^L-\zeta^s)\partial_z b+\partial_z(u^L-u^s)\partial_y b-\partial_z(v^L-v^s)\partial_x b $$
+where $\zeta$ stands for the vertical component of the relative vorticity. This can be summed more compactly to:
+$$ \boxed{\widetilde q_H=(f+\zeta^L-\zeta^s)\partial_z b+\hat{\mathbf z}\cdot\left[\partial_z(\mathbf v^L-\mathbf v^s)\times\nabla_h b\right].} $$
+This is the **same structure as ordinary hydrostatic Boussinesq PV** (see details in [[Terminologies_in_Meteorology_Oceanography#Hydrostatic Boussinesq Ertel PV]],
+$$ q_H=(f+\zeta)\partial_zb+\partial_z u\,\partial_yb-\partial_zv\,\partial_xb, $$
+but with
+$$\mathbf v\rightarrow \mathbf v^L-\mathbf v^s.$$
 provided the flow is inviscid, adiabatic, incompressible, and the tracer/buoyancy is transported by $\mathbf{u}^L$:
 
-$$ \frac{D_L b}{Dt}=0,\qquad \nabla\cdot\mathbf{u}^L=0. $$
+$$ \frac{D_L b}{Dt}=\partial_t b+ (\mathbf{u}^L\cdot \nabla)b = 0,\qquad \nabla\cdot\mathbf{u}^L=0. $$
 It does **not** exactly conserve the full-WAB PV
 $$ q=\left[\nabla\times(\mathbf{u}^L-\mathbf{u}^s)+f\hat{\mathbf z}\right]\cdot\nabla b, $$
 because the reduced model has removed the curl contribution from $w^s$. The difference is
 
 $$ \widetilde q-q=\partial_yw^s\,\partial_xb-\partial_xw^s\,\partial_yb. $$
+The wavy-hydrostatic relation does not mean the PC should use
+$$ b-\mathbf{v}^L\cdot \partial_z \mathbf{v}^s$$
+as the stratifying variable. The PV still uses the real buoyancy $b$. The extra Stokes term is the vertical component of the reduced vortex force, needed to keep the hydrostatic pressure balance paired with the horizontal Stokes force.
+
 > [!Attention] **So the clean conclusion is: Paired reduction preserves zero-work structure and conserves a reduced PV, but not the exact full-WAB PV**
 
 ## 🌟 WAB in ICON structure
