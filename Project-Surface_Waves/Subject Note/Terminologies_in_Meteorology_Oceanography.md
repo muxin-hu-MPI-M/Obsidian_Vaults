@@ -30,11 +30,12 @@ The pressure part should be stated carefully:
 $$ \boxed{\text{Boussinesq does not require pressure variations to be small in the same way as density variations.}} $$
 Pressure is still dynamically important. What changes is that pressure acceleration is divided by constant $\rho_0$, not by variable $\rho$:
 $$ \boxed{\frac{1}{\rho}\nabla p\rightarrow\frac{1}{\rho_0}\nabla p.} $$
-So your list should be:
-- volume conservation / incompressibility,
-- density variation is small compared with $\rho_0$,
-- density variation is neglected everywhere except buoyancy/gravity,
-- pressure remains dynamically active, but pressure-gradient acceleration uses $\rho_0$.
+Also, **Boussinesq approximation does NOT mean the horizontal variation of buoyancy or density anomaly is small and can be neglected**. So in the horizontal momentum equation we replace
+$$ \frac{1}{\rho}\nabla_h p\approx \frac{1}{\rho_0}\nabla_h p. $$
+> [!Important] horizontal gradient is NOT neglected!
+> - But the pressure $p$ itself still depends on density through vertical momentum equation (if under hydrostatic approximation, it is the hydrostatic balance equation $\partial_z p = -\rho g$). 
+> - So horizontal buoyancy gradients are **not neglected**. They enter the horizontal momentum equation indirectly through the vertical structure of the pressure gradient. 
+> - This is exactly the baroclinic pressure-gradient effect.
 
 ## Boussinesq Ertel PV
 
@@ -61,6 +62,8 @@ So $\partial_xw$ and $\partial_yw$ are smaller than $\partial_zu,\partial_zv$ by
 $$ \boldsymbol{\omega}_a^H=(-\partial_zv,\partial_zu,f+\zeta). $$
 Thus the hydrostatic Boussinesq Ertel PV becomes
 $$ \boxed{q_H=(f+\zeta)\partial_zb+\partial_zu\,\partial_yb-\partial_zv\,\partial_xb.} $$
+In more direct form
+$$ \boxed{q_H=\boldsymbol{\omega}_a^H\cdot\nabla b.} $$
 In compact horizontal-vector form $\mathbf{v} = (u,v)$,
 $$ \boxed{q_H=(f+\zeta)\partial_zb+\hat{\mathbf z}\cdot(\partial_z\mathbf v\times\nabla_h b).} $$
 > [!Important] **Horizontal gradient of buoyancy**
