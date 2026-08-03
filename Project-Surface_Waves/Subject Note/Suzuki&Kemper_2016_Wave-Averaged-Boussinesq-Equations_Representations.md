@@ -218,9 +218,11 @@ After removing the resting hydrostatic background,
 $$p=p_0(z)+p',\qquad \rho=\rho_0+\rho',$$
 with
 $$\partial_z p_0=-\rho_0 g,$$
-the dynamically relevant hydrostatic balance is
+the dynamically relevant hydrostatic balance is (see why using dynamically relevant part in [[Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations#Why comparing scaling using dynamically relevant pressure?]])
 $$\partial_z P'=b,\qquad b=-\frac{g\rho'}{\rho_0}.$$
-From horizontal geostrophic scaling,
+In the hydrostatic primitive equations, after Boussinesq scaling, the horizontal pressure-gradient term is
+$$\frac{1}{\rho_0}\nabla_h p'=\nabla_h P'.$$
+For large-scale ocean circulation, the leading horizontal balance is usually geostrophic:
 $$\nabla_h P'\sim fU,$$
 so
 $$P'\sim fUL.$$
@@ -256,7 +258,7 @@ For example,
 $$\epsilon=10^{-2},\qquad U_s=0.05\ \mathrm{m\,s^{-1}},\qquad H_s=20\ \mathrm{m},$$
 gives
 $$\frac{\epsilon U_s}{fH_s}=\frac{10^{-2}\times 0.05}{10^{-4}\times 20}=0.25.$$
-> [!Important]
+> [!Important] **Wavy-hydrostatic Approximation**
 > So the vertical-gradient Stokes terms can be $O(0.1)$ or even $O(1)$ relative to the leading hydrostatic pressure-buoyancy balance. Therefore, in a wavy-hydrostatic approximation, it is reasonable to retain
 > $$-u^L\partial_z u^s - v^L\partial_z v^s$$
 > while neglecting
@@ -264,7 +266,17 @@ $$\frac{\epsilon U_s}{fH_s}=\frac{10^{-2}\times 0.05}{10^{-4}\times 20}=0.25.$$
 > under the assumption $\epsilon_s\ll 1.$ The resulting wavy-hydrostatic balance is
 > $$\boxed{\partial_z P'=b-u^L\partial_z u^s-v^L\partial_z v^s}$$
 > or equivalent: $$\boxed{\partial_z p=-\rho g-\rho_0(u^L\partial_z u^s+v^L\partial_z v^s)}$$
-> up to smaller vertical-inertia, diffusion, and horizontal-\(w^s\)-gradient terms.
+> up to smaller vertical-inertia, diffusion, and horizontal $w^s$-gradient terms.
+
+#### Why comparing scaling using dynamically relevant pressure?
+> [!Quote] **Why using dynamically relevant hydrostatic balance?**
+> Write $$A_s=u^L\partial_z u^s+v^L\partial_z v^s.$$
+> The full dimensional wavy-hydrostatic equation is $$\partial_z p=-\rho g-\rho_0 A_s. $$
+> Now split $$ p=p_0(z)+p',\qquad \rho=\rho_0+\rho', $$
+> with the **resting background** $$ \partial_zp_0=-\rho_0g. $$
+> Subtract this from the full equation: $$ \partial_zp'=-\rho'g-\rho_0A_s. $$
+> Divide by $\rho_0$, using $P'=p'/\rho_0$ and $b=-g\rho'/\rho_0$: $$ \boxed{\partial_zP'=b-A_s.} $$
+> So the relevant comparison is **not** $A_s\sim g$, which is very unlikely to be comparable, but rather $A_s\sim b\sim \partial_zP'$
 
 ### 🌟 Does neglecting terms in Stokes vortex force causing inconsistency?
 The above sections individually discussed the scaling of Stokes vortex force in both horizontal and vertical momentum equations. However, in the end, the proposed ignorances in both cases:
@@ -287,7 +299,9 @@ If you retain the horizontal term but omit the vertical term, the uncanceled wor
 $$ \mathcal P_{\mathrm{error}}=-\rho_0w^L\mathbf v^L\cdot\nabla_hw^s.$$
 The sign is flow-dependent because $\mathbf v^L\cdot\nabla_hw^s$ can be positive or negative. Therefore, the hybrid approximation may act as either an artificial energy source or sink.
 
-> [!Attention] **Therefore, dropping the complete $\mathbf F_w^s$ block does not introduce direct spurious work by the vortex force. But if drop incompletely it will leave energy residuals act act as artificial energy source/sink**
+> [!Attention] **Conclusion** 
+> - **dropping the complete $\mathbf F_w^s$ block does not introduce direct spurious work by the vortex force**. 
+> - **But if drop incompletely it will leave energy residuals act act as artificial energy source/sink**
 
 #### Potential vorticity
 the paired reduced force is equivalent to replacing the Stokes velocity inside the vortex force by
@@ -306,7 +320,7 @@ because the reduced model has removed the curl contribution from $w^s$. The diff
 $$ \widetilde q-q=\partial_yw^s\,\partial_xb-\partial_xw^s\,\partial_yb. $$
 > [!Attention] **So the clean conclusion is: Paired reduction preserves zero-work structure and conserves a reduced PV, but not the exact full-WAB PV**
 
-## WAB in ICON structure
+## 🌟 WAB in ICON structure
 Recall the notation from (Korn, 2017):
 - State vector $\mathbf{v}, \eta, T , S$ consisting of a horizontal velocity field $\mathbf{v}$, the surface elevation $\eta$ and the oceanic tracers temperature and salinity $C = \{T , S\}$.
 - $f$ the Coriolis parameter, $\rho$ and $\rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
