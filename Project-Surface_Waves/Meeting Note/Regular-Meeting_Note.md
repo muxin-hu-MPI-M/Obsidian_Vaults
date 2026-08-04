@@ -13,6 +13,12 @@ Last Eddited: 2026-01-13
 - the concept should be using the Eulerian mean velocity field
 - send an invitation of seamless working group of mattermost to Chris
 
+- modify the boundary condition in the begginging of the timestep
+- or edit in the end of the timestep
+- as a forcing, similar to the wind stress
+- should update the normal velocity, the one used in model, in the tendency of the velocity 
+- maybe try in the time loop, write a subroutine that reads my velocity, remap to normal velocity and update them to the true normal velocity
+- the velocity should be in the tendency term instead of adding it directly (otherwise it will accumulate the blows up the normal velocity )
 # [[2026-07-22]]
 ## Discussion with Antoine
 - in Korn 2017, the $M{\mathbf{u}}=P^T P{\mathbf{u}}$, is the operator to use mapping function ($P^T$) to reconstruct the normal velocity at vertical face (edge) from the velocity field in neighbouring volume columns ($P_{\mathbf{u}}$)

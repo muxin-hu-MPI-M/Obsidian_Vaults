@@ -284,13 +284,13 @@ The above sections individually discussed the scaling of Stokes vortex force in 
 - $\mathbf{v}^L \cdot \nabla_h w^s = (u^L\partial_x w^s,\ v^L\partial_y w^s)$ in vertical momentum equation
 can be summed up into a general form.
 
-Write the full Stokes vortex force as
-$$ \mathbf{F}^s=(\nabla\times\mathbf{u}^s)\times\mathbf{u}^L=\underbrace{\begin{pmatrix}w^L\partial_z\mathbf{v}^s+\zeta^s\hat{\mathbf{z}}\times\mathbf{v}^L\\-\mathbf{v}^L\cdot\partial_z\mathbf{v}^s\end{pmatrix}}_{\mathbf{F}^s_0}+\underbrace{\begin{pmatrix}-w^L\nabla_h w^s\\\mathbf{v}^L\cdot\nabla_h w^s\end{pmatrix}}_{\mathbf{F}^s_w},\qquad \zeta^s=\partial_xv^s-\partial_yu^s. $$
+> [!Attention] Write the full Stokes vortex force as $$ \mathbf{F}^s=(\nabla\times\mathbf{u}^s)\times\mathbf{u}^L=\underbrace{\begin{pmatrix}w^L\partial_z\mathbf{v}^s\\-\mathbf{v}^L\cdot\partial_z\mathbf{v}^s\end{pmatrix}}_{\mathbf{F}^s_{\mathbf{v}^s}}+\underbrace{\begin{pmatrix} \zeta^s\hat{\mathbf{z}} \times\mathbf{v}^L\\0\end{pmatrix}}_{\mathbf{F}^s_{\zeta^s}}+\underbrace{\begin{pmatrix}-w^L\nabla_h w^s\\\mathbf{v}^L\cdot\nabla_h w^s\end{pmatrix}}_{\mathbf{F}^s_w},\qquad \zeta^s=\partial_xv^s-\partial_yu^s.$$
+
 The complete $\nabla_h w^s$-dependent force pair is
 $$ \mathbf F_w^s=\begin{pmatrix}-w^L\nabla_h w^s\\\mathbf v^L\cdot\nabla_h w^s\end{pmatrix}. $$
 #### Energy
-The two blocks are independently perpendicular to $\mathbf u^L=(u^L, v^L, w^L)=(\mathbf{v}^L,w)$:
-$$ \begin{align} \mathbf{u}^L\cdot\mathbf{F}^s_0&=\mathbf{v}^L\cdot\left(w^L\partial_z\mathbf{v}^s+\zeta^s\hat{\mathbf z}\times\mathbf v^L\right)-w^L\mathbf v^L\cdot\partial_z\mathbf v^s=0, \\ \mathbf{u}^L\cdot\mathbf{F}^s_w&=-w^L\mathbf v^L\cdot\nabla_hw^s+w^L\mathbf v^L\cdot\nabla_hw^s=0. \end{align}$$
+The three blocks are independently perpendicular to $\mathbf u^L=(u^L, v^L, w^L)=(\mathbf{v}^L,w)$:
+$$ \begin{align} \mathbf{u}^L\cdot(\mathbf{F}^s_{\mathbf{v}^s}+\mathbf{F}^s_{\zeta^s})&=\mathbf{v}^L\cdot\left(w^L\partial_z\mathbf{v}^s+\zeta^s\hat{\mathbf z}\times\mathbf v^L\right)-w^L\mathbf v^L\cdot\partial_z\mathbf v^s=0, \\ \mathbf{u}^L\cdot\mathbf{F}^s_w&=-w^L\mathbf v^L\cdot\nabla_hw^s+w^L\mathbf v^L\cdot\nabla_hw^s=0. \end{align}$$
 However, dropping the vertical component of $\mathbf F_w^s$ due to wavy-hydrostatic but retain the horizontal one would leave the energy residual. The horizontal and vertical contributions of $\nabla_h w^s$-dependent force pair to the Lagrangian kinetic-energy budget are
 $$ \begin{align}\mathcal P_h&=\rho_0\mathbf v^L\cdot\left(-w^L\nabla_hw^s\right)=-\rho_0w^L\mathbf v^L\cdot\nabla_hw^s, \\\mathcal P_z&=\rho_0w^L\left(\mathbf v^L\cdot\nabla_hw^s\right)=+\rho_0w^L\mathbf v^L\cdot\nabla_hw^s.\end{align}$$
 Therefore,
@@ -325,9 +325,7 @@ For conservation, in the ideal continuous limit, and buoyancy $b$ is the materia
 $$ \frac{D_L}{Dt}=\partial_t + (\mathbf{u}^L\cdot \nabla),\qquad D_h=D_v=0,\qquad \frac{D_L b}{Dt}=0, \qquad \nabla\cdot\mathbf{u}^L=0. $$
 both reduced PV satisfy: 
 $$\boxed{\frac{D_L \widetilde{q}_B}{Dt}=0,\qquad \frac{D_L \widetilde{q}_H}{Dt}=0}$$
-
-
-
+> [!Attention] **Under ideal condition, both reduced Boussinesq WAB PV and its hydrostatic scaling version is materially conserved by the Lagrangian flow**
 
 It does **not** exactly conserve the full-WAB PV
 $$ q=\left[\nabla\times(\mathbf{u}^L-\mathbf{u}^s)+f\hat{\mathbf z}\right]\cdot\nabla b, $$
@@ -337,19 +335,133 @@ $$ \widetilde q-q=\partial_yw^s\,\partial_xb-\partial_xw^s\,\partial_yb. $$
 > [!Attention] **So the clean conclusion is: Paired reduction preserves zero-work structure and conserves a reduced PV, but not the exact full-WAB PV**
 
 ## 🌟 WAB in ICON structure
-Recall the notation from (Korn, 2017):
-- State vector $\mathbf{v}, \eta, T , S$ consisting of a horizontal velocity field $\mathbf{v}$, the surface elevation $\eta$ and the oceanic tracers temperature and salinity $C = \{T , S\}$.
-- $f$ the Coriolis parameter, $\rho$ and $\rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
-- Vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
-- $\mathrm{A}^{\mathrm{v}}$ the coefficient of vertical velocity diffusion, horizontal and vertical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
+> [!Quote] Recall the notation from (Korn, 2017):
+> - State vector $\mathbf{v}, \eta, T , S$ consisting of a horizontal velocity field $\mathbf{v}$, the surface elevation $\eta$ and the oceanic tracers temperature and salinity $C = \{T , S\}$.
+> - $f$ the Coriolis parameter, $\rho$ and $\rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
+> - Vertical velocity $w$; horizontal vector operator e.g.,$\nabla_h$; $D_h$ describes the horizontal velocity diffusion
+> - $\mathrm{A}^{\mathrm{v}}$ the coefficient of vertical velocity diffusion, horizontal and vertical diffusion coefficients for a tracer $C$ are denoted by $\mathrm{K}^C$ and $\mathrm{A}^C$.
 
-> [!Attention] **WAB Equations in ICON-o structure**
+> [!Quote] Recall the Stokes vortex force term, which is the key terms in the WAB momentum equation:$$ \mathbf{F}^s=(\nabla\times\mathbf{u}^s)\times\mathbf{u}^L=\underbrace{\begin{pmatrix}w^L\partial_z\mathbf{v}^s\\-\mathbf{v}^L\cdot\partial_z\mathbf{v}^s\end{pmatrix}}_{\mathbf{F}^s_{\mathbf{v}^s}}+\underbrace{\begin{pmatrix} \zeta^s\hat{\mathbf{z}} \times\mathbf{v}^L\\0\end{pmatrix}}_{\mathbf{F}^s_{\zeta^s}}+\underbrace{\begin{pmatrix}-w^L\nabla_h w^s\\\mathbf{v}^L\cdot\nabla_h w^s\end{pmatrix}}_{\mathbf{F}^s_w},\qquad \zeta^s=\partial_xv^s-\partial_yu^s.$$
+
+The below shows a hierarchy of WAB momentum equations that with different complexities.
+
+### Hierarchy 0: Lagrangian transport tracer only
+Don’t touch the momentum part, let’s the Lagrangian velocity only transport the tracers
+a very idiot but quick idea
+### Hierarchy 1: Preserve strict hydrostatic balance
+#### Has only one component left in Stokes vortex force
+This is the case that we neglect both $\mathbf{F}^s_{\mathbf{v}^s}$ and $\mathbf{F}^s_w$ blocks in the Stokes vortex force term. The only remains is the vertical Stokes vorticity correction $\mathbf{F}^s_{\zeta^s}$. The motivation of doing such reduction is to preserve a strict hydrostatic balance in the vertical momentum equation (i.e., no wavy-hydrostatic).
+
+This reduction is energy consistent, as work of the $\mathbf{F}^s_{\mathbf{v}^s}$ is exactly zero as a pair:
+$$\mathbf u^L\cdot\mathbf F_{\partial_z\mathbf v^s}^s=\mathbf v^L\cdot(w^L\partial_z\mathbf v^s)+w^L(-\mathbf v^L\cdot\partial_z\mathbf v^s)=0.$$
+similar to the $\mathbf{F}^s_w$. The term $\zeta^s\hat{\mathbf{z}} \times\mathbf{v}^L$ is individually perpendicular to $\mathbf{v}^L$ so it does not need a hydrostatic pressure partner for energy.
+
+However, this reduction do not maintain a divergent-free hydrostatic vorticity. Previously we discussed, for the reduced wave velocity $\widetilde{\mathbf u} =\mathbf u^L-\widetilde{\mathbf u}^s=(u^L-u^s,\ v^L-v^s,\ w^L)$, the hydrostatic reduced vorticity should be
+$$ \boldsymbol\Omega_H=(-\partial_zv^L+\partial_zv^s,\ \partial_zu^L-\partial_zu^s,\ f+\zeta^L-\zeta^s). $$
+Now take divergence:
+$$ \nabla\cdot\boldsymbol\Omega_H=\partial_x(-\partial_zv^L+\partial_zv^s)+\partial_y(\partial_zu^L-\partial_zu^s)+\partial_z(f+\zeta^L-\zeta^s). $$
+Using $\zeta^L=\partial_xv^L-\partial_yu^L, \zeta^s=\partial_xv^s-\partial_yu^s$, all terms cancel:
+$$ \nabla\cdot\boldsymbol\Omega_H=0. $$
+But if you keep only the vertical Stokes vorticity correction $-\zeta^s$ and drop the horizontal Stokes-vorticity pieces $\partial_zv^s,\partial_zu^s$, then you are using
+$$ \boldsymbol\Omega_\zeta^H=(-\partial_zv^L,\ \partial_zu^L,\ f+\zeta^L-\zeta^s). $$
+Its divergence is
+$$ \nabla\cdot\boldsymbol\Omega_\zeta^H=\partial_x(-\partial_zv^L)+\partial_y(\partial_zu^L)+\partial_z(f+\zeta^L-\zeta^s). $$
+The Lagrangian parts cancel:
+$$ -\partial_x\partial_zv^L+\partial_y\partial_zu^L+\partial_z(\partial_xv^L-\partial_yu^L)=0. $$
+So only the unpaired Stokes term remains:
+$$\nabla\cdot\boldsymbol\Omega_\zeta^H=-\partial_z\zeta^s$$
+> [!Important] **So unless we have $-\partial_z\zeta^s \approx 0$, this is not a curl-consistent 3D vorticity vector, and exact Ertel-PV conservation is not guaranteed.**
+
+> [!Important] **Consideration: Preserve hydrostatic balance, has one component left in Stokes vortex force**
 > The ICON-o ocean primitive equation framework in WAB form is:
 > $$
 > \begin{align}
-> &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0
+> &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - \zeta^s \vec{z} \times \mathbf{v}^L - \frac{\partial \mathbf{v}^s}{\partial t} = 0
+> \\
+> &\frac{\partial p}{\partial z} = -\rho g
+> \\
+> &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 \tag{5}
+> \\
+> &\frac{\partial \eta}{\partial t} + \text{div}_h \int_{-B}^{\eta}\mathbf{v}^L\;dz = 0
+> \\
+> & \frac{\partial C}{\partial t} + \text{div}(C\mathbf{v}^L)-\text{div}_h(\mathrm{K}^{\mathrm{C}} \nabla C) - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{C}} \frac{\partial}{\partial z} C = 0
+> \\
+> &\rho = F_{eos}(p, T, S),
+> \end{align}
+> $$
+> 
+> **noted**: 
+> - here the diffusion term is using the Lagrangian velocity, but in C-L WAB format, it should use the Eulerian velocity instead
+> - Similar issue maybe in the other coefficients in the tracer equation. 
+> - In practice, we will keep the current setting, but keep in mind that there’s a difference
+
+#### No Stokes vortex force
+This is the cleanest “no vortex-force” approximation. Energy-wise, this avoids the artificial unpaired work from keeping only part of the vortex force. PV-wise, the conserved ideal PV is then the ordinary hydrostatic PV built from $\mathbf u^L$.
+
+But be careful with interpretation. This no-vortex-force model is **not** the full WAB dynamics. It treats the Lagrangian velocity as the model velocity and omits the Stokes-vorticity correction to the quasi-Eulerian momentum. So it conserves a clean model PV, but not the full wave-averaged PV. if drop the vortex force entirely, your equation no longer represents $\mathbf u^L=\mathbf u+\mathbf u^s$ inside the CL/WAB momentum structure. Instead it behaves like $\mathbf u^L$ is just the ordinary Eulerian model velocity.
+
+> [!Important] **Consideration: No Stokes vortex force**
+> The ICON-o ocean primitive equation framework in WAB form is:
+> $$
+> \begin{align}
+> &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - \frac{\partial \mathbf{v}^s}{\partial t} = 0
+> \\
+> &\frac{\partial p}{\partial z} = -\rho g
+> \\
+> &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 \tag{5}
+> \\
+> &\frac{\partial \eta}{\partial t} + \text{div}_h \int_{-B}^{\eta}\mathbf{v}^L\;dz = 0
+> \\
+> & \frac{\partial C}{\partial t} + \text{div}(C\mathbf{v}^L)-\text{div}_h(\mathrm{K}^{\mathrm{C}} \nabla C) - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{C}} \frac{\partial}{\partial z} C = 0
+> \\
+> &\rho = F_{eos}(p, T, S),
+> \end{align}
+> $$
+> 
+> **noted**: 
+> - here the diffusion term is using the Lagrangian velocity, but in C-L WAB format, it should use the Eulerian velocity instead
+> - Similar issue maybe in the other coefficients in the tracer equation. 
+> - In practice, we will keep the current setting, but keep in mind that there’s a difference
+
+### Hierarchy 2: Negligible vert. Stokes (Partial Stokes vortex force)
+This is by far the ~={red}best and most practical version=~, which consider the significant/important part of the Stokes vortex force while neglect the negligible vertical stokes to reduce complexity. 
+
+> [!Attention] **Eventually, it is the version that neglect the $\mathbf{F}^s_w$ block in the Stokes vortex force term, but still keep the energy/PV consistency.**
+
+> [!Attention] **Consideration: negligible vertical Stokes drift velocity**
+> The ICON-o ocean primitive equation framework in WAB form is:
+> $$
+> \begin{align}
+> &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L \frac{\partial \mathbf{v}^s}{\partial z} + \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0
 > \\
 > &\frac{\partial p}{\partial z} = -\rho g - \rho_0 (v^L \partial_z v^s + u^L \partial_z u^s)
+> \\
+> &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 \tag{5}
+> \\
+> &\frac{\partial \eta}{\partial t} + \text{div}_h \int_{-B}^{\eta}\mathbf{v}^L\;dz = 0
+> \\
+> & \frac{\partial C}{\partial t} + \text{div}(C\mathbf{v}^L)-\text{div}_h(\mathrm{K}^{\mathrm{C}} \nabla C) - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{C}} \frac{\partial}{\partial z} C = 0
+> \\
+> &\rho = F_{eos}(p, T, S),
+> \end{align}
+> $$
+> 
+> **noted**: 
+> - here the diffusion term is using the Lagrangian velocity, but in C-L WAB format, it should use the Eulerian velocity instead
+> - Similar issue maybe in the other coefficients in the tracer equation. 
+> - In practice, we will keep the current setting, but keep in mind that there’s a difference
+### Hierarchy 3: Non-hydrostatic case
+However, in this case, we haven’t conclude on the vertical scaling. As the below version keep the horizontal gradient of vertical Stokes term, one should compare the scaling to the ordinary vertical acceleration term. The resulting ratio depends heavily on the horizontal scale of wave fields:
+$$ \boxed{\frac{u^L \partial_x w^s}{u^L \partial_x w^L}\sim\frac{U\epsilon_sU_s/L_s}{\epsilon^2U^2/H}=\frac{\epsilon_s}{\epsilon}\frac{U_s}{U}\frac{L}{L_s}.} $$
+The horizontal gradient of vertical Stokes can be similar or smaller scales than the ordinary vertical terms, so when preserving the $v^L \partial_y w^s - u^L \partial_x w^s$ in the vertical acceleration equation due to the consideration of full Stokes vortex force term, we might also need to preserve the ordinary vertical acceleration term, **which is basically non-hydrostatic cases!**
+
+>[!Important] **Consideration: Non-hydrostatic**
+> The ICON-o ocean primitive equation framework in WAB form is:
+> $$
+> \begin{align}
+> &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s)+ \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0
+> \\
+> &\partial_t w^L + v^L\partial_y w^L + u^L \partial_x w^L + \partial_z p = -\rho g + D^w - w^L \partial_z w^L  + (v^L\partial_y w^s - v^L \partial_z v^s - u^L \partial_z u^s + u^L \partial_x w^s) + \partial_t w^s
 > \\
 > &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0
 > \\
@@ -373,11 +485,6 @@ The surface pressure $p_s$ depends only on the horizontal coordinates, assuming 
 
 > [!Attention] 
 > Inserting the pressure decomposition into Eq.(5) yields for the velocity equation: $$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
-
-### Diffusion terms should use Eulerian velocity!!!
-
-## Numerical consideration
-
 
 
 # Craik–Leibovich (CL) Vortex Force
