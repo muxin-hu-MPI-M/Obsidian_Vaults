@@ -310,9 +310,9 @@ Then
 $$ \mathbf{F}_0^s=[\nabla\times\widetilde{\mathbf{u}}^s]\times\mathbf{u}^L. $$
 So the reduced model conserves the reduced PV, with the Eulerian velocity:
 $$\widetilde{\mathbf u}=\mathbf u^L-\widetilde{\mathbf u}^s$$
-So the reduced Boussinesq WAB PV is:
+So the ==**reduced Boussinesq WAB PV**== is:
 $$ \boxed{\widetilde q_B=\left[\nabla\times(\mathbf{u}^L-\widetilde{\mathbf{u}}^s)+f\hat{\mathbf z}\right]\cdot\nabla b} $$
-Under the hydrostatic primitive-equation scaling, this becomes
+Under the hydrostatic primitive-equation scaling, which ignores the horizontal gradient of the vertical velocity, the reduced Boussinesq WAB PV becomes the ==**reduced Boussinesq-hydrostatic WAB PV**==:
 $$ \widetilde q_H=(f+\zeta^L-\zeta^s)\partial_z b+\partial_z(u^L-u^s)\partial_y b-\partial_z(v^L-v^s)\partial_x b $$
 where $\zeta$ stands for the vertical component of the relative vorticity. This can be summed more compactly to:
 $$ \boxed{\widetilde q_H=(f+\zeta^L-\zeta^s)\partial_z b+\hat{\mathbf z}\cdot\left[\partial_z(\mathbf v^L-\mathbf v^s)\times\nabla_h b\right].} $$
@@ -323,7 +323,7 @@ The wavy-hydrostatic relation does not mean the PC should use $b-\mathbf{v}^L\cd
 
 For conservation, in the ideal continuous limit, and buoyancy $b$ is the material invariant of the flow that transports the vorticity:
 $$ \frac{D_L}{Dt}=\partial_t + (\mathbf{u}^L\cdot \nabla),\qquad D_h=D_v=0,\qquad \frac{D_L b}{Dt}=0, \qquad \nabla\cdot\mathbf{u}^L=0. $$
-both the reduced PV, and its version under hydrostatic scaling satisfy: 
+both reduced PV satisfy: 
 $$\boxed{\frac{D_L \widetilde{q}_B}{Dt}=0,\qquad \frac{D_L \widetilde{q}_H}{Dt}=0}$$
 
 
