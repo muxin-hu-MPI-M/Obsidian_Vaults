@@ -94,3 +94,7 @@ $$
 $$ - \frac{\nabla |\mathbf u|^2}{2}=-u_j\nabla u_j $$
 - **Convective acceleration identity** (i.e., Lamb form identity); Standard identity used to convert between advective from and vortex-force form of the momentum equation
 $$(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{u} + \nabla(\frac{1}{2}|\mathbf{u}|^2)$$
+	- The above relation is usually used in **vector-invariant form of the momentum equation**, which is a way to write fluid motion laws using a vector identity to replace the non-linear advection term with the:
+		- **gradient of kinetic energy**: $\nabla(\frac{1}{2}|\mathbf{u}|^2)$
+		- **cross product of velocity and vorticity**: $(\nabla \times \mathbf{u}) \times \mathbf{u}$
+
