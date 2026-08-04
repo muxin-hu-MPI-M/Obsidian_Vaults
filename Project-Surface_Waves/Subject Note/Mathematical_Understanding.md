@@ -98,3 +98,7 @@ $$(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{
 		- **gradient of kinetic energy**: $\nabla(\frac{1}{2}|\mathbf{u}|^2)$
 		- **cross product of velocity and vorticity**: $(\nabla \times \mathbf{u}) \times \mathbf{u}$
 
+
+
+# Curl of a gradient is always 0
+$$ \nabla \times \nabla \Phi=0$$
