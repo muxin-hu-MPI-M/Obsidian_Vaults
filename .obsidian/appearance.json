@@ -10,7 +10,8 @@
     "extended-colorschemes",
     "math-font-size",
     "inline-code-color",
-    "editor-bg-colors"
+    "editor-bg-colors",
+    "image_align"
   ],
   "interfaceFontFamily": "iA Writer Mono V,Monaspace Neon Var",
   "monospaceFontFamily": "iA Writer Mono V"
