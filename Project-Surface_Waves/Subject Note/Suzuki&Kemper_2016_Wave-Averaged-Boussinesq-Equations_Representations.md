@@ -345,9 +345,11 @@ $$ \widetilde q-q=\partial_yw^s\,\partial_xb-\partial_xw^s\,\partial_yb. $$
 
 The below shows a hierarchy of WAB momentum equations that with different complexities.
 
-### Hierarchy 0: Lagrangian transport tracer only
+### Hierarchy 0: Model velocity & Stokes transport tracer independently
 Don’t touch the momentum part, let’s the Lagrangian velocity only transport the tracers
-a very idiot but quick idea
+- a very idiot but quick idea.
+- This is identical to the case of: Tracers are advected with $u^E + u^S$ from independently run ocean and wave models. 
+- Here the implicit assumption is that, at the ocean top layers, the impact of wave-driven Eulerian response is negligible or at least less important than Stokes drift
 ### Hierarchy 1: Preserve strict hydrostatic balance
 #### Has only one component left in Stokes vortex force
 This is the case that we neglect both $\mathbf{F}^s_{\mathbf{v}^s}$ and $\mathbf{F}^s_w$ blocks in the Stokes vortex force term. The only remains is the vertical Stokes vorticity correction $\mathbf{F}^s_{\zeta^s}$. The motivation of doing such reduction is to preserve a strict hydrostatic balance in the vertical momentum equation (i.e., no wavy-hydrostatic).

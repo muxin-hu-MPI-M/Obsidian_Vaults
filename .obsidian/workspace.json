@@ -77,7 +77,8 @@
               "title": "Terminologies_in_Meteorology_Oceanography"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -215,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -290,10 +291,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "7e2abbe5f6f62af6",
+  "active": "fbeb0fba2e00b1e9",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
     "Project-Surface_Waves/Subject Note/Terminologies_in_Meteorology_Oceanography.md",
