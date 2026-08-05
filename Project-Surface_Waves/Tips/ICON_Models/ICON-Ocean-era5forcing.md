@@ -533,3 +533,60 @@ Test order:
 **Main correction to your list**
 Your step 3 says “modify `mo_ocean_era5_provider_coupling.f90` to add the 3 more fields”. That can work, but I would instead add a separate wave-provider receiver. Storage can still be in `p_as`; the coupling receive logic should be separate because the source component is separate. This makes the system easier to test and avoids making the atmosphere/runoff provider and wave provider artificially inseparable.
 
+
+
+# Reconstruct 3D profile from 3 fileds
+In the module: `mo_ocean_era5_provider_coupling` under /coupling directory
+The subroutine for reconstruction in the end
+```Fortran
+SUBROUTINE reconstruct_era5_stokes_profile_phillips( &
+patch_3d, surf_ust, surf_vst, stokes_transport, ust_3d, vst_3d)
+
+TYPE(t_patch_3d), INTENT(IN) :: patch_3d
+REAL(wp), INTENT(IN) :: surf_ust(:,:), surf_vst(:,:), stokes_transport(:,:)
+REAL(wp), INTENT(INOUT) :: ust_3d(:,:,:), vst_3d(:,:,:)
+TYPE(t_patch), POINTER :: patch_horz
+
+INTEGER :: jb, jc, jk, nlev
+REAL(wp) :: stokes0, kbar, depth_mid, akbz, shape
+
+patch_horz => patch_3d%p_patch_2d(1)
+ust_3d(:,:,:) = 0.0_wp
+vst_3d(:,:,:) = 0.0_wp
+
+! ICON_OMP_PARALLEL_DO PRIVATE(jb,jc,jk,nlev,stokes0,kbar,depth_mid,akbz,shape) ICON_OMP_DEFAULT_SCHEDULE
+DO jb = 1, patch_horz%nblks_c
+	DO jc = 1, nproma
+		nlev = MIN(patch_3d%p_patch_1d(1)%dolic_c(jc,jb), SIZE(ust_3d,2))
+		
+		! magnitude of surface stokes drift velocity
+		stokes0 = SQRT(surf_ust(jc,jb)**2 + surf_vst(jc,jb)**2)
+		
+		! Skip land/dry/zero-transport points
+		IF (nlev > 0 .AND. stokes0 > 0.0_wp .AND. stokes_transport(jc,jb) > 0.0_wp) THEN
+			kbar = stokes0 / (6.0_wp * stokes_transport(jc,jb))
+		
+			DO jk = 1, nlev
+				depth_mid = ABS(patch_3d%p_patch_1d(1)%depth_CellMiddle(jc,jk,jb))
+				akbz = -kbar * depth_mid
+				shape = EXP(2.0_wp*akbz) - SQRT(-pi2*akbz) * ERFC(SQRT(-2.0_wp*akbz))
+				ust_3d(jc,jk,jb) = surf_ust(jc,jb) * shape
+				vst_3d(jc,jk,jb) = surf_vst(jc,jb) * shape
+			END DO
+		END IF
+	END DO
+END DO
+
+! ICON_OMP_END_PARALLEL_DO
+
+END SUBROUTINE reconstruct_era5_stokes_profile_phillips
+```
+
+- `depth_mid` is the cell centre depth. This is because the 3D Stokes field I’m writing is a cell-centred ocean field. each value should be at the centre of an ocean tracer/velocity cell, not at the interface between cells (which is for the vertical velocity)
+- **reconstruction logic is correct**: it uses the ERA5 surface Stokes drift as the value at z=0, then evaluates the 3-D profile at ICON model cell-centre depths. It is not mistaking the first model level for the surface.
+	- So your 2-D ERA5 surface field remains the true surface value, and the reconstructed 3-D field starts at the first ICON model-level center below the surface. That is the correct staggering for a cell-centred 3-D profile.
+```
+z = 0 m                 surface Stokes drift: surf_ust, surf_vst
+z = depth_CellMiddle(1) 3-D profile level 1: ust_3d(:,1,:), vst_3d(:,1,:)
+z = depth_CellMiddle(2) 3-D profile level 2
+```
