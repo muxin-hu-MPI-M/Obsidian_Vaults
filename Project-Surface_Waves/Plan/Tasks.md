@@ -14,24 +14,24 @@ tags:
 - [x] 1st Panel Meeting
 - [/] Literature Reading II
 - [x] Update: narrowing scientific questions and PhD outline
-- [ ] Experiment: Evaluate impacts of different turbulence mixing efficiency parameter `c_k` to the Peru-Chile Upwelling System (PCUS)
+- [x] Experiment: Evaluate impacts of different turbulence mixing efficiency parameter `c_k` to the Peru-Chile Upwelling System (PCUS)
 	- [x] Experiment design: (1) CTRL (default `c_k=0.1`); (2) CK03 (`c_k=0.3`)
 	- [x] Simulation
 		- [x] spin-up for 30-years; Less output
 		- [x] focus period: later 20-years with detailed output
-	- [ ] Analysis
+	- [x] Analysis
 
 
 # Weekly Plan 
 
 
 ## [[2026-07-13]]
-- [ ] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
+- [x] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
 	- [x] Understanding the ICON structure in terms of momentum equation
 	- [x] Full 3D version
 	- [x] Full 3D version with all expansions
 	- [x] Separate 2D horizontal vector from vertical component
-	- [ ] If neglect the horizontal gradient of vertical Stokes velocity, will it affect the consistency of potential vorticity?
+	- [x] If neglect the horizontal gradient of vertical Stokes velocity, will it affect the consistency of potential vorticity?
 
 ## [[2026-06-22]]
 - [x] Panel Meeting: #project/PhD_general 
