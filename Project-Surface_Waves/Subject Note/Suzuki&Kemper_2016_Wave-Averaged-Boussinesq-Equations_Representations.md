@@ -489,6 +489,8 @@ The surface pressure $p_s$ depends only on the horizontal coordinates, assuming 
 > Inserting the pressure decomposition into Eq.(5) yields for the velocity equation: $$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
 
 
+
+
 # Craik–Leibovich (CL) Vortex Force
 ## CL vortex force form and identity
 The vortex force can be rewritten using vector identities (as $A\times B=-B\times A$):
