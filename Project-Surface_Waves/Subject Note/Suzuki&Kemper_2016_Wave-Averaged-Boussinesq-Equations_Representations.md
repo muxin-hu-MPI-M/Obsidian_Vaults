@@ -510,6 +510,7 @@ Here we take the hierarchy 2 as the reference primitive equation set.
 > Our core modifications are in the momentum equations:$$\boxed{\begin{align} &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L \frac{\partial \mathbf{v}^s}{\partial z} + \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 \\
 &\frac{\partial p}{\partial z} = -\rho g - \rho_0 \mathbf{v}^L \cdot \partial_z \mathbf{v}^s \end{align}}$$
 
+#### Terms related to vertical Stokes gradient
 In [[Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations#🌟 Does neglecting terms in Stokes vortex force causing inconsistency?]], we already concluded that the Stokes vortex force, vertical-Stokes-gradient block:
 $$\mathbf{F}_{\mathbf{v}^s}^s=\begin{pmatrix}w^L\partial_z\mathbf{v}^s\\-\mathbf{v}^L\cdot\partial_z\mathbf{v}^s\end{pmatrix}$$
 is energy conserved when we preserve or neglect both horizontal and vertical components. **We now need to discretise the block and also prove that their discretisation also conserve the energy.**
@@ -524,17 +525,14 @@ This pairing is energy-consistent because $P^T$ is the adjoint of $P$, and $Q^T$
 > [!Important] **Discretisation of $\mathbf{F}_{\mathbf{v}^s}^s$ conserves energy**
 > 1. The energy is the dot product of horizontal component with horizontal velocity, written in the below bracket ($<\;,\;>$): $$<P^T Q(w^L D_z P\mathbf{v}^s), \mathbf{v}^L>_{\text{edge}}^{\text{middle}}$$ the whole product should locate at the middle layer of the cell prism and in the edges.
 > 2. Use the definition of $P$, times it to the above, it becomes: $$<Q(w^L D_z P\mathbf{v}^s), P\mathbf{v}^L>_{\text{center}}^{\text{middle}}$$ the whole product is located at the middle layer but at the center of the horizontal face.
-> 3. Use the definition of $Q^T4$ , times it to the above, it becomes: $$<w^L D_z P\mathbf{v}^s, Q^TP\mathbf{v}^L>_{\text{center}}^{\text{top}}$$ the whole product is now located at the top layer (i.e., interface) and still at the center of the horizontal face.
+> 3. Use the definition of $Q^T$ , times it to the above, it becomes: $$<w^L D_z P\mathbf{v}^s, Q^TP\mathbf{v}^L>_{\text{center}}^{\text{top}}$$ the whole product is now located at the top layer (i.e., interface) and still at the center of the horizontal face.
 > 4. Because the vertical velocity $w^L$ is a scalar right at the top layer and in the cell center, we can treat it as a *scalar* quantity. Then apply the vector identity $(wa)\cdot b = w(a \cdot b)$, the above becomes: $$<w^L , (D_z P\mathbf{v}^s)\cdot (Q^TP\mathbf{v}^L)>_{\text{center}}^{\text{top}}$$
 > 5. Now the energy for the vertical discretisation: $$<-(Q^T P\mathbf{v}^L)\cdot (D_z P\mathbf{v}^s), w^L>_{\text{center}}^{\text{top}}$$, it also locates at the top layer and cell center.
 > 6. Obviously, the above format plus the energy of vertical discretisation equals to zero: $$<w^L , (D_z P\mathbf{v}^s)\cdot (Q^TP\mathbf{v}^L)>_{\text{center}}^{\text{top}} + <-(Q^T P\mathbf{v}^L)\cdot (D_z P\mathbf{v}^s), w^L>_{\text{center}}^{\text{top}} = 0 $$
 
+#### Other terms
 
-
-
-
-
-----
+---
 # Craik–Leibovich (CL) Vortex Force
 ## CL vortex force form and identity
 The vortex force can be rewritten using vector identities (as $A\times B=-B\times A$):
