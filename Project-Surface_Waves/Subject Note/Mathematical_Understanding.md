@@ -102,3 +102,5 @@ $$(\mathbf{u}\cdot\nabla)\mathbf{u} = (\nabla \times \mathbf{u}) \times \mathbf{
 
 # Curl of a gradient is always 0
 $$ \nabla \times \nabla \Phi=0$$
+# Divergence of a curl is always 0
+$$\nabla \cdot (\nabla\times \Phi)=0$$

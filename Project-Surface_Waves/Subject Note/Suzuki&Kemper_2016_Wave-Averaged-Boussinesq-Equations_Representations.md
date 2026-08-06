@@ -109,7 +109,7 @@ Where the $- u_j^L\nabla u_j^L$ is in the form of Einstein summation. See detail
 
 ## 2D horizontal vector + vertical
 Now to match with the ICON-o ~={red}**ocean primitive equations** (Equation (1) in Korn, 2017)=~:
-![[Screenshot 2026-07-20 at 11.17.09.png | centre]]
+![[Screenshot 2026-07-20 at 11.17.09.png | center]]
 
 For consistency, we use the same notation as above:
 - $f$ the Coriolis parameter, $\rho$ and $rho_0$ the sea water density and its reference value, $p$ the hydrostatic pressure, $g$ the gravitational constant, $\vec{z}$ the local vertical upward unit vector and $B$ describes the bottom topography 
@@ -436,7 +436,7 @@ This is by far the ~={red}best and most practical version=~, which consider the 
 > \begin{align}
 > &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L \frac{\partial \mathbf{v}^s}{\partial z} + \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0
 > \\
-> &\frac{\partial p}{\partial z} = -\rho g - \rho_0 (v^L \partial_z v^s + u^L \partial_z u^s)
+> &\frac{\partial p}{\partial z} = -\rho g - \rho_0 \mathbf{v}^L \cdot \partial_z \mathbf{v}^s
 > \\
 > &\text{div}_h \mathbf{v}^L + \frac{\partial w^L}{\partial z} = 0 \tag{5}
 > \\
@@ -491,6 +491,50 @@ The surface pressure $p_s$ depends only on the horizontal coordinates, assuming 
 
 
 
+
+## Numerical Discretisation of the WAB
+### Original discretisation of ICON-o
+Starting from the discretisation form of the original ICON-o primitive equations in weighted weak-form on admissible reconstructions (Korn., 2017):
+![[Screenshot 2026-08-06 at 17.05.38.png]]
+**Operator Summary**
+- $P$: reconstructs horizontal velocity from edge-normal scalars to cell-center vectors.
+- $P^T$: maps cell-center vectors back to edge-normal scalars.
+- $M = P^T P$: maps edge-normal scalars to edge-normal scalars through a cell-center vector reconstruction.
+- $Q$: reconstructs quantities from vertical interfaces to layer centers.
+- $Q^T$: maps quantities from layer centers back to vertical interfaces.
+- $D_z$: takes the vertical derivative of a layer-centered quantity and places it on vertical interfaces.
+
+### Discretisation of our reduced WAB in ICON-o structure
+Here we take the hierarchy 2 as the reference primitive equation set. 
+> [!Quote] **Momentum equations in Hierarchy 2**
+> Our core modifications are in the momentum equations:$$\boxed{\begin{align} &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L \frac{\partial \mathbf{v}^s}{\partial z} + \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 \\
+&\frac{\partial p}{\partial z} = -\rho g - \rho_0 \mathbf{v}^L \cdot \partial_z \mathbf{v}^s \end{align}}$$
+
+In [[Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations#🌟 Does neglecting terms in Stokes vortex force causing inconsistency?]], we already concluded that the Stokes vortex force, vertical-Stokes-gradient block:
+$$\mathbf{F}_{\mathbf{v}^s}^s=\begin{pmatrix}w^L\partial_z\mathbf{v}^s\\-\mathbf{v}^L\cdot\partial_z\mathbf{v}^s\end{pmatrix}$$
+is energy conserved when we preserve or neglect both horizontal and vertical components. **We now need to discretise the block and also prove that their discretisation also conserve the energy.**
+
+> [!Attention] **Discretisation of $\mathbf{F}_{\mathbf{v}^s}^s$:**
+> For **Horizontal component**, it is discretised by first reconstructing $v^s$ to cell centers, taking its vertical derivative, multiplying by $w^L$, moving the result to layer centers with $Q$, then mapping it back to edges with $P^T$. $$w^L\partial_z \mathbf{v}^s \quad\longrightarrow\quad \boxed{ P^T Q\left(w^L D_z P\mathbf{v}^s\right) }$$
+> For **Vertical component**, it is discretised by reconstructing $v^L$ to cell centers, mapping it to vertical interfaces with $Q^T$, dotting it with the vertical derivative of reconstructed $v^s$, and adding the minus sign. $$-\mathbf{v}^L\cdot \partial_z \mathbf{v}^s \quad\longrightarrow\quad \boxed{ -\left(Q^T P\mathbf{v}^L\right)\cdot \left(D_z P\mathbf{v}^s\right) }$$
+> 
+
+This pairing is energy-consistent because $P^T$ is the adjoint of $P$, and $Q^T$ is the adjoint of $Q$. The detailed proof is summarised below:
+
+> [!Important] **Discretisation of $\mathbf{F}_{\mathbf{v}^s}^s$ conserves energy**
+> 1. The energy is the dot product of horizontal component with horizontal velocity, written in the below bracket ($<\;,\;>$): $$<P^T Q(w^L D_z P\mathbf{v}^s), \mathbf{v}^L>_{\text{edge}}^{\text{middle}}$$ the whole product should locate at the middle layer of the cell prism and in the edges.
+> 2. Use the definition of $P$, times it to the above, it becomes: $$<Q(w^L D_z P\mathbf{v}^s), P\mathbf{v}^L>_{\text{center}}^{\text{middle}}$$ the whole product is located at the middle layer but at the center of the horizontal face.
+> 3. Use the definition of $Q^T4$ , times it to the above, it becomes: $$<w^L D_z P\mathbf{v}^s, Q^TP\mathbf{v}^L>_{\text{center}}^{\text{top}}$$ the whole product is now located at the top layer (i.e., interface) and still at the center of the horizontal face.
+> 4. Because the vertical velocity $w^L$ is a scalar right at the top layer and in the cell center, we can treat it as a *scalar* quantity. Then apply the vector identity $(wa)\cdot b = w(a \cdot b)$, the above becomes: $$<w^L , (D_z P\mathbf{v}^s)\cdot (Q^TP\mathbf{v}^L)>_{\text{center}}^{\text{top}}$$
+> 5. Now the energy for the vertical discretisation: $$<-(Q^T P\mathbf{v}^L)\cdot (D_z P\mathbf{v}^s), w^L>_{\text{center}}^{\text{top}}$$, it also locates at the top layer and cell center.
+> 6. Obviously, the above format plus the energy of vertical discretisation equals to zero: $$<w^L , (D_z P\mathbf{v}^s)\cdot (Q^TP\mathbf{v}^L)>_{\text{center}}^{\text{top}} + <-(Q^T P\mathbf{v}^L)\cdot (D_z P\mathbf{v}^s), w^L>_{\text{center}}^{\text{top}} = 0 $$
+
+
+
+
+
+
+----
 # Craik–Leibovich (CL) Vortex Force
 ## CL vortex force form and identity
 The vortex force can be rewritten using vector identities (as $A\times B=-B\times A$):
