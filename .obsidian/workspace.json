@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+                "file": "Project-Surface_Waves/Thoughts/Ideas_Questions_from_papers.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -276,15 +276,15 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "9c33eb456bbcecd3",
+  "active": "14febc345da07bab",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Attachments/figure-17-21.png",
     "Attachments/Codex Image 7 Aug 2026, 13_48_12.svg",
     "Attachments/Codex Image 7 Aug 2026, 13_48_12.svg+xml",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Attachments/triangular_prism.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Attachments/triangular_prism",
     "Attachments/Screenshot 2026-08-06 at 17.05.38.png",
     "Project-Surface_Waves/Subject Note/Terminologies_in_Meteorology_Oceanography.md",
@@ -323,7 +323,6 @@
     "Attachments/Figures_plan_2.jpg",
     "Attachments/Figures_plan.jpg",
     "Attachments/Upwelling_region_outline-1.pdf",
-    "Attachments/Screenshot 2026-03-31 at 11.37.29.png",
     "Untitled.canvas",
     "未命名.canvas",
     "Untitled 1.canvas"

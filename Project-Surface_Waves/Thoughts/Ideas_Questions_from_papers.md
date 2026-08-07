@@ -27,15 +27,22 @@ Last Eddited: 2026-08-05
 where
 - $\overline \zeta$ and $\mathbf{\overline u}^s$ are wave-averaged components of surface elevation and velocity vector
 - **Which means:** **One can directly estimate the wave induced-mass transport by the Stokes transport**
-## wave spectrum in Northern Pacific
-> [!Quote] **Wave spectrum in Northern Pacific (NP)**
-> - “Large mechanical wind energy is transferred to surface waves in the midlatitudes from 30 to 60 N [e.g., Wang and Huang, 2004], corresponding to strong surface wind fields associated with storm tracks.”
-> - **The variations of wave spectrum are characterised by strong downshifting of the peak frequency due to non-linear wave-wave interactions** ($S_{nl}$).
-> 	- Corresponding to the high windsea energy (strong high frequency) with lower spectral peak (also strong low frequency), the surface Stokes drift velocity and the e-folding depth becomes large in NP (high frequency contribute to surface Stokes; low frequency contribute to Stokes transport)
-> - **Therefore the wave-spectra are characterised by bi-modal shape**; stationary higher frequency peaks with slowly upshifting spectral peaks at low frequency.
-> 	- Physically, this means waves in the NP is a mix of both high frequent wind waves and low frequent swells. Local differences in the NP:
-> 		- **At midlatitudes**: Ocean waves generated in the midlatitudes propagate far from storms and radiate eastward in the tropical and subtropical Pacific as swells. 
-> 		- **At lower latitudes**: especially in ITCZ, trade winds blowing constantly generate local windsea with background swells, sporadically coming from higher latitudes. Because spectral energy due to short waves is now dominant, surface Stokes become large but it drops rapidly with depth. Thus e-folding depth become small in the ITCZ regions.
+## Wave characteristics in Northern Pacific
+- **Wave spectrum**
+	- “Large mechanical wind energy is transferred to surface waves in the midlatitudes from 30 to 60 N [e.g., Wang and Huang, 2004], corresponding to strong surface wind fields associated with storm tracks.”
+	- **The variations of wave spectrum are characterised by strong downshifting of the peak frequency due to non-linear wave-wave interactions** ($S_{nl}$).
+		- Corresponding to the high windsea energy (strong high frequency) with lower spectral peak (also strong low frequency), the surface Stokes drift velocity and the e-folding depth becomes large in NP (high frequency contribute to surface Stokes; low frequency contribute to Stokes transport)
+	 - **Therefore the wave-spectra are characterised by bi-modal shape**; stationary higher frequency peak with slowly upshifting spectral peaks at low frequency.
+		 - Physically, this means waves in the NP is a mix of both high frequent wind waves and low frequent swells. Local differences in the NP:
+			 - **At midlatitudes**: Ocean waves generated in the midlatitudes propagate far from storms and radiate eastward in the tropical and subtropical Pacific as swells. 
+			 - **At lower latitudes**: especially in ITCZ, trade winds blowing constantly generate local windsea with background swells, sporadically coming from higher latitudes. Because spectral energy due to short waves is now dominant, surface Stokes become large but it drops rapidly with depth. Thus e-folding depth become small in the ITCZ regions.
+- **Scales**
+	- “spatial distributions of mean wave height and mass transport roughly correspond to the synoptic scale (~1000 km); 
+	- divergence of wave induced mass flux corresponds to meso-scale features (100~500 km) (Tamura et al., 2012)
+- **Wave-induced divergence/convergence”
+	- “the corresponding wave-induced divergence and convergences produce vertical velocities of $O(5-10\;cm/day)$. Although these are weaker than values of $O(10-100\;m/day)$ often found in strong frontal zones, they are comparable to the annual and seasonal mean Ekman pumping/suction in the open ocean over the Gulf Stream and the Kuroshio” (Tamura et al., 2012)
+	- “Wave-induced mass divergences and convergences cna rearrange the Ekman transport so as to cancel the wave effects”
+
 ## limitations of estimated surface Stokes drift
 > [!Quote] Limitations of estimation from bulk wave parameter
 > - in the paper, they discussed the estimated surface Stokes drift velocity and the corresponding e-folding depth from bulk-wave parameters
