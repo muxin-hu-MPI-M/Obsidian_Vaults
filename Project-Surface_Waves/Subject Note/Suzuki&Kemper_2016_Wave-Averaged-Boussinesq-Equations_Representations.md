@@ -504,6 +504,10 @@ Starting from the discretisation form of the original ICON-o primitive equations
 - $Q^T$: maps quantities from layer centers back to vertical interfaces.
 - $D_z$: takes the vertical derivative of a layer-centered quantity and places it on vertical interfaces.
 
+ICON grid is a triangular prism:
+![[figure-17-21.png|center||190]]
+
+
 ### Discretisation of our reduced WAB in ICON-o structure
 Here we take the hierarchy 2 as the reference primitive equation set. 
 > [!Quote] **Momentum equations in Hierarchy 2**
