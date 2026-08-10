@@ -560,6 +560,39 @@ $$P^T[\textbf{curl}_z\mathbf{v}^sP\mathbf{v}^L]$$
 Which will make sure the final outcome is still the edge-normal scalars at mid layer. 
 However, in practice, the subroutine to calculate the original Nonlinear Coriolis term is separated and is calculated without the $\textbf{curl}_z$, as we only have operator $\textbf{curl}$. The subroutine can be found in `mo_scalar_product` in the name of `nonlinear_coriolis_3d`
 
+## Implementation in ICON-o source code
+### Standalone Stokes Forcing Module Plan
+**Summary**
+- First build only mo_ocean_stokes_forcing.
+- Do not extend t_hydro_ocean_diag, do not change AB time stepping, and do not add persistent diagnostic fields yet.
+- All routines take explicit input arrays and write to caller-provided output arrays, so the module can be unit-tested in isolation.
+
+**Key Changes**
+- Add `src/ocean/dynamics/mo_ocean_stokes_forcing.f90`.
+- Public routines:
+    - `stokes_local_to_cartesian_cells`: convert cell-centered local u_s/v_s into t_cartesian_coordinates.
+    - `stokes_cell_to_edge_normal`: map Cartesian cell Stokes vectors to edge-normal vn_s using `map_cell2edges_3d`.
+    - `stokes_vertical_shear_tendency`: compute w^L d(v^s)/dz, following the `veloc_adv_vert_mimetic_rot` pattern.
+	    - The shear tendency at the first mid layer uses shear at surface and shear at first interface. The shear at the surface use `(d v_s / dz)_surface ~= (v_s(surface) - v_s(level 1)) / distance(surface, level 1)`
+    - `stokes_vorticity_tendency`: compute $\zeta_s \times \mathbf{v}^L$ by deriving $\zeta_s$ from ***vn_s*** (edge-normal Stokes velocity) and applying the nonlinear-Coriolis-style vertex-to-edge stencil without planetary f.
+    - `stokes_time_tendency`: compute (vn_s_now - vn_s_old) / dtime, with first-step behavior controlled by the caller.
+    - `wavy_hydrostatic_source`: compute cell-centered scalar v^L · ∂z v_s; pressure integration can wait for the next phase.
+	    - it also incorporates the surface Stokes drift velocity
+- Keep signs explicit in routine names/comments: ==**each routine returns the raw mathematical product**== first, and the caller/test decides whether it enters momentum as -term or +term.
+
+**The intended full integration**
+1. Read or reconstruct ERA5-like cell-centered u_s/v_s.
+2. Convert to Cartesian cell vectors with stokes_local_to_cartesian_cells.
+3. Map to edge-normal vn_s with stokes_cell_to_edge_normal.
+4. Form Lagrangian edge velocity: `vn_L = vn_E + vn_s`
+5. Feed vn_L through the existing ICON momentum/tracer/continuity operators wherever the primitive equations should use Lagrangian velocity.
+6. Add compensation terms from mo_ocean_stokes_forcing:
+    - stokes_vertical_shear_tendency: w^L d(v^s)/dz
+    - stokes_vorticity_tendency: zeta_s zhat x v^L
+    - stokes_time_tendency: d(v^s)/dt
+    - wavy_hydrostatic_source: v^L dot d(v^s)/dz, later used in pressure integration
+
+The main missing integration pieces are storage/lifetime choices: where vn_s_old lives for d(v_s)/dt, where temporary vn_L/w_L are built, and where the wavy-hydrostatic source enters pressure-gradient calculation.
 
 ---
 # Craik–Leibovich (CL) Vortex Force
