@@ -39,9 +39,11 @@ where
 - **Scales**
 	- “spatial distributions of mean wave height and mass transport roughly correspond to the synoptic scale (~1000 km); 
 	- divergence of wave induced mass flux corresponds to meso-scale features (100~500 km) (Tamura et al., 2012)
+	- The distributions of mean wave height and mass transport approximately follow the synptic scale associated with atmospheric forcing (Tamura et al., 2012)
 - **Wave-induced divergence/convergence”
 	- “the corresponding wave-induced divergence and convergences produce vertical velocities of $O(5-10\;cm/day)$. Although these are weaker than values of $O(10-100\;m/day)$ often found in strong frontal zones, they are comparable to the annual and seasonal mean Ekman pumping/suction in the open ocean over the Gulf Stream and the Kuroshio” (Tamura et al., 2012)
-	- “Wave-induced mass divergences and convergences cna rearrange the Ekman transport so as to cancel the wave effects”
+	- “Wave-induced mass divergences and convergences can rearrange the Ekman transport so as to cancel the wave effects”
+	- “On the other hand, as pointed out above in the open ocean there are significant mass divergences and convergences caused by the combined effects of the seasonal winds, local fetch and ocean currents, and the estimated vertical velocity is comparable to Ekman pumping/suction. McWilliams and Restrepo [1999] indicated that the net transport in the surface boundary layer (Ekman transport plus Stokes transport) is not affected by ocean waves. However, ocean waves can modify the Ekman velocity profile [Polton et al., 2005].” (Tamura et al., 2012, p. 13)
 
 ## limitations of estimated surface Stokes drift
 > [!Quote] Limitations of estimation from bulk wave parameter

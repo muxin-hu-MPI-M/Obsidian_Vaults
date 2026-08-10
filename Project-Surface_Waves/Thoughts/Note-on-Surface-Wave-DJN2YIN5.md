@@ -3,7 +3,7 @@ tags: []
 parent: ""
 collections:
     - '2025 Ocean Waves'
-$version: 74405
+$version: 76250
 $libraryID: 1
 $itemKey: DJN2YIN5
 
@@ -169,6 +169,8 @@ Adopted and stated by Suzuki and Fox-Kemper (2016):
 ### <span style="background-color: rgba(241, 152, 55, 0.5);">Scale matter!!</span>
 
 *   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQLAG4BAA%22%2C%22pageLabel%22%3A%223%22%2C%22position%22%3A%7B%22pageIndex%22%3A2%2C%22rects%22%3A%5B%5B258.57356569%2C651.8726978000002%2C288.67503937%2C660.7195088000002%5D%2C%5B37.5874%2C641.3848432100002%2C288.69496462%2C650.2316542100002%5D%2C%5B37.5874%2C630.9527793200002%2C288.6901825599999%2C639.7995903200002%5D%2C%5B37.5874%2C620.4649247300002%2C186.2807736400001%2C629.3117357300002%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F3KRSBVKB%22%5D%2C%22locator%22%3A%223%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/QLAG4BAA?page=3">“the submesoscale (1–2 km) fronts where the Stokes-shear force has been found to be important (Suzuki and Fox-Kemper, 2016; McWilliams and FoxKemper, 2013; McWilliams et al., 2015).”</a></span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F3KRSBVKB%22%5D%2C%22locator%22%3A%223%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/3KRSBVKB">Wu et al., 2019, p. 3</a></span>)</span>
+
+*   “spatial distributions of mean wave height and mass transport roughly correspond to the synoptic scale (\~1000 km); divergence of wave induced mass flux corresponds to meso-scale features (100\~500 km) <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6B36P8BZ%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/6B36P8BZ">Tamura et al., 2012</a></span>)</span>
 
 ### <span style="background-color: rgba(241, 152, 55, 0.5);">Importance</span>:
 
@@ -363,6 +365,12 @@ Adopted and stated by Suzuki and Fox-Kemper (2016):
 *   Key climate patterns, including the ENSO, PDO, influence the wind-wave characteristics (significant wave height, mean wave period, mean wave direction) in the Pacific.
 
     *   But the corresponding influence with detailed physical interactions and feedback mechanisms remained poorly constrained.
+
+*   “ocean wave develops largely due to the westerlies and storm tracks in the northwestern Pacific in boreal winter … ocean waves develop abruptly from the eastern coast (Figure 4a) and divergence of wave induced-mass transport contributes to the set-down of mean sea surface in this region … Convergence of wave mass transport (setup of mean sea surface) is induced along the western coast in boreal winter. Divergences and convergences also appear in the Kuroshio extension region <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6B36P8BZ%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/6B36P8BZ">Tamura et al., 2012</a></span>)</span>
+
+*   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FCGGXBVW2%22%2C%22annotationKey%22%3A%22AI5S8QPM%22%2C%22color%22%3A%22%23ff6666%22%2C%22pageLabel%22%3A%227%22%2C%22position%22%3A%7B%22pageIndex%22%3A6%2C%22rects%22%3A%5B%5B192.752%2C65.933%2C299.99%2C74.68%5D%2C%5B60.944%2C54.991%2C300.021%2C63.738%5D%2C%5B311.979%2C722.66%2C551.024%2C731.407%5D%2C%5B311.979%2C711.38%2C551.074%2C721.342%5D%2C%5B311.979%2C700.381%2C551.084%2C710.343%5D%2C%5B311.979%2C689.778%2C551.05%2C698.525%5D%2C%5B311.978%2C678.836%2C551.048%2C687.583%5D%2C%5B311.978%2C667.837%2C551.081%2C676.584%5D%2C%5B311.978%2C656.895%2C363.53%2C665.642%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6B36P8BZ%22%5D%2C%22locator%22%3A%227%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/CGGXBVW2?page=7&#x26;annotation=AI5S8QPM">“These features are mostly confined to eddies and meandering Kuroshio where the corresponding <strong>wave-induced divergences and convergences produce vertical velocities of O(5–10 cm/day).</strong> Although these are weaker than values of O(10–100 m/day) often found in strong frontal zones [e.g., Chang and Oey, 2011], they are comparable to the annual and seasonal mean Ekman pumping/suction in the open ocean over the Gulf Stream and the Kuroshio”</a></span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6B36P8BZ%22%5D%2C%22locator%22%3A%227%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/6B36P8BZ">Tamura et al., 2012, p. 7</a></span>)</span>
+
+*   “significant mass divergence and covergence regions disappear in the Kuroshio extension region in five-year average, bceause these divergences and convergences are induced by eddies and Kuroshio meanders, and they tend to cancel in the average” <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6B36P8BZ%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/6B36P8BZ">Tamura et al., 2012</a></span>)</span>
 
 ### Southern Ocean
 
