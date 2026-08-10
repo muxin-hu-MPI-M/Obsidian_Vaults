@@ -499,13 +499,25 @@ Starting from the discretisation form of the original ICON-o primitive equations
 **Operator Summary**
 - $P$: reconstructs horizontal velocity from edge-normal scalars to cell-center vectors.
 - $P^T$: maps cell-center vectors back to edge-normal scalars.
-- $M = P^T P$: maps edge-normal scalars to edge-normal scalars through a cell-center vector reconstruction.
+- $M = P^T P$: maps edge-normal scalars to edge-normal scalars through a cell-center vector reconstruction; $M[v,C]=P^T(CPv)$
+- $\hat{P}$: maps from edges to vertex-located vectors
+- $\hat{P}^T$: maps from vertex-vectors into edge-located fluxes
+- $\hat{M} = \hat{P}^T \hat{P}$: maps edge-normal scalars to edge-normal scalars through a vertex-located vector reconstruction.
 - $Q$: reconstructs quantities from vertical interfaces to layer centers.
 - $Q^T$: maps quantities from layer centers back to vertical interfaces.
 - $D_z$: takes the vertical derivative of a layer-centered quantity and places it on vertical interfaces.
 
 ICON grid is a triangular prism:
 ![[figure-17-21.png|center||190]]
+
+Locations of each variable:
+
+| Variable                                 | horizontal location | vertical location     | Additional info              |
+| ---------------------------------------- | ------------------- | --------------------- | ---------------------------- |
+| $\mathbf{v}, \mathbf{v}^L, \mathbf{v}^s$ | edge                | mid layer             | edge-normal velocity, scalar |
+| $w, w^L, w^s$                            | cell center         | top layer (interface) | scalar                       |
+| $\mathbf{D}_z \mathbf{v}$                | edge                | top layer (interface) |                              |
+| $f, \omega$                              | vortices            | mid layer             |                              |
 
 
 ### Discretisation of our reduced WAB in ICON-o structure
@@ -520,7 +532,7 @@ $$\mathbf{F}_{\mathbf{v}^s}^s=\begin{pmatrix}w^L\partial_z\mathbf{v}^s\\-\mathbf
 is energy conserved when we preserve or neglect both horizontal and vertical components. **We now need to discretise the block and also prove that their discretisation also conserve the energy.**
 
 > [!Attention] **Discretisation of $\mathbf{F}_{\mathbf{v}^s}^s$:**
-> For **Horizontal component**, it is discretised by first reconstructing $v^s$ to cell centers, taking its vertical derivative, multiplying by $w^L$, moving the result to layer centers with $Q$, then mapping it back to edges with $P^T$. $$w^L\partial_z \mathbf{v}^s \quad\longrightarrow\quad \boxed{ P^T Q\left(w^L D_z P\mathbf{v}^s\right) }$$
+> For **Horizontal component**, it is discretised by first reconstructing $v^s$ to cell centers, taking its vertical derivative (from mid layer to top layer), multiplying by $w^L$, moving the result to layer centers with $Q$, then mapping it back to edges with $P^T$. $$w^L\partial_z \mathbf{v}^s \quad\longrightarrow\quad \boxed{ P^T Q\left(w^L D_z P\mathbf{v}^s\right) }$$
 > For **Vertical component**, it is discretised by reconstructing $v^L$ to cell centers, mapping it to vertical interfaces with $Q^T$, dotting it with the vertical derivative of reconstructed $v^s$, and adding the minus sign. $$-\mathbf{v}^L\cdot \partial_z \mathbf{v}^s \quad\longrightarrow\quad \boxed{ -\left(Q^T P\mathbf{v}^L\right)\cdot \left(D_z P\mathbf{v}^s\right) }$$
 > 
 
@@ -534,7 +546,20 @@ This pairing is energy-consistent because $P^T$ is the adjoint of $P$, and $Q^T$
 > 5. Now the energy for the vertical discretisation: $$<-(Q^T P\mathbf{v}^L)\cdot (D_z P\mathbf{v}^s), w^L>_{\text{center}}^{\text{top}}$$, it also locates at the top layer and cell center.
 > 6. Obviously, the above format plus the energy of vertical discretisation equals to zero: $$<w^L , (D_z P\mathbf{v}^s)\cdot (Q^TP\mathbf{v}^L)>_{\text{center}}^{\text{top}} + <-(Q^T P\mathbf{v}^L)\cdot (D_z P\mathbf{v}^s), w^L>_{\text{center}}^{\text{top}} = 0 $$
 
-#### Other terms
+#### Stokes vorticity term
+The term here:
+$$-\zeta^s \vec{z} \times \mathbf{v}^L$$
+is the **compensation of replacing the Eulerian velocity in original Nonlinear Coriolis term to the Lagrangian velocity**:
+$$(f+\omega)\times \mathbf{v} \quad \rightarrow (f+\omega^L)\times \mathbf{v}^L$$
+Therefore, in practice, we can:
+- either calculate the additional Stokes vorticity term
+- or find a way to use the original Nonlinear Coriolis term
+
+If calculate the additional Stokes vorticity term, the discretised form should be:
+$$P^T[\textbf{curl}_z\mathbf{v}^sP\mathbf{v}^L]$$
+Which will make sure the final outcome is still the edge-normal scalars at mid layer. 
+However, in practice, the subroutine to calculate the original Nonlinear Coriolis term is separated and is calculated without the $\textbf{curl}_z$, as we only have operator $\textbf{curl}$. The subroutine can be found in `mo_scalar_product` in the name of `nonlinear_coriolis_3d`
+
 
 ---
 # Craik–Leibovich (CL) Vortex Force

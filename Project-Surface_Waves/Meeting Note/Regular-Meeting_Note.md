@@ -7,7 +7,12 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
-
+# [[2026-08-07]]
+## Discussion with Peter
+### Discretisation of the equation
+This section is already been discussed, the discretised form of the requested equations are summarised in [[Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations#Discretisation of our reduced WAB in ICON-o structure]]
+### In Practice
+To 
 
 # [[2026-08-03]]
 ## Discussion with Christopher
