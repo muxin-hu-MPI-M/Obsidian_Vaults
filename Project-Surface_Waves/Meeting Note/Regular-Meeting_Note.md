@@ -12,8 +12,16 @@ Last Eddited: 2026-01-13
 ### Discretisation of the equation
 This section is already been discussed, the discretised form of the requested equations are summarised in [[Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations#Discretisation of our reduced WAB in ICON-o structure]]
 ### In Practice
-To 
+Before change the primitive equation sets directly in the time stepping, it is worth to have a new module which read the input of Stokes velocity and Eulerian velocity and apply the unit tests on the discretisation form of the newly introduced terms:
+$$\boxed{\begin{align} &\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p  - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L \frac{\partial \mathbf{v}^s}{\partial z} + \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 \\
+&\frac{\partial p}{\partial z} = -\rho g - \rho_0 \mathbf{v}^L \cdot \partial_z \mathbf{v}^s \end{align}}$$
+New terms are: (1) $- w^L \frac{\partial \mathbf{v}^s}{\partial z}$; (2) $- \zeta^s \vec{z} \times \mathbf{v}^L)$; (3) $\frac{\partial \mathbf{v}^s}{\partial t}$ in the horizontal momentum equation, and (4) $- \rho_0 \mathbf{v}^L \cdot \partial_z \mathbf{v}^s$ in the vertical momentum equation
 
+The example, or reference for calculating the product of vertical velocity times vertical gradient of horizontal velocity is the subroutine `veloc_adv_vert_minetic_rot` inside the module `mo_ocean_velocity_advection`. In side the module, the mother subroutine `veloc_adv_vert_mimetic` call the subroutine `veloc_adv_vert_minetic_rot` to calculate the product. Thus, we can use this subroutine as the reference for our new term (1). While for the new term (4), we can also use the reference, but because this times the product is between the vertical gradient and the horizontal velocity, we should change the layers to match with the vertical momentum equations in discretised form.
+
+To do a unit test, maybe one can set the Stokes velocity $\mathbf{v}^s=(u^s,v^s)$ to have one component all zero, and the other to be 1, and then test inside the new subroutine we wrote and directly print it out to match our expectation. Thus, the unit test needs some designs.
+
+Maybe one thing we should be careful is that, the velocity in the subroutine should be the edge-normal velocity scalars, instead of the cell center vectors. But our introduced Stokes velocity is at the cell center, we should first map it to the edges and then go through later discretisation calculation.
 # [[2026-08-03]]
 ## Discussion with Christopher
 - the eddy viscosity coefficient should also be changed if we are using the Lagrangian velocity
