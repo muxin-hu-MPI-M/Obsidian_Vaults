@@ -573,6 +573,10 @@ However, in practice, the subroutine to calculate the original Nonlinear Corioli
     - `stokes_local_to_cartesian_cells`: convert cell-centered local u_s/v_s into t_cartesian_coordinates.
     - `stokes_cell_to_edge_normal`: map Cartesian cell Stokes vectors to edge-normal vn_s using `map_cell2edges_3d`.
     - `stokes_vertical_shear_tendency`: compute w^L d(v^s)/dz, following the `veloc_adv_vert_mimetic_rot` pattern.
+	    - in our case: `surface_stokes_vec_c stokes_vec_c` are directly prescribed/reconstructed **cell-centered Cartesian vectors**, not reconstructed from edge-normal velocity.
+		    - In the reference veloc_adv_vert_mimetic_rot path: `CALL verticalDeriv_vec_midlevel_on_block( patch_3d, & & p_diag%p_vn(:,:,blockNo), & & z_adv_u_i(:,:), & & start_level+1, & & blockNo, start_index, end_index, lacc=lzacc)`;
+		    - p_diag%p_vn is a **cell-centered vector reconstruction** of the edge-normal velocity. So the sequence is conceptually: `edge-normal vn -> reconstruct cell-centered vector p_diag%p_vn -> vertical derivative at prism-top/interface -> multiply by w -> map prism-top/interface to layer center -> map cell-centered vector back to edge-normal tendency`
+		    - Our stokes_vertical_shear_tendency follows the same placement logic, but starts from a different source: `ERA5/reconstructed u_s, v_s at cell centers -> convert local u/v to Cartesian cell-centered vector stokes_vec_c -> vertical derivative at prism-top/interface -> multiply by w_L -> map prism-top/interface to layer center -> map cell-centered vector to edge-normal tendency`
 	    - The shear tendency at the first mid layer uses shear at surface and shear at first interface. The shear at the surface use `(d v_s / dz)_surface ~= (v_s(surface) - v_s(level 1)) / distance(surface, level 1)`
     - `stokes_vorticity_tendency`: compute $\zeta_s \times \mathbf{v}^L$ by deriving $\zeta_s$ from ***vn_s*** (edge-normal Stokes velocity) and applying the nonlinear-Coriolis-style vertex-to-edge stencil without planetary f.
     - `stokes_time_tendency`: compute (vn_s_now - vn_s_old) / dtime, with first-step behavior controlled by the caller.
