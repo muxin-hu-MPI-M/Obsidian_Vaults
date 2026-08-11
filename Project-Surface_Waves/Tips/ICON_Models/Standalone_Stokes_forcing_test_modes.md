@@ -398,3 +398,50 @@ STOKES-CHECK failed: ...
 ```
 
 and ICON will stop via `finish()`.
+
+
+# Result interpretation
+```text
+STOKES-TEST mode:         120
+ 0:  STOKES-TEST local sample jc/jb:           1           1
+ !! Raw local diagnostics
+ !! hand-computed local mathematical diagnostics at one sample cell
+ 0:  STOKES-TEST local profile surf/u1/u2/w: surface u_s/level-1 u_s/level-2 u_s/prescribed w^L  
+ 0:  STOKES-TEST local top invdz/dz_u/wdz_u:       
+ 0:  STOKES-TEST local interior invdz/dz_u/wdz_u:   
+ 0:  STOKES-TEST local hydro expected/source: raw/actual model routine output from wavy_hydrostatic_source
+ 
+ !! Model output from mo_ocean_stokes_forcing routines
+ !! after ICON mapping/stencils where relevant
+ !! max/min/sample: MAXVAL()/MINVAL()/hard-coded index (1,1,1) for 3D edge/vertex fields 
+ !! or cell (1,1) for hydro/profile fields
+ 0:  STOKES-TEST vn_s max/min/sample:  output from stokes_cell_to_edge_normal
+ 0:  STOKES-TEST shear max/min/sample: output from stokes_vertical_shear_tendency
+ 0:  STOKES-TEST zeta max/min/sample:  output from stokes_vorticity_tendency
+ 0:  STOKES-TEST vort max/min/sample:  output from stokes_vorticity_tendency
+ 0:  STOKES-TEST time max/min/sample:  output from stokes_time_tendency
+ 0:  STOKES-TEST hydro source max/min/sample:  output from wavy_hydrostatic_source
+ 0:  STOKES-TEST vorticity scale err/base: for mode 125, errors in the linearity check plus the base vortex max.
+```
+
+**Test Results**
+
+|Mode|Log|Main Purpose|Result|
+|---|---|---|---|
+|120|26877123|surface Stokes jump|Passed|
+|121|26877234|first interior Stokes jump|Passed|
+|122|26877358|exact time tendency|Passed|
+|123|26877460|first-step time tendency|Passed|
+|124|26877489|zero Stokes vorticity|Passed|
+|125|26877563|vorticity linearity|Passed|
+
+I found no STOKES-TEST check failed, FATAL, ERROR, abort, or NaN markers in the six logs.
+
+**Important Observations**
+- Mode 120: local raw top value is exactly as designed: surf=1, u1=0, w=2, invdz=2, so raw w dz_u = 4. The final edge-normal shear sample is 0.8669063, because it has gone through ICON geometric mapping.
+- Mode 121: local raw interior value is exactly as designed: surf=1, u1=1, u2=0, w=3, so top derivative is zero and interior w dz_u = 3. Hydro source is 0.5.
+- Mode 122: time tendency is exactly 1 everywhere: old field is now - 2, dt=2.
+- Mode 123: first-step flag forces time tendency to zero.
+- Mode 124: zero Stokes gives exactly zero ζ_s and zero vortex tendency. The printed time=1 is unrelated to this test; it is just the default old/new setup still being printed.
+- Mode 125: direct edge-normal Stokes pattern gives nonzero ζ_s and vortex tendency. Scaling vn_s by two gives exactly twice the vorticity and vortex tendency: both scale errors are 0, so the updated vorticity stencil behaves linearly as expected.
+
