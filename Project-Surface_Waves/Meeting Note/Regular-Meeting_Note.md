@@ -4,7 +4,7 @@ tags:
   - project/surfwaves
   - "#presenter/Noel_Gutierrez-Brizuela"
   - "#presenter/Nils_Brüggemann"
-Last Eddited: 2026-01-13
+Last Eddited: 2026-08-12
 ---
 
 # [[2026-08-12]]
