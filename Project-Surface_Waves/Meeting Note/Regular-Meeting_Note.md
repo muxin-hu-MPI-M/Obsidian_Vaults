@@ -7,6 +7,37 @@ tags:
 Last Eddited: 2026-01-13
 ---
 
+# [[2026-08-12]]
+## Regular Meeting with Nils
+suggested pipeline in timestepping:
+```text
+if waves 
+	calculate_stokes(Stokes) 
+else 
+	Stokes = 0 
+end if 
+
+Gu = Adv + diffuion + vert_Adv + Stokes 
+u_new = u_old + dt * Gu 
+```
+Now since we have the Stokes forcing as a whole, the `u_new` becomes the Lagrangian velocity, which means we are timestepping the Lagrangian velocity.
+or
+```
+------------------------- 
+if waves 
+	Gu = Adv + diffuion + vert_Adv + Stokes 
+else 
+	Gu = Adv + diffuion + vert_Adv 
+end if 
+
+------------------------- 
+ue_new = ue_old + dt * Gue 
+ul_new = ul_old + dt * Gul 
+------------------------- 
+u_new = u_old + dt * Gu 
+dul/dt = ... + dus / dt
+```
+
 # [[2026-08-07]]
 ## Discussion with Peter
 ### Discretisation of the equation
