@@ -584,6 +584,16 @@ However, in practice, the subroutine to calculate the original Nonlinear Corioli
 	    - it also incorporates the surface Stokes drift velocity
 - Keep signs explicit in routine names/comments: ==**each routine returns the raw mathematical product**== first, and the caller/test decides whether it enters momentum as -term or +term.
 
+| Routine                                 | Mathematical object         | Discrete location             |
+| --------------------------------------- | --------------------------- | ----------------------------- |
+| stokes_local_to_cartesian_cells         | v_s from local (u_s,v_s)    | cell center, mid-level        |
+| stokes_surface_local_to_cartesian_cells | surface v_s                 | cell center, surface boundary |
+| stokes_cell_to_edge_normal              | normal Stokes velocity vn_s | edge normal, mid-level        |
+| stokes_vertical_shear_tendency          | w_L * d_z v_s               | edge normal, mid-level        |
+| stokes_vorticity_tendency               | zeta_s z x v_L              | edge normal, mid-level        |
+| stokes_time_tendency                    | d_t vn_s                    | edge normal, mid-level        |
+| wavy_hydrostatic_source                 | $v_L \cdot d_z v_s$         | cell center, mid-level        |
+
 **The intended full integration**
 1. Read or reconstruct ERA5-like cell-centered u_s/v_s.
 2. Convert to Cartesian cell vectors with stokes_local_to_cartesian_cells.
