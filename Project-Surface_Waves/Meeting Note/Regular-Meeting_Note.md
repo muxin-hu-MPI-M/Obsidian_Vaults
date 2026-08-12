@@ -9,6 +9,7 @@ Last Eddited: 2026-08-12
 
 # [[2026-08-12]]
 ## Regular Meeting with Nils
+### suggested pipeline
 suggested pipeline in timestepping:
 ```text
 if waves 
@@ -37,6 +38,78 @@ ul_new = ul_old + dt * Gul
 u_new = u_old + dt * Gu 
 dul/dt = ... + dus / dt
 ```
+### where is the summed-up tendency?
+the subroutine that sums up all the tendency terms are under `mo_ocean_ab_timestepping_mimetic.f90`
+```Fortran
+SUBROUTINE calculate_explicit_term_g_n_onBlock( patch_3d, ocean_state, is_first_timestep, &
+    & start_edge_index, end_edge_index, blockNo, lacc )
+    TYPE(t_patch_3d ),TARGET, INTENT(in) :: patch_3d
+    TYPE(t_hydro_ocean_state), TARGET    :: ocean_state
+    LOGICAL,INTENT(in)                   :: is_first_timestep
+    INTEGER,INTENT(in)                   :: start_edge_index, end_edge_index, blockNo
+    LOGICAL, INTENT(in), OPTIONAL        :: lacc
+    INTEGER :: je, jk
+    LOGICAL :: lzacc
+
+    !-----------------------------------------------------------------------
+
+    CALL set_acc_host_or_device(lzacc, lacc)
+
+    IF(MASS_MATRIX_INVERSION_TYPE/=MASS_MATRIX_INVERSION_ADVECTION)THEN
+      !$ACC PARALLEL LOOP GANG VECTOR DEFAULT(PRESENT) ASYNC(1) IF(lzacc)
+      DO je = start_edge_index, end_edge_index
+        DO jk = 1, patch_3d%p_patch_1d(1)%dolic_e(je,blockNo)
+          ocean_state%p_aux%g_n(je, jk, blockNo) = &
+            & - ocean_state%p_diag%press_grad    (je, jk, blockNo)  &
+            & - ocean_state%p_diag%grad          (je, jk, blockNo)  &
+            & - ocean_state%p_diag%veloc_adv_horz(je, jk, blockNo)  &
+            & - ocean_state%p_diag%veloc_adv_vert(je, jk, blockNo)  &
+            & + ocean_state%p_diag%laplacian_horz(je, jk, blockNo)  !&
+            !& + ocean_state%p_diag%laplacian_vert(je, jk, blockNo) !<- is done later implicitely
+        END DO
+      END DO
+      !$ACC END PARALLEL LOOP
+    ELSEIF(MASS_MATRIX_INVERSION_TYPE==MASS_MATRIX_INVERSION_ADVECTION)THEN
+      !$ACC PARALLEL LOOP GANG VECTOR DEFAULT(PRESENT) ASYNC(1) IF(lzacc)
+      DO je = start_edge_index, end_edge_index
+        DO jk = 1, patch_3d%p_patch_1d(1)%dolic_e(je,blockNo)
+          ocean_state%p_aux%g_n(je, jk, blockNo) = &
+            & - ocean_state%p_diag%press_grad    (je, jk, blockNo)  &
+            & - ocean_state%p_diag%grad          (je, jk, blockNo)  &
+            & - ocean_state%p_diag%veloc_adv_horz(je, jk, blockNo)  &
+   !         & - ocean_state%p_diag%veloc_adv_vert(je, jk, blockNo)  &
+            & + ocean_state%p_diag%laplacian_horz(je, jk, blockNo)  !&
+            !& + ocean_state%p_diag%laplacian_vert(je, jk, blockNo) !<- is done later implicitely
+        END DO
+      END DO
+      !$ACC END PARALLEL LOOP
+    ENDIF
+    IF(is_first_timestep)THEN
+      !$ACC PARALLEL LOOP GANG VECTOR DEFAULT(PRESENT) COLLAPSE(2) ASYNC(1) IF(lzacc)
+      DO jk = 1, n_zlev
+        DO je = 1, nproma
+          ocean_state%p_aux%g_nimd(je,jk,blockNo) = &
+            & ocean_state%p_aux%g_n(je,jk,blockNo)
+        END DO
+      END DO
+      !$ACC END PARALLEL LOOP
+    ELSE
+      !$ACC PARALLEL LOOP GANG VECTOR DEFAULT(PRESENT) ASYNC(1) IF(lzacc)
+      DO je = start_edge_index, end_edge_index
+        DO jk = 1, patch_3d%p_patch_1d(1)%dolic_e(je,blockNo)
+          ocean_state%p_aux%g_nimd(je, jk,blockNo)                          &
+            & = (1.5_wp+ab_const) * ocean_state%p_aux%g_n(je, jk,blockNo)   &
+            & - (0.5_wp+ab_const) * ocean_state%p_aux%g_nm1(je, jk,blockNo)
+        END DO
+      END DO
+      !$ACC END PARALLEL LOOP
+    ENDIF
+    !$ACC WAIT(1)
+
+  END SUBROUTINE calculate_explicit_term_g_n_onBlock```
+```
+
+
 
 # [[2026-08-07]]
 ## Discussion with Peter
