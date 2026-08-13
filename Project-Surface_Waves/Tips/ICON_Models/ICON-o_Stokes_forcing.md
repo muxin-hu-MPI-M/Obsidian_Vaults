@@ -349,7 +349,7 @@ vort_scale_error = 0
 
 ---
 
-# What Each Mode Tests
+## What Each Mode Tests
 
 | Mode | Term Tested | Main Quantity Checked | Expected |
 |---|---|---|---|
@@ -364,7 +364,7 @@ vort_scale_error = 0
 
 ---
 
-# Practical Run Notes
+## Practical Run Notes
 To run a mode, edit:
 ```text
 build_intel_test/run/exp.oce_testbed_stokes.run
@@ -400,7 +400,7 @@ STOKES-CHECK failed: ...
 and ICON will stop via `finish()`.
 
 
-# Result interpretation
+## Result interpretation
 ```text
 STOKES-TEST mode:         120
  0:  STOKES-TEST local sample jc/jb:           1           1
@@ -444,4 +444,239 @@ I found no STOKES-TEST check failed, FATAL, ERROR, abort, or NaN markers in t
 - Mode 123: first-step flag forces time tendency to zero.
 - Mode 124: zero Stokes gives exactly zero ζ_s and zero vortex tendency. The printed time=1 is unrelated to this test; it is just the default old/new setup still being printed.
 - Mode 125: direct edge-normal Stokes pattern gives nonzero ζ_s and vortex tendency. Scaling vn_s by two gives exactly twice the vorticity and vortex tendency: both scale errors are 0, so the updated vorticity stencil behaves linearly as expected.
+
+
+# Stokes Forcing Integration Plan
+
+## Summary
+
+Implement the Lagrangian Stokes framework behind a new ocean namelist switch. When enabled, the prognostic edge-normal velocity `vn` is treated as Lagrangian velocity after a one-time startup conversion:
+
+```fortran
+vn_L(t0) = vn_E(t0) + vn_s(t0)
+```
+
+The implementation is split into two physics insertion points:
+
+- **Wavy hydrostatic source** modifies `pressure_hyd` before `press_grad` is calculated.
+- **Horizontal Stokes compensation terms** are added to `ocean_state%p_aux%g_n` before AB extrapolation.
+
+The existing standalone operators in `mo_ocean_stokes_forcing.f90` remain the low-level tested building blocks.
+
+## Key Changes
+
+### 1. Stokes Module Wrappers
+
+Extend `mo_ocean_stokes_forcing.f90` with two public wrapper routines.
+
+Add:
+
+```fortran
+calculate_stokes_pressure_source(...)
+calculate_stokes_momentum_rhs(...)
+```
+
+`calculate_stokes_pressure_source` will:
+
+- convert `p_as%ust_3d/vst_3d` to cell-centered Cartesian `stokes_vec_c`;
+- convert `p_as%surf_ust/surf_vst` to surface Cartesian `stokes_vec_sfc_c`;
+- compute:
+
+```fortran
+wavy_hydrostatic_source_c = v_L . d_z v_s
+```
+
+Keep `wavy_hydrostatic_source` as the raw acceleration source, with units `m s-2`. Do **not** multiply by `rho0` there, because ICON stores `pressure_hyd` effectively as `p/rho0`.
+
+`calculate_stokes_momentum_rhs` will:
+
+- reuse the same Stokes diagnostics;
+- map Stokes to edge-normal `stokes_vn`;
+- compute:
+
+```fortran
+shear_tend_e = w_L * d_z v_s
+vort_tend_e  = zeta_s * z x v_L
+time_tend_e  = d_t vn_s
+```
+
+- sum:
+
+```fortran
+stokes_rhs_e = shear_tend_e + vort_tend_e + time_tend_e
+```
+
+The wrappers should call the existing low-level routines rather than duplicate logic.
+
+### 2. Namelist And State Fields
+
+Add a new switch in `ocean_physics_nml`:
+
+```fortran
+LOGICAL :: l_stokes_forcing = .FALSE.
+```
+
+Do not reuse `l_couple_icon_waves`; that switch is for wave coupling, while this feature should also work with ERA5-reconstructed Stokes fields.
+
+Add persistent diagnostic fields to `t_hydro_ocean_diag`:
+
+```fortran
+stokes_vec_c                  ! cell center, mid-level, Cartesian vector
+stokes_vec_sfc_c              ! cell center, surface, Cartesian vector
+stokes_vn                     ! edge normal, mid-level
+stokes_vn_old                 ! edge normal, mid-level, previous forcing time
+stokes_shear_tend             ! edge normal, mid-level
+stokes_vort_tend              ! edge normal, mid-level
+stokes_time_tend              ! edge normal, mid-level
+stokes_rhs                    ! edge normal, mid-level
+stokes_zeta_v                 ! vertex, mid-level
+stokes_vn_dual                ! vertex, mid-level, Cartesian vector
+wavy_hydrostatic_source       ! cell center, mid-level
+```
+
+Use `lrestart_cont=.TRUE.` for `stokes_vn_old`. The other Stokes diagnostics can be non-restart diagnostics.
+
+### 3. Initialization
+
+After `p_as` has been populated by `update_ocean_surface_refactor` for the first model time, perform a one-time wave initialization if `l_stokes_forcing=.TRUE.`.
+
+Steps:
+
+```fortran
+call stokes_local_to_cartesian_cells(...)
+call stokes_surface_local_to_cartesian_cells(...)
+call stokes_cell_to_edge_normal(...)
+
+ocean_state%p_prog(nold(1))%vn = ocean_state%p_prog(nold(1))%vn + stokes_vn
+ocean_state%p_prog(nnew(1))%vn = ocean_state%p_prog(nold(1))%vn
+
+stokes_vn_old = stokes_vn
+```
+
+Then immediately recompute velocity diagnostics from the converted Lagrangian velocity:
+
+```fortran
+call calc_scalar_product_veloc_3d(... ocean_state%p_prog(nold(1))%vn ...)
+```
+
+This is necessary because `p_diag%p_vn` must represent `v_L`, not the original Eulerian velocity.
+
+For v1, assume fresh wave-enabled starts read Eulerian initial velocity. Restarts from a previous wave-enabled Lagrangian run will need a later restart policy to avoid adding `vn_s` twice.
+
+### 4. Wavy Hydrostatic Pressure
+
+Modify `calc_internal_press_grad` to accept an optional argument:
+
+```fortran
+REAL(wp), INTENT(in), OPTIONAL :: wavy_hydrostatic_source_c(nproma,n_zlev,alloc_cell_blocks)
+```
+
+Original first-level pressure-potential integration:
+
+```fortran
+pressure_hyd(jc,1,jb) =
+  rho(jc,1,jb) * grav/rho0 * dz_top
+  + bc_total_top_potential(jc,jb)
+```
+
+Wave-enabled version:
+
+```fortran
+pressure_hyd(jc,1,jb) =
+  rho(jc,1,jb) * grav/rho0 * dz_top
+  + wavy_hydrostatic_source_c(jc,1,jb) * dz_top
+  + bc_total_top_potential(jc,jb)
+```
+
+Original deeper-level integration:
+
+```fortran
+pressure_hyd(jk) =
+  pressure_hyd(jk-1)
+  + 0.5 * (rho(jk) + rho(jk-1)) * grav/rho0 * dz
+```
+
+Wave-enabled version:
+
+```fortran
+pressure_hyd(jk) =
+  pressure_hyd(jk-1)
+  + 0.5 * (rho(jk) + rho(jk-1)) * grav/rho0 * dz
+  + 0.5 * (wavy_source(jk) + wavy_source(jk-1)) * dz
+```
+
+Also update the bottom partial-cell correction so `press_L` and `press_R` include the same wavy-source trapezoidal increment.
+
+When `l_stokes_forcing=.FALSE.`, call `calc_internal_press_grad` without the optional source and recover the original behavior.
+
+### 5. Momentum Time Step
+
+In `calculate_explicit_term_ab`, after density is available and before `calc_internal_press_grad`:
+
+```fortran
+if (l_stokes_forcing) then
+  call calculate_stokes_pressure_source(...)
+else
+  wavy_hydrostatic_source = 0.0_wp
+end if
+```
+
+Then call:
+
+```fortran
+call calc_internal_press_grad(..., wavy_hydrostatic_source_c = ocean_state%p_diag%wavy_hydrostatic_source, ...)
+```
+
+After `press_grad`, `veloc_adv_vert_mimetic`, and diffusion are available, compute the horizontal Stokes RHS:
+
+```fortran
+if (l_stokes_forcing) then
+  call calculate_stokes_momentum_rhs(...)
+else
+  stokes_rhs = 0.0_wp
+end if
+```
+
+Modify `calculate_explicit_term_g_n_onBlock` to add `stokes_rhs`:
+
+```fortran
+ocean_state%p_aux%g_n = &
+  - ocean_state%p_diag%press_grad       &
+  - ocean_state%p_diag%grad             &
+  - ocean_state%p_diag%veloc_adv_horz   &
+  - ocean_state%p_diag%veloc_adv_vert   &
+  + ocean_state%p_diag%laplacian_horz   &
+  + ocean_state%p_diag%stokes_rhs
+```
+
+The plus sign is intentional: the Stokes compensation terms appear with negative signs on the LHS of the Lagrangian momentum equation, so they enter the RHS tendency positively.
+
+After the Stokes RHS has been computed for the timestep, update:
+
+```fortran
+stokes_vn_old = stokes_vn
+```
+
+so the next call to `stokes_time_tendency` has the correct previous forcing field.
+
+## Test Plan
+
+Keep standalone test modes `120-125` and add integration-level checks:
+
+- `l_stokes_forcing=.FALSE.`: compile and run unchanged baseline.
+- Zero ERA5 Stokes fields: all Stokes diagnostics and `stokes_rhs` are zero; model matches baseline.
+- Constant vertical Stokes profile: `stokes_shear_tend` is zero.
+- Horizontally uniform Stokes: `stokes_zeta_v` and `stokes_vort_tend` are zero.
+- Prescribed old/new Stokes fields: `stokes_time_tend = (vn_s_now - vn_s_old)/dt`.
+- One-column pressure test: known `wavy_hydrostatic_source_c` produces the expected additional `pressure_hyd` increment.
+- Fresh-start Lagrangian conversion test: after initialization, `vn = vn_E + vn_s` at selected edges.
+
+## Assumptions
+
+- V1 targets the non-zstar mimetic AB path in `mo_ocean_ab_timestepping_mimetic.f90`.
+- `p_as%ust_3d/vst_3d` are mid-level Stokes velocities starting at model level 1.
+- `p_as%surf_ust/surf_vst` are separate surface values and are used only for the top vertical derivative.
+- The initial velocity supplied to a fresh wave-enabled run is Eulerian and should be converted once to Lagrangian.
+- `p_diag%w` used in the Stokes shear term is already the diagnosed vertical velocity from the Lagrangian velocity state available at that timestep.
+
 

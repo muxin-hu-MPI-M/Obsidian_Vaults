@@ -609,7 +609,7 @@ However, in practice, the subroutine to calculate the original Nonlinear Corioli
 The main missing integration pieces are storage/lifetime choices: where vn_s_old lives for d(v_s)/dt, where temporary vn_L/w_L are built, and where the wavy-hydrostatic source enters pressure-gradient calculation.
 
 **Test on standalone Stokes forcing via test mode**
-see details in [[Standalone_Stokes_forcing_test_modes]]
+see details in [[ICON-o_Stokes_forcing]]
 
 ### The pipeline
 The ICON-o documentation described the general overview of the code structure: https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/0302_code_structure.html#general-overview
