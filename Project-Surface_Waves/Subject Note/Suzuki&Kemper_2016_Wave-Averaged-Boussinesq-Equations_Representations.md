@@ -611,6 +611,54 @@ The main missing integration pieces are storage/lifetime choices: where vn_s_ol
 **Test on standalone Stokes forcing via test mode**
 see details in [[Standalone_Stokes_forcing_test_modes]]
 
+### The pipeline
+The ICON-o documentation described the general overview of the code structure: https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/0302_code_structure.html#general-overview
+
+We are focusing on the **Momentum time step**. the pipeline of implementing all the Stokes forcing described in the dynamics/mo_ocean_stokes_forcing.f90 is also indicated in the below sequence.
+
+**Initialisation**
+- ➡️ Add a wave/Stokes namelist switch
+- ➡️ during initialisation if waves are enable, convert the initial velocity to Lagrangian velocity
+
+**Momentum time Step**
+- `tide`
+- `update_ho_params` (physics/mo_ocean_physics.f90)
+- `solve_free_surface_eq_ab` (dynamics/mo_ocean_ab_timestepping.f90)
+    - `solve_free_sfc_ab_mimetic` (dynamics/mo_ocean_ab_timestepping_mimetic.f90)
+        - `top_bound_cond_horz_veloc` (boundary/mo_ocean_boundcond.f90)
+            - `top_bound_cond_horz_veloc_fromCells`
+                - `map_cell2edges_3D`( patch_3D, ocean_state%p_aux%bc_top_veloc_cc,ocean_state%p_aux%bc_top_vn,p_op_coeff,level=1)
+        - `calculate_explicit_term_ab` (mo_ocean_ab_timestepping_mimetic.f90)
+            - `veloc_adv_horz_mimetic` (dynamics/mo_ocean_velocity_advection.f90)
+                - `veloc_adv_horz_mimetic_rot`
+                    - `nonlinear_coriolis_3d` (math/mo_scalar_product.f90)
+                    - 1 `nonlinear_coriolis_3d_fast`
+                    - 2 `rot_vertex_ocean_3d`
+                    - `grad_fd_norm_oce_3d_onBlock` (math/mo_ocean_math_operators.f90)
+            - `calculate_density`
+            - `calc_internal_press_grad` (physics/mo_ocean_thermodyn.f90)
+	            - ==➡️ **Add wavy_hydrostatic_source_c (v_L . d_z v_s) * dz into the pressure_hyd**, using IF statement==; The resulting press_grad will be the pressure gradient that considered wavy-hydrostatic approximation
+            - `veloc_adv_vert_mimetic` (dynamics/mo_ocean_velocity_advection.f90)
+                - `veloc_adv_vert_mimetic_rot`
+                    - `verticalDeriv_vec_midlevel_on_block`
+            - `velocity_diffusion` (dynamics/mo_ocean_velocity_diffusion.f90)
+            - `explicit_vn_pred` (explicit_vn_pred_invert_mass_matrix is usually not used)
+                - `grad_fd_norm_oce_2d_onBlock`
+                - `calculate_explicit_term_g_n_onBlock`
+	                - ==➡️ **Add Stokes_hori_momentum_forcings_e, which is the sum of all Stokes horizontal momentum forcings on edge-normal/mid-layer to the g_n term**, using IF statement==; The resulting g_n is then the total Lagrangian velocity tendency
+                - `calculate_explicit_vn_pred_3D_onBlock`
+                    - `VelocityBottomBoundaryCondition_onBlock`
+                - `ICON_PP_Edge_vnPredict_scheme`
+                - `velocity_diffusion_vertical_implicit_onBlock` (dynamics/mo_ocean_velocity_diffusion.f90)
+        - `fill_rhs4surface_eq_ab`
+- `calc_normal_velocity_ab` (dynamics/mo_ocean_ab_timestepping.f90)
+    - `calc_normal_velocity_ab_mimetic` (dynamics/mo_ocean_ab_timestepping_mimetic.f90)
+        - `grad_fd_norm_oce_2d_3d`
+            
+**Derive vertical velocity**
+- `calc_vert_velocity` (dynamics/mo_ocean_ab_timestepping.f90)
+    - `calc_vert_velocity_mim_bottomup` (dynamics/mo_ocean_ab_timestepping_mimetic.f90)
+        - `div_oce_3D_onTriangles_onBlock`
 
 ---
 # Craik–Leibovich (CL) Vortex Force
