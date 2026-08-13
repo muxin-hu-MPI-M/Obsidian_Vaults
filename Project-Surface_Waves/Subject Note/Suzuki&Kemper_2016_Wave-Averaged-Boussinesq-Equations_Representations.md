@@ -452,6 +452,9 @@ This is by far the ~={red}best and most practical version=~, which consider the 
 > - here the diffusion term is using the Lagrangian velocity, but in C-L WAB format, it should use the Eulerian velocity instead
 > - Similar issue maybe in the other coefficients in the tracer equation. 
 > - In practice, we will keep the current setting, but keep in mind that there’s a difference
+
+> [!Attention] 
+> Inserting the pressure decomposition into Eq.(5) yields for the velocity equation: $$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L\frac{\partial \mathbf{v}^s}{\partial z} + \zeta^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
 ### Hierarchy 3: Non-hydrostatic case
 However, in this case, we haven’t conclude on the vertical scaling. As the below version keep the horizontal gradient of vertical Stokes term, one should compare the scaling to the ordinary vertical acceleration term. The resulting ratio depends heavily on the horizontal scale of wave fields:
 $$ \boxed{\frac{u^L \partial_x w^s}{u^L \partial_x w^L}\sim\frac{U\epsilon_sU_s/L_s}{\epsilon^2U^2/H}=\frac{\epsilon_s}{\epsilon}\frac{U_s}{U}\frac{L}{L_s}.} $$
@@ -487,9 +490,6 @@ The surface pressure $p_s$ depends only on the horizontal coordinates, assuming 
 
 > [!Attention] 
 > Inserting the pressure decomposition into Eq.(5) yields for the velocity equation: $$\frac{\partial \mathbf{v}^L}{\partial t} + (f+ \omega^L)\vec{z} \times \mathbf{v}^L + \frac{\nabla_h |\mathbf{v}^L|^2}{2}+ w^L \frac{\partial \mathbf{v}^L}{\partial z} + \frac{1}{\rho_0}\nabla_h p_{hy} + g\nabla_h \eta - D_h \mathbf{v}^L - \frac{\partial}{\partial z} \mathrm{A}^{\mathrm{v}} \frac{\partial}{\partial z} \mathbf{v}^L - (w^L (\frac{\partial \mathbf{v}^s}{\partial z} - \nabla_h w^s) + \omega^s \vec{z} \times \mathbf{v}^L) - \frac{\partial \mathbf{v}^s}{\partial t} = 0 $$
-
-
-
 
 
 ## Numerical Discretisation of the WAB
