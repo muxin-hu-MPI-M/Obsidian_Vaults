@@ -123,8 +123,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812,
-    "collapsed": true
+    "width": 248.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -202,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON-o_Stokes_forcing.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -256,8 +255,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5,
-    "collapsed": true
+    "width": 307.5
   },
   "left-ribbon": {
     "hiddenItems": {

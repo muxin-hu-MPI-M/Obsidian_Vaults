@@ -914,3 +914,103 @@ stokes_vn_old = stokes_vn
 - Fresh non-restart wave-enabled starts read Eulerian velocity.
 - Normal wave-enabled restarts contain Lagrangian `vn`.
 - Restart compatibility with old non-wave restart files is handled by the missing-`stokes_vn_old` fallback, but switching on waves from an old restart should be treated as a fresh conversion case only if explicitly configured later.
+
+
+
+# Status: [[2026-08-14]]
+We are working in ICON-o branch:
+`/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`
+
+Goal: implement Stokes/Lagrangian forcing for ICON-o primitive equations.
+Physics goal:
+- When `l_stokes_forcing = .TRUE.`, prognostic `vn` should mean Lagrangian edge-normal velocity `vn_L`.
+- Fresh non-restart start: convert once with `vn_L(t0) = vn_E(t0) + vn_s(t0)`, where `vn_s` is mapped from ERA5 Stokes fields to edge-normal velocity.
+- Normal wave restart: do **not** add `vn_s` again; restart `vn` is assumed already Lagrangian.
+- Wavy hydrostatic source modifies `pressure_hyd` before `press_grad`.
+- Horizontal Stokes compensation terms are added to `g_n`.
+
+Important existing Stokes fields:
+- ERA5/provider fields live in `p_as`:
+  - `p_as%ust_3d`, `p_as%vst_3d`: cell-centered 3D Stokes, starting at model level 1.
+  - `p_as%surf_ust`, `p_as%surf_vst`: separate surface Stokes values.
+- Surface values are used for the top vertical derivative.
+
+Current implementation status:
+- Do **not** compile immediately if context compaction is unstable; first inspect source.
+- Files touched:
+  - `src/ocean/config/mo_ocean_nml.f90`
+  - `src/ocean/dynamics/mo_ocean_types.f90`
+  - `src/ocean/dynamics/mo_ocean_state.f90`
+  - `src/ocean/dynamics/mo_ocean_stokes_forcing.f90`
+  - `src/ocean/physics/mo_ocean_thermodyn.f90`
+  - `src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90`
+  - `src/ocean/drivers/mo_hydro_ocean_run.f90`
+
+What appears already landed:
+1. `l_stokes_forcing = .FALSE.` added to `ocean_physics_nml`.
+2. Added diagnostic/state fields in `t_hydro_ocean_diag`:
+   - `stokes_vec_c`
+   - `stokes_vec_sfc_c`
+   - `stokes_vn`
+   - `stokes_vn_old`
+   - `stokes_shear_tend`
+   - `stokes_vort_tend`
+   - `stokes_time_tend`
+   - `stokes_rhs`
+   - `stokes_zeta_v`
+   - `stokes_vn_dual`
+   - `wavy_hydrostatic_source`
+3. Allocation/registration in `mo_ocean_state.f90` appears present:
+   - scalar fields via `add_var`
+   - `stokes_vn_old` on `ocean_restart_list`
+   - Cartesian vector fields manually allocated/deallocated near `p_vn`/`p_vn_dual`.
+4. Wrapper routines appear present in `mo_ocean_stokes_forcing.f90`:
+   - `prepare_stokes_fields`
+   - `initialize_lagrangian_velocity_from_stokes`
+   - `calculate_stokes_pressure_source`
+   - `calculate_stokes_momentum_rhs`
+5. `calc_internal_press_grad` in `mo_ocean_thermodyn.f90` has optional: `wavy_hydrostatic_source_c`
+	- and pressure integration included the wavy source: `pressure_hyd(1) += wavy_source(1) * dz_top   pressure_hyd(jk) += 0.5 * (wavy_source(jk) + wavy_source(jk-1)) * dz`. partial-cell correction also appears modified.
+6. `calculate_explicit_term_ab` in `mo_ocean_ab_timestepping_mimetic.f90` appears wired:
+    - if `l_stokes_forcing`, calls `prepare_stokes_fields`
+    - computes `calculate_stokes_pressure_source`
+    - calls `calc_internal_press_grad(..., wavy_hydrostatic_source_c=...)`
+    - computes `calculate_stokes_momentum_rhs`
+    - otherwise zeros `wavy_hydrostatic_source` and `stokes_rhs`
+7. `calculate_explicit_term_g_n_onBlock` adds: `ocean_state%p_diag%stokes_rhs(je,jk,blockNo)`
+8. Fresh-start conversion hook appears in `mo_hydro_ocean_run.f90` after `update_ocean_surface_refactor`:
+```
+IF (l_stokes_forcing .AND. is_initial_timestep(jstep-jstep_shift) .AND. (.NOT. isRestart())) THEN
+  call prepare_stokes_fields(...)
+  call initialize_lagrangian_velocity_from_stokes(...)
+  ocean_state%p_prog(nnew(1))%vn = ocean_state%p_prog(nold(1))%vn
+  call calc_scalar_product_veloc_3d(...)
+END IF
+```
+
+Known concerns / next things to check:
+- Implementation has **not been compile-verified**.
+- Check syntax carefully before compiling.
+- The old-restart fallback for missing `stokes_vn_old` is not implemented. Current assumption: normal wave restart has `stokes_vn_old` in restart file.
+- `calculate_stokes_momentum_rhs` updates `stokes_vn_old = stokes_vn` immediately after forming `stokes_time_tend`; this is acceptable for now but slightly earlier than “after successful timestep”.
+- v1 only targets non-zstar mimetic AB path.
+- Need inspect for line continuation/OpenACC directive syntax, especially around:
+    - `mo_ocean_state.f90` manual vector allocations
+    - `!$ACC ENTER DATA COPYIN(...)` continuation
+    - `mo_ocean_stokes_forcing.f90` import of `sync_e`
+    - `mo_ocean_ab_timestepping_mimetic.f90` new `USE` and calls
+    - `mo_ocean_thermodyn.f90` optional argument order
+
+Important detail:
+- ICON stores `pressure_hyd` effectively as `p/rho0`, so `wavy_hydrostatic_source = v_L . d_z v_s` should be integrated as `source * dz`, **not multiplied by `rho0`**.
+
+Immediate next task in new chat:
+1. Inspect current diffs/source state.
+2. Fix any obvious syntax/import issues without compiling first if desired.
+3. Then compile only touched objects when ready:
+    - `mo_ocean_stokes_forcing.o`
+    - `mo_ocean_state.o`
+    - `mo_ocean_thermodyn.o`
+    - `mo_ocean_ab_timestepping_mimetic.o`
+    - `mo_hydro_ocean_run.o`
+4. If compile errors appear, fix iteratively.
