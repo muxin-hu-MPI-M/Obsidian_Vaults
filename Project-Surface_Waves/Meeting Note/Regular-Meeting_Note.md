@@ -6,6 +6,13 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-08-17]]
+## Discussion with Nobu
+- ICON use COARE3.0(https://journals.ametsoc.org/view/journals/clim/16/4/1520-0442_2003_016_0571_bpoasf_2.0.co_2.xml) to calculate the drag coefficient, and it use the bulk wind speed defined as the mean wind speed relative to the ocean surface, with vector wind components plus a gustiness term.
+	- the ocean velocity used in the relative wind is the **surface current**, i.e. the mean ocean current used to remove current-relative motion. It is **not** a Lagrangian velocity including Stokes drift.
+	- In the appendix they say that, when possible, the wind vector is referenced to the ocean surface to remove current effects; for COARE they used currents from a nearby buoy, and for later cruises a ship Doppler speed log. That points to an observed Eulerian/current correction, not a wave-following Lagrangian velocity. The official COARE code also states the input wind is the magnitude of the difference between wind and **ocean surface current** vectors.
+	- Surface waves enter differently: COARE 3.0 added optional wave-state effects through the roughness/Charnock parameter, using wave slope or wave age, but those wave options were “added” and not fully evaluated in that paper. So waves can affect `C_d`, but they are not included by replacing the ocean current with `u^E + u^S`.
+- However, in my case, since the velocity is replaced to the Lagrangian framework in the initialisation, and the tendency terms are now the Lagrangian tendencies, we might have a trouble in the drag coefficient
 
 # [[2026-08-12]]
 ## Regular Meeting with Nils
