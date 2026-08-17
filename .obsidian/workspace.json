@@ -63,7 +63,8 @@
               "title": "Ideas_Questions_from_papers"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -201,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -277,12 +278,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "34e4e1b50a9c2326",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-o_Stokes_forcing.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Thoughts/Ideas_Questions_from_papers.md",
     "Project-Surface_Waves/Subject Note/Terminologies_in_Meteorology_Oceanography.md",
     "Attachments/figure-17-21.png",

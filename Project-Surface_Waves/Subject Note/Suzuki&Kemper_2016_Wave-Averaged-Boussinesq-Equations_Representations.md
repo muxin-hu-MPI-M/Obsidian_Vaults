@@ -556,7 +556,7 @@ Therefore, in practice, we can:
 - or find a way to use the original Nonlinear Coriolis term
 
 If calculate the additional Stokes vorticity term, the discretised form should be:
-$$P^T[\textbf{curl}_z\mathbf{v}^sP\mathbf{v}^L]$$
+$$\hat{P}^T[\textbf{curl}_z\mathbf{v}^s\hat{P}\mathbf{v}^L]$$
 Which will make sure the final outcome is still the edge-normal scalars at mid layer. 
 However, in practice, the subroutine to calculate the original Nonlinear Coriolis term is separated and is calculated without the $\textbf{curl}_z$, as we only have operator $\textbf{curl}$. The subroutine can be found in `mo_scalar_product` in the name of `nonlinear_coriolis_3d`
 
