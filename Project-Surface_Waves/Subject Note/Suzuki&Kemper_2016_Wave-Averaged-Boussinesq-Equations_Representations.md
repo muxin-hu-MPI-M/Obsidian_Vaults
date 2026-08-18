@@ -616,9 +616,41 @@ The ICON-o documentation described the general overview of the code structure: h
 
 We are focusing on the **Momentum time step**. the pipeline of implementing all the Stokes forcing described in the dynamics/mo_ocean_stokes_forcing.f90 is also indicated in the below sequence.
 
+**Files touched:**
+- `src/ocean/config/mo_ocean_nml.f90`
+- `src/ocean/dynamics/mo_ocean_types.f90`
+- `src/ocean/dynamics/mo_ocean_state.f90`
+- `src/ocean/dynamics/mo_ocean_stokes_forcing.f90`
+- `src/ocean/physics/mo_ocean_thermodyn.f90`
+- `src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90`
+- `src/ocean/drivers/mo_hydro_ocean_run.f90`
+
 **Initialisation**
-- ➡️ Add a wave/Stokes namelist switch
-- ➡️ during initialisation if waves are enable, convert the initial velocity to Lagrangian velocity
+- ==➡️ **add `l_stokes_forcing = .FALSE.` to the `ocean_physics_nml`**
+- ==➡️ **add diagnostic/state fields in `t_hydro_ocean_diag`**==
+	- and allocate/register them in `mo_ocean_state.f90`, appears present:
+		- scalar fields via `add_var`
+		- `stokes_vn_old` on `ocean_restart_list`
+		- Cartesion vector fields mannually allocated/deallocated near `p_vn`/`p_vn_dual`
+- ==➡️ during initialisation if waves are enable, call `prepare_stokes_fields` and `initialize_lagrangian_velocity_from_stokes`, then immediately call `calc_scalar_product_veloc_3d` to update the `p_diag%p_vn, p_diag%kin, p_diag%p_vn_dual` to Lagrangian from the first momentum step== (drivers/mo_hydro_ocean_run.f90)
+
+**Derive Kinetic energy**
+- already replaced to Lagrangian kinetic energy in the previous call
+
+**Surface forcing for T/S and momentum**
+- `update_ocean_surface_refactor` (boundary/mo_ocean_surface_refactor.f90)
+- `update_surface_relaxation` (boundary/mo_ocean_bulk_forcing.f90)
+- `update_surface_relaxation` (boundary/mo_ocean_bulk_forcing.f90)
+- `apply_surface_relaxation` (boundary/mo_ocean_bulk_forcing.f90)
+- `update_atmos_fluxes`
+- `ice_fast_interface`
+- `ice_slow_interface`
+- `update_ocean_surface_stress` 
+	- ==➡️ **here we MIGHT want to retrieve the velocity back to Eulerian velocity to use the correct drag-coefficient calculation**==
+- `apply_surface_fluxes_slo` (boundary/mo_ocean_bulk_forcing.f90)
+- `subsurface_swr_absorption`  
+- `balance_elevation`   
+- `update_height_depdendent_variables`
 
 **Momentum time Step**
 - `tide`
@@ -637,7 +669,8 @@ We are focusing on the **Momentum time step**. the pipeline of implementing all 
                     - `grad_fd_norm_oce_3d_onBlock` (math/mo_ocean_math_operators.f90)
             - `calculate_density`
             - `calc_internal_press_grad` (physics/mo_ocean_thermodyn.f90)
-	            - ==➡️ **Add wavy_hydrostatic_source_c (v_L . d_z v_s) * dz into the pressure_hyd**, using IF statement==; The resulting press_grad will be the pressure gradient that considered wavy-hydrostatic approximation
+	            - ==➡️ **if `l_stokes_forcing`, add wavy_hydrostatic_source_c (v_L . d_z v_s) * dz into the pressure_hyd**==; The resulting press_grad will be the pressure gradient that considered wavy-hydrostatic approximation
+	        - ==➡️ **if `l_stokes_forcing`, compute `calculate_stokes_momentum_rhs` which is the sum of all Stokes horizontal momentum forcings on edge-normal/mid-layer
             - `veloc_adv_vert_mimetic` (dynamics/mo_ocean_velocity_advection.f90)
                 - `veloc_adv_vert_mimetic_rot`
                     - `verticalDeriv_vec_midlevel_on_block`
@@ -645,7 +678,7 @@ We are focusing on the **Momentum time step**. the pipeline of implementing all 
             - `explicit_vn_pred` (explicit_vn_pred_invert_mass_matrix is usually not used)
                 - `grad_fd_norm_oce_2d_onBlock`
                 - `calculate_explicit_term_g_n_onBlock`
-	                - ==➡️ **Add Stokes_hori_momentum_forcings_e, which is the sum of all Stokes horizontal momentum forcings on edge-normal/mid-layer to the g_n term**, using IF statement==; The resulting g_n is then the total Lagrangian velocity tendency
+	                - ==➡️ **if `l_stokes_forcing`, adds `ocean_state%p_diag%stokes_rhs(je,jk,blockNo)` to the g_n, this time the g_n is the total Lagrangian velocity tendency
                 - `calculate_explicit_vn_pred_3D_onBlock`
                     - `VelocityBottomBoundaryCondition_onBlock`
                 - `ICON_PP_Edge_vnPredict_scheme`
