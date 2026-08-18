@@ -24,6 +24,16 @@ tags:
 
 # Weekly Plan 
 
+## [[2026-08-17]]
+- [ ] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
+	- [x] Discuss with Noel
+	- [ ] decide the IMPRS presentation outline
+	- [ ] decide figures
+- [ ] Starting prepare the IMPRS-presentation #project/PhD_general
+	- [ ] abstract before [[2026-08-27]]
+- [ ] Testing on newly implemented ERA5-atmosphere-Stokes forcing experiment #project/surfwaves 
+	- [x] 10-days run, okay?
+	- [ ] 2-years run, with/without Stokes, with necessary diagnosed fields
 
 ## [[2026-07-13]]
 - [x] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 

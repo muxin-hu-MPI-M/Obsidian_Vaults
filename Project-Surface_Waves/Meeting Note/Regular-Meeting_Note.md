@@ -12,6 +12,13 @@ Last Eddited: 2026-08-12
 - Update my working branch: era5 atmospheric + Stokes field force ICON-o
 - Ask questions of the wave-ocean coupling in terms of the momentum fluxes
 
+# [[2026-08-18]]
+## Discussion with Noel on IMPRS-retreat
+- His philosophy: shows the motivation plot (i.e, the heat transport) even it’s completely preliminary
+- the general outline could be:
+	- Ocean surface waves are important (why?) but it is seldomly considered in the climate model
+
+
 # [[2026-08-17]]
 ## Discussion with Nobu
 - **ICON-o (without waves) use COARE2.X**(https://journals.ametsoc.org/view/journals/clim/16/4/1520-0442_2003_016_0571_bpoasf_2.0.co_2.xml) **to calculate the drag coefficient**, and it use the bulk wind speed defined as the mean wind speed relative to the ocean surface, with vector wind components plus a gustiness term.
