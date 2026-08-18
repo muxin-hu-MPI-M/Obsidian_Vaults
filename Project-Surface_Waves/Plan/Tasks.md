@@ -33,7 +33,11 @@ tags:
 	- [ ] abstract before [[2026-08-27]]
 - [ ] Testing on newly implemented ERA5-atmosphere-Stokes forcing experiment #project/surfwaves 
 	- [x] 10-days run, okay?
-	- [ ] 2-years run, with/without Stokes, with necessary diagnosed fields
+	- [x] 2-years r2b4 run, with/without Stokes, with necessary diagnosed fields
+	- [ ] Analysis on 2-years simulations
+		- [ ] compare u,v fields
+		- [ ] compare uT, vT fields
+		- [ ] compare tos, sos
 
 ## [[2026-07-13]]
 - [x] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
