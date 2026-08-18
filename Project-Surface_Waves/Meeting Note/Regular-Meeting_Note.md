@@ -16,7 +16,10 @@ Last Eddited: 2026-08-12
 ## Discussion with Noel on IMPRS-retreat
 - His philosophy: shows the motivation plot (i.e, the heat transport) even it’s completely preliminary
 - the general outline could be:
-	- Ocean surface waves are important (why?) but it is seldomly considered in the climate model
+	- when ppl think of ocean, the first image coming to us might be the waves
+	- however, surface waves and its effect are seldomly included in the climate models.
+	- ofc, we cannot really resolve surface waves themselves, but their effects can. **In general, wave effects can be classified into 3 pathways**
+		- 
 
 
 # [[2026-08-17]]

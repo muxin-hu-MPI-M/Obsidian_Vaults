@@ -91,8 +91,7 @@
               "title": "Panel-Meeting_Note"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -229,7 +228,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -304,8 +303,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "fbeb0fba2e00b1e9",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Flash_cards_figures.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-o_Stokes_forcing.md",
@@ -338,7 +338,6 @@
     "Project-Surface_Waves/Thoughts/(2014-09-01)-Approximate-Stokes-Drift-Profiles-in-Deep-Water-KRC3DAWP.md",
     "Project-Surface_Waves/Thoughts/(2013-01-01)-Air-Sea-Interaction-and-Surface-Waves-RU62EKSR.md",
     "Project-Surface_Waves/Thoughts/(2010-01-01)-Dynamics-of-Winds-and-Currents-Coupled-to-Surface-Waves-JQRPIFWN.md",
-    "QuickCapture.md",
     "Attachments/Screenshot 2026-08-05 at 14.31.50.png",
     "Project-Surface_Waves/Thoughts/attachments/ST9Y2YCZ.png",
     "Project-Surface_Waves/Thoughts/attachments/STHU8YJ7.png",
