@@ -27,15 +27,15 @@ Last Eddited: 2026-08-12
 	- R2B7 for production → for longer simulation (~30-50 years)
 	- merge into master
 - Paper / thesis:
-	- write up theory
+	- **write up theory** → ==better to have it before the TRR retreat== (then we can discuss with Lars/Carsten)
 	- target simulations should be R2B7 ERA5 30 years
 - 2nd paper / thesis:
 	- coupled simulation?
 - Retreat (IMPRS / TRR):
-	- motivation
-	- theory and plan
-	- first results with ERA5 (R2B6)
-	- future plans
+	- **motivation** → start with the most dump estimation, try to convince ppl that this is important, and why we need to use model to study it
+	- **theory and plan** → mathematics/modelling details (as the least detailed as possible)
+	- **first results with ERA5 (R2B6) perhaps**
+	- **future plans** → coupled simulation? Compare with other wave-ocean interaction pathways
 
 # [[2026-08-18]]
 ## Discussion with Noel on IMPRS-retreat

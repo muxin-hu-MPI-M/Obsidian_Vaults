@@ -27,7 +27,7 @@ tags:
 ## [[2026-08-17]]
 - [ ] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
 	- [x] Discuss with Noel
-	- [ ] decide the IMPRS presentation outline
+	- [x] decide the IMPRS presentation outline
 	- [ ] decide figures
 - [ ] Starting prepare the IMPRS-presentation #project/PhD_general
 	- [ ] abstract before [[2026-08-27]]
