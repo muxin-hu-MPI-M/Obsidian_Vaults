@@ -91,7 +91,8 @@
               "title": "Panel-Meeting_Note"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -228,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
+                "file": "Flash_cards_figures.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -303,10 +304,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "85b1c15be670a419",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-era5waves-provider.md",
+    "Attachments/Pasted image 20260819231430.png",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-era5waves-provider.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
     "Project-Surface_Waves/Plan/Tasks.md",
