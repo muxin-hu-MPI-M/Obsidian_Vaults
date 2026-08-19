@@ -5,6 +5,160 @@ tags:
   - ICON/experiment
 Last Eddited: 2026-08-11
 ---
+# ICON-o Stokes Forcing Sanity Check
+
+## Purpose
+The sanity check verifies that the prescribed ERA5 Stokes velocity is correctly received, reconstructed vertically, mapped onto ICON edges, inserted into the Lagrangian velocity, and used to calculate the additional momentum and wavy-hydrostatic terms.
+
+The experiment uses hourly output during the first simulation day. The initial model velocity is zero, allowing the first response to the Stokes velocity to be identified clearly.
+
+## Checks Performed
+### 1. ERA5 Stokes Input
+We examined the maximum absolute values of:
+- Surface Stokes components `era5_surf_ust` and `era5_surf_vst`
+- Three-dimensional Stokes components `era5_ust_3d` and `era5_vst_3d`
+- Mapped edge-normal Stokes velocity `stokes_vn`
+
+The initial output at `1985-01-01 00:00` contains zero Stokes fields. The fields become nonzero at `01:00`.
+
+At the first nonzero output:
+
+| Field | Maximum absolute value |
+|---|---:|
+| Surface $u^s$ | $5.08\times10^{-1}\ \mathrm{m\,s^{-1}}$ |
+| Surface $v^s$ | $4.33\times10^{-1}\ \mathrm{m\,s^{-1}}$ |
+| 3-D $u^s$ | $1.32\times10^{-1}\ \mathrm{m\,s^{-1}}$ |
+| 3-D $v^s$ | $1.23\times10^{-1}\ \mathrm{m\,s^{-1}}$ |
+| Edge-normal $v_n^s$ | $1.21\times10^{-1}\ \mathrm{m\,s^{-1}}$ |
+
+The reduced magnitude of the three-dimensional Stokes velocity is consistent with its vertical decay. The difference between the cell-centered components and `stokes_vn` is expected because `stokes_vn` is interpolated and projected onto edge normals.
+
+### 2. Activation of the New Terms
+The first nonzero times are:
+
+| Quantity | First nonzero output |
+|---|---|
+| ERA5 surface and 3-D Stokes velocity | `01:00`, index 1 |
+| Edge-normal `stokes_vn` | `01:00`, index 1 |
+| Stokes vorticity tendency | `01:00`, index 1 |
+| Wavy-hydrostatic source | `01:00`, index 1 |
+| Lagrangian $u$, $v$, and $w$ | `01:00`, index 1 |
+| Stokes vertical-shear tendency | `02:00`, index 2 |
+| Stokes time tendency | `02:00`, index 2 |
+
+Here, index 0 is the initial output before any model step. Therefore, index 1 is the first evolved output, while index 2 is the second evolved output, although it is the third stored NetCDF record.
+
+## Why the Terms Start at Different Times
+### Terms Starting at `01:00`
+The Stokes vorticity tendency,
+
+$$
+\zeta^s\hat{\mathbf z}\times\mathbf v^L,
+$$
+can be calculated during the first model step because both the mapped Stokes velocity and initialized Lagrangian horizontal velocity are available.
+
+The wavy-hydrostatic source,
+
+$$
+\mathbf v^L\cdot\partial_z\mathbf v^s,
+$$
+also becomes available during the first step because the Lagrangian horizontal velocity and vertical Stokes profile are already defined.
+
+Consequently, `stokes_rhs` is nonzero at `01:00`, but at this time it consists almost entirely of the Stokes vorticity tendency.
+
+### Time Tendency Starting at `02:00`
+The first-step behavior is deliberately defined as
+$$
+\left.\frac{\partial v_n^s}{\partial t}\right|_{\mathrm{first}}=0.
+$$
+During initialization, the model sets
+$$
+v_{n,\mathrm{old}}^s=v_n^s
+$$
+
+and adds $v_n^s$ directly to the initial Eulerian velocity. This avoids interpreting the transition from an uninitialized zero array to the first Stokes field as a physical acceleration.
+
+At the following step, two valid Stokes states exist, so the model evaluates
+$$
+\frac{\partial v_n^s}{\partial t}
+\approx
+\frac{v_{n,\mathrm{now}}^s-v_{n,\mathrm{old}}^s}{\Delta t}.
+$$
+
+Therefore, `stokes_time_tend` first appears at `02:00`.
+
+### Shear Tendency Starting at `02:00`
+The vertical-shear term is
+
+$$
+w^L\partial_z\mathbf v^s.
+$$
+
+During the first momentum calculation, the diagnostic vertical velocity supplied to this term is still the initially zero $w^L$. The first nonzero $w^L$ is diagnosed afterward from the continuity equation using the updated Lagrangian horizontal transport.
+
+That diagnosed $w^L$ becomes available to the momentum calculation during the following step. Therefore, `stokes_shear_tend` first appears at `02:00`.
+
+## Momentum RHS Closure
+We verified
+
+$$
+R_{\mathrm{Stokes}}
+=
+R_{\mathrm{shear}}
++
+R_{\mathrm{vorticity}}
++
+R_{\mathrm{time}}.
+$$
+
+The maximum closure error is between zero and approximately
+$$
+4.55\times10^{-13}\ \mathrm{m\,s^{-2}},
+$$
+
+which is effectively machine/output precision. This confirms that all three stored tendency components are assembled correctly into `stokes_rhs`.
+
+## Tendency Magnitudes
+The horizontal Stokes tendencies generally lie between approximately $10^{-8}$ and $10^{-5}\ \mathrm{m\,s^{-2}}$:
+- Stokes vorticity tendency: approximately $10^{-8}$–$10^{-7}\ \mathrm{m\,s^{-2}}$
+- Vertical-shear tendency: approximately $10^{-7}$–$10^{-6}\ \mathrm{m\,s^{-2}}$
+- Stokes time tendency: several $10^{-6}\ \mathrm{m\,s^{-2}}$
+- Total Stokes RHS: several $10^{-6}$, approaching $10^{-5}\ \mathrm{m\,s^{-2}}$
+
+The Stokes time tendency and vertical-shear tendency are the largest direct horizontal momentum contributions during this period.
+
+The wavy-hydrostatic source has a larger magnitude, around $10^{-3}\ \mathrm{m\,s^{-2}}$, but it is not a direct horizontal momentum tendency. It is vertically integrated into pressure before its horizontal pressure gradient affects momentum.
+
+## Lagrangian Velocity Initialization
+At `01:00` and 6/17 m depth, the with-Stokes minus control velocity was compared with the prescribed cell-centered Stokes velocity over 13,517 wave-active cells.
+
+| Metric | $u$ | $v$ |
+|---|---:|---:|
+| Correlation | 0.9876 | 0.9883 |
+| RMSE | $5.39\times10^{-4}\ \mathrm{m\,s^{-1}}$ | $4.49\times10^{-4}\ \mathrm{m\,s^{-1}}$ |
+| Maximum velocity difference | $3.85\times10^{-2}\ \mathrm{m\,s^{-1}}$ | $3.36\times10^{-2}\ \mathrm{m\,s^{-1}}$ |
+| Maximum prescribed Stokes velocity | $4.11\times10^{-2}\ \mathrm{m\,s^{-1}}$ | $3.99\times10^{-2}\ \mathrm{m\,s^{-1}}$ |
+
+The combined vector metrics are:
+- Vector amplitude ratio: `0.9665`
+- Vector alignment: `0.9880`
+- Relative vector RMSE: `0.1546`
+
+The approximately 0.99 correlations and vector alignment show that the initial velocity difference closely follows the prescribed Stokes velocity. The amplitude ratio indicates that the difference retains approximately 96.6% of the Stokes amplitude along the Stokes direction.
+
+Exact equality is not expected because the comparison is made after one one-hour model step and because the Stokes field passes through cell-to-edge projection and edge-to-cell velocity reconstruction.
+
+## Conclusion
+**The sanity checks show that:**
+- ERA5 Stokes fields are received and reconstructed successfully.
+- Cell-centered Stokes velocity is mapped successfully to edge-normal velocity.
+- The prognostic velocity receives the expected Lagrangian Stokes contribution.
+- The vorticity, vertical-shear, time-derivative, and wavy-hydrostatic terms activate according to their required model state.
+- The total Stokes momentum RHS is assembled accurately.
+- The with-Stokes minus control velocity strongly agrees with the prescribed Stokes velocity during the first evolved timestep.
+
+These tests provide strong numerical evidence that the Stokes forcing pathway is active and wired correctly. They validate the implementation mechanics, while longer physical validation is still needed for signs, conservation behavior, pressure response, and long-term ocean adjustment.
+
 # Standalone Stokes Forcing Test Modes 120-125
 
 This test suite lives in:
