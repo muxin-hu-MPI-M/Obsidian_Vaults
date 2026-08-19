@@ -11,6 +11,31 @@ Last Eddited: 2026-08-12
 ## ICON-wave focus group
 - Update my working branch: era5 atmospheric + Stokes field force ICON-o
 - Ask questions of the wave-ocean coupling in terms of the momentum fluxes
+- It seems the coupling between the atmosphere, waves and ocean is approaching to complete.
+	- the changes in stress is done
+	- the Stokes-induced resolved momentum change is (almost) done
+		- in my branch, yes
+		- in Chris’ branch, still developing
+	- the Stokes and related TKE (unresolved parameterisation) is still working
+- Should document my works in the gitlab page: https://gitlab.dkrz.de/icon-waves/projects/icon-waves-working-group/-/boards
+- Prepare the poster for TRR retreat at the end of September
+
+## Regular meeting with Nils
+- Development:
+	- Gitlab
+	- R2B6 → serious check for median durations (~5 years), would already be enough
+	- R2B7 for production → for longer simulation (~30-50 years)
+	- merge into master
+- Paper / thesis:
+	- write up theory
+	- target simulations should be R2B7 ERA5 30 years
+- 2nd paper / thesis:
+	- coupled simulation?
+- Retreat (IMPRS / TRR):
+	- motivation
+	- theory and plan
+	- first results with ERA5 (R2B6)
+	- future plans
 
 # [[2026-08-18]]
 ## Discussion with Noel on IMPRS-retreat
