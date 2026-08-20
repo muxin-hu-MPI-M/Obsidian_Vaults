@@ -6,6 +6,9 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-08-20]]
+## Restart
+directly
 
 # [[2026-08-19]]
 ## ICON-wave focus group
