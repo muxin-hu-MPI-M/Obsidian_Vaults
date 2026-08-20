@@ -48,6 +48,14 @@ The first nonzero times are:
 
 Here, index 0 is the initial output before any model step. Therefore, index 1 is the first evolved output, while index 2 is the second evolved output, although it is the third stored NetCDF record.
 
+### 3. Why the initial state is all zeros even I initialise the model with Stokes?
+Because ICON writes the 1985-01-01 00:00 record before our Stokes initialization is executed.
+The actual ordering is:
+1. ICON writes the untouched initial state with jstep=0 in [mo_hydro_ocean_run.f90 (line 1748)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:1748). At this point, the configured initial Eulerian velocity is zero.
+2. ICON enters ocean_time_step, increments the step, and advances current_time in [mo_hydro_ocean_run.f90 (line 464)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:464).
+3. The ERA5 provider fields are updated in [mo_hydro_ocean_run.f90 (line 521)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:521).
+4. Only then does our code execute $v_n^L=v_n^E+v_n^s$ in [mo_hydro_ocean_run.f90 (line 524)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:524).
+5. The next normal output is written after completing the first model step, at 01:00, in [mo_hydro_ocean_run.f90 (line 808)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:808).
 ## Why the Terms Start at Different Times
 ### Terms Starting at `01:00`
 The Stokes vorticity tendency,
@@ -1071,7 +1079,341 @@ stokes_vn_old = stokes_vn
 
 
 
-# Status: [[2026-08-14]]
+# Status: 
+
+## [[2026-08-20]]
+We are working in the ICON-o branch:
+`/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`
+### Scientific Goal
+Implement the surface-wave-modified ICON-o primitive equations using the Lagrangian velocity
+$$
+\mathbf v^L=\mathbf v^E+\mathbf v^s.
+$$
+
+When `l_stokes_forcing = .TRUE.`:
+- Prognostic edge-normal `vn` represents $v_n^L$.
+- Diagnostic vertical velocity `w` should represent $w^L$.
+- Existing advection, diffusion, Coriolis, continuity, and tracer calculations should use the Lagrangian velocity.
+- The additional horizontal momentum RHS contains
+$$
+w^L\partial_z\mathbf v^s,
+\qquad
+\zeta^s\hat{\mathbf z}\times\mathbf v^L,
+\qquad
+\partial_t\mathbf v^s.
+$$
+- Hydrostatic pressure includes the wavy-hydrostatic source
+$$
+\mathbf v^L\cdot\partial_z\mathbf v^s.
+$$
+
+When `l_stokes_forcing = .FALSE.`, ICON should retain its original Eulerian behavior.
+### Input Stokes Fields
+ERA5/provider fields are stored in `p_as`:
+- `p_as%ust_3d`, `p_as%vst_3d`: cell-centered three-dimensional Stokes velocity starting at model level 1.
+- `p_as%surf_ust`, `p_as%surf_vst`: separate surface Stokes velocity.
+- `p_as%stokes_transport`: Stokes transport used by the vertical-profile reconstruction.
+
+The surface values are used to calculate the derivative between the surface and the first model level.
+
+### Implemented Source Changes
+#### Configuration
+`l_stokes_forcing = .FALSE.` was added to `ocean_physics_nml`.
+The runscript activates the implementation with:
+```fortran
+&ocean_physics_nml
+  l_stokes_forcing = .TRUE.
+/
+```
+#### Stokes Forcing Module
+The new module is:
+`src/ocean/dynamics/mo_ocean_stokes_forcing.f90`
+Its public routines are:
+```fortran
+prepare_stokes_fields
+initialize_lagrangian_velocity_from_stokes
+calculate_stokes_pressure_source
+calculate_stokes_momentum_rhs
+
+stokes_local_to_cartesian_cells
+stokes_surface_local_to_cartesian_cells
+stokes_cell_to_edge_normal
+stokes_vertical_shear_tendency
+stokes_vorticity_tendency
+stokes_time_tendency
+wavy_hydrostatic_source
+```
+
+The module performs:
+- Local zonal/meridional to Cartesian conversion.
+- Cell-centered Cartesian to edge-normal mapping.
+- Top and interior vertical Stokes derivatives.
+- $w^L\partial_z\mathbf v^s$.
+- Stokes relative vorticity and $\zeta^s\hat{\mathbf z}\times\mathbf v^L$.
+- $(v_n^{s,\mathrm{now}}-v_n^{s,\mathrm{old}})/\Delta t$.
+- $\mathbf v^L\cdot\partial_z\mathbf v^s$.
+- Assembly of the total horizontal Stokes RHS.
+
+#### Persistent State and Diagnostics
+Fields added to `t_hydro_ocean_diag` include:
+```fortran
+stokes_vec_c
+stokes_vec_sfc_c
+stokes_vn
+stokes_vn_old
+stokes_shear_tend
+stokes_vort_tend
+stokes_time_tend
+stokes_rhs
+stokes_zeta_v
+stokes_vn_dual
+wavy_hydrostatic_source
+```
+These fields are allocated and registered in `mo_ocean_state.f90`.
+`stokes_vn_old` is registered in the restart list.
+#### Momentum Integration
+The non-zstar mimetic Adams-Bashforth path now:
+1. Prepares the Stokes cell and edge fields.
+2. Computes the wavy-hydrostatic source.
+3. Includes that source in hydrostatic pressure integration.
+4. Computes all horizontal Stokes tendencies.
+5. Adds `stokes_rhs` to `g_n`.
+The implemented assembly is
+$$
+R_{\mathrm{Stokes}}
+=
+R_{\mathrm{shear}}
++
+R_{\mathrm{vorticity}}
++
+R_{\mathrm{time}}.
+$$
+These are positive RHS contributions corresponding to the terms written with negative signs on the left-hand side of the continuous momentum equation.
+#### Wavy-Hydrostatic Pressure
+`calc_internal_press_grad` accepts the optional argument:
+```fortran
+wavy_hydrostatic_source_c
+```
+The source is included in:
+- The top-level pressure integration.
+- Interior trapezoidal vertical integration.
+- Partial-cell pressure corrections.
+Because ICON stores `pressure_hyd` effectively as $p/\rho_0$, the source is integrated as
+```text
+wavy_source * vertical_distance
+```
+without an additional multiplication by $\rho_0$.
+### Standalone Operator Tests
+The Stokes testbed is implemented in:`src/ocean/testbed/mo_ocean_testbed_stokes_forcing.f90`
+and registered through:`src/ocean/testbed/mo_ocean_testbed_operators.f90`
+Important test modes are:
+
+| Mode | Test |
+|---|---|
+| 120 | Surface-to-level-1 Stokes shear and hydrostatic source |
+| 121 | Interior vertical Stokes shear and layer placement |
+| 122 | Exact Stokes time derivative |
+| 123 | Zero first-step time derivative |
+| 124 | Zero/uniform Stokes vorticity |
+| 125 | Vorticity and vorticity-tendency linearity |
+
+Modes 120–125 completed successfully with their tolerance checks.
+### Compilation Status
+The implementation was compiled successfully with both configurations:
+
+```text
+config/dkrz/levante.nag --enable-bundled-python=mtime,yac
+config/dkrz/levante.intel --enable-openmp --enable-bundled-python=mtime,yac
+```
+Checked logs:
+```text
+build_nag/build_nag.log
+build_intel_test/build_intel_test.log
+```
+
+No implementation-related compiler errors were found.
+GPU execution has not been tested and is not currently required.
+### Runtime Status
+Control and Stokes experiments were run with:
+```text
+exp.ocean_era5_r2b4_noStokes.run
+exp.ocean_era5_r2b4_withStokes.run
+```
+
+The Stokes run uses:
+```fortran
+l_stokes_forcing = .TRUE.
+vert_cor_type = 0
+```
+
+The non-zstar configuration is required because Stokes forcing is currently integrated only into the non-zstar mimetic AB pathway.
+
+The long experiments reached their stop date, wrote outputs and restart data, and completed ocean cleanup. The final `QSUBW_ERROR ... srun` messages appear to be wrapper-level termination messages after model completion rather than ICON crashes.
+
+### Hourly Integration Sanity Check
+Hourly diagnostics included:
+
+```text
+u
+v
+w
+era5_ust_3d
+era5_vst_3d
+era5_surf_ust
+era5_surf_vst
+stokes_vn
+stokes_shear_tend
+stokes_vort_tend
+stokes_time_tend
+stokes_rhs
+wavy_hydrostatic_source
+```
+The main findings were:
+- The `00:00` record contains the untouched zero Eulerian initial state.
+- ERA5 Stokes fields and `stokes_vn` are nonzero at `01:00`.
+- Stokes vorticity and wavy-hydrostatic terms are nonzero at `01:00`.
+- Stokes shear and time tendencies first become nonzero at `02:00`.
+- Horizontal tendencies are generally between $10^{-8}$ and $10^{-5}\ \mathrm{m\,s^{-2}}$.
+- The wavy-hydrostatic source is around $10^{-3}\ \mathrm{m\,s^{-2}}$, but it is not a direct horizontal acceleration.
+- The maximum RHS closure error is approximately $4.55\times10^{-13}\ \mathrm{m\,s^{-2}}$.
+Therefore,
+$$
+\texttt{stokes\_rhs}
+=
+\texttt{stokes\_shear\_tend}
++
+\texttt{stokes\_vort\_tend}
++
+\texttt{stokes\_time\_tend}
+$$
+
+is verified to NetCDF output precision.
+
+### Lagrangian Initialization Evidence
+At `01:00`, the with-Stokes minus control velocity was compared with the prescribed Stokes velocity.
+At 6 m depth:
+
+```text
+Correlation u/v:       0.9907 / 0.9901
+Vector amplitude ratio: 0.9733
+Vector alignment:       0.9905
+Relative vector RMSE:   0.1379
+```
+
+At 17 m depth:
+```text
+Correlation u/v:       0.9876 / 0.9883
+Vector amplitude ratio: 0.9665
+Vector alignment:       0.9880
+Relative vector RMSE:   0.1546
+```
+
+These results strongly support that $v_n^s$ is being added to the prognostic Lagrangian velocity.
+Exact equality is not expected because:
+- The output follows one complete one-hour timestep.
+- Stokes velocity is mapped from cells to edge normals.
+- Output `u/v` is reconstructed from edge-normal velocity.
+- Wave forcing begins modifying the Eulerian circulation immediately.
+
+### Startup Ordering Identified
+The current startup order is:
+1. ICON writes the `jstep=0` output at `00:00`.
+2. ICON enters the first timestep and advances `current_time`.
+3. The ERA5 provider updates the Stokes fields.
+4. The implementation sets $v_n^L=v_n^E+v_n^s.$
+5. It sets $v_{n,\mathrm{old}}^s=v_n^s.$
+6. The first Stokes time tendency is set to zero.
+7. The first evolved output is written at `01:00`.
+
+The zero first-step time tendency is internally consistent with directly inserting the complete first available Stokes field. Using an uninitialized zero history would add the same Stokes velocity twice.
+However, this is a startup shortcut rather than a fully time-consistent $t_0$ initialization.
+
+### Remaining Work
+#### 1. Make Startup Fully Time-Consistent
+The preferred sequence is:
+$$
+\text{obtain }v^s(t_0)
+\rightarrow
+v_n^L(t_0)=v_n^E(t_0)+v_n^s(t_0)
+\rightarrow
+v_{n,\mathrm{old}}^s=v_n^s(t_0)
+\rightarrow
+\text{diagnose }\mathbf v^L(t_0),w^L(t_0)
+\rightarrow
+\text{write the initial output}.
+$$
+The first prognostic step should then use
+$$
+\frac{v_n^s(t_1)-v_n^s(t_0)}{\Delta t}.
+$$
+
+This requires determining how to make the ERA5/YAC Stokes field available at $t_0$ before ICON writes the `jstep=0` output.
+Do **not** calculate the first derivative as `(stokes_vn - 0)/dt` while also adding the full `stokes_vn` to `vn`; that would double count the initial Stokes velocity.
+#### 2. Diagnose Initial $w^L$
+After adding `stokes_vn` to the initial horizontal velocity, immediately diagnose $w^L$ from continuity.
+Currently the first momentum calculation receives the initially zero `w`, so `stokes_shear_tend` starts one timestep later.
+
+#### 3. Verify Startup Forcing Timestamp
+Confirm whether the first provider field used by initialization corresponds to:
+```text
+t0
+```
+or
+```text
+t0 + dtime
+```
+
+This requires tracing the YAC/provider timestamp semantics around `ocean_time_nextStep()` and `update_ocean_surface_refactor()`.
+
+#### 4. Restart Validation
+Run a wave restart test and verify:
+- Restart `vn` remains Lagrangian.
+- `stokes_vn` is not added again.
+- `stokes_vn_old` is restored.
+- `stokes_time_tend` is continuous across the restart.
+- A fallback is defined for older restart files without `stokes_vn_old`.
+
+#### 5. Exact Edge-Space Initialization Check
+Immediately after initialization, verify:
+$$
+v_{n,\mathrm{after}}^L-v_{n,\mathrm{before}}^E-v_n^s=0
+$$
+to numerical precision.
+This avoids contamination from cell-edge remapping and the first dynamics step.
+
+#### 6. Pressure and Sign Validation
+Add focused tests for:
+- The vertically integrated wavy-hydrostatic pressure contribution.
+- The resulting horizontal pressure-gradient contribution.
+- The signs of all Stokes terms in `g_n`.
+- Partial-cell behavior.
+
+#### 7. Conservation and Physical Validation
+Still required:
+- Zero-Stokes run reproduces the control.
+- Momentum and kinetic-energy budgets.
+- Tracer transport consistency with $\mathbf v^L$.
+- Sensitivity to model timestep and ERA5 coupling interval.
+- Long-term circulation response and spin-up behavior.
+
+#### 8. Unsupported Paths
+The current implementation does not yet cover:
+- Z-star timestepping.
+- GPU execution.
+- Other ocean timestepping schemes outside the non-zstar mimetic AB path.
+
+### Recommended Immediate Next Task
+1. Trace how ERA5/YAC provides the first field at the experiment start time.
+2. Design a dedicated Stokes startup routine that runs before the initial output.
+3. Initialize $v_n^L(t_0)$ and `stokes_vn_old`.
+4. Reconstruct the cell velocity and diagnose $w^L(t_0)$.
+5. Compile with NAG and Intel.
+6. Rerun modes 120–125.
+7. Rerun the first-day hourly control/Stokes comparison.
+8. Confirm that the `00:00` output contains the initialized Lagrangian velocity and that the first shear and time tendencies have the expected timing.
+
+
+## [[2026-08-14]]
 We are working in ICON-o branch:
 `/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`
 

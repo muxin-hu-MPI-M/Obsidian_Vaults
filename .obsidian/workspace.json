@@ -105,8 +105,7 @@
               "title": "ICON_Run_Long_Simulation"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,8 +160,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -244,7 +242,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -319,13 +317,14 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "0af97a80bea92349",
+  "active": "fbeb0fba2e00b1e9",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
+    "2026-08-14.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
+    "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "Flash_cards_figures.md",
     "Attachments/Pasted image 20260820134547.png",
@@ -358,7 +357,6 @@
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Thoughts/(2024-01)-Wind-wave-climate-changes-and-their-impacts-6YF82YEW.md",
     "Project-Surface_Waves/Thoughts/(2022)-The-Effects-of-Ocean-Surface-Waves-on-Tropical-Cyclone-Intensity--Numerical-Simulations-Using-a-Regional-Atmosphe-UPGPKJSZ.md",
-    "Project-Surface_Waves/Thoughts/(2014-09-01)-Approximate-Stokes-Drift-Profiles-in-Deep-Water-KRC3DAWP.md",
     "Attachments/Screenshot 2026-08-05 at 14.31.50.png",
     "Untitled.base",
     "Project-Surface_Waves/Thoughts/attachments",
