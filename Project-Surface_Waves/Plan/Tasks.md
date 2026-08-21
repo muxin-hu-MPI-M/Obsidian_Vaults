@@ -25,17 +25,17 @@ tags:
 # Weekly Plan 
 
 ## [[2026-08-17]]
-- [ ] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
+- [x] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
 	- [x] Discuss with Noel
 	- [x] decide the IMPRS presentation outline
-	- [ ] decide figures
+	- [x] decide figures
 - [ ] Starting prepare the IMPRS-presentation #project/PhD_general
 	- [ ] abstract before [[2026-08-27]]
 - [ ] Testing on newly implemented ERA5-atmosphere-Stokes forcing experiment #project/surfwaves 
 	- [x] 10-days run, okay?
 	- [x] 2-years r2b4 run, with/without Stokes, with necessary diagnosed fields
-	- [ ] Analysis on 2-years simulations
-		- [ ] compare u,v fields
+	- [x] Analysis on 2-years simulations
+		- [x] compare u,v fields
 		- [ ] compare uT, vT fields
 		- [ ] compare tos, sos
 

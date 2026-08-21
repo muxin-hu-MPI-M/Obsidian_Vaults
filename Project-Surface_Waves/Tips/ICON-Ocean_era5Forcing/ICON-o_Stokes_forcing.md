@@ -1081,6 +1081,26 @@ stokes_vn_old = stokes_vn
 
 # Status: 
 
+## [[2026-08-21]]
+### Transition from noStokes spin-up to withStokes forcing: potential problem with Adam-Bashforth tendencies
+During the first restarted timestep, ICON calculates a new `g_n` from the current state. Because a restart is not considered an initial timestep, it then constructs
+$$ g_{\mathrm{nimd}} = (1.5+\mathrm{ab\_const})g_n - (0.5+\mathrm{ab\_const})g_{n-1}, $$
+
+using the restored `g_nm1`, in [mo_ocean_ab_timestepping_mimetic.f90 (line 883)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:883).
+
+For an ordinary with-Stokes to with-Stokes restart
+- Restarted `vn` is Lagrangian.
+- `stokes_vn_old` contains the previous Stokes field.
+- `g_nm1` contains a wave-inclusive tendency.
+- AB timestepping continues consistently.
+
+For a no-Stokes to with-Stokes restart:
+- Restarted `vn` is Eulerian.
+- `stokes_vn_old` is expected to be zero.
+- `g_nm1` contains a no-wave Eulerian tendency.
+- The new `g_n` contains the newly activated wave/Lagrangian terms.
+- ICON combines the new wave tendency with the old no-wave tendency in the first AB step.
+
 ## [[2026-08-20]]
 We are working in the ICON-o branch:
 `/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`

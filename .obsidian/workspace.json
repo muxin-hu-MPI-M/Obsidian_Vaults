@@ -242,7 +242,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
+                "file": "Project-Surface_Waves/Plan/Tasks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -317,10 +317,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "190369091626a017",
   "lastOpenFiles": [
-    "2026-08-14.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
+    "2026-08-14.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
