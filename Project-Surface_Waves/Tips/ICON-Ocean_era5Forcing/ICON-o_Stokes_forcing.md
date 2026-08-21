@@ -1086,7 +1086,10 @@ stokes_vn_old = stokes_vn
 During the first restarted timestep, ICON calculates a new `g_n` from the current state. Because a restart is not considered an initial timestep, it then constructs
 $$ g_{\mathrm{nimd}} = (1.5+\mathrm{ab\_const})g_n - (0.5+\mathrm{ab\_const})g_{n-1}, $$
 
-using the restored `g_nm1`, in [mo_ocean_ab_timestepping_mimetic.f90 (line 883)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:883).
+using the restored `g_nm1`, in [mo_ocean_ab_timestepping_mimetic.f90 (line 883)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:883). While `g_n` is ICON’s total explicit horizontal momentum tendency at the current time, `g_nm1` is the corresponding tendency from the previous timestep. 
+
+`g_nimd` is an Adam-Bashforth estimate of the tendency at the intermediate time (n +1/2). The confusing part is that `g_nimd` represents an approximate tendency at the intermediate time $n+\tfrac12$, while that tendency is used to construct a provisional velocity at the new time $n+1$. ICON uses it in the velocity predictor: $$v_n^{\mathrm{pred}} = v_n^{\mathrm{old}} + \Delta t\,g_{\mathrm{nimd}}$$
+apart from the separately treated surface-pressure term. The new surface pressure gradient depends on the unknown new sea-surface height $\eta^{n+1}$. ICON therefore cannot calculate the final velocity immediately. ICON uses the `vn_pred` to construct the transport divergence and solve the elliptic free-surface equation for $\eta^{n+1}$. After obtaining it, ICON uses it to correct the velocity at next timestep `v_np1`.
 
 For an ordinary with-Stokes to with-Stokes restart
 - Restarted `vn` is Lagrangian.
@@ -1101,6 +1104,37 @@ For a no-Stokes to with-Stokes restart:
 - The new `g_n` contains the newly activated wave/Lagrangian terms.
 - ICON combines the new wave tendency with the old no-wave tendency in the first AB step.
 
+The restart file contains `g_nm1` so that an **unchanged model equation** can continue with second-order AB accuracy. In the no-Stokes to with-Stokes transition, however, the equation and the meaning of `vn` both change. That makes the stored `g_nm1` formally inconsistent with the new `g_n`.
+
+Suppose the activation occurs at timestep \(n\): $$g_{n-1}=g_{n-1}^{E}, \qquad g_n=g_n^{L,\mathrm{wave}}.$$
+Using the normal AB formula gives $$g_{\mathrm{nimd}} = 1.6g_n^{L,\mathrm{wave}} - 0.6g_{n-1}^{E}.$$
+
+==Adams–Bashforth derives this extrapolation under the assumption that both tendencies are samples of the same smoothly evolving equation. That assumption is **violated** here.==
+
+suggested change:
+At the activation time, the relevant acceleration over the following interval is the new wave/Lagrangian acceleration. We have no valid previous sample of that equation. The standard multistep startup solution is therefore: $$g_{\mathrm{nimd}}=g_n^{\mathrm{L, wave}}$$
+This is first-order for one step, but it avoids extrapolating the new tendency using an incompatible no-wave history.
+
+It does **not** permanently replace AB timestepping:
+```
+Activation step:
+    g_nimd = g_n_wave
+
+Following step:
+    g_nimd = 1.6*g_n_wave_new - 0.6*g_n_wave_old
+
+Later steps:
+    normal AB continues
+```
+We also do not need to erase or rewrite the restart file. The conditional would simply be:
+```
+IF (is_first_timestep .OR. is_stokes_activation_step) THEN
+  g_nimd = g_n
+ELSE
+  g_nimd = (1.5_wp + ab_const) * g_n &
+         - (0.5_wp + ab_const) * g_nm1
+END IF
+```
 ## [[2026-08-20]]
 We are working in the ICON-o branch:
 `/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`

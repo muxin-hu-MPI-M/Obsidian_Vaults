@@ -242,7 +242,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -317,9 +317,11 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "190369091626a017",
+  "active": "fbeb0fba2e00b1e9",
   "lastOpenFiles": [
+    "2026-08-20.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "2026-08-14.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-Surface_Waves/Tips/ICON_Models/mkExp_Hands_on.md",
@@ -333,7 +335,6 @@
     "Attachments/Pasted image 20260819231430.png",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-era5waves-provider.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Attachments/Pasted image 20260818172834.png",
     "Attachments/Pasted image 20260818172824.png",
@@ -356,7 +357,6 @@
     "Project-Surface_Waves/Plan/Experimental/Stokes_reconst_totalsea.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
     "Project-Surface_Waves/Thoughts/(2024-01)-Wind-wave-climate-changes-and-their-impacts-6YF82YEW.md",
-    "Project-Surface_Waves/Thoughts/(2022)-The-Effects-of-Ocean-Surface-Waves-on-Tropical-Cyclone-Intensity--Numerical-Simulations-Using-a-Regional-Atmosphe-UPGPKJSZ.md",
     "Attachments/Screenshot 2026-08-05 at 14.31.50.png",
     "Untitled.base",
     "Project-Surface_Waves/Thoughts/attachments",
