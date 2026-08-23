@@ -12,7 +12,7 @@ tags:
 	- How do we model surface waves?
 - [x] Familiarise myself with ICON-XPP
 - [x] 1st Panel Meeting
-- [/] Literature Reading II
+- [x] Literature Reading II
 - [x] Update: narrowing scientific questions and PhD outline
 - [x] Experiment: Evaluate impacts of different turbulence mixing efficiency parameter `c_k` to the Peru-Chile Upwelling System (PCUS)
 	- [x] Experiment design: (1) CTRL (default `c_k=0.1`); (2) CK03 (`c_k=0.3`)
