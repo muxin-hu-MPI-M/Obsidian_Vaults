@@ -24,20 +24,24 @@ tags:
 
 # Weekly Plan 
 
+## [[2026-08-24]]
+- [ ] Starting prepare the IMPRS-presentation #project/PhD_general
+	- [ ] abstract before [[2026-08-27]]
+- [ ] Download the wave forcing data from 2011-2020 #project/surfwaves 
+	- [x] update runscript
+	- [x] check storage
+	- [ ] start download
+- [ ] Talk to someone about how the ocean looks like in my 5 years reference run, is it ready for my forcings to check in?
 ## [[2026-08-17]]
 - [x] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
 	- [x] Discuss with Noel
 	- [x] decide the IMPRS presentation outline
 	- [x] decide figures
-- [ ] Starting prepare the IMPRS-presentation #project/PhD_general
-	- [ ] abstract before [[2026-08-27]]
-- [ ] Testing on newly implemented ERA5-atmosphere-Stokes forcing experiment #project/surfwaves 
+- [x] Testing on newly implemented ERA5-atmosphere-Stokes forcing experiment #project/surfwaves 
 	- [x] 10-days run, okay?
 	- [x] 2-years r2b4 run, with/without Stokes, with necessary diagnosed fields
 	- [x] Analysis on 2-years simulations
 		- [x] compare u,v fields
-		- [ ] compare uT, vT fields
-		- [ ] compare tos, sos
 
 ## [[2026-07-13]]
 - [x] Rewrite the WAB momentum equation used in ICON structure #project/surfwaves 
