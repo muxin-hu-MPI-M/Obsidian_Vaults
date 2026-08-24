@@ -6,9 +6,11 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
-# [[2026-08-20]]
-## Restart
-directly
+# [[2026-08-24]]
+## Discussion with Noel: IMPRS retreat abstract
+- the first paragraph is okay-ish, providing general background and a little bit more background
+- the second paragraph is trying to “asking permission to do research”
+- you can be more aggresive, mentioning the key question in the second paragraph
 
 # [[2026-08-19]]
 ## ICON-wave focus group
