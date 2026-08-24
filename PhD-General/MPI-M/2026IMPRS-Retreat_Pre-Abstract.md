@@ -71,3 +71,25 @@ To address this gap, I have implemented ERA5-derived Stokes drift forcing in ICO
 
 
 > !The central scientific question is therefore to what extent spatiotemporally varying Stokes forcing dynamically reorganises ocean circulation and produces non-negligible residual tracer transport after Eulerian compensation. 
+
+### Comment from Noel
+- the first paragraph is okay-ish, providing general background and a little bit more background
+- the second paragraph is trying to “asking permission to do research”
+- you can be more specific about the Stokes-dirft-induced momentum pathway, mentioning the key question in the second paragraph
+- The IMPRS retreat will be about the current focus, no need to mention something else that won’t be the current focus (like the few other pathways)
+- Your version is more like a PhD thesis introduction that consists all the wave stuff you want to investigate 
+- can follow the “Nature structure” of abstract:
+![[Pasted image 20260824215631.png]]
+
+## Draft 3
+### Text
+> The large scale circulation of the subtropical ocean and atmosphere act to redistribute heat from the tropics to higher latitudes. Mid-latitude storms play a crucial role in this poleward heat transport  (Barry et al., 2002). However, tempestuous winds that develop under these storms generate energetic ocean surface waves that can induce equatorward transports may counteract large scale energy flows through a mechanisms known as Stokes drift. It is unclear whether the relatively small scale Stokes drift can have a net impact on large scale heat transports because its influence may be compensated by the ocean Eulerian adjustments. Here, we modify the momentum equations of a global ocean circulation model to account for the tracer transport and ocean dynamical adjustments that result from Stokes drift. Using a hierarchy of simulations, we obtain the different effects of Stokes without adjustments and with increasing complexity.
+
+The large-scale ocean-atmosphere circulation redistributes excess tropical heat toward higher latitudes. Mid-latitude storms play a crucial role in this poleward heat transport, but the tempestuous winds associated with these storms also generate energetic surface gravity waves. Through Stokes drift, these waves induce a surface-intensified Lagrangian transport that can move near-surface water and tracers along the direction of wave propagation. In regions exposed to remotely generated swell, the depth-integrated Stokes transport can include an equatorward component and may therefore oppose part of the heat redistribution carried by the large-scale circulation.
+
+Whether this Stokes-induced transport leaves a non-negligible imprint on large-scale heat transport remains unclear because its influence my be compensated by the ocean adjustments. When Stokes drift is introduced into the momentum balance, the ocean can adjust through compensating Eulerian currents, pressure-gradient changes, vertical velocity changes, and modified tracer pathways. Nevertheless, this adjustment depends on regional conditions such as rotation, stratification, mixing, and basin geometry. Even if volume transport is partly compensated, the return flow may occur at different depths and carry water with different temperature properties, allowing residual heat or tracer redistribution to remain.
+
+To quantify the potential residual effect of Stokes drift, we modified a global ocean circulation model so that both Stokes-induced tracer transport and the associated dynamical ocean adjustment can be represented. Specifically, Stokes-drift-induced momentum effects were implemented in the ICON-o primitive equations using the wave-averaged Boussinesq framework. By comparing reference and Stokes-forced simulations, we can assess how the imposed Stokes transport modifies the circulation, how much of this transport is compensated by model-generated Eulerian currents, and what residual imprint remains in the circulation and tracer distributions.
+
+Preliminary diagnostics suggest that the oceanic response is not confined to the shallow Stokes layer, indicating that compensation may involve deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat-transport signature of this residual response, with particular attention to regions such as the tropical Indo-Pacific where remotely generated swell contributes strongly to seasonal wave variability. 
+
