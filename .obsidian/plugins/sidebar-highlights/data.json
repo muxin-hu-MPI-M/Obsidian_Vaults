@@ -1710,6 +1710,36 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md": [
+      {
+        "id": "160pscexi",
+        "text": "**WAB equations result upon filtering out the waves but retaining the leading order wave couplings with other scales** [Craik and Leibovich, 1976; McWilliams et al., 2004]. (Suzuki & Fox-Kemper, 2016)",
+        "tags": [],
+        "line": 9,
+        "startOffset": 419,
+        "endOffset": 623,
+        "filePath": "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1787561388803,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "ry34anmk8",
+        "text": "**The form of (3) is closest to the exact wave-current interaction theory known as the Generalized Lagrangian Mean theory [Andrews and McIntyre, 1978; Ardhuin et al., 2008] and is useful in showing that the WAB equations are an asymptotic approximation to the exact theory** [Leibovich, 1980; Holm, 1996]. ",
+        "tags": [],
+        "line": 13,
+        "startOffset": 1421,
+        "endOffset": 1731,
+        "filePath": "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1787561388805,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
     ]
   },
   "collections": {},
