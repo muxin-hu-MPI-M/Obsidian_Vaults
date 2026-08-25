@@ -95,3 +95,19 @@ Preliminary diagnostics suggest that the oceanic response is indeed not confined
 
 (maybe few sentences for broader perspective?)
 
+### Comment from Huayu
+- the first paragraph is too long and is not direct, it would be nice to have a straightforward background-gap in the first paragraph.
+- Occam’s razor theory: the simplest explanation is usually the best one. Like the storms I mentioned, if we do not investigate the storms we might don’t want to mention them (如无必要，勿增实体)
+
+## Draft 4
+### Text
+> original: 
+> The large-scale ocean-atmosphere circulation redistributes excess tropical heat toward higher latitudes. Mid-latitude storms play a crucial role in this poleward heat transport, but the tempestuous winds associated with these storms also generate energetic surface gravity waves. Through Stokes drift, these waves induce a surface-intensified Lagrangian transport that can move near-surface water and tracers along the direction of wave propagation. In regions exposed to remotely generated swell, the depth-integrated Stokes transport can include an equatorward component and may therefore oppose part of the heat redistribution carried by the large-scale circulation.
+
+Storm-generated ocean surface waves may provide a previously under-quantified pathway of equatorward heat transport. Strong winds generate energetic waves and swell, which induce the Stokes drift, a surface-intensified Lagrangian transport in the wave propagating direction. In regions exposed to equatorward-propagating swell, this Stokes transport can move near-surface water and tracers toward lower latitudes. Because the large-scale ocean-atmosphere circulation generally redistributes excess tropical heat poleward, this wave-induced transport may oppose part of the climatological heat redistribution. However, whether Stokes-induced transport leaves a non-negligible imprint on large-scale heat transport remains unclear.
+
+This uncertainty arises because Stokes transport cannot be interpreted as an isolated advective flux. When Stokes drift is introduced into the momentum balance, the ocean can adjust through compensating Eulerian currents, pressure-gradient changes, vertical velocity changes, and modified tracer pathways. These adjustments are often expected to offset the imposed Stokes transport, implying a weak net effect. Nevertheless, this adjustment depends on regional conditions such as rotation, stratification， and basin geometry. Even if volume transport is partly compensated, the return flow may occur at different depths and carry water with different temperature properties, allowing residual heat or tracer redistribution to remain.
+
+To quantify the potential residual effect of Stokes drift, we modified a global ocean circulation model so that both Stokes-induced tracer transport and the associated dynamical ocean adjustment can be represented. Specifically, Stokes-drift-induced momentum effects were implemented in the ICON-o primitive equations using the wave-averaged Boussinesq framework. By comparing reference and Stokes-forced simulations, we can assess how the imposed Stokes transport modifies the circulation, how much of this transport is compensated by model-generated Eulerian currents, and what residual imprint remains in the circulation and tracer distributions.
+
+Preliminary diagnostics suggest that the oceanic response is indeed not confined to the shallow Stokes layer, indicating that compensation may involve deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat-transport signature of this residual response, with particular attention to regions such as the tropical Indo-Pacific where remotely generated swell contributes strongly to seasonal wave variability. 
