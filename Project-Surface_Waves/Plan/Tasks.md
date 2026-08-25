@@ -31,7 +31,8 @@ tags:
 	- [x] update runscript
 	- [x] check storage
 	- [ ] start download
-- [ ] Talk to someone about how the ocean looks like in my 5 years reference run, is it ready for my forcings to check in?
+- [x] Talk to someone about how the ocean looks like in my 5 years reference run, is it ready for my forcings to check in?
+- [ ] Just extending the previous simulation longer
 ## [[2026-08-17]]
 - [x] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
 	- [x] Discuss with Noel
