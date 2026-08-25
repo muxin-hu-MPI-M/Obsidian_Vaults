@@ -93,3 +93,4 @@ To quantify the potential residual effect of Stokes drift, we modified a global 
 
 Preliminary diagnostics suggest that the oceanic response is not confined to the shallow Stokes layer, indicating that compensation may involve deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat-transport signature of this residual response, with particular attention to regions such as the tropical Indo-Pacific where remotely generated swell contributes strongly to seasonal wave variability. 
 
+5
