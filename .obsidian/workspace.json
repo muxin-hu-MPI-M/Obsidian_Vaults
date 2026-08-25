@@ -126,7 +126,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "restart",
+                "query": "Restart",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -147,11 +147,13 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812
+    "width": 248.50247192382812,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -283,7 +285,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 306.20458984375
+    "width": 306.20458984375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -304,8 +307,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "03a1eb3b345273c8",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
     "Flash_cards_figures.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
@@ -322,7 +326,6 @@
     "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Plan/Conceptual/General_Proposal.md",
     "Project-Surface_Waves/Meeting Note/IMPRS-retreat.md",
     "2026-08-17.md",

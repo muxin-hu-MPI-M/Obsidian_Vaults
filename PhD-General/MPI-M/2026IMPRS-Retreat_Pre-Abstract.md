@@ -123,3 +123,10 @@ Preliminary diagnostics suggest that the oceanic response is indeed not confined
 
 
 
+## Draft 5
+### Text
+Wind-induced ocean surface waves may provide a previously under-quantified pathway of heat distribution. As waves propagate away from their generation regions, they transport near-surface water and tracers through a mechanism known as Stokes drift. Stokes transport in the subtropics predominantly moves towards the equator, away from storm track regions. This transport opposes the climatological poleward heat redistribution by the large scale oceanic and atmospheric circulations. However, because Stokes drift is not represented explicitly in most global ocean models, its net climate-scale imprint remains unclear.
+
+To constrain this potential impact, we modified the momentum equations in ICON-O to include Stokes-drift-induced effects. Once introduced, the ocean adjusts through compensating Eulerian currents, pressure-gradient changes and modified vertical motion. By allowing this adjustment to develop dynamically within the ocean system, we can assess how the imposed Stokes transport modifies ocean circulation, how much is compensated by the Eulerian currents, and what residual imprint remains in circulation and tracer distributions.
+
+Preliminary diagnostics suggest that the oceanic response to the imposed Stokes drift extends well below the relatively shallower Stokes layer, indicating that compensation may involve deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat transport signature of this residual response. A specific focus will be whether hemispheric asymmetries in wave forcing, linked to persistent Southern Ocean storm activity and remotely propagated swell, contribute to changes in cross-equatorial heat transport. More broadly, this study examines one potential pathway of how large-scale ocean circulation responds to wind-wave-induced perturbations that are usually unresolved in climate models.
