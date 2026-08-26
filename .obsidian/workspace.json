@@ -152,8 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.50247192382812,
-    "collapsed": true
+    "width": 248.50247192382812
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -285,8 +284,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 306.20458984375,
-    "collapsed": true
+    "width": 306.20458984375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -307,7 +305,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "03a1eb3b345273c8",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
