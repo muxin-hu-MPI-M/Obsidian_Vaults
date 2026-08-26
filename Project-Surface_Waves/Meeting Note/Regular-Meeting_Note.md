@@ -6,6 +6,29 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+
+# [[2026-08-26]]
+## Regular Meeting with Nils
+- Abstract is okay, but make the last paragraph more general
+- Be careful with the interpretation of using $$du^e = (u^L_{exp}-u^s)-u^e_{ctl}$$
+  if interpret it as the “net response of Eulerian velocity” of the imposed Stokes forcing, it is fine, because this differences comes from allowing the ocean to adjust freely to the imposed forcing. 
+- Nils thinks that the return flow is the integrate the Stokes forcing in time. However, I think the “return flow” should be considered as the part of the flow after ocean adjust freely through all different processes that opposes the imposed Stokes drift/transport.
+	- The main question from nils is: “When the climate state change (for all kinds of reason), does the previous diagnosed $du^e$ still considered as the return flow?, even though the background climate changed?”
+- Conduct the restart test, ask Helmuth for the details
+
+## Discussion with Helmuth
+- Restart test:
+	1. **run a 10-days short simulation** with the Stokes forcing
+		- include the process of python provider, 
+		- no need to change the `restart_interval` or `checkpoint_interval`, the idea is that it can run the model continuously from 0 to 10 days
+		- output P1D or PT1H variables, 
+		- can include the diagnostic variables (e.g., `uT, vT`)
+	2. **change the directory name for this 10-days run**
+	3. **modify the previous runscript to have 5days as the `restart_interval`
+		- the idea is to force the model to run in 5 days chunk
+		- data will be saved in the correct directory
+	4. **Compare the last 5 days simulation output**, they should be identical!
+
 # [[2026-08-24]]
 ## Discussion with Noel: IMPRS retreat abstract
 - the first paragraph is okay-ish, providing general background and a little bit more background
