@@ -130,3 +130,15 @@ Wind-induced ocean surface waves may provide a previously under-quantified pathw
 To constrain this potential impact, we modified the momentum equations in ICON-O to include Stokes-drift-induced effects. Once introduced, the ocean adjusts through compensating Eulerian currents, pressure-gradient changes and altered vertical motion. By allowing this adjustment to develop dynamically within the ocean system, we can assess how the imposed Stokes transport modifies ocean circulation, how much is compensated by the Eulerian currents, and what residual imprint remains in circulation and tracer distributions.
 
 Preliminary diagnostics suggest that the oceanic response to the imposed Stokes drift extends well below the relatively shallow Stokes layer, indicating deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat transport signature of this residual response. A specific focus will be whether hemispheric asymmetries in wave forcing, linked to more frequent Southern Ocean storm activity and remotely propagated swell, contribute to changes in oceanic cross-equatorial heat transport. More broadly, this study examines one pathway by which large-scale ocean circulation responds to wind-wave-induced effect.
+
+
+## Draft 6
+### Text
+
+**Title**: Assessing the Climate-Scale Imprint of Wave-Induced Stokes Transport
+
+Wind-induced ocean surface waves may provide a previously under-quantified pathway of heat distribution. As waves propagate away from their generation regions, they transport near-surface water and tracers through a mechanism known as Stokes drift. Reanalysis products show that subtropical Stokes transport often has an equatorward component, away from major storm-track regions. This transport opposes the climatological poleward heat redistribution by the large-scale oceanic and atmospheric circulations. However, because Stokes drift is not represented explicitly in most global ocean models, its net climate-scale imprint remains unclear.
+
+To constrain this potential impact, we modified the momentum equations in ICON-O to include Stokes-drift-induced effects. Once introduced, the ocean adjusts through compensating Eulerian currents, pressure-gradient changes and altered vertical motion. By allowing this adjustment to develop dynamically within the ocean system, we can assess how the imposed Stokes transport modifies ocean circulation, how much is compensated by the Eulerian currents, and what residual imprint remains in circulation and tracer distributions.
+
+Preliminary diagnostics suggest that the oceanic response to the imposed Stokes drift extends well below the relatively shallow Stokes layer, indicating deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat transport signature of this residual response. The analysis will remain global in scope while emphasising timescales and regions that provide clear dynamical interpretation. More broadly, this study examines one pathway by which large-scale ocean circulation responds to wind-wave-induced effect.
