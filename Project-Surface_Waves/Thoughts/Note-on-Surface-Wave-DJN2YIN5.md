@@ -3,7 +3,7 @@ tags: []
 parent: ""
 collections:
     - '2025 Ocean Waves'
-$version: 76794
+$version: 77339
 $libraryID: 1
 $itemKey: DJN2YIN5
 
@@ -32,9 +32,7 @@ This file contains notes and some reference for the topics related to surface wa
 
 *   FIO-AOW model: (1) Atmospheric model: WRF4.1; (2) Ocean model: POM; (3) Wave model: 3rd gen **WASNUM**
 
-<!---->
-
-*   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FHU45PU2C%22%2C%22pageLabel%22%3A%2221%22%2C%22position%22%3A%7B%22pageIndex%22%3A20%2C%22rects%22%3A%5B%5B554.6820999999995%2C374.8971000000001%2C570.4230999999995%2C385.22910000000013%5D%2C%5B166.972%2C362.90010000000007%2C570.4572999999993%2C373.2321000000001%5D%2C%5B166.972%2C350.9031000000001%2C570.4320999999995%2C361.23510000000016%5D%2C%5B166.972%2C338.9061000000001%2C570.4959999999995%2C349.23810000000014%5D%2C%5B166.972%2C326.9091000000001%2C224.9770000000001%2C337.24110000000013%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/HU45PU2C?page=21">“Five representative ocean surface wave related processes are considered in the Fully coupled simulation”</a></span> <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/QJ7SCFWN">Zhao et al., 2022, p. 21</a></span>)</span> including:
+-   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FHU45PU2C%22%2C%22pageLabel%22%3A%2221%22%2C%22position%22%3A%7B%22pageIndex%22%3A20%2C%22rects%22%3A%5B%5B554.6820999999995%2C374.8971000000001%2C570.4230999999995%2C385.22910000000013%5D%2C%5B166.972%2C362.90010000000007%2C570.4572999999993%2C373.2321000000001%5D%2C%5B166.972%2C350.9031000000001%2C570.4320999999995%2C361.23510000000016%5D%2C%5B166.972%2C338.9061000000001%2C570.4959999999995%2C349.23810000000014%5D%2C%5B166.972%2C326.9091000000001%2C224.9770000000001%2C337.24110000000013%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/HU45PU2C?page=21">“Five representative ocean surface wave related processes are considered in the Fully coupled simulation”</a></span> <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/QJ7SCFWN">Zhao et al., 2022, p. 21</a></span>)</span> including:
 
     *   wave modulation of air-sea momentum flux,
     *   sea spray induced air-sea enthalpy flux,
@@ -42,9 +40,9 @@ This file contains notes and some reference for the topics related to surface wa
     *   non-breaking wave-induced vertical mixing on upper-ocean
     *   rainfall induced sea surface cooling.
 
-*   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FHU45PU2C%22%2C%22pageLabel%22%3A%2221%22%2C%22position%22%3A%7B%22pageIndex%22%3A20%2C%22rects%22%3A%5B%5B407.21799999999996%2C314.91210000000007%2C570.5040999999997%2C325.2441000000001%5D%2C%5B166.972%2C302.9151000000001%2C570.4689999999999%2C313.24710000000016%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/HU45PU2C?page=21">“Results suggest that the surface wave related physical processes have a limited impact on track but play an important role in TC intensity and size simulations.”</a></span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/QJ7SCFWN">Zhao et al., 2022, p. 21</a></span>)</span>
+-   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FHU45PU2C%22%2C%22pageLabel%22%3A%2221%22%2C%22position%22%3A%7B%22pageIndex%22%3A20%2C%22rects%22%3A%5B%5B407.21799999999996%2C314.91210000000007%2C570.5040999999997%2C325.2441000000001%5D%2C%5B166.972%2C302.9151000000001%2C570.4689999999999%2C313.24710000000016%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/HU45PU2C?page=21">“Results suggest that the surface wave related physical processes have a limited impact on track but play an important role in TC intensity and size simulations.”</a></span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FQJ7SCFWN%22%5D%2C%22locator%22%3A%2221%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/QJ7SCFWN">Zhao et al., 2022, p. 21</a></span>)</span>
 
-*   surface waves tend to increase air-sea momentum flux, which **induces strong inflow near the eyewall**. <span style="background-color: rgba(255, 212, 0, 0.5);">Mechanisms</span>:
+-   surface waves tend to increase air-sea momentum flux, which **induces strong inflow near the eyewall**. <span style="background-color: rgba(255, 212, 0, 0.5);">Mechanisms</span>:
 
     *   The surfave wave related physical processes including sea spray effect enhance the air-sea enthalpy fluxes, resulting in a warmer BL and more unstable surface layer that favor convection development\
         \--> stronger upfrafts advects more absolute angular momentum vertically, in favor of spinning up tengential wind above the BL\
@@ -52,7 +50,7 @@ This file contains notes and some reference for the topics related to surface wa
         \--> leads to a faster spin-up of tangential winds in the inner core region\
         \--> **positive feedback**, work concurrently with negative feedbacks from the non-breaking wave induced upper ocean vetical mixing and rainfall induced sea surface cooling
 
-*   **<span style="background-color: rgba(255, 102, 102, 0.5);">Limitation</span>**:
+-   **<span style="background-color: rgba(255, 102, 102, 0.5);">Limitation</span>**:
 
     *   the studies fully coupled model doesn’t include the effects from Stokes Drift profile which can induce Langmuir turbulence in the upper ocean
 
@@ -117,7 +115,6 @@ Where Stokes transport is no longer homogeneous
 *   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FYSAYI5NQ%22%2C%22annotationKey%22%3A%22QAQP2HRK%22%2C%22color%22%3A%22%23ff6666%22%2C%22pageLabel%22%3A%222%22%2C%22position%22%3A%7B%22pageIndex%22%3A1%2C%22rects%22%3A%5B%5B411.376%2C272.631%2C538.583%2C281.548%5D%2C%5B304.724%2C260.631%2C538.589%2C269.539%5D%2C%5B304.724%2C248.631%2C538.583%2C257.544%5D%2C%5B304.724%2C236.631%2C538.6%2C245.539%5D%2C%5B304.724%2C224.636%2C361.817%2C233.544%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FG9D5N4DW%22%5D%2C%22locator%22%3A%222%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/YSAYI5NQ?page=2&#x26;annotation=QAQP2HRK">“These results imply that <strong><span style="background-color: rgba(255, 212, 0, 0.5);">conservative wave effects become important with a relatively large Rossby number</span></strong>, U/fL, where f is the Coriolis parameter and U and L represent the characteristic velocity and spatial scales.”</a></span> <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FG9D5N4DW%22%5D%2C%22locator%22%3A%222%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/G9D5N4DW">Fujiwara et al., 2026, p. 2</a></span>)</span>
 
     *   Recall conservative wave effects: the most prominent of which is advection by the Stokes drift
-
     *   Examples of moderate or large Rossby number: (1) Coastal upwelling systems (moderate  $Ro$ ); (2) Equatorial dynamics (effective large  $Ro$ ); (3) Western boundary currents & fronts
 
 *   “Meanwhile, Bühler and McIntyre (1998) discussed the current response to localized wave forcing. Their results demonstrate that <span style="color: rgb(255, 32, 32);">wave–current interaction can also produce a “nonlocal” response</span> in the current field, where Stokes drift at one location induces a current response at distant points.” <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FG9D5N4DW%22%5D%2C%22locator%22%3A%222%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/G9D5N4DW">Fujiwara et al., 2026, p. 2</a></span>)</span>
@@ -474,7 +471,7 @@ Adopted and stated by Suzuki and Fox-Kemper (2016):
 
 ## <span style="background-color: rgba(46, 168, 229, 0.5);">High-frequency Contribution to the Stokes drift profile</span>
 
-*   In wave prediction model (e.g., WAM, WaveWatch-III and ECMWF version of WAM), the above procedure is used to compute the Stokes profiles and transports from discretised wave spectra with <span style="background-color: rgba(0, 100, 45, 0.09);">a high-frequency cut-off </span>$f_c$.** **the **stokes drift is weighted toward the high-frequency (HF)** part of the spectrum (since $\mathbf v_s\sim f^3$, Eq (4)), the tail beyond the cutoff frequency $f_c$ is significant both for the Stokes drift profile and the transport.
+*   In wave prediction model (e.g., WAM, WaveWatch-III and ECMWF version of WAM), the above procedure is used to compute the Stokes profiles and transports from discretised wave spectra with <span style="background-color: rgba(0, 100, 45, 0.09);">a high-frequency cut-off </span>$f_c$.**&#x20;**&#x74;he **stokes drift is weighted toward the high-frequency (HF)** part of the spectrum (since $\mathbf v_s\sim f^3$, Eq (4)), the tail beyond the cutoff frequency $f_c$ is significant both for the Stokes drift profile and the transport.
 
     *   In general, the operational wave spectra stop beyond the finite HF cutoff  $f_c$ , but waves with  $f>f_c$  still exist and are significant.
 
@@ -506,6 +503,7 @@ Adopted and stated by Suzuki and Fox-Kemper (2016):
 ## <span style="background-color: rgba(46, 168, 229, 0.5);">Swell</span>
 
 *   *Swell* is a type of ocean surface wave that has traveled away from the area where it was generated by the wind. In general, *swell* are old, mature waves that have become smooth, regular and organized
+
 *   “Poor performance is expected in cases where a one-dimensional fit is made to wave spectra with two diametrically opposite wave systems. Such a case is shown in Fig. 4b, where a *swell* system travels in the opposite direction of the wind sea” <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FZAF7T989%22%5D%2C%22locator%22%3A%222438%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/ZAF7T989">Breivik et al., 2014, p. 2438</a></span>)</span>
 
 ## <span style="background-color: rgba(46, 168, 229, 0.5);">Wave field observation (Reanalysis)</span>
@@ -523,9 +521,7 @@ Adopted and stated by Suzuki and Fox-Kemper (2016):
 *   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FBDF6Y77C%22%2C%22pageLabel%22%3A%227%22%2C%22position%22%3A%7B%22pageIndex%22%3A6%2C%22rects%22%3A%5B%5B287.8808249881853%2C394.36057288%2C538.6522061920153%2C404.24351176%5D%2C%5B85.08041000000014%2C382.48047288%2C538.5166396691357%2C392.36341175999996%5D%2C%5B85.08021000000019%2C370.48047288%2C208.65095000000017%2C380.60251511999996%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FBGFRKLJS%22%5D%2C%22locator%22%3A%227%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/BDF6Y77C?page=7">“The most elegant formulation of the “energy” balance equation is in terms of the action density spectrum N which is the energy spectrum divided by the socalled intrinsic frequency σ.”</a></span> <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FBGFRKLJS%22%5D%2C%22locator%22%3A%227%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/BGFRKLJS">ECMWF, 2024, p. 7</a></span>)</span>
 
     *   the intrinsic frequency is the *oscillation frequency of a surface gravity wave measured in a reference frame moving with the local ocean current*.
-
     *   represents the natural frequency of the wave relative to the fluid
-
     *   Formula:  $\sigma=\sqrt{gk\tanh{(kh)}}$  and wave frequency (dispersion relationship) can therefore be described as  $\omega=\omega (k,x,t)=\sigma+\mathbf k \cdot \mathbf U$ , where the depth  $h(\mathbf x, t)$  and the current  $\mathbf U(\mathbf x,t)$  may be slowly-varying functions of  $\mathbf x$  and  $t$
 
 *   wave groups with action N have energy $\sigma N$ and momentum $kN$ <span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FBGFRKLJS%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/BGFRKLJS">ECMWF, 2024</a></span>)</span>. The wave action $N$ is conserved without the source term, can yields the transport equation of action as:
@@ -533,3 +529,11 @@ Adopted and stated by Suzuki and Fox-Kemper (2016):
     $$
     \frac{\partial }{\partial t}N+\frac{\partial }{\partial z_i}(\hat{z_i}N)=0
     $$
+
+## <span style="background-color: rgba(46, 168, 229, 0.5);">Normal Year Forcing </span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6Q3ZLWLN%22%5D%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/6Q3ZLWLN">Stewart et al., 2020</a></span>)</span>
+
+*   CORE-NYF consists of a synthetically-constructed, single annual cycle of all forcing fields necessary to run an ocean-sea-ice model
+
+*   designed with the intential that its resulting fluxes are as close as possible to the observed climatological fluxes, so that when the CORE-NYF is applied repeatedly, forced interannual variability is eliminated, and the mean model solutino is representative of the observed climatological mean.
+
+*   <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2FE83BPWHA%22%2C%22pageLabel%22%3A%222%22%2C%22position%22%3A%7B%22pageIndex%22%3A1%2C%22rects%22%3A%5B%5B178.15007462999998%2C441.3647873000001%2C288.67224833999995%2C448.7929205000001%5D%2C%5B37.587%2C430.8547873000001%2C288.6682632899999%2C438.2829205000001%5D%2C%5B37.587%2C420.3447873000001%2C288.67384236000004%2C427.7729205000001%5D%2C%5B37.587%2C409.83478730000013%2C288.67384236000004%2C417.2629205000001%5D%2C%5B37.587%2C399.32478730000014%2C288.6690603000001%2C406.75292050000013%5D%2C%5B37.587%2C388.81478730000015%2C212.73871461000002%2C396.24292050000014%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6Q3ZLWLN%22%5D%2C%22locator%22%3A%222%22%7D%7D" ztype="zhighlight"><a href="zotero://open/library/items/E83BPWHA?page=2">“The CORE-NYF has proved to be scientifically useful for the purposes of model spin-up towards an equilibrated climatologically-meaningful ocean state, driving control simulations in perturbation experiments and sensitivity studies, evaluating internal variability on interannual and longer timescales, and estimating model drift in CORE simulations.”</a></span><span class="citation" data-citation="%7B%22citationItems%22%3A%5B%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F13925110%2Fitems%2F6Q3ZLWLN%22%5D%2C%22locator%22%3A%222%22%7D%5D%2C%22properties%22%3A%7B%7D%7D" ztype="zcitation">(<span class="citation-item"><a href="zotero://select/library/items/6Q3ZLWLN">Stewart et al., 2020, p. 2</a></span>)</span>
