@@ -7,6 +7,13 @@ tags:
 Last Eddited: 2026-08-12
 ---
 
+# [[2026-08-27]]
+## Thoughts on spin-up/repeated year forcing
+- It has become common practice for modern global ocean-sea-ice simulations to be initialised from a standard ocean state, usually a climatological hydrography at rest, and run for a spin-up period of undetermined duration, typically subject to computational resources.
+- “The ill-defined duration of this spin-up period varies from years to millennia, depending on the model and dynamics of interest.”
+	- studies examine surface and/or ventilated thermocline dynamics will generally employ a shorter spin-up than those concerned with abyssal process and/or meridional overturning
+	- however, studies recognise the ambiguity of the spin-up duration and accept that full equilibrium is not required for meaningful science
+
 # [[2026-08-26]]
 ## Regular Meeting with Nils
 - Abstract is okay, but make the last paragraph more general
