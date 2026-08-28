@@ -26,6 +26,11 @@ tags:
 
 ## [[2026-08-31]]
 - [ ] Prepare 3 minutes talk for the most important parts of the imprs presentation by Friday #project/PhD_general 
+- [ ] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
+	- [ ] run 10-days seamless simulation with necessary hourly output
+	- [ ] rename the work directory
+	- [ ] change the same script to have restart_interval of 5 days, re submitted the job
+	- [ ] compare the las 5 days of simulation; Outputs identical or not using cdo diff
 
 ## [[2026-08-24]]
 - [ ] Starting prepare the IMPRS-presentation #project/PhD_general
@@ -38,11 +43,7 @@ tags:
 	- [ ] start download
 - [x] Talk to someone about how the ocean looks like in my 5 years reference run, is it ready for my forcings to check in?
 - [x] Just extending the previous simulation longer to 5 years
-- [ ] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
-	- [ ] run 10-days seamless simulation with necessary hourly output
-	- [ ] rename the work directory
-	- [ ] change the same script to have restart_interval of 5 days, re submitted the job
-	- [ ] compare the las 5 days of simulation; Outputs identical or not using cdo diff
+
 ## [[2026-08-17]]
 - [x] Prepare 4 figures with each 30 words in the flash cards before Thursday #project/PhD_general
 	- [x] Discuss with Noel
