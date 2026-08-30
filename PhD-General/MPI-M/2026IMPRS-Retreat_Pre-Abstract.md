@@ -37,6 +37,7 @@ Preliminary diagnostics suggest that the oceanic response to the imposed Stokes 
 
 ## Outline
 Since we only have 10 minutes, need to be straightforward for almost everything, and no need to add details that will not be discussed.
+### Draft 1
 1. **General intro**: 
 	1. What is Stokes drift? (==Figure 1==: net drift of asymmetric wave orbital motion) 
 	2. What is its role? (moves water, and associated tracers, heat)
@@ -58,6 +59,27 @@ Since we only have 10 minutes, need to be straightforward for almost everything,
 	1. Extending the simulation to longer durations
 	2. quantify the depth structure of the oceanic response, detecting regional organisation and heat transport signature
 6. **Conclusion (takeaway message)**
+
+### Draft 2
+**Title Slide: Assessing the Climate-Scale Imprint of Wave-Induced Stokes Transport**  
+Takeaway: wind-induced waves may provide an under-quantified pathway of heat redistribution through three-dimensional ocean adjustment.
+
+1. **Opening: What Is Stokes Drift? (~1 min)**  
+	1. Use Figure 1. 
+	2. Introduce the physical idea: wave motion is nearly back-and-forth, but water parcels experience a small net drift in the direction of wave propagation. This Stokes drift is surface-intensified and can move near-surface water and tracers.
+2. **Why Could This Matter for Climate? (~2 min)**  
+	1. Use Figure 2.  
+	2. Show that reanalysis-based Stokes transport has strong spatial and seasonal structure. In the subtropics, it often has an equatorward component, away from major storm-track regions. The Stokes-only upper-bound estimate suggests that the imposed wave-driven transport is not trivially small, and may be relevant for heat redistribution.
+3. **Dynamical Test: Introduce Stokes Drift Into ICON-o (~3 min)**  
+	1. Use Figure 3.  
+	2. To move from potential transport to net climate-scale imprint, we introduce Stokes-drift-induced effects into ICON-o using the wave-averaged Boussinesq framework. Once Stokes drift is included, the ocean responds through compensating Eulerian currents, pressure-gradient changes, and altered vertical motion. The strength and depth of this adjustment depend on regional conditions such as rotation and stratification. If the response extends below the shallow Stokes layer, it may reorganise circulation and heat transport in a way that is not captured by the Stokes-only estimate.
+
+**4. Current Status and Preliminary Diagnostics (~2 min)**  
+The Stokes-drift implementation in ICON-o is finished, and paired reference/Stokes-forced simulations have started. Preliminary diagnostics suggest that the oceanic response extends below the shallow Stokes layer, consistent with a three-dimensional adjustment. Early heat-transport diagnostics show regional signals, including anomalous heat convergence in the Southern Ocean, which need to be tested with longer simulations.
+
+**5. Next Steps and Takeaway (~2 min)**  
+Next, quantify the depth structure, seasonal variability, regional organisation, and heat-transport signature of the residual response.  
+Final message: Stokes drift is not only a small surface transport; when introduced dynamically, it may trigger a three-dimensional ocean adjustment with a detectable climate-scale imprint.
 
 
 ## Frame the outline into key sentences
