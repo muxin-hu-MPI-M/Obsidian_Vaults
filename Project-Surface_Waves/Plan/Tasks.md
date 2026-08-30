@@ -35,7 +35,7 @@ tags:
 ## [[2026-08-24]]
 - [ ] Starting prepare the IMPRS-presentation #project/PhD_general
 	- [x] abstract before [[2026-08-27]]
-	- [ ] Narrow down the logic
+	- [x] Narrow down the logic
 	- [ ] Prepare the key sentences for each stage
 - [ ] Download the wave forcing data from 2011-2020 #project/surfwaves 
 	- [x] update runscript

@@ -4,6 +4,68 @@ tags:
   - project/PhD_general
 Last Eddited: 2026-08-23
 ---
+
+# Presentation
+## Requirement
+- Use the prescribed IMPRS-ESM corporate design templates available on the MPI-M Intranet.
+- Customise the content of the slides, keeping the title page format unchanged (color, font type, and size).
+- Title Page Requirements:
+	- Display the title of your talk, your name, and the names and roles of your Advisory Panel members.
+	- Include your affiliation details and the dates marking the start and expected completion of your PhD.
+	- Mention, if applicable, the publication status of your work (e.g. in preparation, submitted, under review).
+- Presentation Structure
+	- **10-minute presentation** followed by 5-minute discussion
+		- 1/3: The first third of your talk should be general enough to be understood by an interdisciplinary audience.
+		- 2/3: The next third should cater to those familiar with your discipline.
+		- 3/3: The final third should highlight how your research has advanced knowledge in your field.
+	- Begin the presentation by clearly stating your research question, Highlight what is new and why it matters
+	- Explain how you addressed the research problem and discuss the expected or achieved results
+	- Include only figures and data that are crucial to your message
+	- Clearly label all axes and legends on your graphs to ensure they contribute effectively to the understanding of your results
+	- End your presentation with a summary or conclusions slide that serves as the take-home message for the audience
+	- Number the slides
+
+## Abstract
+Taken directly from [[2026IMPRS-Retreat_Pre-Abstract#Text]]
+**Title**: Assessing the Climate-Scale Imprint of Wave-Induced Stokes Transport
+
+Wind-induced ocean surface waves may provide a previously under-quantified pathway of heat distribution. As waves propagate away from their generation regions, they transport near-surface water and tracers through a mechanism known as Stokes drift. Reanalysis products show that subtropical Stokes transport often has an equatorward component, away from major storm-track regions. This transport opposes the climatological poleward heat redistribution by the large-scale oceanic and atmospheric circulations. However, because Stokes drift is not represented explicitly in most global ocean models, its net climate-scale imprint remains unclear.
+
+To constrain this potential impact, we modified the momentum equations in ICON-O to include Stokes-drift-induced effects. Once introduced, the ocean adjusts through compensating Eulerian currents, pressure-gradient changes and altered vertical motion. By allowing this adjustment to develop dynamically within the ocean system, we can assess how the imposed Stokes transport modifies ocean circulation, how much is compensated by the Eulerian currents, and what residual imprint remains in circulation and tracer distributions.
+
+Preliminary diagnostics suggest that the oceanic response to the imposed Stokes drift extends well below the relatively shallow Stokes layer, indicating deeper circulation adjustments. The next step is to quantify the depth structure, regional and seasonal organisation, and heat transport signature of this residual response. The analysis will remain global in scope while emphasising timescales and regions that provide clear dynamical interpretation. More broadly, this study examines one pathway by which large-scale ocean circulation responds to wind-wave-induced effect.
+
+## Outline
+Since we only have 10 minutes, need to be straightforward for almost everything, and no need to add details that will not be discussed.
+1. **General intro**: 
+	1. What is Stokes drift? (==Figure 1==: net drift of asymmetric wave orbital motion) 
+	2. What is its role? (moves water, and associated tracers, heat)
+	3. Close connections to the atmosphere through winds (wind-driven waves)
+2. **Why is it matter?**
+	1. The most energetic waves are generated through the fast winds associated with weather systems like mid-latitude storms, which plays a key role in the atmospheric poleward heat transport.
+	2. Reanalysis products (that implement a wave model) shows that the waves and the associated Stokes drift often has an equatorward component, away from the major storm-track regions. 
+	3. As the Stokes drift moves the heat, this Stokes-induced heat transport opposes the poleward heat redistribution by those storms and in general those large-scale circulations in the atmosphere and ocean
+	4. The upper-bound estimate shows great magnitudes in meridional heat transport (==Figure 2==: Unadjusted Stokes-only heat transport)
+3. **To quantify the net climate-scale imprint on heat transport, we implemented the Stokes drift into the ocean model in a dynamical consistent way**
+	1. Once the Stokes drift is introduced, the ocean adjusts through compensating Eulerian currents, pressure-gradient changes and altered vertical motion. These effect combined may oppose the impact induced from Stokes, and has long supporting the hypothesis of negligible Stokes-induced influence on the climate scale.
+	2. However, we argues this hypothesis, as these adjustments may offset the imposed Stokes transport, but their strength and vertical structure depend on regional conditions such as rotation and stratification. If the compensating return currents occur at different depth and carries water with different properties (e.g., temperature), residual heat or tracer redistribution may remain even when volume transport is partly compensated. (==Figure 3==: Schematic of the redistribution)
+	3. Thus, to constrain the net imprint, we modified the ICON-O primitive equations to include Stokes-drift-induced effects under the Wave-Averaged Boussinesq framework (functions retain the leading order wave couplings with other scales, found using multiscale asymptotic analysis). By allowing ocean adjustments to develop dynamically, one can assess the net imprint
+4. **Current status and Preliminary diagnose**
+	1. The developing phase is finished, currently
+	2. Preliminary analysis suggest that the oceanic response to the imposed Stokes drift extends below the relative shallow Stokes layer, as expected
+	3. The ocean heat transport shows anomalous heat convergences in the Southern Ocean
+5. **Next step**:
+	1. Extending the simulation to longer durations
+	2. quantify the depth structure of the oceanic response, detecting regional organisation and heat transport signature
+6. **Conclusion (takeaway message)**
+
+
+## Frame the outline into key sentences
+Frame the presentation with core sentences for ideas, transitions, and conclusions
+1. When we stands on the beach and looks the ocean, the first impression we have is probably those waves on the ocean surfaces; These wind-driven waves propagating towards us, at the same time, moves the water and tracers towards us through a mechanism we called Stokes drift. To be more specific, the Stokes drift is a net drift due to not perfectly symmetric wave orbital motion for a moving parcel
+2. Now move to a global sense, these wind-driven waves are everywhere in the ocean, and therefore moves the surface waters everywhere. Reanalysis product shows that subtropical Stokes transport often has an equatorward component, away from major storm-track regions 
+
+
 # Abstract
 ## Requirement
 - Identify recent results or new information you want to present, then create a title and outline for your abstract
