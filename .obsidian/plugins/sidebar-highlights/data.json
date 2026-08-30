@@ -1783,6 +1783,34 @@
         "createdAt": 1788106565872,
         "isNativeComment": false,
         "type": "highlight"
+      },
+      {
+        "id": "fo71ho57e",
+        "text": "show the Figure 2(a) volume transport",
+        "tags": [],
+        "line": 90,
+        "startOffset": 9749,
+        "endOffset": 9790,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788117606146,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "0ipvipodx",
+        "text": "show the Figure 2(b) heat transport",
+        "tags": [],
+        "line": 92,
+        "startOffset": 10212,
+        "endOffset": 10251,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788117629045,
+        "isNativeComment": false,
+        "type": "highlight"
       }
     ]
   },
