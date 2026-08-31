@@ -89,11 +89,10 @@ Frame the presentation with core sentences for ideas, transitions, and conclusio
 - **Why could this matter for climate?**
 	- Its depth-integrated transport is spatially organised and not trivially small. Reanalysis products show coherent Stokes transport patterns, including equatorward components in the subtropics, away from major storm-track regions 
 		- ==show the Figure 2(a) volume transport==: The figure here shows the global climatological Stokes induced volume transport
-	- As Stokes drift also transport heat, I also estimate the Stokes heat transport with the assumption XXX. Its zonal integration shows a clear convergence in the tropics and divergence in the mid-latitude, indicating that the wave-induced pathway may partly oppose the usual poleward redistribution of heat by large-scale circulations 
+	- As Stokes drift also transport heat, I also estimate the Stokes heat transport with the assumption XXX. Its zonal integration shows clear divergence from the storm-track regions and convergence in the tropics, indicating that the wave-induced pathway may partly oppose the usual poleward redistribution of heat by large-scale circulations 
 		- ==show the Figure 2(b) heat transport==: The figure here shows the Stokes-only upper-bound transport
 - **Introduce Stokes drift into ICON-o**
-	- To move from potential transport to net climate-scale imprint, we introduce Stokes-drift-induced effects into ICON-o
-
+	- To move from potential transport to net climate-scale imprint, we introduce Stokes drift into the ICON-O primitive equations. Specifically
 
 
 # Abstract
