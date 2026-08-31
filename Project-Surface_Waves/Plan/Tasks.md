@@ -25,18 +25,24 @@ tags:
 # Weekly Plan 
 
 ## [[2026-08-31]]
+- [ ] PhD semester registration #project/PhD_general 
+	- [x] apply for STINE account
+	- [ ] wait for the reply
 - [ ] Prepare 3 minutes talk for the most important parts of the imprs presentation by Friday #project/PhD_general 
 - [ ] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
 	- [ ] run 10-days seamless simulation with necessary hourly output
 	- [ ] rename the work directory
 	- [ ] change the same script to have restart_interval of 5 days, re submitted the job
 	- [ ] compare the las 5 days of simulation; Outputs identical or not using cdo diff
+- [ ] Figure out the necessity of the Normal Year Forcing
+	- [ ] Note
+	- [ ] Reading
 
 ## [[2026-08-24]]
-- [ ] Starting prepare the IMPRS-presentation #project/PhD_general
+- [x] Starting prepare the IMPRS-presentation #project/PhD_general
 	- [x] abstract before [[2026-08-27]]
 	- [x] Narrow down the logic
-	- [ ] Prepare the key sentences for each stage
+	- [x] Prepare the key sentences for each stage
 - [ ] Download the wave forcing data from 2011-2020 #project/surfwaves 
 	- [x] update runscript
 	- [x] check storage
