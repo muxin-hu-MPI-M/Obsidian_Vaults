@@ -91,9 +91,16 @@ Frame the presentation with core sentences for ideas, transitions, and conclusio
 		- ==show the Figure 2(a) volume transport==: The figure here shows the global climatological Stokes induced volume transport
 	- As Stokes drift also transport heat, I also estimate the Stokes heat transport with the assumption XXX. Its zonal integration shows clear divergence from the storm-track regions and convergence in the tropics, indicating that the wave-induced pathway may partly oppose the usual poleward redistribution of heat by large-scale circulations 
 		- ==show the Figure 2(b) heat transport==: The figure here shows the Stokes-only upper-bound transport
+	- ~={red}state the general gap=~: 
+		- It is still unclear whether Stokes-induced transport leaves a **net** imprint on large-scale heat redistribution (not sharpen enough?)
 - **Introduce Stokes drift into ICON-o**
-	- To move from potential transport to net climate-scale imprint, we introduce Stokes drift into the ICON-O primitive equations. Specifically
-
+	- To move from potential transport to net climate-scale imprint, we introduce Stokes drift into the ICON-O in a dynamically consistent way. 
+		- ==Show the Figure 3 Mathematical expressions==: Specifically, we introduced Stokes-induced momentum effects to the ICON-O primitive equations under the Wave Averaged Boussinesq framework
+		- Once Stokes drift is included, the ocean responds through compensating Eulerian currents, pressure-gradient changes, and altered vertical motion. 
+			- These adjustments combined may oppose the Stokes impacts. However, strength and vertical structure depend on regional conditions such as Coriolis strength and stratification.
+			- This competitiveness further sharped the scientific gap: It is still unclear whether Stokes-induced transport leaves a **net non-negligible** imprint on large-scale heat redistribution. It also further clarify the necessity of using global ocean model to quantify the net imprint.
+- **Current Status and Preliminary Diagnostics**
+		- We used the prescribed Stokes drift velocity profile estimated from ERA5 wave reanalysis
 
 # Abstract
 ## Requirement

@@ -1811,6 +1811,20 @@
         "createdAt": 1788117629045,
         "isNativeComment": false,
         "type": "highlight"
+      },
+      {
+        "id": "o9j0bo2eh",
+        "text": "Show the Figure 3 Mathematical expressions",
+        "tags": [],
+        "line": 97,
+        "startOffset": 10682,
+        "endOffset": 10728,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788169484337,
+        "isNativeComment": false,
+        "type": "highlight"
       }
     ]
   },
