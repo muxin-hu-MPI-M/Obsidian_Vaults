@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -259,7 +259,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",

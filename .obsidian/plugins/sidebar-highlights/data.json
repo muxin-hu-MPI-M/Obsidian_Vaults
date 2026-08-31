@@ -1825,6 +1825,20 @@
         "createdAt": 1788169484337,
         "isNativeComment": false,
         "type": "highlight"
+      },
+      {
+        "id": "qlxhmrqsi",
+        "text": "Show the details about the paired simulations",
+        "tags": [],
+        "line": 104,
+        "startOffset": 11634,
+        "endOffset": 11683,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788175095665,
+        "isNativeComment": false,
+        "type": "highlight"
       }
     ]
   },

@@ -98,9 +98,18 @@ Frame the presentation with core sentences for ideas, transitions, and conclusio
 		- ==Show the Figure 3 Mathematical expressions==: Specifically, we introduced Stokes-induced momentum effects to the ICON-O primitive equations under the Wave Averaged Boussinesq framework
 		- Once Stokes drift is included, the ocean responds through compensating Eulerian currents, pressure-gradient changes, and altered vertical motion. 
 			- These adjustments combined may oppose the Stokes impacts. However, strength and vertical structure depend on regional conditions such as Coriolis strength and stratification.
-			- This competitiveness further sharped the scientific gap: It is still unclear whether Stokes-induced transport leaves a **net non-negligible** imprint on large-scale heat redistribution. It also further clarify the necessity of using global ocean model to quantify the net imprint.
+			- This complexity arose from the competing effects further sharp the scientific gap: It is still unclear whether Stokes-induced transport leaves a **net non-negligible** imprint on large-scale heat redistribution. 
+			- It also highlight the necessity of using global ocean model to quantify the net imprint.
 - **Current Status and Preliminary Diagnostics**
-		- We used the prescribed Stokes drift velocity profile estimated from ERA5 wave reanalysis
+	- The Stokes-drift implementation in ICON-o is finished and verified
+	- ==Show the details about the paired simulations==: paired reference/Stokes-forced simulations have started
+		- prescribed Stokes drift velocity profile estimated from ERA5 wave reanalysis to force the ICON-O as the Stokes-forced simulation; 
+		- The reference simulation is the ERA5 atmosphere forced ICON-O
+	- Preliminary diagnostics suggest that the oceanic response extends below the shallow Stokes layer, consistent with a three-dimensional adjustment. Early heat-transport diagnostics show regional signals, including anomalous heat convergence in the Southern Ocean, which need to be tested with longer simulations.
+- **Next step & Takeaway message**
+	- Next, quantify the depth structure, seasonal variability, regional organisation, and heat-transport signature of the residual response.  
+	- Takeaway message: 
+		- Wind-induced waves may provide a previously under-quantified pathway of heat redistribution, through their dynamical interactions with the ocean circulation
 
 # Abstract
 ## Requirement
