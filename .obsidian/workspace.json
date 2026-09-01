@@ -259,7 +259,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -300,11 +300,10 @@
       "obsidian-importer:Open Importer": false,
       "sidebar-highlights:Open highlights": false,
       "callout-manager:Insert Callout": false,
-      "iconic:Open rulebook": false,
-      "obsidian-task-progress-bar:Open Task Genius view": false
+      "iconic:Open rulebook": false
     }
   },
-  "active": "03a1eb3b345273c8",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
     "Flash_cards_figures.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
