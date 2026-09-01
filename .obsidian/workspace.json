@@ -151,7 +151,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.4234428405762
+    "width": 287.4234428405762,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -283,7 +284,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 306.20458984375
+    "width": 306.20458984375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -300,10 +302,11 @@
       "obsidian-importer:Open Importer": false,
       "sidebar-highlights:Open highlights": false,
       "callout-manager:Insert Callout": false,
-      "iconic:Open rulebook": false
+      "iconic:Open rulebook": false,
+      "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8eadf67652800bf7",
+  "active": "03a1eb3b345273c8",
   "lastOpenFiles": [
     "Flash_cards_figures.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
