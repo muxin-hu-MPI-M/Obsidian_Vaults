@@ -169,10 +169,8 @@ Frame the presentation with core sentences for ideas, transitions, and conclusio
 	- ~={red}Sharpen the gap: we now can sharpen the gap: whether accounting this underrepresented wave-induced pathway in the ocean can leave a net and organised imprint on large-scale heat redistribution.=~
 - **Current Status and Preliminary Diagnostics (~3 mins)**
 	- The Stokes-drift implementation in ICON-o is finished and verified
-	- ==Show the details about the paired simulations==: paired reference/Stokes-forced simulations have started
-		- prescribed Stokes drift velocity profile estimated from ERA5 wave reanalysis to force the ICON-O as the Stokes-forced simulation; 
-		- The reference simulation is the ERA5 atmosphere forced ICON-O
-	- Preliminary diagnostics suggest that the oceanic response extends below the shallow Stokes layer, consistent with a three-dimensional adjustment. Early heat-transport diagnostics show regional signals, including anomalous heat convergence in the Southern Ocean, which need to be tested with longer simulations.
+	- Paired simulations have started 
+	- Preliminary diagnostics suggest that the oceanic adjustment extends below the shallow Stokes layer, consistent with a three-dimensional adjustment. Early heat-transport diagnostics show regional signals, including anomalous heat convergence in the Southern Ocean, which need to be tested with longer simulations.
 - **Next step & Takeaway message (~1 mins)**
 	- Next, quantify the depth structure, seasonal variability, regional organisation, and heat-transport signature of the residual response.  
 	- Takeaway message: 
