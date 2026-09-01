@@ -1925,7 +1925,7 @@
         "type": "highlight"
       },
       {
-        "id": "h7hsj72xk",
+        "id": "r04ncn788",
         "text": "Figure 3",
         "tags": [],
         "line": 164,
@@ -1934,7 +1934,49 @@
         "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
         "footnoteCount": 0,
         "footnoteContents": [],
-        "createdAt": 1788256878149,
+        "createdAt": 1788263254049,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "5a04eml8d",
+        "text": "Figure 2a",
+        "tags": [],
+        "line": 186,
+        "startOffset": 21750,
+        "endOffset": 21763,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788263564547,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "je5bif9l4",
+        "text": "Figure 2b",
+        "tags": [],
+        "line": 189,
+        "startOffset": 22336,
+        "endOffset": 22349,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788263564086,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "zl453t5bf",
+        "text": "Figure 3",
+        "tags": [],
+        "line": 194,
+        "startOffset": 23024,
+        "endOffset": 23036,
+        "filePath": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1788263564697,
         "isNativeComment": false,
         "type": "highlight"
       }
