@@ -13,6 +13,11 @@ Last Eddited: 2026-08-12
 - “The ill-defined duration of this spin-up period varies from years to millennia, depending on the model and dynamics of interest.”
 	- studies examine surface and/or ventilated thermocline dynamics will generally employ a shorter spin-up than those concerned with abyssal process and/or meridional overturning
 	- however, studies recognise the ambiguity of the spin-up duration and accept that full equilibrium is not required for meaningful science
+- Nils suggest:
+	- sanity check with the single year repeat run, especially the transition time, make video to see if the forcing field or the surface kin behaves normally
+	- check with helmuth, stable?
+	- if okay, then go for the single year repeay
+	- but still preserve the possibility to use the normal era5 forcing run.
 
 # [[2026-08-26]]
 ## Regular Meeting with Nils
