@@ -6,6 +6,25 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-09-04]]
+## Discussion with Nicole Feldil
+- The climatological atmospheric heat transport is very sensitive to the change in the climatological ocean heat transport; It tends to compensate the change
+- The atmosphere reacts fast to the change in the heat/surface temperature change
+	- When the stokes forcing are imposed, both the ocean and atmosphere will adjust to the additional Stokes transport pathway, either directly or indirectly
+	- Since the atmosphere adjust faster and also tend to compensate the change, what might be the intermediate phase before the large ocean adjustment happens?
+- recommend paper: The atmospheric heat transport in response to the change in OHT: https://journals.ametsoc.org/view/journals/clim/35/9/JCLI-D-21-0674.1.xml
+
+# [[2026-09-02]]
+## Regular meeting with Nils
+- Nils suggestions in terms of the **repeated year forcing** (see [[Regular-Meeting_Note#Thoughts on spin-up/repeated year forcing]]):
+	- sanity check with the single year repeat run, especially the transition time, make video to see if the forcing field or the surface kin behaves normally
+	- check with helmuth, stable?
+	- if okay, then go for the single year repeat run
+	- but still preserve the possibility to use the normal era5 forcing run.
+- Comment on the preliminary analysis
+	- I said: “the ocean adjust to the Stokes which in the end strengthen the poleward heat transport” (~={red}double check!!=~)
+	- Nils: “I doubt this. Since the Stokes heat is largely equatorward, if in the end the ocean becomes more poleward heat transport, then you said “the ocean response is overshoot“, I don’t think so”.
+	- The simple schematic in our mind, that ~={red}**if the return flow happens in depth and transport cooler water, will in the end help the anomalous equatorward heat transport, instead of strengthening the poleward heat transport**=~”
 
 # [[2026-08-27]]
 ## Thoughts on spin-up/repeated year forcing
@@ -13,11 +32,7 @@ Last Eddited: 2026-08-12
 - “The ill-defined duration of this spin-up period varies from years to millennia, depending on the model and dynamics of interest.”
 	- studies examine surface and/or ventilated thermocline dynamics will generally employ a shorter spin-up than those concerned with abyssal process and/or meridional overturning
 	- however, studies recognise the ambiguity of the spin-up duration and accept that full equilibrium is not required for meaningful science
-- Nils suggest:
-	- sanity check with the single year repeat run, especially the transition time, make video to see if the forcing field or the surface kin behaves normally
-	- check with helmuth, stable?
-	- if okay, then go for the single year repeay
-	- but still preserve the possibility to use the normal era5 forcing run.
+
 
 # [[2026-08-26]]
 ## Regular Meeting with Nils
