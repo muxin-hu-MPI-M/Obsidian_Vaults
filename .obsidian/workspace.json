@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation_design.md",
+                "file": "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON-o_Stokes_simulation_design"
+              "title": "Lagrangian_velocity_and_Stokes_drift"
             }
           },
           {
@@ -306,14 +306,14 @@
   },
   "active": "03a1eb3b345273c8",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
-    "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
-    "Flash_cards_figures.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation_design.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation_design.md",
+    "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Flash_cards_figures.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Note.md",
     "Attachments/Pasted image 20260824215631.png",
