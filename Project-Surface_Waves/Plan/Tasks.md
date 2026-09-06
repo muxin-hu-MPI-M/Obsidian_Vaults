@@ -24,6 +24,13 @@ tags:
 
 # Weekly Plan 
 
+
+## [[2026-09-07]]
+- [ ] Prepare the IMPRS-retreat presentation before Wednesday #project/PhD_general 
+	- [ ] Refine the wave diagnostics plots
+	- [ ] WAB equation visualisation
+	- [ ] Plot for preliminary result: 2 panels: Zonal integral for (1) CTL climatology/absolute anomaly; (2) convergence/divergence
+	- [ ] Working on visualisation of ocean adjustment
 ## [[2026-08-31]]
 - [ ] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
