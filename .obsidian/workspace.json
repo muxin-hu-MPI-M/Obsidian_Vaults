@@ -91,7 +91,8 @@
               "title": "Flash_cards_figures"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -159,6 +160,7 @@
       {
         "id": "03f66a03b8512b9a",
         "type": "tabs",
+        "dimension": 42.46171967020024,
         "children": [
           {
             "id": "b12f9881a9777b27",
@@ -228,7 +230,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -263,9 +265,10 @@
       {
         "id": "ef06f51c1e5c093c",
         "type": "tabs",
+        "dimension": 57.53828032979976,
         "children": [
           {
-            "id": "fbeb0fba2e00b1e9",
+            "id": "8bd6403c33aa06af",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -303,15 +306,16 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "fbeb0fba2e00b1e9",
+  "active": "9f669dd9f6c05ea6",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation_design.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "Flash_cards_figures.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Note.md",
@@ -335,7 +339,6 @@
     "Attachments/Pasted image 20260820131711.png",
     "Attachments/Pasted image 20260820103327.png",
     "Attachments/Pasted image 20260819231430.png",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-era5waves-provider.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
     "Attachments/Pasted image 20260818172834.png",
     "Attachments/Pasted image 20260818172824.png",
