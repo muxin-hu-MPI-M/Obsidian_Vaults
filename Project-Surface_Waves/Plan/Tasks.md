@@ -26,11 +26,13 @@ tags:
 
 
 ## [[2026-09-07]]
+- [x] Summary the current implementation into a single file #project/surfwaves 
 - [ ] Prepare the IMPRS-retreat presentation before Wednesday #project/PhD_general 
-	- [ ] Refine the wave diagnostics plots
+	- [x] Refine the wave diagnostics plots
 	- [ ] WAB equation visualisation
 	- [ ] Plot for preliminary result: 2 panels: Zonal integral for (1) CTL climatology/absolute anomaly; (2) convergence/divergence
 	- [ ] Working on visualisation of ocean adjustment
+- [ ] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
 ## [[2026-08-31]]
 - [ ] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
