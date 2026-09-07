@@ -1272,8 +1272,8 @@
         "text": "; The resulting press_grad will be the pressure gradient that considered wavy-hydrostatic approximation\n\t        - ",
         "tags": [],
         "line": 671,
-        "startOffset": 51948,
-        "endOffset": 52067,
+        "startOffset": 51947,
+        "endOffset": 52066,
         "filePath": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
         "footnoteCount": 0,
         "footnoteContents": [],
@@ -1286,8 +1286,8 @@
         "text": "\n-  advection of velocity and vorticity by Stokes drift\n-  kinematic redistribution of relative vorticity\n-  Coriolis modification via Lagrangian velocity\n-  Mass transport effects associated with Stokes drift (via continuity)\n",
         "tags": [],
         "line": 734,
-        "startOffset": 56262,
-        "endOffset": 56493,
+        "startOffset": 56261,
+        "endOffset": 56492,
         "filePath": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
         "footnoteCount": 0,
         "footnoteContents": [],
@@ -1695,22 +1695,6 @@
         "type": "html"
       }
     ],
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md": [
-      {
-        "id": "24yrduoyt",
-        "text": "Adams–Bashforth derives this extrapolation under the assumption that both tendencies are samples of the same smoothly evolving equation. That assumption is **violated** here.",
-        "tags": [],
-        "line": 37,
-        "startOffset": 2730,
-        "endOffset": 2908,
-        "filePath": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_forcing.md",
-        "footnoteCount": 0,
-        "footnoteContents": [],
-        "createdAt": 1787324875018,
-        "isNativeComment": false,
-        "type": "highlight"
-      }
-    ],
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md": [
       {
         "id": "160pscexi",
@@ -1991,6 +1975,22 @@
         "footnoteCount": 0,
         "footnoteContents": [],
         "createdAt": 1788353854095,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
+    ],
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md": [
+      {
+        "id": "24yrduoyt",
+        "text": "Adams–Bashforth derives this extrapolation under the assumption that both tendencies are samples of the same smoothly evolving equation. That assumption is **violated** here.",
+        "tags": [],
+        "line": 38,
+        "startOffset": 2846,
+        "endOffset": 3024,
+        "filePath": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1787324875018,
         "isNativeComment": false,
         "type": "highlight"
       }

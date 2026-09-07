@@ -6,7 +6,8 @@ tags:
 Last Eddited: 2026-08-11
 ---
 # Status: 
-
+## [[2026-09-07]]
+Find the detailed summary of all implementations here: [[ICON-o_Stokes_Lagrangian_implementation]]
 ## [[2026-08-21]]
 ### Transition from noStokes spin-up to withStokes forcing: potential problem with Adam-Bashforth tendencies
 During the first restarted timestep, ICON calculates a new `g_n` from the current state. Because a restart is not considered an initial timestep, it then constructs
