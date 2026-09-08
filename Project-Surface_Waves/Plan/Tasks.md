@@ -30,7 +30,9 @@ tags:
 - [ ] Prepare the IMPRS-retreat presentation before Wednesday #project/PhD_general 
 	- [x] Refine the wave diagnostics plots
 	- [x] WAB equation visualisation
-	- [ ] Plot for preliminary result: 2 panels: Zonal integral for (1) CTL climatology/absolute anomaly; (2) convergence/divergence
+	- [ ] Plot for preliminary result: 2 panels: 
+		- [x] Zonal integral for (1) CTL climatology/absolute anomaly; 
+		- [ ] (2)convergence/divergence
 	- [ ] Working on visualisation of ocean adjustment
 - [ ] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
 ## [[2026-08-31]]
