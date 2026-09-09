@@ -9,7 +9,7 @@ When we look at the ocean surface from a beach or a boat, the most visible motio
 
 Now let us zoom out from one beach or one boat to the global ocean. Here, I show an animation of significant wave height back during later 2025 using the ERA5 wave reanalysis data.
 
-The animation shows the close connection between winds and waves: (Forget & Ferreira, 2019)
+The animation shows the close connection between winds and waves: (Li et al., 2026)
 
 •Locally generated wind waves tend to follow the background wind field.
 
