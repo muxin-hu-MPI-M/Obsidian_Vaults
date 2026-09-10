@@ -6,6 +6,22 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-09-10]]
+## Retreat test talk
+feedbacks:
+- enlarge the font
+- when present the gap: mention that most climate models don’t consider the surface waves, as well as its key feature, the Stokes drift
+- Slides 5 (OHT diagnostics)
+	- present the formula for the Stokes temperature transport
+	- put the reference evidence of the global OHT
+- Label the primitive equation Lagrangian velocity in different color
+- numbering of the slides
+- Takeaway message:
+	- Focus on the 2nd/3rd points. (What my work so far can conveyor to the audience? not mention the general background information)
+	- Phrase the 2nd points with: “What I did”
+- 
+
+
 # [[2026-09-04]]
 ## Discussion with Nicole Feldil
 - The climatological atmospheric heat transport is very sensitive to the change in the climatological ocean heat transport; It tends to compensate the change
