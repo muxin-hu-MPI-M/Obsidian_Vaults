@@ -42,8 +42,8 @@ tags:
 	- [ ] wait for the reply
 - [x] Prepare 3 minutes talk for the most important parts of the imprs presentation by Friday #project/PhD_general 
 - [ ] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
-	- [ ] run 10-days seamless simulation with necessary hourly output
-	- [ ] rename the work directory
+	- [x] run 10-days seamless simulation with necessary hourly output
+	- [x] rename the work directory
 	- [ ] change the same script to have restart_interval of 5 days, re submitted the job
 	- [ ] compare the las 5 days of simulation; Outputs identical or not using cdo diff
 - [x] Figure out the necessity of the Normal Year Forcing
