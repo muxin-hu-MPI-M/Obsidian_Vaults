@@ -27,25 +27,26 @@ tags:
 
 ## [[2026-09-07]]
 - [x] Summary the current implementation into a single file #project/surfwaves 
-- [ ] Prepare the IMPRS-retreat presentation before Wednesday #project/PhD_general 
+- [x] Prepare the IMPRS-retreat presentation before Wednesday #project/PhD_general 
 	- [x] Refine the wave diagnostics plots
 	- [x] WAB equation visualisation
 	- [x] Plot for preliminary result: 2 panels: 
 		- [x] Zonal integral for (1) CTL climatology/absolute anomaly; 
 		- [x] (2)convergence/divergence
 	- [x] Working on visualisation of ocean adjustment
-	- [ ] Velocity profile snapshot
+	- [x] Velocity profile snapshot
 - [ ] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
+- [ ] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run #project/surfwaves 
 ## [[2026-08-31]]
 - [ ] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
 	- [ ] wait for the reply
 - [x] Prepare 3 minutes talk for the most important parts of the imprs presentation by Friday #project/PhD_general 
-- [ ] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
+- [x] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
 	- [x] run 10-days seamless simulation with necessary hourly output
 	- [x] rename the work directory
-	- [ ] change the same script to have restart_interval of 5 days, re submitted the job
-	- [ ] compare the las 5 days of simulation; Outputs identical or not using cdo diff
+	- [x] change the same script to have restart_interval of 5 days, re submitted the job
+	- [x] compare the las 5 days of simulation; Outputs identical or not using cdo diff
 - [x] Figure out the necessity of the Normal Year Forcing
 	- [x] Note
 	- [x] Reading
