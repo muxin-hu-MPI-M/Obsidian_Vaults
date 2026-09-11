@@ -21,6 +21,8 @@ feedbacks:
 	- Phrase the 2nd points with: “What I did”
 - 
 
+(Fujiwara et al., 2026; Suzuki & Fox-Kemper, 2016; Wu et al., 2019)
+(Hasselmann, 1991)
 
 # [[2026-09-04]]
 ## Discussion with Nicole Feldil
