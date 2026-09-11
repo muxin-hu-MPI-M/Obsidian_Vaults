@@ -25,6 +25,14 @@ tags:
 # Weekly Plan 
 
 
+## [[2026-09-14]]
+- [ ] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
+	- [ ] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
+	- [ ] Implement Fraser’s code on the wave python provider
+	- [ ] Test:
+		- [ ] dry-run the provider
+		- [ ] 10-days r2b4 short run with the new provider
+
 ## [[2026-09-07]]
 - [x] Summary the current implementation into a single file #project/surfwaves 
 - [x] Prepare the IMPRS-retreat presentation before Wednesday #project/PhD_general 
@@ -36,7 +44,6 @@ tags:
 	- [x] Working on visualisation of ocean adjustment
 	- [x] Velocity profile snapshot
 - [ ] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
-- [ ] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run #project/surfwaves 
 ## [[2026-08-31]]
 - [ ] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
