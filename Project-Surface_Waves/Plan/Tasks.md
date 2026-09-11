@@ -43,7 +43,7 @@ tags:
 		- [x] (2)convergence/divergence
 	- [x] Working on visualisation of ocean adjustment
 	- [x] Velocity profile snapshot
-- [ ] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
+- [x] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
 ## [[2026-08-31]]
 - [ ] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
