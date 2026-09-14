@@ -10,7 +10,7 @@ I’d like to start my presentation by asking you to think of a time you spent b
 But what does this familiar scene look like on a global view? Thanks to the Pioneering work by scientists including Klaus and Susanne Hasselmann, we now have the wave model that describes the key features of the surface waves and its effects on the climate system, enabling us to simulate the global wave field.
 
 
-So let’s zoom out from that beach or boat and have a look over the global wave field. Here, I show an animation of significant wave height from ERA5 reanalysis, which implemented the wave model.
+So let’s zoom out from that beach or boat and have a look over the global wave field. Here, I show an animation of significant wave height from ERA5 data, a wave reanalysis product with implemented wave model.
 
 The animation shows the close connection between winds and waves
 - Locally generated wind waves tend to follow the background wind field.
