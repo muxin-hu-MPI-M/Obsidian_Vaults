@@ -7,9 +7,10 @@ Last Eddited: 2026-08-23
 # Oral script
 I’d like to start my presentation by asking you to think of a time you spent by the sea, perhaps on a beach or a boat. Looking out over the water, the most visible motion is often the surface waves. These waves are generated as winds transfer energy from the atmosphere to the ocean surface. 
 
-But what does this familiar scene look like on a global scale? Pioneering work by scientists including Klaus and Susanne Hasselmann helped develop the wave models that enable us to simulate the global wave field. 
+But what does this familiar scene look like on a global view? Thanks to the Pioneering work by scientists including Klaus and Susanne Hasselmann, we now have the wave model that describes the key features of the surface waves and its effects on the climate system, enabling us to simulate the global wave field.
 
-So let’s zoom out from that beach or boat. Here, I show an animation of significant wave height from ERA5 reanalysis, which combines wave modelling with observations to give us a global view of the wave field.
+
+So let’s zoom out from that beach or boat and have a look over the global wave field. Here, I show an animation of significant wave height from ERA5 reanalysis, which implemented the wave model.
 
 The animation shows the close connection between winds and waves
 - Locally generated wind waves tend to follow the background wind field.
