@@ -7,15 +7,16 @@ Last Eddited: 2026-08-23
 # Oral script
 I’d like to start my presentation by asking you to think of a time you spent by the sea, perhaps on a beach or a boat. Looking out over the water, the most visible motion is often the surface waves. These waves are generated as winds transfer energy from the atmosphere to the ocean surface. 
 
-But what does this familiar scene look like on a global view? Thanks to the Pioneering work by scientists including Klaus and Susanne Hasselmann, we now have the wave model that describes the key features of the surface waves and its effects on the climate system, enabling us to simulate the global wave field.
+The waves you see may have formed nearby, or travelled a long way from its source regions, especially those most energetic ones associated with strong events. Pioneering work by scientists including Klaus and Susanne Hasselmann laid the foundations for modern wave models, allowing us to simulate how waves grow and propagate across the global ocean.
 
-
+%%
 So let’s zoom out from that beach or boat and have a look over the global wave field. Here, I show an animation of significant wave height from ERA5 data, a wave reanalysis product with implemented wave model.
 
 The animation shows the close connection between winds and waves
 - Locally generated wind waves tend to follow the background wind field.
 - The most energetic waves, indicated by the largest wave heights are often associated with strong wind events, such as tropical cyclones and mid-latitude storms.
 - But once generated, these energetic waves can also propagate away from their source regions, extending the influence to remote areas
+%%
 
 As the waves propagate, they can induce a net drift in its propagating direction. The video here clearly illustrates this: 
 - Although the ball moves back and forth, it gradually shift forward along the wave propagating direction, this is what we called the Stokes drift.
