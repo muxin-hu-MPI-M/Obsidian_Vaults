@@ -24,7 +24,7 @@ As the waves propagate, they can induce a net drift in its propagating direction
 
 The theory is well established. Previous studies show that Stokes-related effects can influence basin-scale ocean circulation. More recent diagnostic estimates suggest a potentially substantial role in temperature transport, with variability linked to climate modes such as ENSO. 
 
-Together, these findings suggest that Stokes drift could matter way beyond the local. Yet its effects on resolved circulation and tracer transport are not routinely represented in models used for climate-scale studies. Its net influence on large-scale tracer redistribution, including heat, remains poorly quantified. All of these leads to the central question of my work: Could wave-induced Stokes transport affect global ocean heat redistribution on the climate-relevant scales?
+Together, these findings suggest that Stokes drift could matter beyond its local scale. Yet its effects on resolved circulation and tracer transport are not routinely represented in models used for climate-scale studies. Its net influence on large-scale tracer redistribution, including heat, remains poorly quantified. All of these leads to the central question of my work: Could wave-induced Stokes transport affect global ocean heat redistribution on the climate-relevant scales?
 
 To make this question more concrete, also motivated by previous studies, I first used ERA5 wave reanalysis to estimate the magnitude and spatial structure of Stokes transport. This map shows the climatological depth-integrated volume transport. We can again clearly observed the pattern that reflect the global wind and wave fields. 
 
