@@ -20,7 +20,7 @@ The animation shows the close connection between winds and waves
 
 As the waves propagate, they can induce a net drift in its propagating direction. The video here clearly illustrates this: 
 - Although the ball moves back and forth, it gradually shift forward along the wave propagating direction, this is what we called the Stokes drift.
-- It also extends below the surface and weakens with depth, with longer waves reaching deeper into the ocean
+- It also extends below the surface and weakens with depth, with longer waves reaching deeper into the ocean. Integrating over depth one can get the Stokes transport
 - This means that Stokes drift provide an additional near-surface transport pathway for mass, heat, and other tracers.
 
 The theory is well established. Previous studies show that Stokes-related effects can influence basin-scale ocean circulation. More recent diagnostic estimates suggest a potentially substantial role in temperature transport, with variability linked to climate modes such as ENSO. 
