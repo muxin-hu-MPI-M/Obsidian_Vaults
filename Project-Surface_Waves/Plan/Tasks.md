@@ -34,6 +34,10 @@ tags:
 	- [ ] Test:
 		- [ ] dry-run the provider
 		- [ ] 10-days r2b4 short run with the new provider
+- [ ] Data analysis on 5-year rwb4
+	- [ ] make masks for ocean basins
+		- [ ] Southern ocean with different sectors
+		- [ ] Northern mid-latitude
 
 ## [[2026-09-07]]
 - [x] Summary the current implementation into a single file #project/surfwaves 
