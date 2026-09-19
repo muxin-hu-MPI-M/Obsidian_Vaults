@@ -27,7 +27,9 @@ tags:
 
 ## [[2026-09-14]]
 - [ ] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
-	- [ ] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
+	- [x] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
+		- [x] solved conflicts on namelist
+		- [x] fresh new nag compile test
 	- [ ] Implement Fraser’s code on the wave python provider
 	- [ ] Test:
 		- [ ] dry-run the provider
@@ -47,7 +49,7 @@ tags:
 ## [[2026-08-31]]
 - [ ] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
-	- [ ] wait for the reply
+	- [x] wait for the reply
 - [x] Prepare 3 minutes talk for the most important parts of the imprs presentation by Friday #project/PhD_general 
 - [x] Restart test on my Stokes-forcing run. Check details in [[Regular-Meeting_Note#Discussion with Helmuth]]
 	- [x] run 10-days seamless simulation with necessary hourly output
