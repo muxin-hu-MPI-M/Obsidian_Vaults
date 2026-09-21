@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regular-Meeting_Note"
+              "title": "Meeting_Note_WMT"
             }
           },
           {
@@ -308,6 +308,7 @@
   "active": "09fde75c75e539e1",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
@@ -333,7 +334,6 @@
     "Project-Surface_Waves/Plan/Conceptual/General_Proposal.md",
     "Project-Surface_Waves/Meeting Note/IMPRS-retreat.md",
     "2026-08-17.md",
-    "2026-08-20.md",
     "Attachments/Pasted image 20260820134547.png",
     "Attachments/Pasted image 20260820131711.png",
     "Attachments/Pasted image 20260820103327.png",
