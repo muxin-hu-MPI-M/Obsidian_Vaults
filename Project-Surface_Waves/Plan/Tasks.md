@@ -25,7 +25,7 @@ tags:
 # Weekly Plan 
 
 
-## [[2026-09-14]]
+## [[2026-09-21]]
 - [ ] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
 	- [x] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
 		- [x] solved conflicts on namelist

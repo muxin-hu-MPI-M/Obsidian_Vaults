@@ -6,6 +6,11 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+
+# [[2026-09-21]]
+## Some ideas for further analysis on r2b4 test run
+1. CTL/EXP zonal- mean potential temperature profile (lat * depth); mean state the anomaly (response; EXP-CTL)
+
 # [[2026-09-10]]
 ## Retreat test talk
 feedbacks:
