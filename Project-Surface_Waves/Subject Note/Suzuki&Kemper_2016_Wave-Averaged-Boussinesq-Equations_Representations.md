@@ -13,7 +13,7 @@ Last Eddited: 2026-04-24
 Wave-averaged Boussinesq (WAB) Momentum equations in different full 3D vector forms (Suzuki & Fox-Kemper, 2016):
 $$
 \begin{align}
-\partial_t \mathbf{u}+ \left(\nabla \times \mathbf{u}+\mathbf{f}\right)\times \mathbf{u}^L  &= \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2),
+\partial_t \mathbf{u}+ \left(\nabla \times \mathbf{u}+\mathbf{f}\right)\times \mathbf{u}^L  &= \mathbf{b}+\mathbf{D}^{u} -\nabla (p + \frac{1}{2}|\mathbf{u}^L|^2),
 \tag{1}
 \\
 \partial_t \mathbf{u}^L+ \left(\mathbf{u}^{L}\cdot\nabla\right)\mathbf{u}^L + \mathbf{f}\times\mathbf{u}^{L}  &= \mathbf{b}+\mathbf{D}^{u} -\nabla p - \mathbf{u}^L \times \left(\nabla \times \mathbf{u}^s \right) + \partial_t \mathbf{u}^s
@@ -25,7 +25,7 @@ Eq.1 is the momentum equation structure that implemented in the ICON source code
 > [!Attention] **Vectorised WAB momentum equation**
 > Thus, to efficiently use the operators of the ICON, and avoid too much modification, the final WAB momentum equation will be introduced as replacing all Eulerian velocity to the Lagrangian velocity $\mathbf{u}^L=\mathbf{u}+ \mathbf{u}^s$:
 > $$
-> \boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -(\nabla p + \frac{1}{2}|\mathbf{u}^L|^2) + \underbrace{(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L}_{\text{Stokes vortex force}} + \partial_t \mathbf{u}^s} \tag{3}
+> \boxed{\partial_t \mathbf{u}^L+ \left(\nabla \times \mathbf{u}^L+\mathbf{f}\right)\times \mathbf{u}^L = \mathbf{b}+\mathbf{D}^{u} -\nabla ( p + \frac{1}{2}|\mathbf{u}^L|^2) + \underbrace{(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L}_{\text{Stokes vortex force}} + \partial_t \mathbf{u}^s} \tag{3}
 > $$
 > This replacement will lead to two additional terms at the right-hand-side of Eq.(3), they are:
 > - wave-influenced Stokes vortex force: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
