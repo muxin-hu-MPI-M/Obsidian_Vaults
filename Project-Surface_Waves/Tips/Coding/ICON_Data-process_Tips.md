@@ -6,6 +6,88 @@ tags:
   - code/tips
 Last Eddited: 2026-01-13
 ---
+
+
+# Zonal average
+- Find the examples in: `/home/m/m301254/project_surfwaves/scripts/mux0826_era5_r2b4_3dcirculation.ipynb`
+- Core function in `pyICON`, which can be called as `pyic.zonal_average_3d_data`
+	- the idea is to first select the mask cells (e.g., global, southern ocean), then interpolate use the ckdtree with options of different resolution
+	- after interpolation, average over the longitude dimension.
+- code:
+	```Python
+	def zonal_average_3d_data_r2b4(data_array, basin='global'):
+	    gname = 'r2b4_oce_r0004'
+	    lev = 'L40'
+	    path_grid = f'/work/mh0033/m300602/icon/grids/{gname}/'
+	    fpath_fx = f'{path_grid}{gname}_{lev}_fx.nc'
+	    fpath_ckdtree = f'{path_grid}ckdtree/rectgrids/{gname}_res0.30_180W-180E_90S-90N.npz'
+	    ds_fx = xr.open_dataset(fpath_fx)
+	    ds_fx = xr.open_dataset(fpath_fx)
+	    lat_sec, data_array_zave = pyic.zonal_average_3d_data(
+	        data_array.values, basin=basin, 
+	        fpath_fx=fpath_fx, fpath_ckdtree=fpath_ckdtree
+	    )
+	    depth = ds_fx.depth
+	    return lat_sec, depth, data_array_zave
+	
+	# pyic.zonal_average_3d_data can be found in declaration
+	def zonal_average_3d_data(data3d, basin='global', it=0, coordinates='clat clon', fpath_fx='', fpath_ckdtree=''):
+	  """ Like zonal_average but here data instead of path to data is given. This can only work if the whole data array fits into memory.
+	  """
+	
+	  for fp in [fpath_fx, fpath_ckdtree]:
+	    if not os.path.exists(fp):
+	      raise ValueError('::: Error: Cannot find file %s! :::' % (fp))
+	
+	  f = Dataset(fpath_fx, 'r')
+	  basin_c = f.variables['basin_c'][:]
+	  mask_basin = np.zeros(basin_c.shape, dtype=bool)
+	  if basin.lower()=='atlantic' or basin=='atl':
+	    mask_basin[basin_c==1] = True 
+	  elif basin.lower()=='pacific' or basin=='pac':
+	    mask_basin[basin_c==3] = True 
+	  elif basin.lower()=='southern ocean' or basin=='soc' or basin=='so':
+	    mask_basin[basin_c==6] = True 
+	  elif basin.lower()=='indian ocean' or basin=='ind' or basin=='io':
+	    mask_basin[basin_c==7] = True 
+	  elif basin.lower()=='global' or basin=='glob' or basin=='glo':
+	    mask_basin[basin_c!=0] = True 
+	  elif basin.lower()=='indopacific' or basin=='indopac':
+	    mask_basin[(basin_c==3) | (basin_c==7)] = True 
+	  elif basin.lower()=='indopacso':
+	    mask_basin[(basin_c==3) | (basin_c==7) | (basin_c==6)] = True 
+	  f.close()
+	  
+	  ddnpz = np.load(fpath_ckdtree)
+	  #dckdtree = ddnpz['dckdtree']
+	  #ickdtree = ddnpz['ickdtree'] 
+	  lon = ddnpz['lon'] 
+	  lat = ddnpz['lat'] 
+	  shape = [lat.size, lon.size]
+	  lat_sec = lat
+	  
+	  nz = data3d.shape[0]
+	  data_zave = np.ma.zeros((nz,lat_sec.size))
+	  for k in range(nz):
+	    data = 1.*data3d[k,:]
+	    #print('k = %d/%d'%(k,nz))
+	    # --- mask land points
+	    data[data==0] = np.ma.masked
+	    # --- mask not-this-basin points
+	    data[mask_basin==False] = np.ma.masked
+	    # --- go to normal np.array (not np.ma object)
+	    if isinstance(data, np.ma.core.MaskedArray):
+	      data = data.filled(0.)
+	    # --- interpolate to rectangular grid
+	    datai = apply_ckdtree(data, fpath_ckdtree, coordinates=coordinates)
+	    datai = datai.reshape(shape)
+	    # --- go back to masked array
+	    datai = np.ma.array(datai, mask=datai==0.)
+	    # --- do zonal average
+	    data_zave[k,:] = datai.mean(axis=1)
+	  return lat_sec, data_zave
+	```
+
 # Basics
 ## Calculate Spatial Average
 ### when not consider wet_c in fx.file
