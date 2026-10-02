@@ -25,7 +25,7 @@ tags:
 # Weekly Plan 
 
 
-## [[2026-09-21]]
+## [[2026-10-01]]
 - [ ] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
 	- [x] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
 		- [x] solved conflicts on namelist
@@ -34,11 +34,13 @@ tags:
 	- [ ] Test:
 		- [ ] dry-run the provider
 		- [ ] 10-days r2b4 short run with the new provider
-- [ ] Data analysis on 5-year rwb4
+		- [ ] restart test also on the 10 days run
+	- [ ] merge to master branch?
+- [x] Data analysis on 5-year rwb4
 	- [x] make masks for ocean basins
 		- [x] Southern ocean with different sectors
 		- [x] Northern mid-latitude
-	- [ ] zonal-average workflow
+	- [x] zonal-average workflow
 
 ## [[2026-09-07]]
 - [x] Summary the current implementation into a single file #project/surfwaves 

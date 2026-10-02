@@ -6,6 +6,17 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-10-01]]
+## ICON-Wave & ERA5-Wave branch merging
+We want to merge my individual implementation of the WAB in ICON-O with Chris’s version, which we have already used the same formula but with some different logics in the beginning:
+- In Chris’s version, all wave variables are stored in one external TYPE, and in the single modules for all the Stokes forcings
+	- The single Stokes forcing module contains: 
+		- the handle of the 3D Stokes drift in lat/lon grid → 1. transfer to Cartesian; 2. interpolate to edge-normal direction
+		- the initialisation of the Lagrangian edge-normal velocity, the original Eulerian edge-normal velocity will also be saved to the prognostic TYPE for later usage (e.g., Diffusion, diagnostics)
+		- submodules for all Stokes forces: Stokes time tendency; Stokes vertical gradients (now separate in horizontal/vertical, but will merge to one submodules for convenience of switch on/off); Stokes vortex
+	- Thus, in my case, the best solution is to add_var my ERA5 surface/3d Stokes drift velocity to Chris’s TYPE, and then everything works naturally afterwards.
+- however, Chris’s branch lives in icon-nwp but my lives in icon-mpim
+- also, I might want to first finish the single-year repeat run implementation on wave-provider first.
 
 # [[2026-09-21]]
 ## Some ideas for further analysis on r2b4 test run
