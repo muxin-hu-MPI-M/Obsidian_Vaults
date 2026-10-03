@@ -64,34 +64,35 @@
             }
           },
           {
-            "id": "7569516277eb85b5",
+            "id": "7909254b7e5c690e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
+                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON-o_Stokes_Status"
+              "title": "Meeting_Note_WMT"
             }
           },
           {
-            "id": "029d2f001d9cb83c",
+            "id": "29b79a19b1212e5b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
+                "file": "Project-WMT/Plan/Figure_Plan.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ECMWF_2024_Note_Wave-induced-stress_and_Young-waves"
+              "title": "Figure_Plan"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -150,7 +151,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.4234428405762
+    "width": 287.4234428405762,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -229,7 +231,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -284,7 +286,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.3812255859375
+    "width": 325.3812255859375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -305,22 +308,23 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "7909254b7e5c690e",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+    "Project-WMT/Plan/Figure_Plan.md",
+    "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
+    "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
-    "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
-    "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation_design.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
     "Flash_cards_figures.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
@@ -333,7 +337,6 @@
     "PhD-General/MPI-M/How_much_AMOC_Weakening_would_cool_Europe_under_Climate_change.md",
     "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
-    "Project-Surface_Waves/Plan/Conceptual/General_Proposal.md",
     "Attachments/Pasted image 20260820134547.png",
     "Attachments/Pasted image 20260820131711.png",
     "Attachments/Pasted image 20260820103327.png",
