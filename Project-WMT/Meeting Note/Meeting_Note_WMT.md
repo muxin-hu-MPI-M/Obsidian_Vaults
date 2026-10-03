@@ -15,9 +15,22 @@ Last Eddited: 2025-12-01
 - Observational maybe first use the ORAS5 data
 
 ## workflow
+### Finish the previous work
 - **Figure 5 refinement**: use direct $\Delta D_h^i$ map to show the relative importance of each decomposed term; 
 - Another figure: **separate the dependence of inter-cluster difference to either mean state difference or change-term difference**. 
 	- This tells whether the cluster difference in $\Delta D_h^i$ comes from different climatological field or different response.
+### showing the IWMT values for clustering
+- add the additional table of the clustering reference
+- either as a separate table or basically add to Figure 1
+
+### AMOC time-evolution
+- AMOC time-evolution on 4xCO2 (which I have), and on SSP2-4.5 (check if the server has the data for AMOC)
+	- definition of AMOC_z intensity: direct model output of Atlantic overturning streamfunction at 35 N, 1000 m depth
+	- maybe consider change this reference to 50 N and simply the maximum overturning streamfunction value (which might show higher correlation with MOC)
+
+### Observational estimates
+- IWMT, put the comparison to Figure 3. (need to apply the same strategy)
+- thermodynamic sensitivity ($\alpha$)
 
 
 # [[2026-06-02]] Discussion with Hongdou
