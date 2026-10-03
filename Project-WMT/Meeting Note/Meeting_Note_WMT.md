@@ -7,7 +7,18 @@ tags:
 Last Eddited: 2025-12-01
 ---
 # [[2026-10-03]] Suggestions for Figures
-- 
+## From Robb & Dave Bonan
+- Have a figure showing the **time evolution of AMOC in the models in an SSP scenario** in addition to 4xCO2
+	- need to check do I need to download data or the server has the data
+- A figure **showing the two values you cluster on** (extra panel for Figure 1, or as a supplemental figure)
+- Adding **observational estimates to Figure 3 (IWMT) and a comparison of alpha in the two categories of models**. Observational estimates seem to be the key remaining steps
+- Observational maybe first use the ORAS5 data
+
+## workflow
+- **Figure 5 refinement**: use direct $\Delta D_h^i$ map to show the relative importance of each decomposed term; 
+- Another figure: **separate the dependence of inter-cluster difference to either mean state difference or change-term difference**. 
+	- This tells whether the cluster difference in $\Delta D_h^i$ comes from different climatological field or different response.
+
 
 # [[2026-06-02]] Discussion with Hongdou
 - find AMOC_z in the 50 N, maybe higher correlation in climatological/response comparison with MOC
