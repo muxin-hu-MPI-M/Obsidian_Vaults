@@ -26,7 +26,9 @@ Last Eddited: 2025-12-01
 ### AMOC time-evolution
 - AMOC time-evolution on 4xCO2 (which I have), and on SSP2-4.5 (check if the server has the data for AMOC)
 	- definition of AMOC_z intensity: direct model output of Atlantic overturning streamfunction at 35 N, 1000 m depth
-	- maybe consider change this reference to 50 N and simply the maximum overturning streamfunction value (which might show higher correlation with MOC)
+	- maybe **consider change this reference to 50 N, the maximum overturning streamfunction value** (which might show higher correlation with MOC)
+		- Which do not affect my main results based on IWMT
+- Maybe not the time-series but an additional scatter plots in Figure 2: showing the comparison of AMOC reduction in ssp2-4.5 to AMOC reduction in 4xCO2 
 
 ### Observational estimates
 - IWMT, put the comparison to Figure 3. (need to apply the same strategy)
