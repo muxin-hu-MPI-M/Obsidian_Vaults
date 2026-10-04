@@ -31,6 +31,7 @@ Last Eddited: 2025-12-01
 - Maybe not the time-series but an additional scatter plots in Figure 2: showing the comparison of AMOC reduction in ssp2-4.5 to AMOC reduction in 4xCO2 
 
 ### Observational estimates
+- checked: no data in the server → need to download the ORAS5 data
 - IWMT, put the comparison to Figure 3. (need to apply the same strategy)
 - thermodynamic sensitivity ($\alpha$)
 
