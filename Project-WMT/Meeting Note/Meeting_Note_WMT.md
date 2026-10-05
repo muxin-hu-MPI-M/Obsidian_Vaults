@@ -36,7 +36,7 @@ Last Eddited: 2025-12-01
 		- our AMOC intensity is defined as the values of msftmz at 35 N and 1000 m depth, can be found here: `Coding/Cluster_analysis_AMOC_newCluster.ipynb`
 				`AMOC_index_4xCO2_5 = cal_index_new(ds_all_4xCO2_5, 35, 1000, 'Atlantic', 'abrupt-4xCO2')`
 				`AMOC_index_piCon_5 = cal_index_new(ds_all_piCon_5, 35, 1000, 'Atlantic', 'piControl')`
--humu
+		- ds_all_5 is the regridded version of the msftmz, the regrid file can be found here: `Coding/process_data/regrid_function_msftmz.ipynb`
 
 ### Observational estimates
 - checked: no data in the server → need to download the ORAS5 data
