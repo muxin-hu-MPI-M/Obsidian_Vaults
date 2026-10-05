@@ -30,7 +30,7 @@ Last Eddited: 2025-12-01
 		- Which do not affect my main results based on IWMT
 - Maybe not the time-series but an additional scatter plots in Figure 2: showing the comparison of AMOC reduction in ssp2-4.5 to AMOC reduction in 4xCO2 
 	- data availability: 
-		- except: CESM2-FV2, ICON-ESM-LR, NorCPM1, all have ssp245 data in r1i1p1f1 branch in original grid.
+		- except: CESM2-FV2, ICON-ESM-LR, NorCPM1, all have ssp245 data in r1i1p1f1/r1i1p3f1 (for GISS-E2-1-G) branch in original grid ==→ CESM2-FV2, ICON-ESM-LR, NorCPM1 have no SSP245 scenario==
 		- first download the missing data, then regrid
 	- our previous $\Delta AMOC_z$ is defined as: $\overline{AMOC_z}^{\text{4x}}-\overline{AMOC_z}^{\text{pi}}$; find the calculation here: `Coding/wmt_analysis_clusters.ipynb`
 		- our AMOC intensity is defined as the values of msftmz at 35 N and 1000 m depth, can be found here: `Coding/Cluster_analysis_AMOC_newCluster.ipynb`
