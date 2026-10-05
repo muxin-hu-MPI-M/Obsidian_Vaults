@@ -33,6 +33,10 @@ Last Eddited: 2025-12-01
 		- except: CESM2-FV2, ICON-ESM-LR, NorCPM1, all have ssp245 data in r1i1p1f1 branch in original grid.
 		- first download the missing data, then regrid
 	- our previous $\Delta AMOC_z$ is defined as: $\overline{AMOC_z}^{\text{4x}}-\overline{AMOC_z}^{\text{pi}}$; find the calculation here: `Coding/wmt_analysis_clusters.ipynb`
+		- our AMOC intensity is defined as the values of msftmz at 35 N and 1000 m depth, can be found here: `Coding/Cluster_analysis_AMOC_newCluster.ipynb`
+				`AMOC_index_4xCO2_5 = cal_index_new(ds_all_4xCO2_5, 35, 1000, 'Atlantic', 'abrupt-4xCO2')`
+				`AMOC_index_piCon_5 = cal_index_new(ds_all_piCon_5, 35, 1000, 'Atlantic', 'piControl')`
+-humu
 
 ### Observational estimates
 - checked: no data in the server → need to download the ORAS5 data
