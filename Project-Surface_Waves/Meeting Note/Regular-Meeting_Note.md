@@ -6,6 +6,30 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-10-13]]
+## ERA5-forced ICON-O: Single Year Repeat
+Developed under #presenter/Fraser_Goldsworth
+- The forcing repeat as the selected year, with two options
+	- `era5SimpleRepeatYear`: Year of ERA5 data to repeat. January 1st in the model and in the forcing align
+		- it will call the `get_dataset_simple_repeat` function instead of the original `get_dataset`
+	- `era5StewartRepeatYear`: Year of ERA5 data to repeat employing the procedure of Stewart et al. (Ocean Modelling, 2020, https://doi.org/10.1016/j.ocemod.2019.101557). **Year runs from May 1st of this year for 12 months then repeats. May 1st in the model and in the forcing align.** Steweart et al. (2020) recommend 1984, 1990 and 2003, as years in approximately neutral climatic states, identifying 1990 as being optimal for typical use cases.
+		- Under Stewart procedure, ones wraps the repeat year in May to minimise the discontinuity in the atmospheric forcing fields seen by the ocean
+		- it will call the `get_dataset_stewart_repeat` function instead of the original `get_dataset
+- To enable the single year repeat run, one needs to modify the runscript when assign the compute node to the provider, enable the argument, for example: `--era5StewartRepeatYear=1990`
+```
+# Define the number of ERA5 provider processes
+ERA5_PROCS=1
+
+cat > ${EXPDIR}/mpmd.conf << EOF
+0-$((mpi_total_procs - ERA5_PROCS - 2))   $MODEL
+$((mpi_total_procs - ERA5_PROCS - 1))-$((mpi_total_procs - 2))    ${PYTHON} /work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/etc/era5g_omip_runoff_provider.py --era5StewartRepeatYear=1990
+$((mpi_total_procs - 1))-$((mpi_total_procs - 1))                ${PYTHON} /work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/etc/era5g_wave_provider.py
+EOF
+```
+- same strategy should also apply to my own wave provider
+
+
+
 # [[2026-10-01]]
 ## ICON-Wave & ERA5-Wave branch merging
 We want to merge my individual implementation of the WAB in ICON-O with Chris’s version, which we have already used the same formula but with some different logics in the beginning:
