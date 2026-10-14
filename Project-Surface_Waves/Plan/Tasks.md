@@ -33,9 +33,10 @@ tags:
 	- [x] Implement Fraser’s code on the wave python provider
 	- [ ] Test:
 		- [x] dry-run the provider
-		- [ ] 10-days r2b4 short run with the new provider
+		- [ ] short run with the new provider
 		- [ ] restart test also on the 10 days run
-	- [ ] merge to master branch?
+- [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
+	- [ ] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
 - [x] Data analysis on 5-year rwb4
 	- [x] make masks for ocean basins
 		- [x] Southern ocean with different sectors
