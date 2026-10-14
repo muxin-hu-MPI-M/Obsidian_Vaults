@@ -30,9 +30,9 @@ tags:
 	- [x] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
 		- [x] solved conflicts on namelist
 		- [x] fresh new nag compile test
-	- [ ] Implement Fraser’s code on the wave python provider
+	- [x] Implement Fraser’s code on the wave python provider
 	- [ ] Test:
-		- [ ] dry-run the provider
+		- [x] dry-run the provider
 		- [ ] 10-days r2b4 short run with the new provider
 		- [ ] restart test also on the 10 days run
 	- [ ] merge to master branch?
