@@ -111,10 +111,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "directory",
-                "matchingCase": false,
+                "query": "",
+                "matchingCase": true,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -132,8 +132,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -291,7 +290,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "270ac8b03869d128",
+  "active": "b89abaaea3ef86ea",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",

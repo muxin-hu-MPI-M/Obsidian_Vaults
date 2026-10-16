@@ -102,7 +102,8 @@ feedbacks:
 - Conduct the restart test, ask Helmuth for the details
 
 ## Discussion with Helmuth
-- Restart test:
+#ICON/restart_test
+- **Restart test**:
 	1. **run a 10-days short simulation** with the Stokes forcing
 		- include the process of python provider, 
 		- no need to change the `restart_interval` or `checkpoint_interval`, the idea is that it can run the model continuously from 0 to 10 days
@@ -113,6 +114,10 @@ feedbacks:
 		- the idea is to force the model to run in 5 days chunk
 		- data will be saved in the correct directory
 	4. **Compare the last 5 days simulation output**, they should be identical!
+```
+source /home/m/m211054/bin/postFunx.sh
+directoryDiff dir1 dir2
+```
 
 # [[2026-08-24]]
 ## Discussion with Noel: IMPRS retreat abstract
