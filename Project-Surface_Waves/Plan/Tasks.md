@@ -55,7 +55,7 @@ tags:
 	- [x] Velocity profile snapshot
 - [x] AGU Journal ORCID registration #project/MesoEddy_Upwelling 
 ## [[2026-08-31]]
-- [ ] PhD semester registration #project/PhD_general 
+- [x] PhD semester registration #project/PhD_general 
 	- [x] apply for STINE account
 	- [x] wait for the reply
 - [x] Prepare 3 minutes talk for the most important parts of the imprs presentation by Friday #project/PhD_general 
