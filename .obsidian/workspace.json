@@ -111,7 +111,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "restart test",
+                "query": "directory",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -291,7 +291,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "270ac8b03869d128",
   "lastOpenFiles": [
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
