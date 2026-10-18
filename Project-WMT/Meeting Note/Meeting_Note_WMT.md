@@ -40,6 +40,11 @@ Last Eddited: 2025-12-01
 
 ### Observational estimates
 - checked: no data in the server → need to download the ORAS5 data
+	- Download:
+		- [ ] SST: 1980-2010
+		- [ ] SSS: 1980-2010
+		- [ ] hfds: 1980-2010
+		- [ ] wfo: 1980-2010
 - IWMT, put the comparison to Figure 3. (need to apply the same strategy)
 - thermodynamic sensitivity ($\alpha$)
 
