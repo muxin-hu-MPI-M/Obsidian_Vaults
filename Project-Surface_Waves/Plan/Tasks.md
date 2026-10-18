@@ -26,16 +26,16 @@ tags:
 
 
 ## [[2026-10-01]]
-- [ ] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
+- [x] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
 	- [x] Merge my branch with the master branch to have Fraser’s implementation of single year repeat run
 		- [x] solved conflicts on namelist
 		- [x] fresh new nag compile test
 	- [x] Implement Fraser’s code on the wave python provider
-	- [ ] Test:
+	- [x] Test:
 		- [x] dry-run the provider
 		- [x] short run with the new provider
-		- [ ] restart test also on the 10 days run
-	- [ ] Push to the branch?
+		- [x] restart test also on the 10 days run
+	- [x] Push to the branch? It seems I cannot push to my branch under icon/mpim
 - [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
 	- [ ] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
 - [x] Data analysis on 5-year rwb4
