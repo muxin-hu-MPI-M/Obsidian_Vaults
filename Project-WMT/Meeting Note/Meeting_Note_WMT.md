@@ -7,11 +7,22 @@ tags:
 Last Eddited: 2025-12-01
 ---
 
-# [[2026-10-19]] Similar studies from 2025
+
+# [[2026-10-19]] Updates
+## Similar studies from 2025
 - Diagnosing AMOC Variability under Climate Change with the Water Mass Transformation Framework (https://ui.adsabs.harvard.edu/abs/2026AGUOSMCC33B.07K/abstract)
 	- found the AMOC variability is strongly linked to the WMT in the warming whole
 	- WMT is dominated by shortwave radiation; while latent heat flux drives the largest variability.
 	- Importantly, WMT associated with sensible heat flux exhibits the strongest correlation with long-term AMOC changes, indicating highly coherent fluctuations.
+## Discussion with Hongdou
+#presenter/Hongdou_fan 
+- The key message is that, ==**the cluster difference in the heat-driven density flux response under the external forcing has contributions from cluster difference in the climatological thermodynamic sensitivity in the Labrador Sea (or SPG)**==
+- To close the logic, I need to compare the regional mean thermodynamic sensitivity coefficient to the response in AMOC (i.e., $\Delta AMOC_z$) to find if there’s correlation (the dependence)
+- Also the observational estimation of IWMT and thermodynamic sensitivity
+- Some additional tries:
+	- replace the IWMT to just the surface-forced WMT at the density where finds the maximum surface-forced MOC ($WMT(\sigma_{MOC_{max}})$), maybe this can help to separate our regional-difference based cluster from the similar cluster based on climatological mean state (like Lin et al., 2023)
+	- replace the AMOC_z to be the maximum mass overturning circulation at 50N, to get more coherence between the surface-forced MOC (which is the maximum finds at the 50N)
+
 # [[2026-10-03]] Suggestions for Figures
 ## From Robb & Dave Bonan
 - Have a figure showing the **time evolution of AMOC in the models in an SSP scenario** in addition to 4xCO2
@@ -28,7 +39,6 @@ Last Eddited: 2025-12-01
 ### showing the IWMT values for clustering
 - add the additional table of the clustering reference
 - either as a separate table or basically add to Figure 1
-
 ### AMOC time-evolution
 - AMOC time-evolution on 4xCO2 (which I have), and on SSP2-4.5 (check if the server has the data for AMOC)
 	- definition of AMOC_z intensity: direct model output of Atlantic overturning streamfunction at 35 N, 1000 m depth
@@ -43,7 +53,6 @@ Last Eddited: 2025-12-01
 				`AMOC_index_4xCO2_5 = cal_index_new(ds_all_4xCO2_5, 35, 1000, 'Atlantic', 'abrupt-4xCO2')`
 				`AMOC_index_piCon_5 = cal_index_new(ds_all_piCon_5, 35, 1000, 'Atlantic', 'piControl')`
 		- ds_all_5 is the regridded version of the msftmz, the regrid file can be found here: `Coding/process_data/regrid_function_msftmz.ipynb`
-
 ### Observational estimates
 - checked: no data in the server → need to download the ORAS5 data
 	- Download:
