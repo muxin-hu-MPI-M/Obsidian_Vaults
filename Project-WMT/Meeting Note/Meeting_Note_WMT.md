@@ -54,6 +54,8 @@ Last Eddited: 2025-12-01
 	- Ocean grid information (Zuo et al., 2019)
 		- “ORAS5 uses NEMO v3.4.1 and the same spatial configuration as ORAP5, namely ORCA025.L75, often referred to as the DRAKKAR reference configuration.”
 		- [x] Download 
+		- “Grid size (defined as min(e1t, e2t)) on the ORCA025 grid.”
+			- ``
 - IWMT, put the comparison to Figure 3. (need to apply the same strategy)
 - thermodynamic sensitivity ($\alpha$)
 
