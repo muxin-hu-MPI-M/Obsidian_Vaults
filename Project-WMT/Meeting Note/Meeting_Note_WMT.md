@@ -6,6 +6,12 @@ tags:
   - "#supervisor/robb_wills"
 Last Eddited: 2025-12-01
 ---
+
+# [[2026-10-19]] Similar studies from 2025
+- Diagnosing AMOC Variability under Climate Change with the Water Mass Transformation Framework (https://ui.adsabs.harvard.edu/abs/2026AGUOSMCC33B.07K/abstract)
+	- found the AMOC variability is strongly linked to the WMT in the warming whole
+	- WMT is dominated by shortwave radiation; while latent heat flux drives the largest variability.
+	- Importantly, WMT associated with sensible heat flux exhibits the strongest correlation with long-term AMOC changes, indicating highly coherent fluctuations.
 # [[2026-10-03]] Suggestions for Figures
 ## From Robb & Dave Bonan
 - Have a figure showing the **time evolution of AMOC in the models in an SSP scenario** in addition to 4xCO2
@@ -41,10 +47,13 @@ Last Eddited: 2025-12-01
 ### Observational estimates
 - checked: no data in the server → need to download the ORAS5 data
 	- Download:
-		- [ ] SST: 1980-2010
-		- [ ] SSS: 1980-2010
-		- [ ] hfds: 1980-2010
-		- [ ] wfo: 1980-2010
+		- [x] SST: 1980-2010
+		- [x] SSS: 1980-2010
+		- [x] hfds: 1980-2010
+		- [x] wfo: 1980-2010
+	- Ocean grid information (Zuo et al., 2019)
+		- “ORAS5 uses NEMO v3.4.1 and the same spatial configuration as ORAP5, namely ORCA025.L75, often referred to as the DRAKKAR reference configuration.”
+		- [x] Download 
 - IWMT, put the comparison to Figure 3. (need to apply the same strategy)
 - thermodynamic sensitivity ($\alpha$)
 
