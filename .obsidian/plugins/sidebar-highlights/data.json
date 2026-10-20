@@ -2236,6 +2236,22 @@
         "isNativeComment": false,
         "type": "highlight"
       }
+    ],
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md": [
+      {
+        "id": "sd3wk3dpz",
+        "text": "**ICON then differences the cumulative column pressures between neighbouring cells to obtain the edge-normal pressure acceleration**",
+        "tags": [],
+        "line": 379,
+        "startOffset": 13107,
+        "endOffset": 13243,
+        "filePath": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1792501065103,
+        "isNativeComment": false,
+        "type": "highlight"
+      }
     ]
   },
   "collections": {},

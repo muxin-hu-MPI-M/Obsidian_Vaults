@@ -368,7 +368,17 @@ $$
 S_{\mathrm{wave}}\Delta z
 $$
 
-without multiplying by $\rho_0$. The partial-cell pressure-gradient correction includes the same source.
+without multiplying by $\rho_0$. The partial-cell pressure-gradient correction includes the same source. 
+In the end, ICON vertically integrates the kinematic pressure:
+$$\Pi=\frac{p}{\rho_0}$$
+$$ \Pi_k=\Pi_{k-1} + \left[ \frac{g}{\rho_0}\frac{\rho_k+\rho_{k-1}}{2} + \frac{S_k+S_{k-1}}{2} \right]\Delta z_k , $$
+
+where
+$$ S=\mathbf v^L\cdot\partial_z\mathbf v^s . $$
+
+The ordinary density contribution is implemented at [mo_ocean_thermodyn.f90 (line 238)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_thermodyn.f90:238), and the wavy term is added in the first and subsequent layers at [mo_ocean_thermodyn.f90 (line 261)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_thermodyn.f90:261). 
+==**ICON then differences the cumulative column pressures between neighbouring cells to obtain the edge-normal pressure acceleration**== in `press_grad` in the horizontal momentum tendency term at line 342.
+
 ### Magnitude of the Wavy-hydrostatic Pressure
 The value
 $$ \max\left|\mathbf v^L\cdot\partial_z\mathbf v^s\right| =7.86\times10^{-3}\ {\rm m\,s^{-2}} $$
@@ -385,57 +395,44 @@ or about $0.08\%$ of the full gravitational term. It is small compared with grav
 
 However, the dynamically relevant hydrostatic pressure gradient depends on horizontal density differences, not the common reference-density contribution. An equivalent density anomaly is
 $$ \rho'_{\mathrm{equiv}} = \frac{\rho_0}{g} \mathbf v^L\cdot\partial_z\mathbf v^s. $$
-Using $\rho_0=1025\ {\rm kg\,m^{-3}}$:
+Using ICON’s $\rho_0=1025.022\ \mathrm{kg\,m^{-3}}$ and $g=9.80665\ \mathrm{m\,s^{-2}}$,
 
 $$ \rho'_{\mathrm{equiv}} \approx \frac{1025}{9.81}(7.86\times10^{-3}) \approx0.82\ {\rm kg\,m^{-3}}. $$
 Thus:
 
 | Wavy source                          | Equivalent density anomaly |
 | ------------------------------------ | -------------------------- |
-| $10^{-3}\ {\rm m\,s^{-2}}$           | $0.10\ {\rm kg\,m^{-3}}$   |
+| $10^{-4}\ {\rm m\,s^{-2}}$           | $0.010\ {\rm kg\,m^{-3}}$  |
+| $10^{-3}\ {\rm m\,s^{-2}}$           | $0.105\ {\rm kg\,m^{-3}}$  |
+| $5\times10^{-3}\ {\rm m\,s^{-2}}$    | $0.523\ {\rm kg\,m^{-3}}$  |
 | $7.86\times10^{-3}\ {\rm m\,s^{-2}}$ | $0.82\ {\rm kg\,m^{-3}}$   |
 | $10^{-2}\ {\rm m\,s^{-2}}$           | $1.04\ {\rm kg\,m^{-3}}$   |
-That is potentially important compared with upper-ocean density anomalies.
+It does not mean that ICON modifies temperature, salinity or `rho`; it does not represent a real water mass with a $1\ \mathrm{kg\,m^{-3}}$ density anomaly.
 
-#### Why It Is Much Larger Than `stokes_rhs`
-`stokes_rhs` is already an edge-normal horizontal acceleration:
-$$ G^s_e\sim10^{-7}\text{--}10^{-6}\ {\rm m\,s^{-2}}. $$
-The wavy-hydrostatic source is not added directly to horizontal momentum. ICON first calculates
-$$ \Phi_{\mathrm{wave}}(z) = \int_0^z \mathbf v^L\cdot\partial_z\mathbf v^s\,dz, $$
-and then calculates its horizontal gradient:
-$$ G_{\mathrm{wave,pressure}} = -\nabla_h\Phi_{\mathrm{wave}}. $$
-For example, if the source is $7.86\times10^{-3}\ {\rm m\,s^{-2}}$ over a 6 m surface-to-level-1 distance:
-$$ \Delta\Phi_{\mathrm{wave}} \approx 0.047\ {\rm m^2\,s^{-2}}. $$
-Across a horizontal distance of 100 km, this corresponds approximately to
-$$ \frac{0.047}{10^5} \approx4.7\times10^{-7}\ {\rm m\,s^{-2}}, $$
-which is comparable to your `stokes_rhs` maximum. Therefore, the four-order numerical difference between the raw fields is not automatically problematic.
+### Does it reach the deep ocean
+~={red}**Yes**=~: in this ICON-O implementation, a surface-confined wavy-hydrostatic source can modify the pressure gradient throughout the entire water column.
 
-#### Is the Maximum Plausible?
-It can be plausible. Your restart has currents approaching $1\ {\rm m\,s^{-1}}$, while the surface Stokes velocity is around $0.4\ {\rm m\,s^{-1}}$ and the first model-level value around $0.09\ {\rm m\,s^{-1}}$. A strong near-surface shear can therefore produce
+Define the cumulative wave-pressure potential
+$$ \Phi_w(z)=\int_{\rm surface}^{z} S(z')\,d\ell . $$
+If \(S\) becomes negligible below the wave-affected layer \(z_s\), then
+$$ \Phi_w(z>z_s)=\Phi_w(z_s). $$
+It is constant with depth below \(z_s\), but if it varies horizontally,
+$$ -\nabla_h\Phi_w $$
+remains a pressure acceleration at every deeper level. The code contains no removal of this depth-uniform component, taper, or deep cutoff.
 
-$$ |\mathbf v^L|\,|\partial_z\mathbf v^s| \sim10^{-3}\text{--}10^{-2}\ {\rm m\,s^{-2}}. $$
+Therefore, the implementation can:
+- launch a barotropic/free-surface adjustment;
+- change depth-integrated transport;
+- initially accelerate deep velocities;
+- potentially modify deeper balanced circulation.
 
-Because this is a maximum, check that it:
+But ICON’s free-surface solver does respond. The pressure-modified velocity predictor is vertically integrated into the surface-height equation at [mo_ocean_ab_timestepping_mimetic.f90 (line 1034)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:1034), and the resulting surface-height pressure gradient is subsequently applied to every wet level at line 1245. Thus ICON permits sea level to compensate much of the depth-uniform conservative pressure force. The compensation need not be instantaneous or complete, particularly with bathymetry, Coriolis effects and horizontally varying wave forcing.
 
-- occurs in wet upper-ocean cells;
-- is concentrated in the first few levels;
-- is not associated with very thin partial cells;
-- is not caused by unmasked land or halo values;
-- has reasonable 95th and 99th percentiles, not only a few outliers.
-
-#### Decisive Comparison
-The most useful diagnostic is not the raw wavy source. Save or calculate
-$$ \Delta\mathrm{press\_grad} = \mathrm{press\_grad}_{\mathrm{wavy}} - \mathrm{press\_grad}_{\mathrm{ordinary}} $$
-
-from the same instantaneous density and velocity state. Compare that with:
-
-- `press_grad`;
-- `veloc_adv_horz`;
-- `veloc_adv_vert`;
-- `laplacian_horz`;
-- `stokes_rhs`.
-
-So the current $10^{-3}$ to $10^{-2}\ {\rm m\,s^{-2}}$ maximum is **small relative to gravity, significant relative to buoyancy anomalies, and not obviously unphysical**. Its resulting horizontal pressure-gradient acceleration is the quantity that determines its dynamical importance.
+However:
+- $0.82$ or $1.04\ \mathrm{kg\,m^{-3}}$ is not a density anomaly inserted into ICON. It is only a pointwise density-equivalent scaling.
+- $1.04\ \mathrm{kg\,m^{-3}}$ is significant but not extraordinarily large for the upper ocean. It is comparable to strong seasonal or frontal contrasts, larger than many weak mesoscale anomalies, and smaller than common surface-to-thermocline density changes.
+- Whole-column pressure communication is an intentional consequence of hydrostatic integration, not automatically an error.
+- The maximum local source alone cannot determine whether the deep circulation is strongly or spuriously affected. The decisive quantity is its vertically integrated, horizontally varying pressure potential.
 
 ## 12. Adams-Bashforth Bootstrap
 The implementation defines:
