@@ -35,7 +35,8 @@ tags:
 		- [x] dry-run the provider
 		- [x] short run with the new provider
 		- [x] restart test also on the 10 days run
-	- [x] Push to the branch? It seems I cannot push to my branch under icon/mpim
+	- [x] Push to the icon/icon.git branch
+		- [x] now worked on the newly clone version: `/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`
 - [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
 	- [ ] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
 - [x] Data analysis on 5-year rwb4
