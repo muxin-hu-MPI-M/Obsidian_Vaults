@@ -369,6 +369,73 @@ S_{\mathrm{wave}}\Delta z
 $$
 
 without multiplying by $\rho_0$. The partial-cell pressure-gradient correction includes the same source.
+### Magnitude of the Wavy-hydrostatic Pressure
+The value
+$$ \max\left|\mathbf v^L\cdot\partial_z\mathbf v^s\right| =7.86\times10^{-3}\ {\rm m\,s^{-2}} $$
+is locally significant, but it must not be compared directly with `stokes_rhs`. They enter the model differently.
+The distribution of the wavy-hydrostatic pressure source in the first simulation day is:
+![[Screenshot 2026-10-20 at 10.19.08.png|546]]
+- The magnitude is mostly within the 1e-2
+#### Comparison With Gravity
+The ordinary hydrostatic source is approximately
+$$ \frac{\rho}{\rho_0}g\approx9.81\ {\rm m\,s^{-2}}. $$
+Therefore,
+$$ \frac{7.86\times10^{-3}}{9.81} \approx8.0\times10^{-4}, $$
+or about $0.08\%$ of the full gravitational term. It is small compared with gravity itself.
+
+However, the dynamically relevant hydrostatic pressure gradient depends on horizontal density differences, not the common reference-density contribution. An equivalent density anomaly is
+$$ \rho'_{\mathrm{equiv}} = \frac{\rho_0}{g} \mathbf v^L\cdot\partial_z\mathbf v^s. $$
+Using $\rho_0=1025\ {\rm kg\,m^{-3}}$:
+
+$$ \rho'_{\mathrm{equiv}} \approx \frac{1025}{9.81}(7.86\times10^{-3}) \approx0.82\ {\rm kg\,m^{-3}}. $$
+Thus:
+
+| Wavy source                          | Equivalent density anomaly |
+| ------------------------------------ | -------------------------- |
+| $10^{-3}\ {\rm m\,s^{-2}}$           | $0.10\ {\rm kg\,m^{-3}}$   |
+| $7.86\times10^{-3}\ {\rm m\,s^{-2}}$ | $0.82\ {\rm kg\,m^{-3}}$   |
+| $10^{-2}\ {\rm m\,s^{-2}}$           | $1.04\ {\rm kg\,m^{-3}}$   |
+That is potentially important compared with upper-ocean density anomalies.
+
+#### Why It Is Much Larger Than `stokes_rhs`
+`stokes_rhs` is already an edge-normal horizontal acceleration:
+$$ G^s_e\sim10^{-7}\text{--}10^{-6}\ {\rm m\,s^{-2}}. $$
+The wavy-hydrostatic source is not added directly to horizontal momentum. ICON first calculates
+$$ \Phi_{\mathrm{wave}}(z) = \int_0^z \mathbf v^L\cdot\partial_z\mathbf v^s\,dz, $$
+and then calculates its horizontal gradient:
+$$ G_{\mathrm{wave,pressure}} = -\nabla_h\Phi_{\mathrm{wave}}. $$
+For example, if the source is $7.86\times10^{-3}\ {\rm m\,s^{-2}}$ over a 6 m surface-to-level-1 distance:
+$$ \Delta\Phi_{\mathrm{wave}} \approx 0.047\ {\rm m^2\,s^{-2}}. $$
+Across a horizontal distance of 100 km, this corresponds approximately to
+$$ \frac{0.047}{10^5} \approx4.7\times10^{-7}\ {\rm m\,s^{-2}}, $$
+which is comparable to your `stokes_rhs` maximum. Therefore, the four-order numerical difference between the raw fields is not automatically problematic.
+
+#### Is the Maximum Plausible?
+It can be plausible. Your restart has currents approaching $1\ {\rm m\,s^{-1}}$, while the surface Stokes velocity is around $0.4\ {\rm m\,s^{-1}}$ and the first model-level value around $0.09\ {\rm m\,s^{-1}}$. A strong near-surface shear can therefore produce
+
+$$ |\mathbf v^L|\,|\partial_z\mathbf v^s| \sim10^{-3}\text{--}10^{-2}\ {\rm m\,s^{-2}}. $$
+
+Because this is a maximum, check that it:
+
+- occurs in wet upper-ocean cells;
+- is concentrated in the first few levels;
+- is not associated with very thin partial cells;
+- is not caused by unmasked land or halo values;
+- has reasonable 95th and 99th percentiles, not only a few outliers.
+
+#### Decisive Comparison
+The most useful diagnostic is not the raw wavy source. Save or calculate
+$$ \Delta\mathrm{press\_grad} = \mathrm{press\_grad}_{\mathrm{wavy}} - \mathrm{press\_grad}_{\mathrm{ordinary}} $$
+
+from the same instantaneous density and velocity state. Compare that with:
+
+- `press_grad`;
+- `veloc_adv_horz`;
+- `veloc_adv_vert`;
+- `laplacian_horz`;
+- `stokes_rhs`.
+
+So the current $10^{-3}$ to $10^{-2}\ {\rm m\,s^{-2}}$ maximum is **small relative to gravity, significant relative to buoyancy anomalies, and not obviously unphysical**. Its resulting horizontal pressure-gradient acceleration is the quantity that determines its dynamical importance.
 
 ## 12. Adams-Bashforth Bootstrap
 The implementation defines:
