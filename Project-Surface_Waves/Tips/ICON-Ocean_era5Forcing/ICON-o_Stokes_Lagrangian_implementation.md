@@ -435,6 +435,44 @@ However:
 - Whole-column pressure communication is an intentional consequence of hydrostatic integration, not automatically an error.
 - The maximum local source alone cannot determine whether the deep circulation is strongly or spuriously affected. The decisive quantity is its vertically integrated, horizontally varying pressure potential. The decisive diagnostic is therefore not `max(abs(wavy_hydrostatic_source))`. Compute and compare between forced and control runs: $\Phi_w(x,y,z)=\int S\,dz, \eta_{\rm equiv}=\Phi_w/g, \nabla_h\Phi_w$, especially at the bottom and below 200–500 m, together with SSH and depth-integrated transport. That will tell you directly whether the free surface cancels the barotropic component or whether an appreciable unwanted deep circulation remains.
 
+### Summary from the investigation
+#### Quasi-hydrostatic argument 
+The wavy-hydrostatic source $$S=\boldsymbol{u}^{L}\cdot\partial_z\boldsymbol{u}^{S}$$
+is much smaller than \(g\), so it is a small perturbation to the leading hydrostatic balance. However, \(S\ll g\) does not guarantee that its resulting horizontal acceleration is small. Its consistency should also be assessed relative to neglected vertical inertia, while its dynamical importance must be assessed relative to horizontal momentum terms.
+
+#### The wave-pressure potential and corresponding momentum tendency
+Is the integral from the surface to the k-th layer:
+$$\Phi_w(d)=\int_0^d S(d')\,\mathrm{d}d', \qquad T_\Phi=-\nabla_h\Phi_w.$$
+When \(S\approx0\) below the Stokes-influenced layer \(D\), $$\Phi_w(d>D)\approx\int_0^D S\,\mathrm{d}d,$$so \(T_\Phi\) approaches a nonzero, depth-independent plateau in the ocean interior.
+#### Diagnosed Stokes momentum terms
+The explicitly diagnosed Stokes momentum terms are  $$T_{\mathrm{rhs}} = T_{\mathrm{shear}}+T_{\mathrm{vorticity}}+T_{\mathrm{time}},$$and the diagnosed combined contribution is  $$T_{\mathrm{Stokes,diagnosed}} = T_{\mathrm{rhs}}+T_\Phi.$$This is not necessarily the complete wave influence because some terms, including planetary-vorticity effects, is represented elsewhere.
+#### Explicit ($T_{\text{rhs}}$) versus indirect ($T_\Phi=-\nabla \phi_w$; pressure contri.)
+Root mean square (RMS) of global pressure contribution at each level, zoom in first 100 meters.
+![[Pasted image 20261021173153.png]]
+Pressure contribution distribution over diff. layers
+![[Pasted image 20261021173038.png]]
+Comparison of pressure contribution to `stokes_rhs` contribution
+![[Pasted image 20261021172129.png]]
+> [!Attention]
+> - **At upper ocean, $T_{\text{rhs}}$ dominates the combined contribution**, ranging between $10^{-7}$ and $10^{-6}$ with the $T_{\text{time}}$ contributes most of the magnitude. 
+> - **The pressure contribution becomes dominant rapidly with depth;** while $T_{\text{rhs}}$ approaches zero while $T_\Phi$ persist, ranging between $10^{-8}$ and $10^{-7}$.
+> 	- In ocean interior, the pressure tendency has approximately $\text{median}\approx 1.7 \times 10^{-8}$, roughly 8-9% of wet edges exceed $10^{-7} m\;s^{-2}$, showing that signal is widespread rather than caused by a few extreme points
+
+Therefore, among the explicitly diagnosed Stokes terms, the direct Stokes tendencies dominate near the surface, while the pressure-mediated Stokes contribution dominates below approximately 20–30 m. Whether it significantly changes the circulation remains unresolved because it must be compared with ordinary pressure gradients, Coriolis \(fU\), advection, and the actual velocity tendency.
+#### wavy-pressure tendency: barotropic-like forcing
+When $S\approx0$ below the Stokes-influenced layer $D$, $$\Phi_w(d>D)\approx\int_0^D S\,\mathrm{d}d,$$so
+$$T_\Phi(d>D) = -\nabla_h\Phi_\infty(x,y)$$
+is independent of depth. ~={red}**A depth-independent horizontal pressure gradient is the defining structure of a barotropic pressure force.**=~
+
+For a deep column $H\gg D$, its depth average is
+$$ \overline{T_\Phi} = \frac{1}{H}\int_0^H T_\Phi(d)\,\mathrm{d}d \approx T_\Phi^\infty.$$
+Therefore, most of this forcing projects onto the depth-uniform, or barotropic, vertical mode. The remaining baroclinic part,
+$$T_\Phi'(d)=T_\Phi(d)-\overline{T_\Phi},$$
+
+is concentrated mainly in the upper 20–30 m where the integral is still increasing.
+
+
+
 ## 12. Adams-Bashforth Bootstrap
 The implementation defines:
 ```fortran
