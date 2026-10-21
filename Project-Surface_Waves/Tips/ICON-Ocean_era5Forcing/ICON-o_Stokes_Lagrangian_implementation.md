@@ -409,16 +409,16 @@ Thus:
 | $10^{-2}\ {\rm m\,s^{-2}}$           | $1.04\ {\rm kg\,m^{-3}}$   |
 It does not mean that ICON modifies temperature, salinity or `rho`; it does not represent a real water mass with a $1\ \mathrm{kg\,m^{-3}}$ density anomaly.
 
-### Does it reach the deep ocean
+### Does it reach the deep ocean?
 ~={red}**Yes**=~: in this ICON-O implementation, a surface-confined wavy-hydrostatic source can modify the pressure gradient throughout the entire water column.
 
 Define the cumulative wave-pressure potential
 $$ \Phi_w(z)=\int_{\rm surface}^{z} S(z')\,d\ell . $$
 If \(S\) becomes negligible below the wave-affected layer \(z_s\), then
 $$ \Phi_w(z>z_s)=\Phi_w(z_s). $$
-It is constant with depth below \(z_s\), but if it varies horizontally,
+It is constant with depth below \(z_s\), **but if it varies horizontally**,
 $$ -\nabla_h\Phi_w $$
-remains a pressure acceleration at every deeper level. The code contains no removal of this depth-uniform component, taper, or deep cutoff.
+**remains a pressure acceleration in the horizontal momentum at every deeper level.** The code contains no removal of this depth-uniform component, taper, or deep cutoff.
 
 Therefore, the implementation can:
 - launch a barotropic/free-surface adjustment;
@@ -429,10 +429,11 @@ Therefore, the implementation can:
 But ICON’s free-surface solver does respond. The pressure-modified velocity predictor is vertically integrated into the surface-height equation at [mo_ocean_ab_timestepping_mimetic.f90 (line 1034)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:1034), and the resulting surface-height pressure gradient is subsequently applied to every wet level at line 1245. Thus ICON permits sea level to compensate much of the depth-uniform conservative pressure force. The compensation need not be instantaneous or complete, particularly with bathymetry, Coriolis effects and horizontally varying wave forcing.
 
 However:
+- It does not formally “break hydrostatic ICON-O.” ICON is imposing a modified diagnostic hydrostatic balance, the ratio: $\frac{S}{g}$ is small in the vertical-momentum ordering
 - $0.82$ or $1.04\ \mathrm{kg\,m^{-3}}$ is not a density anomaly inserted into ICON. It is only a pointwise density-equivalent scaling.
 - $1.04\ \mathrm{kg\,m^{-3}}$ is significant but not extraordinarily large for the upper ocean. It is comparable to strong seasonal or frontal contrasts, larger than many weak mesoscale anomalies, and smaller than common surface-to-thermocline density changes.
 - Whole-column pressure communication is an intentional consequence of hydrostatic integration, not automatically an error.
-- The maximum local source alone cannot determine whether the deep circulation is strongly or spuriously affected. The decisive quantity is its vertically integrated, horizontally varying pressure potential.
+- The maximum local source alone cannot determine whether the deep circulation is strongly or spuriously affected. The decisive quantity is its vertically integrated, horizontally varying pressure potential. The decisive diagnostic is therefore not `max(abs(wavy_hydrostatic_source))`. Compute and compare between forced and control runs: $\Phi_w(x,y,z)=\int S\,dz, \eta_{\rm equiv}=\Phi_w/g, \nabla_h\Phi_w$, especially at the bottom and below 200–500 m, together with SSH and depth-integrated transport. That will tell you directly whether the free surface cancels the barotropic component or whether an appreciable unwanted deep circulation remains.
 
 ## 12. Adams-Bashforth Bootstrap
 The implementation defines:
@@ -494,34 +495,23 @@ stokes_rhs               = 0
 original ICON-O momentum pathway is preserved.
 
 ## 15. Verification Completed
-
 - NAG compilation passed.
 - Intel compilation passed.
 - Standalone Stokes operator modes 120-125 passed.
-- Surface and interior vertical-shear derivatives matched analytical
-  expectations.
+- Surface and interior vertical-shear derivatives matched analytical expectations.
 - Time tendency gave the exact finite difference and zero startup value.
 - Uniform/zero Stokes fields produced zero vorticity tendency.
 - Vorticity and its tendency passed the linear scaling test.
 - The diagnosed `stokes_rhs` closure error was approximately $10^{-13}$.
-- First-hour wave-minus-control velocity correlated with prescribed Stokes
-  velocity at approximately $0.99$.
+- First-hour wave-minus-control velocity correlated with prescribed Stokes velocity at approximately $0.99$.
 - Wave-to-wave restart completed without a second Stokes insertion.
-- No-wave-to-wave restart correctly converted Eulerian velocity, zeroed the
-  activation-step Stokes time derivative, and bootstrapped AB at first order.
+- No-wave-to-wave restart correctly converted Eulerian velocity, zeroed the activation-step Stokes time derivative, and bootstrapped AB at first order.
 
 ## 16. Remaining Limitations
-
-- The validated implementation targets the non-zstar mimetic Adams-Bashforth
-  pathway.
+- The validated implementation targets the non-zstar mimetic Adams-Bashforth pathway.
 - GPU/OpenACC execution has not been validated and is not currently required.
 - The cold-start `00:00` output is written before Stokes insertion.
-- Cold starts from rest have zero initial $w^L$, so the shear tendency begins
-  on the following step; Eulerian-restart activation explicitly rediagnoses
-  $w^L$.
-- Surface drag currently receives velocity diagnostics reconstructed from
-  prognostic `vn`. With waves enabled, this can mean Lagrangian rather than
-  Eulerian ocean current; the drag-relative-velocity treatment still needs
-  physical review.
+- Cold starts from rest have zero initial $w^L$, so the shear tendency begins on the following step; Eulerian-restart activation explicitly rediagnoses $w^L$.
+- Surface drag currently receives velocity diagnostics reconstructed from prognostic `vn`. With waves enabled, this can mean Lagrangian rather than Eulerian ocean current; the drag-relative-velocity treatment still needs physical review.
 - `stokes_vn_old` is updated during tendency calculation rather than only after
   complete timestep success.

@@ -8,7 +8,9 @@ Last Eddited: 2026-08-11
 # Status: 
 
 ## [[2026-10-20]]
-
+- merged with the `origin/master` under the `icon/icon.git`
+- Implementation of single year repeat run in the python wave provider under `/etc`
+- investigate the magnitude of the wavy-hydrostatic source term and its implication, find details in [[ICON-o_Stokes_Lagrangian_implementation#11. Wavy-Hydrostatic Pressure]]
 ## [[2026-09-07]]
 Find the detailed summary of all implementations here: [[ICON-o_Stokes_Lagrangian_implementation]]
 ## [[2026-08-21]]
