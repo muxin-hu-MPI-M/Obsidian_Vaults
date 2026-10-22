@@ -105,7 +105,8 @@
               "title": "ICON-o_Stokes_Lagrangian_implementation"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -243,7 +244,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -273,7 +274,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -318,8 +319,14 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "7909254b7e5c690e",
   "lastOpenFiles": [
+    "Attachments/Screenshot 2026-10-22 at 16.44.15.png",
+    "Attachments/Screenshot 2026-10-22 at 16.43.48.png",
+    "Attachments/Screenshot 2026-10-22 at 16.36.04.png",
+    "Attachments/Screenshot 2026-10-22 at 16.35.49.png",
+    "Attachments/Screenshot 2026-10-22 at 16.35.04.png",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Attachments/Pasted image 20261021173153.png",
@@ -332,7 +339,6 @@
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-WMT/Plan/Figure_Plan.md",
     "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
@@ -351,11 +357,7 @@
     "PhD-General/MPI-M/How_much_AMOC_Weakening_would_cool_Europe_under_Climate_change.md",
     "Project-Surface_Waves/Plan/Conceptual/Research-Gaps.md",
     "Attachments/Pasted image 20260820134547.png",
-    "Attachments/Pasted image 20260820131711.png",
-    "Attachments/Pasted image 20260820103327.png",
-    "Attachments/Pasted image 20260819231430.png",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
-    "Attachments/Pasted image 20260818172834.png",
     "Attachments/Codex Image 7 Aug 2026, 13_48_12.svg+xml",
     "Attachments/triangular_prism",
     "Untitled.base",

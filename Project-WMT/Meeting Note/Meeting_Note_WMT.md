@@ -29,6 +29,23 @@ The nc files are in the name of: {variable}_control_monthly_highres_2D_{TIME}_CO
 I have also
 ```
 
+
+# [[2026-10-22]] Comment from Dave Bonan
+- include CMCC-CM2-SR5, CMCC-ESM2, INM-CM4-8, INM-CM5-0, IPSL-CM6A-LR, and GFDL-ESM4.
+	- [ ] check availability in the server
+- Also, is something going on with ACCESS-ESM1-5 — why does it not weakening for $\Delta IWMT$?
+![[Screenshot 2026-10-22 at 16.36.04.png|411|center|329]]
+- after checking: find that $\Delta IWMT$ is summed in the range $[\sigma_{MOC_{\sigma,max}}-0.5, \sigma_{MOC_{\sigma,max}}]$, the sigma where finds the maximum surface forced MOC
+- However, in the current setup, the “maximum surface forced MOC” is defined individually in piControl and 4xCO2 scenarios → we always find the maximum surface forced MOC ==under the current climate==, and the $IWMT$ always indicate the formation of densest water that sink to the lowest limb of surface forced MOC under the current climate
+- For the ACCESS-ESM1-5, it seems that the maximum surface-forced MOC shifts to lower sigma, associated with a shift of WMT towards the lower sigma, leading to an active WMT under the 4xCO2 scenario. When integrate, the magnitude of $IWMT$ remains almost the same as its climatology
+Surface-forced MOC
+
+![[Screenshot 2026-10-22 at 16.43.48.png]]
+
+WMT distribution
+![[Screenshot 2026-10-22 at 16.44.15.png|center]]
+
+
 # [[2026-10-19]] Updates
 ## Similar studies from 2025
 - Diagnosing AMOC Variability under Climate Change with the Water Mass Transformation Framework (https://ui.adsabs.harvard.edu/abs/2026AGUOSMCC33B.07K/abstract)
@@ -44,7 +61,7 @@ I have also
 	- replace the IWMT to just the surface-forced WMT at the density where finds the maximum surface-forced MOC ($WMT(\sigma_{MOC_{max}})$), maybe this can help to separate our regional-difference based cluster from the similar cluster based on climatological mean state (like Lin et al., 2023)
 	- replace the AMOC_z to be the maximum mass overturning circulation at 50N, to get more coherence between the surface-forced MOC (which is the maximum finds at the 50N)
 
-# [[2026-10-03]] Suggestions for Figures
+# [[2026-10-03]] Suggestions from Dave Bonan 
 ## From Robb & Dave Bonan
 - Have a figure showing the **time evolution of AMOC in the models in an SSP scenario** in addition to 4xCO2
 	- need to check do I need to download data or the server has the data
