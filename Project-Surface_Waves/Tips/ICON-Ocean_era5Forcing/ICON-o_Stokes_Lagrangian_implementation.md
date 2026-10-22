@@ -414,9 +414,9 @@ It does not mean that ICON modifies temperature, salinity or `rho`; it does not 
 
 Define the cumulative wave-pressure potential
 $$ \Phi_w(z)=\int_{\rm surface}^{z} S(z')\,d\ell . $$
-If \(S\) becomes negligible below the wave-affected layer \(z_s\), then
+If $S$ becomes negligible below the wave-affected layer $z_s$, then
 $$ \Phi_w(z>z_s)=\Phi_w(z_s). $$
-It is constant with depth below \(z_s\), **but if it varies horizontally**,
+It is constant with depth below $z_s$, **but if it varies horizontally**,
 $$ -\nabla_h\Phi_w $$
 **remains a pressure acceleration in the horizontal momentum at every deeper level.** The code contains no removal of this depth-uniform component, taper, or deep cutoff.
 
@@ -438,12 +438,12 @@ However:
 ### Summary from the investigation
 #### Quasi-hydrostatic argument 
 The wavy-hydrostatic source $$S=\boldsymbol{u}^{L}\cdot\partial_z\boldsymbol{u}^{S}$$
-is much smaller than \(g\), so it is a small perturbation to the leading hydrostatic balance. However, \(S\ll g\) does not guarantee that its resulting horizontal acceleration is small. Its consistency should also be assessed relative to neglected vertical inertia, while its dynamical importance must be assessed relative to horizontal momentum terms.
+is much smaller than $g$, so it is a small perturbation to the leading hydrostatic balance. However, $S\ll g$ does not guarantee that its resulting horizontal acceleration is small. Its consistency should also be assessed relative to neglected vertical inertia, while its dynamical importance must be assessed relative to horizontal momentum terms.
 
 #### The wave-pressure potential and corresponding momentum tendency
 Is the integral from the surface to the k-th layer:
 $$\Phi_w(d)=\int_0^d S(d')\,\mathrm{d}d', \qquad T_\Phi=-\nabla_h\Phi_w.$$
-When \(S\approx0\) below the Stokes-influenced layer \(D\), $$\Phi_w(d>D)\approx\int_0^D S\,\mathrm{d}d,$$so \(T_\Phi\) approaches a nonzero, depth-independent plateau in the ocean interior.
+When $S\approx0$ below the Stokes-influenced layer $D$, $$\Phi_w(d>D)\approx\int_0^D S\,\mathrm{d}d,$$so $T_\Phi$ approaches a nonzero, depth-independent plateau in the ocean interior.
 #### Diagnosed Stokes momentum terms
 The explicitly diagnosed Stokes momentum terms are  $$T_{\mathrm{rhs}} = T_{\mathrm{shear}}+T_{\mathrm{vorticity}}+T_{\mathrm{time}},$$and the diagnosed combined contribution is  $$T_{\mathrm{Stokes,diagnosed}} = T_{\mathrm{rhs}}+T_\Phi.$$This is not necessarily the complete wave influence because some terms, including planetary-vorticity effects, is represented elsewhere.
 #### Explicit ($T_{\text{rhs}}$) versus indirect ($T_\Phi=-\nabla \phi_w$; pressure contri.)
@@ -458,19 +458,55 @@ Comparison of pressure contribution to `stokes_rhs` contribution
 > - **The pressure contribution becomes dominant rapidly with depth;** while $T_{\text{rhs}}$ approaches zero while $T_\Phi$ persist, ranging between $10^{-8}$ and $10^{-7}$.
 > 	- In ocean interior, the pressure tendency has approximately $\text{median}\approx 1.7 \times 10^{-8}$, roughly 8-9% of wet edges exceed $10^{-7} m\;s^{-2}$, showing that signal is widespread rather than caused by a few extreme points
 
-Therefore, among the explicitly diagnosed Stokes terms, the direct Stokes tendencies dominate near the surface, while the pressure-mediated Stokes contribution dominates below approximately 20–30 m. Whether it significantly changes the circulation remains unresolved because it must be compared with ordinary pressure gradients, Coriolis \(fU\), advection, and the actual velocity tendency.
+Therefore, among the explicitly diagnosed Stokes terms, the direct Stokes tendencies dominate near the surface, while the pressure-mediated Stokes contribution dominates below approximately 20–30 m. Whether it significantly changes the circulation remains unresolved because it must be compared with ordinary pressure gradients, Coriolis $fU$, advection, and the actual velocity tendency.
 #### wavy-pressure tendency: barotropic-like forcing
-When $S\approx0$ below the Stokes-influenced layer $D$, $$\Phi_w(d>D)\approx\int_0^D S\,\mathrm{d}d,$$so
+When $S\approx0$ below the Stokes-influenced layer $D$, $$\Phi_w(d>D)\approx\int_0^D S\,\mathrm{d}d=\Phi_\infty(x,y),$$so
 $$T_\Phi(d>D) = -\nabla_h\Phi_\infty(x,y)$$
 is independent of depth. ~={red}**A depth-independent horizontal pressure gradient is the defining structure of a barotropic pressure force.**=~
 
 For a deep column $H\gg D$, its depth average is
 $$ \overline{T_\Phi} = \frac{1}{H}\int_0^H T_\Phi(d)\,\mathrm{d}d \approx T_\Phi^\infty.$$
-Therefore, most of this forcing projects onto the depth-uniform, or barotropic, vertical mode. The remaining baroclinic part,
+Therefore, most of this forcing projects onto the **depth-uniform, or barotropic, vertical mode.** 
+The remaining baroclinic part,
 $$T_\Phi'(d)=T_\Phi(d)-\overline{T_\Phi},$$
 
 is concentrated mainly in the upper 20–30 m where the integral is still increasing.
+#### barotropic-like forcing: dynamically equivalent to SSH contribution
+A depth-independent pressure potential is dynamically equivalent to a sea-surface-height contribution.
+Define
+$$ \eta_{\mathrm{eff}} = \frac{\Phi_\infty}{g}. $$
+Then
+$$ -\nabla_h\Phi_\infty = -g\nabla_h\eta_{\mathrm{eff}}. $$
+The depth-independent momentum balance can therefore be written schematically as
+$$ \frac{\partial\boldsymbol{u}}{\partial t} +f\hat{\boldsymbol{k}}\times\boldsymbol{u} = -g\nabla_h \left( \eta+\eta_{\mathrm{eff}} \right) +\cdots. $$
+The ocean can respond by changing its actual sea-surface height $\eta$, producing an ordinary pressure gradient that partially or nearly completely balances the wave-induced pressure gradient. Thus the deep ocean should not necessarily accelerate indefinitely.
+For a horizontal scale $L=1000$ km,
+$$ \Delta\eta_{\mathrm{eff}} \sim \frac{|T_\Phi|L}{g}. $$
+Using $T_\Phi=10^{-8}$–$10^{-7}\,\mathrm{m\,s^{-2}}$ gives approximately
+$$ \Delta\eta_{\mathrm{eff}} \sim1\ \mathrm{mm}\text{–}1\ \mathrm{cm}. $$
+This is a small sea-level difference, but dynamically meaningful over basin scales.
+Below the Stokes layer, write
+$$ T_\Phi=-\nabla_h\Phi_\infty =-g\nabla_h\eta_{\mathrm{eff}}, \qquad \eta_{\mathrm{eff}}=\frac{\Phi_\infty}{g}. $$
+If the actual sea surface changes by $\delta\eta$, the perturbation momentum balance is approximately
+$$ \frac{\partial\delta\boldsymbol{u}}{\partial t} +f\hat{\boldsymbol{k}}\times\delta\boldsymbol{u} = -g\nabla_h\left(\delta\eta+\eta_{\mathrm{eff}}\right) +\cdots. $$
+There are several possible responses:
+- **Complete sea-level compensation** $$ \delta\eta\approx-\eta_{\mathrm{eff}}. $$
+    Then $$ -g\nabla_h(\delta\eta+\eta_{\mathrm{eff}})\approx0, $$
+    so there is almost no persistent velocity response.
+- **No sea-level compensation** $$ \delta\eta\approx0. $$
+    The remaining pressure gradient may be balanced by Coriolis: $$ f\hat{\boldsymbol{k}}\times\delta\boldsymbol{u} \approx T_\Phi, $$
+    giving $$ |\delta\boldsymbol{u}| \sim\frac{|T_\Phi|}{|f|}. $$
+- **Partial compensation**, which is most general: $$T_{\mathrm{res}}T_\Phi-g\nabla_h\delta\eta, $$
+  and $$|\delta\boldsymbol{u}| \sim\frac{|T_{\mathrm{res}}|}{|f|}.$$
+Thus $T_\Phi/f$ is the velocity scale only if the wave-pressure gradient remains uncompensated. If the sea surface cancels 90% of it, the corresponding velocity scale is only approximately $0.1T_\Phi/f$.
 
+When the forcing is first introduced, it can produce a depth-uniform transient acceleration. The ocean then adjusts through:
+- fast barotropic gravity waves;
+- sea-surface redistribution;
+- Coriolis deflection;
+- bottom friction and other momentum terms.
+
+After adjustment, the ocean should not continue accelerating uniformly. It may instead contain some combination of sea-level setup, barotropic current, and time-dependent barotropic waves.
 
 
 ## 12. Adams-Bashforth Bootstrap
