@@ -6,29 +6,6 @@ tags:
   - "#supervisor/robb_wills"
 Last Eddited: 2025-12-01
 ---
-```
-Now I would like to calculate the observational estimate of the climatological Water Mass transformation, and the climatological thermodynamic sensitivity.
-
-The observational dataset I'm using is the oras5 data set in the directory:
-
-/climdyn/muxihu/Downloads/oras5/{variable}
-
-with the below {variable}:
-
-- sohefldo: Net Downward Heat Flux in W/m2; It includes both solar and non-solar heat fluxes, and is positive (negative) if it points downwards (upwards) in the ocean.
-    
-- sowaflup: Net Upward Water Flux in Kg/m2/s; It is positive (negative) if it points upwards (downwards) to (from) the surface.
-    
-- sosstsst: sea surface temperature in Celcius
-    
-- sosaline: sea surface salinity in PSU
-    
-
-The nc files are in the name of: {variable}_control_monthly_highres_2D_{TIME}_CONS_v0.1.nc, which the {TIME} to be monthly from 198001 to 201012 for all variables.
-
-I have also
-```
-
 
 # [[2026-10-22]] Comment from Dave Bonan
 - include CMCC-CM2-SR5, CMCC-ESM2, INM-CM4-8, INM-CM5-0, IPSL-CM6A-LR, and GFDL-ESM4.

@@ -27,11 +27,11 @@ tags:
 ## [[2026-10-18]]
 - [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
 	- [ ] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
-- [ ] Observational estimate of the WMT, IWMT, and thermodynamic sensitivity coefficient based on ORAS5 data #project/WMT 
+- [x] Observational estimate of the WMT, IWMT, and thermodynamic sensitivity coefficient based on ORAS5 data #project/WMT 
 	- [x] Download ORAS5 data: 1980-2010
-	- [ ] Clarify the difference in the data (heat flux direction)
+	- [x] Clarify the difference in the data (heat flux direction)
 	- [x] identify the correct reference code we’ve been using (sigma0, same sigma space, same logic)
-	- [ ] Calculation
+	- [x] Calculation
 - [ ] Data availability under piControl and 4xCO2 for the model list #project/WMT 
 
 ## [[2026-10-01]]
