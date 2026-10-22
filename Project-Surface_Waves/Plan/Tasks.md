@@ -24,6 +24,15 @@ tags:
 
 # Weekly Plan 
 
+## [[2026-10-18]]
+- [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
+	- [ ] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
+- [ ] Observational estimate of the WMT, IWMT, and thermodynamic sensitivity coefficient based on ORAS5 data #project/WMT 
+	- [x] Download ORAS5 data: 1980-2010
+	- [ ] Clarify the difference in the data (heat flux direction)
+	- [x] identify the correct reference code we’ve been using (sigma0, same sigma space, same logic)
+	- [ ] Calculation
+- [ ] Data availability under piControl and 4xCO2 for the model list #project/WMT 
 
 ## [[2026-10-01]]
 - [x] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 
@@ -37,8 +46,6 @@ tags:
 		- [x] restart test also on the 10 days run
 	- [x] Push to the icon/icon.git branch
 		- [x] now worked on the newly clone version: `/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing`
-- [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
-	- [ ] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
 - [x] Data analysis on 5-year rwb4
 	- [x] make masks for ocean basins
 		- [x] Southern ocean with different sectors
