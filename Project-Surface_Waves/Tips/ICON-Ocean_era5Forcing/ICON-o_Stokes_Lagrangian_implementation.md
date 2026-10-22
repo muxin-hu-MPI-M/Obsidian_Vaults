@@ -508,6 +508,11 @@ When the forcing is first introduced, it can produce a depth-uniform transient a
 
 After adjustment, the ocean should not continue accelerating uniformly. It may instead contain some combination of sea-level setup, barotropic current, and time-dependent barotropic waves.
 
+> [!Attention]
+> “The wavy-pressure tendency is a barotropic-like forcing below the Stokes layer because it is approximately depth-independent there. It acts on every deeper layer as one component of the momentum equation, but it does not imply a depth-uniform net acceleration or velocity response. Other terms—including sea-level pressure adjustment, Coriolis, ordinary hydrostatic pressure gradients, advection, and friction—can balance or redistribute it. Its final influence may therefore appear as sea-level setup, barotropic currents, barotropic waves, or a modified momentum balance.”
+> - **The wavy-pressure term itself is a vertically uniform forcing component acts throughout the column below the stokes layer**
+> - But this does NOT mean a vertically uniform net acceleration. The actual circulation response can only be determined from the complete momentum balance
+
 
 ## 12. Adams-Bashforth Bootstrap
 The implementation defines:
