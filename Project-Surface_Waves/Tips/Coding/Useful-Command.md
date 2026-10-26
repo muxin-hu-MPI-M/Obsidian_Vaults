@@ -10,4 +10,7 @@ Last Eddited: 2025-12-17
 ```
 salloc --partition=compute --nodes=-1 --time=08:00:00 --account mh00XX
 ```
-
+- to have the log file when running a script/command
+```
+2>&1 | tee XXX.log
+```
