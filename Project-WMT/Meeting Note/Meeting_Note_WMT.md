@@ -158,6 +158,7 @@ WMT distribution
 | $\sigma_{MOC_{\sigma}^{max}}$ | The $\sigma$ level of the maximum surface-forced AMOC founded north of 50 N in the Atlantic basin.                                                                                                                                                                    | kg m-3     |
 | $IWMT$                        | Integrated $WMT$ over a certain $\sigma$ range: $(\sigma > \sigma_{MOC_{\sigma}^{max}}-0.5)$; It is used to quantify how much surface buoyancy forcing contributes to the formation of densest water masses that sink to form the deepest limb of surface forced AMOC | kg s-1     |
 | $D$                           | Density flux. Has two component: (1) heat-flux driven density flux $D_h=-\alpha Q_h /c_w$ and (2) freshwater-flux driven density flux $D_w=-\beta S Q_w$                                                                                                              | kg m-2 s-1 |
+
 - every annotation will have two values:
 	- $\overline{X}^{\text{pi}}$: climatology, defined as 500-year time mean of piControl experiment. For simplification, use $X$ directly
 	- $\overline{X}^{\text{4x}}$: last 50-year time-mean of abrupt-4xCO2 experiment
