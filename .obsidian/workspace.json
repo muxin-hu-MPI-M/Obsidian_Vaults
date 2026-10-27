@@ -91,8 +91,7 @@
               "title": "ICON-o_Stokes_Lagrangian_implementation"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -168,7 +167,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +186,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -230,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -305,12 +304,12 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "7b849083b795b279",
+  "active": "09fde75c75e539e1",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
-    "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
     "Attachments/0646b16e7877526044de75c5b711f94a.png",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Surface_Waves/Plan/Tasks.md",
