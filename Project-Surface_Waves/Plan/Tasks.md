@@ -32,6 +32,7 @@ tags:
 		- [x] 10-days test on noWavy condition
 		- [x] 10-days restart test check
 		- [x] check the diagnose term
+	- [x] commit, push/pull
 - [x] Observational estimate of the WMT, IWMT, and thermodynamic sensitivity coefficient based on ORAS5 data #project/WMT 
 	- [x] Download ORAS5 data: 1980-2010
 	- [x] Clarify the difference in the data (heat flux direction)

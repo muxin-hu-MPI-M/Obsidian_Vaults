@@ -7,6 +7,22 @@ tags:
 Last Eddited: 2025-12-01
 ---
 
+# [[2026-10-27]] Discussion with Hongdou
+- check the correlation of NA (LAB + ENA) IWMT climatology versus LAB alpha JFM climatology
+- add observational estimation
+![[0646b16e7877526044de75c5b711f94a.png]]
+- **What’s next**:
+	- Correlation between LAB JFM alpha to the change in NA IWMT response/AMOC → reflecting back to complete the logic chain
+- ==**One of my guess:**==
+	- Cluster_LAB is has the high surface thermodynamic sensitivity, align with the strong winter heat loss (more negative Qh), and deep MLD in the Labrador Sea
+		- Thermodynamic sensitivity: warmer and saltier → higher alpha?
+		- **deep convection, high thermodynamic sensitivity, and strong winter heat loss are connected/coupled with each other**, no one leading to another
+		- When external forcing (4xCO2) happens, the Labrador Sea is more “sensitive” to the initial perturbation in the Qh for Cluster_LAB, since:
+			- Higher thermodynamic sensitivity
+			- no ice cover
+	- While for the Cluster_ENA, their deep convection happens in the Eastern North Atlantic (GIN Sea, and in eastern SPG). 
+		- In these regions, Cluster_ENA **may not** have stronger surface sensitivity sensitivity
+		- but they have strong Qh difference
 # [[2026-10-22]] Comment from Dave Bonan
 - include CMCC-CM2-SR5, CMCC-ESM2, INM-CM4-8, INM-CM5-0, IPSL-CM6A-LR, and GFDL-ESM4.
 	- [ ] check availability in the server

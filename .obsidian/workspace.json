@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Useful-Command"
+              "title": "Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
             }
           },
           {
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -147,8 +147,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -261,7 +260,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "ef06f51c1e5c093c",
@@ -306,16 +305,17 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8bd6403c33aa06af",
+  "active": "7909254b7e5c690e",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
+    "Attachments/0646b16e7877526044de75c5b711f94a.png",
+    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
     "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
@@ -341,9 +341,7 @@
     "Flash_cards_figures.md",
     "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "PhD-General/MPI-M/2025IMPRS-Retreat_Note.md",
-    "Attachments/Pasted image 20260824215631.png",
     "Project-Surface_Waves/Plan/Conceptual/Proposal-Large_scale_dynamical_impact_of_Stokes_drift.md",
-    "PhD-General/MPI-M/2025IMPRS-Retreat_Pre-Abstract.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
     "Attachments/Codex Image 7 Aug 2026, 13_48_12.svg+xml",
     "Attachments/triangular_prism",
