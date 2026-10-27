@@ -30,7 +30,7 @@ tags:
 	- [x] implementation
 	- [ ] Test:
 		- [x] 10-days test on noWavy condition
-		- [ ] 10-days restart test check
+		- [x] 10-days restart test check
 		- [ ] check the diagnose term
 - [x] Observational estimate of the WMT, IWMT, and thermodynamic sensitivity coefficient based on ORAS5 data #project/WMT 
 	- [x] Download ORAS5 data: 1980-2010
