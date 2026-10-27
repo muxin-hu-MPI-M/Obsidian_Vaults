@@ -22,7 +22,7 @@ Last Eddited: 2025-12-01
 			- no ice cover
 	- While for the Cluster_ENA, their deep convection happens in the Eastern North Atlantic (GIN Sea, and in eastern SPG). 
 		- In these regions, Cluster_ENA **may not** have stronger surface sensitivity sensitivity
-		- but they have strong Qh difference
+		- but they have strong Qh difference,
 # [[2026-10-22]] Comment from Dave Bonan
 - include CMCC-CM2-SR5, CMCC-ESM2, INM-CM4-8, INM-CM5-0, IPSL-CM6A-LR, and GFDL-ESM4.
 	- [ ] check availability in the server
