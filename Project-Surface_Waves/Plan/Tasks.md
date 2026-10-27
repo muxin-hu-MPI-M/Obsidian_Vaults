@@ -25,13 +25,13 @@ tags:
 # Weekly Plan 
 
 ## [[2026-10-18]]
-- [ ] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
+- [x] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
 	- [x] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
 	- [x] implementation
-	- [ ] Test:
+	- [x] Test:
 		- [x] 10-days test on noWavy condition
 		- [x] 10-days restart test check
-		- [ ] check the diagnose term
+		- [x] check the diagnose term
 - [x] Observational estimate of the WMT, IWMT, and thermodynamic sensitivity coefficient based on ORAS5 data #project/WMT 
 	- [x] Download ORAS5 data: 1980-2010
 	- [x] Clarify the difference in the data (heat flux direction)
