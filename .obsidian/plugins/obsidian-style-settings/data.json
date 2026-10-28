@@ -88,5 +88,7 @@
   "anuppuccin-theme-settings@@anp-simple-rainbow-icon-toggle": true,
   "anuppuccin-theme-settings@@anp-stacked-header-width": 40,
   "anuppuccin-theme-settings@@anp-status-bar-select": "none",
-  "anuppuccin-theme-settings@@anp-rainbow-folder-bg-opacity": 0.2
+  "anuppuccin-theme-settings@@anp-rainbow-folder-bg-opacity": 0.2,
+  "anuppuccin-theme-settings@@anp-disable-newtab-align": false,
+  "anuppuccin-theme-settings@@anp-safari-border-width": 0
 }

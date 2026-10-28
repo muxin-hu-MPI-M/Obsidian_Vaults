@@ -7,6 +7,8 @@ Last Eddited: 2026-08-11
 ---
 # Status: 
 
+## [[2026-10-27]]
+- Finished implementation of namelist switch on the `wavy_hydrostatic_src` and its energy pair `stokes_shear_tend`
 ## [[2026-10-20]]
 - merged with the `origin/master` under the `icon/icon.git`
 - Implementation of single year repeat run in the python wave provider under `/etc`
@@ -1068,7 +1070,223 @@ vort_scale_error = 0
 
 
 # Stokes Forcing implementation Plan
-## [[2026-08-14]] Implementate Stokes forcings into timestepping
+
+## [[2026-10-27]] Add switch-on Wavy-hydrostatic Energy Pair
+### Summary
+Add the default-enabled namelist switch:
+```
+LOGICAL :: l_stokes_wavy_hydrostatic = .TRUE.
+```
+It jointly controls the energy-consistent pair
+$$ S_w=\boldsymbol{u}^{L}\cdot\partial_z\boldsymbol{u}^{S}, \qquad \boldsymbol{T}_{\mathrm{shear}} =w^{L}\partial_z\boldsymbol{u}^{S}. $$
+Disabling the switch removes both terms while retaining the Stokes vorticity and time tendencies.
+### Configuration
+```
+&ocean_physics_nml
+  l_stokes_forcing           = .TRUE.
+  l_stokes_wavy_hydrostatic  = .TRUE.   ! or .FALSE.
+/
+```
+
+|Stokes forcing|Wavy-hydrostatic switch|Behaviour|
+|---|---|---|
+|`.FALSE.`|either|Original no-Stokes behaviour|
+|`.TRUE.`|`.TRUE.`|Full wavy-pressure and Stokes RHS|
+|`.TRUE.`|`.FALSE.`|No wavy-pressure source or shear tendency; vorticity and time tendencies remain|
+
+### Timestepping Logic
+When enabled: $$ \mathrm{stokes\_rhs} = \boldsymbol{T}_{\mathrm{shear}} +\boldsymbol{T}_{\mathrm{vort}} +\boldsymbol{T}_{\mathrm{time}}. $$
+The wavy-hydrostatic source is calculated and passed to the hydrostatic-pressure integration.
+When disabled: $$ S_w=0,\qquad \boldsymbol{T}_{\mathrm{shear}}=0, $$$$ \mathrm{stokes\_rhs} = \boldsymbol{T}_{\mathrm{vort}} +\boldsymbol{T}_{\mathrm{time}}. $$
+The ordinary hydrostatic-pressure integration is used without the optional wave source. Stokes fields are still prepared, and `stokes_vn_old` is still updated every timestep.
+
+### Restart Behaviour
+`l_stokes_from_eulerian_restart` remains independent and unchanged:
+- Eulerian-to-Lagrangian restart conversion is preserved.
+- First-step Stokes time-derivative suppression is preserved.
+- Restart activation is not controlled by `l_stokes_wavy_hydrostatic`.
+
+### Diagnostics and Logging
+The existing diagnostics remain registered:
+```
+wavy_hydrostatic_source
+stokes_shear_tend
+stokes_vort_tend
+stokes_time_tend
+stokes_rhs
+```
+When the pair is disabled, the first two should be zero. Startup logging explicitly reports:
+```
+Wavy-hydrostatic source and Stokes vertical-shear tendency are disabled
+```
+
+### Validation Status
+- NAG clean build: successful.
+- Intel clean build: successful.
+- Nine-day R2B4L40 experiment with the pair disabled: successful.
+- Runtime log confirms the pair was disabled.
+- Testbed mode `126` was added to check enabled/disabled RHS composition and `stokes_vn_old` updates, but has not yet been executed.
+## [[2026-08-21]] Fix no-Stokes to with-Stokes Restart Transition
+### Summary
+Add an explicit, one-time conversion from an Eulerian no-wave restart to the Lagrangian velocity convention:
+$$
+v_n^L=v_n^E+v_n^s.
+$$
+The activation step will rebuild dependent velocity diagnostics, initialize Stokes history, and restart Adams-Bashforth at first order. Cold starts, no-wave continuations, and wave-to-wave restarts remain unchanged.
+Implementation will include static inspection only. All compilation and simulation testing will be performed by the user.
+### Assumptions
+- The incoming transition restart contains Eulerian `vn`.
+- Existing restart storage for `g_n`, `g_nm1`, `w`, and `stokes_vn_old` remains unchanged.
+- The restart file’s timestamped state remains Eulerian; the first post-restart model state becomes Lagrangian.
+- Fresh-start `00:00` output reordering is outside this change.
+- Initial support is limited to the non-zstar mimetic Adams-Bashforth pathway.
+### Configuration
+Add to `ocean_physics_nml`:
+```fortran
+LOGICAL :: l_stokes_from_eulerian_restart = .FALSE.
+```
+
+Define these modes:
+
+| Stokes forcing | Transition option | Behavior |
+|---|---|---|
+| false | false | Original ICON-O |
+| true | false, cold start | Existing Stokes cold start |
+| true | false, restart | Restart `vn` is assumed Lagrangian |
+| true | true, restart | Restart `vn` is Eulerian and converted once |
+| false | true | Configuration error |
+
+Add cross-checks requiring:
+- `l_stokes_forcing=.TRUE.`;
+- an actual restart;
+- the supported non-zstar mimetic AB configuration.
+
+Print a clear startup message stating that the incoming restart velocity is assumed Eulerian. Do not infer the convention from `stokes_vn_old`, since a valid Stokes field can be zero.
+
+### One-Time Activation
+In the ocean driver, introduce:
+```fortran
+l_stokes_activation_pending
+l_stokes_activation_step
+```
+Initialize `pending` from the two namelist switches and `isRestart()`. Reset `activation_step` to false at the beginning of each ocean timestep.
+
+After the first ERA5 provider update:
+1. Prepare the cell-centered, surface, and edge-normal Stokes fields.
+2. Add Stokes velocity to wet edge levels:
+   $$
+   v_n^L=v_n^E+v_n^s.
+   $$
+3. Update `p_prog(nold)%vn`.
+4. Copy the converted velocity to `p_prog(nnew)%vn`.
+5. Set:
+   ```fortran
+   stokes_vn_old = stokes_vn
+   ```
+6. Set `l_stokes_activation_step=.TRUE.`.
+7. Clear `l_stokes_activation_pending`.
+
+Use a private driver-level mother routine for orchestration. Keep mapping and array-level operations in `mo_ocean_stokes_forcing` to avoid circular module dependencies.
+
+### Dependent Diagnostics
+Before the first wave-enabled momentum calculation:
+1. Reconstruct cell-centered `p_diag%p_vn` from converted Lagrangian `vn`.
+2. Initialize `p_diag%vn_time_weighted` from converted `vn`.
+3. Synchronize the edge field.
+4. Call `calc_vert_velocity` once to diagnose activation-time $w^L$:
+   $$
+   \partial_z w^L=-\nabla_h\cdot\mathbf v^L.
+   $$
+
+This is a one-time pre-step diagnosis. It ensures that the first Stokes shear tendency uses $w^L$, rather than the vertical velocity inherited from the Eulerian restart.
+Do not add a separate pressure calculation. During normal tendency assembly, the existing pathway will:
+1. Calculate $\mathbf v^L\cdot\partial_z\mathbf v^s$ using rebuilt `p_vn`.
+2. Recalculate `press_hyd` and `press_grad`.
+3. Apply the wavy-hydrostatic pressure gradient.
+4. Use the rediagnosed $w^L$ in the Stokes shear tendency.
+The standard post-momentum `calc_vert_velocity` call remains unchanged.
+### Stokes Time Derivative
+Pass the activation flag to the Stokes momentum calculation:
+```fortran
+l_stokes_derivative_startup = is_first_timestep                 &
+  & .OR. l_stokes_activation_step
+```
+On the activation step:
+$$
+\partial_t v_n^s=0,
+\qquad
+v_{n,\mathrm{old}}^s=v_n^s.
+$$
+
+This avoids adding $(v_n^s-0)/\Delta t$ after the full Stokes velocity has already been inserted into `vn`.
+Starting with the next step:
+$$
+\partial_t v_n^s
+=
+\frac{v_{n,\mathrm{now}}^s-v_{n,\mathrm{old}}^s}{\Delta t}.
+$$
+
+### Adams-Bashforth Bootstrap
+Thread a separate activation flag through the free-surface wrapper, mimetic solver, explicit tendency assembly, and velocity predictor.
+Define:
+```fortran
+l_ab_startup = is_first_timestep .OR. l_stokes_activation_step
+```
+Use:
+```fortran
+IF (l_ab_startup) THEN
+  g_nimd = g_n
+ELSE
+  g_nimd = (1.5_wp + ab_const) * g_n                      &
+         - (0.5_wp + ab_const) * g_nm1
+END IF
+```
+The activation flag affects only:
+- the Stokes time derivative;
+- the AB tendency combination.
+It must not activate the general ICON cold-start advection branch.
+After the existing end-of-step tendency-pointer swap, the first wave-enabled `g_n` becomes valid AB history. Normal AB2 resumes automatically on the following timestep.
+
+### Runscript Usage
+No-Stokes spin-up:
+```fortran
+l_stokes_forcing = .FALSE.
+l_stokes_from_eulerian_restart = .FALSE.
+```
+First continuation from its Eulerian restart:
+```fortran
+l_stokes_forcing = .TRUE.
+l_stokes_from_eulerian_restart = .TRUE.
+```
+Every later wave-to-wave restart:
+```fortran
+l_stokes_forcing = .TRUE.
+l_stokes_from_eulerian_restart = .FALSE.
+```
+
+The transition option must not remain enabled for an already Lagrangian restart because that would add Stokes velocity twice.
+### Compilation and Runtime Verification
+The user will perform all checks requiring a compiled model or simulation:
+- [x] Compile with NAG.
+- [x] Compile with Intel.
+- [x] Run the no-wave-to-wave restart experiment.
+- [ ] Confirm:$v_{n,\mathrm{after}}-v_{n,\mathrm{before}}-v_n^s=0$ to numerical precision on wet edges.
+- [ ] Confirm on the activation step:
+   - `stokes_time_tend = 0`;
+   - `g_nimd = g_n`;
+   - `p_vn` is Lagrangian;
+   - the wavy pressure source is active;
+   - the shear tendency uses rediagnosed $w^L$.
+- [ ] Confirm on the second wave-enabled step:
+   - finite-difference `stokes_time_tend` is active;
+   - normal AB2 has resumed;
+   - AB history is wave-enabled.
+- [ ] Run a wave-to-wave restart with the transition option false and confirm:
+   - no second Stokes insertion;
+   - `stokes_vn_old` is restored;
+   - results agree with an uninterrupted wave run.
+- [ ] Confirm that no-wave and ordinary cold-start configurations remain operational.
+## [[2026-08-14]] Add Stokes forcings into timestepping
 ### Summary
 Implement Stokes forcing behind `l_stokes_forcing`. When enabled, ICON’s prognostic `vn` means **Lagrangian edge-normal velocity**. The model converts Eulerian initial velocity to Lagrangian velocity only for fresh starts, and never adds Stokes velocity again on a normal restart.
 The timestep keeps the split insertion:
@@ -1250,164 +1468,5 @@ stokes_vn_old = stokes_vn
 - Normal wave-enabled restarts contain Lagrangian `vn`.
 - Restart compatibility with old non-wave restart files is handled by the missing-`stokes_vn_old` fallback, but switching on waves from an old restart should be treated as a fresh conversion case only if explicitly configured later.
 
-## [[2026-08-21]] Fix: no-Stokes to with-Stokes Restart Transition
-### Summary
-Add an explicit, one-time conversion from an Eulerian no-wave restart to the Lagrangian velocity convention:
-$$
-v_n^L=v_n^E+v_n^s.
-$$
-The activation step will rebuild dependent velocity diagnostics, initialize Stokes history, and restart Adams-Bashforth at first order. Cold starts, no-wave continuations, and wave-to-wave restarts remain unchanged.
-Implementation will include static inspection only. All compilation and simulation testing will be performed by the user.
-### Assumptions
-- The incoming transition restart contains Eulerian `vn`.
-- Existing restart storage for `g_n`, `g_nm1`, `w`, and `stokes_vn_old` remains unchanged.
-- The restart file’s timestamped state remains Eulerian; the first post-restart model state becomes Lagrangian.
-- Fresh-start `00:00` output reordering is outside this change.
-- Initial support is limited to the non-zstar mimetic Adams-Bashforth pathway.
-### Configuration
-Add to `ocean_physics_nml`:
-```fortran
-LOGICAL :: l_stokes_from_eulerian_restart = .FALSE.
-```
 
-Define these modes:
-
-| Stokes forcing | Transition option | Behavior |
-|---|---|---|
-| false | false | Original ICON-O |
-| true | false, cold start | Existing Stokes cold start |
-| true | false, restart | Restart `vn` is assumed Lagrangian |
-| true | true, restart | Restart `vn` is Eulerian and converted once |
-| false | true | Configuration error |
-
-Add cross-checks requiring:
-- `l_stokes_forcing=.TRUE.`;
-- an actual restart;
-- the supported non-zstar mimetic AB configuration.
-
-Print a clear startup message stating that the incoming restart velocity is assumed Eulerian. Do not infer the convention from `stokes_vn_old`, since a valid Stokes field can be zero.
-
-### One-Time Activation
-In the ocean driver, introduce:
-```fortran
-l_stokes_activation_pending
-l_stokes_activation_step
-```
-Initialize `pending` from the two namelist switches and `isRestart()`. Reset `activation_step` to false at the beginning of each ocean timestep.
-
-After the first ERA5 provider update:
-1. Prepare the cell-centered, surface, and edge-normal Stokes fields.
-2. Add Stokes velocity to wet edge levels:
-   $$
-   v_n^L=v_n^E+v_n^s.
-   $$
-3. Update `p_prog(nold)%vn`.
-4. Copy the converted velocity to `p_prog(nnew)%vn`.
-5. Set:
-   ```fortran
-   stokes_vn_old = stokes_vn
-   ```
-6. Set `l_stokes_activation_step=.TRUE.`.
-7. Clear `l_stokes_activation_pending`.
-
-Use a private driver-level mother routine for orchestration. Keep mapping and array-level operations in `mo_ocean_stokes_forcing` to avoid circular module dependencies.
-
-### Dependent Diagnostics
-Before the first wave-enabled momentum calculation:
-1. Reconstruct cell-centered `p_diag%p_vn` from converted Lagrangian `vn`.
-2. Initialize `p_diag%vn_time_weighted` from converted `vn`.
-3. Synchronize the edge field.
-4. Call `calc_vert_velocity` once to diagnose activation-time $w^L$:
-   $$
-   \partial_z w^L=-\nabla_h\cdot\mathbf v^L.
-   $$
-
-This is a one-time pre-step diagnosis. It ensures that the first Stokes shear tendency uses $w^L$, rather than the vertical velocity inherited from the Eulerian restart.
-Do not add a separate pressure calculation. During normal tendency assembly, the existing pathway will:
-1. Calculate $\mathbf v^L\cdot\partial_z\mathbf v^s$ using rebuilt `p_vn`.
-2. Recalculate `press_hyd` and `press_grad`.
-3. Apply the wavy-hydrostatic pressure gradient.
-4. Use the rediagnosed $w^L$ in the Stokes shear tendency.
-The standard post-momentum `calc_vert_velocity` call remains unchanged.
-### Stokes Time Derivative
-Pass the activation flag to the Stokes momentum calculation:
-```fortran
-l_stokes_derivative_startup = is_first_timestep                 &
-  & .OR. l_stokes_activation_step
-```
-On the activation step:
-$$
-\partial_t v_n^s=0,
-\qquad
-v_{n,\mathrm{old}}^s=v_n^s.
-$$
-
-This avoids adding $(v_n^s-0)/\Delta t$ after the full Stokes velocity has already been inserted into `vn`.
-Starting with the next step:
-$$
-\partial_t v_n^s
-=
-\frac{v_{n,\mathrm{now}}^s-v_{n,\mathrm{old}}^s}{\Delta t}.
-$$
-
-### Adams-Bashforth Bootstrap
-Thread a separate activation flag through the free-surface wrapper, mimetic solver, explicit tendency assembly, and velocity predictor.
-Define:
-```fortran
-l_ab_startup = is_first_timestep .OR. l_stokes_activation_step
-```
-Use:
-```fortran
-IF (l_ab_startup) THEN
-  g_nimd = g_n
-ELSE
-  g_nimd = (1.5_wp + ab_const) * g_n                      &
-         - (0.5_wp + ab_const) * g_nm1
-END IF
-```
-The activation flag affects only:
-- the Stokes time derivative;
-- the AB tendency combination.
-It must not activate the general ICON cold-start advection branch.
-After the existing end-of-step tendency-pointer swap, the first wave-enabled `g_n` becomes valid AB history. Normal AB2 resumes automatically on the following timestep.
-
-### Runscript Usage
-No-Stokes spin-up:
-```fortran
-l_stokes_forcing = .FALSE.
-l_stokes_from_eulerian_restart = .FALSE.
-```
-First continuation from its Eulerian restart:
-```fortran
-l_stokes_forcing = .TRUE.
-l_stokes_from_eulerian_restart = .TRUE.
-```
-Every later wave-to-wave restart:
-```fortran
-l_stokes_forcing = .TRUE.
-l_stokes_from_eulerian_restart = .FALSE.
-```
-
-The transition option must not remain enabled for an already Lagrangian restart because that would add Stokes velocity twice.
-### Compilation and Runtime Verification
-The user will perform all checks requiring a compiled model or simulation:
-- [x] Compile with NAG.
-- [x] Compile with Intel.
-- [x] Run the no-wave-to-wave restart experiment.
-- [ ] Confirm:$v_{n,\mathrm{after}}-v_{n,\mathrm{before}}-v_n^s=0$ to numerical precision on wet edges.
-- [ ] Confirm on the activation step:
-   - `stokes_time_tend = 0`;
-   - `g_nimd = g_n`;
-   - `p_vn` is Lagrangian;
-   - the wavy pressure source is active;
-   - the shear tendency uses rediagnosed $w^L$.
-- [ ] Confirm on the second wave-enabled step:
-   - finite-difference `stokes_time_tend` is active;
-   - normal AB2 has resumed;
-   - AB history is wave-enabled.
-- [ ] Run a wave-to-wave restart with the transition option false and confirm:
-   - no second Stokes insertion;
-   - `stokes_vn_old` is restored;
-   - results agree with an uninterrupted wave run.
-- [ ] Confirm that no-wave and ordinary cold-start configurations remain operational.
 
