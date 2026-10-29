@@ -7,6 +7,38 @@ Last Eddited: 2026-08-11
 ---
 # Status: 
 
+## [[2026-10-29]]
+Figure out the reason why we use the Eulerian vertical velocity in the first time step for a cold-start simulation when calculating the `stokes_shear_tend` with the definition: $w^L\partial_z u^s$.
+
+Below is the explanation:
+ICON cannot diagnose the scheme-consistent $w^L$ until the first horizontal-velocity solve has finished. ICON diagnoses vertical velocity from the time-weighted horizontal velocity:
+$$ v_n^{\,n+\gamma} = \gamma v_n^{\,n+1} + (1-\gamma)v_n^{\,n}, \qquad \gamma=0.6, $$
+followed by
+$$ \partial_z w^{\,n+\gamma} = -\nabla_h\cdot\boldsymbol{v}^{\,n+\gamma}. $$
+The time-weighted velocity is constructed only after the free-surface and new horizontal velocity have been solved in [mo_ocean_ab_timestepping_mimetic.f90 (line 1270)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:1270). The normal vertical-velocity diagnosis then occurs at the end of the timestep in [mo_hydro_ocean_run.f90 (line 727)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:727).
+
+At cold-start Stokes insertion, $v_n^{n+1}$ does not exist yet. Therefore, an immediate diagnosis would require the approximation
+$$ v_n^{n+\gamma}\approx v_n^n, $$
+which is exactly what the Eulerian-restart activation does by manually setting:
+
+```
+vn_time_weighted = p_prog(nold)%vn
+```
+
+That is a provisional first-order diagnosis, not the normal ICON time-centred one. There are also side effects: `calc_vert_velocity` does more than calculate $w$. It overwrites:
+- `w_old`;
+- horizontal mass flux and its divergence;
+- `w`;
+- and, when `use_continuity_correction=.TRUE.`, the provisional next-step sea-surface height:
+
+$$ h^{n+1}=h^n+w_{\mathrm{surface}}\Delta t. $$
+
+See [mo_ocean_ab_timestepping_mimetic.f90 (line 1350)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:1350) and [the continuity correction (line 1465)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:1465). Calling it during cold-start initialization is therefore not a harmless diagnostic operation.
+
+The ordinary ICON cold-start procedure also does not diagnose $w$ from the initial horizontal velocity. It initializes the state, writes the $00{:}00$ output, and obtains the first consistent $w$ only after the first velocity solve. The Stokes cold start preserves that general startup convention.
+
+The Eulerian-restart transition is different: it starts from a dynamically developed circulation, and the stored $w^E$ is definitely inconsistent after converting $v^E$ to $v^L$. A provisional rediagnosis is preferable there.
+
 ## [[2026-10-27]]
 - Finished implementation of namelist switch on the `wavy_hydrostatic_src` and its energy pair `stokes_shear_tend`
 ## [[2026-10-20]]
