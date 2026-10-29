@@ -8,7 +8,15 @@ Last Eddited: 2026-08-11
 # Status: 
 
 ## [[2026-10-29]]
-Figure out the reason why we use the Eulerian vertical velocity in the first time step for a cold-start simulation when calculating the `stokes_shear_tend` with the definition: $w^L\partial_z u^s$.
+
+Figure out the reason why we use the Eulerian vertical velocity in the first time step for a cold-start simulation when calculating the `stokes_shear_tend` with the definition: $w^L\partial_z u^s$.:
+- A scheme-consistent $w^L$ requires the time-weighted velocity, which is unavailable until the first horizontal-velocity and free-surface solve → **a general ICON-O cold-start behaviour**
+	- The first momentum tendency is evaluated using $w^E=0$. Therefore, ordinary vertical acceleration is also zero during this evaluation. After solving the first horizontal-velocity and free-surface step, ICON constructs `vn_time_weighted` and diagnoses $w^E$ from continuity. The diagnosed vertical velocity is available for the following momentum evaluation
+	- The Stokes implementation follows the same startup convention
+- Cold starts from rest therefore retain $w^L=0$ during the first momentum evaluation. The Stokes shear tendency begins on the following timestep
+- An immediate diagnosis would require the provisional approximation `vn_time_weighted = vn(n)` and would also modify `w_old`, mass fluxes, and—under continuity correction—the provisional sea-surface height.
+- Eulerian-restart activation uses this provisional diagnosis because the inherited $w^E$ is inconsistent after converting to Lagrangian velocity. Normal Lagrangian restarts retain their consistent saved $w^L$.
+- Consequently, the cold start has a known one-timestep imbalance between the wavy-hydrostatic source and its paired shear tendency.
 
 Below is the explanation:
 ICON cannot diagnose the scheme-consistent $w^L$ until the first horizontal-velocity solve has finished. ICON diagnoses vertical velocity from the time-weighted horizontal velocity:
