@@ -24,6 +24,14 @@ tags:
 
 # Weekly Plan 
 
+
+## [[2026-10-25]]
+- [ ] Data availability under piControl and 4xCO2 for the model list #project/WMT 
+- [ ] Meeting with Robb and Dylan #project/WMT 
+	- [ ] Record meeting note
+	- [ ] Create the Earth System Dynamics manuscript reference
+- [ ] Email to Carsten for the details of simulation #project/surfwaves 
+
 ## [[2026-10-18]]
 - [x] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
 	- [x] The idea is that when we don’t have wavy hydrostatic, we should also neglect the corresponding horizontal momentum component
@@ -38,7 +46,7 @@ tags:
 	- [x] Clarify the difference in the data (heat flux direction)
 	- [x] identify the correct reference code we’ve been using (sigma0, same sigma space, same logic)
 	- [x] Calculation
-- [ ] Data availability under piControl and 4xCO2 for the model list #project/WMT 
+
 
 ## [[2026-10-01]]
 - [x] Add single year repeat option to my ERA5 wave forcing project #project/surfwaves 

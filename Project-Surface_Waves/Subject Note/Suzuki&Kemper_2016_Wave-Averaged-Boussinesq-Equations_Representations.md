@@ -31,7 +31,7 @@ Eq.1 is the momentum equation structure that implemented in the ICON source code
 > - wave-influenced Stokes vortex force: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L$
 > - prognostic Stokes velocity: $\partial_t \mathbf{u}^s$
 
-Comparing Eq.(3) to Eq.(1), one can find:
+Comparing Eq.(3) to Eq.(2), one can find:
 $$(\nabla \times \mathbf{u}^L)\times \mathbf{u}^L + \nabla(p + \frac{1}{2}|\mathbf{u}^L|^2)-(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = (\mathbf{u}^L \cdot \nabla)\mathbf{u}^L + \nabla p + \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$$
 Because:
 - Distributivity of cross product: $(\nabla \times \mathbf{u}^s)\times \mathbf{u}^L = - \mathbf{u}^L \times (\nabla \times \mathbf{u}^s)$
