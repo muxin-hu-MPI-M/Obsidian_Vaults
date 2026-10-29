@@ -1277,15 +1277,15 @@ The user will perform all checks requiring a compiled model or simulation:
    - `p_vn` is Lagrangian;
    - the wavy pressure source is active;
    - the shear tendency uses rediagnosed $w^L$.
-- [ ] Confirm on the second wave-enabled step:
+- [x] Confirm on the second wave-enabled step:
    - finite-difference `stokes_time_tend` is active;
    - normal AB2 has resumed;
    - AB history is wave-enabled.
-- [ ] Run a wave-to-wave restart with the transition option false and confirm:
+- [x] Run a wave-to-wave restart with the transition option false and confirm:
    - no second Stokes insertion;
    - `stokes_vn_old` is restored;
    - results agree with an uninterrupted wave run.
-- [ ] Confirm that no-wave and ordinary cold-start configurations remain operational.
+- [x] Confirm that no-wave and ordinary cold-start configurations remain operational.
 ## [[2026-08-14]] Add Stokes forcings into timestepping
 ### Summary
 Implement Stokes forcing behind `l_stokes_forcing`. When enabled, ICON’s prognostic `vn` means **Lagrangian edge-normal velocity**. The model converts Eulerian initial velocity to Lagrangian velocity only for fresh starts, and never adds Stokes velocity again on a normal restart.
@@ -1462,7 +1462,6 @@ stokes_vn_old = stokes_vn
 - Known one-column wavy source: expected `pressure_hyd` increment.
 - Lagrangian kinetic-energy test: `p_diag%kin` changes after fresh-start conversion and matches `vn_L`.
 ### Assumptions
-
 - V1 targets the non-zstar mimetic AB path.
 - Fresh non-restart wave-enabled starts read Eulerian velocity.
 - Normal wave-enabled restarts contain Lagrangian `vn`.
