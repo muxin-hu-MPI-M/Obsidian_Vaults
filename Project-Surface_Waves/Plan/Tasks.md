@@ -25,12 +25,12 @@ tags:
 # Weekly Plan 
 
 
-## [[2026-10-25]]
+## [[2026-11-02]]
 - [ ] Data availability under piControl and 4xCO2 for the model list #project/WMT 
 - [ ] Meeting with Robb and Dylan #project/WMT 
 	- [ ] Record meeting note
 	- [ ] Create the Earth System Dynamics manuscript reference
-- [ ] Email to Carsten for the details of simulation #project/surfwaves 
+- [x] Email to Carsten for the details of simulation #project/surfwaves 
 
 ## [[2026-10-18]]
 - [x] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
