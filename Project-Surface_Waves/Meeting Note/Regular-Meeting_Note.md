@@ -6,6 +6,17 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+
+
+# [[2026-10-28]]
+## Regular meeting with Nils
+- finish the implementation
+- ask #presenter/Carsten_Eden  about the details of his simulation
+	- spin-up ocean period, branch details
+	- resolution, single year repeat
+	- output
+- compare the simulation result to Carsten’s result to do a qualitative comparison; if the magnitude matches which is good, and we can always find scope to do science
+
 # [[2026-10-13]]
 ## ERA5-forced ICON-O: Single Year Repeat
 Developed under #presenter/Fraser_Goldsworth
