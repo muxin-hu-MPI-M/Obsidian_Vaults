@@ -31,6 +31,14 @@ tags:
 	- [ ] Record meeting note
 	- [ ] Create the Earth System Dynamics manuscript reference
 - [x] Email to Carsten for the details of simulation #project/surfwaves 
+- [ ] ERA5-Wave implementation: (1) switch of applying the velocity diffusion to Eulerian/Lagrangian velocity; (2) add additional diagnostics of $u^sT, u^ET$ #project/surfwaves 
+	- [x] Plan with Codex
+	- [x] Implementation
+	- [x] Compile model with NAG and INTEL compilers
+	- [x] 10 days short run: noWavy, diffusion on Eulerian, enable additional flux
+	- [x] Restart test
+	- [x] Compare withStokes and noStokes in terms of regional-mean T-flux profile, attribution changes 
+	- [ ] Document the implemented plan and the changes in the status report [[ICON-o_Stokes_Status]]
 
 ## [[2026-10-18]]
 - [x] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 

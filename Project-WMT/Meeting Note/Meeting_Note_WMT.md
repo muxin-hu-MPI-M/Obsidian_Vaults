@@ -7,6 +7,14 @@ tags:
 Last Eddited: 2025-12-01
 ---
 
+# [[2026-10-28]] Discussion: Paper Figures & storyline
+- ORAS5: not good in the subsurface, but may be relatively okay for the surface variables
+	- other observation products: FOSSI? CHOR?
+- Why also have the correlation between MOC and the corresponding IWMT? Because MOC cannot add linearly between LAB and ENA, but IWMT can. 
+- Keep figure 3.1
+- higher climatological alpha may also explain to some extent that it experienced more decline, due to the non-linearity of the equation of state
+	- not direct from the rho-T-S profile
+	- get a **figure of LAB alpha as a function of SST and SSS (or simply just CT, SA**, in the reference region in LAB)
 # [[2026-10-27]] Discussion with Hongdou
 - check the correlation of NA (LAB + ENA) IWMT climatology versus LAB alpha JFM climatology
 - add observational estimation
