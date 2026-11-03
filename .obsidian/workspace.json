@@ -245,7 +245,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Plan/Tasks.md",
+                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -320,8 +320,9 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "8bd6403c33aa06af",
+  "active": "6feccb175e2ca6c2",
   "lastOpenFiles": [
+    "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
@@ -332,7 +333,6 @@
     "Project-Surface_Waves/Tips/ICON_Models/ICON-waves_Short-Overview_and_Current-Status.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
-    "Project-Surface_Waves/Plan/Tasks.md",
     "2026-10-27.md",
     "Attachments/0646b16e7877526044de75c5b711f94a.png",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
