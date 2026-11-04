@@ -39,6 +39,7 @@ tags:
 	- [x] Restart test
 	- [x] Compare withStokes and noStokes in terms of regional-mean T-flux profile, attribution changes 
 	- [ ] Document the implemented plan and the changes in the status report [[ICON-o_Stokes_Status]]
+	- [ ] Update to open source ICON
 
 ## [[2026-10-18]]
 - [x] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
