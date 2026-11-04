@@ -7,6 +7,14 @@ Last Eddited: 2026-08-11
 ---
 # Status: 
 
+## [[2026-11-04]]
+see [[ICON-o_Stokes_Status#2026-11-04 Add Eulerian velocity diffusion, Mixing, and Split Stokes diagnostics]]
+- Finish the implementation of
+	- Velocity diffusion to Eulerian velocity
+		- horizontal → involves changes in mixing scheme (e.g., shear production in TKE)
+		- vertical → subtract-solve-add
+	- Split Stokes diagnostics in heat/salt flux
+
 ## [[2026-10-29]]
 
 Figure out the reason why we use the Eulerian vertical velocity in the first time step for a cold-start simulation when calculating the `stokes_shear_tend` with the definition: $w^L\partial_z u^s$.:
@@ -1111,6 +1119,185 @@ vort_scale_error = 0
 
 # Stokes Forcing implementation Plan
 
+## [[2026-11-04]] Add Eulerian velocity diffusion, Mixing, and Split Stokes diagnostics
+### Implemented Plan:
+Eulerian Diffusion, Mixing, and Split Stokes Diagnostics
+- ==**Summary**==: Keep $\boldsymbol{u}^L$ as the only prognostic velocity, but reconstruct the source-time Eulerian velocity $$\boldsymbol{u}^{E,n}=\boldsymbol{u}^{L,n}-\boldsymbol{u}^{S,n}$$for velocity diffusion, TKE/PP shear calculations, velocity-dependent viscosity coefficients, and separate Eulerian/Stokes diagnostics. Existing behavior remains the default.
+- ==**Configuration and State**==
+	- Add `l_stokes_eulerian_velocity_diffusion=.FALSE.` to `ocean_physics_nml`.
+	  - When enabled with `l_stokes_forcing=.TRUE.`, horizontal and vertical velocity diffusion and their mixing coefficients use Eulerian velocity.
+	  - Log the selected diffusion velocity.
+	- Add `stokes_eddydiag=0` to `ocean_diagnostics_nml`:
+	  - `0`: disabled;
+	  - `1`: Eulerian/Stokes $u,v$ and temperature products;
+	  - `2`: additionally include salinity products.
+	  - Require `eddydiag=.TRUE.` when nonzero so the legacy Lagrangian products remain available for comparison.
+	- Allocate Eulerian working fields only when either new feature requires them:
+	  - Eulerian edge-normal velocity;
+	  - cell Cartesian vector;
+	  - dual-grid vector and vorticity;
+	  - local $u^E,v^E$ only when diagnostics are enabled.
+	- Do not add prognostic or restart variables. Reconstruct all Eulerian fields after every cold start, Lagrangian restart, and Eulerian-restart activation.
+	- Reject invalid diagnostic levels and fail clearly if the new functionality is requested with z-star or OpenACC.
+- ==**Physics Implementation**==
+	- After Stokes activation handling and before `update_ho_params`, construct $$v_n^{E,n}=v_n^{L,n}-v_{n,\mathrm{old}}^S.$$Reconstruct its cell, dual-grid, local-coordinate, and vorticity representations without overwriting the existing Lagrangian `p_diag` fields.
+	- Pass the Eulerian velocity view into:
+	  - Richardson-number/vertical-stability calculation;
+	  - PP and TKE horizontal-shear calculations;
+	  - TKE shear production and resulting $A_v$;
+	  - velocity-dependent Leith viscosity calculations.
+	- Leith forms use Eulerian horizontal vorticity/divergence. Variants involving $w$ retain the existing diagnosed $w$, consistent with the agreed absence of a separate vertical Stokes velocity.
+	- Horizontal diffusion computes$$D_h\!\left(\boldsymbol{u}^{E,n}\right)$$
+	  using the matching Eulerian vorticity or cell vector for both curl–curl and div–grad forms. The resulting tendency is still added to the Lagrangian momentum equation.
+	- Apply vertical implicit diffusion through subtract–solve–add:$$\boldsymbol{r}^{E}=\widetilde{\boldsymbol{u}}^{L}-\boldsymbol{u}^{S,*},$$$$\left(I-\Delta tD_v[A_v^E]\right)\boldsymbol{u}^{E,*}=\boldsymbol{r}^{E},$$$$\boldsymbol{u}^{L,*}=\boldsymbol{u}^{E,*}+\boldsymbol{u}^{S,*}.$$
+	  Use the same current `stokes_vn` for subtraction and addition, operate on `vn_pred`, and cover both standard and mass-matrix predictor branches. For `PPscheme_ICON_Edge_vnPredict_type`, subtract Stokes before calculating PP coefficients.
+	- Leave momentum advection, tracer transport, pressure terms, surface stress, bottom drag, Langmuir source, Stokes RHS, wavy-hydrostatic logic, and `stokes_vn_old` lifecycle unchanged.
+	- With the switch disabled, or without Stokes forcing, preserve the original calculation path.
+- **Diagnostics**: Register the following cell-centred, non-restart fields beside the existing `eddydiag` variables in `groups_oce_eddy`:
+	- Level 1:
+	  - `eulerian_u`, `eulerian_v`, `stokes_u`, `stokes_v`;
+	  - `eulerian_uT`, `eulerian_vT`;
+	  - `stokes_uT`, `stokes_vT`.
+	- Level 2:
+	  - `eulerian_uS`, `eulerian_vS`;
+	  - `stokes_uS`, `stokes_vS`.
+	Use the legacy diagnostic time pairing: $$uT_{\mathrm{legacy}}=u^{L,n}T^{n+1},$$
+	$$uT_{\mathrm{legacy}}=u^{E,n}T^{n+1}+u^{S,n}T^{n+1},$$
+	with the analogous relations for $vT$ and salinity. Derive local Stokes velocity as Lagrangian minus reconstructed Eulerian velocity to guarantee spatial and temporal closure. Existing `uT`, `vT`, `wT`, and salinity diagnostics remain unchanged; no separated vertical products are added.
+### Key changes:
+Key changes:
+- Added `l_stokes_eulerian_velocity_diffusion=.FALSE.` and `stokes_eddydiag=0/1/2`, including validation and logging in [mo_ocean_nml_crosscheck.f90 (line 142)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/config/mo_ocean_nml_crosscheck.f90:142).
+- Added conditional Eulerian working fields and split diagnostic outputs in [mo_ocean_state.f90 (line 1371)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_state.f90:1371).
+- Reconstructs source-time Eulerian velocity from \(v_n^L-v_{n,\mathrm{old}}^S\) in [mo_ocean_stokes_forcing.f90 (line 95)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_stokes_forcing.f90:95).
+- Routes Eulerian velocity through horizontal diffusion, PP/TKE shear, Richardson stability and Leith viscosity.
+- Implements vertical subtract–solve–add in both predictor branches in [mo_ocean_ab_timestepping_mimetic.f90 (line 665)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:665).
+- Adds Eulerian/Stokes velocity, temperature-product and optional salinity-product diagnostics in [mo_ocean_diagnostics.f90 (line 3527)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/diagnostics/mo_ocean_diagnostics.f90:3527).
+- Adds testbed modes 127–130 for reconstruction, zero-Stokes behavior, diagnostic closure and predictor subtract/add in [mo_ocean_testbed_stokes_forcing.f90 (line 417)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/testbed/mo_ocean_testbed_stokes_forcing.f90:417).
+### Summary
+Keep the Lagrangian velocity as the only prognostic velocity, but reconstruct the source-time Eulerian velocity: $$v_n^{E,n}=v_n^{L,n}-v_n^{S,n}.$$
+The reconstructed Eulerian velocity can optionally be used for:
+- horizontal velocity diffusion;
+- implicit vertical velocity diffusion;
+- TKE/PP shear production and viscosity coefficients;
+- velocity-dependent Leith viscosity;
+- separate Eulerian and Stokes scalar-flux diagnostics.
+Existing behaviour remains the default.
+### Configuration
+```
+&ocean_physics_nml
+  l_stokes_forcing                     = .TRUE.
+  l_stokes_eulerian_velocity_diffusion = .TRUE.
+/
+
+&ocean_diagnostics_nml
+  eddydiag        = .TRUE.
+  stokes_eddydiag = 1
+/
+```
+with the below options:
+
+| Option                                         | Behaviour                                                |
+| ---------------------------------------------- | -------------------------------------------------------- |
+| `l_stokes_eulerian_velocity_diffusion=.FALSE.` | Diffusion and mixing use prognostic Lagrangian velocity  |
+| `l_stokes_eulerian_velocity_diffusion=.TRUE.`  | Diffusion and mixing use reconstructed Eulerian velocity |
+| `stokes_eddydiag=0`                            | No split diagnostics                                     |
+| `stokes_eddydiag=1`                            | Eulerian/Stokes velocities and temperature products      |
+| `stokes_eddydiag=2`                            | Additionally diagnose salinity products                  |
+`stokes_eddydiag>0` requires both `l_stokes_forcing=.TRUE.` and `eddydiag=.TRUE.`
+
+### Eulerian velocity reconstruction
+At each source timestep:
+$$\boldsymbol{u}^{E,n} = \boldsymbol{u}^{L,n}-\boldsymbol{u}^{S,n}.$$
+The model reconstructs matching Eulerian representations:
+
+```
+eulerian_vn
+eulerian_vec_c
+eulerian_vn_dual
+eulerian_vort
+eulerian_u
+eulerian_v
+```
+
+These are diagnostic/working fields only. No new prognostic or restart velocity is introduced. Working fields are allocated only when Eulerian diffusion or split diagnostics require them.
+
+### Diffusion and Mixing
+Horizontal diffusion uses the Eulerian edge velocity together with the matching Eulerian cell vector and vorticity: $$\boldsymbol{D}_h=\boldsymbol{D}_h\left(\boldsymbol{u}^{E,n}\right).$$
+The Eulerian velocity is also used for:
+- Richardson-number and vertical-stability calculations;
+- TKE shear production;
+- PP shear calculations;
+- resulting vertical viscosity coefficients;
+- velocity-dependent harmonic and biharmonic Leith closures.
+
+Leith variants involving vertical velocity retain the existing diagnosed \(w\).
+==**Implicit vertical diffusion uses subtract–solve–add**:==$$\boldsymbol{r}^{E} = \widetilde{\boldsymbol{u}}^{L} - \boldsymbol{u}^{S,*}, $$$$ \left(I-\Delta tD_v[A_v^E]\right)\boldsymbol{u}^{E,*} = \boldsymbol{r}^{E}, $$$$ \widetilde{\boldsymbol{u}}^{L,*} = \boldsymbol{u}^{E,*} + \boldsymbol{u}^{S,*}. $$
+The operation is applied directly to `vn_pred` in both standard and mass-matrix **predictor** branches.
+### Split diagnostics
+The following non-restart fields are registered in `groups_oce_eddy`.
+For `stokes_eddydiag=1`:
+```
+eulerian_u
+eulerian_v
+stokes_u
+stokes_v
+eulerian_uT
+eulerian_vT
+stokes_uT
+stokes_vT
+```
+For `stokes_eddydiag=2`, additionally:
+```
+eulerian_uS
+eulerian_vS
+stokes_uS
+stokes_vS
+```
+The diagnostics follow the legacy `eddydiag` time pairing and satisfy:
+$$u^L T=u^E T+u^S T, \qquad v^L T=v^E T+v^S T, $$
+with analogous salinity closure at level 2.
+Local diagnostic Stokes velocity is calculated as:
+$$\boldsymbol{u}^S = \boldsymbol{u}^L-\boldsymbol{u}^E, $$
+which guarantees closure after spatial reconstruction. These `stokes_u` and `stokes_v` diagnostics are distinct from the prescribed `era5_ust_3d` and `era5_vst_3d` forcing fields.
+Existing `uT`, `vT`, `wT`, `uS`, `vS`, and `wS` diagnostics remain unchanged. No separated vertical Stokes products are added.
+### Changed Fortran Files
+| File                                                      | Change                                                                                                  |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `src/ocean/config/mo_ocean_nml.f90`                       | Adds `l_stokes_eulerian_velocity_diffusion` and `stokes_eddydiag`                                       |
+| `src/ocean/config/mo_ocean_nml_crosscheck.f90`            | Validates switch combinations, supported configurations and startup logging                             |
+| `src/ocean/dynamics/mo_ocean_types.f90`                   | Adds Eulerian working fields and split diagnostic fields                                                |
+| `src/ocean/dynamics/mo_ocean_state.f90`                   | Conditionally allocates Eulerian fields and registers split output variables                            |
+| `src/ocean/dynamics/mo_ocean_stokes_forcing.f90`          | Adds Eulerian reconstruction and predictor Stokes shift routines                                        |
+| `src/ocean/drivers/mo_hydro_ocean_run.f90`                | Reconstructs source-time Eulerian velocity and passes it into mixing physics                            |
+| `src/ocean/physics/mo_ocean_physics.f90`                  | Routes optional Eulerian velocity, vorticity and edge velocity through stability and Leith calculations |
+| `src/ocean/physics/mo_ocean_pp_scheme.f90`                | Uses Eulerian shear in PP viscosity calculations                                                        |
+| `src/ocean/physics/mo_ocean_tke.f90`                      | Uses Eulerian shear for TKE production and viscosity                                                    |
+| `src/ocean/dynamics/mo_ocean_velocity_diffusion.f90`      | Allows horizontal diffusion to use matching Eulerian vector and vorticity fields                        |
+| `src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90` | Selects Eulerian horizontal diffusion and implements vertical subtract–solve–add                        |
+| `src/ocean/diagnostics/mo_ocean_diagnostics.f90`          | Calculates Eulerian/Stokes velocity and scalar-product diagnostics                                      |
+| `src/ocean/testbed/mo_ocean_testbed_stokes_forcing.f90`   | Adds test modes 127–130                                                                                 |
+| `src/ocean/testbed/mo_ocean_testbed_operators.f90`        | Extends Stokes testbed dispatch through mode 130                                                        |
+
+### Compatibility and Restrictions
+- `l_stokes_forcing=.FALSE.` follows the original no-Stokes physics path.
+- The new diffusion switch defaults to `.FALSE.`.
+- Split diagnostics default to disabled.
+- Optional velocity arguments fall back to the original Lagrangian fields.
+- Existing Stokes RHS, wavy-hydrostatic source and `stokes_vn_old` lifecycle are unchanged.
+- Initial support is restricted to the CPU, z-level, mimetic ocean configuration.
+- OpenACC, z-star and shallow-water configurations are rejected when the new functionality is requested.
+### 🌟Restart Operational Note
+For the first continuation from an Eulerian spin-up:
+```
+l_stokes_forcing               = .TRUE.
+l_stokes_from_eulerian_restart = .TRUE.
+```
+After writing the first Lagrangian restart, all subsequent Stokes restarts must use:
+```
+l_stokes_forcing               = .TRUE.
+l_stokes_from_eulerian_restart = .FALSE.
+```
+The activation segment must not automatically continue with the transition flag still enabled, because that would add Stokes velocity again.
 ## [[2026-10-27]] Add switch-on Wavy-hydrostatic Energy Pair
 ### Summary
 Add the default-enabled namelist switch:

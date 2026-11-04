@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -165,8 +165,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 293.64374923706055,
-    "collapsed": true
+    "width": 293.64374923706055
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -245,7 +244,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
+                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -320,13 +319,14 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "cff3e07a50488ec8",
+  "active": "8eadf67652800bf7",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Plan/Tasks.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
-    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
+    "Untitled.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
+    "Project-Surface_Waves/Plan/Tasks.md",
+    "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_11-Small_Scale_Turbulence.md",
     "Project-Surface_Waves/Subject Note/Mathematical_Understanding.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
@@ -357,7 +357,6 @@
     "PhD-General/MPI-M/2026IMPRS-Retreat_Pre-Abstract.md",
     "Project-Surface_Waves/Meeting Note/Panel-Meeting_Note.md",
     "Flash_cards_figures.md",
-    "Project-Surface_Waves/Thoughts/Note-on-Surface-Wave-DJN2YIN5.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
     "Attachments/Codex Image 7 Aug 2026, 13_48_12.svg+xml",
     "Attachments/triangular_prism",
