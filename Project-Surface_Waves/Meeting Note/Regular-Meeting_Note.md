@@ -6,7 +6,10 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
-git difftool --tool=meld -d origin/icon-2026.10
+
+# [[2026-11-04]]
+## Regular Meeting with Nils
+- it seems the remaining 
 
 # [[2026-10-28]]
 ## Regular meeting with Nils

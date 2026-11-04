@@ -14,3 +14,7 @@ salloc --partition=compute --nodes=1 --time=08:00:00 --account mh0033
 ```
 2>&1 | tee XXX.log
 ```
+- to check the difference between the local commits to the merged one
+```
+git difftool --tool=meld -d origin/icon-2026.10
+```
