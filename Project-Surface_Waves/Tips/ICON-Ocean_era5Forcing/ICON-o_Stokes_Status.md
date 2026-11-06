@@ -7,6 +7,25 @@ Last Eddited: 2026-08-11
 ---
 # Status: 
 
+## [[2026-11-06]]
+- diagnostic fields: `stokes_u/v, eulerian/stokes_u/vT`: **source time**, model-resolved cell reconstruction
+	- ordinary ICON uses the same general staging
+	- all diagnostics are at source time
+- `stokes_vn`: **current** prescribed profile translated into the model’s edge-normal space
+- `era5_u/vst_3d`: prescribed **current** cell-centered Stokes profile
+```
+Source state at t_n:
+    Lagrangian velocity = p_prog(nold)%vn
+    Stokes velocity     = stokes_vn_old
+
+Fresh forcing for the step:
+    Stokes velocity     = stokes_vn
+
+Target state:
+    Lagrangian velocity = p_prog(nnew)%vn
+```
+- the staggering difference is one model step → PT1200S in R2B7 case
+Finish the 1,2 stage of the z-star implementation of Stokes forcings
 ## [[2026-11-04]]
 see [[ICON-o_Stokes_Status#2026-11-04 Add Eulerian velocity diffusion, Mixing, and Split Stokes diagnostics]]
 - Finish the implementation of
@@ -1119,10 +1138,142 @@ vort_scale_error = 0
 
 # Stokes Forcing implementation Plan
 
-## [[2026-11-06]] Z-star coordinate implementation: 1st Stage
+## [[2026-11-06]] Z-star coordinate implementation: 2nd Stage
+The second stage solve:
+- option for applying velocity diffusion to Eulerian velocity
+- split prognostic velocity/flux to Stokes/Eulerian contributions
+### Implemented Plan 
+Z-star Eulerian diffusion/mixing and split Stokes diagnostics
+- ==**Summary**==: 
+	- Extend the successful CPU-only z-star noWavy Stokes implementation so velocity diffusion and vertical mixing can operate on reconstructed Eulerian velocity, and enable the existing split Eulerian/Stokes eddy diagnostics. 
+	- Follow ordinary ICON’s native z-star algorithms: retain `stretch_c` in cell-centered vertical gradients and `stretch_e` in edge-centered implicit diffusion. Reuse the common Eulerian reconstruction and diagnostic routines. Leave z-level behavior untouched.
+- ==**Implementation changes**==
+	- In the z-star driver, after Stokes profile preparation and cold-start/restart activation, call the existing `prepare_eulerian_velocity` from `mo_ocean_stokes_forcing.f90`:
+	  - Reconstruct source-time `eulerian_vn = lagrangian_vn - stokes_vn_old`.
+	  - Produce cell vectors, dual vectors, vorticity, and—when `stokes_eddydiag>0`—local `eulerian_u/v`.
+	  - Pass Eulerian fields to z-star physics only when `l_stokes_eulerian_velocity_diffusion=.TRUE.`.
+	- In z-star momentum timestepping:
+	  - When Eulerian diffusion is enabled, call the existing horizontal `velocity_diffusion` with `eulerian_vn`, `eulerian_vort`, and `eulerian_vec_c`.
+	  - Before PP predictor processing and native z-star implicit vertical diffusion, subtract current `stokes_vn` from `vn_pred`.
+	  - Run the existing z-star solver with `stretch_e`, then add `stokes_vn` back.
+	  - Preserve the current prognostic-Lagrangian path exactly when the switch is false.
+	- Extend the native z-star physics interfaces with optional velocity inputs:
+	  - `update_ho_params_zstar` and `calc_vertical_stability_zstar` select Eulerian cell velocity when supplied.
+	  - Preserve the existing `stretch_c` correction in physical vertical shear.
+	  - Forward Eulerian velocity to `calc_tke`; its existing z-star metric treatment remains unchanged.
+	  - Extend `update_PP_scheme_zstar` and `ICON_PP_Edge_scheme_zstar` similarly.
+	  - For `PPscheme_ICON_Edge_vnPredict_type`, use the already shifted Eulerian predictor.
+	  - IDEMIX remains unchanged; only its TKE component receives Eulerian velocity.
+	- Reuse the existing split-diagnostic infrastructure unchanged:
+	  - `calc_stokes_eddydiag` continues to calculate `stokes_u/v = lagrangian_u/v - eulerian_u/v`.
+	  - `stokes_eddydiag=1` produces velocity and temperature-product splits.
+	  - `stokes_eddydiag=2` additionally produces salinity-product splits.
+	  - Products remain pointwise on moving z-star model layers; no remapping or additional metric factor is introduced.
+	- Update namelist validation:
+	  - Permit Eulerian reconstruction, Eulerian diffusion, and split diagnostics for `vert_cor_type=1`.
+	  - Retain requirements for Stokes forcing, mimetic 3-D dynamics, noWavy hydrostatics, and CPU execution.
+	  - Retain `stokes_eddydiag>0` requiring `eddydiag=.TRUE.`.
+	  - Reject z-star Eulerian diffusion with nonzero `LeithClosure_order`; ordinary ICON’s native `update_ho_params_zstar` does not provide the corresponding dynamic Leith update.
+	  - Add no new namelist switches.
+- ==**Interfaces and invariants**==
+	- Add optional Eulerian velocity arguments only to internal z-star physics/PP interfaces; add no state, restart, or output variables.
+	- Continue using `stokes_vn_old` for source-time Eulerian reconstruction and current `stokes_vn` for predictor shift-out/shift-back.
+	- Keep profile reconstruction in `mo_ocean_stokes_forcing_zstar`; do not create `prepare_eulerian_velocity_zstar`.
+	- Preserve cold-start, Eulerian-restart activation, and normal Stokes-restart handling.
+	- Preserve the original no-Stokes and z-level arithmetic branches.
+- ==**Deferred work**==
+	- Wavy-hydrostatic pressure and Stokes vertical-shear tendency.
+	- Z-star vertical-gradient metric treatment.
+
+### Main Change
+- Reconstructs Eulerian velocity after z-star Stokes preparation using `stokes_vn_old` in [mo_hydro_ocean_run.f90 (line 1233)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:1233).
+- Applies horizontal and vertical diffusion to Eulerian velocity while retaining the native `stretch_e` solver in [mo_ocean_ab_timestepping_zstar.f90 (line 800)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_zstar.f90:800).
+- Routes Eulerian cell velocity through z-star stability, TKE, and IDEMIX+TKE while retaining `stretch_c` metrics in [mo_ocean_physics.f90 (line 978)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_physics.f90:978).
+- Extends the z-star PP path to select Eulerian shear in [mo_ocean_pp_scheme.f90 (line 251)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_pp_scheme.f90:251).
+- Enables both features for z-star and rejects dynamic Leith closure with Eulerian diffusion in [mo_ocean_nml_crosscheck.f90 (line 164)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/config/mo_ocean_nml_crosscheck.f90:164).
+
+The existing state allocation and `calc_stokes_eddydiag` routines were reused unchanged. No state, restart, output variables, or z-level routines were added or modified. Source/interface and diff whitespace checks passed. As requested, I did not compile or run simulations.
+
+---
+
+## [[2026-11-05]] Z-star coordinate implementation: 1st Stage
 The first stage solve:
 - add Stokes forces to the momentum equation timestepping
 - namelist switch on, allow cold start and restart from Eulerian
+### Implemented Plan
+Z-star noWavy Stokes forcing
+- ==**Summary**==
+	- Implement an isolated z-star Stokes path for R2B7L72 supporting Stokes time and vorticity tendencies, cold starts, Eulerian-restart activation, and normal Stokes restarts.
+	- Keep the existing z-level profile reconstruction and timestep path unchanged. Compilation and all runtime testing will be performed by you.
+- ==**Implementation changes**==
+	- Add `mo_ocean_stokes_forcing_zstar.f90` containing:
+	  - Z-star Phillips-profile reconstruction using physical depth below the moving surface:
+	    `abs(depth_CellMiddle) * stretch_c`.
+	  - `prepare_stokes_fields_zstar`, reconstructing `ust_3d/vst_3d` before calling the common Stokes mapping routines.
+	  - A noWavy momentum wrapper reusing the existing time-tendency and vorticity operators.
+	  - CPU-only support initially.
+	- In the z-star driver:
+	  - Reconstruct and prepare the profile after ERA5 forcing, z-star coordinate updates, and any IAU update.
+	  - Reconstruct every timestep, including timesteps without new ERA5 data.
+	  - On cold start, add Stokes velocity once to the incoming Eulerian velocity and initialize `stokes_vn_old`.
+	  - On Eulerian-restart activation, perform the same one-time conversion, synchronize velocity state, recompute velocity diagnostics and z-star vertical velocity, and mark the step as an activation step.
+	  - On a normal Stokes restart, retain the restarted Lagrangian velocity and `stokes_vn_old` without another shift.
+	  - Reset `l_stokes_activation_step` at the start of every z-star timestep.
+	- In z-star momentum timestepping:
+	  - Compute only Stokes vorticity and time tendencies.
+	  - Add `stokes_rhs` to the explicit z-star momentum RHS.
+	  - Keep the exact fixed-layer derivative:
+	    `(stokes_vn_now(k)-stokes_vn_old(k))/dtime`.
+	  - Use the existing constant-model-level curl operator, matching native z-star horizontal momentum.
+	  - Reset Adams–Bashforth history on cold start and Eulerian-restart activation.
+	  - Preserve the original no-Stokes arithmetic branch.
+	  - Keep shear and wavy-hydrostatic source fields zero.
+	- Update namelist validation:
+	  - Permit `l_stokes_from_eulerian_restart` for `vert_cor_type=1`.
+	  - Require mimetic, non-shallow-water, noWavy configuration for z-star Stokes.
+	  - Reject z-star Stokes with wavy hydrostatics, Eulerian velocity diffusion, nonzero `stokes_eddydiag`, or OpenACC.
+	  - Add no new namelist switches.
+- ==**Interfaces and invariants**==
+	- Export:
+	  - `prepare_stokes_fields_zstar(..., stretch_c, ..., ust_3d, vst_3d, ...)`
+	  - `calculate_stokes_momentum_rhs_zstar_nowavy(...)`
+	- Extend internal z-star free-surface interfaces with `is_stokes_activation_step`.
+	- Add no state variables, restart variables, or output fields.
+	- Keep `stokes_vn_old` as the restart-continuation field.
+	- Grid motion influences the newly reconstructed `stokes_now(k)` through `stretch_c`; do not add ALE corrections, remapping, or an explicit grid-velocity term.
+	- Do not modify the existing z-level reconstruction or z-level timestepping implementation.
+- ==**Deferred work**==
+	- Wavy-hydrostatic pressure and Stokes vertical-shear tendency.
+	- Z-star vertical-gradient metric treatment.
+	- Eulerian velocity diffusion and mixing.
+	- Split Eulerian/Stokes eddy diagnostics.
+
+### Main changes
+- Added [mo_ocean_stokes_forcing_zstar.f90 (line 46)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_stokes_forcing_zstar.f90:46):
+    - Phillips-profile reconstruction with `abs(depth_CellMiddle) * stretch_c`.
+    - Per-timestep z-star preparation using the existing mapping operators.
+    - CPU-only noWavy momentum wrapper reusing the existing time and vorticity tendencies.
+    - The time derivative remains exactly:   
+        ```
+        (stokes_vn_now - stokes_vn_old) / dtime
+        ```    
+- Updated the z-star driver in [mo_hydro_ocean_run.f90 (line 515)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:515):
+    - Reconstructs Stokes fields every timestep after forcing, coordinate updates, and IAU.
+    - Handles cold-start Eulerian-to-Lagrangian conversion.
+    - Handles one-time Eulerian-restart activation and resets the activation flag each timestep.
+    - Recomputes velocity diagnostics and z-star vertical velocity after conversion.
+    - Leaves normal Stokes restarts unshifted.
+- Updated [mo_ocean_ab_timestepping_zstar.f90 (line 689)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_zstar.f90:689):
+    - Computes only Stokes vorticity and time tendencies.
+    - Adds `stokes_rhs` to the explicit momentum RHS.
+    - Resets Adams–Bashforth history for cold starts and activation steps.
+    - Preserves the original no-Stokes RHS expression and operation ordering.
+    - Keeps shear and wavy-hydrostatic sources zero.
+- Updated validation in [mo_ocean_nml_crosscheck.f90 (line 117)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/config/mo_ocean_nml_crosscheck.f90:117):
+    - Allows Eulerian-restart activation for z-star.
+    - Requires mimetic, non-shallow-water, noWavy configuration.
+    - Rejects z-star Stokes with Eulerian diffusion, split diagnostics, wavy hydrostatics, or OpenACC.
+
 ### Stokes profile reconstruction on z-star
 compare to the z-level (previous) implementation, two implementations use the same Phillips profile and the same cell-to-edge mapping. The important difference is when physical layer depth can change.
 ==🟢Z-level==
@@ -1187,8 +1338,9 @@ in magnitude, assuming the same surface Stokes velocity and transport. The recon
 The important distinction is:
 - At the same model-layer index \(k\), Stokes velocity changes because that layer moves physically.
 - At the same physical depth, the prescribed analytical Stokes profile has not changed. it is just the point we select on that depth change, so the values will also change. So the actual profile is not "moving", it's the coordinate moving, and we are projecting the actual physical profile to the coordinate.
+---
 
-## [[2026-11-04]] Add Eulerian velocity diffusion, Mixing, and Split Stokes diagnostics
+## [[2026-11-04]] Eulerian velocity diffusion, new diagnostics
 ### Implemented Plan:
 Eulerian Diffusion, Mixing, and Split Stokes Diagnostics
 - ==**Summary**==: Keep $\boldsymbol{u}^L$ as the only prognostic velocity, but reconstruct the source-time Eulerian velocity $$\boldsymbol{u}^{E,n}=\boldsymbol{u}^{L,n}-\boldsymbol{u}^{S,n}$$for velocity diffusion, TKE/PP shear calculations, velocity-dependent viscosity coefficients, and separate Eulerian/Stokes diagnostics. Existing behavior remains the default.
@@ -1367,6 +1519,9 @@ l_stokes_forcing               = .TRUE.
 l_stokes_from_eulerian_restart = .FALSE.
 ```
 The activation segment must not automatically continue with the transition flag still enabled, because that would add Stokes velocity again.
+
+---
+
 ## [[2026-10-27]] Add switch-on Wavy-hydrostatic Energy Pair
 ### Summary
 Add the default-enabled namelist switch:
@@ -1422,6 +1577,9 @@ Wavy-hydrostatic source and Stokes vertical-shear tendency are disabled
 - Nine-day R2B4L40 experiment with the pair disabled: successful.
 - Runtime log confirms the pair was disabled.
 - Testbed mode `126` was added to check enabled/disabled RHS composition and `stokes_vn_old` updates, but has not yet been executed.
+
+---
+
 ## [[2026-08-21]] Fix no-Stokes to with-Stokes Restart Transition
 ### Summary
 Add an explicit, one-time conversion from an Eulerian no-wave restart to the Lagrangian velocity convention:
@@ -1582,6 +1740,9 @@ The user will perform all checks requiring a compiled model or simulation:
    - `stokes_vn_old` is restored;
    - results agree with an uninterrupted wave run.
 - [x] Confirm that no-wave and ordinary cold-start configurations remain operational.
+
+---
+
 ## [[2026-08-14]] Add Stokes forcings into timestepping
 ### Summary
 Implement Stokes forcing behind `l_stokes_forcing`. When enabled, ICON’s prognostic `vn` means **Lagrangian edge-normal velocity**. The model converts Eulerian initial velocity to Lagrangian velocity only for fresh starts, and never adds Stokes velocity again on a normal restart.
@@ -1762,6 +1923,3 @@ stokes_vn_old = stokes_vn
 - Fresh non-restart wave-enabled starts read Eulerian velocity.
 - Normal wave-enabled restarts contain Lagrangian `vn`.
 - Restart compatibility with old non-wave restart files is handled by the missing-`stokes_vn_old` fallback, but switching on waves from an old restart should be treated as a fresh conversion case only if explicitly configured later.
-
-
-

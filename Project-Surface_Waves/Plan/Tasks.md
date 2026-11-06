@@ -31,15 +31,25 @@ tags:
 	- [ ] Record meeting note
 	- [ ] Create the Earth System Dynamics manuscript reference
 - [x] Email to Carsten for the details of simulation #project/surfwaves 
-- [ ] ERA5-Wave implementation: (1) switch of applying the velocity diffusion to Eulerian/Lagrangian velocity; (2) add additional diagnostics of $u^sT, u^ET$ #project/surfwaves 
+- [x] ERA5-Wave implementation: (1) switch of applying the velocity diffusion to Eulerian/Lagrangian velocity; (2) add additional diagnostics of $u^sT, u^ET$ #project/surfwaves 
 	- [x] Plan with Codex
 	- [x] Implementation
 	- [x] Compile model with NAG and INTEL compilers
 	- [x] 10 days short run: noWavy, diffusion on Eulerian, enable additional flux
 	- [x] Restart test
 	- [x] Compare withStokes and noStokes in terms of regional-mean T-flux profile, attribution changes 
-	- [ ] Document the implemented plan and the changes in the status report [[ICON-o_Stokes_Status]]
-	- [ ] Update to open source ICON
+	- [x] Document the implemented plan and the changes in the status report [[ICON-o_Stokes_Status]]
+	- [x] Update to open source ICON
+- [ ] Implement Stokes forcings to z-star routine
+	- [x] add Stokes forcings to time stepping
+	- [x] add namelist switch of forcings, cold-or-Eulerian restart
+	- [x] add namelist switch of velocity diffusion to Eulerian or Lagrangian
+	- [x] add split of Lagrangian velocity associated fluxes
+	- [ ] add Wavy-hydrostatic energy pair
+	- [ ] Test:
+		- [x] r2b7L72, withStokes 10-days short run
+		- [ ] r2b7L72, noStokes 10-days short run
+		- [ ] r2b7L72, restart from Eulerian ocean short run
 
 ## [[2026-10-18]]
 - [x] Modify the src code to have the namelist switch to have wavy-hydrostatic or not #project/surfwaves 
