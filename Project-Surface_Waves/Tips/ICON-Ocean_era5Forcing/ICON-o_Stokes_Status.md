@@ -1119,6 +1119,75 @@ vort_scale_error = 0
 
 # Stokes Forcing implementation Plan
 
+## [[2026-11-06]] Z-star coordinate implementation: 1st Stage
+The first stage solve:
+- add Stokes forces to the momentum equation timestepping
+- namelist switch on, allow cold start and restart from Eulerian
+### Stokes profile reconstruction on z-star
+compare to the z-level (previous) implementation, two implementations use the same Phillips profile and the same cell-to-edge mapping. The important difference is when physical layer depth can change.
+==🟢Z-level==
+```
+couple_ocean_to_era5_provider
+  └─ reconstruct_era5_stokes_profile_phillips
+       └─ produces p_as%ust_3d and p_as%vst_3d
+
+calculate_explicit_term
+  └─ prepare_stokes_fields
+       ├─ local u/v → Cartesian cell vector
+       └─ Cartesian cell vector → stokes_vn on edges
+```
+The relevant routines are:
+- ERA5 reception: [couple_ocean_to_era5_provider (line 212)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/coupling/mo_ocean_era5_provider_coupling.f90:212)
+- Reconstruction call after receiving new data: [coupling line 350 (line 350)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/coupling/mo_ocean_era5_provider_coupling.f90:350)
+- Actual z-level reconstruction: [reconstruct_era5_stokes_profile_phillips (line 373)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/coupling/mo_ocean_era5_provider_coupling.f90:373)
+- Mapping inside z-level momentum: [mo_ocean_ab_timestepping_mimetic.f90 (line 464)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_ab_timestepping_mimetic.f90:464)
+- Common mapping routine: [prepare_stokes_fields (line 62)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_stokes_forcing.f90:62)
+The reconstruction only occurs when new ERA5 data are actually received. Between coupling times, the previous `ust_3d/vst_3d` profile is retained.
+That is sufficient for z-level because `depth_CellMiddle` never moves.
+==🟢Z-star==
+```
+update_ocean_surface_refactor
+  └─ receive/retain surface Stokes fields
+
+update_zstar_variables
+  └─ update stretch_c from the current free surface
+
+prepare_stokes_fields_zstar
+  ├─ reconstruct_stokes_profile_phillips_zstar
+  │    └─ produces stretch-aware ust_3d/vst_3d
+  └─ prepare_stokes_fields
+       └─ common cell-vector and edge-normal mapping
+```
+The relevant routines are:
+- Surface-forcing update: [mo_hydro_ocean_run.f90 (line 1162)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:1162)
+- Z-star-coordinate update: [mo_hydro_ocean_run.f90 (line 1170)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:1170)
+- Per-timestep z-star preparation: [mo_hydro_ocean_run.f90 (line 1212)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:1212)
+- Z-star wrapper: [prepare_stokes_fields_zstar (line 46)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_stokes_forcing_zstar.f90:46)
+- Actual z-star reconstruction: [reconstruct_stokes_profile_phillips_zstar (line 128)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/dynamics/mo_ocean_stokes_forcing_zstar.f90:128)
+==🔴**This path runs every ocean timestep, including timesteps without new ERA5 data.**
+
+> [!Attention] 
+> No mathematical difference, only the physical depth $d$ differs:
+> - Z-level: `abs(depth_CellMiddle)`
+> - Z-star: `abs(depth_CellMiddle) * strech_c`
+> 	- the reference-coordinate depth multiple by `strech_c` converts it into the current physical depth below the moving surface
+> 	- No separate SSH displacement is needed because z-star stretches the entire water column relative to the instantaneous surface.
+
+In both cases, the reconstructed Stokes velocities ultimately live on model layers:
+- `ust_3d/vst_3d`: cell centers at every model level \(k\)
+- `stokes_vec_c`: Cartesian cell vector at level \(k\)
+- `stokes_vn`: edge-normal Stokes velocity at level \(k\)
+
+For z-star, `stretch_c` is one value for the entire water column, not a separate value for each layer. If a column has: $$\text{stretch}_c < 1,$$
+then every model layer in that column becomes physically thinner and its center moves closer to the instantaneous sea surface. For the second layer: $$d_2^{z^\star} = d_{2,\mathrm{reference}}\,\text{stretch}_c.$$
+Therefore, if `stretch_c < 1`: $$d_2^{z^\star}<d_{2,\mathrm{reference}},$$
+and because the Phillips Stokes profile decreases with depth: $$u^S_2(z^\star)>u^S_2(z\text{-level})$$
+in magnitude, assuming the same surface Stokes velocity and transport. The reconstructed Stokes velocity becomes progressively larger because that model layer now samples a shallower part of the prescribed profile.
+
+The important distinction is:
+- At the same model-layer index \(k\), Stokes velocity changes because that layer moves physically.
+- At the same physical depth, the prescribed analytical Stokes profile has not changed. it is just the point we select on that depth change, so the values will also change. So the actual profile is not "moving", it's the coordinate moving, and we are projecting the actual physical profile to the coordinate.
+
 ## [[2026-11-04]] Add Eulerian velocity diffusion, Mixing, and Split Stokes diagnostics
 ### Implemented Plan:
 Eulerian Diffusion, Mixing, and Split Stokes Diagnostics
