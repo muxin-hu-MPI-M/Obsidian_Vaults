@@ -48,7 +48,7 @@ tags:
 	- [ ] add Wavy-hydrostatic energy pair
 	- [ ] Test:
 		- [x] r2b7L72, withStokes 10-days short run
-		- [ ] r2b7L72, noStokes 10-days short run
+		- [x] r2b7L72, noStokes 10-days short run
 		- [ ] r2b7L72, restart from Eulerian ocean short run
 
 ## [[2026-10-18]]
