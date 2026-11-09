@@ -30,7 +30,7 @@ Last Eddited: 2026-08-12
 - compare the simulation result to Carsten’s result to do a qualitative comparison; if the magnitude matches which is good, and we can always find scope to do science
 - Nils's thought on Carsten's implementation on Wave contribution to TKE:
     - In general, Carsten may increase the TKE budget through the secondary Stokes shear production term
-    - but somehow, the model went crazy; Carsten turned the parameter(s) in a way that also increase the diffusion of the newly produced TKE: ![[Attachments/Screenshot 2025-10-28 at 10.48.16.png|center]]
+    - but somehow, the model went crazy; Carsten turned the parameter(s) in a way that also increase the diffusion of the newly produced TKE: #TKE_scheme #TKE ![[Attachments/Screenshot 2025-10-28 at 10.48.16.png|center]]
     - **Nils' suspicion**: the increased TKE cannot effectively redistribute to the botoom of the MLD that contribute to the mixing in upper ocean; They are quickly diffused to warm the water
 
 # [[2026-10-13]]
