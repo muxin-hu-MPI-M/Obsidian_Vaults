@@ -32,6 +32,14 @@ Last Eddited: 2026-08-12
     - In general, Carsten may increase the TKE budget through the secondary Stokes shear production term
     - but somehow, the model went crazy; Carsten turned the parameter(s) in a way that also increase the diffusion of the newly produced TKE: #TKE_scheme #TKE ![[Attachments/Screenshot 2025-10-28 at 10.48.16.png|center]]
     - **Nils' suspicion**: the increased TKE cannot effectively redistribute to the botoom of the MLD that contribute to the mixing in upper ocean; They are quickly diffused to warm the water
+    - TKE formula: $$\partial_t E_{\text{tke}}=\partial_z(k_e\partial_zE_{\text{tke}})-k_vN^2+A_v(\partial_z \overline{u}_h)^2 + F_{\text{tke}}-c_{\epsilon}E_{\text{tke}}^{3/2}/L_{\text{mix}}+\epsilon_{iw}$$
+- where:
+	- $k_e=\alpha_{\text{tke}} A_v$
+	- $F_{\text{tke}}$ surface forcing parameterised by momentum flux
+	- $A_v=c_kE_{\text{tke}}^{1/2}L_{\text{mix}}$: down-gradient diffusivity for momentum
+	- $k_v=c_b E_{\text{tke}}^{1/2}L_{\text{mix}}$: down-gradient diffusivity for buoyancy
+	- $L_{\text{mix}}=\sqrt{2E_{\text{tke}}/N^2}$: mixing length
+- 
 
 # [[2026-10-13]]
 ## ERA5-forced ICON-O: Single Year Repeat
