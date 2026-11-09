@@ -9,7 +9,16 @@ Last Eddited: 2026-08-12
 
 # [[2026-11-04]]
 ## Regular Meeting with Nils
-- it seems the remaining 
+- Model output: find the outputs to reproduce Carsten’s plot
+	- ssh (diagnosed), pressure, heat content
+	- quick plots, surface heat fluxes
+	- tendency terms (`diagnose_for_tendencies=.TRUE.`) for what? → check the source code
+- EGU
+	- session? If Nils’s session, 99% that I cannot give a talk
+		- talk? → is more like the research is almost finished and near published
+		- poster? → generally can receive more feedback
+		- depends on the progress before the January, ddl? → for Nils session: **12/01/2027**
+- Panel meeting? → January
 
 # [[2026-10-28]]
 ## Regular meeting with Nils
