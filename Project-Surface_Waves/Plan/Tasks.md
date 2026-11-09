@@ -24,12 +24,18 @@ tags:
 
 # Weekly Plan 
 
-
-## [[2026-11-02]]
+## [[2026-11-09]]
+- [ ] Finish the meeting note records #project/surfwaves 
 - [ ] Data availability under piControl and 4xCO2 for the model list #project/WMT 
 - [ ] Meeting with Robb and Dylan #project/WMT 
 	- [ ] Record meeting note
 	- [ ] Create the Earth System Dynamics manuscript reference
+- [ ] Simulation #project/surfwaves 
+	- [x] ocean 15-years spinup run with minimum output
+	- [ ] Finalise the model output for the comparison run
+	- [ ] branching off from spinup
+
+## [[2026-11-02]]
 - [x] Email to Carsten for the details of simulation #project/surfwaves 
 - [x] ERA5-Wave implementation: (1) switch of applying the velocity diffusion to Eulerian/Lagrangian velocity; (2) add additional diagnostics of $u^sT, u^ET$ #project/surfwaves 
 	- [x] Plan with Codex
