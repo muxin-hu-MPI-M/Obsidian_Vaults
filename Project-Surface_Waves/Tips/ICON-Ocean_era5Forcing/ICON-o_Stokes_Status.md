@@ -7,6 +7,36 @@ Last Eddited: 2026-08-11
 ---
 # Status: 
 
+## [[2026-11-10]]
+Once the `l_stokes_eulerian_velocity_diffusion = .TRUE.`, the TKE shear production term uses the reconstructed Eulerian velocity, not the prognostic Lagrangian velocity
+The chain is:
+1. Reconstruct source-time Eulerian velocity: $\mathbf{u}_E^n=\mathbf{u}_L^n-\mathbf{u}_S^n$, using `lagrangian_vn - stokes_vn_old`.
+2. Pass `eulerian_vec_c` into `update_ho_params_zstar` at [mo_hydro_ocean_run.f90 (line 1295)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/drivers/mo_hydro_ocean_run.f90:1295).
+3. Forward it to `calc_tke` at [mo_ocean_physics.f90 (line 1024)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_physics.f90:1024).
+4. Inside TKE, the optional field becomes the shear velocity at [mo_ocean_tke.f90 (line 1195)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_tke.f90:1195):
+
+```
+IF (PRESENT(velocity_vec_c)) THEN
+  shear_velocity_c => velocity_vec_c
+ELSE
+  shear_velocity_c => ocean_state%p_diag%p_vn
+END IF
+```
+
+The physical z-star shear is then calculated as:
+$$S^2 = \left| \frac{\mathbf{u}_E(k-1)-\mathbf{u}_E(k)} {\Delta z\,\mathrm{stretch}_c} \right|^2,$$
+at [mo_ocean_tke.f90 (line 1295)](/work/mh0033/m301254/proj_surfwave/icon-2026-06-ocean-era5/m301254/era5g-wave-forcing/src/ocean/physics/mo_ocean_tke.f90:1295). This `Ssqr` enters the TKE calculation and affects the resulting vertical viscosity `a_veloc_v`.
+
+The full behaviour is therefore:
+
+|Switch|TKE shear production|Velocity diffusion/mixing|
+|---|---|---|
+|`.FALSE.`|Prognostic Lagrangian velocity|Prognostic Lagrangian velocity|
+|`.TRUE.`|Reconstructed Eulerian velocity|Reconstructed Eulerian velocity|
+
+The vertical implicit solver then applies the TKE-derived `a_veloc_v` to the Eulerian predictor through the subtract-Stokes → diffuse → add-Stokes sequence.
+
+So with the switch enabled, the implementation is internally consistent: both the production of vertical viscosity and its application use Eulerian velocity. Other TKE sources—buoyancy production, wind input, dissipation and IDEMIX input—are unchanged.
 ## [[2026-11-06]]
 - diagnostic fields: `stokes_u/v, eulerian/stokes_u/vT`: **source time**, model-resolved cell reconstruction
 	- ordinary ICON uses the same general staging
