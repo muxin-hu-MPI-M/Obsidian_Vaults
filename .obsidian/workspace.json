@@ -13,54 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
+                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON_Parameterisation"
-            }
-          },
-          {
-            "id": "0af97a80bea92349",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
-            }
-          },
-          {
-            "id": "7b849083b795b279",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Useful-Command"
-            }
-          },
-          {
-            "id": "9f669dd9f6c05ea6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Breivik_2014&2016_Note_Stokes-Drift-Profile"
+              "title": "Regular-Meeting_Note"
             }
           },
           {
@@ -78,17 +36,45 @@
             }
           },
           {
-            "id": "cff3e07a50488ec8",
+            "id": "0af97a80bea92349",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
+                "file": "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ICON-o_Stokes_Lagrangian_implementation"
+              "title": "Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations"
+            }
+          },
+          {
+            "id": "9f669dd9f6c05ea6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Breivik_2014&2016_Note_Stokes-Drift-Profile"
+            }
+          },
+          {
+            "id": "7b849083b795b279",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Useful-Command"
             }
           },
           {
@@ -106,7 +92,21 @@
             }
           },
           {
-            "id": "05c31b26f71b8e20",
+            "id": "92fade71ff70ec2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ICON_Parameterisation"
+            }
+          },
+          {
+            "id": "e9f54773027a181d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -119,7 +119,8 @@
               "title": "Chapter_11-Small_Scale_Turbulence"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -178,7 +179,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 293.64374923706055
+    "width": 293.64374923706055,
+    "collapsed": true
   },
   "right": {
     "id": "838d4b369ada7e2b",
@@ -312,7 +314,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.3812255859375
+    "width": 325.3812255859375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -332,20 +335,22 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "92fade71ff70ec2b",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_11-Small_Scale_Turbulence.md",
+    "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
+    "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
+    "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
+    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
+    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
+    "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "2026-11-04.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Run_Long_Simulation.md",
     "Project-Surface_Waves/Plan/Tasks.md",
     "Project-Surface_Waves/Subject Note/Textbook-Ocean_Dynamics/Chapter_1-Fundamental_Laws.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Status.md",
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_Lagrangian_implementation.md",
     "Project-WMT/Meeting Note/Meeting_Note_WMT.md",
-    "Project-Surface_Waves/Subject Note/Breivik_2014&2016_Note_Stokes-Drift-Profile.md",
-    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
-    "Project-Surface_Waves/Subject Note/Suzuki&Kemper_2016_Wave-Averaged-Boussinesq-Equations_Representations.md",
     "Project-Surface_Waves/Thoughts/Lagrangian_velocity_and_Stokes_drift.md",
     "PhD-General/TRR-181/TRR-Workshop_Git-Lab.md",
     "Untitled.md",
@@ -357,10 +362,8 @@
     "Attachments/0646b16e7877526044de75c5b711f94a.png",
     "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
     "Project-Surface_Waves/Tips/Coding/ICON_Data-process_Tips.md",
-    "Project-Surface_Waves/Subject Note/ECMWF_2024_Note_Wave-induced-stress_and_Young-waves.md",
     "Project-Surface_Waves/Plan/Experimental/Assess_diff_Stokes_reconstruction_methods.md",
     "Project-Surface_Waves/Thoughts/attachments/(2010-01-01)-Dynamics-of-Winds-and-Currents-Coupled-to-Surface-Waves-JQRPIFWN.md",
-    "Project-WMT/Plan/Figure_Plan_2025-11-13.md",
     "Attachments/Screenshot 2026-10-22 at 16.44.15.png",
     "Attachments/Screenshot 2026-10-22 at 16.43.48.png",
     "Attachments/Screenshot 2026-10-22 at 16.36.04.png",

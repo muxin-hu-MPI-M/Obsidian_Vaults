@@ -18,3 +18,7 @@ salloc --partition=compute --nodes=1 --time=08:00:00 --account mh0033
 ```
 git difftool --tool=meld -d origin/icon-2026.10
 ```
+- to check the updating log file, `Ctrl+C` to stop
+```
+tail -n 50 -F xxx
+```

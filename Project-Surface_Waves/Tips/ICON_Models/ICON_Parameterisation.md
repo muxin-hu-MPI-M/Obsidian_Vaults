@@ -22,7 +22,7 @@ The TKE parameterisation scheme in ICON-O model.
 ![[Screenshot 2025-10-28 at 10.48.16.png |center]]
 
 
-> [!Attention] **At the right-hand-side, from 1st to 6th terms are:**
+> [!Important] **At the right-hand-side, from 1st to 6th terms are:**
 > 1. Vertical redistribution of TKE: vertical divergence of the diffusive TKE flux
 > 2. Buoyancy production
 > 3. Shear production
@@ -45,7 +45,9 @@ $$ \begin{equation} \frac{\partial \varepsilon}{\partial t}=\frac{\partial}{\par
 
 Some explanation of the TKE-Scheme is listed in the following section.
 
-## TKE Flux (Divergence) → Redistribution
+## Each Terms
+### (1) TKE Flux (Divergence) → Vertical redistribution
+==**It describes the vertical divergence of the diffusive TKE flux**==. 
 The TKE redistribution in the mixed layer is expressed in the first term on the right-hand side of the above two equations. The term is simplified by assuming all three fluxes in the TKE flux term (i.e., divergence term) into one turbulent diffusion term:
 $$ \frac{\partial}{\partial z}\bigg( k_e\frac{\partial E_{tke}}{\partial z}\bigg)
 
@@ -55,42 +57,54 @@ $$ k_e=c_E E_{tke}^{1/2}L_{mix}=\alpha_{tke}A_v $$
 
 The turbulent viscosity $Av$ expression is summarised below.
 
+If we define
+$$ F_E=-k_e\partial_z E_{\mathrm{tke}}, $$
+then
+$$ \partial_tE_{\mathrm{tke}}\big|_{\mathrm{transport}} =-\partial_zF_E. $$
+Integrating over a water column gives
+$$ \int_{z_b}^{z_s}\partial_z(k_e\partial_z E)\,dz = -F_E(z_s)+F_E(z_b). $$
+Therefore, **this term does not create or destroy energy within the interior**, but it can change the total TKE of a column through boundary fluxes.
 
-## Eddy (Turbulent) Viscosity for momentum $A_v$
-Represents the ==**ability of turbulence to mix momentum**==, which is a turbulence analogue of molecular viscosity.
+This distinction matters particularly for surface-wave-driven turbulence: energy can enter at the surface and then be transported downward by this term.
 
-It is appeared in the mean momentum equation as a parameterisation of the turbulence momentum flux (i.e., shear production term. Considering horizontal homogeneous, leading to $\overline{w}=0$). Also considering mixing length concept (See [[Chapter_11-Small_Scale_Turbulence#Mixing Length]]):
+### (2) Buoyancy Production
+==**This is an energy exchange term between the turbulent kinetic and potential energy**==, not necessarily a pure production term. See details in [[Chapter_11-Small_Scale_Turbulence#Exchange with Mean Potential Energy]]
+Buoyancy production term in TKE equation (for mixed layer), which can be related to mean buoyancy profile (i.e., mixing length concept):
+$$ \overline{b'w'}=-K_b\frac{\partial \overline {b}}{\partial z} $$
+> [!Cite] **Turbulent (eddy) diffusivity for buoyancy $k_v$**
+> Where the $K_b$ is the eddy diffusivity. With TKE closure:
+> $$ K_b=k_v=c_bE_{tke}^{1/2}L_{mix} $$
+> - Where $$c_b=c_u/Pr$$, thus $Pr=c_u/c_b$, is the turbulent Prandtl number
+> - Represents the ability of turbulence to mix scalar quantities (e.g., temperature, salinity, density (or buoyancy)).
+> - The term ‘eddy diffusivity’ and ‘eddy viscosity’ is just two different names for the same concept originated in the mixing length concept in Turbulent mixing.
+> - The turbulent viscosity/diffusivity both represents the magnitude of mixing. Thus, a simple from of the turbulent flux can be obtained by **assuming that mixing is mainly caused by eddies with maximum energy, with a length scale** $L$ (integral length scale for large eddies), which yields $K\sim UL \sim \varepsilon^{1/2}L$
+> - The main idea is to represent the turbulent flux into the mean gradient of the scalar quantity. While in the mixed layer, we assume the horizontal homogeneity, which only consider the vertical mean gradient.
+> - for $z$ increasing upward.
+> 	- When $N^2>0$, the ocean is stably stratified. Turbulence must work against buoyancy to mix water vertically, converting TKE into potential energy.
+> 	- When $N^2<0$, the water column is gravitationally unstable. Buoyancy drives convection, converting potential energy into TKE.
+
+And because the buoyancy and the buoyancy frequency is linked:
+$$ b=-g\frac{\rho'}{\rho_0}\quad \text{and} \quad N^2=-\frac{g}{\rho_0}\frac{D\rho}{Dz}=\frac{\partial \overline{b}}{\partial z} $$
+> [!Important] Thus, the buoyancy production term: 
+> $$ \boxed{\overline{b'w'}=-k_vN^2} $$
+
+
+### (3) Shear Production
+==**Represents a transfer of energy from resolved mean kinetic energy into unresolved turbulent kinetic energy**==. In TKE scheme, its parameterisation describes the interaction of turbulence with a mean shear (see [[Chapter_11-Small_Scale_Turbulence#Exchange with Mean kinetic Energy]]). The direction of this exchange is normally such that energy flows from mean to turbulent kinetic energy. 
+
+Considering horizontal homogeneous, leading to $\overline{w}=0$). Also considering mixing length concept (See [[Chapter_11-Small_Scale_Turbulence#Mixing Length]]):
 $$ \begin{split} -\overline{\mathbf u_h'w'}\frac{\partial \overline{\mathbf u_h}}{\partial z}&=-(-K_m\frac{\partial \overline{\mathbf u_h}}{\partial z})\frac{\partial \overline{\mathbf u_h}}{\partial z} \\
 
 &=K_m(\frac{\partial \overline{\mathbf u_h}}{\partial z})^2 \end{split} $$
-==**Where the $K_m$ is the eddy viscosity==.** In the TKE-Scheme, this viscosity is represented as:
-$$ K_m=A_v=c_uE_{tke}^{1/2}L_{mix} $$
-Thus, the shear production term (turbulent momentum flux):
-$$ -\overline{u'w'}\frac{\partial \overline{\mathbf u}}{\partial z}=A_v(\partial_z(\overline{\mathbf u_h}))^2 $$
+> [!Cite] **Eddy (Turbulent) Viscosity for momentum $A_v$**
+> Where the $K_m$ is the eddy viscosity. In the TKE-Scheme, this viscosity is represented as:
+> $$ K_m=A_v=c_uE_{tke}^{1/2}L_{mix} \sim \mathrm m^2 \mathrm s^{-1}$$
+> Represents the **ability of turbulence to mix momentum**, which is a turbulence analogue of molecular viscosity.
 
+> [!Important] Thus, the shear production term (turbulent momentum flux):
+> $$ \boxed{-\overline{u'w'}\frac{\partial \overline{\mathbf u}}{\partial z}=A_v(\partial_z(\overline{\mathbf u_h}))^2} $$
 
-## Eddy (Turbulent) Diffusivity for buoyancy $k_v$
-Represents the ability of turbulence to mix scalar quantities (e.g., temperature, salinity, density (or buoyancy)).
-
-Which appears in the scalar transport equations. buoyancy production term in TKE equation (for mixed layer), which can be related to mean buoyancy profile (i.e., mixing length concept):
-$$ \overline{b'w'}=-K_b\frac{\partial \overline {b}}{\partial z} $$
-**Where the $K_b$ is the eddy diffusivity.** With TKE closure:
-$$ K_b=k_v=c_bE_{tke}^{1/2}L_{mix} $$
-And because the buoyancy and the buoyancy frequency is linked:
-$$ b=-g\frac{\rho'}{\rho_0}\quad \text{and} \quad N^2=-\frac{g}{\rho_0}\frac{D\rho}{Dz}=\frac{\partial \overline{b}}{\partial z} $$
-Thus, the buoyancy production term:
-$$ \overline{b'w'}=-k_vN^2 $$
-As you can see, the term ‘eddy diffusivity’ and ‘eddy viscosity’ is just two different names for the same concept originated in the mixing length concept in Turbulent mixing.
-- The turbulent viscosity/diffusivity both represents the magnitude of mixing. Thus, a simple from of the turbulent flux can be obtained by ==**assuming that mixing is mainly caused by eddies with maximum energy, with a length scale== $L$** (integral length scale for large eddies), which yields $K\sim UL \sim \varepsilon^{1/2}L$
-The main idea is to represent the turbulent flux into the mean gradient of the scalar quantity. While in the mixed layer, we assume the horizontal homogeneity, which only consider the vertical mean gradient.
-for $z$ increasing upward.
-- When $N^2>0$, the ocean is stably stratified. Turbulence must work against buoyancy to mix water vertically, converting TKE into potential energy.
-- When $N^2<0$, the water column is gravitationally unstable. Buoyancy drives convection, converting potential energy into TKE.
-
-Thus, this is an energy exchange term between turbulent kinetic and potential energy, not necessarily a pure production term.
-
-
-### Mixing length
+#### Mixing length
 Here the mixing length is defined as the displacement of a particle that is entirely supported by the amount of TKE (per mass), which will be transferred to potential energy (as the particle moves).
 
 Derivation process:
@@ -107,26 +121,36 @@ The potential energy change is:
 $$ E_p=\int_{0}^{\Delta z}N^2z'dz'=\frac{1}{2}N^2(\Delta z)^2\approx \frac{1}{2}N^2L^2 $$
 Thus the mixing length (which is the displacement trigger by the TKE)
 $$ L_{mix}=\sqrt{\frac{2E_{tke}}{N^2}} $$
+### (4) Surface forcing
+In ICON-O, the ==**surface forcing can represent energy input associated with surface wave breaking**==. Wind stress can also enter through a surface boundary condition on TKE or its vertical flux. But it is a simple parameterisation only related to the wind stress:
+$$F_{\text{tke}}\sim f(|\tau_0|^{3/2})$$
+This TKE forcing represents the rate at which energy enters the turbulent field
 
-## Turbulent dissipation
-Represents the conversion from TKE to internal (thermal) energy. Hence, **always negative**. The expression comes straight from ==***Kolmogorov’s theory***== (see [[Chapter_11-Small_Scale_Turbulence#11.1 Kolmogorov’s Theory of Homogeneous Turbulence]]) of turbulence and the idea of energy cascade:
-$$ \epsilon=c_{\epsilon}\frac{E_{tke}^{3/2}}{L_{mix}}
+
+### (5) Turbulent dissipation
+==**Represents the conversion from TKE to internal (thermal) energy through the turbulent energy cascade and ultimately molecular viscosity**==. Hence, **always negative**. The expression comes straight from ==🔴***Kolmogorov’s theory***== (see [[Chapter_11-Small_Scale_Turbulence#11.1 Kolmogorov’s Theory of Homogeneous Turbulence]]) of turbulence and the idea of energy cascade:
+$$ \boxed{\epsilon_{\text{tke}}=c_{\epsilon}\frac{E_{tke}^{3/2}}{L_{mix}}}
 
 $$
 
 The $L_{mix}$ is the mixing length. Larger the $L_{mix}$, smaller the dissipation rate. And this is related to the turnover time for eddy $T_L\sim L_{mix}/\sqrt{E_{tke}}$, which is the time an eddy of a size $L_{mix}$ takes to mix with its surroundings. Then the dissipation rate $\epsilon \sim E_{tke}/T_L$.
 
-It says: **the dissipation rate is proportional to the turbulent velocity scale cubed divided by the mixing length scale (to match the correct dimension)**
+It says, the dissipation rate is proportional to the turbulent velocity scale cubed divided by the mixing length scale (to match the correct dimension)
 
 **It assumes:**
-
 - Equilibrium (quasi-steady) state between energy production and dissipation
 - Homogeneous, isotropic turbulence at small scales
 - Single dominant length scale $L_{mix}$ governs the energy-containing eddies
 
+### (6) Internal-wave energy input
+This one is particularly important for ocean interior mixing. Internal waves can lose energy through breaking and other dissipative processes. Some of that energy is transferred into small-scale turbulence, supplying TKE.
+
+Schematically,
+$$ E_{\mathrm{internal\ waves}} \xrightarrow{\epsilon_{iw}} E_{\mathrm{tke}} \xrightarrow{\epsilon_{\mathrm{tke}}} E_{\mathrm{internal\ heat}}. $$
+
+This explains why $\epsilon_{iw}$ enters the TKE equation with a positive sign, despite often being called internal-wave dissipation. In coupled TKE–IDEMIX formulations, this term links the internal-wave energy budget to the turbulence budget.
+
 For the actual ICON output of TKE and TKE tendency (change rate of TKE), please refers to the **“TKE Output Table” section in ICON Output Reference**
-
-
 
 # Gent-McWilliams parameterisation (GM90) (ICON-o)
 ## Summary (AI-generated)
