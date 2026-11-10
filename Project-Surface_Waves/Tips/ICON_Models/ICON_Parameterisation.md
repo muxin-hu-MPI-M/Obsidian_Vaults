@@ -10,7 +10,7 @@ tags:
 Last Eddited: 2025-11-29
 ---
 
-# TKE-Scheme (ICON-o)
+# TKE-Scheme (ICON-o) #TKE_scheme 
 
 ## Introduction
 
@@ -129,11 +129,18 @@ This TKE forcing represents the rate at which energy enters the turbulent field
 
 ### (5) Turbulent dissipation
 ==**Represents the conversion from TKE to internal (thermal) energy through the turbulent energy cascade and ultimately molecular viscosity**==. Hence, **always negative**. The expression comes straight from ==🔴***Kolmogorov’s theory***== (see [[Chapter_11-Small_Scale_Turbulence#11.1 Kolmogorov’s Theory of Homogeneous Turbulence]]) of turbulence and the idea of energy cascade:
-$$ \boxed{\epsilon_{\text{tke}}=c_{\epsilon}\frac{E_{tke}^{3/2}}{L_{mix}}}
+$$ \boxed{\epsilon_{\text{tke}}=c_{\epsilon}\frac{E_{tke}^{3/2}}{L_{mix}}}$$
 
-$$
+The $L_{mix}$ is the mixing length. Larger the $L_{mix}$, smaller the dissipation rate. 
 
-The $L_{mix}$ is the mixing length. Larger the $L_{mix}$, smaller the dissipation rate. And this is related to the turnover time for eddy $T_L\sim L_{mix}/\sqrt{E_{tke}}$, which is the time an eddy of a size $L_{mix}$ takes to mix with its surroundings. Then the dissipation rate $\epsilon \sim E_{tke}/T_L$.
+> [!Cite] **Derivation of turbulent dissipation in TKE-scheme**
+> the turnover time for eddy:
+> $$\tau_{\text{eddy}}\sim L_{mix}/\sqrt{E_{tke}}$$
+> which is the time an eddy of a size $L_{mix}$ takes to mix with its surroundings with the velocity $U\sim \sqrt{E_{tke}}$. 
+> Then the dissipation rate:
+> $$\epsilon \sim E_{tke}/\tau_{\text{tke}} \sim \frac{E_{\text{tke}}}{L_{\text{mix}}/\sqrt{E_{\text{tke}}}}\sim \frac{E_{\text{tke}}^{3/2}}{L_{\text{mix}}}$$.
+> The scaling argument does not determine an exact numerical prefactor. Then, a dimensionless coefficient $c_{\epsilon}$ is introduced, depends on the definitions of the characteristic turbulent velocity and mixing length, as well as the assumptions and calibration of the closure. Finally, the turbulent dissipation term in TKE scheme is: 
+> $$ \boxed{\epsilon_{\text{tke}}=c_{\epsilon}\frac{E_{tke}^{3/2}}{L_{mix}}}$$
 
 It says, the dissipation rate is proportional to the turbulent velocity scale cubed divided by the mixing length scale (to match the correct dimension)
 
