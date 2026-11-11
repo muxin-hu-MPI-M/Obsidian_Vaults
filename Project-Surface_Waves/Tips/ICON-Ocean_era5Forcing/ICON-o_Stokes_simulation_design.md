@@ -31,7 +31,7 @@ Last Eddited: 2026-08-31
 		- monthly means of 3D scalar: `to, so`
 		- monthly means of 3D velocity: `u,v,w,uu,vv`
 			- `uu,vv` used for EKE calculation: $EKE = \frac{(<u^2>-<u>^2+<v^2>-<v>^2)}{2}$
-		- monthly means of surface 2D fields: `tos, sos, zos, zos_square, mlotst, mld, HeatFlux_Total, HeatFlux_Shortwave, HeatFlux_LongWave, HeatFlux_LongWave, HeatFlux_Sensible, HeatFlux_Latent, atmos_fluxes_SWnetw, xxx` → check with Helmuth
+		- monthly means of surface 2D fields: `tos, sos, zos, zos_square, mlotst, mld, HeatFlux_Total, HeatFlux_Shortwave, HeatFlux_LongWave, HeatFlux_LongWave, HeatFlux_Sensible, HeatFlux_Latent`
 		- monthly means of vertical mixing: `tke, tke_Lmix, tke_Ttot, tke_Tbck, tke_Tiwf, tke_Twin, tke_Tdis, tke_Tdif, tke_Tspr, tke_Tbpr, tke_Pr, tke_plc` 
 		- monthly means of freshwater/heat transport per basin: `global_hfbasin, atlantic_hfbasin, pacific_hfbasin, global_sltbasin, atlantic_sltbasin, pacific_sltbasin`
 		- monthly means of tracer flux: `uT, vT, wT, uS, vS, wS`
