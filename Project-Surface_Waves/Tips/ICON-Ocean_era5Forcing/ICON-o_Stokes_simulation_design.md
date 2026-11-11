@@ -32,10 +32,10 @@ Last Eddited: 2026-08-31
 		- monthly means of 3D velocity: `u,v,w,uu,vv`
 			- `uu,vv` used for EKE calculation: $EKE = \frac{(<u^2>-<u>^2+<v^2>-<v>^2)}{2}$
 		- monthly means of surface 2D fields: `tos, sos, zos, zos_square, mlotst, mld, HeatFlux_Total, HeatFlux_Shortwave, HeatFlux_LongWave, HeatFlux_LongWave, HeatFlux_Sensible, HeatFlux_Latent, atmos_fluxes_SWnetw, xxx` → check with Helmuth
-		- monthly means of vertical mixing: `tke` and all tendency terms
+		- monthly means of vertical mixing: `tke` and all tendency terms, length scale
 		- monthly means of freshwater/heat transport per basin: `global_hfbasin, atlantic_hfbasin, pacific_hfbasin, global_sltbasin, atlantic_sltbasin, pacific_sltbasin`
 		- monthly means of tracer flux: `uT, vT, wT, uS, vS, wS`
-		- monthly eddy density fluxes: `rho, uR, vR, wR`
+		- monthly eddy density fluxes: `rho, uR, vR, wR` ✅
 		- KE budget??
 		- near-inertial diagnostic → don’t have in my code
 	- withStokes additional
