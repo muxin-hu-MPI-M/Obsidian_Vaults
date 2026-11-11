@@ -7,7 +7,7 @@ tags:
 Last Eddited: 2026-08-12
 ---
 # [[2026-11-11]]
-## ICON-wave
+## ICON-wave meeting
 - wind stress may already account for the inertial period → ??
 - stokes forcing is external, the leading forcing is the CSF which is a **body force**
 
