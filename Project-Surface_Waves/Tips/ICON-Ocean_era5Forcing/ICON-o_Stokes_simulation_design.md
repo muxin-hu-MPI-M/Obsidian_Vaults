@@ -36,8 +36,6 @@ Last Eddited: 2026-08-31
 		- monthly means of freshwater/heat transport per basin: `global_hfbasin, atlantic_hfbasin, pacific_hfbasin, global_sltbasin, atlantic_sltbasin, pacific_sltbasin`
 		- monthly means of tracer flux: `uT, vT, wT, uS, vS, wS`
 		- monthly eddy density fluxes: `rho, uR, vR, wR` 
-		- KE budget??
-		- near-inertial diagnostic → don’t have in my code
 	- withStokes additional
 		- monthly means of velocity + `stokes_u, stokes_v, eulerian_u, eulerian_v`
 		- monthly means of tracer flux + `eulerian_uT, eulerian_vT, stokes_uT, stokes_vT`, same as salt flux
