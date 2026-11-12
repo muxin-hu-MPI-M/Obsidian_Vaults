@@ -20,5 +20,5 @@ git difftool --tool=meld -d origin/icon-2026.10
 ```
 - to check the updating log file with certain words, `Ctrl+C` to stop
 ```
-tail -n 50 -F xxx | grep -line--buffered 'xxx'
+tail -n 50 -F xxx | grep --line-buffered 'xxx'
 ```
