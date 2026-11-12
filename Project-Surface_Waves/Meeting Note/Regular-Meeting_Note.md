@@ -11,7 +11,34 @@ Last Eddited: 2026-08-12
 - wind stress may already account for the inertial period → ??
 - stokes forcing is external, the leading forcing is the CSF which is a **body force**
 
-## Regular meeting with Nils & Noel
+## Joint meeting with Nils & Noel
+- Separation of Lagrangian flux to eulerian and stokes will be the most important diagnostics
+- The study “will” clarify:
+	- Where the return flows happen, mostly in the Stokes layer? or distributed in greater depth that below the Stokes layer?
+- ==Nils’ suggestions==: quantify stokes/eulerian response in both velocity/flux fields in **control volume**
+	- How many total heat flux come in/out 
+	- What are the relative contributions from direct Stokes drift and indirect Stokes-induced Eulerian flow
+	- ==Noel’s suggestion==: calculate “transport isotherm” → see [https://journals.ametsoc.org/view/journals/phoc/49/1/jpo-d-18-0098.1.xml](https://journals.ametsoc.org/view/journals/phoc/49/1/jpo-d-18-0098.1.xml)
+		- Integrate the divergence of (uT, vT) over volume with different T/density class (? similar to the Water Mass Transformation)
+		- Better to do it online (change the icon src code); However, for the first investigation, try with offline estimation to see the relevance (Nils may have the code)
+	- How to identify the region? → speculate the map of heat/mass transport divergence/convergence
+- Discussion:
+	- Main focus of the study: 
+		- ==Nils== suggest “Stokes-driven heat convergence and divergence”
+		- ==Noel== suggest “How map of heat convergence/divergence develop, details in circulation pattern”
+	- Start writing: 
+		- starts with the methodology → WAB formula + code implementation
+		- add figures as many as I can (we then decide)
+	- Expansion in ideas:
+		- Compensation at diff. layer + diff. timescales
+		- Climate change simulation
+			- known: storm activity change under global warming; SO wind stress changes a lot
+			- unknown: what might be the influence to the Stokes-driven heat convergence? (but this we need coupled model!!!)
+	- Compare with Carsten’s result:
+		- I make the figure and tell Carsten to remake
+		- The idea is to have similar order of magnitudes in the results
+	- Coordinate with Chris:
+		- We’d better not working in parallel! Muxin want Chris to shift focus to TKE implementation
 
 
 
