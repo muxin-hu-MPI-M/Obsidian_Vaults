@@ -22,3 +22,20 @@ git difftool --tool=meld -d origin/icon-2026.10
 ```
 tail -n 50 -F xxx | grep --line-buffered 'xxx'
 ```
+- To upload the quick plots output:
+```
+cd pyicon/all_qps
+module load py-python-swiftclient
+
+# if the swift token is expired 
+swift-token new
+Account: mh0033
+Username: m301254
+Password: same for levante
+
+# if the token is there
+cd all_qps
+swift upload m301254 *
+
+# the website: 
+```
