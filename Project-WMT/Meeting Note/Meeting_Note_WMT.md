@@ -12,9 +12,19 @@ Last Eddited: 2025-12-01
 	- other observation products: FOSSI? CHOR?
 - Why also have the correlation between MOC and the corresponding IWMT? Because MOC cannot add linearly between LAB and ENA, but IWMT can. 
 - Keep figure 3.1
-- higher climatological alpha may also explain to some extent that it experienced more decline, due to the non-linearity of the equation of state
+- Check if “higher climatological alpha may also explain to some extent that it experienced more decline, due to the non-linearity of the equation of state”
 	- not direct from the rho-T-S profile
 	- get a **figure of LAB alpha as a function of SST and SSS (or simply just CT, SA**, in the reference region in LAB)
+- we should have 3 extra models:
+	- check the MIROC6, CMCC on ESGF server
+- Aim for ESD journal → check the reference for this journal
+- Keep “maps”, 4.2
+- cluster mean response is also very interesting, especially the alpha.
+- ==Cluster_LAB: the Surface density is more sensitive to SST change in the deep water formation region → alpha is higher==
+- Would be nice to have a figure compare:
+	- alpha climatology cluster means/diff
+	- alpha response cluster means/diff
+
 # [[2026-10-27]] Discussion with Hongdou
 - check the correlation of NA (LAB + ENA) IWMT climatology versus LAB alpha JFM climatology
 - add observational estimation
