@@ -6,6 +6,11 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+
+# [[2026-11-13]]
+## Discussion with Noel
+- the stokes simulation also needs time to spin-up, since the applied physics change
+- maybe run for another 25 years if the computation source/disk space is allowed.
 # [[2026-11-11]]
 ## ICON-wave meeting
 - wind stress may already account for the inertial period → ??
