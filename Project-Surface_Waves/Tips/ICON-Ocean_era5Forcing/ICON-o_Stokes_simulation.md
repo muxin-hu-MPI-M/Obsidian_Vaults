@@ -48,6 +48,17 @@ Differential budget residual:    -0.0026 W/m²
 - might be a side story but may not be the main focus of my study, as suggested by Noel #presenter/Noel_Gutierrez-Brizuela , the main focus should be the energy/heat redistribution by the ocean
 
 ## [[2026-11-15]] How ICON calculates `global_hfbasin`?
+The source explicitly describes the final step as calculating heat transport from the residual of heat-content tendency and integrated surface heat flux. See the [ICON-O diagnostic source](https://github.com/wafarm/icon-model/blob/main/src/ocean/diagnostics/mo_ocean_diagnostics.f90) and [ICON-O output documentation](https://icon-o.gitlab-pages.dkrz.de/icon-o-documentation/0306_output.html).
+
+Conceptually,
+$$\mathrm{global\_hfbasin} = \mathrm{implied\ transport\ from\ surface\ flux} - \mathrm{storage\ contribution},$$
+
+using ICON’s internal sign convention.
+
+So `global_hfbasin` is a budget-consistent transport diagnostic, but it is not a pure direct advective transport diagnostic.
+
+
+
 ## [[2026-08-31]] Some thoughts
 For the simulations, I would think in three layers:
 1. **Immediate / transient adjustment**  

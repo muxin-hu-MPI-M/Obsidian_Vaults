@@ -119,7 +119,8 @@
               "title": "Useful-Command"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -257,7 +258,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -332,10 +333,10 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "ecbc9dfbd0f1b840",
   "lastOpenFiles": [
-    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
+    "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation.md",
     "Attachments/Pasted image 20261116135843.png",
     "Attachments/Pasted image 20261116135233.png",
     "2026-11-16.md",
