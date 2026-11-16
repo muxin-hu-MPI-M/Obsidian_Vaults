@@ -11,9 +11,9 @@
   "font-size",
   "shiki-highlighter",
   "obsidian-citation-plugin",
-  "obsidian-zotero-desktop-connector",
   "obsidian-git",
   "obsidian-enhancing-mindmap",
   "editing-toolbar",
-  "obsidian-task-progress-bar"
+  "obsidian-task-progress-bar",
+  "obsidian-zotero-desktop-connector"
 ]

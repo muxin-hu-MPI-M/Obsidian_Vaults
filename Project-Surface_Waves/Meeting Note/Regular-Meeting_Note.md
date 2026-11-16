@@ -7,10 +7,34 @@ tags:
 Last Eddited: 2026-08-12
 ---
 
+# [[2026-11-16]]
+## Discussion with Noel
+![[Pasted image 20261116132419.png]]
+-  The current Hovomoller graph is calculated by subtracting the control state at the same time: $$F'(t) = F_{\text{withStokes}}(t)-F_{\text{noStokes}}(t)$$
+	- The current Hovomoller graph indicates some annual wave pattern
+- It is better Calculate the “anomaly” by subtracting the **control mean state** (i.e., long-time average of the control state): $$F'(t) = F_{\text{withStokes}}(t)-\overline {F_{\text{noStokes}}(t)}$$
+	- however, since the `noStokes` simulation didn’t reach to thermodynamic quasi-equilibrium state, can we simply take the time-mean of it and being subtracted? 
+	  → Technically I think we can, since we are applying single-year-repeat atmospheric forcing, we remove externally imposed interannual variability and externally imposed trends. Only the ocean’s seasonal and interannual variability is retained.
+- The above subtraction DO NOT affect the time-mean anomaly: $$\overline{F'(t)} = \overline{F_{\text{withStokes}}(t)-\overline {F_{\text{noStokes}}(t)}} = \overline{F_{\text{withStokes}}(t)-F_{\text{noStokes}}(t)}$$
+- The 99%-interval do not help explaining, because the variability that we saw may comes from the interannual-variability of the ocean itself
+- **The OHT is only redistributing the energy, do not creating/sinking the global energy**
+	- So when comparing both simulations, we need to discuss them individually as diff. simulations may have diff. climate state which affect how much the energy is being transported and distributed (as we already observed in our pair simulations)
+	- for each climate state, we have energy distribution
+	- So I suppose we need to use: $\overline {F_{\text{withStokes}}(t)} - \overline {F_{\text{noStokes}}(t)}$?
+- ==IMPORTANT!==: Even if in the end, the mean OHT anomaly convergence is almost zero, we still have ways to do science; We know that the Stokes-only heat transport is large, but the net effect is small, then we need to understand why? Where is the return flow, and how the return flow is canceling the effect?
+	- **How to show importance**? Shows the mean heat convergence and the “imposed” Stokes-only heat convergence (or the mean heat transport anomaly and the “imposed” Stokes-only heat transport)
+	- **How to visualise**? Global maps of vertical-integral of `uT, vT` and `u, v`. 
+	- For example, 3 maps, each map has the same `contourf` with the convergence of heat transport anomaly `conv(\delta_uT, \delta_vT)` → indicate the anomalous OHT anomaly convergence/divergence. On top of that, add coarsen arrows indicate:
+		- $\int_{-H}^{0} (u^L_{\text{withStokes}}- u^E_{\text{noStokes}})\;dz$: total volume transport change (i.e., actual change)
+		- $\int_{-H}^{0} u^s_{\text{withStokes}}\;dz$: changes due to direct Stokes volume transport
+		- $\int_{-H}^{0} (u^E_{\text{withStokes}} - u^E_{\text{noStokes}})\;dz$: changes due to Stokes-induced Eulerian volume transport
+	
+
 # [[2026-11-13]]
 ## Discussion with Noel
 - the stokes simulation also needs time to spin-up, since the applied physics change
 - maybe run for another 25 years if the computation source/disk space is allowed.
+
 # [[2026-11-11]]
 ## ICON-wave meeting
 - wind stress may already account for the inertial period → ??
@@ -44,7 +68,6 @@ Last Eddited: 2026-08-12
 		- The idea is to have similar order of magnitudes in the results
 	- Coordinate with Chris:
 		- We’d better not working in parallel! Muxin want Chris to shift focus to TKE implementation
-
 
 
 # [[2026-11-04]]
