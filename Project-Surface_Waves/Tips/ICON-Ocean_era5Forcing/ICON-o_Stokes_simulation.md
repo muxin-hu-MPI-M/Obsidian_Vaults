@@ -8,6 +8,18 @@ Last Eddited: 2026-08-31
 ---
 
 # Note
+## [[2026-11-17]] Near thermo-equilibrium branching off 30 years
+![[Pasted image 20261117102335.png]]
+- After running from 1990-2005 (common spin-up), branching to:
+	- EXP: `withStokes`
+	- CTL: `noStokes` 
+- The global heat content started to become stable
+
+![[Pasted image 20261117103725.png]]
+
+- There’s a sign change from 2025, as the global mean surface heat flux started to be come positive → ocean taking up heat from the atmosphere, and the `withStokes` simulation takes more than `noStokes` simulation.
+- Previously, `withStokes` lose less heat to the atmosphere, now taking more, retaining the global ocean heat content larger than the `noStokes`
+- the mean different by calculating the 2005-2035 period find the difference in HeatFlux_total could explain 88% of the mean difference in ocean heat content, by converting the ocean heat content to equivalent heat flux.
 ## [[2026-11-16]] How to use `noStokes` simulation?
 three related diagnostics:
 1. **Reference-state departure**
