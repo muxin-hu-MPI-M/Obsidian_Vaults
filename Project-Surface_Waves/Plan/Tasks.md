@@ -30,10 +30,10 @@ tags:
 - [ ] Meeting with Robb and Dylan #project/WMT 
 	- [ ] Record meeting note
 	- [ ] Create the Earth System Dynamics manuscript reference
-- [ ] Simulation #project/surfwaves 
+- [x] Simulation #project/surfwaves 
 	- [x] ocean 15-years spinup run with minimum output
-	- [ ] Finalise the model output for the comparison run
-	- [ ] branching off from spinup
+	- [x] Finalise the model output for the comparison run
+	- [x] branching off from spinup
 
 ## [[2026-11-02]]
 - [x] Email to Carsten for the details of simulation #project/surfwaves 

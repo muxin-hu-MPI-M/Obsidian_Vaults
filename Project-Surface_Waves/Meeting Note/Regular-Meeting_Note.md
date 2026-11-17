@@ -6,6 +6,44 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-11-17]]
+## Discussion with Noel: Paper Introduction
+#presenter/Noel_Gutierrez-Brizuela 
+Discussion
+- **Starting point**, Gap? Noel suggestion to create tension
+	- for example, we have evidence 1 and evidence 2, but they are somehow against each other, which means something still need to be resolved
+	- There’s an order of importance based on the subject of this study. In our study:
+		1. OHT
+		2. Climate impact
+		3. Stokes-induced transport
+		we need to find a logical chain to link them
+- **Crucial question** should be: “Does Stokes drift produce meaningful large-scale redistribution of heat”
+	- the concept of “return flow” shouldn’t contain in the crucial question, but need to be addressed in “requirement” for an acceptable answer
+- **Prospects/Stakes**: 
+	- Difference in wave transport (i.e., Stokes transport) compared to others
+	- We want to connect/use the wave-propagation which leads to remote effect 
+	- Maybe also mention the winds/weather, wind-driven Ekman flow
+- **Requirements for an acceptable answer**
+    - The flow adjusts to Stokes in many ways, including Coriolis continuity, these are called Eulerian adjustments
+    - The quantification of the impacts on ocean heat redistribution from Stokes should account for those adjustments
+    - We introduced the Stokes drift to the ICON-O in a physical consistent way that account for these adjustments
+
+From Noel:
+- **What’s the starting point?**
+	- The large scale atmospheric and oceanic circulations act to redistribute heat from the tropics towards higher latitudes. Changes in these spatial patterns of transport can lead to major climate variability and impacts. 
+	- Assessments of large scale heat transport typically come from numerical models that cannot resolve all the scales of motion in the ocean or atmosphere. Surface waves are not included in models. However, they allow tracers near the ocean surface to drift in the direction of wave propagation. 
+	- Ocean models don’t have surface waves, so we know little about the waves’ impact on large scale climate
+- **What’s the crucial question?**
+	- Does Stokes drift produce a meaningful large-scale redistribution of heat?
+- **What are the prospects/stakes? Why should we be excited that you are going to answer this question?**
+	- (Something about how small and large-scale connect)
+	- Surface waves are high-frequency and small length-scale, so they are free to move more detached from the large-scale circulation than most other forms of motion. Stokes drift can have its own distinct spatiotemporal signature on the patterns of heat transport (difference from others). For example, Song et al (2026) show that wind waves can drive persitent transport of tracers across Southern Ocean fronts, which mean currents cannot do.
+	- Large-scale flow is bound to the conservation of potential vorticity so it is difficult to move a parcel meridionally across a long distance. This does not constrain surface wave groups, which have been observed moving from the Southern Ocean to the extratropical North Pacific (Munk, 1966). 
+	- Long range propagation of surface waves provides a pathway for atmospheric weather to have remote effects in ocean transport. Here we seek to quantify whether those effects (via Stokes drift) can aggregate to have noticeable climate impacts
+	- Patterns of surface wave generation are changing as global warming modifies weather across the planet. Therefore, if Stokes drift imposes its own pattern of large scale heat transport, we can also expect these patterns to change (https://www.sciencedirect.com/science/article/pii/S0921818118300894)
+- **What are requirements for an acceptable answer to the question?**
+	- The flow adjusts to Stokes in many ways. A quantification of large-scale transport by Stokes should account for those adjustments. The adjustments include Coriolis, continuity...
+
 
 # [[2026-11-16]]
 ## Discussion with Noel

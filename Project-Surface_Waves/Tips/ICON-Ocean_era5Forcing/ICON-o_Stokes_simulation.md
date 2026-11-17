@@ -12,7 +12,7 @@ Last Eddited: 2026-08-31
 ![[Pasted image 20261117102335.png]]
 - After running from 1990-2005 (common spin-up), branching to:
 	- EXP: `withStokes`
-	- CTL: `noStokes` 
+	- CTL: `noStokes` → should be 45 years in total
 - The global heat content started to become stable
 
 ![[Pasted image 20261117103725.png]]
