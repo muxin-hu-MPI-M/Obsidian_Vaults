@@ -6,6 +6,22 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-11-24]]
+## Discussion with Philip
+#presenter/Philip_Kennedy
+![[Pasted image 20261124124709.png]]
+- the total responses (i.e., anomaly) we see the advective heat transport convergence/divergence, either the 35-years annual mean or seasonal mean, are connected to the waves
+- A potential pathway:
+	- Stokes forcing affect the mid-latitude westward propagating Rossby wave
+	- The westward propagating Rossby wave reach to the western boundary current regions, where the anomaly propagate equatorial along the western boundary to the equator
+	- the anomaly buffered and propagating eastward as Kelvin wave
+- The reason why my top13levels result do not clearly see the wave pattern, while the total column-integral could observe, is because the fix depth here at ~50 m is not a good “depth” for observation. The depth of these waves changes from regions to regions
+- **Question**: Why the anomaly persist even after 35-years of averaging if these are not standing waves? 
+- how to capture it is the waves? Multiple ways:
+	- get wave dispersion relationship
+	- check monthly snapchat of heat convergence/divergence to create a Hovomoller graph for a specific region?
+	- 
+
 # [[2026-11-17]]
 ## Discussion with Noel: Paper Introduction
 #presenter/Noel_Gutierrez-Brizuela 
