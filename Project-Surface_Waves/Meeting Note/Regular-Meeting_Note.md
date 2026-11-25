@@ -39,6 +39,10 @@ Last Eddited: 2026-08-12
 	- check monthly snapchat of heat convergence/divergence or other variables (e.g., SSH, SST) to create a Hovomüller graph for a specific region?
 	- From the energy wise, check the mlotst?
 
+# [[2026-11-23]]
+## Discussion with Noel
+- Despite the Stokes heat transport convergence/divergence is largely compensated by the Eulerian response, it is important to see that the compensation is neither locally nor vertically confined
+- The compensation does involves a three-dimensional Eulerian ocean circulation changes which doesn’t move heat directly opposes to the Stokes heat transport
 
 # [[2026-11-17]]
 ## Discussion with Noel: Paper Introduction
