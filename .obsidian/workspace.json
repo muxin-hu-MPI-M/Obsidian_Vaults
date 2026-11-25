@@ -153,7 +153,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mux2501",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -174,8 +174,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -333,7 +332,7 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "09fde75c75e539e1",
+  "active": "b89abaaea3ef86ea",
   "lastOpenFiles": [
     "Attachments/Pasted image 20261124124709.png",
     "Project-Surface_Waves/Tips/Coding/Useful-Command.md",

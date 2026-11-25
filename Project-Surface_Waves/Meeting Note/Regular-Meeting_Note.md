@@ -6,6 +6,23 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-11-25]]
+## Regular meeting with Nils
+- **Nils agreed** that the spatial patterns of the column-integral advective heat transport convergence response (withStokes - noStokes) looks like the typical tropical instability wave pattern: 
+	- Rossby wave-like pattern in mid-latitudes
+	- anomalies in western boundary currents, 
+	- Kelvin wave-like patterns in the tropics
+- **Nils think** even the pattern is persistent, the magnitude is very small in the annual-mean
+- The intermediate-scale response patters we see in the tropics might not be the “signals”, might just a reflection of the perturbation? 
+	- **My argument**: we averaged over 35 years, the signals still persist, especially over the seasonal mean
+	- **Nils’ suggestion**: 
+		- check the means of different stages (years), short-term means to see how the signal develop and propagate
+		- maybe in the later, run second/third model with perturbations/different initial conditions to see if there’s similar pattern → not now
+- Both simulations has the ocean losing heat to the atmosphere, but withStokes simulation reduce less.**me and Nils** both hypothesised: 
+	- Effectively, withStokes simulation has the Stokes forcing which affect the ocean in a way that pulling more heat downwards
+	- As the Eulerian ocean is the Stokes-affected Eulerian velocity, change the ocean mixing indirectly through the shear production term → need check the TKE production
+	- There’s even a chance that the vertical heat flux change, as the vertical velocity may change, as well as the T-field → need to check the wT
+
 # [[2026-11-24]]
 ## Discussion with Philip
 #presenter/Philip_Kennedy
@@ -19,8 +36,9 @@ Last Eddited: 2026-08-12
 - **Question**: Why the anomaly persist even after 35-years of averaging if these are not standing waves? 
 - how to capture it is the waves? Multiple ways:
 	- get wave dispersion relationship
-	- check monthly snapchat of heat convergence/divergence to create a Hovomoller graph for a specific region?
-	- 
+	- check monthly snapchat of heat convergence/divergence or other variables (e.g., SSH, SST) to create a Hovomüller graph for a specific region?
+	- From the energy wise, check the mlotst?
+
 
 # [[2026-11-17]]
 ## Discussion with Noel: Paper Introduction
