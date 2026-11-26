@@ -8,6 +8,30 @@ Last Eddited: 2026-08-31
 ---
 
 # Note
+## [[2026-11-26]] High-latitude Thermal overturning cell
+- Previously we found apart from the cancellation of Stokes contribution, there’s substantial additional large-scale structures remains in the upper 50m of the ocean
+- Within the upper ocean, there’s anomalous extratropical advective heat convergence in all ocean basins, combined with anomalous high-latitude heat divergence; Opposite spatial patterns observed in the deep ocean → indication of the overturning
+- The interface between the upper and deep ocean shows coherent vertical heat flux structures → ==further suggesting a broad thermal overturning between extratropical and polar water==
+- In the tropical also observes strong intermediate scale heat convection → ==🟢there’s a general latitudinal dependency of the overturning?==
+![[Pasted image 20261126110219.png]]
+
+
+## [[2026-11-24]] Cancellation of direct Stokes heat transport
+![[Pasted image 20261126105138.png]]
+Figure caption: The total response in depth-integral horizontal advective heat transport convergence and its decomposition to direct Stokes contribution and Eulerian responses. First column is the column-integral; Second and Third column is the top13levels and levels13to71 integrals, respectively. 
+
+**Interpretation**:
+- **Compensation of Direct Stokes advective heat transport**
+	- Direct Stokes advective heat transport is largely opposed by the induced Eulerian response
+	- Approximately 97% of the projected convergence compensation occurs within the effective Stokes layer
+	- This compensation is robust across seasons and spatial resolutions
+	- However, the cancellation of the direct Stokes pattern does not imply complete cancellation of the total heat transport response
+- **3D ocean adjustment to shallow Stokes forcing**
+	- The effective Stokes layer Eulerian response contains substantial additional sturctures, including regional compensation overshoot → ==Stokes-induced Eulerian compensation extends well below the effective Stokes layer==
+	- The deeper Eulerian response partly compensates that remaining upper-ocean response
+	- The Eulerian response exhibits structures across multiple spatial scales.
+	- The spatial and vertical structures suggest a broader circulation adjustment beyond local anti-Stokes compensation.
+
 ## [[2026-11-17]] Near thermo-equilibrium branching off 30 years
 ![[Pasted image 20261117102335.png]]
 - After running from 1990-2005 (common spin-up), branching to:

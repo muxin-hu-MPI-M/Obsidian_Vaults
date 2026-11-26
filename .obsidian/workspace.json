@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -154,7 +154,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "swift",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -175,7 +175,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -258,7 +259,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
+                "file": "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -333,11 +334,13 @@
       "obsidian-task-progress-bar:Open Task Genius view": false
     }
   },
-  "active": "2c1c0f50bf0347f3",
+  "active": "ecbc9dfbd0f1b840",
   "lastOpenFiles": [
+    "Attachments/Pasted image 20261126110219.png",
+    "Attachments/Pasted image 20261126105138.png",
+    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Surface_Waves/Meeting Note/Regular-Meeting_Note.md",
     "Attachments/Pasted image 20261124124709.png",
-    "Project-Surface_Waves/Tips/Coding/Useful-Command.md",
     "Project-Surface_Waves/Tips/ICON_Models/ICON_Parameterisation.md",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing/ICON-o_Stokes_simulation.md",
     "Project-Surface_Waves/Plan/Tasks.md",
@@ -369,7 +372,6 @@
     "Attachments/0646b16e7877526044de75c5b711f94a.png",
     "Project-Surface_Waves/Tips/Coding/Use-DASK-on-HPC.md",
     "Attachments/Screenshot 2026-10-22 at 16.44.15.png",
-    "Attachments/Screenshot 2026-10-22 at 16.43.48.png",
     "Project-Surface_Waves/Tips/ICON-Ocean_era5Forcing",
     "Attachments/Codex Image 7 Aug 2026, 13_48_12.svg+xml",
     "Attachments/triangular_prism",
