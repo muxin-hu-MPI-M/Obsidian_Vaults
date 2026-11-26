@@ -6,6 +6,11 @@ tags:
   - "#presenter/Nils_Brüggemann"
 Last Eddited: 2026-08-12
 ---
+# [[2026-11-26]]
+## Discussion with Nobu
+- The surface anomalous overturning may related to the eastward Stokes drift, and due to Coriolis-Stokes drift, inducing a surface flow away from that eastward Stokes drift. Once it piles up the ocean, induce a downward velocity, and forming a overturning
+	- why anti-Stokes do not just westward?
+
 # [[2026-11-25]]
 ## Regular meeting with Nils
 - **Nils agreed** that the spatial patterns of the column-integral advective heat transport convergence response (withStokes - noStokes) looks like the typical tropical instability wave pattern: 
