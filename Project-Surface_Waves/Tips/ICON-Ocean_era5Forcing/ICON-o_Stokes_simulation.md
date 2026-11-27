@@ -8,6 +8,24 @@ Last Eddited: 2026-08-31
 ---
 
 # Note
+
+## [[2026-11-27]] 30-60 deg mass overturning anomaly
+![[Pasted image 20261127133328.png |center|500]]
+- Global MOC: ICON’s online `global_moc` sums $-\rho_0Aw$ over wet native cells in 1 degree latitude bands, spreads each contribution across seven bands, and accumulates from north to south. 
+	- For `z-star` it uses the physical vertical velocity `w_deriv`, different from what we saved monthly coordinate velocity `w`
+	- So substituting it skips the moving coordinate correction, the edge-flux reconstruction `mass_flux` gives a closer match than using archived w
+	- Strategy: **Use the archived velocity fields for the Stokes–Eulerian split, and use `mass_flux` to check the total.**
+- Statistics based on the `global_moc`:
+	- Anomaly peak at 49.5°S, 26.85 m: +3.12 Sv (+13.3%)
+		- noStokes 23.54 Sv, 
+		- withStokes 26.66 Sv 
+	- Climatology peak at 49.5°S, 119.10 m
+		- noStokes 37.38 Sv
+		- withStokes 37.85 Sv
+	- ≥2 Sv at 26.85 m: 57.5°S to 39.5°S (18.0° span) 
+	- ≥3 Sv at 26.85 m: 52.5°S to 47.5°S (5.0° span) 
+	- Annual difference at the peak: +3.09 to +3.17 Sv 
+	- **Positive in 34 of 34 years**
 ## [[2026-11-26]] High-latitude Thermal overturning cell
 - Previously we found apart from the cancellation of Stokes contribution, there’s substantial additional large-scale structures remains in the upper 50m of the ocean
 - Within the upper ocean, there’s anomalous extratropical advective heat convergence in all ocean basins, combined with anomalous high-latitude heat divergence; Opposite spatial patterns observed in the deep ocean → indication of the overturning
